@@ -30,6 +30,7 @@
 - `../frontend/06-acessibilidade.md`
 - `../frontend/07-estado-cache-local-pwa.md`
 - `../frontend/08-contratos-api-frontend.md`
+- `../frontend/09-guia_detalhado_frontend.md`
 
 ## Backend
 
@@ -47,6 +48,23 @@
 - `../backend/12-compartilhamento.md`
 - `../backend/13-estrutura-pastas.md`
 - `../backend/14-testes-backend.md`
+- `../backend/15-guia_detalhado_backend.md`
+
+## Segurança
+
+- `../security/01-modelo-ameacas.md`
+- `../security/02-checklist-seguranca.md`
+- `../security/03-politicas-upload-storage.md`
+- `../security/04-privacidade-retencao.md`
+
+## QA
+
+- `../qa/01-estrategia-testes.md`
+- `../qa/02-testes-frontend.md`
+- `../qa/03-testes-backend.md`
+- `../qa/04-testes-e2e.md`
+- `../qa/05-testes-musicais.md`
+- `../qa/06-checklist-regressao.md`
 
 ## Implementação por IA/Codex
 
@@ -57,3 +75,10 @@
 - `../implementacao/04-politica_logs_documentacao.md`
 - `../implementacao/05-definition_of_done.md`
 - `../implementacao/06-prompts_operacionais_codex.md`
+
+## Logs
+
+- `../logs/CHANGELOG.md`
+- `../logs/DECISIONS.md`
+- `../logs/IMPLEMENTATION_LOG.md`
+- `../logs/TEST_LOG.md`
