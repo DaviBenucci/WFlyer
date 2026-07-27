@@ -1,0 +1,33 @@
+# Modelo de ameaças
+
+## Ativos
+
+- disponibilidade do site;
+- reputação do domínio;
+- chaves Turnstile e Resend;
+- caixa de entrada institucional;
+- dados enviados no formulário;
+- integridade do conteúdo;
+- cadeia de dependências.
+
+## Ameaças principais
+
+| Ameaça | Impacto | Controle |
+|---|---|---|
+| spam automatizado | custo e caixa saturada | Turnstile, honeypot, rate limit |
+| abuso de endpoint | disponibilidade/custo | WAF, limite de payload, timeout |
+| header injection | envio malicioso | campos fixos, normalização, validação |
+| XSS | execução de script | sem HTML do usuário, CSP, escaping |
+| vazamento de segredo | abuso de APIs | env server-only, revisão de bundle |
+| supply chain | código comprometido | lockfile, versões exatas, auditoria |
+| clickjacking | interface enganosa | `frame-ancestors 'none'` e X-Frame-Options |
+| scraping/DoS | recursos consumidos | CDN, WAF, cache, limites |
+| vazamento em logs | privacidade | logging mínimo e sanitizado |
+| conteúdo enganoso | reputação/jurídico | revisão editorial e sem cases fictícios |
+
+## Limitações aceitas
+
+- rate limit da borda não é um contador global perfeito;
+- e-mail permanece sujeito à disponibilidade do provedor;
+- não há fila persistente; falha de envio exige nova tentativa do usuário;
+- sem banco, o site não possui histórico próprio de mensagens.
