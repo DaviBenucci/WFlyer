@@ -42,3 +42,18 @@ Inicialmente:
 - `BreadcrumbList` em páginas internas.
 
 Não adicionar endereço, telefone, avaliações, fundação, equipe, clientes ou redes sociais inexistentes.
+
+
+## Dados públicos aprovados
+
+`Organization` e footer podem incluir:
+
+- URL: `https://wflyer.com.br`;
+- e-mail: `davi.benucci@wflyer.com.br`;
+- `sameAs`: Instagram `https://www.instagram.com/davibenucci/` e GitHub `https://github.com/DaviBenucci`.
+
+Não incluir endereço, telefone, avaliações, CNPJ, data de fundação ou tamanho de equipe sem decisão futura.
+
+## Analytics
+
+Não adicionar Google Analytics, pixels ou scripts de rastreamento. Search Console pode ser configurado externamente sem inserir analytics no frontend.

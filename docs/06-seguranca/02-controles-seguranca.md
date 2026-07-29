@@ -39,4 +39,6 @@
 - revisão de scripts de instalação;
 - dependências mínimas;
 - atualização rápida de patches de segurança;
-- imagem Docker reconstruída após atualização.
+- artefato standalone e dependências reconstruídos após atualização;
+- deploy da Napoleon identificado por commit/tag;
+- secrets apenas em GitHub Actions/Napoleon, nunca no repositório.

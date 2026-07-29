@@ -1,5 +1,13 @@
 # Contato e políticas
 
+## Contato oficial
+
+- e-mail público: `davi.benucci@wflyer.com.br`;
+- destinatário do formulário: `davi.benucci@wflyer.com.br`;
+- Instagram: `https://www.instagram.com/davibenucci/`;
+- GitHub: `https://github.com/DaviBenucci`;
+- omitir telefone, endereço e outras redes.
+
 ## Formulário
 
 Campos:
@@ -13,54 +21,32 @@ Campos:
 - Turnstile;
 - honeypot invisível.
 
-Tipos de projeto:
+Tipos: site institucional, landing page, aplicação web, integração, automação, solução personalizada e outro.
 
-- site institucional;
-- landing page;
-- aplicação web;
-- integração;
-- automação;
-- solução personalizada;
-- outro.
+## Terminal institucional
 
-## Terminal da partitura institucional
+Contato é o último capítulo. Após formulário e canais, a pauta converge para barra dupla final. A cadência não substitui estados de envio, sucesso ou erro.
 
-A página Contato é o último capítulo do ramo institucional. Depois do formulário e dos canais alternativos válidos, a pauta converge para a barra dupla final. A cadência não substitui estados de envio, sucesso ou erro.
+## Privacidade
 
-## Canais alternativos
+A política deve informar:
 
-Renderizar somente dados reais configurados. Não exibir placeholders de e-mail, telefone, endereço ou redes sociais em produção.
-
-## Política de privacidade
-
-Deve explicar:
-
-- quais dados o formulário recebe;
-- finalidade de resposta;
-- bases e responsabilidades a serem revisadas juridicamente;
-- provedores envolvidos;
-- retenção no e-mail institucional;
-- direitos e canal de solicitação;
+- dados enviados voluntariamente no formulário;
+- finalidade exclusiva de resposta e avaliação do projeto;
+- envio por Resend para o e-mail institucional;
+- proteções de borda e Turnstile da Cloudflare;
+- ausência de banco de leads;
+- logs técnicos mínimos e sanitizados;
+- canal de direitos: `davi.benucci@wflyer.com.br`;
 - ausência de venda de dados.
 
-## Cookies
+## Cookies e analytics
 
-A versão inicial não usa cookies de marketing. A preferência de tema fica em `localStorage`. Turnstile e infraestrutura podem processar sinais de segurança; o texto final exige revisão jurídica e compatibilidade com a configuração real.
+- não utilizar Google Analytics, Meta Pixel, session replay ou cookies de marketing;
+- preferência de tema pode usar `localStorage`;
+- Turnstile, Cloudflare e Napoleon podem processar dados técnicos de segurança/operação;
+- não mostrar banner de consentimento genérico quando não houver cookie não essencial; manter aviso/política compatível com a implementação real.
 
-## Termos
+## Termos e acessibilidade
 
-- natureza institucional do conteúdo;
-- propriedade intelectual;
-- limites de disponibilidade;
-- ausência de garantia sobre conteúdo futuro;
-- links externos;
-- contato.
-
-## Acessibilidade
-
-- compromisso;
-- padrões adotados;
-- limitações conhecidas;
-- canal para reportar barreiras.
-
-Os documentos legais devem ser revisados por profissional qualificado antes da publicação definitiva.
+Incluir natureza institucional, propriedade intelectual, links externos, disponibilidade, canal de contato e compromisso de acessibilidade. A homologação final é de Davi Benucci; revisão jurídica profissional continua recomendada antes de uso comercial definitivo.

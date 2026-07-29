@@ -85,7 +85,38 @@ Toda página principal deve declarar entrada, saída, ramo, ordem, rota anterior
 **Status:** aprovado
 A página Aplicação usa um tablet com profundidade por CSS 3D e movimento coordenado por GSAP. A tela é HTML interativo e acessível, não uma textura raster. A demonstração usa dados locais determinísticos e não executa upload, OCR/OMR, transposição real, rede, autenticação ou processamento do aplicativo.
 
-## ADR-017 — Golden reference como gate de página
+## ADR-017 — Referência visual e herança por arquétipo
 
-**Status:** aprovado
-A implementação visual final de uma página só pode começar quando houver golden reference individual aprovada, acompanhada por `.spec.yaml`. A referência é reconstruída com HTML, CSS e SVG; é proibido usar o PNG como fundo, textura ou substituto da interface.
+**Status:** aprovado e atualizado
+O conjunto visual existente é suficiente para a implementação integral. Uma página pode ser `approved-individual`, `approved-master-panel` ou `authorized-derived`. Estados derivados usam obrigatoriamente o arquétipo, os tokens, a especificação textual e as regras responsivas. PNGs nunca são usados como frontend.
+
+## ADR-018 — Cloudflare e DNS já provisionados
+
+**Status:** aprovado com inventário pendente  
+O proprietário confirmou que a propriedade da W_Flyer já existe na Cloudflare e que o DNS já aponta para a Cloudflare. O projeto não deve recriar a zona nem trocar nameservers. `app.wflyer.com.br` é uma aplicação existente e deve permanecer operacional e intocável. Antes de mudanças, o Codex deve realizar inventário somente leitura e identificar o produto Cloudflare, registros, origem, SSL, cache, WAF e regras atuais.
+
+## ADR-019 — Implementação integral somente após freeze pré-código
+
+**Status:** aprovado  
+O Codex poderá implementar as Fases 0 a 9 em sequência após o checklist `15-checklist-prontidao-pre-codigo.md` atingir `READY_FOR_IMPLEMENTATION`. Antes disso, não pode inventar páginas pendentes, publicar uma versão parcial no domínio principal nem alterar infraestrutura da aplicação.
+
+
+## ADR-020 — Hospedagem Napoleon conectada ao GitHub
+
+**Status:** aprovado  
+O site será mantido no GitHub e executado como aplicação Node.js na Napoleon, atrás da Cloudflare. VPS, EasyPanel e Docker deixam de ser requisitos normativos de produção. O build deve gerar saída Next.js standalone e possuir procedimento de inicialização compatível com o ambiente Node.js da Napoleon.
+
+## ADR-021 — GitHub Actions Secrets como fonte de segredos
+
+**Status:** aprovado  
+Turnstile, Resend e credenciais de deploy ficam em GitHub Actions Secrets. O workflow deve injetar ou sincronizar os valores com o runtime da Napoleon. É proibido presumir que secrets do Actions aparecem automaticamente no processo hospedado.
+
+## ADR-022 — Canais, portfólio e analytics
+
+**Status:** aprovado  
+O e-mail público e destinatário é `davi.benucci@wflyer.com.br`. As únicas redes são Instagram `@davibenucci` e GitHub `DaviBenucci`. O portfólio inicial contém W_Flyer, MSN Distribuidora e MSN Suprimentos. Analytics e cookies de marketing não serão utilizados no lançamento.
+
+## ADR-023 — Homologação pelo proprietário
+
+**Status:** aprovado  
+Davi Benucci é o responsável pela homologação final. O Codex executa desenvolvimento e QA, mas somente a aprovação registrada pelo responsável libera a produção.

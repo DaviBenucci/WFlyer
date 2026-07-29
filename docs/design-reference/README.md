@@ -2,29 +2,24 @@
 
 ## Estrutura
 
-- `inspiration/`: imagens fornecidas pelo usuário, somente para inspiração;
-- `golden-pages/master/`: prancha visual mestra aprovada;
-- `golden-pages/<page>/`: referências individuais aprovadas e seus specs;
-- `golden-pages/briefs/`: briefs de geração por página;
-- `components/`: estados visuais originais de componentes;
-- `storyboards/`: quadros de animação e continuidade;
-- `schemas/`: schemas de manifests e specs.
+- `inspiration/`: somente inspiração;
+- `golden-pages/master/`: prancha mestra aprovada;
+- `golden-pages/application/`: referência individual aprovada;
+- `golden-pages/visual-archetypes.yaml`: contratos de herança;
+- `golden-pages/page-matrix.yaml`: autorização por página/estado;
+- `components/` e `storyboards/`: estados e motion;
+- `schemas/`: validação.
 
 ## Ordem de autoridade
 
-1. decisões e requisitos textuais;
+1. decisões e requisitos;
 2. especificação visual da página;
-3. golden reference individual aprovada;
-4. prancha mestra;
-5. inspiração.
-
-A IA deve consultar simultaneamente texto, imagem, tokens, manifesto do capítulo e critérios de aceite.
+3. autorização e arquétipo;
+4. referência individual, quando existir;
+5. painel da prancha mestra;
+6. tokens, responsividade e motion;
+7. inspiração.
 
 ## Regra de produção
 
-- referências e inspiração não entram no bundle;
-- PNG não pode ser usado como background ou interface;
-- o frontend deve ser reconstruído com HTML, CSS e SVG originais;
-- uma referência só é normativa com `status: approved` e `.spec.yaml`;
-- o usuário é a autoridade de aprovação;
-- erros de texto presentes em imagem não substituem a copy documentada.
+As referências não entram no bundle. O frontend é reconstruído com HTML, CSS e SVG. Estados `authorized-derived` são plenamente implementáveis e devem ser comparados aos arquétipos e ao sistema global, não a um layout inventado.

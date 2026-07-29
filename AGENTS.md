@@ -1,20 +1,18 @@
 # AGENTS.md — regras normativas para agentes de implementação
 
-## 1. Escopo do repositório
+## 1. Escopo
 
 Este repositório pertence exclusivamente ao site institucional `wflyer.com.br`.
 
 É proibido:
 
-- importar código, documentação de domínio ou regras do motor musical do aplicativo;
-- implementar OCR, OMR, transposição, harmonização, análise de partitura ou processamento musical real;
-- criar autenticação, painel administrativo, banco de dados ou área de cliente sem decisão formal;
-- afirmar que a W_Flyer possui equipe, clientes, números, cases ou resultados ainda inexistentes;
-- tratar a clave de sol narrativa como logotipo oficial;
-- publicar métricas, depoimentos, contatos, redes sociais ou cases de preenchimento;
-- incorporar golden references ou screenshots como interface produtiva.
-
-A aplicação musical deve ser apresentada somente em linguagem pública e comercial. A demonstração do tablet é local, determinística e ilustrativa.
+- importar código ou regras internas do aplicativo musical;
+- implementar OCR, OMR, transposição real, harmonização, banco, autenticação ou painel administrativo;
+- alterar `app.wflyer.com.br`;
+- inventar métricas, clientes, depoimentos, equipe ou resultados;
+- usar a clave narrativa como logo;
+- incorporar screenshots ou golden references como interface produtiva;
+- adicionar analytics na versão inicial.
 
 ## 2. Fonte da verdade
 
@@ -23,100 +21,118 @@ A ordem de precedência é:
 1. decisões aprovadas em `docs/00-governanca/05-registro-decisoes.md`;
 2. bloqueio tecnológico;
 3. requisitos de produto;
-4. especificação da dupla partitura e das páginas;
-5. golden reference individual aprovada;
-6. prancha visual mestra;
-7. motion, implementação e comentários do código.
+4. especificação de páginas e dupla partitura;
+5. autorização visual e arquétipos;
+6. referência individual aprovada, quando existir;
+7. painel aprovado na prancha mestra;
+8. tokens, motion, responsividade e critérios de aceite.
 
-A imagem controla composição; a documentação controla comportamento, semântica, acessibilidade, segurança e conteúdo. Quando houver conflito, não escolher arbitrariamente. Interromper a etapa, registrar o conflito e solicitar decisão.
+A imagem controla linguagem, proporção e densidade. A documentação controla conteúdo, comportamento, acessibilidade, segurança e herança entre páginas.
 
 ## 3. Stack bloqueada
 
-Usar somente:
+Usar:
 
 - Next.js App Router;
 - React;
-- TypeScript em modo estrito;
-- Tailwind CSS 4;
-- CSS Custom Properties;
+- TypeScript estrito;
+- Tailwind CSS 4 e CSS Custom Properties;
 - GSAP, ScrollTrigger e `@gsap/react`;
 - SVG original;
-- MDX local e objetos TypeScript tipados;
-- Zod;
-- Resend;
-- Cloudflare Turnstile e WAF Rate Limiting;
+- conteúdo local em MDX/TypeScript;
+- Zod, Resend e Cloudflare Turnstile;
 - Vitest, Testing Library, Storybook, Playwright, axe-core e Lighthouse CI.
 
-Não instalar Anime.js, Motion/Framer Motion, React Spring, Lenis, Three.js, React Three Fiber, Lottie, bibliotecas de partículas, smooth scroll global, CMS ou biblioteca geral de componentes.
+Não usar Anime.js, Motion/Framer Motion, React Spring, Lenis, Three.js, React Three Fiber, WebGL, Lottie, biblioteca de partículas, CMS ou sistema geral de componentes.
 
-## 4. Dependências
+## 4. Referências visuais
 
-- toda dependência deve ter versão exata no `package.json`;
-- não usar `^` ou `~`;
-- o lockfile é obrigatório;
-- uma dependência nova exige justificativa e ADR;
-- não substituir uma biblioteca por preferência do agente;
-- remover dependências sem uso antes do encerramento da fase.
+O conjunto atual é suficiente para implementação integral.
 
-## 5. Identidade oficial e referências
+- prancha mestra: sistema visual e painéis canônicos;
+- Aplicação desktop claro: composição canônica da página de produto e tablet;
+- `visual-archetypes.yaml`: herança das páginas sem imagem própria;
+- `page-matrix.yaml`: status de autorização por estado;
+- specs textuais: estrutura, conteúdo e continuidade.
 
-- usar os SVGs oficiais da W_Flyer;
-- o símbolo oficial ocupa o centro do header desktop;
-- o wordmark oficial só aparece nos lockups e locais previstos;
-- a clave de sol é um elemento narrativo da Home e não substitui a marca;
-- usar tokens `--wf-*` definidos em `02-tokens-visuais-v1.md`;
-- não copiar vetores, notas ou composições das referências de terceiros;
-- não usar a prancha mestra ou golden pages como background, texture, `<img>` de interface ou mapa de imagem;
-- reconstruir cada referência com componentes semânticos, CSS e SVG originais;
-- uma página final exige golden reference individual `approved` e `.spec.yaml` correspondente.
+Uma página `authorized-derived` deve ser implementada a partir do arquétipo indicado, sem criar uma linguagem nova. Referências adicionais podem ser geradas durante QA para comparação, mas não são pré-condição.
 
-## 6. Arquitetura da dupla partitura
+Proibido:
 
-- a Home é a origem da composição;
-- o ramo da aplicação avança para a esquerda;
-- o ramo institucional avança para a direita;
-- cada rota principal declara `branch`, `order`, `previous`, `next`, `entryAnchor`, `exitAnchor` e `terminal`;
-- Benefícios termina com CTA para o app e barra dupla final;
-- Contato termina com formulário e barra dupla final;
-- páginas de detalhe de serviço e páginas legais são rotas auxiliares, não novos compassos da linha principal;
-- deep links devem renderizar diretamente a página correta, sem simular toda a viagem desde a Home;
-- saltos no mesmo ramo usam passagem comprimida e nunca montam páginas intermediárias;
-- trocas entre ramos usam a Home como pivô conceitual e nunca conectam diretamente uma pauta à outra.
+- usar PNG como background ou textura;
+- recortar elementos de screenshots;
+- transformar o tablet em imagem achatada;
+- atualizar baseline para ocultar divergências;
+- copiar erros de texto presentes em imagens.
 
-## 7. Animação e interação
+## 5. Dupla partitura
 
-- usar GSAP para timelines, transições laterais, entrada, saída e reações coordenadas;
-- usar CSS para hover, foco, cor e profundidade estrutural do tablet;
-- não substituir o scroll nativo;
-- não deformar continuamente a pauta durante o scroll;
-- não criar animação automática infinita;
+- Home é a origem;
+- aplicação avança para a esquerda;
+- institucional avança para a direita;
+- cada rota principal declara ramo, ordem, anterior, seguinte, entrada, saída e terminal;
+- Benefícios e Contato terminam com barra dupla final;
+- deep links renderizam diretamente;
+- troca entre ramos usa a Home como pivô conceitual;
+- páginas auxiliares não criam capítulos falsos.
+
+## 6. Motion e tablet
+
+- GSAP para timelines e transições coordenadas;
+- CSS para estados simples e profundidade estrutural;
+- scroll nativo;
+- nenhuma animação infinita obrigatória;
 - respeitar `prefers-reduced-motion`;
-- não bloquear leitura, foco, teclado, histórico ou navegação por links;
-- o tablet pode inclinar no máximo dentro dos limites documentados e deve permanecer operável por teclado;
-- a tela do tablet deve ser DOM, nunca uma imagem achatada ou textura WebGL.
+- tablet em DOM, operável por teclado, com tilt máximo documentado;
+- demonstração local e determinística, sem rede ou motor musical.
 
-## 8. Segurança
+## 7. Conteúdo oficial
 
-- o formulário envia exclusivamente para `POST /api/contact`;
-- validar Content-Type, tamanho, origem, Turnstile, honeypot e schema Zod;
-- não registrar corpo integral, mensagem, e-mail completo, token ou segredo;
-- não aceitar anexos nem HTML do visitante;
-- não criar persistência local ou remota para contatos;
-- falhar de forma fechada quando Turnstile ou validação estiverem indisponíveis.
+Usar `docs/04-conteudo/08-perfil-publicacao.yaml`.
 
-## 9. Regra sequencial
+- e-mail público e destinatário: `davi.benucci@wflyer.com.br`;
+- Instagram: `@davibenucci`;
+- GitHub: `DaviBenucci`;
+- portfólio: W_Flyer, MSN Distribuidora e MSN Suprimentos;
+- não criar métricas para esses projetos;
+- analytics permanece desabilitado.
 
-Uma fase só pode ser marcada como `CONCLUÍDA` quando:
+## 8. Infraestrutura e deploy
 
-- implementação prevista estiver presente;
-- testes obrigatórios estiverem verdes;
-- regressão visual tiver sido verificada contra referência aprovada;
-- acessibilidade aplicável tiver sido auditada;
-- documentação, manifests e evidências tiverem sido atualizados;
-- não existirem pendências bloqueadoras.
+- repositório no GitHub sob a conta `DaviBenucci`;
+- origem na Napoleon como aplicação Node.js conectada ao GitHub;
+- Cloudflare permanece na borda;
+- não criar VPS, EasyPanel ou dependência obrigatória de Docker;
+- preparar build Next.js standalone compatível com Node.js;
+- armazenar segredos em GitHub Actions Secrets;
+- garantir que os segredos sejam injetados no runtime da Napoleon; não presumir que secrets do Actions aparecem automaticamente no processo Node;
+- preservar zona, nameservers, e-mail e `app.wflyer.com.br`.
 
-Não iniciar a próxima fase em paralelo para contornar falhas da fase atual.
+## 9. Segurança
 
-## 10. Animação de entrada da marca
+- formulário somente por `POST /api/contact`;
+- validar Content-Type, tamanho, origem, Turnstile, honeypot e Zod;
+- sem anexos, HTML do visitante ou persistência;
+- não registrar mensagem, e-mail completo, token ou segredo;
+- falhar de forma fechada.
 
-A implementação deve seguir `docs/03-motion/06-animacao-entrada-marca.md` e `06-animacao-entrada-marca.timeline.yaml`. É proibido substituir a abertura por vídeo, Lottie, Canvas, WebGL, outro motor de animação ou reveal genérico. Não alterar os paths oficiais. O handoff termina na Home real, onde a clave narrativa e as duas partituras passam a existir.
+## 10. Regra sequencial
+
+Uma fase só é `CONCLUÍDA` com:
+
+- implementação prevista;
+- testes verdes;
+- comparação visual com referência ou arquétipo autorizado;
+- acessibilidade auditada;
+- documentação e evidências atualizadas;
+- nenhuma pendência bloqueadora.
+
+## 11. Estado de execução
+
+`PRE-CODE-STATUS.md` está em `READY_FOR_IMPLEMENTATION`. O Codex pode iniciar e concluir o código. A publicação só pode ocorrer após:
+
+- cadastro dos GitHub Actions Secrets;
+- configuração da aplicação Node.js na Napoleon;
+- validação de staging;
+- homologação por Davi Benucci;
+- smoke test de produção e confirmação de que `app.wflyer.com.br` permaneceu operacional.

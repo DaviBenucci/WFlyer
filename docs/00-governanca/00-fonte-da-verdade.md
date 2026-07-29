@@ -2,51 +2,45 @@
 
 ## Objetivo
 
-Evitar que decisões mudem durante a implementação por preferência da IA, repetição de prompts, leitura isolada de uma imagem ou adoção oportunista de bibliotecas.
+Impedir que a implementação mude por preferência do agente ou por leitura isolada de uma imagem.
 
-## Documentos e referências normativas
+## Ordem normativa
 
 | Prioridade | Fonte | Função |
 |---|---|---|
-| 1 | `05-registro-decisoes.md` e ADRs aprovadas | decisões formais e substituições |
+| 1 | `05-registro-decisoes.md` | decisões formais e substituições |
 | 2 | `01-bloqueio-tecnologico.md` | tecnologias autorizadas e proibidas |
-| 3 | `01-produto/05-requisitos.md` | comportamento e restrições do produto |
-| 4 | `02-design/09-sistema-dupla-partitura.md` e `10-especificacao-visual-paginas.md` | arquitetura visual e contrato de cada página |
-| 5 | golden reference individual marcada como `approved` | composição específica de uma página/estado |
-| 6 | `wflyer-approved-master-board.png` | linguagem visual global, temas e densidade |
-| 7 | `03-motion/*` | movimento, continuidade e interação |
-| 8 | `07-qa/05-criterios-aceite.md` | evidência exigida para conclusão |
-| 9 | `05-implementacao/*` | modo de execução |
+| 3 | `01-produto/05-requisitos.md` | comportamento e restrições |
+| 4 | `02-design/09-sistema-dupla-partitura.md` e `10-especificacao-visual-paginas.md` | arquitetura visual por rota |
+| 5 | `golden-pages/IMPLEMENTATION-AUTHORIZATION.md` e `visual-archetypes.yaml` | autorização e herança visual |
+| 6 | golden reference individual aprovada | composição específica quando existir |
+| 7 | painel aprovado da prancha mestra | composição canônica de arquétipo |
+| 8 | tokens, motion, responsividade e QA | estados derivados e comportamento |
 
-## Regra para conflitos entre texto e imagem
+## Regra de herança visual
 
-- uma imagem nunca autoriza conteúdo fictício, texto incorreto, violação de acessibilidade ou tecnologia proibida;
-- a especificação textual controla semântica, conteúdo, comportamento, acessibilidade e segurança;
-- a golden reference individual controla composição, hierarquia, proporção, ritmo, densidade e posição relativa dos elementos daquela página;
-- a prancha mestra controla a identidade visual compartilhada;
-- quando uma referência individual aprovada substituir um painel da prancha mestra, a referência individual prevalece somente para aquela página;
-- qualquer conflito real deve ser registrado, não resolvido silenciosamente.
+A ausência de PNG individual não autoriza improvisação e também não bloqueia o código. A página deve herdar o arquétipo indicado na matriz:
 
-## Tratamento de conflito
+- a prancha mestra fixa a linguagem global;
+- a referência individual da Aplicação fixa o padrão de página de produto e o tablet;
+- os arquétipos fixam estrutura, densidade, cards, ritmo e tipos de seção;
+- tokens fixam a conversão entre temas;
+- regras responsivas fixam a adaptação mobile;
+- especificações textuais fixam conteúdo e continuidade da pauta.
 
-1. identificar os dois trechos conflitantes;
-2. não implementar nenhuma interpretação silenciosa;
-3. abrir registro em `05-registro-decisoes.md`;
-4. registrar impacto em escopo, prazo, segurança, acessibilidade, conteúdo e performance;
-5. aguardar decisão;
-6. atualizar todos os documentos, manifests e referências afetados na mesma mudança.
+## Conflitos
+
+- imagem não autoriza conteúdo fictício ou inacessível;
+- texto controla semântica, conteúdo, segurança e comportamento;
+- referência individual prevalece sobre painel da prancha somente para a página correspondente;
+- arquétipo prevalece sobre preferência estética do agente;
+- conflito real exige registro, não decisão silenciosa.
 
 ## Terminologia
 
-- **site institucional:** projeto em `wflyer.com.br`;
-- **aplicação:** produto separado em `app.wflyer.com.br`;
-- **static-first:** páginas estáticas com endpoint mínimo de contato;
-- **identidade oficial:** símbolo, wordmark e regras de uso aprovados da W_Flyer;
-- **prancha mestra:** composição aprovada que fixa a linguagem visual dos temas claro e escuro;
-- **ramo da aplicação:** partitura que parte da Home e avança para a esquerda;
-- **ramo institucional:** partitura que parte da Home e avança para a direita;
-- **capítulo de partitura:** página/rota principal com posição definida em um ramo;
-- **âncora de continuidade:** ponto vetorial pelo qual a pauta entra ou sai de uma página;
-- **barra final:** barra dupla que encerra formalmente um ramo;
-- **golden reference:** imagem original aprovada para comparação, nunca um asset de produção;
-- **compasso de navegação:** item do header construído como miniatura de pauta musical.
+- **approved-individual:** imagem individual aprovada;
+- **approved-master-panel:** painel aprovado da prancha mestra;
+- **authorized-derived:** estado autorizado por herança de arquétipo, tokens e regras;
+- **golden reference:** referência de comparação, nunca asset de produção;
+- **arquétipo visual:** contrato reutilizável de composição para páginas relacionadas;
+- **capítulo:** rota principal da dupla partitura.

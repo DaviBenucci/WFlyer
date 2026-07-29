@@ -55,6 +55,9 @@
 | RNF-015 | Transições não bloqueiam histórico, foco ou carregamento direto. |
 | RNF-016 | Nenhuma métrica, cliente, depoimento ou rede social fictícia. |
 | RNF-017 | A pauta não sofre morph contínuo durante scroll ou movimento do cursor. |
-| RNF-018 | Cada página final implementada deve corresponder a golden reference individual aprovada. |
+| RNF-018 | Cada página final deve corresponder a referência individual, painel aprovado ou arquétipo autorizado registrado na matriz visual. |
 | RNF-019 | A duração da transição não cresce linearmente com a distância entre capítulos. |
 | RNF-020 | Carregamento direto não simula capítulos anteriores nem a passagem pela Home. |
+| RNF-021 | Não utilizar analytics, pixels ou session replay na versão inicial. |
+| RNF-022 | O build e o runtime devem ser compatíveis com aplicação Node.js na Napoleon, sem VPS ou Docker obrigatório. |
+| RNF-023 | Segredos devem permanecer fora do repositório e ser fornecidos por GitHub Actions Secrets. |

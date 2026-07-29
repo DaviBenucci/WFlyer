@@ -2,32 +2,31 @@
 
 ## Camadas
 
-1. **Governança:** define autoridade, stack e processo de mudança.
-2. **Produto:** define o que o site entrega e para quem.
-3. **Design e motion:** define como o conteúdo aparece, se conecta e responde.
-4. **Conteúdo:** define mensagens, estrutura editorial e limites de afirmação.
-5. **Implementação:** define arquitetura técnica e ordem de execução.
-6. **Segurança:** define controles obrigatórios.
-7. **QA:** define como comprovar a conclusão.
-8. **Operação:** define atualização e resposta a falhas.
-9. **Referências visuais:** registra imagens aprovadas, specs e storyboards.
+1. Governança;
+2. Produto;
+3. Design e motion;
+4. Conteúdo;
+5. Implementação;
+6. Segurança;
+7. QA;
+8. Operação;
+9. Referências visuais.
 
-## Status documental
-
-Cada documento ou referência pode estar em um dos estados:
+## Status documentais
 
 - `NORMATIVO`: obrigatório;
 - `PROVISÓRIO`: obrigatório até substituição aprovada;
-- `REFERÊNCIA`: orienta, mas não pode contrariar normas;
-- `HISTÓRICO`: preservado, sem orientar implementação atual;
-- `APPROVED`: referência visual individual aprovada;
-- `PENDING`: referência aguardando geração ou aprovação.
+- `REFERÊNCIA`: orienta sem contrariar normas;
+- `HISTÓRICO`: não orienta implementação atual;
+- `APPROVED_INDIVIDUAL`: referência individual aprovada;
+- `APPROVED_MASTER_PANEL`: painel canônico da prancha;
+- `AUTHORIZED_DERIVED`: implementação autorizada por arquétipo.
 
 ## Regras
 
-- os documentos de governança, produto, design, motion, implementação, segurança e QA são normativos, salvo indicação explícita;
-- copy pode permanecer provisória mesmo quando a composição visual está aprovada;
-- imagens de inspiração são referência não produtiva;
-- golden reference `approved` é normativa para composição da página correspondente;
-- arquivos históricos existem somente para preservar rastreabilidade;
-- o nome antigo de um arquivo não altera seu status declarado no conteúdo.
+- documentos normativos prevalecem sobre preferência da IA;
+- a copy aprovada pode receber correção editorial sem alterar significado;
+- inspiração é não produtiva;
+- estados `APPROVED_INDIVIDUAL`, `APPROVED_MASTER_PANEL` e `AUTHORIZED_DERIVED` autorizam implementação visual;
+- arquivos históricos preservam rastreabilidade;
+- o nome antigo de um arquivo não altera o status declarado no conteúdo.

@@ -2,70 +2,58 @@
 
 ## Antes de escrever código
 
-1. identificar a fase atual;
-2. confirmar que a anterior está concluída;
-3. localizar a rota no manifesto de capítulos;
-4. confirmar `branch`, `coordinate`, `previous`, `next` e `terminal`;
-5. verificar o status em `design-reference/golden-pages/page-matrix.yaml`;
-6. abrir a golden reference aprovada e o `.spec.yaml` correspondente;
-7. ler requisitos, design, motion, conteúdo, segurança e QA relacionados;
-8. localizar a especificação OpenSpec;
-9. listar arquivos que serão alterados;
-10. apontar riscos e dependências;
-11. não instalar pacote sem autorização documental.
+1. ler `AGENTS.md`;
+2. confirmar `READY_FOR_IMPLEMENTATION`;
+3. identificar fase e rota;
+4. consultar manifesto de capítulos;
+5. consultar `page-matrix.yaml` e `visual-archetypes.yaml`;
+6. abrir a referência individual ou os painéis-fonte do arquétipo;
+7. ler design, conteúdo, motion, segurança e QA;
+8. listar arquivos, testes e riscos;
+9. não instalar dependência sem autorização.
 
-## Quando a referência visual estiver pendente
+## Implementação visual
 
-- não inventar layout final;
-- não usar a prancha mestra como substituta de uma referência individual quando a página não estiver definida;
-- pode criar rota, semântica, tipos, manifesto, conteúdo e testes neutros;
-- registrar `BLOCKED_GOLDEN_REFERENCE`;
-- aguardar geração e aprovação.
+- `approved-individual`: reproduzir composição do PNG/spec;
+- `approved-master-panel`: reconstruir o painel com componentes em alta resolução;
+- `authorized-derived`: aplicar fielmente o arquétipo, os tokens e a especificação da página;
+- não solicitar uma nova imagem quando a matriz já autorizar derivação;
+- não importar `docs/design-reference/` no runtime;
+- implementar estático antes de motion;
+- manter a mesma geometria entre temas;
+- adaptar mobile conforme regras normativas.
 
 ## Durante a implementação
 
-- mudanças pequenas e rastreáveis;
-- testes junto do componente;
-- nomes alinhados à documentação;
-- sem atalhos que eliminem acessibilidade;
+- mudanças rastreáveis;
+- TypeScript estrito;
 - sem conteúdo fictício;
-- sem `any` injustificado;
 - sem segredo no cliente;
-- sem cópia raster das referências;
-- sem importar arquivos de `docs/design-reference/` no runtime;
-- reconstruir grid, espaço, tipografia, formas e estados com código;
-- preservar a mesma árvore estrutural em claro/escuro;
-- manter direção do ramo e continuidade da pauta;
-- resolver a navegação como `adjacent-score`, `compressed-score-jump`, `home-pivot` ou `neutral`;
-- não montar páginas intermediárias em saltos nem conectar diretamente os dois ramos;
-- implementar estado estático correto antes da animação;
-- não criar motion que não esteja catalogado.
+- sem rasterização da interface;
+- navegação classificada como adjacente, salto comprimido, pivô Home ou neutra;
+- nenhum capítulo intermediário montado em salto;
+- nenhuma ligação direta entre ramos.
 
-## Comparação visual
+## Comparação e QA
 
-1. executar página no viewport da referência;
-2. fixar tema, conteúdo e preferência de movimento;
-3. capturar screenshot determinístico;
-4. comparar lado a lado e por diff;
-5. corrigir primeiro estrutura e proporção;
-6. depois tipografia, cor, borda e sombra;
-7. por último microdetalhes;
-8. não atualizar baseline sem aprovação.
+1. fixar viewport, tema, conteúdo e motion;
+2. capturar screenshot determinístico;
+3. comparar estrutura, proporção, tipografia, cor e microdetalhes;
+4. executar lint, typecheck, unitários, Storybook, Playwright, axe e Lighthouse;
+5. validar claro, escuro, mobile e reduced motion;
+6. registrar evidências e gate.
 
-## Depois
+## Infraestrutura
 
-1. executar lint;
-2. executar typecheck;
-3. executar unitários;
-4. executar Storybook/testes visuais aplicáveis;
-5. executar Playwright;
-6. executar axe;
-7. executar Lighthouse quando a mudança afetar UI ou bundle;
-8. validar claro, escuro e reduced motion;
-9. atualizar changelog, status da página e decisão quando necessário;
-10. registrar limitações reais;
-11. somente então marcar a etapa concluída.
+- GitHub é o repositório/CI;
+- Napoleon é a origem Node.js;
+- Cloudflare é borda existente;
+- preservar `app.wflyer.com.br`;
+- inventário DNS antes de alterações;
+- secrets em GitHub Actions, com injeção explícita no runtime Napoleon;
+- staging antes de produção;
+- homologação por Davi Benucci.
 
-## Resposta diante de ambiguidade
+## Execução integral
 
-Não escolher biblioteca alternativa, inventar conteúdo ou reinterpretar o sentido da partitura. Registrar a dúvida com opções e impacto.
+Seguir `14-contrato-execucao-integral-codex.md`. Parar somente por bloqueio externo real, conflito normativo ou falha de gate não solucionável sem decisão.

@@ -7,7 +7,13 @@ wflyer-site/
 ├── package.json
 ├── pnpm-lock.yaml
 ├── next.config.ts
-├── Dockerfile
+├── .env.example
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
+│       └── deploy.yml
+├── scripts/
+│   └── prepare-standalone.mjs
 ├── public/
 │   ├── brand/official/
 │   ├── score/
@@ -78,6 +84,7 @@ wflyer-site/
 │   └── accessibility/
 ├── docs/
 │   └── design-reference/        não enviado ao build
+├── server.js                    adaptador de inicialização somente se exigido pela Napoleon
 └── openspec/
 ```
 

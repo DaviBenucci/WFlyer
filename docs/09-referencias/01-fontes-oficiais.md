@@ -35,3 +35,8 @@ Consultadas para a definição inicial. A implementação deve usar documentaç�
 - Storybook testing: https://storybook.js.org/docs/writing-tests
 - axe-core: https://github.com/dequelabs/axe-core
 - Core Web Vitals: https://web.dev/articles/vitals
+
+## Hospedagem e automação
+
+- Napoleon Node.js/cPanel: https://painel.napoleon.com.br/knowledgebase/34/Como-fazer-o-setup-do-Node.js-no-app-do-cPanel.html
+- GitHub Actions — deploy em plataformas de terceiros: https://docs.github.com/pt/actions/how-tos/deploy/deploy-to-third-party-platforms

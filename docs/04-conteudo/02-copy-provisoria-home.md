@@ -1,7 +1,7 @@
 # Copy de referência visual
 
-**Status:** PROVISÓRIO PARA CONTEÚDO, APROVADO COMO DIREÇÃO VISUAL
-Os textos abaixo orientam golden references e podem ser refinados antes da publicação. Não alterar a estrutura visual aprovada sem decisão.
+**Status:** BASE EDITORIAL APROVADA PARA IMPLEMENTAÇÃO
+Os textos abaixo são a base final para o Codex. Ajustes de ortografia, concisão e quebra de linha são permitidos, mas não podem alterar promessas, escopo ou significado sem decisão registrada.
 
 ## Home — ramo da aplicação
 
@@ -142,8 +142,8 @@ A redação final deve manter a revisão humana explícita e não prometer preci
 **Título:**
 `Projetos selecionados`
 
-**Estado vazio:**
-`Projetos selecionados serão publicados em breve. Estamos preparando conteúdos que mostrem o contexto, o processo e as decisões de cada entrega.`
+**Projetos:**
+`W_Flyer`, `MSN Distribuidora` e `MSN Suprimentos`, conforme `05-portfolio.md`.
 
 ## Contato
 
@@ -159,7 +159,7 @@ A redação final deve manter a revisão humana explícita e não prometer preci
 ## Regras de uso em referências
 
 - não inventar métricas para preencher espaços;
-- não inserir endereços, telefones, e-mails ou redes sem dados oficiais;
+- usar somente o e-mail e as redes registrados em `08-perfil-publicacao.yaml`;
 - não tratar texto gerado em imagem como conteúdo final quando houver erro ortográfico;
 - títulos podem quebrar linha para preservar a composição, sem alterar a ordem semântica;
 - o rótulo `MODO CLARO/ESCURO` pertence à prancha de apresentação, não ao site.

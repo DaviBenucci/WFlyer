@@ -1,40 +1,47 @@
 # Portfólio
 
-## Estado inicial
+## Projetos aprovados para a versão inicial
 
-Não criar cases fictícios. A seção aceita três tipos de item:
+### W_Flyer
 
-- `case-real`: projeto publicado com autorização;
-- `produto-proprio`: iniciativa própria, identificada como tal;
-- `estudo-conceitual`: experimento identificado como conceito.
+- tipo: produto próprio;
+- URL: `https://wflyer.com.br`;
+- descrição: identidade, documentação, arquitetura e desenvolvimento do site institucional e da experiência narrativa em dupla partitura;
+- não publicar métricas inventadas;
+- após o lançamento, status `publicado`.
 
-Enquanto não houver item publicável, mostrar estado vazio honesto e placeholders abstratos originais. Não usar logos de empresas, screenshots inventados ou resultados simulados.
+### MSN Distribuidora
 
-## Schema editorial
+- tipo: case real;
+- URL: `https://msndistribuidora.com.br`;
+- categoria: e-commerce;
+- o Codex deve verificar o estado público no momento do lançamento e usar `em desenvolvimento` caso a página ainda esteja indisponível ou em manutenção;
+- não afirmar resultados comerciais sem evidência.
 
-```yaml
-slug: string
-title: string
-type: case-real | produto-proprio | estudo-conceitual
-status: publicado | em-desenvolvimento | arquivado
-summary: string
-problem: string
-solution: string
-services: string[]
-technologies: string[]
-results: string[]
-permission: required-for-case-real
-images: string[]
-```
+### MSN Suprimentos
 
-## Resultados
+- tipo: case real;
+- URL: `https://msnsuprimentos.com.br`;
+- categoria: site comercial/institucional integrado ao fluxo do e-commerce;
+- descrever organização de conteúdo, apresentação de produtos e direcionamento de atendimento;
+- não afirmar métricas sem evidência.
 
-Somente publicar métricas verificáveis. Quando não houver métrica, descrever entrega e contexto sem fabricar impacto.
+## Estrutura dos cards
 
-## Comportamento visual
+Cada card contém:
 
-- carrossel não possui autoplay obrigatório;
-- controles anterior/próximo são operáveis por teclado;
-- estado vazio não simula um case;
-- a pauta institucional continua visualmente para Contato;
-- a página não usa barra final.
+- nome;
+- tipo do projeto;
+- resumo de uma ou duas frases;
+- serviços executados;
+- tecnologias somente quando confirmadas;
+- status;
+- link externo com indicação acessível;
+- imagem real autorizada ou composição abstrata original.
+
+## Regras
+
+- não criar clientes ou cases adicionais;
+- não publicar logos ou screenshots sem autorização/asset próprio;
+- não inventar números, depoimentos ou resultados;
+- a página continua para Contato e não usa barra final.

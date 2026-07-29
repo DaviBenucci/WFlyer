@@ -1,83 +1,43 @@
-# Assets, licenças e golden references
+# Assets, licenças e referências visuais
 
-## Classes de referência
+## Classes
 
 ### Inspiração
 
-Arquivos em `design-reference/inspiration/` são somente direção. Possuem licença desconhecida ou de terceiros e não entram no produto.
+Arquivos de terceiros em `design-reference/inspiration/` são somente direção e nunca entram no produto.
 
 ### Prancha mestra aprovada
 
-`design-reference/golden-pages/master/wflyer-approved-master-board.png` fixa:
+A prancha mestra fixa identidade, temas, header, densidade, cards, botões, pauta e os painéis canônicos de Home, Serviços, Portfólio, Contato e Footer.
 
-- linguagem visual dos temas;
-- estrutura do header;
-- uso central do símbolo;
-- cards, botões, ícones e pauta;
-- densidade e proporção geral.
+### Referência individual
 
-### Golden reference individual
+Imagem de página/viewport/tema com spec. Aplicação — desktop claro é a referência individual aprovada atual.
 
-Imagem de uma única página, um único viewport e um único tema, acompanhada por `.spec.yaml`. Controla a composição daquela página. Não é asset de produção.
+### Arquétipo autorizado
 
-### Storyboard
+Contrato reutilizável que permite implementar páginas relacionadas sem exigir um PNG separado. O arquétipo define fontes visuais, estrutura, densidade, seções, tema e adaptação responsiva.
 
-Quadros que mostram estados temporais, continuidade da pauta e direção da transição.
+## Gate atualizado
 
-## Imagens de inspiração
+A implementação é autorizada quando o estado da matriz for:
 
-Todas são classificadas como:
+- `approved-individual`;
+- `approved-master-panel`;
+- `authorized-derived`.
 
-```yaml
-usage: inspiration-only
-ship_in_production: false
-license_status: unknown-or-third-party
-```
+`authorized-derived` não significa liberdade criativa. Exige herança fiel de `visual-archetypes.yaml`, tokens, especificação da página e componentes aprovados.
 
-Elas não podem ser publicadas, recortadas, vetorizadas por cópia, usadas como textura, incorporadas à marca ou tratadas como material licenciado.
+## Reconstrução
 
-## Assets produtivos
+O Codex deve usar HTML, CSS, SVG e componentes. É proibido usar PNG como background, recortar elementos, mapear cliques sobre imagem, usar screenshot como tablet ou copiar conteúdo errado da imagem.
 
-Devem ser originais:
+## Mobile e tema escuro
 
-- pauta e conectores;
-- clave narrativa;
-- notas;
-- barras de compasso e barra final;
-- ícones musicais e de serviço;
-- padrões e texturas;
-- ilustrações de serviço;
-- casca do tablet e reflexos;
-- interface HTML do tablet.
+Mobile e tema escuro podem ser derivados quando a matriz autorizar:
 
-## Gate de golden references
-
-Antes da implementação final de uma página são obrigatórios:
-
-1. PNG individual claro;
-2. PNG individual escuro;
-3. `.spec.yaml` para cada PNG;
-4. marcação `status: approved`;
-5. identificação de ramo, ordem, entrada, saída e terminal;
-6. ausência de conteúdo fictício;
-7. aprovação do usuário registrada no status.
-
-As versões mobile claro/escuro devem existir antes da conclusão responsiva da página.
-
-## Referências já aprovadas
-
-- prancha mestra dos layouts claro/escuro;
-- Aplicação W_Flyer — desktop claro, incluindo conceito do tablet.
-
-O status detalhado está em `design-reference/golden-pages/STATUS.md`.
-
-## Regra de reconstrução
-
-O Codex deve reconstruir a composição com HTML, CSS, SVG e componentes. É proibido:
-
-- usar PNG como background;
-- cortar partes da golden reference para compor a página;
-- inserir screenshot do tablet como tela final;
-- mapear cliques sobre imagem;
-- aceitar erros de texto da imagem como conteúdo definitivo;
-- atualizar baseline para esconder divergência.
+- geometria e hierarquia preservadas;
+- tokens oficiais aplicados;
+- regras de `06-responsividade.md` seguidas;
+- QA visual, axe e Playwright executados;
+- homologação final pelo proprietário.

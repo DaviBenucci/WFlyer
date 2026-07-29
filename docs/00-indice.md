@@ -10,6 +10,7 @@
 - [Registro de decisões](00-governanca/05-registro-decisoes.md)
 - [ADR — animação de entrada programática](00-governanca/06-adr-animacao-entrada-programatica.md)
 - [ADR — dupla partitura e páginas visuais](00-governanca/07-adr-dupla-partitura-e-paginas-visuais.md)
+- [Decisões operacionais e publicação](00-governanca/08-decisoes-operacionais-publicacao.md)
 
 ## 01 — Produto
 
@@ -38,7 +39,7 @@
 - [Narrativa de dupla partitura](03-motion/02-narrativa-dupla-partitura.md)
 - [Catálogo de animações](03-motion/03-catalogo-animacoes.md)
 - [Movimento reduzido](03-motion/04-reduced-motion.md)
-- [Orçamento de     performance](03-motion/05-orcamento-performance.md)
+- [Orçamento de performance](03-motion/05-orcamento-performance.md)
 - [Animação de entrada da marca](03-motion/06-animacao-entrada-marca.md)
 - [Timeline executável da entrada](03-motion/06-animacao-entrada-marca.timeline.yaml)
 - [Transições entre capítulos](03-motion/07-transicoes-entre-capitulos.md)
@@ -53,6 +54,7 @@
 - [Portfólio](04-conteudo/05-portfolio.md)
 - [Contato e políticas](04-conteudo/06-contato-politicas.md)
 - [SEO e metadados](04-conteudo/07-seo-metadados.md)
+- [Perfil de publicação](04-conteudo/08-perfil-publicacao.yaml)
 
 ## 05 — Implementação
 
@@ -68,6 +70,10 @@
 - [Contrato de assets da animação](05-implementacao/10-contrato-assets-animacao.md)
 - [Manifesto de capítulos da partitura](05-implementacao/11-manifesto-capitulos-partitura.yaml)
 - [Fluxo de golden references](05-implementacao/12-fluxo-golden-references.md)
+- [Estado da infraestrutura Cloudflare](05-implementacao/13-estado-infraestrutura-cloudflare.md)
+- [Contrato de execução integral pelo Codex](05-implementacao/14-contrato-execucao-integral-codex.md)
+- [Checklist de prontidão pré-código](05-implementacao/15-checklist-prontidao-pre-codigo.md)
+- [GitHub Actions Secrets e Napoleon](05-implementacao/16-github-actions-secrets-napoleon.md)
 
 ## 06 — Segurança
 
@@ -98,3 +104,5 @@
 - [Referências visuais](design-reference/README.md)
 - [Matriz de páginas visuais](design-reference/golden-pages/page-matrix.yaml)
 - [Status das referências](design-reference/golden-pages/STATUS.md)
+- [Autorização de implementação visual](design-reference/golden-pages/IMPLEMENTATION-AUTHORIZATION.md)
+- [Arquétipos visuais](design-reference/golden-pages/visual-archetypes.yaml)

@@ -5,58 +5,39 @@
 | Camada | Decisão |
 |---|---|
 | Runtime | Node.js 24 LTS |
-| Gerenciador | pnpm, fixado no campo `packageManager` |
-| Framework | Next.js 16.2, App Router |
+| Gerenciador | pnpm fixado em `packageManager` |
+| Framework | Next.js 16.2 App Router |
 | UI | React 19.2 |
 | Linguagem | TypeScript estrito |
 | Estilização | Tailwind CSS 4 + CSS Custom Properties |
 | Motion | GSAP 3 + ScrollTrigger + `@gsap/react` |
-| Profundidade do tablet | CSS 3D limitado, sem WebGL |
+| Tablet | CSS 3D limitado, sem WebGL |
 | Ilustração | SVG original e CSS |
 | Conteúdo | MDX local + objetos TypeScript tipados |
 | Validação | Zod |
 | E-mail | Resend |
 | Antispam | Cloudflare Turnstile |
 | Rate limit | Cloudflare WAF Rate Limiting |
-| Unitários | Vitest + Testing Library |
-| Catálogo UI | Storybook |
-| E2E | Playwright |
-| Acessibilidade | axe-core + testes manuais |
-| Performance | Lighthouse CI + métricas de runtime |
-| Entrega | Docker Next.js standalone atrás da Cloudflare |
+| Testes | Vitest, Testing Library, Storybook, Playwright, axe-core e Lighthouse CI |
+| Repositório/CI | GitHub + GitHub Actions |
+| Hospedagem | Napoleon, aplicação Node.js conectada ao GitHub |
+| Borda | Cloudflare DNS/proxy/HTTPS/WAF |
+| Build | Next.js `output: standalone`, sem Docker obrigatório |
 
-As versões de patch devem ser fixadas no bootstrap e atualizadas apenas por processo de manutenção. A linha inicial do Next.js deve conter, no mínimo, o patch de segurança documentado no manifesto tecnológico.
+## Tecnologias e serviços proibidos na primeira versão
 
-## Tecnologias proibidas na primeira versão
-
-- Anime.js;
-- Motion ou Framer Motion;
-- React Spring;
-- Lenis e qualquer smooth scroll global;
-- Three.js ou React Three Fiber;
-- WebGL para o tablet ou para a navegação;
-- Lottie;
-- bibliotecas de partículas;
-- shadcn/ui como sistema visual;
-- bibliotecas gerais de componentes;
-- Canvas para renderizar páginas, pauta ou interface do tablet;
-- CMS;
-- banco de dados SQL, NoSQL, Redis ou KV;
-- autenticação;
-- analytics com rastreamento individual;
+- Anime.js, Motion/Framer Motion, React Spring;
+- Lenis ou smooth scroll global;
+- Three.js, React Three Fiber, WebGL, Lottie ou partículas;
+- Canvas para páginas, pauta ou tablet;
+- shadcn/ui ou biblioteca geral de componentes;
+- CMS, SQL, NoSQL, Redis, KV, autenticação;
+- analytics, pixels, session replay ou rastreamento comportamental;
 - IA em produção;
-- código ou pacote do aplicativo musical;
-- uso de golden reference como asset produtivo.
+- código do aplicativo musical;
+- golden reference como asset produtivo;
+- VPS, EasyPanel ou Docker como requisito operacional do lançamento.
 
 ## Exceções
 
-Uma exceção exige ADR aprovado contendo:
-
-- problema concreto;
-- alternativas avaliadas;
-- impacto de bundle e runtime;
-- impacto de acessibilidade;
-- impacto de segurança;
-- estratégia de remoção;
-- testes adicionais;
-- aprovação explícita do responsável pelo projeto.
+Qualquer exceção exige ADR com problema, alternativas, impacto de bundle, acessibilidade, segurança, testes, remoção e aprovação explícita do responsável.

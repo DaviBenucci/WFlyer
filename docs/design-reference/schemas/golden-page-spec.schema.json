@@ -29,7 +29,9 @@
         "approved-master-panel",
         "pending-generation",
         "pending-approval",
-        "superseded"
+        "superseded",
+        "approved-individual",
+        "authorized-derived"
       ]
     },
     "approval_date": {

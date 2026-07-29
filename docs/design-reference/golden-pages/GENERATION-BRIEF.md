@@ -1,8 +1,8 @@
-# Brief global para geração de golden pages
+# Brief opcional para geração de referências adicionais
 
 ## Objetivo
 
-Gerar uma única página completa da W_Flyer por imagem, em alta resolução, preservando a identidade aprovada e a posição da página dentro de uma das duas partituras.
+Produzir, quando necessário durante QA, uma imagem adicional de página sem reabrir a autorização de implementação já concedida.
 
 ## Invariantes visuais
 
@@ -58,7 +58,7 @@ Antes de gerar:
 
 ## Conteúdo
 
-Usar `docs/04-conteudo/02-copy-provisoria-home.md` e os documentos de conteúdo específicos. Não preencher espaço com números, selos ou frases de marketing não aprovadas.
+Usar `docs/04-conteudo/02-copy-provisoria-home.md` como base editorial aprovada e os documentos de conteúdo específicos. Não preencher espaço com números, selos ou frases de marketing não aprovadas.
 
 ## Saída esperada
 
@@ -71,4 +71,4 @@ Usar `docs/04-conteudo/02-copy-provisoria-home.md` e os documentos de conteúdo 
 
 ## Revisão
 
-Após a geração, a imagem permanece `pending-approval`. Somente o usuário pode aprovar. Depois da aprovação, criar spec, checksum e atualizar `STATUS.md` e `page-matrix.yaml`.
+Após a geração, a imagem permanece `pending-approval`. Somente o usuário pode aprovar. Uma imagem adicional não bloqueia páginas já `authorized-derived`; após aprovação explícita, ela pode substituir o estado derivado na matriz.

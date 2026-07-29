@@ -8,49 +8,36 @@ architecture:
   cms: prohibited-v1
   runtime_ai: prohibited-v1
   page_model: route-based-score-chapters
-  visual_reference_gate: required
+  visual_reference_gate: archetype-authorized
 runtime:
   node: "24 LTS"
   package_manager: pnpm
 framework:
-  next:
-    line: "16.2"
-    minimum_security_patch: "16.2.11"
-  react:
-    line: "19.2"
-  typescript:
-    strict: true
+  next: {line: "16.2", minimum_security_patch: "16.2.11", output: standalone}
+  react: {line: "19.2"}
+  typescript: {strict: true}
 styling:
   tailwind: "4"
   css_custom_properties: true
   css_3d: allowed-for-tablet-shell
 motion:
   gsap: "3"
-  allowed_plugins:
-    - ScrollTrigger
+  allowed_plugins: [ScrollTrigger]
   react_adapter: "@gsap/react"
   native_scroll: true
   route_transitions: gsap-only
   reduced_motion: required
-  prohibited:
-    - animejs
-    - motion
-    - framer-motion
-    - react-spring
-    - lenis
-    - threejs
-    - react-three-fiber
-    - webgl
-    - lottie
+  prohibited: [animejs, motion, framer-motion, react-spring, lenis, threejs, react-three-fiber, webgl, lottie]
 content:
   mdx_local: true
   typed_objects: true
   fabricated_metrics: prohibited
+  profile: docs/04-conteudo/08-perfil-publicacao.yaml
 visual_references:
-  directory: docs/design-reference
   runtime_import: prohibited
   production_shipping: prohibited
-  individual_approval: required
+  allowed_statuses: [approved-individual, approved-master-panel, authorized-derived]
+  archetype_manifest: docs/design-reference/golden-pages/visual-archetypes.yaml
 application_demo:
   dom_screen: required
   local_deterministic_data: required
@@ -64,6 +51,12 @@ contact:
   captcha: cloudflare-turnstile
   rate_limit: cloudflare-waf
   persistence: none
+  public_email: davi.benucci@wflyer.com.br
+  recipient_email: davi.benucci@wflyer.com.br
+analytics:
+  enabled: false
+  marketing_cookies: false
+  session_replay: false
 testing:
   unit: vitest
   component: storybook
@@ -72,5 +65,28 @@ testing:
   performance: lighthouse-ci
   visual_regression: required
 deployment:
-  mode: next-standalone-docker
+  mode: napoleon-managed-node-github
+  provider: napoleon
+  repository_provider: github
+  repository_owner: DaviBenucci
+  docker_required: false
+  vps_required: false
+  easypanel: prohibited
   edge: cloudflare
+  secret_store: github-actions-secrets
+  production_hostname: wflyer.com.br
+  staging_hostname: staging.wflyer.com.br
+  existing_application_hostname: app.wflyer.com.br
+  existing_application_mutation: prohibited
+  nameserver_change: prohibited
+  destructive_dns_change: prohibited
+  ssl_target: full-strict-after-validation
+  immutable_release_by_commit: required
+  rollback_test: required
+homologation:
+  responsible: Davi Benucci
+implementation_readiness:
+  current: READY_FOR_IMPLEMENTATION
+  production_state: READY_FOR_DEPLOYMENT_CONFIGURATION
+  contract: docs/05-implementacao/14-contrato-execucao-integral-codex.md
+  checklist: docs/05-implementacao/15-checklist-prontidao-pre-codigo.md

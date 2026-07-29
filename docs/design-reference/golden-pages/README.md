@@ -1,53 +1,28 @@
-# Golden pages
+# Golden pages e arquétipos
 
 ## Objetivo
 
-Fornecer uma referência individual, clara e verificável para cada página, tema e viewport. Essas imagens orientam o Codex, mas nunca são assets de produção.
+Orientar a implementação visual sem exigir uma imagem independente para cada combinação de página, tema e viewport.
 
-## Arquivos aprovados
+## Fontes aprovadas
 
-- `master/wflyer-approved-master-board.png` — prancha mestra;
-- `application/application-desktop-light.png` — página Aplicação, desktop claro.
-
-## Padrão de nomes
-
-```text
-<page-id>-desktop-light.png
-<page-id>-desktop-light.spec.yaml
-<page-id>-desktop-dark.png
-<page-id>-desktop-dark.spec.yaml
-<page-id>-mobile-light.png
-<page-id>-mobile-light.spec.yaml
-<page-id>-mobile-dark.png
-<page-id>-mobile-dark.spec.yaml
-```
-
-## Viewports padrão
-
-```yaml
-desktop:
-  width: 1536
-  height: 1024
-mobile:
-  width: 390
-  height: 844
-```
+- `master/wflyer-approved-master-board.png` — linguagem global e painéis canônicos;
+- `application/application-desktop-light.png` — Aplicação e tablet;
+- `visual-archetypes.yaml` — herança das páginas restantes;
+- `page-matrix.yaml` — autorização por estado.
 
 ## Status permitidos
 
-- `approved`: imagem individual aprovada;
-- `approved-master-panel`: composição aprovada dentro da prancha mestra, mas ainda requer versão individual;
-- `pending-generation`: ainda não gerada;
-- `pending-approval`: gerada, aguardando revisão;
-- `superseded`: preservada apenas como histórico.
+- `approved-individual`;
+- `approved-master-panel`;
+- `authorized-derived`;
+- `superseded`.
 
-## Gate
+Não existem estados bloqueadores de geração no pacote 1.4.
 
-Uma página só pode receber implementação visual final com PNG individual e spec ambos marcados como `approved`. Painel na prancha mestra autoriza a direção, mas não encerra o gate de alta resolução.
+## Regra
 
-Consultar:
-
-- `STATUS.md`;
-- `page-matrix.yaml`;
-- `GENERATION-BRIEF.md`;
-- `../../05-implementacao/12-fluxo-golden-references.md`.
+- `approved-individual`: comparar diretamente com o PNG e spec;
+- `approved-master-panel`: reconstruir o painel em alta resolução usando o sistema global;
+- `authorized-derived`: aplicar o arquétipo indicado, sem criar linguagem nova;
+- qualquer estado precisa de QA visual e homologação humana antes de produção.

@@ -1,0 +1,43 @@
+version: '1.0'
+status: approved
+updated_at: '2026-07-29'
+brand:
+  public_name: W_Flyer
+  site_url: https://wflyer.com.br
+  app_url: https://app.wflyer.com.br
+contact:
+  public_email: davi.benucci@wflyer.com.br
+  recipient_email: davi.benucci@wflyer.com.br
+socials:
+  instagram:
+    handle: '@davibenucci'
+    url: https://www.instagram.com/davibenucci/
+  github:
+    handle: DaviBenucci
+    url: https://github.com/DaviBenucci
+  omit_all_others: true
+portfolio:
+  - id: wflyer-site
+    title: W_Flyer
+    type: produto-proprio
+    url: https://wflyer.com.br
+    status_at_launch: publicado
+    metrics_allowed: false
+  - id: msn-distribuidora
+    title: MSN Distribuidora
+    type: case-real
+    url: https://msndistribuidora.com.br
+    status_at_launch: verify-public-state
+    metrics_allowed: false
+  - id: msn-suprimentos
+    title: MSN Suprimentos
+    type: case-real
+    url: https://msnsuprimentos.com.br
+    status_at_launch: publicado
+    metrics_allowed: false
+analytics:
+  enabled: false
+  marketing_cookies: false
+  session_replay: false
+homologation:
+  responsible: Davi Benucci

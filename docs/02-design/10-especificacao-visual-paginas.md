@@ -243,19 +243,35 @@ Foco em diagnóstico, desenho, implementação e evolução de necessidades não
 - em páginas intermediárias, pauta continua de forma discreta;
 - em Benefícios e Contato, integra-se à barra final do ramo.
 
-## 12. Entregáveis de referência
 
-Para cada página principal:
+## 12. Template compartilhado de páginas legais
 
-```text
-<id>-desktop-light.png
-<id>-desktop-light.spec.yaml
-<id>-desktop-dark.png
-<id>-desktop-dark.spec.yaml
-<id>-mobile-light.png
-<id>-mobile-light.spec.yaml
-<id>-mobile-dark.png
-<id>-mobile-dark.spec.yaml
-```
+Aplica-se a:
 
-O status e a ordem de geração estão em `design-reference/golden-pages/page-matrix.yaml`.
+- `/politica-de-privacidade`;
+- `/politica-de-cookies`;
+- `/termos-de-uso`;
+- `/acessibilidade`.
+
+### Composição
+
+- header oficial simplificado;
+- título, resumo e data de atualização;
+- índice por âncoras;
+- coluna de leitura com largura controlada;
+- headings semânticos e foco visível;
+- pauta decorativa discreta;
+- footer compartilhado;
+- nenhuma barra final da partitura principal.
+
+O mesmo template controla as quatro rotas. O conteúdo é independente e deve ser aprovado; não inventar razão social, endereço, DPO, contatos ou obrigações específicas.
+
+## 13. Contrato de referência
+
+Cada página principal possui um estado em `design-reference/golden-pages/page-matrix.yaml`:
+
+- `approved-individual`;
+- `approved-master-panel`;
+- `authorized-derived`.
+
+O Codex deve usar o arquétipo indicado em `visual-archetypes.yaml`. Novos PNGs podem ser criados durante QA, mas não são obrigatórios para páginas já autorizadas por derivação.

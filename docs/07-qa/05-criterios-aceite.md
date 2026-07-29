@@ -32,7 +32,7 @@
 - [ ] pauta principal é ondulada e moderada;
 - [ ] temas correspondem aos tokens visuais v1;
 - [ ] imagens de inspiração não foram publicadas;
-- [ ] golden references individuais foram aprovadas;
+- [ ] cada página segue referência individual, painel ou arquétipo autorizado;
 - [ ] golden references não entram no bundle;
 - [ ] nenhuma página usa screenshot como interface;
 - [ ] claro e escuro preservam geometria;
@@ -68,7 +68,7 @@
 
 - [ ] Next.js/React/TypeScript conforme manifesto;
 - [ ] dependências com versões exatas;
-- [ ] build standalone reproduzível;
+- [ ] build standalone reproduzível e executável na Napoleon;
 - [ ] páginas estáticas no build;
 - [ ] nenhuma dependência de banco;
 - [ ] nenhum código do aplicativo musical;
@@ -95,3 +95,17 @@
 - [ ] Lighthouse dentro das metas;
 - [ ] revisão em dispositivo real;
 - [ ] documentação, manifests e checksums atualizados.
+
+
+## Publicação e conteúdo operacional
+
+- [ ] e-mail exibido é `davi.benucci@wflyer.com.br`;
+- [ ] formulário entrega no mesmo endereço;
+- [ ] Instagram aponta para `@davibenucci`;
+- [ ] GitHub aponta para `DaviBenucci`;
+- [ ] portfólio contém W_Flyer, MSN Distribuidora e MSN Suprimentos sem métricas inventadas;
+- [ ] nenhum analytics, pixel ou session replay foi instalado;
+- [ ] deploy usa GitHub → Napoleon → Cloudflare;
+- [ ] não existe dependência de VPS ou EasyPanel;
+- [ ] GitHub Actions Secrets não aparecem em logs;
+- [ ] homologação final foi registrada por Davi Benucci.

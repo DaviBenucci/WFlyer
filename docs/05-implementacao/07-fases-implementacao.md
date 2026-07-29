@@ -2,154 +2,110 @@
 
 ## Regra absoluta
 
-A fase seguinte só começa quando a atual estiver `CONCLUÍDA` segundo os gates definidos. Dentro da Fase 4, cada página possui seu próprio ciclo e não pode ser marcada como concluída sem referência aprovada.
+A fase seguinte só começa quando a atual estiver concluída e testada. As páginas usam a referência ou o arquétipo autorizado da matriz.
 
-## Fase 0 — Preparação e governança
+## Fase 0 — Fundação
 
-- criar repositório separado;
-- copiar documentação e assets oficiais;
-- configurar Node/pnpm;
+- validar documentação e manifests;
+- criar projeto Next.js e pnpm;
 - fixar versões;
-- configurar lint, format, TypeScript e CI;
-- configurar OpenSpec e AGENTS;
-- validar manifests e links;
-- registrar baseline.
+- configurar lint, TypeScript, Vitest, Storybook, Playwright, axe e Lighthouse;
+- criar GitHub Actions;
+- preparar build standalone;
+- registrar inventário Cloudflare somente leitura sem bloquear código.
 
-**Gate:** build vazio, lint, typecheck e testes de infraestrutura verdes; documentação sem conflito conhecido.
+**Gate:** build, lint, typecheck e testes-base verdes.
 
-## Fase 1 — Referências visuais e contrato de páginas
+## Fase 1 — Sistema visual
 
-- validar prancha mestra;
-- gerar referências individuais na ordem do `page-matrix.yaml`;
-- criar claro/escuro para desktop;
-- criar `.spec.yaml` de cada estado;
-- revisar conteúdo fictício e legibilidade;
-- registrar aprovação do usuário;
-- criar storyboards de continuidade e tablet.
-
-**Gate:** Home, Aplicação, Como funciona, Benefícios, Empresa, Serviços, Processo, Portfólio, Contato e Footer possuem referências desktop claro/escuro aprovadas. Nenhum PNG contém conteúdo factual inventado.
-
-## Fase 2 — Fundações estáticas
-
-- App Router e rotas básicas;
-- layout, metadata e fontes;
-- tokens claro/escuro;
-- conteúdo local;
+- tokens, fontes e temas;
 - componentes primitivos;
-- manifesto tipado de capítulos;
-- Storybook inicial.
+- header e navegação;
+- componentes de pauta;
+- catálogo Storybook;
+- mapa de arquétipos tipado.
 
-**Gate:** todas as rotas renderizam conteúdo sem GSAP, tablet interativo ou formulário.
+**Gate:** componentes correspondem à prancha e à Aplicação aprovada.
 
-## Fase 3 — Header, Home e partitura estática
+## Fase 2 — Conteúdo e rotas estáticas
 
-- símbolo oficial central;
-- grupos de compassos;
-- menu mobile;
-- tema;
-- Home bifurcada estática;
-- geometria da pauta;
-- âncoras de continuidade;
-- barra final;
-- fallback vertical.
+- todas as rotas;
+- conteúdo local;
+- perfil de publicação;
+- páginas legais;
+- SEO base;
+- sem motion.
 
-**Gate:** Home e estrutura compartilhada correspondem às referências aprovadas em claro/escuro; E2E de navegação e axe sem violações críticas.
+**Gate:** todas as rotas renderizam e são navegáveis por teclado.
 
-## Fase 4 — Implementação visual página por página
+## Fase 3 — Home e dupla partitura
 
-Para cada página, seguir obrigatoriamente:
+- Home bifurcada;
+- pauta contínua;
+- âncoras;
+- barras finais;
+- fallback mobile/vertical.
 
-1. confirmar golden reference `approved`;
-2. implementar tema claro estático;
-3. implementar tema escuro com a mesma geometria;
-4. capturar screenshots;
-5. comparar com a referência;
-6. corrigir hierarquia, espaçamento e tipografia;
-7. criar/aprovar referências mobile;
-8. implementar responsividade;
-9. executar Storybook, visual e axe;
-10. marcar a página como `CONCLUÍDA`.
+**Gate:** narrativa correta em claro/escuro e desktop/mobile.
 
-Ordem:
+## Fase 4 — Páginas por arquétipo
 
-1. Aplicação;
-2. Como funciona;
-3. Benefícios;
-4. Empresa;
-5. Serviços;
-6. Processo;
-7. Portfólio;
-8. Contato;
-9. detalhes de serviço;
-10. políticas.
+Ordem: Aplicação, Como funciona, Benefícios, Empresa, Serviços, Processo, Portfólio, Contato, detalhes e políticas.
 
-**Gate:** todas as páginas principais correspondem às golden references estáticas e funcionam sem motion.
+Para cada página:
 
-## Fase 5 — Navegação e continuidade animada
+1. ler matriz e arquétipo;
+2. implementar claro;
+3. derivar escuro;
+4. adaptar mobile;
+5. capturar screenshots;
+6. comparar com fontes visuais;
+7. executar visual, axe e E2E;
+8. registrar gate.
 
-- provider de transição;
-- cálculo de direção por coordenadas e topologia do grafo;
-- modo adjacente, salto comprimido, pivô pela Home e transição neutra;
-- conectores temporários da pauta;
-- navegação anterior/próximo;
-- histórico e deep links;
-- reveals locais;
+## Fase 5 — Motion e navegação
+
+- transições adjacentes;
+- salto comprimido;
+- pivô pela Home;
+- foco, histórico e deep links;
 - reduced motion;
-- falha segura e timeout.
+- timeout seguro.
 
-**Gate:** testes de direção, histórico, foco, deep link, resize e performance verdes; storyboards aprovados.
+## Fase 6 — Tablet
 
-## Fase 6 — Tablet demonstrativo
-
-- casca CSS 3D;
+- CSS 3D;
 - tela DOM;
-- estados locais;
-- dados determinísticos;
-- interação teclado/mouse/toque;
-- tilt e reflexo;
-- reduced motion;
-- Storybook de todos os estados.
+- simulação local;
+- teclado, toque e mouse;
+- estados Storybook.
 
-**Gate:** nenhuma rede ou lógica do app; axe sem violações; performance dentro do orçamento; referências de componente aprovadas.
+## Fase 7 — Abertura e motion local
 
-## Fase 7 — Abertura e motion final
+- introdução oficial;
+- handoff para Home;
+- reveals, cards, notas e cadências;
+- skip e sessão.
 
-- animação oficial da marca;
-- handoff para header e Home;
-- bifurcação animada;
-- cards, notas, tema e cadências;
-- integração da barra final;
-- sessão, skip e Escape.
+## Fase 8 — Contato, segurança e conteúdo final
 
-**Gate:** QA dedicado da abertura, motion e regressão visual aprovado.
-
-## Fase 8 — Conteúdo, contato e segurança
-
-- revisão editorial completa;
-- SEO;
-- portfólio vazio honesto;
-- políticas provisórias;
-- Route Handler;
-- Zod;
-- Turnstile;
-- Resend;
-- headers;
+- Zod, Turnstile, Resend;
+- CSP/headers;
 - WAF/rate limit;
-- logs mínimos;
-- testes de abuso.
+- portfólio aprovado;
+- redes e e-mail;
+- sem analytics;
+- políticas.
 
-**Gate:** revisão editorial, SEO, segurança e entrega real em staging.
+## Fase 9 — Napoleon, staging e produção
 
-## Fase 9 — QA, performance e release
+- build standalone;
+- deploy pela integração GitHub/Napoleon;
+- secrets por GitHub Actions;
+- staging;
+- homologação de Davi Benucci;
+- produção via Cloudflare;
+- smoke test e rollback;
+- verificação de `app.wflyer.com.br`.
 
-- Playwright completo;
-- Storybook;
-- Lighthouse CI;
-- dispositivos reais;
-- revisão de licenças;
-- revisão legal;
-- rollback;
-- checklist de release;
-- atualização de manifests e checksums.
-
-**Gate:** todos os critérios de aceite aprovados e nenhuma fase marcada por suposição.
+**Gate final:** todos os critérios de aceite e homologação registrados.

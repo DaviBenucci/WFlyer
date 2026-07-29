@@ -17,5 +17,5 @@
 - [ ] `/api/contact` não é cacheado.
 - [ ] Logs não contêm dados pessoais integrais.
 - [ ] Imagens de inspiração não estão no artefato produtivo.
-- [ ] Container roda como usuário não-root.
+- [ ] Processo Node.js roda sob usuário isolado da hospedagem Napoleon, sem privilégios administrativos.
 - [ ] Rollback foi validado.

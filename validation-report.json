@@ -1,34 +1,59 @@
 {
-  "status": "pass",
+  "project": "wflyer-site",
+  "version": "1.4",
+  "generated_at": "2026-07-29",
+  "result": "pass",
+  "markdown": {
+    "files": 117,
+    "relative_links_checked": 93,
+    "broken": []
+  },
+  "structured_files": {
+    "json_parsed": 10,
+    "json_errors": [],
+    "yaml_parsed": 11,
+    "yaml_errors": []
+  },
+  "visual_matrix": {
+    "units": 15,
+    "states": 60,
+    "status_counts": {
+      "approved-master-panel": 10,
+      "authorized-derived": 49,
+      "approved-individual": 1
+    },
+    "invalid_states": [],
+    "blocking_states": 0,
+    "readiness": "READY_FOR_IMPLEMENTATION"
+  },
+  "deployment": {
+    "repository": "GitHub/DaviBenucci",
+    "provider": "Napoleon",
+    "edge": "Cloudflare",
+    "secret_store": "GitHub Actions Secrets",
+    "vps_required": false,
+    "docker_required": false,
+    "cloudflare_inventory": "required-before-deploy",
+    "existing_application_hostname": "app.wflyer.com.br"
+  },
+  "content": {
+    "public_email": "davi.benucci@wflyer.com.br",
+    "portfolio_items": 3,
+    "analytics": false,
+    "homologation": "Davi Benucci"
+  },
   "checks": {
-    "xml_well_formed": true,
-    "unique_ids": true,
-    "required_ids_present": true,
-    "missing_required_ids": [],
-    "no_forbidden_elements": true,
-    "forbidden_elements_found": [],
-    "no_external_hrefs": true,
-    "external_hrefs_found": [],
-    "official_path_geometry_exact": true,
-    "geometry_detail": {
-      "wf-geometry-symbol-anchor": true,
-      "wf-geometry-symbol-upper-wing": true,
-      "wf-geometry-symbol-lower-wing": true,
-      "wf-geometry-wordmark-w": true,
-      "wf-geometry-wordmark-underscore": true,
-      "wf-geometry-wordmark-f": true,
-      "wf-geometry-wordmark-l": true,
-      "wf-geometry-wordmark-y": true,
-      "wf-geometry-wordmark-e": true,
-      "wf-geometry-wordmark-r": true
-    },
-    "header_geometry_exact": true,
-    "header_geometry_detail": {
-      "wf-header-symbol-anchor": true,
-      "wf-header-symbol-upper-wing": true,
-      "wf-header-symbol-lower-wing": true
-    },
-    "rendered_pixel_parity_absolute_error": 0.0,
-    "rendered_pixel_parity_pass": true
-  }
+    "readiness_status": true,
+    "implementation_authorized": true,
+    "no_visual_pending": true,
+    "visual_states_allowed": true,
+    "napoleon_provider": true,
+    "github_secret_store": true,
+    "analytics_disabled": true,
+    "contact_email": true,
+    "homologation_owner": true
+  },
+  "contradictions": [],
+  "implementation_readiness": "READY_FOR_IMPLEMENTATION",
+  "production_readiness": "READY_FOR_DEPLOYMENT_CONFIGURATION"
 }

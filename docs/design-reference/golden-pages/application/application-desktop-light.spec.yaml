@@ -1,7 +1,7 @@
 id: application-desktop-light
 page_id: application
 route: /aplicacao-wflyer
-status: approved
+status: approved-individual
 approval_date: "2026-07-29"
 viewport:
   width: 1536
