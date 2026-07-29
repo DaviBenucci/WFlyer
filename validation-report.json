@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "checks": {
+    "xml_well_formed": true,
+    "unique_ids": true,
+    "required_ids_present": true,
+    "missing_required_ids": [],
+    "no_forbidden_elements": true,
+    "forbidden_elements_found": [],
+    "no_external_hrefs": true,
+    "external_hrefs_found": [],
+    "official_path_geometry_exact": true,
+    "geometry_detail": {
+      "wf-geometry-symbol-anchor": true,
+      "wf-geometry-symbol-upper-wing": true,
+      "wf-geometry-symbol-lower-wing": true,
+      "wf-geometry-wordmark-w": true,
+      "wf-geometry-wordmark-underscore": true,
+      "wf-geometry-wordmark-f": true,
+      "wf-geometry-wordmark-l": true,
+      "wf-geometry-wordmark-y": true,
+      "wf-geometry-wordmark-e": true,
+      "wf-geometry-wordmark-r": true
+    },
+    "header_geometry_exact": true,
+    "header_geometry_detail": {
+      "wf-header-symbol-anchor": true,
+      "wf-header-symbol-upper-wing": true,
+      "wf-header-symbol-lower-wing": true
+    },
+    "rendered_pixel_parity_absolute_error": 0.0,
+    "rendered_pixel_parity_pass": true
+  }
+}

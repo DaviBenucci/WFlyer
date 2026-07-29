@@ -1,0 +1,39 @@
+{
+  "package": "wflyer-brand-motion-assets",
+  "version": "1.0.0-review",
+  "status": "PENDING_USER_APPROVAL",
+  "generated_at": "2026-07-29T11:33:00-03:00",
+  "source_of_truth": "/mnt/data/W_Flyer_Brand_Assets_exact/W_Flyer_Brand_Assets/svg/master/wflyer-logo-master.svg",
+  "production_assets": [
+    {
+      "path": "svg/wflyer-intro-master.svg",
+      "role": "inline animated intro master",
+      "viewBox": "0 0 1200 675"
+    },
+    {
+      "path": "svg/wflyer-header-symbol.svg",
+      "role": "header symbol",
+      "viewBox": "-1 -2 282 165"
+    }
+  ],
+  "review_only": [
+    "review/01-start-dark.svg",
+    "review/02-symbol-lock-dark.svg",
+    "review/03-final-dark.svg",
+    "review/04-start-light.svg",
+    "review/05-symbol-lock-light.svg",
+    "review/06-final-light.svg",
+    "review/07-echo-inspection-dark.svg",
+    "review/08-echo-inspection-light.svg",
+    "review/09-header-symbol-dark.svg",
+    "review/10-header-symbol-light.svg"
+  ],
+  "geometry_policy": "All official logo paths copied byte-for-byte from wflyer-logo-master.svg d attributes.",
+  "forbidden_in_assets": [
+    "text elements",
+    "embedded raster images",
+    "external references",
+    "fonts",
+    "embedded animation"
+  ]
+}
