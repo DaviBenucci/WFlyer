@@ -28,17 +28,17 @@ A navegação usa scroll nativo. O scroll vertical controla uma cena horizontal;
 ## ADR-006 — Header em compassos
 
 **Status:** aprovado  
-Compassos da aplicação à esquerda, marca textual ao centro e compassos da empresa à direita.
+Compassos da aplicação à esquerda, símbolo oficial W_Flyer ao centro e compassos da empresa à direita.
 
 ## ADR-007 — Partitura ondulada
 
 **Status:** aprovado  
 A pauta principal usa curvas suaves em SVG, com amplitude moderada. Não usar linha totalmente reta nem ondulação extrema.
 
-## ADR-008 — Identidade provisória
+## ADR-008 — Logo oficial e tokens visuais do site
 
-**Status:** aprovado  
-Somente `W_Flyer` textual e tokens com prefixo provisório até a aprovação da marca.
+**Status:** substituído pela decisão atual  
+O símbolo e o wordmark W_Flyer foram aprovados como identidade oficial. Paleta, tipografia do site e alguns tokens de interface permanecem sujeitos a refinamento e devem continuar versionados.
 
 ## ADR-009 — Formulário por Route Handler
 
@@ -54,3 +54,9 @@ O endpoint não usa sessão, autenticação, cookies de autoridade ou mutação 
 
 **Status:** aprovado  
 Ferramentas de IA são apenas de desenvolvimento. O site publicado não terá chatbot, geração dinâmica ou agente.
+
+
+## ADR-012 — Abertura vetorial programática
+
+**Status:** aprovado  
+A abertura da homepage será implementada com SVG oficial, GSAP e `@gsap/react`. Não usar vídeo generativo, Lottie, Canvas, WebGL ou segundo motor de animação. A duração alvo é 4,8 s, com execução uma vez por sessão, skip acessível, reduced motion e handoff direto para o header e a homepage.

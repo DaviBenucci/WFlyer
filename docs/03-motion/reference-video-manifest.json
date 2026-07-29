@@ -1,0 +1,35 @@
+{
+  "status": "motion-reference-only",
+  "source_file": "davinci_create_a_precise_six_second_premium_brand_identity.mp4",
+  "sha256": "c23c221f40b2fc93fbd397fce9ee25cb2c6cbb892defc63fb4f3f3c2a00e9a6c",
+  "bytes": 261251,
+  "duration_seconds": 4.086009,
+  "video": {
+    "codec": "h264",
+    "width": 864,
+    "height": 496,
+    "fps": 24,
+    "frames": 97,
+    "pixel_format": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac"
+  },
+  "authority": {
+    "motion_rhythm": true,
+    "temporary_contours": true,
+    "logo_geometry": false,
+    "wordmark_geometry": false,
+    "final_brand_asset": false
+  },
+  "observed_checkpoints_seconds": [
+    0.0,
+    0.3,
+    0.7,
+    1.5,
+    2.1,
+    2.5,
+    3.3,
+    4.05
+  ]
+}

@@ -29,3 +29,15 @@
 ## Teste
 
 Medir em desktop e mobile com CPU/rede simuladas e com dispositivo real de capacidade intermediária.
+
+
+## Orçamento específico da abertura
+
+- máximo de 12 elementos animados simultaneamente;
+- máximo de quatro paths com `stroke-dashoffset` simultâneo;
+- SVGs combinados preferencialmente abaixo de 100 KB comprimidos;
+- preparação com timeout máximo de 1.200 ms;
+- nenhuma leitura de layout dentro de `onUpdate`;
+- `getTotalLength()` calculado e armazenado;
+- duração total entre 4,6 e 5,0 s;
+- nenhuma animação ambiental permanece após o handoff.

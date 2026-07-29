@@ -1,4 +1,4 @@
-# Direção visual provisória
+# Direção visual do site e tokens ainda provisórios
 
 ## Conceito
 
@@ -24,11 +24,18 @@
 - notas aleatórias sem relação com conteúdo;
 - interface com aparência padrão de biblioteca de componentes;
 - animações incessantes;
-- clave provisória tratada como marca oficial.
+- clave de sol tratada como substituta da marca oficial. A clave é um elemento narrativo da homepage; a logo W_Flyer é a identidade oficial.
+
+## Estado da identidade
+
+- símbolo e wordmark W_Flyer: oficiais;
+- uso do símbolo no centro do header: aprovado;
+- clave de sol inteira no hero: elemento visual, não logotipo;
+- paleta do site, tipografia editorial e detalhes musicais: ainda sujeitos a refinamento.
 
 ## Tipografia provisória
 
 - display: `Cormorant Garamond`, self-hosted pelo build;
 - texto e interface: `Manrope`, self-hosted pelo build;
 - fallback: famílias de sistema;
-- substituição permitida somente quando a identidade oficial for aprovada.
+- substituição permitida por decisão registrada, pois a tipografia do site não é a tipografia vetorial do wordmark oficial.

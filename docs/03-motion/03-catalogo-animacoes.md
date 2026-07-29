@@ -56,3 +56,17 @@
 - redução gradual de notas decorativas;
 - pauta converge para barra dupla;
 - rodapé aparece sem ocultar links.
+
+
+## M-010 — Abertura oficial da marca
+
+- duração alvo: 4,8 s;
+- underscore representa a origem individual;
+- quatro lógicas abstratas representam sites, aplicações, integrações e soluções sob medida;
+- trajetórias convergem nos módulos oficiais do símbolo;
+- wordmark revelado por Ink Transfer com máscara SVG;
+- lock final com overshoot máximo de `1.012`;
+- handoff obrigatório para o símbolo do header, os compassos, a clave e a partitura;
+- executar somente uma vez por sessão;
+- pular em `prefers-reduced-motion`;
+- especificação completa em `06-animacao-entrada-marca.md`.

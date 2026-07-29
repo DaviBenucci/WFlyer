@@ -35,6 +35,8 @@
 - [Catálogo de animações](03-motion/03-catalogo-animacoes.md)
 - [Movimento reduzido](03-motion/04-reduced-motion.md)
 - [Orçamento de performance](03-motion/05-orcamento-performance.md)
+- [Animação de entrada da marca](03-motion/06-animacao-entrada-marca.md)
+- [Timeline executável da entrada](03-motion/06-animacao-entrada-marca.timeline.yaml)
 
 ## 04 — Conteúdo
 
@@ -73,6 +75,7 @@
 - [Acessibilidade](07-qa/03-testes-acessibilidade.md)
 - [Segurança do formulário](07-qa/04-testes-seguranca-formulario.md)
 - [Critérios de aceite](07-qa/05-criterios-aceite.md)
+- [QA da animação de entrada](07-qa/06-qa-animacao-entrada.md)
 
 ## 08 — Operação
 

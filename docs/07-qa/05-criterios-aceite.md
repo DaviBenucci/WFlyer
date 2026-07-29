@@ -24,7 +24,12 @@
 - [ ] header sincroniza corretamente;
 - [ ] não existe segundo motor de animação;
 - [ ] modo reduzido remove a cena extensa;
-- [ ] performance permanece dentro do orçamento.
+- [ ] performance permanece dentro do orçamento;
+- [ ] abertura usa o SVG oficial e executa uma vez por sessão;
+- [ ] skip, Escape e reduced motion funcionam;
+- [ ] lockup final mantém geometria oficial;
+- [ ] handoff para o símbolo do header não apresenta corte perceptível;
+- [ ] clave e partitura entram apenas durante o handoff para a homepage.
 
 ## Técnica
 

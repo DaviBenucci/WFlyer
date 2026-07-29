@@ -5,12 +5,12 @@
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ [Aplicação] [Como funciona] [Benefícios] [Acessar app]                      │
-│                                  W_Flyer                                    │
+│                           [símbolo oficial W_Flyer]                         │
 │                      [Empresa] [Serviços] [Portfólio] [Contato]             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-Na implementação real, os dois grupos ocupam a mesma linha e a marca fica centralizada geometricamente.
+Na implementação real, os dois grupos ocupam a mesma linha e o símbolo oficial W_Flyer fica centralizado geometricamente. O wordmark não ocupa o centro do header desktop aprovado.
 
 ## Grupo esquerdo — aplicação
 
@@ -59,10 +59,15 @@ Cada compasso contém:
 
 ## Mobile
 
-- marca textual;
+- símbolo ou lockup compacto oficial, conforme espaço disponível;
 - botão de tema;
 - botão de menu;
 - menu em painel vertical dividido em Aplicação e Empresa;
 - fechamento por `Escape`, clique externo e seleção;
 - foco contido enquanto aberto;
 - retorno do foco ao botão de origem.
+
+
+## Relação com a abertura
+
+No handoff da animação inicial, uma cópia do símbolo se move para a posição medida do header e realiza crossfade com o componente real. A tolerância visual máxima é de 1 px em desktop e 1,5 px em mobile. O header não deve aguardar o overlay ser removido para existir no layout.

@@ -95,3 +95,8 @@ Uma fase só pode ser marcada como `CONCLUÍDA` quando:
 - não existirem pendências bloqueadoras.
 
 Não iniciar a próxima fase em paralelo para contornar falhas da fase atual.
+
+
+## Animação de entrada da marca
+
+A implementação deve seguir `docs/03-motion/06-animacao-entrada-marca.md` e o arquivo `06-animacao-entrada-marca.timeline.yaml`. É proibido substituir a abertura por vídeo, Lottie, Canvas, WebGL, outro motor de animação ou um reveal genérico. Não alterar os paths oficiais da marca. Cada fase só pode avançar após aprovação visual e testes da fase anterior.

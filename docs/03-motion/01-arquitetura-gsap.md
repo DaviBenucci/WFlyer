@@ -37,3 +37,17 @@ src/lib/motion/
 - destruir ScrollTriggers na desmontagem;
 - não duplicar listeners após navegação;
 - carregar o módulo de experiência por divisão de código quando possível.
+
+
+## Abertura da marca
+
+A animação inicial é um Client Component isolado e usa o SVG oficial inline. A timeline completa está normatizada em `06-animacao-entrada-marca.md` e em `06-animacao-entrada-marca.timeline.yaml`.
+
+Regras adicionais:
+
+- não usar vídeo, Canvas, WebGL ou Lottie na abertura;
+- manter a homepage renderizada atrás do overlay;
+- iniciar a timeline somente depois de definir tema, estado inicial e medidas do handoff;
+- medir a posição da logo real do header uma vez antes do handoff;
+- remover `will-change`, listeners e overlay ao concluir;
+- falhas devem liberar a homepage imediatamente.

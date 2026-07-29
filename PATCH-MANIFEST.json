@@ -1,0 +1,51 @@
+{
+  "project": "wflyer-site",
+  "package": "brand-intro-documentation-review",
+  "version": "2.0-review",
+  "generated_at": "2026-07-29",
+  "contains_visual_assets": false,
+  "contains_source_code": false,
+  "asset_gate": "BLOCKED_ASSET_APPROVAL",
+  "files": [
+    {
+      "path": "README-REVISAO.md",
+      "bytes": 1101,
+      "sha256": "9f1252f95e9f7d30ac087117e076aa6130ebfd277b3791659a577f17de974eeb"
+    },
+    {
+      "path": "docs/00-governanca/06-adr-animacao-entrada-programatica.md",
+      "bytes": 2021,
+      "sha256": "d060787a00977004f0c8d791c065ff7dc8aa7d32cf23ab49b40d7e75feb4f576"
+    },
+    {
+      "path": "docs/03-motion/06-animacao-entrada-marca.frames.csv",
+      "bytes": 71368,
+      "sha256": "8378b93ec6dbb575e9b49e9117bca352eb522c40866d110fc826790bf5b9b764"
+    },
+    {
+      "path": "docs/03-motion/06-animacao-entrada-marca.md",
+      "bytes": 26664,
+      "sha256": "bd754ed77abb50d3b8f5cf4f8a9dfab65725a13695b6524866695f49064f7e07"
+    },
+    {
+      "path": "docs/03-motion/06-animacao-entrada-marca.timeline.yaml",
+      "bytes": 2653,
+      "sha256": "b365805501e805915fd0fe03def6f3d1eb1b83e7230ea0a75c9e2cc949778e26"
+    },
+    {
+      "path": "docs/03-motion/reference-video-manifest.json",
+      "bytes": 715,
+      "sha256": "f5b241ead34b100dcc9d8c9fb8dd0ec7549cc56a0cb3d5712db5b5a735c6b24d"
+    },
+    {
+      "path": "docs/05-implementacao/10-contrato-assets-animacao.md",
+      "bytes": 3719,
+      "sha256": "08f21b58d8533ec27d59b8b54820a54dd712b2053d303fc69b03fecb85e36793"
+    },
+    {
+      "path": "docs/07-qa/06-qa-animacao-entrada.md",
+      "bytes": 4100,
+      "sha256": "665243689599bfd536ed0fac447287693d9a51c73af9e88c3876f83380c198aa"
+    }
+  ]
+}

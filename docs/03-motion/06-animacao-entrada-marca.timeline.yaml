@@ -1,0 +1,104 @@
+specification: wflyer-brand-intro
+version: 2.0-review
+status: proposed
+reference_fps: 60
+runtime_clock: time-based
+total_duration_seconds: 5.600
+brand_duration_seconds: 4.050
+overlay_end_seconds: 4.850
+technology:
+  framework: Next.js
+  view: React
+  language: TypeScript
+  animation: GSAP
+  react_adapter: "@gsap/react"
+  geometry: approved-svg-only
+asset_gate: BLOCKED_ASSET_APPROVAL
+labels:
+  intro_start: 0.000
+  intro_seed: 0.300
+  intro_expand: 0.700
+  intro_lock: 1.500
+  intro_breath: 2.100
+  intro_wordmark: 2.500
+  intro_hold: 3.300
+  intro_handoff: 4.050
+  hero_start: 4.250
+  intro_overlay_off: 4.850
+  hero_ready: 5.600
+phases:
+  - id: origin
+    start_seconds: 0.000
+    end_seconds: 0.300
+    start_frame_60fps: 0
+    end_frame_60fps: 17
+    purpose: "underscore isolado; glow contido"
+  - id: symbol-seed
+    start_seconds: 0.300
+    end_seconds: 0.700
+    start_frame_60fps: 18
+    end_frame_60fps: 41
+    purpose: "módulos nascem próximos ao underscore"
+  - id: expansion-echo
+    start_seconds: 0.700
+    end_seconds: 1.500
+    start_frame_60fps: 42
+    end_frame_60fps: 89
+    purpose: "símbolo cresce e ecos aparecem"
+  - id: symbol-lock
+    start_seconds: 1.500
+    end_seconds: 2.100
+    start_frame_60fps: 90
+    end_frame_60fps: 125
+    purpose: "escala estabiliza e ecos são absorvidos"
+  - id: symbol-breath
+    start_seconds: 2.100
+    end_seconds: 2.500
+    start_frame_60fps: 126
+    end_frame_60fps: 149
+    purpose: "pausa sem movimento ambiente"
+  - id: wordmark-reveal
+    start_seconds: 2.500
+    end_seconds: 3.300
+    start_frame_60fps: 150
+    end_frame_60fps: 197
+    purpose: "símbolo vai ao lockup e máscara revela wordmark"
+  - id: final-hold
+    start_seconds: 3.300
+    end_seconds: 4.050
+    start_frame_60fps: 198
+    end_frame_60fps: 242
+    purpose: "lockup oficial imóvel"
+  - id: handoff
+    start_seconds: 4.050
+    end_seconds: 4.850
+    start_frame_60fps: 243
+    end_frame_60fps: 290
+    purpose: "wordmark some e símbolo realiza FLIP ao header"
+  - id: hero-opening
+    start_seconds: 4.250
+    end_seconds: 5.600
+    start_frame_60fps: 255
+    end_frame_60fps: 336
+    purpose: "header, clave, pauta e conteúdo entram"
+eases:
+  origin: power2.out
+  seed: power3.out
+  expansion: expo.out
+  echoes: power2.inOut
+  lock: power3.out
+  wordmark_position: power2.inOut
+  wordmark_mask: power1.inOut
+  handoff: power3.inOut
+  scroll_bound_motion: none
+forbidden_eases:
+  - back
+  - elastic
+  - bounce
+  - rough
+session_key: wflyer.brand-intro.completed.v1
+reduced_motion_max_duration_seconds: 0.400
+skip:
+  button_label: "Pular introdução"
+  keyboard: Escape
+  result: apply-final-home-state

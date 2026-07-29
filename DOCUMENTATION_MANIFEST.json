@@ -1,17 +1,18 @@
 {
   "project": "wflyer-site",
-  "version": "1.0",
-  "generated_at": "2026-07-27",
+  "version": "1.1",
+  "generated_at": "2026-07-29",
+  "focus": "documentacao detalhada da animacao de entrada vetorial da marca",
   "files": [
     {
       "path": "AGENTS.md",
-      "bytes": 3665,
-      "sha256": "d69d34d52b8c51ee98fd64ce46edac5adbd4c9e7b7e3d42ff81e82d6d66331e8"
+      "bytes": 4073,
+      "sha256": "7d9e4d34bdeda6f48d76daea32d935e9dbe4a0c272f3078660d7567beb222d6b"
     },
     {
       "path": "README.md",
-      "bytes": 2581,
-      "sha256": "bcefe5c30273d17ed881a81b2916996969c508290a3d911493c0475b85df9d00"
+      "bytes": 2748,
+      "sha256": "1f3ed379639b704adf1117bf5735d3ff2516c7811cddf9a3bae1effa45b788a0"
     },
     {
       "path": "docs/00-governanca/00-fonte-da-verdade.md",
@@ -40,13 +41,13 @@
     },
     {
       "path": "docs/00-governanca/05-registro-decisoes.md",
-      "bytes": 2092,
-      "sha256": "69be4b157274e6b6357554b14481b65b6aa732576fc9b13dd8c0aca7839a79d2"
+      "bytes": 2625,
+      "sha256": "45c8d9f9f49621116fee61aebab1116be46f9a4888953c43a83d23df08bfc117"
     },
     {
       "path": "docs/00-indice.md",
-      "bytes": 3657,
-      "sha256": "a5ae7783df78b95d69a33cc7ad418aeedeac8cafa6b5444336b9a418d396b27a"
+      "bytes": 3884,
+      "sha256": "9e68f443cfb6293b7b1afcb2f9a3224161dc331b27342008221ec5eaad20cf24"
     },
     {
       "path": "docs/01-produto/01-visao-e-objetivos.md",
@@ -75,8 +76,8 @@
     },
     {
       "path": "docs/02-design/01-direcao-visual-provisoria.md",
-      "bytes": 1359,
-      "sha256": "3f87fb1847cf652344a0cdc3c0c6d5d0da4beb1343c59bfd9457d5bf30070931"
+      "bytes": 1800,
+      "sha256": "cef2ee347d20fc273af41772d8bc555639b57c09a8397a0cd6bb877860d9b5bd"
     },
     {
       "path": "docs/02-design/02-tokens-provisorios.md",
@@ -85,8 +86,8 @@
     },
     {
       "path": "docs/02-design/03-header-partitura.md",
-      "bytes": 2302,
-      "sha256": "204ed419469efa507457dec01074cb52ab3c95d9d7dadbe68486bac9c2ce8966"
+      "bytes": 2752,
+      "sha256": "f829f595a3d618f09e571b8a01ddb6fb7987a088c7942c88ce6c1802ea45ed6b"
     },
     {
       "path": "docs/02-design/04-homepage.md",
@@ -115,8 +116,8 @@
     },
     {
       "path": "docs/03-motion/01-arquitetura-gsap.md",
-      "bytes": 973,
-      "sha256": "e18d6610de9e864c999bbec148b31bb90369606b3964388667641c64f92d4ec1"
+      "bytes": 1592,
+      "sha256": "9ed06fc2b0f0040df1bd0152372f02346522b5a213aea2294e698981fdc8f00e"
     },
     {
       "path": "docs/03-motion/02-narrativa-scroll-horizontal.md",
@@ -125,18 +126,28 @@
     },
     {
       "path": "docs/03-motion/03-catalogo-animacoes.md",
-      "bytes": 1279,
-      "sha256": "e7ea34a44758fa911d8f86ddf41559983f4b88863f900d85e5f3c21b80b6341f"
+      "bytes": 1879,
+      "sha256": "cd86e06f7162a0b758daf436e58cc14fcca0fce52c86fdce6be595319ae35927"
     },
     {
       "path": "docs/03-motion/04-reduced-motion.md",
-      "bytes": 754,
-      "sha256": "c9466f1effc6367b0a521c37d0157ef20d39ca1a71d7706123afe82478c59db8"
+      "bytes": 1107,
+      "sha256": "54893a36ba98ca06a58396e05fd679bb8cb6acbcc94d23a42c66ef455cf0b9b3"
     },
     {
       "path": "docs/03-motion/05-orcamento-performance.md",
-      "bytes": 1057,
-      "sha256": "f141daf93baf459a80471add7a26ff8463c8f777a694a62b2fe4a275609666c0"
+      "bytes": 1517,
+      "sha256": "c2ea0f88668291c1cc1ff9cbde2fa17b436d8f15883bdd2ece14ed178e2a2092"
+    },
+    {
+      "path": "docs/03-motion/06-animacao-entrada-marca.md",
+      "bytes": 32593,
+      "sha256": "4245be9d7531926f7456acec6996d9faa6dbeb15ac64086bac61a6dcef99579e"
+    },
+    {
+      "path": "docs/03-motion/06-animacao-entrada-marca.timeline.yaml",
+      "bytes": 7211,
+      "sha256": "85be6f1044b623e53bdbc135f487cb9620951bd4088911552fb5bd9e1b983d61"
     },
     {
       "path": "docs/04-conteudo/01-mapa-conteudo.md",
@@ -250,8 +261,8 @@
     },
     {
       "path": "docs/07-qa/02-testes-motion-visual.md",
-      "bytes": 795,
-      "sha256": "b5d0c6bfc44a0a9ae690a1add9b66800b96cd8035d9360fc11fdb4b62768105e"
+      "bytes": 1158,
+      "sha256": "74d6de64e19d362928d38fc0dd5a1fee7c9a3f8faed578f8b97580e8ac2df578"
     },
     {
       "path": "docs/07-qa/03-testes-acessibilidade.md",
@@ -265,8 +276,13 @@
     },
     {
       "path": "docs/07-qa/05-criterios-aceite.md",
-      "bytes": 1630,
-      "sha256": "45eb9c0df9566dfad8f98b5e01d156c264d5f231a2ccebb94cbe54bdbde0db7d"
+      "bytes": 1935,
+      "sha256": "0cfbb03925dc140da506632e29c1b97b25c2ca3498d1bd8442cecd8147c9b670"
+    },
+    {
+      "path": "docs/07-qa/06-qa-animacao-entrada.md",
+      "bytes": 4727,
+      "sha256": "2bbef1a19e35d24184e6bdcc2e7c64d523003dd701255e87c0e2223685a5f18a"
     },
     {
       "path": "docs/08-operacao/01-observabilidade-incidentes.md",
@@ -287,6 +303,36 @@
       "path": "docs/design-reference/README.md",
       "bytes": 573,
       "sha256": "59a2083fbe2e3b459d8f422770e3b45ea3a97711039c9ee50245c59afcdf723d"
+    },
+    {
+      "path": "docs/design-reference/brand-intro/README.md",
+      "bytes": 1018,
+      "sha256": "cb7bdf0402b2a559621769ef6d1f1837e88ad7b9dd9903d01c826e9d417399c8"
+    },
+    {
+      "path": "docs/design-reference/brand-intro/source-assets/ID-MAP-ANIMACAO.md",
+      "bytes": 1893,
+      "sha256": "5252969ab3c98b32e0da91de06260746c24ab073e5445f6b199480d2680d5baf"
+    },
+    {
+      "path": "docs/design-reference/brand-intro/source-assets/INSTRUCOES-INK-TRANSFER.md",
+      "bytes": 1618,
+      "sha256": "464569ea34a4c68570633223399c70589ae82ab979d033ea7a2205f70f7b158f"
+    },
+    {
+      "path": "docs/design-reference/brand-intro/source-assets/wflyer-animation-base.svg",
+      "bytes": 4378,
+      "sha256": "063e18379b60c83f074204a20d7395be73bef203257c5edd975c548d5c3d435f"
+    },
+    {
+      "path": "docs/design-reference/brand-intro/source-assets/wflyer-on-dark.svg",
+      "bytes": 3735,
+      "sha256": "1f5ca8e9f4d32e995c8b2f382ad5a2afb0ae090e0d76fef121449e7de9da3547"
+    },
+    {
+      "path": "docs/design-reference/brand-intro/source-assets/wflyer-on-light.svg",
+      "bytes": 3735,
+      "sha256": "27968c4f1d373b0c874da028ae138c22a9f1bd516293c8a4b51c24c2ad711133"
     },
     {
       "path": "docs/design-reference/components/README.md",
