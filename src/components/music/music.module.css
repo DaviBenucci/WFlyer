@@ -1,0 +1,49 @@
+.staff {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  overflow: visible;
+  color: var(--wf-staff, #c9a17c);
+  pointer-events: none;
+}
+
+.staffSegment {
+  color: inherit;
+}
+
+.staffLine {
+  stroke: currentColor;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  opacity: 0.72;
+}
+
+.note {
+  color: var(--wf-note, #70401f);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.noteHead {
+  vector-effect: non-scaling-stroke;
+}
+
+.measureBar {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.finalBarline {
+  stroke: currentColor;
+}
+
+.finalBarlineThin {
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.finalBarlineThick {
+  stroke-width: 4;
+  vector-effect: non-scaling-stroke;
+}

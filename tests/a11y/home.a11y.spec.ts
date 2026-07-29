@@ -16,7 +16,7 @@ async function findRelevantViolations(page: Page): Promise<RelevantViolation[]> 
       axe: typeof import("axe-core");
     };
     const results = await axeWindow.axe.run(document, {
-      resultTypes: ["violations"],
+      resultTypes: ["violations", "incomplete"],
       runOnly: {
         type: "tag",
         values: [
@@ -29,7 +29,11 @@ async function findRelevantViolations(page: Page): Promise<RelevantViolation[]> 
       },
     });
 
-    return results.violations
+    const relevantIncomplete = results.incomplete.filter(
+      ({ id }) => id === "aria-hidden-focus",
+    );
+
+    return [...results.violations, ...relevantIncomplete]
       .filter(({ impact }) => impact === "critical" || impact === "serious")
       .map(({ help, id, impact, nodes }) => ({
         help,
@@ -40,9 +44,28 @@ async function findRelevantViolations(page: Page): Promise<RelevantViolation[]> 
   });
 }
 
-test("a Home não apresenta violações axe críticas ou sérias", async ({ page }) => {
-  await page.goto("/");
-  await expect(page.getByRole("main")).toBeVisible();
+for (const theme of ["light", "dark"] as const) {
+  test(`a Home não apresenta violações axe críticas ou sérias (${theme})`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ colorScheme: theme });
+    await page.goto("/");
+    await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
+    await expect(page.getByRole("main")).toBeVisible();
 
+    expect(await findRelevantViolations(page)).toEqual([]);
+  });
+}
+
+test("o menu mobile aberto não apresenta violações axe críticas ou sérias", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await page.getByRole("button", { name: "Abrir menu" }).click();
+
+  await expect(
+    page.getByRole("dialog", { name: "Navegação W_Flyer" }),
+  ).toBeVisible();
   expect(await findRelevantViolations(page)).toEqual([]);
 });

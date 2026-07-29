@@ -25,8 +25,8 @@ A execução local, os testes, os workflows, o build standalone e a preparação
 |---|---|---|
 | Pré-voo | `CONCLUÍDO` | sem bloqueio normativo real |
 | Fase 0 — Fundação | `CONCLUÍDA` | gate local verde |
-| Fase 1 — Sistema visual | `EM_EXECUÇÃO` | aberto |
-| Fase 2 — Conteúdo e rotas estáticas | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
+| Fase 1 — Sistema visual | `CONCLUÍDA` | gate local verde |
+| Fase 2 — Conteúdo e rotas estáticas | `EM_EXECUÇÃO` | aberto |
 | Fase 3 — Home e dupla partitura | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
 | Fase 4 — Páginas por arquétipo | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
 | Fase 5 — Motion e navegação | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
@@ -189,7 +189,7 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 
 ### Fase 0 — Fundação
 
-**Estado:** `CONCLUÍDA`  
+**Estado:** `CONCLUÍDA`
 **Objetivo:** criar a fundação reproduzível com Next.js App Router, Node.js 24, pnpm, dependências exatas, TypeScript estrito, lint, testes, Storybook, Playwright, axe-core, Lighthouse CI, GitHub Actions e build standalone.
 
 - **Arquivos criados:** projeto Next.js em `src/`; manifesto tipado de capítulos e configuração pública; `package.json`, `pnpm-lock.yaml`, configurações Next/TypeScript/ESLint/Tailwind; Vitest, Testing Library, Storybook, Playwright e Lighthouse CI; testes-base; workflows de CI e preparação de release; scripts de validação de dependências, Lighthouse e pacote standalone; este relatório.
@@ -210,26 +210,27 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 
 ### Fase 1 — Sistema visual
 
-**Estado:** `EM_EXECUÇÃO`  
+**Estado:** `CONCLUÍDA`
 **Objetivo:** implementar tokens, fontes, temas, primitivos próprios, header, elementos musicais, navegação, Storybook e mapa tipado de arquétipos.
 
-- **Arquivos criados:** a registrar.
-- **Arquivos modificados:** a registrar.
-- **Decisões aplicadas:** a registrar.
-- **Comandos:** a registrar.
-- **Testes e resultados:** não executados.
-- **Screenshots:** a registrar.
-- **Comparação visual:** pendente contra prancha mestra e referência autorizada.
-- **Acessibilidade:** pendente.
-- **Performance:** pendente.
-- **Riscos:** a registrar.
-- **Pendências não bloqueadoras:** a registrar.
-- **Gate:** `NÃO_AVALIADO`.
-- **Título de commit:** a definir.
+- **Arquivos criados:** camadas `src/styles/tokens.css` e `base.css`; três fontes variáveis WOFF2 locais com licenças e checksums; carregamento por `next/font/local`; componentes próprios de marca oficial, tema, ações, superfícies, tipografia, ícones, pauta, notas, compassos, barra final, header e menu; configuração tipada de navegação e espelho exato dos arquétipos; stories e testes; smoke standalone de assets; quatro evidências visuais locais em `docs/05-implementacao/evidencias/fase-1/`.
+- **Arquivos modificados:** layout raiz, folha global e Home temporária; preview global do Storybook; configuração Vitest; suítes de Home, acessibilidade, motion e regressão visual; scripts do `package.json`.
+- **Decisões aplicadas:** ADR-006, ADR-008 e ADR-013; prefixo oficial `--wf-*`; geometria oficial imutável no `OfficialBrandSymbol`; Cormorant Garamond e Manrope self-hosted; tema claro/escuro com preferência do sistema, persistência e bootstrap antes do paint; mesma árvore DOM entre temas; `SiteHeader` persistente com oito compassos de 44 px, símbolo central, marcador Processo entre Serviços e Portfólio e link externo explícito; menu mobile modal com `inert`, foco contido, Escape, clique externo, seleção, retorno de foco e fechamento seguro no breakpoint; nenhuma dependência nova.
+- **Storybook:** toolbar de tema sincronizada com `documentElement`, storage e fontes de produção; viewport normativo `390 × 844`; estados claro, escuro, hover, focus, active, external, Processo e menu aberto; paleta única derivada dos tokens, sem cópia paralela nas stories.
+- **Comandos:** `pnpm validate:dependencies`; `pnpm lint`; `pnpm typecheck`; `pnpm test`; `pnpm build:storybook`; `pnpm test:storybook`; `pnpm test:e2e`; `pnpm build`; `pnpm prepare:standalone`; `pnpm smoke:standalone`; `pnpm lighthouse`; `git diff --check`; capturas Chromium determinísticas; inspeção visual das quatro capturas e comparação com as duas referências aprovadas.
+- **Testes e resultados:** dependências exatas verdes; lint e typecheck verdes; 48 de 48 testes unitários em 9 arquivos; 33 de 33 testes de stories em 9 arquivos; 13 de 13 cenários Playwright no Chromium; build Storybook e build Next verdes; pacote standalone verde; smoke validou a Home e 12 assets CSS, JavaScript e WOFF2. A revisão independente não encontrou bloqueador remanescente.
+- **Screenshots:** [desktop claro](evidencias/fase-1/desktop-light.png), [desktop escuro](evidencias/fase-1/desktop-dark.png), [mobile claro](evidencias/fase-1/mobile-light.png) e [menu mobile escuro](evidencias/fase-1/mobile-menu-dark.png). São evidências de execução, não novas golden references.
+- **Comparação visual:** cores, tipografia editorial, símbolo central, divisão dos ramos, cinco linhas por compasso, notas, barras, densidade, controles e geometrias entre temas correspondem à prancha mestra e ao header da Aplicação aprovada. Desktop claro/escuro preserva exatamente a geometria; o mobile transforma a partitura espacial em ordem vertical explícita. A composição definitiva da Home, incluindo clave narrativa e bifurcação, permanece corretamente reservada à Fase 3.
+- **Acessibilidade:** axe-core encontrou zero violação crítica ou séria nos dois temas e no menu aberto; a suíte também bloqueia o caso estrutural `aria-hidden-focus`. Foram validados skip link, nomes acessíveis, indicação de nova aba, contraste determinístico, `aria-current`, foco visível, trap e retorno de foco, Escape, clique externo, resize 390 → 1200 → 390 e reduced motion sem animação ativa.
+- **Performance:** três execuções finais isoladas do Lighthouse obtiveram Performance 100, Acessibilidade 100, Boas práticas 100 e SEO 100 em todas; nenhum budget ou assertion falhou.
+- **Riscos controlados:** o primeiro smoke standalone verificava somente HTTP 200 e permitia falso positivo sem CSS; ele foi substituído por verificação executável de todos os assets estáticos referenciados. O script inline anti-FOUC precisará receber a política CSP definitiva na Fase 8. O chunk grande de axe aparece apenas no catálogo/teste Storybook e não integra o bundle produtivo.
+- **Pendências não bloqueadoras:** a Home desta fase é uma vitrine estática dos primitivos e será substituída pela composição normativa na Fase 3; rotas e conteúdo entram na Fase 2; Firefox/WebKit e matriz ampliada ficam para o QA final; acessos externos e produção continuam limitados pela seção 3.6.
+- **Gate:** `CONCLUÍDO`.
+- **Título de commit:** `feat(design-system): build visual foundations and musical header`.
 
 ### Fase 2 — Conteúdo e rotas estáticas
 
-**Estado:** `AGUARDANDO_GATE_ANTERIOR`  
+**Estado:** `EM_EXECUÇÃO`
 **Objetivo:** implementar todas as rotas, conteúdo local, páginas legais, SEO, sitemap, robots, estados de erro, 404, footer e navegação funcional sem depender de motion.
 
 - **Arquivos criados:** a registrar.
@@ -385,3 +386,4 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 |---|---|
 | 2026-07-29 | Relatório criado; pré-voo registrado como concluído; Fase 0 iniciada sem declarar testes antecipadamente. |
 | 2026-07-29 | Fase 0 concluída após correção do manifesto tipado, WCAG 2.2 AA, favicon oficial, 8 testes unitários, Storybook, Playwright, standalone, Actionlint e Lighthouse 100/100/100/100. Fase 1 iniciada. |
+| 2026-07-29 | Fase 1 concluída com design system, fontes locais, temas, marca oficial, pauta, header, navegação e catálogo; 48 unitários, 33 stories e 13 cenários Playwright verdes; standalone com 12 assets verificados; Lighthouse 100/100/100/100 em três execuções. Fase 2 iniciada. |

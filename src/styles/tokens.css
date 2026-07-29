@@ -1,0 +1,231 @@
+:root {
+  color-scheme: light;
+
+  /* Cores — tema claro normativo. */
+  --wf-bg: #f7f1e8;
+  --wf-surface: #fffaf3;
+  --wf-surface-elevated: #fffdf8;
+  --wf-surface-muted: #eee2d4;
+  --wf-text: #24180f;
+  --wf-text-muted: #665548;
+  --wf-primary: #4d280d;
+  --wf-primary-hover: #633612;
+  --wf-accent: #9a6237;
+  --wf-staff: #c9a17c;
+  --wf-note: #70401f;
+  --wf-border: #ddc9b5;
+  --wf-focus: #75421f;
+  --wf-text-accent: var(--wf-note);
+  --wf-shadow-soft: 0 18px 50px rgb(58 32 17 / 0.12);
+  --wf-glow-soft: none;
+  --wf-tablet-edge: #3a210f;
+  --wf-tablet-reflection: rgb(255 255 255 / 0.28);
+  --wf-on-primary: var(--wf-surface-elevated);
+
+  /* Tipografia self-hosted, carregada pelo layout com next/font/local. */
+  --wf-font-display:
+    var(--wf-font-cormorant), Georgia, "Times New Roman", serif;
+  --wf-font-sans:
+    var(--wf-font-manrope), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --wf-font-size-label: 0.75rem;
+  --wf-font-size-body-sm: 0.875rem;
+  --wf-font-size-body: 1rem;
+  --wf-font-size-body-lg: clamp(1.0625rem, 1rem + 0.25vw, 1.25rem);
+  --wf-font-size-title-sm: clamp(2rem, 1.55rem + 2vw, 3.5rem);
+  --wf-font-size-title: clamp(2.75rem, 1.8rem + 4.25vw, 6rem);
+  --wf-font-size-display: clamp(3.5rem, 2rem + 7vw, 8rem);
+  --wf-font-weight-regular: 400;
+  --wf-font-weight-medium: 500;
+  --wf-font-weight-semibold: 600;
+  --wf-font-weight-bold: 700;
+  --wf-line-height-display: 0.92;
+  --wf-line-height-title: 1;
+  --wf-line-height-body: 1.7;
+  --wf-line-height-label: 1.25;
+  --wf-tracking-display: -0.04em;
+  --wf-tracking-label: 0.16em;
+
+  /* Espaçamento e geometria. */
+  --wf-space-1: 0.25rem;
+  --wf-space-2: 0.5rem;
+  --wf-space-3: 0.75rem;
+  --wf-space-4: 1rem;
+  --wf-space-5: 1.25rem;
+  --wf-space-6: 1.5rem;
+  --wf-space-8: 2rem;
+  --wf-space-10: 2.5rem;
+  --wf-space-12: 3rem;
+  --wf-space-16: 4rem;
+  --wf-space-20: 5rem;
+  --wf-space-24: 6rem;
+  --wf-space-32: 8rem;
+  --wf-section-space: clamp(5rem, 9vw, 9rem);
+  --wf-header-height-desktop: 88px;
+  --wf-header-height-mobile: 64px;
+  --wf-content-max: 1440px;
+  --wf-page-gutter: clamp(20px, 4vw, 72px);
+  --wf-control-min-size: 44px;
+  --wf-radius-sm: 8px;
+  --wf-radius-md: 16px;
+  --wf-radius-lg: 28px;
+  --wf-radius-pill: 999px;
+  --wf-staff-gap-desktop: 12px;
+  --wf-staff-gap-mobile: 8px;
+  --wf-focus-width: 3px;
+  --wf-focus-offset: 3px;
+
+  /* Camadas persistentes. */
+  --wf-z-base: 0;
+  --wf-z-content: 10;
+  --wf-z-sticky: 30;
+  --wf-z-header: 50;
+  --wf-z-transition: 70;
+  --wf-z-dialog: 80;
+  --wf-z-intro: 90;
+  --wf-z-toast: 100;
+
+  /* Motion — GSAP consome os mesmos tempos; CSS usa apenas estados simples. */
+  --wf-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --wf-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --wf-duration-fast: 180ms;
+  --wf-duration-medium: 360ms;
+  --wf-duration-chapter: 720ms;
+  --wf-transition-chapter: 720ms;
+  --wf-tablet-tilt-max: 6deg;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --wf-bg: #f7f1e8;
+  --wf-surface: #fffaf3;
+  --wf-surface-elevated: #fffdf8;
+  --wf-surface-muted: #eee2d4;
+  --wf-text: #24180f;
+  --wf-text-muted: #665548;
+  --wf-primary: #4d280d;
+  --wf-primary-hover: #633612;
+  --wf-accent: #9a6237;
+  --wf-staff: #c9a17c;
+  --wf-note: #70401f;
+  --wf-border: #ddc9b5;
+  --wf-focus: #75421f;
+  --wf-text-accent: var(--wf-note);
+  --wf-shadow-soft: 0 18px 50px rgb(58 32 17 / 0.12);
+  --wf-glow-soft: none;
+  --wf-tablet-edge: #3a210f;
+  --wf-tablet-reflection: rgb(255 255 255 / 0.28);
+  --wf-on-primary: var(--wf-surface-elevated);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --wf-bg: #020b22;
+  --wf-surface: #07132e;
+  --wf-surface-elevated: #0b193a;
+  --wf-surface-muted: #111f43;
+  --wf-text: #f7f4ff;
+  --wf-text-muted: #c5c5dc;
+  --wf-primary: #7437ff;
+  --wf-primary-hover: #915eff;
+  --wf-accent: #a348ff;
+  --wf-staff: #5834bd;
+  --wf-note: #933fff;
+  --wf-border: #2b3167;
+  --wf-focus: #b58cff;
+  --wf-text-accent: color-mix(in oklab, var(--wf-note) 76%, var(--wf-text) 24%);
+  --wf-shadow-soft: 0 22px 60px rgb(0 0 0 / 0.34);
+  --wf-glow-soft: 0 0 28px rgb(126 55 255 / 0.28);
+  --wf-tablet-edge: #10153a;
+  --wf-tablet-reflection: rgb(171 132 255 / 0.18);
+  --wf-on-primary: var(--wf-text);
+}
+
+/* Fallback funcional quando JavaScript está indisponível. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --wf-bg: #020b22;
+    --wf-surface: #07132e;
+    --wf-surface-elevated: #0b193a;
+    --wf-surface-muted: #111f43;
+    --wf-text: #f7f4ff;
+    --wf-text-muted: #c5c5dc;
+    --wf-primary: #7437ff;
+    --wf-primary-hover: #915eff;
+    --wf-accent: #a348ff;
+    --wf-staff: #5834bd;
+    --wf-note: #933fff;
+    --wf-border: #2b3167;
+    --wf-focus: #b58cff;
+    --wf-text-accent: color-mix(in oklab, var(--wf-note) 76%, var(--wf-text) 24%);
+    --wf-shadow-soft: 0 22px 60px rgb(0 0 0 / 0.34);
+    --wf-glow-soft: 0 0 28px rgb(126 55 255 / 0.28);
+    --wf-tablet-edge: #10153a;
+    --wf-tablet-reflection: rgb(171 132 255 / 0.18);
+    --wf-on-primary: var(--wf-text);
+  }
+}
+
+/* Tailwind 4: utilities semânticas resolvem os tokens em runtime. */
+@theme inline {
+  --color-canvas: var(--wf-bg);
+  --color-surface: var(--wf-surface);
+  --color-surface-elevated: var(--wf-surface-elevated);
+  --color-surface-muted: var(--wf-surface-muted);
+  --color-foreground: var(--wf-text);
+  --color-muted: var(--wf-text-muted);
+  --color-primary: var(--wf-primary);
+  --color-primary-hover: var(--wf-primary-hover);
+  --color-accent: var(--wf-accent);
+  --color-staff: var(--wf-staff);
+  --color-note: var(--wf-note);
+  --color-border: var(--wf-border);
+  --color-focus: var(--wf-focus);
+  --color-text-accent: var(--wf-text-accent);
+  --color-tablet-edge: var(--wf-tablet-edge);
+  --color-tablet-reflection: var(--wf-tablet-reflection);
+  --color-on-primary: var(--wf-on-primary);
+
+  --font-sans: var(--wf-font-sans);
+  --font-display: var(--wf-font-display);
+  --text-label: var(--wf-font-size-label);
+  --text-label--line-height: var(--wf-line-height-label);
+  --text-body-sm: var(--wf-font-size-body-sm);
+  --text-body-sm--line-height: var(--wf-line-height-body);
+  --text-body: var(--wf-font-size-body);
+  --text-body--line-height: var(--wf-line-height-body);
+  --text-body-lg: var(--wf-font-size-body-lg);
+  --text-body-lg--line-height: var(--wf-line-height-body);
+  --text-title-sm: var(--wf-font-size-title-sm);
+  --text-title-sm--line-height: var(--wf-line-height-title);
+  --text-title: var(--wf-font-size-title);
+  --text-title--line-height: var(--wf-line-height-title);
+  --text-display: var(--wf-font-size-display);
+  --text-display--line-height: var(--wf-line-height-display);
+  --font-weight-regular: var(--wf-font-weight-regular);
+  --font-weight-medium: var(--wf-font-weight-medium);
+  --font-weight-semibold: var(--wf-font-weight-semibold);
+  --font-weight-bold: var(--wf-font-weight-bold);
+  --tracking-display: var(--wf-tracking-display);
+  --tracking-label: var(--wf-tracking-label);
+  --leading-display: var(--wf-line-height-display);
+  --leading-title: var(--wf-line-height-title);
+  --leading-body: var(--wf-line-height-body);
+
+  --spacing-gutter: var(--wf-page-gutter);
+  --spacing-section: var(--wf-section-space);
+  --spacing-content: var(--wf-content-max);
+  --spacing-control: var(--wf-control-min-size);
+  --spacing-staff: var(--wf-staff-gap-desktop);
+  --radius-sm: var(--wf-radius-sm);
+  --radius-md: var(--wf-radius-md);
+  --radius-lg: var(--wf-radius-lg);
+  --radius-pill: var(--wf-radius-pill);
+  --shadow-soft: var(--wf-shadow-soft);
+  --shadow-glow: var(--wf-glow-soft);
+  --ease-wf-out: var(--wf-ease-out);
+  --ease-wf-in-out: var(--wf-ease-in-out);
+}
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));

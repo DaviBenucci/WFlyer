@@ -1,0 +1,31 @@
+.shell {
+  display: grid;
+  min-height: calc(100svh - var(--wf-header-height-desktop));
+  place-content: center;
+  padding-block: var(--wf-space-20);
+}
+
+.content {
+  display: grid;
+  gap: var(--wf-space-5);
+}
+
+.content h1 {
+  max-width: 17ch;
+}
+
+.content > p {
+  max-width: 46rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--wf-space-3);
+}
+
+@media (width < 64rem) {
+  .shell {
+    min-height: calc(100svh - var(--wf-header-height-mobile));
+  }
+}
