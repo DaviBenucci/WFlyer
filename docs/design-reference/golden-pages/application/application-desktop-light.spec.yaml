@@ -1,0 +1,48 @@
+id: application-desktop-light
+page_id: application
+route: /aplicacao-wflyer
+status: approved
+approval_date: "2026-07-29"
+viewport:
+  width: 1536
+  height: 1024
+theme: light
+branch: application
+coordinate: -1
+previous: home
+next: application-how-it-works
+entry_edge: right
+entry_anchor_y: 0.46
+exit_edge: left
+exit_anchor_y: 0.68
+terminal: false
+final_barline: false
+source: generated-and-user-approved
+usage: golden-reference
+ship_in_production: false
+sha256: d69ce4dac5b6bc5576286f40a471ce5fe00a1f5d69e4fbf063309d330d27da5d
+components:
+  - site-header
+  - application-hero-copy
+  - primary-cta
+  - secondary-cta
+  - interactive-tablet-shell
+  - demo-score-screen
+  - five-benefit-strip
+  - local-score-segment
+  - scroll-cue
+interactive_regions:
+  - tablet-controls
+  - access-application-cta
+  - learn-more-link
+presentation_annotations:
+  - top title "APLICAÇÃO W_FLYER – MODO CLARO" is not part of production UI
+content_notes:
+  - tablet screen is a visual reference; production screen must be DOM
+  - final copy follows docs/04-conteudo and may correct image text
+  - no real transposition is implied by this static reference
+motion_notes:
+  - tablet supports bounded CSS 3D tilt
+  - score lines and notes use local reveals
+  - route entry from Home follows left branch direction
+tolerance: 0.02

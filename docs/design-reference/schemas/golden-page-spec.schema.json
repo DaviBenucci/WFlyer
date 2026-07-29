@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wflyer.com.br/schemas/golden-page-spec.schema.json",
+  "title": "W_Flyer golden page spec",
+  "type": "object",
+  "required": [
+    "id",
+    "page_id",
+    "status",
+    "viewport",
+    "theme",
+    "usage",
+    "ship_in_production",
+    "sha256"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "page_id": {
+      "type": "string"
+    },
+    "route": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "approved",
+        "approved-master-panel",
+        "pending-generation",
+        "pending-approval",
+        "superseded"
+      ]
+    },
+    "approval_date": {
+      "type": "string"
+    },
+    "viewport": {
+      "type": "object",
+      "required": [
+        "width",
+        "height"
+      ],
+      "properties": {
+        "width": {
+          "type": "integer"
+        },
+        "height": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "theme": {
+      "type": "string"
+    },
+    "branch": {
+      "enum": [
+        "origin",
+        "application",
+        "institutional"
+      ]
+    },
+    "coordinate": {
+      "type": "integer"
+    },
+    "previous": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "next": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "entry_edge": {
+      "enum": [
+        "left",
+        "right",
+        "center"
+      ]
+    },
+    "exit_edge": {
+      "enum": [
+        "left",
+        "right",
+        "center"
+      ]
+    },
+    "entry_anchor_y": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "exit_anchor_y": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "terminal": {
+      "type": "boolean"
+    },
+    "final_barline": {
+      "type": "boolean"
+    },
+    "source": {
+      "type": "string"
+    },
+    "usage": {
+      "enum": [
+        "golden-reference",
+        "component-reference",
+        "storyboard"
+      ]
+    },
+    "ship_in_production": {
+      "const": false
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "interactive_regions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "presentation_annotations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "content_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "motion_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "controls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tolerance": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "additionalProperties": false
+}

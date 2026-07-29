@@ -1,13 +1,13 @@
 # W_Flyer — documentação do site institucional
 
-**Domínio previsto:** `wflyer.com.br`  
-**Aplicação separada:** `app.wflyer.com.br`  
-**Status:** especificação normativa atualizada — versão 1.1  
+**Domínio previsto:** `wflyer.com.br`
+**Aplicação separada:** `app.wflyer.com.br`
+**Status:** especificação normativa atualizada — versão 1.2
 **Data-base:** 2026-07-29
 
-Este pacote documenta o site institucional da futura empresa W_Flyer. O site apresenta a empresa, seus serviços, a aplicação musical em linguagem comercial, o portfólio, o contato e as políticas institucionais.
+Este pacote documenta o site institucional da W_Flyer. O site apresenta a empresa, seus serviços, a aplicação musical em linguagem pública, o portfólio, o contato e as políticas institucionais.
 
-O site institucional é um projeto independente do aplicativo musical. A documentação técnica do motor musical, OCR, transposição, harmonização, processamento de partituras, banco de dados e administração da aplicação **não integra o escopo deste repositório**.
+O site institucional é independente do aplicativo musical. A documentação do motor musical, OCR/OMR, transposição, harmonização, processamento de partituras, banco de dados e administração da aplicação **não integra o escopo deste repositório**.
 
 ## Classificação arquitetural
 
@@ -18,18 +18,28 @@ O projeto é **static-first**, e não um `static export` puro:
 - somente `POST /api/contact` requer execução no servidor para validar o formulário e enviar e-mail;
 - o site será publicado em um contêiner Next.js standalone, atrás da Cloudflare.
 
-## Decisões consolidadas
+## Decisões visuais consolidadas
+
+- a logo W_Flyer é oficial; o símbolo oficial ocupa o centro do header desktop;
+- a prancha `docs/design-reference/golden-pages/master/wflyer-approved-master-board.png` é a referência visual mestra aprovada;
+- a Home é a origem da composição: uma clave de sol narrativa dá início a duas partituras;
+- a partitura da aplicação avança para a esquerda: Aplicação → Como funciona → Benefícios → acesso ao app → barra final;
+- a partitura institucional avança para a direita: Empresa → Serviços → Processo → Portfólio → Contato → barra final;
+- cada rota principal é um capítulo/compasso da respectiva partitura e deve conservar continuidade visual com a rota anterior e a seguinte;
+- o tablet da página Aplicação será uma demonstração interativa em DOM, com profundidade por CSS 3D e GSAP, sem Three.js e sem executar o motor real do aplicativo;
+- referências visuais individuais, em claro e escuro, são obrigatórias antes da implementação final de cada página.
+
+## Decisões técnicas consolidadas
 
 - Next.js 16.2, React 19.2 e TypeScript estrito;
 - Tailwind CSS 4 e CSS Custom Properties;
 - GSAP, ScrollTrigger e `@gsap/react` como único conjunto de animação programática;
-- SVG original para pauta, clave de sol, notas e compassos;
+- SVG original para pauta, clave de sol, notas, compassos e barras finais;
 - conteúdo local em MDX/TypeScript;
 - formulário por Route Handler, Zod, Cloudflare Turnstile, Cloudflare WAF Rate Limiting e Resend;
 - Storybook, Vitest, Playwright, axe-core e Lighthouse CI;
 - ausência de banco de dados na versão inicial;
-- logo W_Flyer oficial; paleta e tokens de interface ainda versionáveis;
-- abertura vetorial com SVG oficial, GSAP, Ink Transfer e handoff para a homepage.
+- abertura vetorial com SVG oficial, GSAP, Ink Transfer e handoff para a Home.
 
 ## Leitura obrigatória
 
@@ -37,11 +47,15 @@ O projeto é **static-first**, e não um `static export` puro:
 2. [`docs/00-indice.md`](docs/00-indice.md)
 3. [`docs/00-governanca/00-fonte-da-verdade.md`](docs/00-governanca/00-fonte-da-verdade.md)
 4. [`docs/00-governanca/01-bloqueio-tecnologico.md`](docs/00-governanca/01-bloqueio-tecnologico.md)
-5. [`docs/02-design/04-homepage.md`](docs/02-design/04-homepage.md)
-6. [`docs/05-implementacao/07-fases-implementacao.md`](docs/05-implementacao/07-fases-implementacao.md)
-7. [`docs/03-motion/06-animacao-entrada-marca.md`](docs/03-motion/06-animacao-entrada-marca.md)
-8. [`docs/07-qa/05-criterios-aceite.md`](docs/07-qa/05-criterios-aceite.md)
+5. [`docs/02-design/09-sistema-dupla-partitura.md`](docs/02-design/09-sistema-dupla-partitura.md)
+6. [`docs/02-design/10-especificacao-visual-paginas.md`](docs/02-design/10-especificacao-visual-paginas.md)
+7. [`docs/03-motion/02-narrativa-dupla-partitura.md`](docs/03-motion/02-narrativa-dupla-partitura.md)
+8. [`docs/03-motion/08-tablet-interativo.md`](docs/03-motion/08-tablet-interativo.md)
+9. [`docs/05-implementacao/07-fases-implementacao.md`](docs/05-implementacao/07-fases-implementacao.md)
+10. [`docs/05-implementacao/12-fluxo-golden-references.md`](docs/05-implementacao/12-fluxo-golden-references.md)
+11. [`docs/03-motion/06-animacao-entrada-marca.md`](docs/03-motion/06-animacao-entrada-marca.md)
+12. [`docs/07-qa/05-criterios-aceite.md`](docs/07-qa/05-criterios-aceite.md)
 
 ## Regra de implementação
 
-A IA só pode avançar para a fase seguinte quando todos os critérios da fase atual estiverem concluídos, testados e registrados. Alterações de stack, arquitetura, identidade oficial ou escopo exigem decisão registrada.
+A IA só pode avançar para a fase seguinte quando todos os critérios da fase atual estiverem concluídos, testados e registrados. Uma página não pode receber implementação visual final enquanto sua referência individual não estiver marcada como `approved` e acompanhada do respectivo `.spec.yaml`. Alterações de stack, arquitetura, identidade oficial, narrativa de partitura ou escopo exigem decisão registrada.

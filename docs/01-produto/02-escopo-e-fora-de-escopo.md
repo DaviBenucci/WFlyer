@@ -2,23 +2,25 @@
 
 ## Escopo da versão inicial
 
-- homepage interativa;
-- apresentação da empresa;
-- serviços de criação de sites;
-- serviços de criação de aplicações;
-- integrações;
-- soluções sob medida;
+- Home central com clave de sol narrativa e duas partituras;
+- páginas independentes para Aplicação, Como funciona e Benefícios;
+- páginas independentes para Empresa/Sobre, Serviços, Processo, Portfólio e Contato;
+- continuidade visual da pauta entre capítulos;
+- barra dupla final nos dois terminais;
+- header em compassos, dividido pelos dois ramos;
 - apresentação pública da aplicação W_Flyer;
+- tablet demonstrativo em DOM com CSS 3D e interações locais;
+- serviços de criação de sites, aplicações, integrações e soluções sob medida;
+- páginas detalhadas para os quatro serviços;
 - seção de portfólio preparada para conteúdo futuro;
 - formulário de contato;
 - páginas institucionais e legais;
 - alternância claro/escuro;
-- header em compassos;
-- partitura ondulada controlada por scroll no desktop;
-- experiência vertical equivalente no mobile;
+- experiência mobile vertical equivalente;
+- abertura oficial da marca e demais animações documentadas;
 - SEO técnico e dados estruturados apropriados;
-- segurança e rate limit;
-- testes e documentação.
+- segurança, rate limit, testes e documentação;
+- golden references individuais para páginas, componentes e storyboards.
 
 ## Fora de escopo
 
@@ -31,11 +33,14 @@
 - chat em tempo real;
 - chatbot ou IA em produção;
 - orçamento automático;
-- upload de arquivos;
+- upload real de partituras no site institucional;
+- OCR/OMR ou transposição real dentro do tablet demonstrativo;
 - pagamentos;
 - agendamento;
 - analytics comportamental invasivo;
 - motor musical;
-- funcionalidades da aplicação;
-- identidade oficial definitiva;
-- cases fictícios.
+- funcionalidades internas da aplicação;
+- cases, métricas ou depoimentos fictícios;
+- áudio automático;
+- navegação horizontal obrigatória por arraste;
+- Three.js, WebGL ou modelo 3D pesado para o tablet.

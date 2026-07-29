@@ -80,7 +80,7 @@ phases:
     end_seconds: 5.600
     start_frame_60fps: 255
     end_frame_60fps: 336
-    purpose: "header, clave, pauta e conteúdo entram"
+    purpose: "header, clave, duas partituras e conteúdos dos dois ramos entram"
 eases:
   origin: power2.out
   seed: power3.out

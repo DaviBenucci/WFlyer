@@ -1,0 +1,25 @@
+id: wflyer-approved-master-board
+page_id: master-board
+status: approved
+approval_date: "2026-07-29"
+viewport:
+  width: 1536
+  height: 1024
+theme: mixed-light-dark
+usage: golden-reference
+source: user-approved-original-board
+ship_in_production: false
+sha256: 571d5b40a24127a6eac7b62f07ae08a64f633c203c250c41bde63570475f2fcd
+controls:
+  - global visual language
+  - header composition
+  - light and dark theme direction
+  - services cards
+  - portfolio empty state
+  - contact form composition
+  - footer composition
+notes:
+  - Panels are not individual implementation assets.
+  - Home, services, portfolio, contact and footer require isolated high-resolution references.
+  - Text in the board remains subject to editorial documentation.
+tolerance: 0.02

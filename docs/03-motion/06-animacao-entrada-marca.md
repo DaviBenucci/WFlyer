@@ -1,13 +1,13 @@
 # Animação de entrada da marca W_Flyer
 
-**Identificador:** `M-010`  
-**Status:** proposta normativa para aprovação  
-**Versão:** `2.0-review`  
-**Data-base:** `2026-07-29`  
-**Escopo:** site institucional `wflyer.com.br`  
-**Referência de movimento:** vídeo aprovado pelo usuário em 29/07/2026  
-**Duração da referência:** `4,086 s`, `24 fps`, `864 × 496`, H.264  
-**Duração da coreografia web completa:** `5,600 s`  
+**Identificador:** `M-010`
+**Status:** proposta normativa para aprovação
+**Versão:** `2.0-review`
+**Data-base:** `2026-07-29`
+**Escopo:** site institucional `wflyer.com.br`
+**Referência de movimento:** vídeo aprovado pelo usuário em 29/07/2026
+**Duração da referência:** `4,086 s`, `24 fps`, `864 × 496`, H.264
+**Duração da coreografia web completa:** `5,600 s`
 **Base temporal de documentação:** `60 fps`, apenas para inspeção e QA
 
 > A execução real é baseada em tempo, não em contagem fixa de frames. O mapa de frames é uma representação determinística a 60 fps para revisão, depuração, comparação visual e testes automatizados.
@@ -114,7 +114,7 @@ CSS Custom Properties
 HTML semântico para controles
 ```
 
-`ScrollTrigger` não controla a abertura, porque a abertura é temporal e ocorre antes da narrativa de scroll. Ele continua autorizado para a homepage após o handoff.
+`ScrollTrigger` não controla a abertura, porque a abertura é temporal e ocorre antes da narrativa da dupla partitura. Ele continua autorizado para reveals locais e interações após o handoff.
 
 ### 4.2 Responsabilidade por tecnologia
 
@@ -313,7 +313,7 @@ O arquivo `06-animacao-entrada-marca.frames.csv` contém uma amostra para todos 
 
 ## Fase A — Origem estável
 
-**Tempo:** `0,000–0,300 s`  
+**Tempo:** `0,000–0,300 s`
 **Frames:** `0–17`
 
 ### Frame 0
@@ -343,7 +343,7 @@ O arquivo `06-animacao-entrada-marca.frames.csv` contém uma amostra para todos 
 
 ## Fase B — Semente do símbolo
 
-**Tempo:** `0,300–0,700 s`  
+**Tempo:** `0,300–0,700 s`
 **Frames:** `18–41`
 
 ### Frames 18–23
@@ -372,7 +372,7 @@ O arquivo `06-animacao-entrada-marca.frames.csv` contém uma amostra para todos 
 
 ## Fase C — Expansão geométrica e ecos
 
-**Tempo:** `0,700–1,500 s`  
+**Tempo:** `0,700–1,500 s`
 **Frames:** `42–89`
 
 Esta fase reproduz a característica mais importante do vídeo: o símbolo cresce enquanto contornos externos acompanham sua expansão.
@@ -410,7 +410,7 @@ Esta fase reproduz a característica mais importante do vídeo: o símbolo cresc
 
 ## Fase D — Lock e absorção dos contornos
 
-**Tempo:** `1,500–2,100 s`  
+**Tempo:** `1,500–2,100 s`
 **Frames:** `90–125`
 
 ### Frames 90–101
@@ -440,7 +440,7 @@ O lock pode receber um único acento de contraste com duração máxima de `80 m
 
 ## Fase E — Pausa do símbolo
 
-**Tempo:** `2,100–2,500 s`  
+**Tempo:** `2,100–2,500 s`
 **Frames:** `126–149`
 
 - símbolo permanece imóvel;
@@ -455,7 +455,7 @@ A pausa é intencional e não deve ser removida para “acelerar” a abertura.
 
 ## Fase F — Revelação do wordmark
 
-**Tempo:** `2,500–3,300 s`  
+**Tempo:** `2,500–3,300 s`
 **Frames:** `150–197`
 
 ### Regra geométrica
@@ -498,7 +498,7 @@ O lockup final deve estar centralizado como conjunto. Para isso:
 
 ## Fase G — Hold do lockup oficial
 
-**Tempo:** `3,300–4,050 s`  
+**Tempo:** `3,300–4,050 s`
 **Frames:** `198–242`
 
 - logo horizontal completa permanece imóvel;
@@ -513,7 +513,7 @@ O usuário pode pular durante o hold; o resultado visual deve ser idêntico ao i
 
 ## Fase H — Handoff da marca para o header
 
-**Tempo:** `4,050–4,850 s`  
+**Tempo:** `4,050–4,850 s`
 **Frames:** `243–290`
 
 O handoff não é um fade genérico. A marca deve se transformar em parte da interface.
@@ -538,7 +538,7 @@ Antes de iniciar:
 - wordmark desaparece completamente;
 - o símbolo inicia transformação FLIP para o target do header;
 - o target real do header ainda permanece invisível;
-- a partitura da hero começa a ser desenhada em baixa opacidade.
+- as duas partituras da Home começam a ser desenhadas em baixa opacidade.
 
 ### Frames 267–278
 
@@ -571,8 +571,8 @@ Isso preserva alinhamento em diferentes viewports.
 
 ## Fase I — Abertura da hero
 
-**Tempo:** `4,250–5,600 s`  
-**Frames:** `255–336`  
+**Tempo:** `4,250–5,600 s`
+**Frames:** `255–336`
 **Sobreposição:** começa durante o handoff.
 
 ### Frames 255–275
@@ -584,14 +584,14 @@ Isso preserva alinhamento em diferentes viewports.
 ### Frames 276–300
 
 - notas indicadoras e barras dos compassos entram;
-- clave de sol da hero aparece no centro;
+- clave de sol narrativa da Home aparece no centro;
 - escala da clave: `0,94 → 1,00`;
 - rotação máxima: `1°`.
 
 ### Frames 301–324
 
 - conteúdo da aplicação entra da esquerda;
-- conteúdo da empresa entra da direita;
+- conteúdo institucional entra da direita;
 - deslocamento máximo: `20 px`;
 - botões aparecem após títulos e parágrafos.
 

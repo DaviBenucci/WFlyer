@@ -23,6 +23,14 @@ Tipos de projeto:
 - solução personalizada;
 - outro.
 
+## Terminal da partitura institucional
+
+A página Contato é o último capítulo do ramo institucional. Depois do formulário e dos canais alternativos válidos, a pauta converge para a barra dupla final. A cadência não substitui estados de envio, sucesso ou erro.
+
+## Canais alternativos
+
+Renderizar somente dados reais configurados. Não exibir placeholders de e-mail, telefone, endereço ou redes sociais em produção.
+
 ## Política de privacidade
 
 Deve explicar:

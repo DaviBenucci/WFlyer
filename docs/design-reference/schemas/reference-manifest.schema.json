@@ -3,15 +3,27 @@
   "$id": "https://wflyer.com.br/schemas/reference-manifest.schema.json",
   "title": "W_Flyer visual reference manifest",
   "type": "object",
-  "required": ["id", "file", "usage", "ship_in_production", "license_status"],
+  "required": ["version", "generated_at", "references"],
   "properties": {
-    "id": { "type": "string" },
-    "file": { "type": "string" },
-    "usage": { "enum": ["inspiration-only", "golden-reference", "component-reference", "storyboard"] },
-    "ship_in_production": { "type": "boolean" },
-    "license_status": { "type": "string" },
-    "notes": { "type": "string" },
-    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+    "version": { "type": "string" },
+    "generated_at": { "type": "string" },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "file", "usage", "ship_in_production", "license_status", "sha256"],
+        "properties": {
+          "id": { "type": "string" },
+          "file": { "type": "string" },
+          "usage": { "enum": ["inspiration-only", "golden-reference", "component-reference", "storyboard"] },
+          "ship_in_production": { "type": "boolean" },
+          "license_status": { "type": "string" },
+          "notes": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        },
+        "additionalProperties": false
+      }
+    }
   },
   "additionalProperties": false
 }

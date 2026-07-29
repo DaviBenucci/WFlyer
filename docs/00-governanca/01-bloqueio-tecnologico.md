@@ -11,6 +11,7 @@
 | Linguagem | TypeScript estrito |
 | Estilização | Tailwind CSS 4 + CSS Custom Properties |
 | Motion | GSAP 3 + ScrollTrigger + `@gsap/react` |
+| Profundidade do tablet | CSS 3D limitado, sem WebGL |
 | Ilustração | SVG original e CSS |
 | Conteúdo | MDX local + objetos TypeScript tipados |
 | Validação | Zod |
@@ -24,7 +25,7 @@
 | Performance | Lighthouse CI + métricas de runtime |
 | Entrega | Docker Next.js standalone atrás da Cloudflare |
 
-As versões de patch devem ser fixadas no bootstrap e atualizadas apenas por processo de manutenção. A linha inicial do Next.js deve conter, no mínimo, o patch de segurança `16.2.11`.
+As versões de patch devem ser fixadas no bootstrap e atualizadas apenas por processo de manutenção. A linha inicial do Next.js deve conter, no mínimo, o patch de segurança documentado no manifesto tecnológico.
 
 ## Tecnologias proibidas na primeira versão
 
@@ -33,16 +34,19 @@ As versões de patch devem ser fixadas no bootstrap e atualizadas apenas por pro
 - React Spring;
 - Lenis e qualquer smooth scroll global;
 - Three.js ou React Three Fiber;
+- WebGL para o tablet ou para a navegação;
 - Lottie;
 - bibliotecas de partículas;
 - shadcn/ui como sistema visual;
 - bibliotecas gerais de componentes;
+- Canvas para renderizar páginas, pauta ou interface do tablet;
 - CMS;
 - banco de dados SQL, NoSQL, Redis ou KV;
 - autenticação;
 - analytics com rastreamento individual;
 - IA em produção;
-- código do aplicativo musical.
+- código ou pacote do aplicativo musical;
+- uso de golden reference como asset produtivo.
 
 ## Exceções
 

@@ -1,413 +1,1014 @@
 {
   "project": "wflyer-site",
-  "version": "1.1",
+  "version": "1.2",
   "generated_at": "2026-07-29",
-  "focus": "documentacao detalhada da animacao de entrada vetorial da marca",
+  "status": "normative-documentation-updated-visual-references-partial",
+  "focus": "dual-score page architecture, individual golden-reference workflow, route motion, and interactive application tablet",
+  "contains_source_code_changes": false,
+  "contains_visual_assets": true,
+  "visual_reference_gate": {
+    "master_board": "approved",
+    "individual_approved": [
+      "application-desktop-light"
+    ],
+    "approved_master_panels_pending_individual": [
+      "home-light",
+      "home-dark",
+      "services-light",
+      "services-dark",
+      "portfolio-light",
+      "portfolio-dark",
+      "contact-light",
+      "contact-dark",
+      "footer-light",
+      "footer-dark"
+    ],
+    "next_reference": "application-desktop-dark"
+  },
+  "documentation_file_count": 160,
+  "documentation_total_bytes": 4658454,
+  "files_by_extension": {
+    ".csv": 1,
+    ".ico": 1,
+    ".jpeg": 3,
+    ".json": 7,
+    ".md": 109,
+    ".png": 15,
+    ".svg": 15,
+    ".webp": 2,
+    ".yaml": 7
+  },
   "files": [
     {
+      "path": ".codex/skills/openspec-apply-change/SKILL.md",
+      "bytes": 5465,
+      "sha256": "83e0d2d4c47674e312fc9d29297d91e5c018a5507e6961829ee623600e2cf2ff",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": ".codex/skills/openspec-archive-change/SKILL.md",
+      "bytes": 4965,
+      "sha256": "85c8764715a18fbd11d16ca04bd9e15d8644bf5e4203176ad34eee192b546472",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": ".codex/skills/openspec-explore/SKILL.md",
+      "bytes": 11428,
+      "sha256": "79249f798ad0d69bf95f08f3c7a29d44d982e4c1645f1a12a21dfcd488f4ba0d",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": ".codex/skills/openspec-propose/SKILL.md",
+      "bytes": 5465,
+      "sha256": "a666b2381a7d5e982d8e32183484020f518da2b795c0f387c5ff4b3cb47be0fd",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": ".codex/skills/openspec-sync-specs/SKILL.md",
+      "bytes": 5187,
+      "sha256": "420e5815eee33ebd642b9d038f0a5307b176923a5c1a837c4873e51de085aae3",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": ".codex/skills/openspec-update-change/SKILL.md",
+      "bytes": 5791,
+      "sha256": "82a51ed50b10ac3be479d7abc4a99fe3685ee7794078d7d8ea7bfc90ae42c2d9",
+      "media_type": "text/markdown"
+    },
+    {
       "path": "AGENTS.md",
-      "bytes": 4073,
-      "sha256": "7d9e4d34bdeda6f48d76daea32d935e9dbe4a0c272f3078660d7567beb222d6b"
+      "bytes": 5895,
+      "sha256": "55757f1569ca130d1afaf22d93ba642b23040cbfc7d06c8712b28ff2a2db3d18",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "README-REVISAO.md",
+      "bytes": 2787,
+      "sha256": "8df95d86e3cd83da0a9346f1797f787e5f12ccc85b386e447885f306a7afaa34",
+      "media_type": "text/markdown"
     },
     {
       "path": "README.md",
-      "bytes": 2748,
-      "sha256": "1f3ed379639b704adf1117bf5735d3ff2516c7811cddf9a3bae1effa45b788a0"
+      "bytes": 4340,
+      "sha256": "ab2576995e80c938c561c2c1cb3425a7d96fa320e85e22d5483df339f5862e6b",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/00-governanca/00-fonte-da-verdade.md",
-      "bytes": 1476,
-      "sha256": "b732d986bcd653307c93bbd6233224c8520ee2593edbaa49f6c62dd6c43778c5"
+      "bytes": 3129,
+      "sha256": "fc763620b709b15dd59405aa053522aa08b892be8786aafc4181b8b5fe7b0480",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/00-governanca/01-bloqueio-tecnologico.md",
-      "bytes": 1775,
-      "sha256": "184520cf9cf5a1c6b6c0f70f11a5eaa49206c37d6cdc50490f9482918b901628"
+      "bytes": 2027,
+      "sha256": "6a616b27b0e093bd8fb8bd20bf8c675256b5aea87d3d2e08610531fc41fa5a0a",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/00-governanca/02-hierarquia-documental.md",
-      "bytes": 977,
-      "sha256": "7da992fe47d4e2e645b27739a4e24d3a037d940a3ef0328f54027dfebeca748f"
+      "bytes": 1579,
+      "sha256": "a1d7082a6334197ba2577cace4880ca417f67952f5eca3d763114bb8b9af3051",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/00-governanca/03-politica-dependencias.md",
       "bytes": 913,
-      "sha256": "ca64c85521f4c65aa6368ee951a031e4069d30bab5cf3635706e45e23925d583"
+      "sha256": "ca64c85521f4c65aa6368ee951a031e4069d30bab5cf3635706e45e23925d583",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/00-governanca/04-separacao-site-aplicacao.md",
-      "bytes": 919,
-      "sha256": "b6f8479f4ce53ef8a61b5f619f0a00e003c45ff1018f9fc91cf771995d69d897"
+      "bytes": 1552,
+      "sha256": "99917899534d62c6cde04a1ad5f351b75921a6da8bdc8b62ebc18faf3df41ed3",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/00-governanca/05-registro-decisoes.md",
-      "bytes": 2625,
-      "sha256": "45c8d9f9f49621116fee61aebab1116be46f9a4888953c43a83d23df08bfc117"
+      "bytes": 4803,
+      "sha256": "c8e61e0637fe54b8e1c156b9a3e764d16fd0018ee87fa86f18155bd75a1a0299",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/00-governanca/06-adr-animacao-entrada-programatica.md",
+      "bytes": 2021,
+      "sha256": "d060787a00977004f0c8d791c065ff7dc8aa7d32cf23ab49b40d7e75feb4f576",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/00-governanca/07-adr-dupla-partitura-e-paginas-visuais.md",
+      "bytes": 2701,
+      "sha256": "0f6c6793957620e922105c23b7837d18f6e54686c2c1283b695d5bf629812455",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/00-indice.md",
-      "bytes": 3884,
-      "sha256": "9e68f443cfb6293b7b1afcb2f9a3224161dc331b27342008221ec5eaad20cf24"
+      "bytes": 4869,
+      "sha256": "d7287feb1253692f2a7cb7558eff40e1851d5919b1bacb804e6d06e732e2a908",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/01-produto/01-visao-e-objetivos.md",
-      "bytes": 1194,
-      "sha256": "5df955d8cf7f3ba62539508b64d2399413c1031e83760f5ceee630ad1b39a8ed"
+      "bytes": 1884,
+      "sha256": "49449de0ca8a670e339626d480521d6958019d011e6b46ddd83ff21e9368fc4e",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/01-produto/02-escopo-e-fora-de-escopo.md",
-      "bytes": 1059,
-      "sha256": "fe4c49cb99eb5c62b77739e44bd0b2a785b80e30aa13b40faca4efcccdeeb230"
+      "bytes": 1723,
+      "sha256": "08f8379fcb77eb4098cfc21d31982ed95359af6e3a825111376addff9c69d5c2",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/01-produto/03-publicos-e-jornadas.md",
-      "bytes": 1100,
-      "sha256": "cb0049c7041812a8d321387982dc127b40993905094cdcd633c392682c4de99a"
+      "bytes": 1594,
+      "sha256": "e0ab071e9eeba3de1c558bd0fa9966861022150b4209c532b45566e847114579",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/01-produto/04-arquitetura-informacao.md",
-      "bytes": 903,
-      "sha256": "4cab4f2ac295b869cfa0f96339b058b3e0c4500aa9286accb65d1578c0c18073"
+      "bytes": 2355,
+      "sha256": "efd1b0b5d890f8897c05b36ebb2ade9367d8827b7573f2c0ba668cd9fe0ad20e",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/01-produto/05-requisitos.md",
-      "bytes": 1718,
-      "sha256": "e123bed3d9d7f3cf6061edc57b74f1d0901b7fa635cede1adc9688f94bfcedac"
+      "bytes": 3713,
+      "sha256": "1c5b5bf4d1feeb9f14178cbc68d4e08b66304a9af2483cfb84027677650475ab",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/02-design/01-direcao-visual-aprovada.md",
+      "bytes": 2466,
+      "sha256": "d3e50f6460f11a708d201d1c04e65b1126f63a6a29470130cae33c785c2962a4",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/02-design/01-direcao-visual-provisoria.md",
-      "bytes": 1800,
-      "sha256": "cef2ee347d20fc273af41772d8bc555639b57c09a8397a0cd6bb877860d9b5bd"
+      "bytes": 227,
+      "sha256": "56782763f11df26e55290d533c9d00432ecebb81980f13d9f65a720b0454cb6d",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/02-design/02-tokens-provisorios.md",
-      "bytes": 1607,
-      "sha256": "eb72eae3820f6500be92974ec4e6a183f7e53217396b6253f4927d9f778b9933"
+      "bytes": 208,
+      "sha256": "5bf7937cca3c75aee9df8c117f99e834b31a179d39f139e0a1b1770367d8a885",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/02-design/02-tokens-visuais-v1.md",
+      "bytes": 2259,
+      "sha256": "4c7b421493ef822cb0918a02dbbb03bd94433f6c79b117d39e484533ef038c33",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/02-design/03-header-partitura.md",
-      "bytes": 2752,
-      "sha256": "f829f595a3d618f09e571b8a01ddb6fb7987a088c7942c88ce6c1802ea45ed6b"
+      "bytes": 3929,
+      "sha256": "6cf6950c9912a8c1fa69e335bce62d25332cd7f2587e3e23ef89bd6668bd2b77",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/02-design/04-homepage.md",
-      "bytes": 2510,
-      "sha256": "5f9a0b74a1934697fd72a3abc81e280ed5f69a0104478745dfe980e552fdd99b"
+      "bytes": 3026,
+      "sha256": "bc44f6a96bdc98c0e05833c8efc3d59e7e9a73f8e543f0061cb3985d3915cb38",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/02-design/05-partitura-ondulada.md",
-      "bytes": 1807,
-      "sha256": "46633937f6980cbaf4325ffe85eafc8d6997a66e24fa8828875c09e71fc89c34"
+      "bytes": 3659,
+      "sha256": "30cc6d33e7670501995bd27b64d2e637dd2b643da0160ec2ff821b6b5b6caac5",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/02-design/06-responsividade.md",
-      "bytes": 979,
-      "sha256": "801c20fe0102fd86f06aee912438a746e757e84955b4fe9e1329f919a989016b"
+      "bytes": 1780,
+      "sha256": "bc143a40d1172e8966830290ea32676488a4477b55c5fcb3bc883328ed786d8a",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/02-design/07-acessibilidade.md",
-      "bytes": 1169,
-      "sha256": "cc5d6600ad7ec2ab865f6d0a3ecc1d1743655d3dbbac9f2144de56340ac0131e"
+      "bytes": 2591,
+      "sha256": "a5b4efb192fc213df24681a6c64b89c6499739326618e41f73ed2df501fb8b33",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/02-design/08-assets-licencas-golden-references.md",
-      "bytes": 1360,
-      "sha256": "3bddbfe53c931e818ad3ef27857e8f3bbbe283e169107c3a0e2dd5d76ffe2cb4"
+      "bytes": 2442,
+      "sha256": "c3c9dbe1a824566136f92160ad43d781c2aec57cd25770213b0a363bb17e4ab1",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/02-design/09-sistema-dupla-partitura.md",
+      "bytes": 4925,
+      "sha256": "61b71ea6b21be8bcebd13e3cb1db8f7bddbaa68d18590047ac07859149fb474d",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/02-design/10-especificacao-visual-paginas.md",
+      "bytes": 8009,
+      "sha256": "6f935a460687365a3df4c01dbc41111732d73ab0eba1c4a31dce5ef712372407",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/03-motion/01-arquitetura-gsap.md",
-      "bytes": 1592,
-      "sha256": "9ed06fc2b0f0040df1bd0152372f02346522b5a213aea2294e698981fdc8f00e"
+      "bytes": 3172,
+      "sha256": "cbacb9fa78a7e29d03705ada36daedc1914921607338f4130024108707860d5c",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/03-motion/02-narrativa-dupla-partitura.md",
+      "bytes": 4792,
+      "sha256": "6302000639bcf1a217bc6420008cf5258f8118787e96b85421d5f48315a697ed",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/03-motion/02-narrativa-scroll-horizontal.md",
-      "bytes": 1267,
-      "sha256": "69f09d087cf76c0b86dc4d37714a98666eb7ce3bdceba00903aeb3be2b95ff4b"
+      "bytes": 306,
+      "sha256": "f91ed2c8ae4b4044d45343348ef377b28efb0eebc2c6f041143f0ed80a531246",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/03-motion/03-catalogo-animacoes.md",
-      "bytes": 1879,
-      "sha256": "cd86e06f7162a0b758daf436e58cc14fcca0fce52c86fdce6be595319ae35927"
+      "bytes": 4429,
+      "sha256": "10b2d0a957680d60c579432ad81bdb5395792c40ea2fd1f261db1cf6be7d9149",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/03-motion/04-reduced-motion.md",
-      "bytes": 1107,
-      "sha256": "54893a36ba98ca06a58396e05fd679bb8cb6acbcc94d23a42c66ef455cf0b9b3"
+      "bytes": 1749,
+      "sha256": "251fd828997c523b71097e03823fb46d767a2f229f825d62d9af0732efe1274d",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/03-motion/05-orcamento-performance.md",
-      "bytes": 1517,
-      "sha256": "c2ea0f88668291c1cc1ff9cbde2fa17b436d8f15883bdd2ece14ed178e2a2092"
+      "bytes": 2594,
+      "sha256": "bc0807d950f61f03b96bc6231ecc2b0970bd4ae37b8a468b9e4c19c09315874f",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/03-motion/06-animacao-entrada-marca.frames.csv",
+      "bytes": 71368,
+      "sha256": "8378b93ec6dbb575e9b49e9117bca352eb522c40866d110fc826790bf5b9b764",
+      "media_type": "text/csv"
     },
     {
       "path": "docs/03-motion/06-animacao-entrada-marca.md",
-      "bytes": 32593,
-      "sha256": "4245be9d7531926f7456acec6996d9faa6dbeb15ac64086bac61a6dcef99579e"
+      "bytes": 26678,
+      "sha256": "e56558345d8493d6360aebd0f04c553c406233f869bcb7d9b240a61c4e9e5ba8",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/03-motion/06-animacao-entrada-marca.timeline.yaml",
-      "bytes": 7211,
-      "sha256": "85be6f1044b623e53bdbc135f487cb9620951bd4088911552fb5bd9e1b983d61"
+      "bytes": 2679,
+      "sha256": "1f060483bd449f1b11006c80b91643396b6bd95bf5fa3df5f941d7be3cdae4ba",
+      "media_type": "application/yaml"
+    },
+    {
+      "path": "docs/03-motion/07-transicoes-entre-capitulos.md",
+      "bytes": 4897,
+      "sha256": "90e6518f98375ff8dd6e26ecfe202629f190ac62161cf1b64a547232eadaa5dc",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/03-motion/08-tablet-interativo.md",
+      "bytes": 4315,
+      "sha256": "f04e555f5568bf69c88c8344513788c991f34c4e1e07fb95f4fb1fcec46c265f",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/03-motion/reference-video-manifest.json",
+      "bytes": 715,
+      "sha256": "f5b241ead34b100dcc9d8c9fb8dd0ec7549cc56a0cb3d5712db5b5a735c6b24d",
+      "media_type": "application/json"
     },
     {
       "path": "docs/04-conteudo/01-mapa-conteudo.md",
-      "bytes": 1231,
-      "sha256": "896e184b58f3372d7a71699702764a10580a4dadf95807fbc6beececd26da4f5"
+      "bytes": 2255,
+      "sha256": "55aae29ad33e6510a584309e4fb4954a0442eb1799fe0d23b24fce5e550e059e",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/04-conteudo/02-copy-provisoria-home.md",
-      "bytes": 2246,
-      "sha256": "1a5e74f3f43dd38ee4d88f65254bd79ad103f03e4640f7f8509eb097dd0bdb76"
+      "bytes": 4341,
+      "sha256": "6e03ad3fc03a79b02743b9cfef05203dcad1aeabf69dbfcc57c49f0c54a72f94",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/04-conteudo/03-servicos.md",
-      "bytes": 969,
-      "sha256": "69f7d7601f95e174b17f745ec72841eb70f10b222120f6af50af7694efbbe7ac"
+      "bytes": 1927,
+      "sha256": "0f95c04f7919c9a461c6e69097302c0108d77f0f33bf59a3a3a00b40ea1ebbd1",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/04-conteudo/04-aplicacao-publica.md",
-      "bytes": 748,
-      "sha256": "98714c2daa806ba9c70ca0cc9ff31730929e0234e0bfcce6b088e3c37020fb50"
+      "bytes": 1392,
+      "sha256": "f4b50ffe5088995f1c41af7b379db32137b01d0a75751597346784826828fd4e",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/04-conteudo/05-portfolio.md",
-      "bytes": 752,
-      "sha256": "05ef1fa029beef25856f9a44782a54b8bfe821a928ef1d68e814151f925c551e"
+      "bytes": 1189,
+      "sha256": "f28f7a09c53f45782f9a5a448d34a9d57fc7328313105d85b3033d95c51d7d09",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/04-conteudo/06-contato-politicas.md",
-      "bytes": 1295,
-      "sha256": "b50c1b61536e6f1eef85a1bbd257b449e65e6c2cba8b2814819a4f27e8b22a96"
+      "bytes": 1721,
+      "sha256": "7d2fc12deb879477d755c8b0487eaaeadcf642ee7b7ea4e46bcda39cc15bd5da",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/04-conteudo/07-seo-metadados.md",
-      "bytes": 965,
-      "sha256": "e98003743405dde6f1a04aa518b0fcb1fabb0cee23def62ec2cbceabb437a3c6"
+      "bytes": 1632,
+      "sha256": "141af48b77e1a7ffdedc9f5cb749a0d56ec28480d61489b33b423e585732fc4f",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/05-implementacao/01-arquitetura-static-first.md",
-      "bytes": 1182,
-      "sha256": "cb5d1aea20e0c903b8cd30d07df39aa0257bcc18a8434322afb534027c31816b"
+      "bytes": 2165,
+      "sha256": "00d30ab126b2daa6f46943373d38d62dcb5da7649c741a14e1e8a5c2c04b2686",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/05-implementacao/02-estrutura-pastas.md",
-      "bytes": 1674,
-      "sha256": "02dfbbdba0aee3ae9a6d2a2b32a819c16387bec3a639350df03ff24f6fa256ec"
+      "bytes": 2946,
+      "sha256": "fff16d758f348e10486544f48dfbd9bde8a6fbb8fdef30d250dd24d4555370c7",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/05-implementacao/03-componentes.md",
-      "bytes": 986,
-      "sha256": "52084a599051c18217ac0ff64e92c6361060338baac7d35bedcf4482ccb9daa8"
+      "bytes": 1698,
+      "sha256": "820f0932256347733a72a10523c8660dd5c337b5c3d8b522bb21d01599684ec9",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/05-implementacao/04-formulario-contato.md",
       "bytes": 2421,
-      "sha256": "435b03724154c713ee31d2747528cb2d80ac26b7eb7ef03f8f6353f5aa8d4f92"
+      "sha256": "435b03724154c713ee31d2747528cb2d80ac26b7eb7ef03f8f6353f5aa8d4f92",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/05-implementacao/05-deploy-configuracao.md",
       "bytes": 1219,
-      "sha256": "8e53902ca966a1c8920eb62d62a3f1cfb578ce1242e17110c6609a7eff6dee07"
+      "sha256": "8e53902ca966a1c8920eb62d62a3f1cfb578ce1242e17110c6609a7eff6dee07",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/05-implementacao/06-toolchain-ia.md",
-      "bytes": 1321,
-      "sha256": "13700573e5805ed8bddd4e60e4a83d02ede99ebd3c6f91e8f60202972310dacc"
+      "bytes": 2270,
+      "sha256": "f00e2782765bc3acde540636473a42bc238d9d8d426e1b23917a9e0f1e0a4a15",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/05-implementacao/07-fases-implementacao.md",
-      "bytes": 2068,
-      "sha256": "aa2f07b1254c666dfdc8a658a02718e5f00b2c278c567ed02f01e25ce2368f4a"
+      "bytes": 4477,
+      "sha256": "dca53d7355bca97220b1e13d222af597c4e29d089326b6e63548097df5ad0eb5",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/05-implementacao/08-guia-codex.md",
-      "bytes": 1154,
-      "sha256": "234742e6f549818cab025d7f6c0c351ec77b6ec416614593cfe26be009d564ea"
+      "bytes": 2802,
+      "sha256": "1b689be0c7a62a1fec0bd7a064a4ce7ffe24d65a51909cf35fb5ac730e6bdfe7",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/05-implementacao/09-manifesto-tecnologico.yaml",
-      "bytes": 1081,
-      "sha256": "aaaf66c39c7193650608a80f18843290cf9cca438b368403f8b49c47ef7f7237"
+      "bytes": 1637,
+      "sha256": "2bc4e4495f661e7dbe678096592277fffe69775c1802c7c95a582e23c7c6aa06",
+      "media_type": "application/yaml"
+    },
+    {
+      "path": "docs/05-implementacao/10-contrato-assets-animacao.md",
+      "bytes": 3719,
+      "sha256": "08f21b58d8533ec27d59b8b54820a54dd712b2053d303fc69b03fecb85e36793",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/05-implementacao/11-manifesto-capitulos-partitura.yaml",
+      "bytes": 3714,
+      "sha256": "4bae51e5182dcaa97d749a1c226f8220b9eec6907a92c1f9263d8e4b52e6f8a1",
+      "media_type": "application/yaml"
+    },
+    {
+      "path": "docs/05-implementacao/12-fluxo-golden-references.md",
+      "bytes": 3529,
+      "sha256": "7d6e6605866fb72d167a5ef17f2c0d1940a01f43de19e50ac80f5a37ed5586f5",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/06-seguranca/01-modelo-ameacas.md",
       "bytes": 1376,
-      "sha256": "14276171dd348edcb1d1dc8921fe4f017eb15c6d14fa7c9427f48065cc76b8be"
+      "sha256": "14276171dd348edcb1d1dc8921fe4f017eb15c6d14fa7c9427f48065cc76b8be",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/06-seguranca/02-controles-seguranca.md",
       "bytes": 910,
-      "sha256": "2275aae0057ea4ddbfc6b64a993e171081c3abf8e4f7f1748e5fbee66f170be7"
+      "sha256": "2275aae0057ea4ddbfc6b64a993e171081c3abf8e4f7f1748e5fbee66f170be7",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/06-seguranca/03-csp-headers.md",
       "bytes": 1584,
-      "sha256": "25973efab4eac358e03e56b38f0e9f0f2f7458958d2bf5312791f49020c7523a"
+      "sha256": "25973efab4eac358e03e56b38f0e9f0f2f7458958d2bf5312791f49020c7523a",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/06-seguranca/04-privacidade-logs.md",
       "bytes": 930,
-      "sha256": "77da17b0e19c8bc526ee1ad8f1b7f5ab52407802dc404af069a41363ad7ffd25"
+      "sha256": "77da17b0e19c8bc526ee1ad8f1b7f5ab52407802dc404af069a41363ad7ffd25",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/06-seguranca/05-checklist-release.md",
       "bytes": 918,
-      "sha256": "25251f0cec5c18c49ab0a707ead9c3d6a283d07e30134da492502ecb67915ab1"
+      "sha256": "25251f0cec5c18c49ab0a707ead9c3d6a283d07e30134da492502ecb67915ab1",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/07-qa/01-estrategia-testes.md",
-      "bytes": 649,
-      "sha256": "5d4622d97ea048b1a29f4325935a9fc66d958fa62927882893c4cac7259167d4"
+      "bytes": 1280,
+      "sha256": "ced7d86f0b7ff081dba5ae908f5c9c715aa3a43f2d4ff798015f470e131b34cb",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/07-qa/02-testes-motion-visual.md",
-      "bytes": 1158,
-      "sha256": "74d6de64e19d362928d38fc0dd5a1fee7c9a3f8faed578f8b97580e8ac2df578"
+      "bytes": 2843,
+      "sha256": "e207030499155fd381e6d9e0aa4e450b39b32a5aa8a2f46ee1ba9d8609f718f3",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/07-qa/03-testes-acessibilidade.md",
-      "bytes": 667,
-      "sha256": "525f0aad1cfef942c03e4bd2f02528017896e50acbf360c8e46b943cf05575e9"
+      "bytes": 1496,
+      "sha256": "4afb9a641b60580210a0de3d160066bdd5beec4ac36f679a160b7716d928da7d",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/07-qa/04-testes-seguranca-formulario.md",
       "bytes": 988,
-      "sha256": "0cf295e71078d3efef00d4e7aa450c7f9f9b5229dafe3dda3d3114a5cf37049d"
+      "sha256": "0cf295e71078d3efef00d4e7aa450c7f9f9b5229dafe3dda3d3114a5cf37049d",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/07-qa/05-criterios-aceite.md",
-      "bytes": 1935,
-      "sha256": "0cfbb03925dc140da506632e29c1b97b25c2ca3498d1bd8442cecd8147c9b670"
+      "bytes": 3684,
+      "sha256": "e98772df5a9969c6e436f0937fcf0676dbb033d99fa4a5e1342850a195604745",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/07-qa/06-qa-animacao-entrada.md",
-      "bytes": 4727,
-      "sha256": "2bbef1a19e35d24184e6bdcc2e7c64d523003dd701255e87c0e2223685a5f18a"
+      "bytes": 4100,
+      "sha256": "665243689599bfd536ed0fac447287693d9a51c73af9e88c3876f83380c198aa",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/07-qa/07-qa-dupla-partitura-tablet.md",
+      "bytes": 3316,
+      "sha256": "eeaf15f3ace1cd29894440ba47f6c01ad778b2a0ad3f2897d934de301f3325aa",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/08-operacao/01-observabilidade-incidentes.md",
       "bytes": 753,
-      "sha256": "13f804e5587c8fa0ccf699e2ca9da4ccdac66e994f1432f1714795f67251c198"
+      "sha256": "13f804e5587c8fa0ccf699e2ca9da4ccdac66e994f1432f1714795f67251c198",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/08-operacao/02-manutencao-dependencias.md",
       "bytes": 729,
-      "sha256": "083c53133835b55a01807b33ea840919b568c0ae9decea389da37695b9a2ffe2"
+      "sha256": "083c53133835b55a01807b33ea840919b568c0ae9decea389da37695b9a2ffe2",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/09-referencias/01-fontes-oficiais.md",
       "bytes": 1726,
-      "sha256": "c4341910241a5cf2fcaf1613561d03bfc431b54660028c7c42e6f902ae9ba770"
+      "sha256": "c4341910241a5cf2fcaf1613561d03bfc431b54660028c7c42e6f902ae9ba770",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/ID-MAP.md",
+      "bytes": 2048,
+      "sha256": "3a5b975d42ea95614668915a76a79cdd136529cb8adfca03e2f9bc57aba0129d",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 1992,
+      "sha256": "3a4b4813f5b9dc3eb24202bd54cc218bb23ffb72fcc4188176293ccfa8338e3a",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/LOGO/README.md",
+      "bytes": 1236,
+      "sha256": "0cac3a7e7dba8c94285516c2f1ebaefaebdb0d101d0fd353cca6f980bf1e6894",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/LOGO/docs/ID-MAP-ANIMACAO.md",
+      "bytes": 1893,
+      "sha256": "5252969ab3c98b32e0da91de06260746c24ab073e5445f6b199480d2680d5baf",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/LOGO/docs/INSTRUCOES-INK-TRANSFER.md",
+      "bytes": 1618,
+      "sha256": "464569ea34a4c68570633223399c70589ae82ab979d033ea7a2205f70f7b158f",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/LOGO/docs/MATRIZ-DE-ENTREGAVEIS.md",
+      "bytes": 884,
+      "sha256": "d94719be040a7c1fab7e1cde0092ff31ac26b37e2c1ee4b33fa47fab3206bb5f",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/LOGO/favicon/favicon-16.png",
+      "bytes": 424,
+      "sha256": "b05ad2bdebd831e44613885fd534498248c6ceccf3a68a00e7dc0ecda14827bc",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/favicon/favicon-180.png",
+      "bytes": 3553,
+      "sha256": "474a9395582c72586ef0b532defb3b42ca6ac6e801ab5360520316ee9c7244b7",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/favicon/favicon-192.png",
+      "bytes": 3825,
+      "sha256": "6432e53fcdf0baa79fc28861ca6ca97ba59d3da0fb96a1ff2b7bcc33d95809de",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/favicon/favicon-32.png",
+      "bytes": 678,
+      "sha256": "07d60f14920a3230801c094b3d245e594ec088d79fa4502a66d5f5f32480db8e",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/favicon/favicon-48.png",
+      "bytes": 1029,
+      "sha256": "e5c4858a3ad4676fbbd6f859dc11b4a4a416d69b1705d3a2fdc7876eac23ae3a",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/favicon/favicon-512.png",
+      "bytes": 10787,
+      "sha256": "f6bab89863a7a90dab519c22b959f427b4098478d57337e567e39cb8ce5de816",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/favicon/favicon-64.png",
+      "bytes": 1364,
+      "sha256": "e167e369989b449c95956e7edb4dbd89d1bd578f86db5d0edf73d173c7787434",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/favicon/favicon.ico",
+      "bytes": 15086,
+      "sha256": "2db3ca98350efb06d1f567733bc7daa04e263b0c15f32e8e5fe12b553be61c35",
+      "media_type": "image/vnd.microsoft.icon"
+    },
+    {
+      "path": "docs/design-reference/LOGO/favicon/favicon.svg",
+      "bytes": 981,
+      "sha256": "37c87a976ccae9a5c81c72e3ecbfb1dc78b75c0fab2a15baa72ff86e545e8699",
+      "media_type": "image/svg+xml"
+    },
+    {
+      "path": "docs/design-reference/LOGO/png/wflyer-horizontal-black-4096.png",
+      "bytes": 78617,
+      "sha256": "39649fc3f86bf01c24544903587ee5d8258ac9c48baf22a6ea5ed51c79bbfa8e",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/png/wflyer-horizontal-gradient-4096.png",
+      "bytes": 170982,
+      "sha256": "abe1678f6c2049d1d5e28a26cb26b3343ef2274bfc1db963637933ae017b2204",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/png/wflyer-horizontal-white-4096.png",
+      "bytes": 78617,
+      "sha256": "39649fc3f86bf01c24544903587ee5d8258ac9c48baf22a6ea5ed51c79bbfa8e",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/png/wflyer-symbol-black-2048.png",
+      "bytes": 49210,
+      "sha256": "11a38adac9998316d7e4d41c111d0fc801833f973fad61b63b3bd27c7658244f",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/png/wflyer-vertical-black-2048.png",
+      "bytes": 62540,
+      "sha256": "f3698b1ff847e03059a0c47451f1593b5492c988d9abf6dbd1ca2b0fcd3deeaf",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/source/wflyer-approved-reference-clean.png",
+      "bytes": 43133,
+      "sha256": "fe89f72c4783aa1b19128142e1e75529a26ab15c14efbd1dffa723fba29e6646",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/LOGO/svg/lockups/wflyer-compact.svg",
+      "bytes": 986,
+      "sha256": "939b9e0895a47700a100978bad4ae929361081a81cee0e43bda532704898b689",
+      "media_type": "image/svg+xml"
+    },
+    {
+      "path": "docs/design-reference/LOGO/svg/lockups/wflyer-lockup-horizontal.svg",
+      "bytes": 3740,
+      "sha256": "5012428a88345c33a1ea3dcd567c69024c40fabf7c6e8e77f395ccf86379540e",
+      "media_type": "image/svg+xml"
+    },
+    {
+      "path": "docs/design-reference/LOGO/svg/lockups/wflyer-lockup-vertical.svg",
+      "bytes": 3859,
+      "sha256": "b9ead0b77aba087725dcdf2528cb1d0269145d0062128384dc206c10a92d25ef",
+      "media_type": "image/svg+xml"
+    },
+    {
+      "path": "docs/design-reference/LOGO/svg/master/wflyer-animation-base.svg",
+      "bytes": 4378,
+      "sha256": "063e18379b60c83f074204a20d7395be73bef203257c5edd975c548d5c3d435f",
+      "media_type": "image/svg+xml"
+    },
+    {
+      "path": "docs/design-reference/LOGO/svg/master/wflyer-logo-master.svg",
+      "bytes": 3740,
+      "sha256": "5012428a88345c33a1ea3dcd567c69024c40fabf7c6e8e77f395ccf86379540e",
+      "media_type": "image/svg+xml"
+    },
+    {
+      "path": "docs/design-reference/LOGO/svg/master/wflyer-symbol.svg",
+      "bytes": 934,
+      "sha256": "d53df1bac661d6d75d86e1c46539bc0f908eb32a34579016ab148634567dbce5",
+      "media_type": "image/svg+xml"
+    },
+    {
+      "path": "docs/design-reference/LOGO/svg/master/wflyer-wordmark.svg",
+      "bytes": 2984,
+      "sha256": "cc0321b3a480b22b8bb71c0372c7aa95de63d2598b9a0cbf841adb08314efcbd",
+      "media_type": "image/svg+xml"
+    },
+    {
+      "path": "docs/design-reference/LOGO/svg/variants/wflyer-brand-gradient.svg",
+      "bytes": 3966,
+      "sha256": "b5ed548189764aa73864c26975c3f92014459c9a9a4264f9df200f4b797eb6b9",
+      "media_type": "image/svg+xml"
+    },
+    {
+      "path": "docs/design-reference/LOGO/svg/variants/wflyer-monochrome.svg",
+      "bytes": 3740,
+      "sha256": "5012428a88345c33a1ea3dcd567c69024c40fabf7c6e8e77f395ccf86379540e",
+      "media_type": "image/svg+xml"
+    },
+    {
+      "path": "docs/design-reference/LOGO/svg/variants/wflyer-on-dark.svg",
+      "bytes": 3735,
+      "sha256": "1f5ca8e9f4d32e995c8b2f382ad5a2afb0ae090e0d76fef121449e7de9da3547",
+      "media_type": "image/svg+xml"
+    },
+    {
+      "path": "docs/design-reference/LOGO/svg/variants/wflyer-on-light.svg",
+      "bytes": 3735,
+      "sha256": "27968c4f1d373b0c874da028ae138c22a9f1bd516293c8a4b51c24c2ad711133",
+      "media_type": "image/svg+xml"
     },
     {
       "path": "docs/design-reference/README.md",
-      "bytes": 573,
-      "sha256": "59a2083fbe2e3b459d8f422770e3b45ea3a97711039c9ee50245c59afcdf723d"
+      "bytes": 1144,
+      "sha256": "3f56d194e40e296e33fe9e3922fede49952ac0845a9733e07802f0dd1da7f23f",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/design-reference/brand-intro/README.md",
       "bytes": 1018,
-      "sha256": "cb7bdf0402b2a559621769ef6d1f1837e88ad7b9dd9903d01c826e9d417399c8"
+      "sha256": "cb7bdf0402b2a559621769ef6d1f1837e88ad7b9dd9903d01c826e9d417399c8",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/design-reference/brand-intro/source-assets/ID-MAP-ANIMACAO.md",
       "bytes": 1893,
-      "sha256": "5252969ab3c98b32e0da91de06260746c24ab073e5445f6b199480d2680d5baf"
+      "sha256": "5252969ab3c98b32e0da91de06260746c24ab073e5445f6b199480d2680d5baf",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/design-reference/brand-intro/source-assets/INSTRUCOES-INK-TRANSFER.md",
       "bytes": 1618,
-      "sha256": "464569ea34a4c68570633223399c70589ae82ab979d033ea7a2205f70f7b158f"
+      "sha256": "464569ea34a4c68570633223399c70589ae82ab979d033ea7a2205f70f7b158f",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/design-reference/brand-intro/source-assets/wflyer-animation-base.svg",
       "bytes": 4378,
-      "sha256": "063e18379b60c83f074204a20d7395be73bef203257c5edd975c548d5c3d435f"
+      "sha256": "063e18379b60c83f074204a20d7395be73bef203257c5edd975c548d5c3d435f",
+      "media_type": "image/svg+xml"
     },
     {
       "path": "docs/design-reference/brand-intro/source-assets/wflyer-on-dark.svg",
       "bytes": 3735,
-      "sha256": "1f5ca8e9f4d32e995c8b2f382ad5a2afb0ae090e0d76fef121449e7de9da3547"
+      "sha256": "1f5ca8e9f4d32e995c8b2f382ad5a2afb0ae090e0d76fef121449e7de9da3547",
+      "media_type": "image/svg+xml"
     },
     {
       "path": "docs/design-reference/brand-intro/source-assets/wflyer-on-light.svg",
       "bytes": 3735,
-      "sha256": "27968c4f1d373b0c874da028ae138c22a9f1bd516293c8a4b51c24c2ad711133"
+      "sha256": "27968c4f1d373b0c874da028ae138c22a9f1bd516293c8a4b51c24c2ad711133",
+      "media_type": "image/svg+xml"
     },
     {
       "path": "docs/design-reference/components/README.md",
-      "bytes": 342,
-      "sha256": "bd7b7b5dbdefb975cd54f00763ff982c3d115ae717384975befb4ae53ada5c58"
+      "bytes": 963,
+      "sha256": "379f58f887f0a91edfd4dcd9fc12ea9d94f953f43d63f634fcee4f547e4ea7fe",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/GENERATION-BRIEF.md",
+      "bytes": 3127,
+      "sha256": "adb282f2695cf1966f6012c75d4f26008fbb778f86b4a6bcaeb0c87b6b868d11",
+      "media_type": "text/markdown"
     },
     {
       "path": "docs/design-reference/golden-pages/README.md",
-      "bytes": 406,
-      "sha256": "00e1aaeb90dfd647e204e8373c4b56318c12c12632fc6863282e6b7471954312"
+      "bytes": 1421,
+      "sha256": "cfd33e4a3ead2a2174ddd20ceec0004af43b7d77a0d77c7b7a05183815e4f90c",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/STATUS.md",
+      "bytes": 1807,
+      "sha256": "5b14f6303ba53625bea5f219a68a4cb8da4c7e059387f79a823f5d63ac6eb426",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/application/application-desktop-light.png",
+      "bytes": 1498801,
+      "sha256": "d69ce4dac5b6bc5576286f40a471ce5fe00a1f5d69e4fbf063309d330d27da5d",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/application/application-desktop-light.spec.yaml",
+      "bytes": 1305,
+      "sha256": "5b3f887bf987b228788e3a5da8cba45ad0cbf70cc8e53f69714cc2b491b4e4bc",
+      "media_type": "application/yaml"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/01-application-desktop-dark.md",
+      "bytes": 674,
+      "sha256": "f28ae16e9e680da2a307e1a915f701153c1f60e2868f646de1b823e1b2bff662",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/02-how-it-works-desktop.md",
+      "bytes": 760,
+      "sha256": "007f190202a2b6e91ee408892e6ccfae587ad79b0f9e8fb0ee86e409678870f9",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/03-benefits-desktop.md",
+      "bytes": 594,
+      "sha256": "ee7404338ae158534c311534cc76da2df10b3ef08ad38949c880dcf7f90a84fc",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/04-company-desktop.md",
+      "bytes": 581,
+      "sha256": "d4a56b0ab396ca1eae0c7937aec19c1b9449be0a5845b3ef2cda343a497470d6",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/05-process-desktop.md",
+      "bytes": 663,
+      "sha256": "e065adb575951ca22565a1791f93a9f58eaced413dc8019f448af6a6c183defd",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/06-home-individual.md",
+      "bytes": 543,
+      "sha256": "822ffff5550bd5e8a9d6f62710e0a1977ef451d1ed7c76f35d8cbb83a993489b",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/07-services-individual.md",
+      "bytes": 525,
+      "sha256": "8fd307f9c3ac0b39ec18720750637cb44c2410b5a65accb1d7653f0865d9c2c2",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/08-portfolio-individual.md",
+      "bytes": 608,
+      "sha256": "054d8dcbc76efb7f382468b964b2e3b5006af9e91e837e8fc1e7168f26b22dab",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/09-contact-individual.md",
+      "bytes": 602,
+      "sha256": "56f0275d85cf79d4ca4e4ffb7e872d332bc872916143dcbc3524e7c998e64c3d",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/10-footer-individual.md",
+      "bytes": 651,
+      "sha256": "506b8165224c28f1e2dcf55fa9cdd493bb115c14299bb50469add99266150138",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/11-service-detail-pages.md",
+      "bytes": 529,
+      "sha256": "a49bb8414501c7ac0620469d5e35ced7b1e4557ce9dbfb806f143757c60daa14",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/12-mobile-adaptation.md",
+      "bytes": 544,
+      "sha256": "bd66de9575ae1069a9d35543f03c8f142047c013b4bd137eb14e70d96f5543a9",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/briefs/README.md",
+      "bytes": 627,
+      "sha256": "609cb519d9b16489574dd73315a8d43c715913e129cc2c3ff776388a33714b91",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/master/wflyer-approved-master-board.png",
+      "bytes": 2045902,
+      "sha256": "571d5b40a24127a6eac7b62f07ae08a64f633c203c250c41bde63570475f2fcd",
+      "media_type": "image/png"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/master/wflyer-approved-master-board.spec.yaml",
+      "bytes": 752,
+      "sha256": "51548282f94319f4e61d0082ae5bcdcfa7f06af1c4860bdd0c21496ed6bc55c0",
+      "media_type": "application/yaml"
+    },
+    {
+      "path": "docs/design-reference/golden-pages/page-matrix.yaml",
+      "bytes": 4316,
+      "sha256": "c41bab13568ae93c74d66387dbebb3954318dea4e3ed00ab90db7e4969a07072",
+      "media_type": "application/yaml"
     },
     {
       "path": "docs/design-reference/inspiration/manifest.yaml",
       "bytes": 1799,
-      "sha256": "87e4bbd8836d66ac6d5bb67d39876d02ea97aa3ae875d064ac92eaa42615eb2b"
+      "sha256": "87e4bbd8836d66ac6d5bb67d39876d02ea97aa3ae875d064ac92eaa42615eb2b",
+      "media_type": "application/yaml"
     },
     {
       "path": "docs/design-reference/inspiration/ref-01-clave-pauta-horizontal.jpeg",
       "bytes": 22165,
-      "sha256": "0fc45256eb40009b4c367ef1e390e76849cead4bde16062a16bfa409eb47d40a"
+      "sha256": "0fc45256eb40009b4c367ef1e390e76849cead4bde16062a16bfa409eb47d40a",
+      "media_type": "image/jpeg"
     },
     {
       "path": "docs/design-reference/inspiration/ref-02-clave-central-compassos.jpeg",
       "bytes": 26434,
-      "sha256": "304ce0d9f322ab42c03c4f1f010d6861701e155172fe3489924ec7d995c2fab8"
+      "sha256": "304ce0d9f322ab42c03c4f1f010d6861701e155172fe3489924ec7d995c2fab8",
+      "media_type": "image/jpeg"
     },
     {
       "path": "docs/design-reference/inspiration/ref-03-partitura-dourada.webp",
       "bytes": 57404,
-      "sha256": "0327eb2ff46f124c3ac94b58e5e9c850359ec8ac8383657827f8402d9eb8e52a"
+      "sha256": "0327eb2ff46f124c3ac94b58e5e9c850359ec8ac8383657827f8402d9eb8e52a",
+      "media_type": "image/webp"
     },
     {
       "path": "docs/design-reference/inspiration/ref-04-partitura-curva-dourada.webp",
       "bytes": 21452,
-      "sha256": "07cef3b7b2e827bbb37184f559e0279bab871f5ddfe1a2354a40b382cafd6918"
+      "sha256": "07cef3b7b2e827bbb37184f559e0279bab871f5ddfe1a2354a40b382cafd6918",
+      "media_type": "image/webp"
     },
     {
       "path": "docs/design-reference/inspiration/ref-05-partitura-ondulada.jpeg",
       "bytes": 43865,
-      "sha256": "a58b772280ad54f9e8764109ea6d56f4174aa404fc42d5b2a6ef103b9c603aa8"
+      "sha256": "a58b772280ad54f9e8764109ea6d56f4174aa404fc42d5b2a6ef103b9c603aa8",
+      "media_type": "image/jpeg"
+    },
+    {
+      "path": "docs/design-reference/reference-manifest.json",
+      "bytes": 940,
+      "sha256": "06e003c941e4165db46300dfd1d423f2cacba625426486ebbfa8832d2c25f549",
+      "media_type": "application/json"
+    },
+    {
+      "path": "docs/design-reference/schemas/golden-page-spec.schema.json",
+      "bytes": 3029,
+      "sha256": "a996e516d73a13049d625f3ff2b397f84062c028d3b6d54a48b1ad98e547e6b4",
+      "media_type": "application/json"
     },
     {
       "path": "docs/design-reference/schemas/reference-manifest.schema.json",
-      "bytes": 702,
-      "sha256": "f96cf32de553fd3bad59bb4a01da1155aa471336f2582f6f82a5ec5bf320d3f9"
+      "bytes": 1069,
+      "sha256": "6f89261e483f1e173cd7adb5a152c631a4ab3cc9e8ef3aca1f858c0a8fdd0af1",
+      "media_type": "application/json"
     },
     {
       "path": "docs/design-reference/storyboards/README.md",
-      "bytes": 538,
-      "sha256": "9c3f53f39c8cd8a4a7b281566610638566c31402571919b85bfe2ad832940ca0"
+      "bytes": 1442,
+      "sha256": "fb34d0661bdf8bdd37c6c385bea2b70233110f4661bdce058e646a6c3462d4bf",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 1218,
+      "sha256": "bb0a6e6a0e9ea7bbe757d5bce2c5d1c5a3bd629fdc3a8aac6828113b674132fd",
+      "media_type": "application/json"
     },
     {
       "path": "openspec/README.md",
       "bytes": 498,
-      "sha256": "21f37c31e681c4130083ac0b25899fce16bb34ebf4252793d06d05537ebe3677"
+      "sha256": "21f37c31e681c4130083ac0b25899fce16bb34ebf4252793d06d05537ebe3677",
+      "media_type": "text/markdown"
     },
     {
       "path": "openspec/templates/acceptance.md",
       "bytes": 236,
-      "sha256": "ca8dc3bdd63b2cdfd9e828d2f0a3540f6dfa93c094f8bc00009b0a4e7e6a97c5"
+      "sha256": "ca8dc3bdd63b2cdfd9e828d2f0a3540f6dfa93c094f8bc00009b0a4e7e6a97c5",
+      "media_type": "text/markdown"
     },
     {
       "path": "openspec/templates/design.md",
       "bytes": 129,
-      "sha256": "a9f455aaad673fc2b7bb551f149dfc80b4dda6e43dc5f5b130b5bab2feb6e303"
+      "sha256": "a9f455aaad673fc2b7bb551f149dfc80b4dda6e43dc5f5b130b5bab2feb6e303",
+      "media_type": "text/markdown"
     },
     {
       "path": "openspec/templates/proposal.md",
       "bytes": 187,
-      "sha256": "8f4dd26e85836c9a3c703b0311aae98f88b894c6c4fef37ed34066d1dedcdea2"
+      "sha256": "8f4dd26e85836c9a3c703b0311aae98f88b894c6c4fef37ed34066d1dedcdea2",
+      "media_type": "text/markdown"
     },
     {
       "path": "openspec/templates/tasks.md",
       "bytes": 211,
-      "sha256": "f6d75b6904ac7495ea384aa9f49a86b20c075e0fdf5c660f243aa894bee535d2"
+      "sha256": "f6d75b6904ac7495ea384aa9f49a86b20c075e0fdf5c660f243aa894bee535d2",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "validation-report.json",
+      "bytes": 1060,
+      "sha256": "0e5e46ec53f897f6ff4cc34bef293b8579faa6f6617d9a8dcfe7a8351751540c",
+      "media_type": "application/json"
+    },
+    {
+      "path": "visual-docs-validation.json",
+      "bytes": 2118,
+      "sha256": "43730ab6df4075c0245ae287214b14f3ecd9773f5bc8213fe0fa11183d5994b7",
+      "media_type": "application/json"
     }
+  ],
+  "excluded_from_this_manifest": [
+    "index.html",
+    "package-lock.json",
+    "review/**",
+    "svg/**",
+    ".serena/**",
+    ".git/**",
+    "DOCUMENTATION_MANIFEST.json",
+    "PATCH-MANIFEST.json",
+    "SHA256SUMS.txt"
   ]
 }

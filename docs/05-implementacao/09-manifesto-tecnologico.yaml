@@ -1,12 +1,14 @@
 project: wflyer-site
 status: normative
-updated_at: 2026-07-27
+updated_at: 2026-07-29
 architecture:
   classification: static-first
   pure_static_export: false
   database: prohibited-v1
   cms: prohibited-v1
   runtime_ai: prohibited-v1
+  page_model: route-based-score-chapters
+  visual_reference_gate: required
 runtime:
   node: "24 LTS"
   package_manager: pnpm
@@ -21,12 +23,15 @@ framework:
 styling:
   tailwind: "4"
   css_custom_properties: true
+  css_3d: allowed-for-tablet-shell
 motion:
   gsap: "3"
   allowed_plugins:
     - ScrollTrigger
   react_adapter: "@gsap/react"
   native_scroll: true
+  route_transitions: gsap-only
+  reduced_motion: required
   prohibited:
     - animejs
     - motion
@@ -35,10 +40,23 @@ motion:
     - lenis
     - threejs
     - react-three-fiber
+    - webgl
     - lottie
 content:
   mdx_local: true
   typed_objects: true
+  fabricated_metrics: prohibited
+visual_references:
+  directory: docs/design-reference
+  runtime_import: prohibited
+  production_shipping: prohibited
+  individual_approval: required
+application_demo:
+  dom_screen: required
+  local_deterministic_data: required
+  network_calls: prohibited
+  uploads: prohibited
+  real_music_processing: prohibited
 contact:
   endpoint: /api/contact
   validation: zod
@@ -52,6 +70,7 @@ testing:
   e2e: playwright
   accessibility: axe-core
   performance: lighthouse-ci
+  visual_regression: required
 deployment:
   mode: next-standalone-docker
   edge: cloudflare

@@ -1,0 +1,143 @@
+version: "1.0"
+status: normative
+updated_at: 2026-07-29
+viewports:
+  desktop: { width: 1536, height: 1024 }
+  mobile: { width: 390, height: 844 }
+master:
+  file: master/wflyer-approved-master-board.png
+  status: approved
+  sha256: 571d5b40a24127a6eac7b62f07ae08a64f633c203c250c41bde63570475f2fcd
+pages:
+  - id: home
+    route: /
+    branch: origin
+    coordinate: 0
+    terminal: false
+    references:
+      desktop_light: approved-master-panel
+      desktop_dark: approved-master-panel
+      mobile_light: pending-generation
+      mobile_dark: pending-generation
+
+  - id: application
+    route: /aplicacao-wflyer
+    branch: application
+    coordinate: -1
+    terminal: false
+    references:
+      desktop_light:
+        status: approved
+        file: application/application-desktop-light.png
+        spec: application/application-desktop-light.spec.yaml
+        sha256: d69ce4dac5b6bc5576286f40a471ce5fe00a1f5d69e4fbf063309d330d27da5d
+      desktop_dark: pending-generation
+      mobile_light: pending-generation
+      mobile_dark: pending-generation
+
+  - id: application-how-it-works
+    route: /aplicacao-wflyer/como-funciona
+    branch: application
+    coordinate: -2
+    terminal: false
+    references:
+      desktop_light: pending-generation
+      desktop_dark: pending-generation
+      mobile_light: pending-generation
+      mobile_dark: pending-generation
+
+  - id: application-benefits
+    route: /aplicacao-wflyer/beneficios
+    branch: application
+    coordinate: -3
+    terminal: true
+    references:
+      desktop_light: pending-generation
+      desktop_dark: pending-generation
+      mobile_light: pending-generation
+      mobile_dark: pending-generation
+
+  - id: company
+    route: /sobre
+    branch: institutional
+    coordinate: 1
+    terminal: false
+    references:
+      desktop_light: pending-generation
+      desktop_dark: pending-generation
+      mobile_light: pending-generation
+      mobile_dark: pending-generation
+
+  - id: services
+    route: /servicos
+    branch: institutional
+    coordinate: 2
+    terminal: false
+    references:
+      desktop_light: approved-master-panel
+      desktop_dark: approved-master-panel
+      mobile_light: pending-generation
+      mobile_dark: pending-generation
+
+  - id: process
+    route: /processo
+    branch: institutional
+    coordinate: 3
+    terminal: false
+    references:
+      desktop_light: pending-generation
+      desktop_dark: pending-generation
+      mobile_light: pending-generation
+      mobile_dark: pending-generation
+
+  - id: portfolio
+    route: /portfolio
+    branch: institutional
+    coordinate: 4
+    terminal: false
+    references:
+      desktop_light: approved-master-panel
+      desktop_dark: approved-master-panel
+      mobile_light: pending-generation
+      mobile_dark: pending-generation
+
+  - id: contact
+    route: /contato
+    branch: institutional
+    coordinate: 5
+    terminal: true
+    references:
+      desktop_light: approved-master-panel
+      desktop_dark: approved-master-panel
+      mobile_light: pending-generation
+      mobile_dark: pending-generation
+
+
+shared_components:
+  - id: footer
+    route_scope: global
+    coordinate: null
+    terminal: false
+    references:
+      desktop_light: approved-master-panel
+      desktop_dark: approved-master-panel
+      mobile_light: pending-generation
+      mobile_dark: pending-generation
+
+auxiliary_pages:
+  - id: service-sites
+    route: /servicos/criacao-de-sites
+    parent: services
+    references: { desktop_light: pending-generation, desktop_dark: pending-generation, mobile_light: pending-generation, mobile_dark: pending-generation }
+  - id: service-applications
+    route: /servicos/criacao-de-aplicacoes
+    parent: services
+    references: { desktop_light: pending-generation, desktop_dark: pending-generation, mobile_light: pending-generation, mobile_dark: pending-generation }
+  - id: service-integrations
+    route: /servicos/integracoes
+    parent: services
+    references: { desktop_light: pending-generation, desktop_dark: pending-generation, mobile_light: pending-generation, mobile_dark: pending-generation }
+  - id: service-custom
+    route: /servicos/solucoes-sob-medida
+    parent: services
+    references: { desktop_light: pending-generation, desktop_dark: pending-generation, mobile_light: pending-generation, mobile_dark: pending-generation }

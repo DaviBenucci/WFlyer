@@ -1,106 +1,77 @@
 # Especificação da homepage
 
-## Visão geral
+## Função
 
-A homepage alterna fluxo vertical e uma cena horizontal controlada pelo scroll.
+A Home é o ponto zero da composição e apresenta simultaneamente os dois caminhos da W_Flyer. Ela não é um capítulo entre Aplicação e Empresa; é a origem comum das duas partituras.
+
+## Estrutura aprovada
 
 ```text
-Prelúdio vertical
-      ↓
-Cena musical horizontal
-Aplicação → Como funciona → Benefícios → W_Flyer → Empresa → Serviços
-      ↓
-Fluxo vertical
-Processo → Portfólio → Contato → Rodapé
+Header em compassos
+────────────────────────────────────────────────────
+Mensagem da aplicação   CLAVE DE SOL   Mensagem institucional
+CTA aplicação                              CTA serviços
+     pauta segue para a esquerda ←  → pauta segue para a direita
+────────────────────────────────────────────────────
+Indicação discreta de exploração
 ```
 
-## 1. Prelúdio
+## Elementos obrigatórios
 
-**Objetivo:** apresentar a marca e ensinar que a página responde ao scroll.
+- símbolo oficial no centro do header;
+- clave de sol tridimensional ou volumétrica no centro do hero, como elemento narrativo;
+- bloco da aplicação à esquerda;
+- bloco da empresa/serviços à direita;
+- dois CTAs principais com peso equivalente;
+- duas pautas onduladas saindo visualmente da região da clave;
+- notas coerentes com cada pauta;
+- indicação discreta de que existem dois caminhos;
+- tema claro e escuro equivalentes em estrutura.
 
-Elementos:
+## Conteúdo da esquerda
 
-- marca textual `W_Flyer`;
-- frase provisória;
-- pauta surgindo ao fundo;
-- CTA `Conhecer a W_Flyer`;
-- CTA secundário `Acessar aplicação`;
-- indicação discreta de scroll.
+- título centrado na transformação musical;
+- descrição pública curta;
+- CTA `Acessar aplicação` ou `Conhecer aplicação`;
+- CTA secundário para explorar o ramo;
+- nenhuma descrição de motor interno.
 
-A clave provisória pode ser desenhada após as linhas, mas deve estar marcada no código como temporária.
+## Conteúdo da direita
 
-## 2. Cena horizontal
+- título centrado em soluções digitais sob medida;
+- descrição dos tipos de serviço;
+- CTA `Conheça nossos serviços`;
+- CTA secundário para a empresa, quando necessário.
 
-A seção tem altura suficiente para mapear o progresso vertical em deslocamento horizontal. O viewport é fixado temporariamente apenas no desktop.
+## Comportamento da bifurcação
 
-### Capítulo A — Aplicação W_Flyer
+- a pauta esquerda se enfatiza ao focar/hover um elemento do ramo da aplicação;
+- a pauta direita se enfatiza ao focar/hover um elemento do ramo institucional;
+- a ênfase usa cor, opacidade e pequeno deslocamento de nota, nunca deformação do path;
+- ao selecionar um ramo, a transição segue a direção correspondente;
+- nenhuma direção é escolhida automaticamente pelo scroll;
+- o símbolo central do header sempre retorna a este estado.
 
-- problema público;
-- proposta de valor;
-- status de produto;
-- CTA para página da aplicação.
+## Relação com a abertura oficial
 
-### Capítulo B — Como funciona
+A abertura termina na Home real:
 
-Somente etapas públicas:
+1. símbolo chega ao header;
+2. compassos do header crescem para os lados;
+3. a clave narrativa aparece no hero;
+4. duas pautas são desenhadas a partir do centro;
+5. conteúdo da aplicação entra pela esquerda;
+6. conteúdo institucional entra pela direita;
+7. CTAs e navegação tornam-se interativos.
 
-1. inserir ou selecionar a partitura;
-2. indicar o contexto musical necessário;
-3. receber resultado para revisão e uso.
+A Home deve existir e estar legível antes do término da timeline. Em reduced motion, ela aparece diretamente no estado final.
 
-Não mencionar arquitetura interna.
+## Proibições
 
-### Capítulo C — Benefícios
-
-- reduzir trabalho repetitivo;
-- apoiar adaptação entre instrumentos;
-- centralizar uma experiência musical;
-- manter revisão humana.
-
-### Capítulo D — Centro W_Flyer
-
-Trecho mais estável, quase horizontal. A marca textual atua como ponte entre produto e empresa.
-
-### Capítulo E — Empresa
-
-- propósito;
-- forma de trabalho;
-- compromisso com clareza, segurança e manutenção.
-
-### Capítulo F — Serviços
-
-Quatro compassos maiores:
-
-- sites;
-- aplicações;
-- integrações;
-- soluções sob medida.
-
-## 3. Processo
-
-Fluxo vertical em quatro etapas:
-
-1. descoberta;
-2. definição;
-3. implementação;
-4. validação e evolução.
-
-## 4. Portfólio
-
-Enquanto não existirem cases públicos:
-
-- mostrar estado `Projetos selecionados serão publicados em breve`;
-- permitir projeto próprio claramente marcado como `produto em desenvolvimento`;
-- não inventar métricas, clientes ou depoimentos.
-
-## 5. Contato
-
-- título direto;
-- formulário;
-- informação de uso dos dados;
-- canal institucional alternativo quando disponível;
-- status acessível de envio.
-
-## 6. Rodapé
-
-As notas diminuem, a pauta converge para uma barra dupla e permanecem marca e links institucionais.
+- wordmark grande central competindo com a clave;
+- terceira trilha narrativa;
+- scroll horizontal obrigatório;
+- pauta como mero wallpaper sem conexão com a navegação;
+- partículas em loop permanente;
+- conteúdo fictício;
+- vídeo como hero principal.

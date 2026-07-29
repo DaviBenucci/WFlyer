@@ -1,19 +1,21 @@
 # Arquitetura de componentes
 
+## Marca
+
+- `OfficialBrandSymbol`
+- `OfficialBrandLockup`
+- `BrandIntroOverlay`
+
 ## Navegação
 
 - `SiteHeader`
 - `ApplicationMeasureGroup`
-- `CompanyMeasureGroup`
+- `InstitutionalMeasureGroup`
 - `NavigationMeasure`
 - `MobileScoreMenu`
 - `ThemeToggle`
-- `ScrollProgressNote`
-
-## Marca provisória
-
-- `TextBrand`
-- `ProvisionalBrandMark`
+- `ChapterNavigation`
+- `BranchIndicator`
 
 ## Partitura
 
@@ -21,22 +23,46 @@
 - `StaffPath`
 - `MusicalNote`
 - `MeasureBar`
-- `ScoreChapter`
-- `HorizontalScoreStage`
+- `FinalBarline`
+- `ScoreSegment`
+- `ScoreEntryAnchor`
+- `ScoreExitAnchor`
+- `ScoreConnectorLayer`
+- `ScoreChapterFrame`
 - `ScoreFallbackFlow`
 
-## Conteúdo
+## Experiência
 
-- `HeroPrelude`
-- `ApplicationOverview`
-- `PublicHowItWorks`
-- `BenefitsSection`
-- `CompanyOverview`
-- `ServicesScore`
-- `ProcessSection`
-- `PortfolioPreview`
-- `ContactSection`
+- `SiteExperienceShell`
+- `ScoreTransitionProvider`
+- `ScoreTransitionLayer`
+- `HomeBifurcation`
+- `PageRevealBoundary`
+- `ReducedMotionBoundary`
+
+## Conteúdo principal
+
+- `HomeHero`
+- `ApplicationOverviewPage`
+- `PublicHowItWorksPage`
+- `BenefitsPage`
+- `CompanyOverviewPage`
+- `ServicesPage`
+- `ProcessPage`
+- `PortfolioPage`
+- `ContactPage`
+- `ServiceDetailPage`
 - `SiteFooter`
+
+## Tablet demonstrativo
+
+- `ApplicationDemoTablet`
+- `TabletShell`
+- `TabletScreen`
+- `DemoScorePreview`
+- `DemoTranspositionControls`
+- `DemoStatus`
+- `DemoResetButton`
 
 ## Formulário
 
@@ -51,6 +77,10 @@
 - props tipadas;
 - componente visual sem acesso direto a segredo ou ambiente;
 - conteúdo separado de animação;
+- geometria da pauta separada de copy;
 - estados Storybook para cada componente relevante;
 - nenhum componente de domínio do aplicativo musical;
-- nenhuma abstração genérica prematura.
+- nenhuma abstração genérica prematura;
+- o tablet não importa lógica do aplicativo;
+- golden references não são importadas no runtime;
+- componentes de claro e escuro compartilham a mesma árvore DOM sempre que possível.

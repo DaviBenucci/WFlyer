@@ -8,6 +8,8 @@
 - [Política de dependências](00-governanca/03-politica-dependencias.md)
 - [Separação entre site e aplicativo](00-governanca/04-separacao-site-aplicacao.md)
 - [Registro de decisões](00-governanca/05-registro-decisoes.md)
+- [ADR — animação de entrada programática](00-governanca/06-adr-animacao-entrada-programatica.md)
+- [ADR — dupla partitura e páginas visuais](00-governanca/07-adr-dupla-partitura-e-paginas-visuais.md)
 
 ## 01 — Produto
 
@@ -19,29 +21,33 @@
 
 ## 02 — Design
 
-- [Direção visual provisória](02-design/01-direcao-visual-provisoria.md)
-- [Tokens provisórios](02-design/02-tokens-provisorios.md)
+- [Direção visual aprovada](02-design/01-direcao-visual-aprovada.md)
+- [Tokens visuais v1](02-design/02-tokens-visuais-v1.md)
 - [Header em partitura](02-design/03-header-partitura.md)
 - [Homepage](02-design/04-homepage.md)
 - [Partitura ondulada](02-design/05-partitura-ondulada.md)
 - [Responsividade](02-design/06-responsividade.md)
 - [Acessibilidade](02-design/07-acessibilidade.md)
 - [Assets, licenças e golden references](02-design/08-assets-licencas-golden-references.md)
+- [Sistema de dupla partitura](02-design/09-sistema-dupla-partitura.md)
+- [Especificação visual das páginas](02-design/10-especificacao-visual-paginas.md)
 
 ## 03 — Motion
 
 - [Arquitetura GSAP](03-motion/01-arquitetura-gsap.md)
-- [Narrativa horizontal](03-motion/02-narrativa-scroll-horizontal.md)
+- [Narrativa de dupla partitura](03-motion/02-narrativa-dupla-partitura.md)
 - [Catálogo de animações](03-motion/03-catalogo-animacoes.md)
 - [Movimento reduzido](03-motion/04-reduced-motion.md)
-- [Orçamento de performance](03-motion/05-orcamento-performance.md)
+- [Orçamento de     performance](03-motion/05-orcamento-performance.md)
 - [Animação de entrada da marca](03-motion/06-animacao-entrada-marca.md)
 - [Timeline executável da entrada](03-motion/06-animacao-entrada-marca.timeline.yaml)
+- [Transições entre capítulos](03-motion/07-transicoes-entre-capitulos.md)
+- [Tablet interativo](03-motion/08-tablet-interativo.md)
 
 ## 04 — Conteúdo
 
 - [Mapa de conteúdo](04-conteudo/01-mapa-conteudo.md)
-- [Copy provisória da homepage](04-conteudo/02-copy-provisoria-home.md)
+- [Copy de referência visual](04-conteudo/02-copy-provisoria-home.md)
 - [Serviços](04-conteudo/03-servicos.md)
 - [Apresentação pública da aplicação](04-conteudo/04-aplicacao-publica.md)
 - [Portfólio](04-conteudo/05-portfolio.md)
@@ -59,6 +65,9 @@
 - [Fases de implementação](05-implementacao/07-fases-implementacao.md)
 - [Guia Codex](05-implementacao/08-guia-codex.md)
 - [Manifesto tecnológico](05-implementacao/09-manifesto-tecnologico.yaml)
+- [Contrato de assets da animação](05-implementacao/10-contrato-assets-animacao.md)
+- [Manifesto de capítulos da partitura](05-implementacao/11-manifesto-capitulos-partitura.yaml)
+- [Fluxo de golden references](05-implementacao/12-fluxo-golden-references.md)
 
 ## 06 — Segurança
 
@@ -76,6 +85,7 @@
 - [Segurança do formulário](07-qa/04-testes-seguranca-formulario.md)
 - [Critérios de aceite](07-qa/05-criterios-aceite.md)
 - [QA da animação de entrada](07-qa/06-qa-animacao-entrada.md)
+- [QA da dupla partitura e do tablet](07-qa/07-qa-dupla-partitura-tablet.md)
 
 ## 08 — Operação
 
@@ -86,3 +96,5 @@
 
 - [Fontes oficiais](09-referencias/01-fontes-oficiais.md)
 - [Referências visuais](design-reference/README.md)
+- [Matriz de páginas visuais](design-reference/golden-pages/page-matrix.yaml)
+- [Status das referências](design-reference/golden-pages/STATUS.md)
