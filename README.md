@@ -72,3 +72,33 @@ As imagens nunca podem ser usadas como background, textura, mapa de cliques ou f
 ## Regra de implementação
 
 O estado `READY_FOR_IMPLEMENTATION` autoriza o Codex a percorrer todas as fases. A ausência de uma referência individual adicional não é bloqueio quando a página estiver marcada como `authorized-derived` na matriz. O Codex só interrompe por impedimento externo real, conflito normativo, falha de segurança/teste ou ausência de credencial necessária para publicar.
+
+## Execução local
+
+Pré-requisitos:
+
+- Node.js 24;
+- Corepack habilitado;
+- pnpm 11.15.1.
+
+Comandos principais:
+
+```bash
+pnpm install --frozen-lockfile
+pnpm dev
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build:storybook
+pnpm test:storybook
+pnpm test:e2e
+pnpm build
+pnpm prepare:standalone
+pnpm lighthouse
+```
+
+O build standalone fica em `.next/standalone`. `pnpm prepare:standalone` deve ser executado após `pnpm build` para incluir assets públicos e `.next/static`.
+
+Os candidatos `staging` e `production` são apenas empacotados pelo workflow manual enquanto o método real de integração da Napoleon não estiver aprovado. Nenhum workflow atual publica em produção, altera DNS ou toca em `app.wflyer.com.br`.
+
+O histórico da implementação e os gates por fase ficam em [`docs/05-implementacao/17-relatorio-execucao-codex.md`](docs/05-implementacao/17-relatorio-execucao-codex.md).

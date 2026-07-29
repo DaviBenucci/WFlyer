@@ -1,0 +1,253 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop/site-institucional
+      - "feature/**"
+  pull_request:
+    branches:
+      - main
+      - develop/site-institucional
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  CI: "true"
+  NEXT_TELEMETRY_DISABLED: "1"
+  NEXT_PUBLIC_SITE_URL: http://127.0.0.1:3000
+  NEXT_PUBLIC_APP_URL: https://app.wflyer.com.br
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  quality:
+    name: Lint, types and unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: 11.15.1
+          run_install: false
+
+      - name: Configure Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: "24"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate dependency policy
+        run: pnpm validate:dependencies
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Run unit tests
+        run: pnpm test
+
+  storybook:
+    name: Storybook build and tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: 11.15.1
+          run_install: false
+
+      - name: Configure Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: "24"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Storybook browser
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Build Storybook
+        run: pnpm build:storybook
+
+      - name: Test Storybook stories
+        run: pnpm test:storybook
+
+      - name: Upload Storybook
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: storybook-${{ github.sha }}
+          path: storybook-static/
+          if-no-files-found: error
+          retention-days: 7
+
+  browser:
+    name: Browser, accessibility and visual tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: 11.15.1
+          run_install: false
+
+      - name: Configure Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: "24"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium firefox webkit
+
+      - name: Run end-to-end tests
+        run: pnpm test:e2e
+
+      - name: Run accessibility tests
+        run: pnpm test:a11y
+
+      - name: Run visual regression tests
+        run: pnpm test:visual
+
+      - name: Run motion tests
+        run: pnpm test:motion
+
+      - name: Upload browser test evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: playwright-${{ github.sha }}
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          include-hidden-files: true
+          retention-days: 14
+
+  standalone:
+    name: Standalone build, smoke and Lighthouse
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: 11.15.1
+          run_install: false
+
+      - name: Configure Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: "24"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build application
+        run: pnpm build
+
+      - name: Complete standalone package
+        run: pnpm prepare:standalone
+
+      - name: Smoke standalone server
+        run: |
+          server_log="${RUNNER_TEMP}/wflyer-standalone.log"
+          HOSTNAME=127.0.0.1 PORT=3100 node .next/standalone/server.js >"${server_log}" 2>&1 &
+          server_pid=$!
+          trap 'kill "${server_pid}" 2>/dev/null || true' EXIT
+
+          ready=0
+          for attempt in {1..30}; do
+            if curl --fail --silent --show-error --max-time 2 \
+              http://127.0.0.1:3100/ >/dev/null; then
+              ready=1
+              break
+            fi
+            sleep 1
+          done
+
+          if [[ "${ready}" -ne 1 ]]; then
+            tail -n 80 "${server_log}"
+            exit 1
+          fi
+
+      - name: Install Lighthouse browser
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Run Lighthouse budgets
+        run: pnpm lighthouse
+
+      - name: Create immutable standalone archive
+        id: archive
+        run: |
+          mkdir -p release
+          archive="release/wflyer-standalone-${GITHUB_SHA}.tar.gz"
+          tar \
+            --sort=name \
+            --mtime="UTC 1970-01-01" \
+            --owner=0 \
+            --group=0 \
+            --numeric-owner \
+            -czf "${archive}" \
+            -C .next/standalone .
+          sha256sum "${archive}" >"${archive}.sha256"
+          echo "path=${archive}" >>"${GITHUB_OUTPUT}"
+
+      - name: Upload standalone archive
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: standalone-${{ github.sha }}
+          path: |
+            ${{ steps.archive.outputs.path }}
+            ${{ steps.archive.outputs.path }}.sha256
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload Lighthouse evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: lighthouse-${{ github.sha }}
+          path: .lighthouseci/
+          if-no-files-found: ignore
+          include-hidden-files: true
+          retention-days: 14

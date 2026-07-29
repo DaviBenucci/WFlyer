@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  --wf-provisional-background: #f7f1e8;
+  --wf-provisional-surface: #fffaf3;
+  --wf-provisional-text: #24180f;
+  --wf-provisional-action: #4d280d;
+  --wf-provisional-border: rgb(77 40 13 / 24%);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --wf-provisional-background: #020b22;
+    --wf-provisional-surface: #07132e;
+    --wf-provisional-text: #f7f4ff;
+    --wf-provisional-action: #a348ff;
+    --wf-provisional-border: rgb(163 72 255 / 35%);
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--wf-provisional-background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--wf-provisional-background);
+  color: var(--wf-provisional-text);
+  font-family:
+    Manrope, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.foundation-shell {
+  display: grid;
+  min-height: 100svh;
+  place-content: center;
+  gap: 1.25rem;
+  width: min(100% - 2rem, 68rem);
+  margin-inline: auto;
+  padding-block: 5rem;
+}
+
+.foundation-shell h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+
+.foundation-shell > p:not(.foundation-eyebrow) {
+  max-width: 46rem;
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.foundation-eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.foundation-shell nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.foundation-shell nav a {
+  min-height: 2.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--wf-provisional-border);
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.foundation-shell nav a:first-child {
+  background: var(--wf-provisional-action);
+  color: var(--wf-provisional-background);
+}
+
+:focus-visible {
+  outline: 3px solid var(--wf-provisional-action);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

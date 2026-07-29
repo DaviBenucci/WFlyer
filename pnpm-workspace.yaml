@@ -1,0 +1,10 @@
+packages:
+  - "."
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+
+minimumReleaseAgeExclude:
+  - jsdom@30.0.1

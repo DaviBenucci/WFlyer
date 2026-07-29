@@ -1,0 +1,236 @@
+name: Prepare Napoleon release
+
+# This workflow deliberately creates a deployment candidate without contacting
+# Napoleon. The approved Napoleon integration method must be configured before
+# a deployment step can be added. Protect the GitHub "production" Environment
+# with Davi Benucci as a required reviewer in the repository settings.
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: GitHub Environment that owns this release
+        required: true
+        default: staging
+        type: choice
+        options:
+          - staging
+          - production
+      release_ref:
+        description: Staging branch, main, or an approved release tag
+        required: true
+        default: develop/site-institucional
+        type: string
+      production_confirmation:
+        description: For production only, type HOMOLOGADO_POR_DAVI
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: napoleon-${{ inputs.environment }}
+  cancel-in-progress: false
+
+env:
+  CI: "true"
+  NEXT_TELEMETRY_DISABLED: "1"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  validate-request:
+    name: Validate release request
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Enforce branch and homologation gates
+        env:
+          TARGET_ENVIRONMENT: ${{ inputs.environment }}
+          RELEASE_REF: ${{ inputs.release_ref }}
+          PRODUCTION_CONFIRMATION: ${{ inputs.production_confirmation }}
+        run: |
+          set -euo pipefail
+
+          if [[ "${TARGET_ENVIRONMENT}" == "staging" ]]; then
+            if [[ "${RELEASE_REF}" != "develop/site-institucional" ]]; then
+              echo "::error::Staging candidates must use develop/site-institucional."
+              exit 1
+            fi
+            exit 0
+          fi
+
+          if [[ "${TARGET_ENVIRONMENT}" != "production" ]]; then
+            echo "::error::Only staging and production are supported."
+            exit 1
+          fi
+
+          if [[ "${RELEASE_REF}" != "main" \
+            && "${RELEASE_REF}" != refs/tags/* ]]; then
+            echo "::error::Production candidates must use main or an approved release tag."
+            exit 1
+          fi
+
+          if [[ "${PRODUCTION_CONFIRMATION}" != "HOMOLOGADO_POR_DAVI" ]]; then
+            echo "::error::Production preparation requires recorded homologation."
+            exit 1
+          fi
+
+  package-candidate:
+    name: Package ${{ inputs.environment }} candidate
+    needs: validate-request
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment:
+      name: ${{ inputs.environment }}
+    steps:
+      - name: Check out approved revision
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ inputs.release_ref }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Record immutable revision
+        id: revision
+        run: |
+          release_sha="$(git rev-parse HEAD)"
+          echo "sha=${release_sha}" >>"${GITHUB_OUTPUT}"
+          echo "Preparing commit ${release_sha} for ${TARGET_ENVIRONMENT}."
+        env:
+          TARGET_ENVIRONMENT: ${{ inputs.environment }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: 11.15.1
+          run_install: false
+
+      - name: Configure Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: "24"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate required Environment secrets
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+          TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          CONTACT_FROM_EMAIL: ${{ secrets.CONTACT_FROM_EMAIL }}
+          CONTACT_RECIPIENT_EMAIL: ${{ secrets.CONTACT_RECIPIENT_EMAIL }}
+          CONTACT_ALLOWED_ORIGINS: ${{ secrets.CONTACT_ALLOWED_ORIGINS }}
+        run: |
+          set -euo pipefail
+          required=(
+            NEXT_PUBLIC_SITE_URL
+            NEXT_PUBLIC_APP_URL
+            NEXT_PUBLIC_TURNSTILE_SITE_KEY
+            TURNSTILE_SECRET_KEY
+            RESEND_API_KEY
+            CONTACT_FROM_EMAIL
+            CONTACT_RECIPIENT_EMAIL
+            CONTACT_ALLOWED_ORIGINS
+          )
+          missing=()
+
+          for variable_name in "${required[@]}"; do
+            if [[ -z "${!variable_name:-}" ]]; then
+              missing+=("${variable_name}")
+            fi
+          done
+
+          if (( ${#missing[@]} > 0 )); then
+            printf "::error::Missing required Environment secret: %s\n" "${missing[@]}"
+            exit 1
+          fi
+
+          echo "All required Environment secrets are configured."
+
+      - name: Validate dependency policy
+        run: pnpm validate:dependencies
+
+      - name: Build application
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+        run: pnpm build
+
+      - name: Complete standalone package
+        run: pnpm prepare:standalone
+
+      - name: Smoke standalone server
+        run: |
+          server_log="${RUNNER_TEMP}/wflyer-standalone.log"
+          HOSTNAME=127.0.0.1 PORT=3100 node .next/standalone/server.js >"${server_log}" 2>&1 &
+          server_pid=$!
+          trap 'kill "${server_pid}" 2>/dev/null || true' EXIT
+
+          ready=0
+          for attempt in {1..30}; do
+            if curl --fail --silent --show-error --max-time 2 \
+              http://127.0.0.1:3100/ >/dev/null; then
+              ready=1
+              break
+            fi
+            sleep 1
+          done
+
+          if [[ "${ready}" -ne 1 ]]; then
+            tail -n 80 "${server_log}"
+            exit 1
+          fi
+
+      - name: Create checksummed release archive
+        id: archive
+        env:
+          RELEASE_SHA: ${{ steps.revision.outputs.sha }}
+        run: |
+          mkdir -p release
+          archive="release/wflyer-standalone-${RELEASE_SHA}.tar.gz"
+          tar \
+            --sort=name \
+            --mtime="UTC 1970-01-01" \
+            --owner=0 \
+            --group=0 \
+            --numeric-owner \
+            -czf "${archive}" \
+            -C .next/standalone .
+          sha256sum "${archive}" >"${archive}.sha256"
+          echo "path=${archive}" >>"${GITHUB_OUTPUT}"
+
+      - name: Upload deployment candidate
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: wflyer-${{ inputs.environment }}-${{ steps.revision.outputs.sha }}
+          path: |
+            ${{ steps.archive.outputs.path }}
+            ${{ steps.archive.outputs.path }}.sha256
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Record Napoleon handoff
+        env:
+          RELEASE_SHA: ${{ steps.revision.outputs.sha }}
+          TARGET_ENVIRONMENT: ${{ inputs.environment }}
+          ARCHIVE_PATH: ${{ steps.archive.outputs.path }}
+        run: |
+          {
+            echo "## Napoleon handoff pending"
+            echo
+            echo "- Environment: \`${TARGET_ENVIRONMENT}\`"
+            echo "- Commit: \`${RELEASE_SHA}\`"
+            echo "- Candidate: \`${ARCHIVE_PATH}\` plus SHA-256 file"
+            echo "- No deployment endpoint was called."
+            echo "- Configure the approved Napoleon integration and inject the same Environment secrets into its Node.js runtime."
+          } >>"${GITHUB_STEP_SUMMARY}"
