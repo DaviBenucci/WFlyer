@@ -1,0 +1,28 @@
+.canvas {
+  display: grid;
+  min-height: 20rem;
+  place-items: center;
+  gap: var(--wf-space-6);
+  padding: var(--wf-page-gutter);
+  background: var(--wf-bg);
+  color: var(--wf-text);
+}
+
+.content {
+  display: grid;
+  justify-items: center;
+  gap: var(--wf-space-4);
+  max-width: 34rem;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--wf-font-display);
+  font-size: var(--wf-font-size-title-sm);
+  font-weight: var(--wf-font-weight-medium);
+  line-height: var(--wf-line-height-title);
+}
+
+.description {
+  color: var(--wf-text-muted);
+}

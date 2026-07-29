@@ -1,0 +1,6 @@
+.mark {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  color: var(--wf-text, #24180f);
+}

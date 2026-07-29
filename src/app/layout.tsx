@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
+import { SiteHeader } from "@/components/header";
+import { ThemeProvider, ThemeScript, ThemeToggle } from "@/components/theme";
 import { siteConfig } from "@/config/site";
 
+import { cormorantGaramond, manrope } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -41,8 +44,23 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="pt-BR">
-      <body>{children}</body>
+    <html
+      className={`${cormorantGaramond.variable} ${manrope.variable}`}
+      lang="pt-BR"
+      suppressHydrationWarning
+    >
+      <head>
+        <ThemeScript />
+      </head>
+      <body>
+        <ThemeProvider>
+          <a className="wf-skip-link" href="#main-content">
+            Pular para o conteúdo principal
+          </a>
+          <SiteHeader themeControl={<ThemeToggle />} />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

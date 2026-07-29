@@ -1,0 +1,44 @@
+.frame {
+  display: grid;
+  min-block-size: 100vh;
+  align-content: center;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background: var(--wf-bg);
+  color: var(--wf-text);
+}
+
+.frame[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+}
+
+.stack {
+  display: grid;
+  gap: 0.75rem;
+  max-inline-size: 58rem;
+}
+
+.iconSample {
+  display: grid;
+  min-block-size: 5.5rem;
+  place-items: center;
+  gap: 0.5rem;
+  color: var(--wf-text);
+  font-family: var(--wf-font-sans, ui-sans-serif, system-ui, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+}

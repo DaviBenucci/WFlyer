@@ -9,11 +9,17 @@ test("a Home entrega conteúdo e os dois caminhos principais", async ({ page }) 
   await expect(page.getByRole("main")).toBeVisible();
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 
-  const applicationPath = page.locator('a[href="/aplicacao-wflyer"]');
-  const institutionalPath = page.locator('a[href="/sobre"]');
+  const applicationPath = page.getByRole("link", {
+    name: "Explorar a aplicação",
+  });
+  const institutionalPath = page.getByRole("link", {
+    name: "Conhecer a empresa",
+  });
 
   await expect(applicationPath).toBeVisible();
   await expect(institutionalPath).toBeVisible();
+  await expect(applicationPath).toHaveAttribute("href", "/aplicacao-wflyer");
+  await expect(institutionalPath).toHaveAttribute("href", "/sobre");
   await expect(applicationPath).not.toHaveAccessibleName("");
   await expect(institutionalPath).not.toHaveAccessibleName("");
 });

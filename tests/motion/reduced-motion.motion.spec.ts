@@ -7,8 +7,12 @@ test("reduced motion mantém a Home disponível e encerra animações", async ({
   await page.goto("/");
 
   await expect(page.getByRole("main")).toBeVisible();
-  await expect(page.locator('a[href="/aplicacao-wflyer"]')).toBeVisible();
-  await expect(page.locator('a[href="/sobre"]')).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Explorar a aplicação" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Conhecer a empresa" }),
+  ).toBeVisible();
 
   expect(
     await page.evaluate(() =>
