@@ -1,21 +1,71 @@
 .shell {
+  position: relative;
   display: grid;
   min-height: calc(100svh - var(--wf-header-height-desktop));
-  place-content: center;
-  padding-block: var(--wf-space-20);
+  align-items: center;
+  overflow: clip;
+  padding-block: clamp(4rem, 10vw, 8rem);
+}
+
+.shell::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 12% 48%,
+      color-mix(in oklab, var(--wf-accent) 12%, transparent),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 88% 48%,
+      color-mix(in oklab, var(--wf-note) 10%, transparent),
+      transparent 34%
+    );
+  content: "";
 }
 
 .content {
   display: grid;
+  gap: clamp(2.5rem, 7vw, 6rem);
+}
+
+.intro {
+  display: grid;
+  max-inline-size: 62rem;
+  gap: var(--wf-space-5);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.intro h1 {
+  max-inline-size: 16ch;
+}
+
+.intro > p {
+  max-inline-size: 48rem;
+  margin-inline: auto;
+}
+
+.branches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--wf-space-5);
 }
 
-.content h1 {
-  max-width: 17ch;
+.branch {
+  display: grid;
+  align-content: start;
+  gap: var(--wf-space-5);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
 }
 
-.content > p {
-  max-width: 46rem;
+.branch h2 {
+  max-inline-size: 14ch;
+}
+
+.branch > p {
+  max-inline-size: 38rem;
 }
 
 .actions {
@@ -27,5 +77,19 @@
 @media (width < 64rem) {
   .shell {
     min-height: calc(100svh - var(--wf-header-height-mobile));
+  }
+}
+
+@media (width < 48rem) {
+  .branches {
+    grid-template-columns: 1fr;
+  }
+
+  .intro {
+    text-align: start;
+  }
+
+  .intro > p {
+    margin-inline: 0;
   }
 }

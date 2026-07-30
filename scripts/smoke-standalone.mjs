@@ -10,6 +10,25 @@ const standaloneDirectory = resolve(repositoryRoot, ".next", "standalone");
 const serverPath = resolve(standaloneDirectory, "server.js");
 const host = "127.0.0.1";
 const startupTimeoutMs = 20_000;
+const publicRoutes = [
+  "/",
+  "/aplicacao-wflyer",
+  "/aplicacao-wflyer/como-funciona",
+  "/aplicacao-wflyer/beneficios",
+  "/sobre",
+  "/servicos",
+  "/processo",
+  "/portfolio",
+  "/contato",
+  "/servicos/criacao-de-sites",
+  "/servicos/criacao-de-aplicacoes",
+  "/servicos/integracoes",
+  "/servicos/solucoes-sob-medida",
+  "/politica-de-privacidade",
+  "/politica-de-cookies",
+  "/termos-de-uso",
+  "/acessibilidade",
+];
 
 function delay(durationMs) {
   return new Promise((resolveDelay) => {
@@ -153,17 +172,60 @@ try {
   }
 
   const html = await homeResponse.text();
-  const assetUrls = referencedStaticAssets(html);
+  const assetUrls = new Set(referencedStaticAssets(html));
 
   if (!html.includes('id="main-content"')) {
     throw new Error("Home HTML is missing the main content landmark.");
   }
 
   for (const requiredExtension of [".css", ".js", ".woff2"]) {
-    if (!assetUrls.some((assetUrl) => assetUrl.includes(requiredExtension))) {
+    if (
+      ![...assetUrls].some((assetUrl) =>
+        assetUrl.includes(requiredExtension),
+      )
+    ) {
       throw new Error(
         `Home HTML does not reference a ${requiredExtension} standalone asset.`,
       );
+    }
+  }
+
+  for (const route of publicRoutes.slice(1)) {
+    const response = await fetch(new URL(route, baseUrl), {
+      cache: "no-store",
+      redirect: "error",
+      signal: AbortSignal.timeout(5_000),
+    });
+    const routeContentType = response.headers.get("content-type") ?? "";
+
+    if (!response.ok) {
+      throw new Error(`${route} responded with HTTP ${response.status}.`);
+    }
+
+    if (!routeContentType.includes("text/html")) {
+      throw new Error(
+        `${route} returned unexpected Content-Type: ${routeContentType}`,
+      );
+    }
+
+    const routeHtml = await response.text();
+
+    if (!routeHtml.includes('id="main-content"')) {
+      throw new Error(`${route} is missing the main content landmark.`);
+    }
+
+    if ((routeHtml.match(/<h1(?:\s|>)/gu) ?? []).length !== 1) {
+      throw new Error(`${route} does not contain exactly one h1.`);
+    }
+
+    const canonicalUrl = `https://wflyer.com.br${route}`;
+
+    if (!routeHtml.includes(`rel="canonical" href="${canonicalUrl}"`)) {
+      throw new Error(`${route} is missing its canonical URL.`);
+    }
+
+    for (const assetUrl of referencedStaticAssets(routeHtml)) {
+      assetUrls.add(assetUrl);
     }
   }
 
@@ -203,7 +265,7 @@ try {
   }
 
   console.log(
-    `Standalone smoke passed: Home + ${assetUrls.length} static assets on ${baseUrl}`,
+    `Standalone smoke passed: ${publicRoutes.length} public routes + ${assetUrls.size} static assets on ${baseUrl}`,
   );
 } finally {
   await terminate(child);
