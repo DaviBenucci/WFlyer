@@ -19,15 +19,15 @@ A execução local, os testes, os workflows, o build standalone e a preparação
 - alteração destrutiva ou não inventariada de DNS, Cloudflare ou Napoleon;
 - qualquer ação que possa interromper `app.wflyer.com.br`.
 
-## 2. Estado inicial das fases
+## 2. Estado atual das fases
 
-| Etapa | Estado inicial | Gate |
+| Etapa | Estado atual | Gate |
 |---|---|---|
 | Pré-voo | `CONCLUÍDO` | sem bloqueio normativo real |
 | Fase 0 — Fundação | `CONCLUÍDA` | gate local verde |
 | Fase 1 — Sistema visual | `CONCLUÍDA` | gate local verde |
-| Fase 2 — Conteúdo e rotas estáticas | `EM_EXECUÇÃO` | aberto |
-| Fase 3 — Home e dupla partitura | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
+| Fase 2 — Conteúdo e rotas estáticas | `CONCLUÍDA` | gate local verde |
+| Fase 3 — Home e dupla partitura | `PRONTA_PARA_INICIAR` | não avaliado |
 | Fase 4 — Páginas por arquétipo | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
 | Fase 5 — Motion e navegação | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
 | Fase 6 — Tablet | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
@@ -35,7 +35,34 @@ A execução local, os testes, os workflows, o build standalone e a preparação
 | Fase 8 — Contato, segurança e conteúdo final | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
 | Fase 9 — Napoleon, staging e produção | `AGUARDANDO_GATES_LOCAIS_E_ACESSOS_EXTERNOS` | não avaliado |
 
-Nenhum teste de implementação é declarado verde neste estado inicial. Cada fase somente poderá mudar para `CONCLUÍDA` depois de satisfazer integralmente seu gate.
+Cada fase somente muda para `CONCLUÍDA` depois de satisfazer integralmente seu gate. A conclusão local não autoriza publicação, merge em `main` ou alteração de infraestrutura.
+
+### 2.1 Continuidade da execução
+
+Em 2026-07-30, a execução foi retomada na branch
+`feature/fase-2-pages`, a partir do commit `6ef3cf5`
+(`merge: complete phase 1 design system`). A inspeção inicial confirmou que:
+
+- as Fases 0 e 1 permaneciam concluídas, testadas e integradas em
+  `develop/site-institucional`;
+- a implementação e as evidências da Fase 2 estavam preservadas no worktree,
+  ainda sem commit próprio;
+- não havia alteração fora do escopo, segredo versionado, teste desabilitado
+  ou artefato gerado indevido;
+- o primeiro trabalho incompleto era revalidar e consolidar a Fase 2 antes de
+  iniciar a Home e a dupla partitura;
+- o cache local de Graphify não continha `graph.json`, por isso a auditoria de
+  recuperação usou diretamente Git, contratos e evidências, sem reconstruir
+  ou modificar o índice;
+- `app.wflyer.com.br` continuava registrado como dependência externa de
+  homologação e publicação, sem impedir os gates locais.
+
+A revalidação imediata do estado retomado confirmou dependências exatas, lint,
+TypeScript, 52 de 52 testes unitários, build com 22 de 22 páginas estáticas,
+smoke standalone de 17 rotas e 14 assets, 35 de 35 cenários concentrados de
+rotas, teclado, SEO e axe, além da integridade do diff. A consolidação Git é
+registrada na Fase 2 e no histórico abaixo; nenhuma alteração em `main`,
+produção, Cloudflare ou Napoleon foi realizada.
 
 ## 3. Pré-voo
 
@@ -230,26 +257,29 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 
 ### Fase 2 — Conteúdo e rotas estáticas
 
-**Estado:** `EM_EXECUÇÃO`
+**Estado:** `CONCLUÍDA`
 **Objetivo:** implementar todas as rotas, conteúdo local, páginas legais, SEO, sitemap, robots, estados de erro, 404, footer e navegação funcional sem depender de motion.
 
-- **Arquivos criados:** a registrar.
-- **Arquivos modificados:** a registrar.
-- **Decisões aplicadas:** a registrar.
-- **Comandos:** a registrar.
-- **Testes e resultados:** não executados.
-- **Screenshots:** a registrar.
-- **Comparação visual:** pendente.
-- **Acessibilidade:** pendente, incluindo teclado, foco e semântica.
-- **Performance:** pendente.
-- **Riscos:** a registrar.
-- **Pendências não bloqueadoras:** a registrar.
-- **Gate:** `NÃO_AVALIADO`.
-- **Título de commit:** a definir.
+- **Arquivos criados:** 17 páginas públicas no App Router; conteúdo tipado local em `src/content/site-content.ts`; contrato central de SEO; JSON-LD de `Organization`, `WebSite`, `Service` e `BreadcrumbList`; componentes compartilhados de capítulo, seção, cards, etapas, detalhes de serviço, páginas legais e estados; footer global; `sitemap.ts`, `robots.ts`, `not-found.tsx`, `error.tsx` e `global-error.tsx`; testes de conteúdo, rotas, teclado e axe; runner robusto do servidor Lighthouse; seis evidências visuais e seu índice.
+- **Arquivos modificados:** layout raiz para metadata global, dados estruturados e footer; Home estática com os dois caminhos; estilos da Home; smoke standalone; configuração do Lighthouse; este relatório.
+- **Rotas entregues:** Home; três páginas da aplicação; Sobre; Serviços; Processo; Portfólio; Contato; quatro detalhes de serviço; Privacidade; Cookies; Termos de uso; Acessibilidade. O build também gera 404, favicon, sitemap e robots.
+- **Decisões aplicadas:** ADR-002, ADR-014, ADR-015, ADR-017 e ADR-022; conteúdo essencial server-rendered e static-first; nenhum motion nesta fase; portfólio limitado a W_Flyer, MSN Distribuidora e MSN Suprimentos; aplicação declarada como produto em desenvolvimento e ferramenta de apoio com revisão humana; Contato somente informativo nesta fase, sem simular envio ou sucesso antes da Fase 8; quatro detalhes condicionais, sem preço, prazo ou garantia; políticas conservadoras baseadas apenas na implementação aprovada e marcadas para revisão jurídica/homologação; e-mail, Instagram e GitHub como únicos canais; nenhum analytics ou cookie de marketing.
+- **SEO:** títulos e descrições únicos; canonical e Open Graph próprios nas 17 rotas; card social textual `summary`, sem imagem não aprovada ou handle de rede inexistente; sitemap com somente as 17 rotas; robots permite conteúdo público, bloqueia `/api/` e referencia o sitemap; 404 recebe `noindex` do App Router sem meta duplicada; dados estruturados contêm somente fatos autorizados.
+- **Comandos:** `pnpm validate:dependencies`; `pnpm lint`; `pnpm typecheck`; `pnpm test`; `pnpm build:storybook`; `pnpm test:storybook`; `pnpm test:e2e`; `pnpm build`; `pnpm prepare:standalone`; `pnpm smoke:standalone`; `pnpm lighthouse`; `git diff --check`; capturas Chromium em 1536 × 1024 e 390 × 844; inspeção visual das seis capturas; crawl independente de rotas, links, metadata e JSON-LD.
+- **Testes e resultados:** dependências exatas, lint e typecheck verdes; 52 de 52 testes unitários em 10 arquivos; 33 de 33 testes Storybook; 48 de 48 cenários Playwright no Chromium; as 17 rotas respondem diretamente com um `main`, um `h1`, canonical próprio e footer; sitemap/robots/404 verdes; build Next gerou 22 de 22 páginas estáticas; build Storybook verde; revisão independente validou 17 páginas, 21 destinos e JSON-LD parseável sem bloqueador.
+- **Standalone:** o smoke foi ampliado para recusar falso positivo e validou as 17 rotas públicas, landmarks, um `h1`, canonicals e 14 assets CSS, JavaScript e WOFF2 com payload real. O runner do Lighthouse agora aguarda uma resposta HTTP válida do servidor standalone antes de liberar a coleta.
+- **Screenshots:** [Home desktop claro](evidencias/fase-2/home-desktop-light.png), [Aplicação desktop escuro](evidencias/fase-2/application-desktop-dark.png), [Serviços desktop claro](evidencias/fase-2/services-desktop-light.png), [Privacidade desktop escuro](evidencias/fase-2/privacy-desktop-dark.png), [Contato mobile escuro](evidencias/fase-2/contact-mobile-dark.png) e [detalhe de serviço mobile claro](evidencias/fase-2/service-detail-mobile-light.png). O [índice de evidências](evidencias/fase-2/README.md) distingue essas capturas das golden references.
+- **Comparação visual:** tokens, tipografia, header em partitura, cards, navegação anterior/próximo, pauta estática, footer e geometrias entre temas permanecem coerentes com a prancha mestra. As páginas são deliberadamente estáticas e preservam espaço/contratos para a Home bifurcada, o tablet e os arquétipos finais das Fases 3 e 4. Desktop e mobile não apresentam overflow horizontal.
+- **Acessibilidade:** todas as 17 rotas foram exercitadas por URL direta e teclado; o primeiro Tab alcança o skip link e Enter conduz foco ao `main`; cada página possui um único `h1`, headings lógicos, landmarks, foco visível, links reais e indicação de nova aba. Axe encontrou zero violação crítica ou séria na Home clara/escura, no menu mobile aberto e nas outras 16 rotas; o caso estrutural `aria-hidden-focus` continua bloqueador.
+- **Performance:** três coletas finais do Lighthouse no pacote standalone obtiveram Performance 100, Acessibilidade 100, Boas práticas 100 e SEO 100 em todas. LCP variou de aproximadamente 604 ms a 620 ms e CLS foi 0 nas três execuções.
+- **Riscos controlados:** a base jurídica não inventa razão social, CNPJ, endereço, telefone, DPO ou prazo legal; revisão jurídica e homologação continuam obrigatórias antes da produção. O status público dos projetos será reconferido próximo ao lançamento. Golden references não foram incorporadas ao frontend. Nenhuma dependência ou integração externa nova foi adicionada.
+- **Pendências não bloqueadoras:** em 2026-07-29, Instagram, GitHub, MSN Distribuidora e MSN Suprimentos responderam publicamente, mas `app.wflyer.com.br` não resolveu DNS durante a revisão independente. O link configurado corresponde ao perfil aprovado, portanto isso não bloqueia o gate local da Fase 2; restaurações/validações do subdomínio e o smoke externo são bloqueadores de homologação e publicação. Firefox/WebKit e matriz final permanecem para a Fase 9.
+- **Gate:** `CONCLUÍDO`; revisão independente sem bloqueador de implementação após a atualização deste registro.
+- **Título de commit:** `feat(content): publish static routes and verified public content`.
 
 ### Fase 3 — Home e dupla partitura
 
-**Estado:** `AGUARDANDO_GATE_ANTERIOR`  
+**Estado:** `PRONTA_PARA_INICIAR`
 **Objetivo:** implementar Home, origem, bifurcação, pautas, âncoras, continuidade, terminações e fallback mobile conforme o manifesto de capítulos.
 
 - **Arquivos criados:** a registrar.
@@ -387,3 +417,4 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 | 2026-07-29 | Relatório criado; pré-voo registrado como concluído; Fase 0 iniciada sem declarar testes antecipadamente. |
 | 2026-07-29 | Fase 0 concluída após correção do manifesto tipado, WCAG 2.2 AA, favicon oficial, 8 testes unitários, Storybook, Playwright, standalone, Actionlint e Lighthouse 100/100/100/100. Fase 1 iniciada. |
 | 2026-07-29 | Fase 1 concluída com design system, fontes locais, temas, marca oficial, pauta, header, navegação e catálogo; 48 unitários, 33 stories e 13 cenários Playwright verdes; standalone com 12 assets verificados; Lighthouse 100/100/100/100 em três execuções. Fase 2 iniciada. |
+| 2026-07-30 | Execução retomada sem perda de trabalho. A Fase 2 foi revalidada com dependências exatas, lint, tipos, 52 unitários, build de 22 páginas, standalone de 17 rotas e 14 assets e 35 cenários concentrados; o relatório recebeu o registro de continuidade e a Fase 3 foi alinhada como pronta para iniciar após a consolidação Git. |

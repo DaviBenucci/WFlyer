@@ -5,8 +5,8 @@
         "http://127.0.0.1:3000/"
       ],
       "numberOfRuns": 3,
-      "startServerCommand": "HOSTNAME=127.0.0.1 PORT=3000 node .next/standalone/server.js",
-      "startServerReadyPattern": "Ready",
+      "startServerCommand": "node scripts/start-lighthouse-server.mjs",
+      "startServerReadyPattern": "LIGHTHOUSE_SERVER_READY",
       "startServerReadyTimeout": 60000,
       "settings": {
         "preset": "desktop",

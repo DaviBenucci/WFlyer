@@ -1,0 +1,96 @@
+import { expect, test } from "@playwright/test";
+
+const routes = [
+  "/",
+  "/aplicacao-wflyer",
+  "/aplicacao-wflyer/como-funciona",
+  "/aplicacao-wflyer/beneficios",
+  "/sobre",
+  "/servicos",
+  "/processo",
+  "/portfolio",
+  "/contato",
+  "/servicos/criacao-de-sites",
+  "/servicos/criacao-de-aplicacoes",
+  "/servicos/integracoes",
+  "/servicos/solucoes-sob-medida",
+  "/politica-de-privacidade",
+  "/politica-de-cookies",
+  "/termos-de-uso",
+  "/acessibilidade",
+] as const;
+
+for (const route of routes) {
+  test(`${route} renderiza diretamente com SEO e navegação por teclado`, async ({
+    page,
+  }) => {
+    const response = await page.goto(route);
+
+    expect(response?.ok()).toBe(true);
+    await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
+    await expect(page.getByRole("main")).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+    await expect(page.getByRole("contentinfo")).toBeAttached();
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      route === "/"
+        ? "https://wflyer.com.br"
+        : new URL(route, "https://wflyer.com.br").toString(),
+    );
+
+    await page.keyboard.press("Tab");
+    const skipLink = page.getByRole("link", {
+      name: "Pular para o conteúdo principal",
+    });
+    await expect(skipLink).toBeFocused();
+    await page.keyboard.press("Enter");
+    await expect(page.getByRole("main")).toBeFocused();
+  });
+}
+
+test("sitemap e robots expõem somente a superfície pública esperada", async ({
+  page,
+}) => {
+  const sitemapResponse = await page.goto("/sitemap.xml");
+  const sitemap = await page.locator("body").innerText();
+
+  expect(sitemapResponse?.ok()).toBe(true);
+  for (const route of routes) {
+    expect(sitemap).toContain(
+      new URL(route, "https://wflyer.com.br").toString(),
+    );
+  }
+  expect(sitemap).not.toContain("/api/contact");
+  expect(sitemap).not.toContain("app.wflyer.com.br");
+
+  const robotsResponse = await page.goto("/robots.txt");
+  const robots = await page.locator("body").innerText();
+
+  expect(robotsResponse?.ok()).toBe(true);
+  expect(robots).toContain("Allow: /");
+  expect(robots).toContain("Disallow: /api/");
+  expect(robots).toContain(
+    "Sitemap: https://wflyer.com.br/sitemap.xml",
+  );
+});
+
+test("uma rota inexistente apresenta 404 acessível e não indexável", async ({
+  page,
+}) => {
+  const response = await page.goto("/rota-que-nao-existe");
+
+  expect(response?.status()).toBe(404);
+  await expect(
+    page.getByRole("heading", { level: 1, name: "Página não encontrada" }),
+  ).toBeVisible();
+  await expect(page.locator('meta[name="robots"]').first()).toHaveAttribute(
+    "content",
+    /noindex/u,
+  );
+  await expect(
+    page.getByRole("link", {
+      name: "Voltar à página inicial",
+      exact: true,
+    }),
+  ).toHaveAttribute("href", "/");
+});
