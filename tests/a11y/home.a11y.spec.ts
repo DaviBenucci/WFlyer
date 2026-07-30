@@ -44,17 +44,23 @@ async function findRelevantViolations(page: Page): Promise<RelevantViolation[]> 
   });
 }
 
-for (const theme of ["light", "dark"] as const) {
-  test(`a Home não apresenta violações axe críticas ou sérias (${theme})`, async ({
-    page,
-  }) => {
-    await page.emulateMedia({ colorScheme: theme });
-    await page.goto("/");
-    await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
-    await expect(page.getByRole("main")).toBeVisible();
+for (const viewport of [
+  { label: "desktop", width: 1536, height: 1024 },
+  { label: "mobile", width: 390, height: 844 },
+] as const) {
+  for (const theme of ["light", "dark"] as const) {
+    test(`a Home não apresenta violações axe críticas ou sérias (${viewport.label}, ${theme})`, async ({
+      page,
+    }) => {
+      await page.setViewportSize(viewport);
+      await page.emulateMedia({ colorScheme: theme });
+      await page.goto("/");
+      await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
+      await expect(page.getByRole("main")).toBeVisible();
 
-    expect(await findRelevantViolations(page)).toEqual([]);
-  });
+      expect(await findRelevantViolations(page)).toEqual([]);
+    });
+  }
 }
 
 test("o menu mobile aberto não apresenta violações axe críticas ou sérias", async ({

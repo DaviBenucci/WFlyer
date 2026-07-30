@@ -19,8 +19,11 @@ for (const viewport of viewports) {
       await page.goto("/");
 
       await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
-      await expect(page.getByRole("main")).toBeVisible();
-      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+      const main = page.getByRole("main");
+
+      await expect(main).toBeVisible();
+      await expect(main.getByRole("heading", { level: 1 })).toHaveCount(1);
+      await expect(main.getByRole("heading", { level: 2 })).toHaveCount(2);
 
       const dimensions = await page.evaluate(() => ({
         clientWidth: document.documentElement.clientWidth,
@@ -31,3 +34,48 @@ for (const viewport of viewports) {
     });
   }
 }
+
+for (const width of [767, 768, 1023, 1024, 1199, 1200]) {
+  test(`a Home preserva reflow e largura útil em ${width}px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/");
+
+    const dimensions = await page.evaluate(() => ({
+      clientWidth: document.documentElement.clientWidth,
+      scrollWidth: document.documentElement.scrollWidth,
+    }));
+
+    expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
+    await expect(page.locator('[data-home-branch="application"]')).toBeVisible();
+    await expect(
+      page.locator('[data-home-branch="institutional"]'),
+    ).toBeVisible();
+  });
+}
+
+test("a troca de tema preserva a geometria da bifurcação", async ({ page }) => {
+  await page.setViewportSize({ width: 1536, height: 1024 });
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.goto("/");
+
+  const selectors = [
+    "[data-home-origin]",
+    '[data-home-branch="application"]',
+    '[data-home-branch="institutional"]',
+    "[data-origin-score]",
+  ] as const;
+  const geometryBefore = await Promise.all(
+    selectors.map((selector) => page.locator(selector).boundingBox()),
+  );
+
+  await page.getByRole("button", { name: "Tema escuro" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+
+  const geometryAfter = await Promise.all(
+    selectors.map((selector) => page.locator(selector).boundingBox()),
+  );
+
+  expect(geometryAfter).toEqual(geometryBefore);
+});

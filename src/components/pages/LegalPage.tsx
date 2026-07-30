@@ -1,4 +1,5 @@
 import { BreadcrumbStructuredData } from "@/components/seo";
+import { Staff } from "@/components/music";
 import { ArrowIcon, Container, Eyebrow, Heading, LinkButton, Text } from "@/components/ui";
 import type { LegalDocument } from "@/content/site-content";
 
@@ -24,6 +25,7 @@ export function LegalPage({
       <main
         className={styles.page}
         data-branch="origin"
+        data-route-kind="auxiliary"
         id="main-content"
         tabIndex={-1}
       >
@@ -47,6 +49,12 @@ export function LegalPage({
                 Última atualização: <time dateTime="2026-07-29">{document.updatedAt}</time>
               </p>
             </div>
+            <Staff
+              className={styles.score}
+              data-score-variant="auxiliary"
+              density="quiet"
+              direction="right"
+            />
           </header>
 
           <div className={staticPageStyles.legalLayout}>

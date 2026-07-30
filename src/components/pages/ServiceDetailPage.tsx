@@ -52,6 +52,7 @@ export function ServiceDetailPage({
             </LinkButton>
           </>
         }
+        auxiliary
         chapterId="services"
         description={service.description}
         eyebrow={service.eyebrow}
