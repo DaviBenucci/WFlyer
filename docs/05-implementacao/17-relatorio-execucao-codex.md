@@ -27,8 +27,8 @@ A execução local, os testes, os workflows, o build standalone e a preparação
 | Fase 0 — Fundação | `CONCLUÍDA` | gate local verde |
 | Fase 1 — Sistema visual | `CONCLUÍDA` | gate local verde |
 | Fase 2 — Conteúdo e rotas estáticas | `CONCLUÍDA` | gate local verde |
-| Fase 3 — Home e dupla partitura | `PRONTA_PARA_INICIAR` | não avaliado |
-| Fase 4 — Páginas por arquétipo | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
+| Fase 3 — Home e dupla partitura | `CONCLUÍDA` | gate local verde |
+| Fase 4 — Páginas por arquétipo | `PRONTA_PARA_INICIAR` | não avaliado |
 | Fase 5 — Motion e navegação | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
 | Fase 6 — Tablet | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
 | Fase 7 — Abertura e motion local | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
@@ -279,26 +279,29 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 
 ### Fase 3 — Home e dupla partitura
 
-**Estado:** `PRONTA_PARA_INICIAR`
+**Estado:** `CONCLUÍDA`
 **Objetivo:** implementar Home, origem, bifurcação, pautas, âncoras, continuidade, terminações e fallback mobile conforme o manifesto de capítulos.
 
-- **Arquivos criados:** a registrar.
-- **Arquivos modificados:** a registrar.
-- **Decisões aplicadas:** a registrar.
-- **Comandos:** a registrar.
-- **Testes e resultados:** não executados.
-- **Screenshots:** a registrar por tema e viewport.
-- **Comparação visual:** pendente contra painéis Home da prancha mestra.
-- **Acessibilidade:** pendente.
-- **Performance:** pendente.
-- **Riscos:** a registrar.
-- **Pendências não bloqueadoras:** a registrar.
-- **Gate:** `NÃO_AVALIADO`.
-- **Título de commit:** a definir.
+- **Arquivos criados:** `NarrativeClef`, clave SVG original e separada da marca; `OriginScore`, bifurcação determinística com variantes desktop e compacta; `ChapterScore`, segmento vetorial dirigido pelas bordas e alturas do manifesto; stories e testes unitários do sistema; suíte E2E de continuidade; oito evidências visuais e seu índice.
+- **Arquivos modificados:** Home e seus estilos; exportações e estilos musicais; `MusicalNote` para rotação limitada a ±6°; templates compartilhados de capítulos, detalhes de serviço e páginas legais; testes do manifesto, Home, axe, reduced motion e responsividade; este relatório.
+- **Decisões aplicadas:** ADR-007, ADR-013, ADR-014, ADR-015 e ADR-017; Home como origem `0`, com `h1` semântico único e dois `h2` equivalentes; clave narrativa não usada como logo; CTA primário esquerdo para o aplicativo e CTA primário direito para Serviços; escolha secundária de Aplicação e Empresa preservada; pauta enfatizada por hover/foco somente com cor, opacidade e deslocamento curto das notas, sem morph; nenhuma escolha automática por scroll; conteúdo essencial server-rendered; nenhuma animação GSAP antecipada.
+- **Continuidade:** os oito capítulos não centrais expõem no DOM ramo, coordenada, bordas e alturas de entrada/saída, terminalidade e segmento correspondente. As alturas internas coincidem com o próximo capítulo; o ramo da aplicação avança visualmente para a esquerda e retorna pela direita, enquanto o institucional faz o inverso. Detalhes de serviço usam pauta local e `data-parent-chapter`; páginas legais usam pauta local no contexto neutro da origem, sem pai. Todas declaram `data-route-kind="auxiliary"` e nenhuma cria capítulo falso. A exceção `.50 → .46` da origem é tratada pela curva própria da bifurcação, sem alterar o manifesto.
+- **Barras finais:** Benefícios encerra à esquerda depois do CTA e do conteúdo; Contato encerra à direita depois do conteúdo atualmente disponível. A barra de Contato será revalidada após os estados do formulário na Fase 8. Nenhuma rota auxiliar ou capítulo intermediário exibe barra final.
+- **Comandos:** Context7 para documentação atual do Next.js 16; `pnpm validate:dependencies`; `pnpm lint`; `pnpm typecheck`; `pnpm test`; `pnpm build:storybook`; `pnpm test:storybook`; `pnpm test:e2e`; seleções concentradas Playwright; `pnpm verify`; `pnpm build`; `pnpm prepare:standalone`; `pnpm smoke:standalone`; `pnpm lighthouse`; capturas Chromium no standalone; inspeção visual; `git diff --check`.
+- **Testes e resultados:** dependências exatas, lint e typecheck verdes; 58 de 58 testes unitários em 11 arquivos; 38 de 38 testes Storybook em 10 arquivos; 73 de 73 cenários Playwright Chromium; 13 de 13 cenários finais de Home/regressão visual após o ajuste de composição; build Storybook verde; build Next gerou 22 de 22 páginas estáticas; standalone validou 17 rotas e 14 assets.
+- **Screenshots:** [Home desktop claro](evidencias/fase-3/home-desktop-light.png), [Home desktop escuro](evidencias/fase-3/home-desktop-dark.png), [Home mobile claro](evidencias/fase-3/home-mobile-light.png), [Home mobile escuro](evidencias/fase-3/home-mobile-dark.png), fluxos mobile completos [claro](evidencias/fase-3/home-mobile-flow-light.png) e [escuro](evidencias/fase-3/home-mobile-flow-dark.png), [Benefícios terminal claro](evidencias/fase-3/benefits-terminal-desktop-light.png) e [Contato terminal escuro](evidencias/fase-3/contact-terminal-desktop-dark.png). O [índice de evidências](evidencias/fase-3/README.md) registra a proveniência no standalone.
+- **Comparação visual:** a Home reproduz o arquétipo `origin-bifurcation` dos painéis aprovados: símbolo oficial no header, aplicação à esquerda, clave volumétrica central, institucional à direita, CTAs equivalentes, pautas saindo da origem e indicação discreta de exploração. Claro e escuro mantêm caixas e geometria idênticas. O mobile reorganiza a origem e os ramos em uma coluna, usa pauta compacta de 8 px e rótulos direcionais explícitos. Nenhum PNG, recorte ou golden reference integra o frontend.
+- **Acessibilidade:** um `h1` semântico e dois títulos subordinados equivalentes; landmarks e ordem DOM estáveis; skip link e foco visível; CTAs reais com alvo mínimo; pauta, notas, clave e barras ocultadas da árvore acessível; ênfase equivalente por foco e mouse; navegação convencional e barras disponíveis sem JavaScript; axe sem violação crítica ou séria em 1536 × 1024 e 390 × 844, nos dois temas; reduced motion sem animação ativa.
+- **Responsividade:** zero overflow em 390 × 844 e 1536 × 1024, além dos limites 767/768, 1023/1024 e 1199/1200 px. A troca de tema preservou exatamente as caixas da origem, dos ramos e da pauta.
+- **Performance:** três execuções Lighthouse no pacote standalone obtiveram 100 em Performance, Acessibilidade, Boas práticas e SEO. LCP variou de aproximadamente 604 ms a 617 ms; FCP, de 250 ms a 258 ms; CLS permaneceu 0.
+- **Riscos controlados:** `:has()` aprimora a ênfase dos ramos em navegadores modernos, mas o fallback mantém ambas as pautas visíveis e todos os links operáveis. A clave usa poucas camadas vetoriais, sem filtro pesado, Canvas, WebGL ou raster. O conteúdo do formulário não foi antecipado; o gate terminal de Contato é explicitamente reaberto na Fase 8.
+- **Pendências não bloqueadoras:** acabamento individual das outras páginas pertence à Fase 4; transições GSAP, tablet e abertura pertencem às Fases 5 a 7; Firefox/WebKit permanecem para a matriz final; `app.wflyer.com.br` continua dependência externa de homologação/publicação.
+- **Gate:** `CONCLUÍDO`; narrativa correta em claro/escuro e desktop/mobile, com continuidade estática, acessibilidade, performance e evidências verdes.
+- **Título de commit:** `feat(score): compose bifurcated home and chapter continuity`.
 
 ### Fase 4 — Páginas por arquétipo
 
-**Estado:** `AGUARDANDO_GATE_ANTERIOR`  
+**Estado:** `PRONTA_PARA_INICIAR`
 **Objetivo:** implementar, na ordem normativa, Aplicação, Como funciona, Benefícios, Empresa, Serviços, Processo, Portfólio, Contato, quatro detalhes de serviço e páginas legais.
 
 - **Arquivos criados:** a registrar.
@@ -418,3 +421,4 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 | 2026-07-29 | Fase 0 concluída após correção do manifesto tipado, WCAG 2.2 AA, favicon oficial, 8 testes unitários, Storybook, Playwright, standalone, Actionlint e Lighthouse 100/100/100/100. Fase 1 iniciada. |
 | 2026-07-29 | Fase 1 concluída com design system, fontes locais, temas, marca oficial, pauta, header, navegação e catálogo; 48 unitários, 33 stories e 13 cenários Playwright verdes; standalone com 12 assets verificados; Lighthouse 100/100/100/100 em três execuções. Fase 2 iniciada. |
 | 2026-07-30 | Execução retomada sem perda de trabalho. A Fase 2 foi revalidada com dependências exatas, lint, tipos, 52 unitários, build de 22 páginas, standalone de 17 rotas e 14 assets e 35 cenários concentrados; o relatório recebeu o registro de continuidade e a Fase 3 foi alinhada como pronta para iniciar após a consolidação Git. |
+| 2026-07-30 | Fase 3 concluída com Home bifurcada, clave narrativa original, pauta de origem, anchors de oito capítulos, navegação direcional, barras finais e fallback vertical; 58 unitários, 38 stories, 73 Playwright, standalone 17+14 e Lighthouse 100/100/100/100 em três execuções. Fase 4 liberada. |

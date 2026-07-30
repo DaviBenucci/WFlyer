@@ -8,10 +8,10 @@ test("reduced motion mantém a Home disponível e encerra animações", async ({
 
   await expect(page.getByRole("main")).toBeVisible();
   await expect(
-    page.getByRole("link", { name: "Explorar a aplicação" }),
+    page.getByRole("link", { name: /Acessar aplicação/u }),
   ).toBeVisible();
   await expect(
-    page.getByRole("link", { name: "Conhecer a empresa" }),
+    page.getByRole("link", { name: "Conheça nossos serviços" }),
   ).toBeVisible();
 
   expect(

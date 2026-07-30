@@ -7,6 +7,7 @@ export interface MusicalNoteProps
   readonly x?: number;
   readonly y?: number;
   readonly filled?: boolean;
+  readonly rotation?: number;
   readonly stem?: "up" | "down";
   readonly scale?: number;
 }
@@ -17,6 +18,7 @@ export interface MusicalNoteProps
 export function MusicalNote({
   className,
   filled = true,
+  rotation = 0,
   scale = 1,
   stem = "up",
   x = 0,
@@ -25,6 +27,7 @@ export function MusicalNote({
 }: MusicalNoteProps) {
   const stemDirection = stem === "up" ? -1 : 1;
   const stemX = stem === "up" ? 5.5 : -5.5;
+  const boundedRotation = Math.max(-6, Math.min(6, rotation));
   const combinedClassName = className
     ? `${styles.note} ${className}`
     : styles.note;
@@ -37,7 +40,7 @@ export function MusicalNote({
       data-filled={filled ? "true" : "false"}
       data-musical-note=""
       focusable="false"
-      transform={`translate(${x} ${y}) scale(${scale})`}
+      transform={`translate(${x} ${y}) rotate(${boundedRotation}) scale(${scale})`}
     >
       <ellipse
         className={styles.noteHead}

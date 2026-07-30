@@ -193,6 +193,45 @@ describe("manifesto da dupla partitura", () => {
     }
   });
 
+  it("conecta a altura de saída à entrada do próximo capítulo", () => {
+    for (const chapter of scoreChapters) {
+      if (!chapter.next) {
+        continue;
+      }
+
+      const nextChapter = scoreChapterById[chapter.next];
+
+      expect(chapter.exit_anchor_y).toBe(nextChapter.entry_anchor_y);
+    }
+  });
+
+  it("preserva bordas direcionais e a exceção central da origem", () => {
+    expect(scoreChapterById.home).toMatchObject({
+      entry_anchor_y: 0.5,
+      entry_edge: "center",
+      exit_anchor_y: 0.5,
+      exit_edge: "center",
+      final_barline: false,
+      next: null,
+      previous: null,
+      terminal: false,
+    });
+
+    for (const chapter of scoreChapters.filter(
+      ({ branch }) => branch === "application",
+    )) {
+      expect(chapter.entry_edge).toBe("right");
+      expect(chapter.exit_edge).toBe("left");
+    }
+
+    for (const chapter of scoreChapters.filter(
+      ({ branch }) => branch === "institutional",
+    )) {
+      expect(chapter.entry_edge).toBe("left");
+      expect(chapter.exit_edge).toBe("right");
+    }
+  });
+
   it("usa a Home somente como pivô inicial dos dois ramos", () => {
     const chaptersStartingAtHome = scoreChapters.filter(
       ({ previous }) => previous === "home",

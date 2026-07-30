@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 
-import { FinalBarline, StaffSegment } from "@/components/music";
+import { ChapterScore, Staff } from "@/components/music";
 import {
   ArrowIcon,
   Card,
@@ -13,48 +13,15 @@ import {
 } from "@/components/ui";
 import {
   scoreChapterById,
-  type ChapterBranch,
   type ChapterId,
 } from "@/config/chapters";
 import { chapterLabels } from "@/content/site-content";
 
 import styles from "./static-page.module.css";
 
-function StaticScore({
-  branch,
-  terminal = false,
-}: {
-  readonly branch: ChapterBranch;
-  readonly terminal?: boolean;
-}) {
-  return (
-    <svg
-      aria-hidden="true"
-      className={terminal ? styles.terminalScore : styles.score}
-      focusable="false"
-      viewBox="0 0 760 112"
-    >
-      <StaffSegment
-        amplitude={branch === "origin" ? 8 : 14}
-        baseY={28}
-        direction={branch === "application" ? "left" : "right"}
-        endX={terminal ? 700 : 760}
-        lineGap={12}
-      />
-      {terminal ? (
-        <FinalBarline
-          bottom={88}
-          side={branch === "application" ? "start" : "end"}
-          top={20}
-          x={branch === "application" ? 26 : 734}
-        />
-      ) : null}
-    </svg>
-  );
-}
-
 export interface ChapterPageProps {
   readonly actions?: ReactNode;
+  readonly auxiliary?: boolean;
   readonly chapterId: ChapterId;
   readonly children?: ReactNode;
   readonly description: string;
@@ -66,6 +33,7 @@ export interface ChapterPageProps {
 
 export function ChapterPage({
   actions,
+  auxiliary = false,
   chapterId,
   children,
   description,
@@ -75,14 +43,25 @@ export function ChapterPage({
   title,
 }: ChapterPageProps) {
   const chapter = scoreChapterById[chapterId];
+  const isMainChapter = !auxiliary && chapter.branch !== "origin";
 
   return (
     <main
       className={styles.page}
       data-branch={chapter.branch}
-      data-chapter={chapter.id}
-      data-coordinate={chapter.coordinate}
-      data-terminal={chapter.terminal ? "true" : "false"}
+      data-chapter={isMainChapter ? chapter.id : undefined}
+      data-coordinate={isMainChapter ? chapter.coordinate : undefined}
+      data-entry-anchor-y={
+        isMainChapter ? chapter.entry_anchor_y : undefined
+      }
+      data-entry-edge={isMainChapter ? chapter.entry_edge : undefined}
+      data-exit-anchor-y={isMainChapter ? chapter.exit_anchor_y : undefined}
+      data-exit-edge={isMainChapter ? chapter.exit_edge : undefined}
+      data-parent-chapter={auxiliary ? chapter.id : undefined}
+      data-route-kind={auxiliary ? "auxiliary" : "chapter"}
+      data-terminal={
+        isMainChapter && chapter.terminal ? "true" : "false"
+      }
       id="main-content"
       tabIndex={-1}
     >
@@ -101,15 +80,41 @@ export function ChapterPage({
               <div className={styles.heroActions}>{actions}</div>
             ) : null}
           </div>
-          <StaticScore branch={chapter.branch} />
+          {isMainChapter ? (
+            <ChapterScore
+              branch={chapter.branch}
+              className={styles.score}
+              data-score-chapter={chapter.id}
+              entryAnchorY={chapter.entry_anchor_y}
+              entryEdge={chapter.entry_edge}
+              exitAnchorY={chapter.exit_anchor_y}
+              exitEdge={chapter.exit_edge}
+            />
+          ) : (
+            <Staff
+              className={styles.score}
+              data-score-variant="auxiliary"
+              density="quiet"
+              direction="right"
+            />
+          )}
         </header>
 
         {children}
 
-        {chapter.terminal ? (
-          <StaticScore branch={chapter.branch} terminal />
+        {isMainChapter && chapter.terminal ? (
+          <ChapterScore
+            branch={chapter.branch}
+            className={styles.terminalScore}
+            data-score-chapter={chapter.id}
+            entryAnchorY={chapter.entry_anchor_y}
+            entryEdge={chapter.entry_edge}
+            exitAnchorY={chapter.exit_anchor_y}
+            exitEdge={chapter.exit_edge}
+            terminal
+          />
         ) : null}
-        {showChapterNavigation ? (
+        {isMainChapter && showChapterNavigation ? (
           <ChapterNavigation chapterId={chapterId} />
         ) : null}
       </Container>
@@ -278,27 +283,48 @@ export function ChapterNavigation({
     return null;
   }
 
+  const previousLink = previous ? (
+    <LinkButton
+      data-navigation-role="previous"
+      href={previous.route}
+      leadingIcon={
+        chapter.branch === "institutional" ? (
+          <ArrowIcon direction="left" />
+        ) : undefined
+      }
+      trailingIcon={
+        chapter.branch === "application" ? <ArrowIcon /> : undefined
+      }
+      variant="secondary"
+    >
+      Anterior: {chapterLabels[previous.id]}
+    </LinkButton>
+  ) : null;
+  const nextLink = next ? (
+    <LinkButton
+      data-navigation-role="next"
+      href={next.route}
+      leadingIcon={
+        chapter.branch === "application" ? (
+          <ArrowIcon direction="left" />
+        ) : undefined
+      }
+      trailingIcon={
+        chapter.branch === "institutional" ? <ArrowIcon /> : undefined
+      }
+    >
+      Próximo: {chapterLabels[next.id]}
+    </LinkButton>
+  ) : null;
+
   return (
     <nav
       aria-label="Navegação entre capítulos"
-      className={`${styles.chapterNavigation} ${
-        previous && next ? "" : styles.singleNavigation
-      }`}
+      className={styles.chapterNavigation}
+      data-branch={chapter.branch}
     >
-      {previous ? (
-        <LinkButton
-          href={previous.route}
-          leadingIcon={<ArrowIcon direction="left" />}
-          variant="secondary"
-        >
-          Anterior: {chapterLabels[previous.id]}
-        </LinkButton>
-      ) : null}
-      {next ? (
-        <LinkButton href={next.route} trailingIcon={<ArrowIcon />}>
-          Próximo: {chapterLabels[next.id]}
-        </LinkButton>
-      ) : null}
+      {chapter.branch === "application" ? nextLink : previousLink}
+      {chapter.branch === "application" ? previousLink : nextLink}
     </nav>
   );
 }
