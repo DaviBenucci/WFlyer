@@ -1,8 +1,6 @@
 import {
-  CardGrid,
   ChapterPage,
-  PageSection,
-  StepCard,
+  StepSequence,
 } from "@/components/pages";
 import { BreadcrumbStructuredData } from "@/components/seo";
 import { ArrowIcon, LinkButton } from "@/components/ui";
@@ -40,17 +38,19 @@ export default function HowItWorksPage() {
         eyebrow={howItWorksContent.eyebrow}
         title={howItWorksContent.title}
       >
-        <PageSection
-          description="As escolhas permanecem visíveis e revisáveis antes de cada continuação."
+        <section
+          aria-labelledby="etapas-title"
+          data-compact-archetype-section=""
           id="etapas"
-          title="Cinco etapas claras"
         >
-          <CardGrid columns={5}>
-            {howItWorksContent.steps.map((step) => (
-              <StepCard key={step.number} {...step} />
-            ))}
-          </CardGrid>
-        </PageSection>
+          <h2 className="wf-sr-only" id="etapas-title">
+            Cinco etapas claras
+          </h2>
+          <StepSequence
+            branch="application"
+            steps={howItWorksContent.steps}
+          />
+        </section>
       </ChapterPage>
     </>
   );

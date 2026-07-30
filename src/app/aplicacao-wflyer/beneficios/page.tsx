@@ -1,8 +1,7 @@
 import {
-  CardGrid,
+  BenefitsGrid,
   ChapterPage,
-  InfoCard,
-  PageSection,
+  PageCallout,
 } from "@/components/pages";
 import { BreadcrumbStructuredData } from "@/components/seo";
 import { LinkButton } from "@/components/ui";
@@ -28,31 +27,34 @@ export default function BenefitsPage() {
         ]}
       />
       <ChapterPage
-        actions={
-          <LinkButton
-            external
-            href={siteConfig.applicationUrl}
-            target="_blank"
-          >
-            Acessar aplicação
-          </LinkButton>
-        }
         chapterId="application-benefits"
         description={benefitsContent.description}
         eyebrow={benefitsContent.eyebrow}
         title={benefitsContent.title}
       >
-        <PageSection
-          description="Valor prático com revisão humana e decisões musicais explícitas."
+        <section
+          aria-labelledby="beneficios-title"
+          data-compact-archetype-section=""
           id="beneficios"
-          title="Benefícios para o trabalho musical"
         >
-          <CardGrid columns={3}>
-            {benefitsContent.benefits.map((benefit) => (
-              <InfoCard key={benefit.title} {...benefit} />
-            ))}
-          </CardGrid>
-        </PageSection>
+          <h2 className="wf-sr-only" id="beneficios-title">
+            Benefícios para o trabalho musical
+          </h2>
+          <BenefitsGrid items={benefitsContent.benefits} />
+        </section>
+        <PageCallout
+          action={
+            <LinkButton
+              external
+              href={siteConfig.applicationUrl}
+              target="_blank"
+            >
+              Acessar aplicação
+            </LinkButton>
+          }
+          description="Continue no ambiente separado da aplicação quando quiser conhecer a experiência disponível."
+          title="Pronto para seguir para a aplicação?"
+        />
       </ChapterPage>
     </>
   );

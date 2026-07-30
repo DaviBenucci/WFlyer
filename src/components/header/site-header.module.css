@@ -37,6 +37,19 @@
   padding-inline: var(--wf-page-gutter, clamp(20px, 4vw, 72px));
 }
 
+.siteHeader[data-variant="simplified"] .desktopHeader {
+  block-size: calc(var(--wf-header-height-desktop, 88px) - 0.75rem);
+}
+
+.siteHeader[data-variant="simplified"] .measureGraphic {
+  display: none;
+}
+
+.siteHeader[data-variant="simplified"] .measureLabel {
+  font-size: clamp(0.64rem, 0.65vw, 0.74rem);
+  background: transparent;
+}
+
 .desktopMeasureGroup {
   display: grid;
   grid-template-columns: repeat(4, minmax(5.5rem, 1fr));

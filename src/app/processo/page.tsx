@@ -1,4 +1,7 @@
-import { CardGrid, ChapterPage, PageSection, StepCard } from "@/components/pages";
+import {
+  ChapterPage,
+  StepSequence,
+} from "@/components/pages";
 import { BreadcrumbStructuredData } from "@/components/seo";
 import { createPageMetadata } from "@/config/seo";
 import { processContent } from "@/content/site-content";
@@ -20,13 +23,19 @@ export default function ProcessPage() {
         eyebrow={processContent.eyebrow}
         title={processContent.title}
       >
-        <PageSection id="etapas" title="Etapas do trabalho">
-          <CardGrid columns={4}>
-            {processContent.steps.map((step) => (
-              <StepCard key={step.number} {...step} />
-            ))}
-          </CardGrid>
-        </PageSection>
+        <section
+          aria-labelledby="etapas-title"
+          data-compact-archetype-section=""
+          id="etapas"
+        >
+          <h2 className="wf-sr-only" id="etapas-title">
+            Etapas do trabalho
+          </h2>
+          <StepSequence
+            branch="institutional"
+            steps={processContent.steps}
+          />
+        </section>
       </ChapterPage>
     </>
   );

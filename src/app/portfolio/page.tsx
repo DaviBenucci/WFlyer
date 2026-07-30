@@ -1,12 +1,8 @@
 import {
-  CardGrid,
   ChapterPage,
-  InfoCard,
-  PageSection,
-  TagList,
+  ProjectGrid,
 } from "@/components/pages";
 import { BreadcrumbStructuredData } from "@/components/seo";
-import { LinkButton } from "@/components/ui";
 import { createPageMetadata } from "@/config/seo";
 import { portfolioContent } from "@/content/site-content";
 
@@ -27,31 +23,16 @@ export default function PortfolioPage() {
         eyebrow={portfolioContent.eyebrow}
         title={portfolioContent.title}
       >
-        <PageSection
+        <section
+          aria-labelledby="projetos-title"
+          data-compact-archetype-section=""
           id="projetos"
-          title="Projetos aprovados para a versão inicial"
         >
-          <CardGrid columns={3}>
-            {portfolioContent.projects.map((project) => (
-              <InfoCard
-                description={project.description}
-                eyebrow={`${project.type} · ${project.status}`}
-                key={project.name}
-                title={project.name}
-              >
-                <TagList items={project.scope} />
-                <LinkButton
-                  external
-                  href={project.url}
-                  target="_blank"
-                  variant="ghost"
-                >
-                  Visitar {project.name}
-                </LinkButton>
-              </InfoCard>
-            ))}
-          </CardGrid>
-        </PageSection>
+          <h2 className="wf-sr-only" id="projetos-title">
+            Projetos aprovados para a versão inicial
+          </h2>
+          <ProjectGrid projects={portfolioContent.projects} />
+        </section>
       </ChapterPage>
     </>
   );

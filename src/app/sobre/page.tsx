@@ -1,4 +1,8 @@
-import { ChapterPage, CardGrid, InfoCard, PageSection } from "@/components/pages";
+import {
+  ChapterPage,
+  CompanyMark,
+  EditorialPillars,
+} from "@/components/pages";
 import { BreadcrumbStructuredData } from "@/components/seo";
 import { createPageMetadata } from "@/config/seo";
 import { aboutContent } from "@/content/site-content";
@@ -18,18 +22,19 @@ export default function AboutPage() {
         chapterId="company"
         description={aboutContent.description}
         eyebrow={aboutContent.eyebrow}
+        heroVisual={<CompanyMark />}
         title={aboutContent.title}
       >
-        <PageSection
+        <section
+          aria-labelledby="principios-title"
+          data-compact-archetype-section=""
           id="principios"
-          title="Missão, visão e valores"
         >
-          <CardGrid columns={3}>
-            {aboutContent.pillars.map((pillar) => (
-              <InfoCard key={pillar.title} {...pillar} />
-            ))}
-          </CardGrid>
-        </PageSection>
+          <h2 className="wf-sr-only" id="principios-title">
+            Missão, visão e valores
+          </h2>
+          <EditorialPillars items={aboutContent.pillars} />
+        </section>
       </ChapterPage>
     </>
   );

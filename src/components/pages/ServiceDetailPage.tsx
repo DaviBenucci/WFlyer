@@ -1,8 +1,17 @@
 import { BreadcrumbStructuredData, ServiceStructuredData } from "@/components/seo";
 import { ArrowIcon, LinkButton } from "@/components/ui";
 import { pageSeo } from "@/config/seo";
-import type { ServiceDetail } from "@/content/site-content";
+import type {
+  ServiceDetail,
+  ServiceRoute,
+} from "@/content/site-content";
 
+import {
+  AudienceList,
+  ServiceDetailMark,
+  StepSequence,
+  type PageIconName,
+} from "./archetypes";
 import {
   Breadcrumbs,
   BulletList,
@@ -11,8 +20,37 @@ import {
   InfoCard,
   PageCallout,
   PageSection,
-  StepCard,
 } from "./StaticPage";
+
+const servicePresentation = {
+  "/servicos/criacao-de-sites": {
+    cta: "Falar sobre um site",
+    icon: "sites",
+    label: "Criação de sites",
+  },
+  "/servicos/criacao-de-aplicacoes": {
+    cta: "Falar sobre uma aplicação",
+    icon: "applications",
+    label: "Criação de aplicações",
+  },
+  "/servicos/integracoes": {
+    cta: "Falar sobre integração",
+    icon: "integrations",
+    label: "Integrações",
+  },
+  "/servicos/solucoes-sob-medida": {
+    cta: "Apresentar necessidade",
+    icon: "custom",
+    label: "Soluções sob medida",
+  },
+} as const satisfies Record<
+  ServiceRoute,
+  {
+    readonly cta: string;
+    readonly icon: PageIconName;
+    readonly label: string;
+  }
+>;
 
 export function ServiceDetailPage({
   service,
@@ -20,6 +58,7 @@ export function ServiceDetailPage({
   readonly service: ServiceDetail;
 }) {
   const contactHref = `/contato?tipo=${encodeURIComponent(service.contactType)}`;
+  const presentation = servicePresentation[service.route];
 
   return (
     <>
@@ -45,45 +84,44 @@ export function ServiceDetailPage({
               href={contactHref}
               trailingIcon={<ArrowIcon />}
             >
-              Falar sobre este projeto
+              {presentation.cta}
             </LinkButton>
             <LinkButton href="/servicos" variant="secondary">
               Voltar aos serviços
             </LinkButton>
           </>
         }
+        archetype="service-detail"
         auxiliary
+        breadcrumbs={
+          <Breadcrumbs
+            items={[
+              { href: "/", label: "Home" },
+              { href: "/servicos", label: "Serviços" },
+              {
+                label: pageSeo[service.route].title.replace(" — W_Flyer", ""),
+              },
+            ]}
+          />
+        }
         chapterId="services"
         description={service.description}
         eyebrow={service.eyebrow}
+        heroVisual={
+          <ServiceDetailMark
+            icon={presentation.icon}
+            label={presentation.label}
+          />
+        }
         showChapterNavigation={false}
         title={service.title}
       >
-        <Breadcrumbs
-          items={[
-            { href: "/", label: "Home" },
-            { href: "/servicos", label: "Serviços" },
-            {
-              label: pageSeo[service.route].title.replace(" — W_Flyer", ""),
-            },
-          ]}
-        />
-
         <PageSection
           description="O ponto de partida é compreender o problema antes de definir a forma da solução."
           id="adequacao"
           title="Quando este serviço faz sentido"
         >
-          <CardGrid columns={3}>
-            {service.audience.map((item, index) => (
-              <InfoCard
-                description={item}
-                eyebrow={`Contexto ${index + 1}`}
-                key={item}
-                title="Necessidade compatível"
-              />
-            ))}
-          </CardGrid>
+          <AudienceList items={service.audience} />
         </PageSection>
 
         <PageSection
@@ -112,11 +150,10 @@ export function ServiceDetailPage({
           id="processo"
           title="Processo de trabalho"
         >
-          <CardGrid columns={4}>
-            {service.process.map((step) => (
-              <StepCard key={step.number} {...step} />
-            ))}
-          </CardGrid>
+          <StepSequence
+            branch="institutional"
+            steps={service.process}
+          />
         </PageSection>
 
         <PageSection
@@ -146,7 +183,7 @@ export function ServiceDetailPage({
               href={contactHref}
               trailingIcon={<ArrowIcon />}
             >
-              Apresentar necessidade
+              {presentation.cta}
             </LinkButton>
           }
           description="Conte o contexto, o objetivo e o processo atual. A conversa inicial ajuda a verificar se este é o serviço adequado."

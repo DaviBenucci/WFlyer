@@ -24,6 +24,7 @@ export function LegalPage({
       />
       <main
         className={styles.page}
+        data-archetype="legal-editorial"
         data-branch="origin"
         data-route-kind="auxiliary"
         id="main-content"
@@ -46,7 +47,10 @@ export function LegalPage({
                 {document.description}
               </Text>
               <p className={staticPageStyles.updatedAt}>
-                Última atualização: <time dateTime="2026-07-29">{document.updatedAt}</time>
+                Última atualização:{" "}
+                <time dateTime={document.updatedAtIso}>
+                  {document.updatedAt}
+                </time>
               </p>
             </div>
             <Staff
@@ -79,6 +83,7 @@ export function LegalPage({
                   className={staticPageStyles.legalSection}
                   id={section.id}
                   key={section.id}
+                  tabIndex={-1}
                 >
                   <Heading as="h2" id={`${section.id}-title`} size="md">
                     {section.title}

@@ -28,8 +28,8 @@ A execução local, os testes, os workflows, o build standalone e a preparação
 | Fase 1 — Sistema visual | `CONCLUÍDA` | gate local verde |
 | Fase 2 — Conteúdo e rotas estáticas | `CONCLUÍDA` | gate local verde |
 | Fase 3 — Home e dupla partitura | `CONCLUÍDA` | gate local verde |
-| Fase 4 — Páginas por arquétipo | `PRONTA_PARA_INICIAR` | não avaliado |
-| Fase 5 — Motion e navegação | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
+| Fase 4 — Páginas por arquétipo | `CONCLUÍDA` | gate local verde |
+| Fase 5 — Motion e navegação | `PRONTA_PARA_INICIAR` | não avaliado |
 | Fase 6 — Tablet | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
 | Fase 7 — Abertura e motion local | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
 | Fase 8 — Contato, segurança e conteúdo final | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
@@ -301,26 +301,28 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 
 ### Fase 4 — Páginas por arquétipo
 
-**Estado:** `PRONTA_PARA_INICIAR`
+**Estado:** `CONCLUÍDA`
 **Objetivo:** implementar, na ordem normativa, Aplicação, Como funciona, Benefícios, Empresa, Serviços, Processo, Portfólio, Contato, quatro detalhes de serviço e páginas legais.
 
-- **Arquivos criados:** a registrar.
-- **Arquivos modificados:** a registrar.
-- **Decisões aplicadas:** a registrar por página, matriz e arquétipo.
-- **Comandos:** a registrar.
-- **Testes e resultados:** não executados.
-- **Screenshots:** a registrar por página, tema e viewport.
-- **Comparação visual:** pendente contra referência individual, painel ou arquétipo autorizado.
-- **Acessibilidade:** pendente, incluindo axe e navegação por teclado.
-- **Performance:** pendente.
-- **Riscos:** a registrar.
-- **Pendências não bloqueadoras:** a registrar.
-- **Gate:** `NÃO_AVALIADO`.
-- **Título de commit:** a definir.
+- **Arquivos criados:** catálogo de ícones SVG originais; blocos semânticos para os arquétipos normativos `product-demo`, `editorial-sequence`, `editorial-benefits-terminal`, `service-grid`, `process-timeline`, `portfolio-grid`, `contact-terminal`, `service-detail` e `legal-editorial`; seletor cliente isolado para refletir a pré-seleção validada do tipo de projeto sem tornar Contato dinâmico; estilos próprios; testes unitários, stories, cenários E2E e matriz visual; gerador de capturas e 15 evidências documentadas.
+- **Arquivos modificados:** as oito rotas principais após a Home; templates compartilhados de capítulo, detalhe de serviço e documento legal; header legal simplificado, preservando símbolo e os dois grupos; footer terminal; configuração Lighthouse; exportações; conteúdo tipado com ícones, tipos de contato e datas ISO; testes de conteúdo e acessibilidade.
+- **Decisões aplicadas:** Aplicação deriva da referência individual aprovada e usa tablet estático construído em DOM e SVG, sem upload, rede ou simulação de resultado; a faixa canônica e o cue permanecem no primeiro viewport 1536 × 1024. Como funciona e Processo usam sequências semânticas distintas; Benefícios, Serviços e detalhes usam os arquétipos autorizados sem criar uma linguagem paralela; Serviços segue a ordem canônica cards → CTA → pauta e usa o SVG Bézier oficial do sistema, não gradiente CSS; Empresa conserva a clave como elemento narrativo, nunca como logo; Portfólio publica somente W_Flyer, MSN Distribuidora e MSN Suprimentos, sem métricas; Contato exibe os canais oficiais e um shell explicitamente indisponível até a implementação segura da Fase 8, mas reflete de forma segura a query `tipo` dos CTAs de serviço; documentos legais permanecem institucionais, honestos e navegáveis por seções.
+- **Continuidade e terminais:** todas as rotas principais preservam os metadados e segmentos da dupla partitura implementados na Fase 3. Benefícios e Contato apresentam conteúdo, navegação anterior/próximo e somente então a barra dupla final; a pauta decorativa do footer é suprimida após capítulos terminais. Rotas auxiliares continuam sem criar capítulos falsos.
+- **Comandos:** Context7 para a documentação atual do Next.js 16 e o contrato `useSearchParams` + `Suspense` em rota prerenderizada; `pnpm lint`; `pnpm typecheck`; `pnpm test`; `pnpm build:storybook`; `pnpm test:storybook`; `pnpm test:e2e`; suíte visual concentrada; suíte axe concentrada; `pnpm build`; `pnpm prepare:standalone`; `pnpm smoke:standalone`; `pnpm lighthouse`; capturas Chromium no standalone; inspeção visual; verificações finais de integridade do diff.
+- **Testes e resultados:** lint e TypeScript verdes; 65 de 65 testes unitários em 12 arquivos; build Storybook verde e 46 de 46 testes em 11 arquivos; 147 de 147 cenários Playwright Chromium; 52 de 52 verificações visuais concentradas, incluindo a composição completa da Aplicação em 1536 × 1024, a separação geométrica entre pautas e texto legível, a ordem canônica de Serviços, presença dos blocos no primeiro viewport, igualdade geométrica entre temas, reduced motion e limites 767/768, 1023/1024 e 1199/1200; build Next gerou 22 de 22 páginas estáticas; standalone validou 17 rotas e 17 assets.
+- **Screenshots:** as matrizes das 16 rotas em [desktop claro](evidencias/fase-4/matrix-desktop-light.png), [desktop escuro](evidencias/fase-4/matrix-desktop-dark.png), [mobile claro](evidencias/fase-4/matrix-mobile-light.png) e [mobile escuro](evidencias/fase-4/matrix-mobile-dark.png) cobrem 64 estados. As vistas detalhadas incluem [Aplicação desktop claro](evidencias/fase-4/application-desktop-light.png), [Aplicação mobile escuro](evidencias/fase-4/application-mobile-dark.png), [Como funciona mobile claro](evidencias/fase-4/how-it-works-mobile-light.png), [Benefícios desktop escuro](evidencias/fase-4/benefits-desktop-dark.png), [Empresa mobile claro](evidencias/fase-4/company-mobile-light.png), [Serviços](evidencias/fase-4/services-desktop-light.png), [Processo](evidencias/fase-4/process-desktop-light.png), [Portfólio](evidencias/fase-4/portfolio-desktop-dark.png), [Contato](evidencias/fase-4/contact-desktop-light.png), [detalhe de serviço](evidencias/fase-4/service-detail-mobile-light.png) e [documento legal](evidencias/fase-4/legal-mobile-dark.png). As seis capturas detalhadas desktop usam exatamente 1536 × 1024; o [índice de evidências](evidencias/fase-4/README.md) registra viewport, tema, rota e proveniência.
+- **Comparação visual:** Aplicação reproduz no mesmo viewport da golden a composição em dois campos, título editorial, tablet inclinado, pauta, faixa de cinco benefícios e cue, preservando conteúdo oficial e removendo qualquer impressão de processamento real. As demais páginas herdam exclusivamente os painéis e arquétipos autorizados: abertura editorial, densidade suficiente para manter os blocos canônicos no primeiro viewport, cards contidos, ícones lineares, fundos quentes e continuidade musical. Nenhuma pauta atravessa texto legível; os segmentos editoriais ficam em fluxo após a descrição, a legenda da Aplicação isola sua copy e Serviços reproduz cards → CTA → pauta. O header legal simplificado mantém símbolo e ambos os grupos sem os compassos decorativos. A comparação automatizada protege geometria, presença, enquadramento e paridade entre temas; a inspeção direta usa a golden e a prancha sem transformar divergências editoriais obrigatórias em baseline falso. Claro e escuro preservam a geometria; o mobile converte as composições em ordem vertical sem overflow. Nenhum PNG, screenshot ou golden reference foi incorporado ao frontend.
+- **Acessibilidade:** um `h1` por rota, hierarquia de headings, landmarks, breadcrumbs e listas semânticas; links e CTAs reais; shell do formulário nativamente desabilitado e descrito; documentos legais com índice focável; SVGs decorativos fora da árvore acessível; foco visível, skip link e alvos operáveis. Foram executadas 64 varreduras axe nas 16 rotas da Fase 4, em desktop/mobile e claro/escuro, além das quatro varreduras da Home; nenhuma apresentou violação crítica ou séria.
+- **Responsividade:** zero overflow na matriz desktop/mobile e nos seis limites de breakpoint. O tablet perde inclinação no mobile, grids viram colunas e documentos legais preservam leitura e índice sem alterar a ordem DOM.
+- **Performance:** 15 coletas no pacote standalone final — três para Home, Aplicação, Serviços, Contato e Privacidade — obtiveram 100 em Performance, Acessibilidade, Boas práticas e SEO. FCP variou de 247 ms a 263 ms; LCP, de 492 ms a 669 ms; o maior CLS foi 0,039 na Aplicação e TBT foi 0 ms em todas.
+- **Riscos controlados:** o tablet desta fase é somente uma prévia estática e determinística; sua operação acessível pertence à Fase 6 e sua inclinação já é removida em reduced motion. O shell de Contato não aceita nem transmite dados até que validação, Turnstile, Resend e falha fechada sejam implementados na Fase 8; a pré-seleção atual somente apresenta um valor permitido no controle desabilitado. Não foram adicionadas dependências, métricas, depoimentos, clientes, analytics, CMS ou lógica da aplicação musical.
+- **Pendências não bloqueadoras:** reabrir o tablet na Fase 6; reabrir o formulário e a barra terminal de Contato na Fase 8; reconferir o estado público dos projetos próximo ao lançamento; obter revisão jurídica e homologação de Davi Benucci antes da produção; executar Firefox/WebKit na matriz final. `app.wflyer.com.br` permanece uma dependência externa de homologação/publicação, não do gate local.
+- **Gate:** `CONCLUÍDO`; as 16 rotas da fase têm composição autorizada, conteúdo oficial, responsividade, acessibilidade, performance, testes e evidências verdes. Três revisões independentes finais — requisitos, código e auditoria integral — retornaram `NÃO BLOQUEIA`.
+- **Título de commit:** `feat(pages): implement authorized visual archetypes`.
 
 ### Fase 5 — Motion e navegação
 
-**Estado:** `AGUARDANDO_GATE_ANTERIOR`  
+**Estado:** `PRONTA_PARA_INICIAR`
 **Objetivo:** implementar transições adjacentes, saltos comprimidos, pivô pela Home, deep links, histórico, foco, fallback, timeout e reduced motion.
 
 - **Arquivos criados:** a registrar.
@@ -422,3 +424,4 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 | 2026-07-29 | Fase 1 concluída com design system, fontes locais, temas, marca oficial, pauta, header, navegação e catálogo; 48 unitários, 33 stories e 13 cenários Playwright verdes; standalone com 12 assets verificados; Lighthouse 100/100/100/100 em três execuções. Fase 2 iniciada. |
 | 2026-07-30 | Execução retomada sem perda de trabalho. A Fase 2 foi revalidada com dependências exatas, lint, tipos, 52 unitários, build de 22 páginas, standalone de 17 rotas e 14 assets e 35 cenários concentrados; o relatório recebeu o registro de continuidade e a Fase 3 foi alinhada como pronta para iniciar após a consolidação Git. |
 | 2026-07-30 | Fase 3 concluída com Home bifurcada, clave narrativa original, pauta de origem, anchors de oito capítulos, navegação direcional, barras finais e fallback vertical; 58 unitários, 38 stories, 73 Playwright, standalone 17+14 e Lighthouse 100/100/100/100 em três execuções. Fase 4 liberada. |
+| 2026-07-30 | Fase 4 concluída após auditoria e recomposição de densidade no viewport normativo, com 16 páginas pelos arquétipos autorizados, tablet estático em DOM, pautas separadas do texto, Serviços em ordem canônica, header legal simplificado, terminais corrigidos e 15 evidências; 65 unitários, 46 stories, 147 Playwright, standalone 17+17 e Lighthouse 100/100/100/100 em 15 execuções sobre cinco rotas. Três revisões independentes finais retornaram `NÃO BLOQUEIA`; Fase 5 liberada. |

@@ -15,17 +15,25 @@ import {
   scoreChapterById,
   type ChapterId,
 } from "@/config/chapters";
+import {
+  visualArchetypeByPage,
+  type VisualArchetypeId,
+} from "@/config/archetypes";
 import { chapterLabels } from "@/content/site-content";
 
 import styles from "./static-page.module.css";
 
 export interface ChapterPageProps {
   readonly actions?: ReactNode;
+  readonly archetype?: VisualArchetypeId;
   readonly auxiliary?: boolean;
+  readonly breadcrumbs?: ReactNode;
   readonly chapterId: ChapterId;
   readonly children?: ReactNode;
   readonly description: string;
   readonly eyebrow: string;
+  readonly heroVisual?: ReactNode;
+  readonly scorePlacement?: "after-content" | "hero";
   readonly showChapterNavigation?: boolean;
   readonly status?: string;
   readonly title: string;
@@ -33,21 +41,48 @@ export interface ChapterPageProps {
 
 export function ChapterPage({
   actions,
+  archetype,
   auxiliary = false,
+  breadcrumbs,
   chapterId,
   children,
   description,
   eyebrow,
+  heroVisual,
+  scorePlacement = "hero",
   showChapterNavigation = true,
   status,
   title,
 }: ChapterPageProps) {
   const chapter = scoreChapterById[chapterId];
   const isMainChapter = !auxiliary && chapter.branch !== "origin";
+  const resolvedArchetype =
+    archetype ?? visualArchetypeByPage[chapter.id];
+  const score = isMainChapter ? (
+    <ChapterScore
+      branch={chapter.branch}
+      className={styles.score}
+      data-score-chapter={chapter.id}
+      data-score-placement={scorePlacement}
+      entryAnchorY={chapter.entry_anchor_y}
+      entryEdge={chapter.entry_edge}
+      exitAnchorY={chapter.exit_anchor_y}
+      exitEdge={chapter.exit_edge}
+    />
+  ) : (
+    <Staff
+      className={styles.score}
+      data-score-placement={scorePlacement}
+      data-score-variant="auxiliary"
+      density="quiet"
+      direction="right"
+    />
+  );
 
   return (
     <main
       className={styles.page}
+      data-archetype={resolvedArchetype}
       data-branch={chapter.branch}
       data-chapter={isMainChapter ? chapter.id : undefined}
       data-coordinate={isMainChapter ? chapter.coordinate : undefined}
@@ -66,7 +101,13 @@ export function ChapterPage({
       tabIndex={-1}
     >
       <Container>
-        <header className={styles.hero}>
+        {breadcrumbs ? (
+          <div className={styles.breadcrumbSlot}>{breadcrumbs}</div>
+        ) : null}
+        <header
+          className={styles.hero}
+          data-has-visual={heroVisual ? "true" : "false"}
+        >
           <div className={styles.heroCopy}>
             <Eyebrow>{eyebrow}</Eyebrow>
             <Heading as="h1" size="display">
@@ -80,28 +121,18 @@ export function ChapterPage({
               <div className={styles.heroActions}>{actions}</div>
             ) : null}
           </div>
-          {isMainChapter ? (
-            <ChapterScore
-              branch={chapter.branch}
-              className={styles.score}
-              data-score-chapter={chapter.id}
-              entryAnchorY={chapter.entry_anchor_y}
-              entryEdge={chapter.entry_edge}
-              exitAnchorY={chapter.exit_anchor_y}
-              exitEdge={chapter.exit_edge}
-            />
-          ) : (
-            <Staff
-              className={styles.score}
-              data-score-variant="auxiliary"
-              density="quiet"
-              direction="right"
-            />
-          )}
+          {heroVisual ? (
+            <div className={styles.heroVisual}>{heroVisual}</div>
+          ) : null}
+          {scorePlacement === "hero" ? score : null}
         </header>
 
         {children}
+        {scorePlacement === "after-content" ? score : null}
 
+        {isMainChapter && showChapterNavigation ? (
+          <ChapterNavigation chapterId={chapterId} />
+        ) : null}
         {isMainChapter && chapter.terminal ? (
           <ChapterScore
             branch={chapter.branch}
@@ -113,9 +144,6 @@ export function ChapterPage({
             exitEdge={chapter.exit_edge}
             terminal
           />
-        ) : null}
-        {isMainChapter && showChapterNavigation ? (
-          <ChapterNavigation chapterId={chapterId} />
         ) : null}
       </Container>
     </main>
@@ -243,6 +271,19 @@ export function TagList({ items }: { readonly items: readonly string[] }) {
         <li key={item}>{item}</li>
       ))}
     </ul>
+  );
+}
+
+export function ExplorationCue({
+  children,
+}: {
+  readonly children: ReactNode;
+}) {
+  return (
+    <p className={styles.explorationCue} data-exploration-cue="">
+      <span aria-hidden="true">↓</span>
+      {children}
+    </p>
   );
 }
 

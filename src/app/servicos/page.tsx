@@ -1,5 +1,9 @@
-import { CardGrid, ChapterPage, InfoCard, PageSection } from "@/components/pages";
+import {
+  ChapterPage,
+  ServiceSolutionGrid,
+} from "@/components/pages";
 import { BreadcrumbStructuredData } from "@/components/seo";
+import { ArrowIcon, LinkButton } from "@/components/ui";
 import { createPageMetadata } from "@/config/seo";
 import { servicesContent } from "@/content/site-content";
 
@@ -18,24 +22,29 @@ export default function ServicesPage() {
         chapterId="services"
         description={servicesContent.description}
         eyebrow={servicesContent.eyebrow}
+        scorePlacement="after-content"
         title={servicesContent.title}
       >
-        <PageSection
+        <section
+          aria-labelledby="categorias-title"
+          data-service-overview=""
           id="categorias"
-          title="Quatro categorias de solução"
         >
-          <CardGrid columns={4}>
-            {servicesContent.services.map((service) => (
-              <InfoCard
-                description={service.description}
-                href={service.route}
-                key={service.route}
-                linkLabel={service.cta}
-                title={service.title}
-              />
-            ))}
-          </CardGrid>
-        </PageSection>
+          <h2 className="wf-sr-only" id="categorias-title">
+            Quatro categorias de solução
+          </h2>
+          <ServiceSolutionGrid
+            action={
+              <LinkButton
+                href="#categorias"
+                trailingIcon={<ArrowIcon />}
+              >
+                Ver todos os serviços
+              </LinkButton>
+            }
+            services={servicesContent.services}
+          />
+        </section>
       </ChapterPage>
     </>
   );
