@@ -71,6 +71,7 @@ export function SiteFooter() {
       <svg
         aria-hidden="true"
         className={styles.score}
+        data-footer-score=""
         focusable="false"
         preserveAspectRatio="none"
         viewBox="0 0 1200 112"

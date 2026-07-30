@@ -20,6 +20,10 @@
   pointer-events: none;
 }
 
+:global(main[data-terminal="true"] + footer) .score {
+  display: none;
+}
+
 .inner {
   position: relative;
   z-index: 1;

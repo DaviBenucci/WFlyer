@@ -1,8 +1,8 @@
 import {
-  CardGrid,
+  ApplicationFeatureStrip,
+  ApplicationPreview,
   ChapterPage,
-  InfoCard,
-  PageSection,
+  ExplorationCue,
 } from "@/components/pages";
 import { BreadcrumbStructuredData } from "@/components/seo";
 import { ArrowIcon, LinkButton } from "@/components/ui";
@@ -43,20 +43,20 @@ export default function ApplicationPage() {
         chapterId="application"
         description={applicationContent.description}
         eyebrow={applicationContent.eyebrow}
+        heroVisual={<ApplicationPreview />}
         status={applicationContent.status}
         title={applicationContent.title}
       >
-        <PageSection
-          description="Uma visão pública dos benefícios previstos para a experiência."
-          id="beneficios-em-destaque"
-          title="Benefícios em destaque"
+        <section
+          aria-labelledby="beneficios-em-destaque"
+          data-application-features=""
         >
-          <CardGrid columns={5}>
-            {applicationContent.highlights.map((highlight) => (
-              <InfoCard key={highlight.title} {...highlight} />
-            ))}
-          </CardGrid>
-        </PageSection>
+          <h2 className="wf-sr-only" id="beneficios-em-destaque">
+            Benefícios em destaque
+          </h2>
+          <ApplicationFeatureStrip items={applicationContent.highlights} />
+        </section>
+        <ExplorationCue>Role para explorar a experiência</ExplorationCue>
       </ChapterPage>
     </>
   );

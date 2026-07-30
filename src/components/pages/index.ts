@@ -1,11 +1,28 @@
 export { LegalPage } from "./LegalPage";
 export { ServiceDetailPage } from "./ServiceDetailPage";
 export {
+  ApplicationFeatureStrip,
+  ApplicationPreview,
+  AudienceList,
+  BenefitsGrid,
+  CompanyMark,
+  ContactWorkspace,
+  EditorialPillars,
+  PageIcon,
+  ProjectGrid,
+  ServiceDetailMark,
+  ServiceSolutionGrid,
+  StepSequence,
+  type PageIconName,
+  type PageIconProps,
+} from "./archetypes";
+export {
   Breadcrumbs,
   BulletList,
   CardGrid,
   ChapterNavigation,
   ChapterPage,
+  ExplorationCue,
   InfoCard,
   PageCallout,
   PageSection,

@@ -27,6 +27,13 @@ const internalRoutes = [
   "/acessibilidade",
 ] as const;
 
+const accessibilityStates = [
+  { colorScheme: "light", height: 1024, name: "desktop claro", width: 1536 },
+  { colorScheme: "dark", height: 1024, name: "desktop escuro", width: 1536 },
+  { colorScheme: "light", height: 844, name: "mobile claro", width: 390 },
+  { colorScheme: "dark", height: 844, name: "mobile escuro", width: 390 },
+] as const;
+
 async function findRelevantViolations(page: Page): Promise<RelevantViolation[]> {
   await page.addScriptTag({ content: axe.source });
 
@@ -64,12 +71,32 @@ async function findRelevantViolations(page: Page): Promise<RelevantViolation[]> 
 }
 
 for (const route of internalRoutes) {
-  test(`${route} não apresenta violações axe críticas ou sérias`, async ({
+  test(`${route} passa axe nos quatro estados normativos`, async ({
     page,
   }) => {
-    await page.goto(route);
-    await expect(page.getByRole("main")).toBeVisible();
+    test.setTimeout(120_000);
 
-    expect(await findRelevantViolations(page)).toEqual([]);
+    for (const state of accessibilityStates) {
+      await page.setViewportSize({
+        height: state.height,
+        width: state.width,
+      });
+      await page.emulateMedia({ colorScheme: state.colorScheme });
+      await page.goto(route);
+      await page.evaluate((theme) => {
+        window.localStorage.setItem("wf-theme", theme);
+      }, state.colorScheme);
+      await page.reload();
+
+      await expect(page.locator("html")).toHaveAttribute(
+        "data-theme",
+        state.colorScheme,
+      );
+      await expect(page.getByRole("main")).toBeVisible();
+      expect(
+        await findRelevantViolations(page),
+        `${route} — ${state.name}`,
+      ).toEqual([]);
+    }
   });
 }

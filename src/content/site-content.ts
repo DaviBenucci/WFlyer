@@ -1,7 +1,35 @@
 import type { AuxiliaryRoute, ChapterId, ChapterRoute } from "@/config/chapters";
 
+export type ContentIconName =
+  | "applications"
+  | "build"
+  | "clarity"
+  | "cloud"
+  | "continue"
+  | "custom"
+  | "define"
+  | "devices"
+  | "discover"
+  | "download"
+  | "evolve"
+  | "human"
+  | "instruments"
+  | "integrations"
+  | "mission"
+  | "note"
+  | "review"
+  | "score"
+  | "sites"
+  | "sliders"
+  | "source"
+  | "target"
+  | "values"
+  | "vision"
+  | "workflow";
+
 export interface ContentCard {
   readonly description: string;
+  readonly icon: ContentIconName;
   readonly title: string;
 }
 
@@ -55,26 +83,31 @@ export const applicationContent = {
     "Produto em desenvolvimento. A apresentação deste site descreve a proposta pública da aplicação e não substitui a avaliação musical do usuário.",
   highlights: [
     {
+      icon: "score",
       title: "Leitura inteligente",
       description:
         "Um fluxo organizado para compreender a partitura e preparar a adaptação.",
     },
     {
+      icon: "sliders",
       title: "Transposição orientada",
       description:
         "Escolhas de instrumento e tonalidade apresentadas de forma clara e revisável.",
     },
     {
+      icon: "note",
       title: "Essência musical preservada",
       description:
         "O resultado permanece sujeito à conferência e à interpretação de quem toca.",
     },
     {
+      icon: "download",
       title: "Exportação versátil",
       description:
         "Continuidade do trabalho nos formatos que forem aprovados pelo produto.",
     },
     {
+      icon: "cloud",
       title: "Acesso de qualquer lugar",
       description:
         "Uma experiência web pensada para acompanhar estudo e preparação musical.",
@@ -89,30 +122,35 @@ export const howItWorksContent = {
     "Cada etapa torna as escolhas visíveis e mantém um momento explícito de revisão antes de continuar.",
   steps: [
     {
+      icon: "score",
       number: "01",
       title: "Escolha a partitura",
       description:
         "Insira ou selecione o material que será usado no fluxo da aplicação.",
     },
     {
+      icon: "source",
       number: "02",
       title: "Informe o contexto de origem",
       description:
         "Indique o instrumento e a tonalidade de origem para contextualizar o material.",
     },
     {
+      icon: "target",
       number: "03",
       title: "Defina o contexto de destino",
       description:
         "Escolha o instrumento e a tonalidade para os quais deseja adaptar a partitura.",
     },
     {
+      icon: "review",
       number: "04",
       title: "Visualize e revise",
       description:
         "Confira o resultado apresentado e faça a avaliação musical necessária.",
     },
     {
+      icon: "continue",
       number: "05",
       title: "Exporte ou continue",
       description:
@@ -133,31 +171,37 @@ export const benefitsContent = {
     "A proposta da W_Flyer é reduzir etapas repetitivas e tornar adaptações mais compreensíveis, sem retirar do músico a responsabilidade pela revisão.",
   benefits: [
     {
+      icon: "workflow",
       title: "Menos etapas repetitivas",
       description:
         "Organize tarefas recorrentes em um fluxo único e orientado.",
     },
     {
+      icon: "instruments",
       title: "Adaptação entre instrumentos",
       description:
         "Prepare materiais para diferentes contextos instrumentais com escolhas explícitas.",
     },
     {
+      icon: "clarity",
       title: "Mudanças mais claras",
       description:
         "Visualize o contexto de origem, o destino e o resultado antes de seguir.",
     },
     {
+      icon: "human",
       title: "Revisão humana",
       description:
         "Mantenha a interpretação, a conferência e a decisão musical com você.",
     },
     {
+      icon: "devices",
       title: "Acesso flexível",
       description:
         "Use a experiência web em diferentes dispositivos, conforme a disponibilidade do produto.",
     },
     {
+      icon: "download",
       title: "Continuidade do trabalho",
       description:
         "Exporte o resultado nos formatos que forem aprovados para a aplicação.",
@@ -177,16 +221,19 @@ export const aboutContent = {
     "A W_Flyer une tecnologia, design e música para construir experiências digitais claras, úteis e cuidadosamente executadas.",
   pillars: [
     {
+      icon: "mission",
       title: "Missão",
       description:
         "Transformar necessidades reais em experiências digitais que aproximem pessoas, processos e ideias.",
     },
     {
+      icon: "vision",
       title: "Visão",
       description:
         "Desenvolver produtos e serviços digitais com identidade, precisão e capacidade de evolução.",
     },
     {
+      icon: "values",
       title: "Valores",
       description:
         "Clareza, responsabilidade, simplicidade, aprendizado contínuo e respeito por quem utiliza cada solução.",
@@ -213,6 +260,7 @@ export const servicesContent = {
     "Tecnologia e criatividade para transformar ideias em experiências digitais.",
   services: [
     {
+      icon: "sites",
       title: "Criação de sites",
       description:
         "Sites institucionais, landing pages e experiências interativas com estrutura técnica sólida.",
@@ -220,6 +268,7 @@ export const servicesContent = {
       cta: "Conhecer criação de sites",
     },
     {
+      icon: "applications",
       title: "Criação de aplicações",
       description:
         "Sistemas web e plataformas desenhados para processos específicos.",
@@ -227,6 +276,7 @@ export const servicesContent = {
       cta: "Conhecer criação de aplicações",
     },
     {
+      icon: "integrations",
       title: "Integrações",
       description:
         "Conexão entre APIs, ferramentas e fluxos para reduzir trabalho manual.",
@@ -234,6 +284,7 @@ export const servicesContent = {
       cta: "Conhecer integrações",
     },
     {
+      icon: "custom",
       title: "Soluções sob medida",
       description:
         "Diagnóstico e desenvolvimento quando a necessidade não cabe em uma solução pronta.",
@@ -255,24 +306,28 @@ export const processContent = {
     "Cada projeto é conduzido de forma incremental, com decisões visíveis e espaço para validar o que está sendo construído.",
   steps: [
     {
+      icon: "discover",
       number: "01",
       title: "Descoberta e contexto",
       description:
         "Entendemos a necessidade, o público, o processo atual e os limites do projeto.",
     },
     {
+      icon: "define",
       number: "02",
       title: "Escopo e direção",
       description:
         "Organizamos prioridades, critérios de qualidade, responsabilidades e uma direção para a solução.",
     },
     {
+      icon: "build",
       number: "03",
       title: "Implementação incremental",
       description:
         "Construímos em etapas verificáveis para que decisões e riscos apareçam cedo.",
     },
     {
+      icon: "evolve",
       number: "04",
       title: "Validação e evolução",
       description:
@@ -353,9 +408,30 @@ export const contactContent = {
   emailCta: "Enviar e-mail",
 } as const;
 
+export const contactProjectTypes = [
+  { label: "Site institucional", value: "site-institucional" },
+  { label: "Landing page", value: "landing-page" },
+  { label: "Aplicação web", value: "aplicacao-web" },
+  { label: "Integração", value: "integracao" },
+  { label: "Automação", value: "automacao" },
+  { label: "Solução personalizada", value: "solucao-personalizada" },
+  { label: "Outro", value: "outro" },
+] as const;
+
+export type ContactProjectType =
+  (typeof contactProjectTypes)[number]["value"];
+
+export function isContactProjectType(
+  value: string | null,
+): value is ContactProjectType {
+  return contactProjectTypes.some(
+    (projectType) => projectType.value === value,
+  );
+}
+
 export interface ServiceDetail {
   readonly audience: readonly string[];
-  readonly contactType: string;
+  readonly contactType: ContactProjectType;
   readonly criteria: readonly string[];
   readonly deliverables: readonly string[];
   readonly description: string;
@@ -369,24 +445,28 @@ export interface ServiceDetail {
 
 const sharedServiceProcess = [
   {
+    icon: "discover",
     number: "01",
     title: "Entendimento",
     description:
       "Levantamento do contexto, dos objetivos, das pessoas envolvidas e dos limites do projeto.",
   },
   {
+    icon: "define",
     number: "02",
     title: "Definição",
     description:
       "Organização de escopo, prioridades, entregáveis e critérios de validação.",
   },
   {
+    icon: "build",
     number: "03",
     title: "Construção",
     description:
       "Implementação incremental com verificações técnicas e de experiência.",
   },
   {
+    icon: "evolve",
     number: "04",
     title: "Entrega e evolução",
     description:
@@ -531,24 +611,28 @@ export const serviceDetails = {
     ],
     process: [
       {
+        icon: "discover",
         number: "01",
         title: "Investigar",
         description:
           "Entender o processo atual, as pessoas envolvidas e os gargalos observados.",
       },
       {
+        icon: "define",
         number: "02",
         title: "Delimitar",
         description:
           "Definir requisitos, limites, riscos, responsabilidades e prioridade.",
       },
       {
+        icon: "build",
         number: "03",
         title: "Prototipar e construir",
         description:
           "Validar a direção e implementar a solução em partes verificáveis.",
       },
       {
+        icon: "evolve",
         number: "04",
         title: "Testar e evoluir",
         description:
@@ -592,6 +676,7 @@ export interface LegalDocument {
   readonly sections: readonly LegalSection[];
   readonly title: string;
   readonly updatedAt: string;
+  readonly updatedAtIso: string;
 }
 
 export const legalDocuments = {
@@ -602,6 +687,7 @@ export const legalDocuments = {
     description:
       "Esta política explica quais dados podem ser enviados voluntariamente à W_Flyer, como são usados e quais canais estão disponíveis para solicitações.",
     updatedAt: "29 de julho de 2026",
+    updatedAtIso: "2026-07-29",
     sections: [
       {
         id: "escopo",
@@ -668,6 +754,7 @@ export const legalDocuments = {
     description:
       "O lançamento do site não utiliza analytics, pixels, replay de sessão ou cookies de marketing.",
     updatedAt: "29 de julho de 2026",
+    updatedAtIso: "2026-07-29",
     sections: [
       {
         id: "resumo",
@@ -718,6 +805,7 @@ export const legalDocuments = {
     description:
       "Estes termos apresentam as condições gerais de uso do site institucional W_Flyer.",
     updatedAt: "29 de julho de 2026",
+    updatedAtIso: "2026-07-29",
     sections: [
       {
         id: "natureza",
@@ -776,6 +864,7 @@ export const legalDocuments = {
     description:
       "A W_Flyer busca oferecer uma experiência perceptível, operável, compreensível e robusta em diferentes formas de navegação.",
     updatedAt: "29 de julho de 2026",
+    updatedAtIso: "2026-07-29",
     sections: [
       {
         id: "compromisso",

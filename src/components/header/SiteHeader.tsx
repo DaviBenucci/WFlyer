@@ -29,6 +29,13 @@ const FOCUSABLE_SELECTOR = [
   "[tabindex]:not([tabindex='-1'])",
 ].join(",");
 
+const LEGAL_ROUTES = new Set([
+  "/acessibilidade",
+  "/politica-de-cookies",
+  "/politica-de-privacidade",
+  "/termos-de-uso",
+]);
+
 export interface SiteHeaderProps {
   readonly pathname?: string;
   readonly themeControl?: ReactNode;
@@ -138,6 +145,7 @@ export function SiteHeader({
 }: SiteHeaderProps) {
   const routerPathname = usePathname();
   const currentPathname = pathname ?? routerPathname ?? "/";
+  const simplified = LEGAL_ROUTES.has(currentPathname);
   const { activeId, processSubchapter } =
     getHeaderRouteState(currentPathname);
   const [menuOpen, setMenuOpen] = useState(defaultMenuOpen);
@@ -280,6 +288,7 @@ export function SiteHeader({
       className={styles.siteHeader}
       data-menu-open={menuOpen ? "true" : "false"}
       data-scrolled={scrolled ? "true" : "false"}
+      data-variant={simplified ? "simplified" : "score"}
     >
       <div
         className={styles.desktopHeader}

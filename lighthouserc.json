@@ -2,7 +2,11 @@
   "ci": {
     "collect": {
       "url": [
-        "http://127.0.0.1:3000/"
+        "http://127.0.0.1:3000/",
+        "http://127.0.0.1:3000/aplicacao-wflyer",
+        "http://127.0.0.1:3000/servicos",
+        "http://127.0.0.1:3000/contato",
+        "http://127.0.0.1:3000/politica-de-privacidade"
       ],
       "numberOfRuns": 3,
       "startServerCommand": "node scripts/start-lighthouse-server.mjs",

@@ -2,9 +2,15 @@ import { describe, expect, it } from "vitest";
 
 import { pageSeo, publicRoutes } from "@/config/seo";
 import {
+  applicationContent,
+  benefitsContent,
+  contactProjectTypes,
+  howItWorksContent,
   legalDocuments,
+  processContent,
   portfolioContent,
   serviceDetails,
+  servicesContent,
 } from "@/content/site-content";
 
 const expectedRoutes = [
@@ -76,10 +82,37 @@ describe("conteúdo público tipado", () => {
 
     for (const document of Object.values(legalDocuments)) {
       expect(document.updatedAt).toBe("29 de julho de 2026");
+      expect(document.updatedAtIso).toBe("2026-07-29");
       expect(document.sections.length).toBeGreaterThanOrEqual(4);
       expect(new Set(document.sections.map(({ id }) => id)).size).toBe(
         document.sections.length,
       );
     }
+  });
+
+  it("associa ícones e tipos de contato por metadados estáveis", () => {
+    const iconBearingCollections = [
+      applicationContent.highlights,
+      howItWorksContent.steps,
+      benefitsContent.benefits,
+      servicesContent.services,
+      processContent.steps,
+    ];
+
+    for (const collection of iconBearingCollections) {
+      expect(
+        collection.every(({ icon }) => icon.trim().length > 0),
+      ).toBe(true);
+    }
+
+    const allowedContactTypes = new Set(
+      contactProjectTypes.map(({ value }) => value),
+    );
+
+    expect(
+      Object.values(serviceDetails).every(({ contactType }) =>
+        allowedContactTypes.has(contactType),
+      ),
+    ).toBe(true);
   });
 });
