@@ -347,7 +347,7 @@ export function SiteHeader({
             <div className={styles.mobileThemeControl}>{themeControl}</div>
           ) : null}
           <button
-            aria-controls={menuTitleId}
+            aria-controls={menuOpen ? menuTitleId : undefined}
             aria-expanded={menuOpen}
             aria-haspopup="dialog"
             aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}

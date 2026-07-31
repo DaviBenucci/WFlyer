@@ -1,6 +1,45 @@
 import type { NextConfig } from "next";
 
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "connect-src 'self' https://challenges.cloudflare.com",
+  "font-src 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  "frame-src https://challenges.cloudflare.com",
+  "img-src 'self' data: blob:",
+  "object-src 'none'",
+  "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com",
+  "style-src 'self' 'unsafe-inline'",
+].join("; ");
+
 const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        headers: [
+          {
+            key: "Content-Security-Policy-Report-Only",
+            value: contentSecurityPolicy,
+          },
+          { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+          {
+            key: "Permissions-Policy",
+            value:
+              "camera=(), geolocation=(), microphone=(), payment=(), usb=()",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "DENY" },
+        ],
+        source: "/:path*",
+      },
+    ];
+  },
   output: "standalone",
   poweredByHeader: false,
   reactStrictMode: true,

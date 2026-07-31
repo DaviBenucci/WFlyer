@@ -686,8 +686,8 @@ export const legalDocuments = {
     title: "Política de privacidade",
     description:
       "Esta política explica quais dados podem ser enviados voluntariamente à W_Flyer, como são usados e quais canais estão disponíveis para solicitações.",
-    updatedAt: "29 de julho de 2026",
-    updatedAtIso: "2026-07-29",
+    updatedAt: "31 de julho de 2026",
+    updatedAtIso: "2026-07-31",
     sections: [
       {
         id: "escopo",
@@ -753,8 +753,8 @@ export const legalDocuments = {
     title: "Política de cookies",
     description:
       "O lançamento do site não utiliza analytics, pixels, replay de sessão ou cookies de marketing.",
-    updatedAt: "29 de julho de 2026",
-    updatedAtIso: "2026-07-29",
+    updatedAt: "31 de julho de 2026",
+    updatedAtIso: "2026-07-31",
     sections: [
       {
         id: "resumo",
@@ -766,10 +766,11 @@ export const legalDocuments = {
       },
       {
         id: "tema",
-        title: "Preferência de tema",
+        title: "Armazenamento local e de sessão",
         paragraphs: [
           "A escolha entre tema claro e escuro pode ser guardada no localStorage do navegador. Esse recurso fica no dispositivo, serve apenas para lembrar a aparência escolhida e não cria um perfil de navegação.",
-          "Você pode remover essa preferência apagando os dados locais do site no navegador.",
+          "Um marcador técnico pode ser guardado no sessionStorage para evitar que a abertura da marca seja repetida durante a mesma sessão. Ele não identifica a pessoa, não registra as páginas visitadas e é descartado ao encerrar a sessão do navegador.",
+          "Você pode remover essas preferências apagando os dados locais do site no navegador.",
         ],
       },
       {

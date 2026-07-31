@@ -7,15 +7,14 @@ import {
   LinkButton,
   Text,
 } from "@/components/ui";
+import { ContactForm, ContactFormFallback } from "@/components/pages/contact";
 import {
-  contactProjectTypes,
   type ContentCard,
   type ContentStep,
   type PortfolioProject,
   type ServiceSummary,
 } from "@/content/site-content";
 
-import { ContactProjectTypeSelect } from "./ContactProjectTypeSelect";
 import { PageIcon, type PageIconName } from "./PageIcons";
 import styles from "./archetypes.module.css";
 
@@ -196,19 +195,6 @@ export function ServiceSolutionGrid({
         <div className={styles.serviceAction}>{action}</div>
       ) : null}
     </div>
-  );
-}
-
-function ProjectTypeSelectFallback() {
-  return (
-    <select defaultValue="" disabled name="projectType">
-      <option value="">Selecione uma opção</option>
-      {contactProjectTypes.map((projectType) => (
-        <option key={projectType.value} value={projectType.value}>
-          {projectType.label}
-        </option>
-      ))}
-    </select>
   );
 }
 
@@ -395,58 +381,9 @@ export function ContactWorkspace({
         </dl>
       </div>
 
-      <form
-        aria-label="Formulário de contato em preparação"
-        aria-describedby="contact-shell-status"
-        className={styles.contactFormShell}
-        data-contact-form-shell=""
-      >
-        <fieldset disabled>
-          <legend>Apresente o seu projeto</legend>
-          <div className={styles.fieldRow}>
-            <label>
-              Nome
-              <input autoComplete="name" name="name" type="text" />
-            </label>
-            <label>
-              E-mail
-              <input autoComplete="email" name="email" type="email" />
-            </label>
-          </div>
-          <label>
-            Empresa <span>(opcional)</span>
-            <input autoComplete="organization" name="company" type="text" />
-          </label>
-          <label>
-            Tipo de projeto
-            <Suspense fallback={<ProjectTypeSelectFallback />}>
-              <ContactProjectTypeSelect />
-            </Suspense>
-          </label>
-          <label>
-            Mensagem
-            <textarea name="message" rows={5} />
-          </label>
-          <label className={styles.consentField}>
-            <input name="consent" type="checkbox" />
-            <span>
-              Li a Política de Privacidade e concordo com o uso destes dados
-              para resposta ao contato.
-            </span>
-          </label>
-          <button
-            className={styles.disabledSubmit}
-            disabled
-            type="button"
-          >
-            Enviar mensagem
-          </button>
-        </fieldset>
-        <p className={styles.formStatus} id="contact-shell-status">
-          O formulário seguro está em preparação. Neste momento, use o e-mail
-          oficial para iniciar a conversa.
-        </p>
-      </form>
+      <Suspense fallback={<ContactFormFallback />}>
+        <ContactForm siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ""} />
+      </Suspense>
     </section>
   );
 }

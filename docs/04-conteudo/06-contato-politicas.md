@@ -44,6 +44,8 @@ A política deve informar:
 
 - não utilizar Google Analytics, Meta Pixel, session replay ou cookies de marketing;
 - preferência de tema pode usar `localStorage`;
+- o marcador técnico da abertura pode usar `sessionStorage` somente para impedir
+  repetição na mesma sessão, sem perfil de navegação;
 - Turnstile, Cloudflare e Napoleon podem processar dados técnicos de segurança/operação;
 - não mostrar banner de consentimento genérico quando não houver cookie não essencial; manter aviso/política compatível com a implementação real.
 

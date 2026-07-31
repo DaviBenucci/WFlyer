@@ -82,7 +82,7 @@ describe("blocos visuais dos arquétipos", () => {
     ).toHaveAttribute("href", "/servicos/criacao-de-sites");
   });
 
-  it("mantém o shell de contato honestamente indisponível", () => {
+  it("mantém o formulário operável e falha fechado sem Turnstile", () => {
     render(
       <ContactWorkspace
         email="davi.benucci@wflyer.com.br"
@@ -92,16 +92,16 @@ describe("blocos visuais dos arquétipos", () => {
     );
 
     const form = screen.getByRole("form", {
-      name: "Formulário de contato em preparação",
+      name: "Formulário de contato",
     });
 
-    expect(within(form).getByLabelText("Nome")).toBeDisabled();
-    expect(within(form).getByLabelText("E-mail")).toBeDisabled();
+    expect(within(form).getByLabelText("Nome")).toBeEnabled();
+    expect(within(form).getByLabelText("E-mail")).toBeEnabled();
     expect(
       within(form).getByRole("button", { name: "Enviar mensagem" }),
     ).toBeDisabled();
     expect(
-      within(form).getByText(/use o e-mail oficial/u),
+      within(form).getByText(/verificação de segurança está indisponível/u),
     ).toBeVisible();
   });
 

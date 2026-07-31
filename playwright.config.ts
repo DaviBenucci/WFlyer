@@ -59,6 +59,7 @@ export default defineConfig({
           command: "pnpm dev --hostname 127.0.0.1",
           env: {
             NEXT_TELEMETRY_DISABLED: "1",
+            NEXT_PUBLIC_TURNSTILE_SITE_KEY: "1x00000000000000000000AA",
             WFLYER_TRANSITION_TEST_MODE: "1",
           },
           reuseExistingServer: !process.env.CI,

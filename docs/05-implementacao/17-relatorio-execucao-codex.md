@@ -631,24 +631,91 @@ or blocker remains; Phase 06 is still the exact next phase.
 - **Gate:** `CONCLUÍDO`; timeline, recuperação, reduced motion, motion local, visual, acessibilidade, performance, standalone, Graphify e OpenSpec verdes.
 - **Título de commit:** `feat(brand): complete accessible opening motion`.
 
-### Fase 8 — Contato, segurança e conteúdo final
+### Phase 08 — Final content, secure contact, and browser security
 
-**Estado:** `PRONTA_PARA_INICIAR`
-**Objetivo:** implementar `POST /api/contact`, Zod, Turnstile, Resend, honeypot, limites, origem, logs sanitizados, headers, CSP, políticas e conteúdo oficial, sem persistência ou analytics.
+**Status:** `COMPLETE`
+**Objective:** finish the approved public content and legal routes, implement
+the private `POST /api/contact` boundary, and establish the locally enforceable
+security baseline without persistence, analytics, fabricated claims, or
+premature production policy.
 
-- **Arquivos criados:** a registrar.
-- **Arquivos modificados:** a registrar.
-- **Decisões aplicadas:** ADR-009, ADR-010, ADR-021 e ADR-022.
-- **Comandos:** a registrar.
-- **Testes e resultados:** não executados.
-- **Screenshots:** a registrar.
-- **Comparação visual:** pendente.
-- **Acessibilidade:** pendente, incluindo erros e confirmações do formulário.
-- **Performance:** pendente.
-- **Riscos:** integração externa real indisponível sem secrets; ativação prematura de HSTS proibida.
-- **Pendências não bloqueadoras:** testes locais poderão usar mocks fechados; testes reais dependem dos acessos da seção 3.6.
-- **Gate:** `NÃO_AVALIADO`.
-- **Título de commit:** a definir.
+- **Created files:** the contact route; focused schema/configuration,
+  Turnstile, Resend, and barrel modules under `src/lib/contact/`; the accessible
+  `ContactForm`, styles, barrel, and component tests; three Phase 08 Playwright
+  suites; 27 cross-engine visual baselines; the security validation report;
+  and OpenSpec change `complete-content-contact-security`.
+- **Modified files:** Contact composition and its archetype tests/styles;
+  official content and legal dates; the contact/content policy; privacy and
+  release-security documentation; safe response headers and report-only CSP;
+  Playwright's public Turnstile test key; dependency resolution; the mobile
+  header's conditional `aria-controls`; accumulated E2E/content tests;
+  Graphify outputs/map; and this report. The unrelated `README.md` indentation
+  remains untouched and excluded from the phase commit.
+- **Implementation:** the API applies an exact finite order for media type,
+  streamed 16 KiB size, server configuration, origin, JSON, honeypot, strict
+  Zod data, Turnstile action/hostname, and fixed-address plain-text Resend
+  delivery. It returns generic no-store JSON and never persists or logs contact
+  payloads. The client provides native labels and constraints, enum-only query
+  preselection, explicit widget lifecycle, an eight-second unavailable
+  fallback, reset/expiry/error recovery, focusable live status, success/error
+  states, 44 px mobile controls, and the official email fallback.
+- **Content and policy:** all official routes retain Portuguese public copy and
+  the documented email, application, Instagram, GitHub, and three-project
+  portfolio facts. Privacy and cookie content now match runtime storage:
+  `wf-theme` in local storage and the session-only opening marker. No analytics,
+  pixel, replay, marketing cookie, consent banner, metric, testimonial, legal
+  identifier, or unsupported claim was introduced.
+- **Security:** browser responses include `nosniff`, `DENY`, same-origin COOP,
+  restrictive referrer and permissions policies, and a report-only CSP limited
+  to the application and Turnstile with no `unsafe-eval`. HSTS and CSP
+  enforcement remain deliberately deferred until HTTPS and CSP-report
+  observation in staging. The production dependency audit reports zero known
+  vulnerabilities after pinned transitive overrides; peer validation is
+  clean, and source inspection found no secret, analytics, attachment,
+  persistence, visitor-HTML, or contact logging path.
+- **Commands:** exact dependency validation; ESLint; TypeScript; unit and
+  Storybook builds/tests; production build; standalone packaging/smoke;
+  focused and complete Playwright matrices; Lighthouse; production audit and
+  peer check; secret/source inspection; strict OpenSpec validation; Graphify
+  update/query/diagnostics; and final worktree integrity checks.
+- **Measured results:** 239/239 unit/component tests in 28 files and 63/63
+  Storybook tests in 13 files passed. The complete Chromium matrix passed
+  239/239 with the established two-worker profile. The focused cross-browser
+  Phase 08 matrix passed 48/48: 12 functional/security checks, 9 axe executions,
+  and 27 visual comparisons across Chromium, Firefox, and WebKit. Next built 22
+  routes with `/api/contact` correctly dynamic; standalone smoke passed 17
+  public routes and 19 assets.
+- **Visual/accessibility/responsive evidence:** nine reviewed states—idle,
+  field error, verified, submitting, success, provider error, dark, mobile, and
+  reduced motion—pass in all three engines. Automated evidence covers labels,
+  constraints, announcements, focus transfer, keyboard operation, 320 px
+  portrait, 844 × 320 landscape, zoom/reflow invariants, theme parity, reduced
+  motion, the Contact final barline, and zero horizontal overflow. No physical
+  screen-reader or independent legal/accessibility review is falsely claimed;
+  both remain homologation gates.
+- **Performance:** 15 final Lighthouse runs over Home, Application, Services,
+  Contact, and Privacy scored 100/100/100/100. FCP was
+  249.1132–262.39 ms, LCP 638.62115–719.94585 ms, maximum CLS 0.0034082042,
+  and TBT 0 ms. The contact provider work remains server-only and finite; the
+  only browser third-party script is Turnstile on Contact.
+- **Graphify/OpenSpec:** the filtered Graphify graph advanced from 2,651 nodes,
+  3,859 edges, and 282 communities to 2,793 / 4,038 / 287. Diagnostics report
+  zero missing/dangling endpoints, self-loops, or duplicate edges. A bounded
+  contact-flow query connected UI, API, schema, Turnstile, Resend, tests, and
+  runtime gates and corrected the stale memory that the endpoint was still
+  unimplemented. The OpenSpec change completed 21/21 tasks, was strictly
+  validated, synchronized into two canonical capabilities, and archived as
+  `2026-07-31-complete-content-contact-security`.
+- **External gates:** provider secrets, verified Resend sender, environment-
+  specific Turnstile keys, Napoleon runtime variables, read-only Cloudflare
+  inventory, edge rate limit/WAF decision, staging CSP observation, HSTS review,
+  log-retention approval, and professional legal review remain Phase 09 owner
+  or infrastructure actions. No external system was mutated.
+- **Gate:** `COMPLETE`; local implementation, content, tests, cross-browser
+  behavior, reviewed visuals, accessibility automation, responsiveness,
+  dependency/security inspection, build, standalone, Lighthouse, Graphify, and
+  OpenSpec are green.
+- **Commit title:** `feat(contact): complete secure contact workflow`.
 
 ### Fase 9 — Napoleon, staging e produção
 
@@ -683,3 +750,4 @@ or blocker remains; Phase 06 is still the exact next phase.
 | 2026-07-31 | Phase 05 completed with a persistent score-transition shell, manifest-derived topology, cancelable GSAP lifecycle, truthful history/focus behavior, live reduced motion, seven deterministic evidence captures, 201 unit tests, 57 Storybook tests, 192 Chromium checks, 135 focused cross-browser Phase 05 checks, 30 motion, 207 visual, 87 axe/accessibility, standalone 17+18, and Lighthouse 100/100/100/100 in 15 final runs. Graphify refreshed to 2,493 nodes and OpenSpec archived after 33/33 tasks; Phase 06 released. |
 | 2026-07-31 | Phase 06 completed with a semantic local tablet, deterministic five-state interaction, cancellable processing, original SVG score, precise-hover GSAP tilt, privacy instrumentation, 204 unit tests, 62 Storybook tests, 15 focused cross-browser interactions, 21 cross-browser state baselines, four-state axe coverage for all three Application routes, responsive 320 px and canonical 1536 × 1024 checks, and production/Storybook builds. Graphify refreshed to 2,556 nodes and the new OpenSpec capability was synchronized and archived; Phase 07 released. |
 | 2026-07-31 | Phase 07 completed with the immutable official SVG, a 5.600-second labeled GSAP opening, measured symbol-to-header handoff, one-session eligibility, skip/Escape/timeout/fail-open recovery, direct reduced-motion Home, route-aware finite local reveals, 214 unit tests, 63 Storybook tests, 21 focused cross-browser behaviors, 30 visual baselines, 6 axe audits, 30 accumulated motion checks, standalone 17+21, and Lighthouse 100/100/100/100 across 15 runs. OpenSpec and Graphify were refreshed before Phase 08 was released. |
+| 2026-07-31 | Phase 08 completed with strict 16 KiB contact validation, Turnstile and Resend boundaries, accessible recoverable client states, truthful privacy/legal content, report-only CSP and browser headers, zero known production dependency vulnerabilities, 239 unit/component tests, 63 Storybook tests, 239 complete Chromium checks, a 48-case dedicated cross-browser matrix, 27 reviewed form baselines, standalone 17+19, and Lighthouse 100/100/100/100 across 15 runs. Graphify advanced to 2,793 nodes and OpenSpec was synchronized and archived before Phase 09. |

@@ -81,13 +81,27 @@ describe("conteúdo público tipado", () => {
     ]);
 
     for (const document of Object.values(legalDocuments)) {
-      expect(document.updatedAt).toBe("29 de julho de 2026");
-      expect(document.updatedAtIso).toBe("2026-07-29");
+      const wasUpdatedForContactAndStorage =
+        document.route === "/politica-de-privacidade" ||
+        document.route === "/politica-de-cookies";
+      expect(document.updatedAt).toBe(
+        wasUpdatedForContactAndStorage
+          ? "31 de julho de 2026"
+          : "29 de julho de 2026",
+      );
+      expect(document.updatedAtIso).toBe(
+        wasUpdatedForContactAndStorage ? "2026-07-31" : "2026-07-29",
+      );
       expect(document.sections.length).toBeGreaterThanOrEqual(4);
       expect(new Set(document.sections.map(({ id }) => id)).size).toBe(
         document.sections.length,
       );
     }
+    expect(
+      legalDocuments["/politica-de-cookies"].sections
+        .flatMap(({ paragraphs }) => paragraphs)
+        .join(" "),
+    ).toMatch(/sessionStorage.+mesma sessão.+não identifica/iu);
   });
 
   it("associa ícones e tipos de contato por metadados estáveis", () => {

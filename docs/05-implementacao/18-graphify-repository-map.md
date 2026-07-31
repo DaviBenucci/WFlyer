@@ -3,6 +3,7 @@
 **Status:** REFRESHED_LOCALLY
 **Baseline date:** 2026-07-30
 **Phase 05 refresh:** 2026-07-31
+**Phase 08 refresh:** 2026-07-31
 **Graphify:** `0.9.31`
 **Mode:** normal, undirected graph
 **Analyzed root:** W_Flyer institutional-site repository
@@ -105,6 +106,29 @@ two explicit corrected memories now identify the implemented shell/state model
 and the dedicated Phase 05 test matrix. Normative source and current code take
 precedence over those historical semantic nodes.
 <!-- GRAPHIFY_STATS_END -->
+
+### 4.1 Accumulated Phase 08 structural refresh
+
+After Phases 06–08, `graphify update .` re-extracted the filtered code corpus
+and advanced the graph from the Phase 07 checkpoint of 2,651 nodes / 3,859
+edges / 282 communities to 2,793 / 4,038 / 287. Relative to that checkpoint,
+the contact and security boundary added 142 nodes, 179 edges, and 5
+communities. The filtered corpus and `.graphifyignore` were preserved; no full
+working-directory or secret-bearing scan was performed.
+
+Read-only multigraph diagnostics report 2,793 verified nodes, 4,038 valid
+undirected edges, and zero missing endpoints, dangling endpoints, self-loops,
+exact duplicates, or endpoint-pair collapses. The degree-ranked top ten remain
+unchanged, while `ContactForm()`, `POST()`, `readLimitedBody()`,
+`verifyTurnstile()`, and `sendContactEmail()` now form one extracted contact
+community connected to route, content, tests, Resend, and runtime
+configuration.
+
+A bounded Phase 08 query traced that complete path and exposed one historical
+memory claiming that the endpoint was still unimplemented. The result was
+saved as a correction: current source now implements and tests the client,
+server, Turnstile, and Resend workflow; edge rate limiting, HSTS, provider
+credentials, and CSP enforcement remain external staging gates.
 
 ## 5. Communities and high-impact nodes
 
@@ -228,5 +252,6 @@ stylesheet dependency.
   therefore benign and no reinstall was performed.
 - This map represents the local snapshot above. Later structural changes still
   require `scripts/graphify-repository.sh update`, validation, and checksums.
-- Phase 05 runtime relationships now exist in code. Features that belong to
-  Phases 06–08 remain plans until their own implementation gates are completed.
+- Phase 05–08 runtime relationships now exist in code. Phase 09 hosting,
+  staging, external-provider validation, and release relationships remain
+  plans until their own repository and infrastructure gates are completed.

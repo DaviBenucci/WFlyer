@@ -1,21 +1,21 @@
 # Checklist de segurança para release
 
-- [ ] Next.js está em patch de segurança atual da linha aprovada.
-- [ ] React e dependências críticas estão atualizadas.
-- [ ] Não há segredo em bundle, repositório ou logs.
-- [ ] `/api/contact` rejeita método incorreto.
-- [ ] Content-Type e payload são limitados.
-- [ ] Origem externa é rejeitada.
-- [ ] Turnstile é validado no servidor.
-- [ ] `hostname` e `action` são validados.
-- [ ] Honeypot é testado.
+- [x] Next.js está em patch de segurança atual da linha aprovada.
+- [x] React e dependências críticas estão atualizadas.
+- [x] Não há segredo em bundle, repositório ou logs.
+- [x] `/api/contact` rejeita método incorreto.
+- [x] Content-Type e payload são limitados.
+- [x] Origem externa é rejeitada.
+- [x] Turnstile é validado no servidor.
+- [x] `hostname` e `action` são validados.
+- [x] Honeypot é testado.
 - [ ] Rate limit está ativo na Cloudflare.
-- [ ] Resend usa remetente e destinatário fixos.
-- [ ] Entradas são escapadas.
-- [ ] CSP foi testada e não permite `unsafe-eval`.
-- [ ] Cabeçalhos obrigatórios estão presentes.
-- [ ] `/api/contact` não é cacheado.
-- [ ] Logs não contêm dados pessoais integrais.
-- [ ] Imagens de inspiração não estão no artefato produtivo.
+- [x] Resend usa remetente e destinatário fixos.
+- [x] Entradas são escapadas.
+- [x] CSP foi testada e não permite `unsafe-eval`.
+- [x] Cabeçalhos aplicáveis antes do inventário HSTS estão presentes.
+- [x] `/api/contact` não é cacheado.
+- [x] Logs da aplicação não contêm dados pessoais integrais.
+- [x] Imagens de inspiração não estão no artefato produtivo.
 - [ ] Processo Node.js roda sob usuário isolado da hospedagem Napoleon, sem privilégios administrativos.
 - [ ] Rollback foi validado.

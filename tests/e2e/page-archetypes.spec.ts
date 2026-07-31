@@ -120,22 +120,24 @@ test("Portfólio permanece limitado aos três projetos oficiais", async ({
   ).toHaveCount(0);
 });
 
-test("Contato apresenta a composição completa sem simular envio", async ({
+test("Contato apresenta o formulário seguro sem simular envio", async ({
   page,
 }) => {
   await page.goto("/contato");
 
   const form = page.getByRole("form", {
-    name: "Formulário de contato em preparação",
+    name: "Formulário de contato",
   });
   await expect(form).toBeVisible();
-  await expect(form.locator("fieldset")).toHaveAttribute("disabled", "");
+  await expect(form.locator("fieldset")).not.toHaveAttribute("disabled", "");
   await expect(
     form.getByRole("button", { name: "Enviar mensagem" }),
   ).toBeDisabled();
   await expect(form).toContainText(
-    "O formulário seguro está em preparação.",
+    "Conclua a verificação de segurança para habilitar o envio.",
   );
+  await expect(form.locator("[data-contact-status]"))
+    .toHaveAttribute("data-contact-status", "idle");
   const workspace = page.locator("[data-contact-workspace]");
   await expect(
     workspace.getByRole("link", {
@@ -240,13 +242,13 @@ for (const { contactType, route } of serviceDetailRoutes) {
 }
 
 const legalRoutes = [
-  "/politica-de-privacidade",
-  "/politica-de-cookies",
-  "/termos-de-uso",
-  "/acessibilidade",
+  { route: "/politica-de-privacidade", updatedAt: "2026-07-31" },
+  { route: "/politica-de-cookies", updatedAt: "2026-07-31" },
+  { route: "/termos-de-uso", updatedAt: "2026-07-29" },
+  { route: "/acessibilidade", updatedAt: "2026-07-29" },
 ] as const;
 
-for (const route of legalRoutes) {
+for (const { route, updatedAt } of legalRoutes) {
   test(`${route} usa o template editorial legal`, async ({ page }) => {
     await page.goto(route);
 
@@ -255,7 +257,7 @@ for (const route of legalRoutes) {
     await expect(main).toHaveAttribute("data-route-kind", "auxiliary");
     await expect(main.locator("time")).toHaveAttribute(
       "datetime",
-      "2026-07-29",
+      updatedAt,
     );
     await expect(
       main.getByRole("navigation", { name: /^Índice de/u }),

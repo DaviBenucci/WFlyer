@@ -478,112 +478,6 @@
   font-weight: var(--wf-font-weight-semibold);
 }
 
-.contactFormShell {
-  display: grid;
-  gap: var(--wf-space-4);
-  padding: clamp(1.5rem, 3.5vw, 3rem);
-  border: 1px solid var(--wf-border);
-  border-radius: var(--wf-radius-lg);
-  background:
-    linear-gradient(
-      145deg,
-      color-mix(in oklab, var(--wf-accent) 6%, transparent),
-      transparent 42%
-    ),
-    var(--wf-surface);
-  box-shadow: var(--wf-shadow-soft);
-}
-
-.contactFormShell fieldset {
-  display: grid;
-  gap: var(--wf-space-4);
-  margin: 0;
-  padding: 0;
-  border: 0;
-  opacity: 1;
-}
-
-.contactFormShell legend {
-  margin-block-end: var(--wf-space-5);
-  color: var(--wf-text);
-  font-family: var(--wf-font-display);
-  font-size: var(--wf-font-size-title-sm);
-  font-weight: var(--wf-font-weight-semibold);
-}
-
-.contactFormShell label {
-  display: grid;
-  gap: var(--wf-space-2);
-  color: var(--wf-text);
-  font-size: var(--wf-font-size-body-sm);
-  font-weight: var(--wf-font-weight-semibold);
-}
-
-.contactFormShell label > span {
-  color: var(--wf-text-muted);
-  font-weight: var(--wf-font-weight-regular);
-}
-
-.contactFormShell input,
-.contactFormShell select,
-.contactFormShell textarea {
-  inline-size: 100%;
-  min-block-size: var(--wf-control-min-size);
-  padding: 0.8rem 0.9rem;
-  border: 1px solid var(--wf-border);
-  border-radius: var(--wf-radius-sm);
-  background: var(--wf-bg);
-  color: var(--wf-text);
-  font: inherit;
-  opacity: 1;
-}
-
-.contactFormShell textarea {
-  min-block-size: 8rem;
-  resize: vertical;
-}
-
-.fieldRow {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--wf-space-4);
-}
-
-.consentField {
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: start;
-}
-
-.consentField input {
-  inline-size: 1.1rem;
-  min-block-size: 1.1rem;
-  margin-block-start: 0.15rem;
-  padding: 0;
-}
-
-.formStatus {
-  margin: 0;
-  padding: var(--wf-space-3) var(--wf-space-4);
-  border-inline-start: 3px solid var(--wf-accent);
-  background: color-mix(in oklab, var(--wf-accent) 8%, transparent);
-  color: var(--wf-text-muted);
-  font-size: var(--wf-font-size-body-sm);
-}
-
-.disabledSubmit {
-  min-block-size: var(--wf-control-min-size);
-  padding: 0.8rem 1.25rem;
-  border: 1px solid var(--wf-primary);
-  border-radius: var(--wf-radius-pill);
-  background: var(--wf-primary);
-  color: var(--wf-on-primary);
-  font-family: var(--wf-font-sans);
-  font-size: var(--wf-font-size-body-sm);
-  font-weight: var(--wf-font-weight-bold);
-  opacity: 0.52;
-  cursor: not-allowed;
-}
-
 @media (width < 75rem) {
   .stepSequence ol {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -711,10 +605,6 @@
     grid-column: auto;
   }
 
-  .fieldRow {
-    grid-template-columns: 1fr;
-  }
-
   .channelList > div {
     grid-template-columns: 1fr;
     gap: var(--wf-space-1);
@@ -724,9 +614,5 @@
 @media (forced-colors: active) {
   .serviceCard:has(.serviceLink:focus-visible) {
     outline-color: Highlight;
-  }
-
-  .formStatus {
-    border-inline-start-color: CanvasText;
   }
 }

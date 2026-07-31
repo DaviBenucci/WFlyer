@@ -214,6 +214,12 @@ for (const { route, selector } of routes) {
       await expect(main).toBeVisible();
       await expect(archetypeBlock).toBeVisible();
       await expect(main.getByRole("heading", { level: 1 })).toHaveCount(1);
+      if (route === "/contato") {
+        await expect(page.locator("[data-verification-state]")).not.toHaveAttribute(
+          "data-verification-state",
+          "loading",
+        );
+      }
 
       const lightGeometry = {
         archetype: await archetypeBlock.boundingBox(),
