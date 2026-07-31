@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { BrandIntroController } from "@/components/brand-intro";
 import { NarrativeClef, OriginScore } from "@/components/music";
 import {
   ArrowIcon,
@@ -22,20 +23,24 @@ const homeChapter = scoreChapterById.home;
 
 export default function HomePage() {
   return (
-    <main
-      className={styles.shell}
-      data-branch={homeChapter.branch}
-      data-chapter={homeChapter.id}
-      data-coordinate={homeChapter.coordinate}
-      data-entry-anchor-y={homeChapter.entry_anchor_y}
-      data-entry-edge={homeChapter.entry_edge}
-      data-exit-anchor-y={homeChapter.exit_anchor_y}
-      data-exit-edge={homeChapter.exit_edge}
-      data-terminal="false"
-      id="main-content"
-      tabIndex={-1}
-    >
-      <Container className={styles.content}>
+    <>
+      <BrandIntroController
+        testMode={process.env.WFLYER_TRANSITION_TEST_MODE === "1"}
+      />
+      <main
+        className={styles.shell}
+        data-branch={homeChapter.branch}
+        data-chapter={homeChapter.id}
+        data-coordinate={homeChapter.coordinate}
+        data-entry-anchor-y={homeChapter.entry_anchor_y}
+        data-entry-edge={homeChapter.entry_edge}
+        data-exit-anchor-y={homeChapter.exit_anchor_y}
+        data-exit-edge={homeChapter.exit_edge}
+        data-terminal="false"
+        id="main-content"
+        tabIndex={-1}
+      >
+        <Container className={styles.content}>
         <section
           aria-labelledby="home-title"
           className={styles.hero}
@@ -145,7 +150,8 @@ export default function HomePage() {
             <span>Escolha um caminho para explorar</span>
           </div>
         </section>
-      </Container>
-    </main>
+        </Container>
+      </main>
+    </>
   );
 }

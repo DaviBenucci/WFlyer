@@ -107,6 +107,7 @@ export function ChapterPage({
         <header
           className={styles.hero}
           data-has-visual={heroVisual ? "true" : "false"}
+          data-page-hero=""
         >
           <div className={styles.heroCopy}>
             <Eyebrow>{eyebrow}</Eyebrow>

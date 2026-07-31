@@ -31,8 +31,8 @@ A execução local, os testes, os workflows, o build standalone e a preparação
 | Fase 4 — Páginas por arquétipo | `CONCLUÍDA` | gate local verde |
 | Fase 5 — Motion e navegação | `CONCLUÍDA` | gate local verde |
 | Fase 6 — Tablet | `CONCLUÍDA` | gate local verde |
-| Fase 7 — Abertura e motion local | `PRONTA_PARA_INICIAR` | gate anterior verde |
-| Fase 8 — Contato, segurança e conteúdo final | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
+| Fase 7 — Abertura e motion local | `CONCLUÍDA` | gate local verde |
+| Fase 8 — Contato, segurança e conteúdo final | `PRONTA_PARA_INICIAR` | gate anterior verde |
 | Fase 9 — Napoleon, staging e produção | `AGUARDANDO_GATES_LOCAIS_E_ACESSOS_EXTERNOS` | não avaliado |
 
 Cada fase somente muda para `CONCLUÍDA` depois de satisfazer integralmente seu gate. A conclusão local não autoriza publicação, merge em `main` ou alteração de infraestrutura.
@@ -606,33 +606,34 @@ or blocker remains; Phase 06 is still the exact next phase.
 - **Acessibilidade:** labels, fieldset, botão nativo, `aria-busy`, região única `aria-live=polite`, foco previsível após resultado, reset, 44 × 44 px no mobile, ausência de overflow e reduced motion funcional foram automatizados; axe não encontrou violação nos estados do ramo.
 - **Performance:** zero canvas contínuo, WebGL, rede ou listener de pointer fora do viewport; timers, media queries, observer e GSAP context são limpos; build de produção verde. Lighthouse completo permanece no gate acumulado da Fase 9.
 - **Riscos controlados:** o teste revelou e corrigiu leitura tardia de SyntheticEvent e a mutação cross-engine do tipo do botão no fluxo reduced motion; botões agora têm identidade DOM distinta. Logs de Fast Refresh são filtrados apenas da asserção de privacidade de escolha, sem mascarar rede/storage/file access.
-- **Graphify/OpenSpec:** grafo atualizado para 2.556 nós, 3.759 arestas e 265 comunidades; consulta localizou componente, rota, specs, stories e suítes. OpenSpec estrito permanece verde e será sincronizado/arquivado no fechamento deste checkpoint.
+- **Graphify/OpenSpec:** grafo atualizado para 2.556 nós, 3.759 arestas e 265 comunidades; consulta localizou componente, rota, specs, stories e suítes. O change OpenSpec foi validado, sincronizado e arquivado como `2026-07-31-complete-interactive-application-demo`.
 - **Pendências não bloqueadoras:** validação externa real não se aplica à demonstração local. A referência em vídeo ausente continua sem autoridade geométrica. Firefox/WebKit e as variantes autorizadas já foram cobertos localmente.
 - **Gate:** `CONCLUÍDO`.
 - **Título de commit:** `feat(application): complete interactive tablet demo`.
 
 ### Fase 7 — Abertura e motion local
 
-**Estado:** `AGUARDANDO_GATE_ANTERIOR`  
+**Estado:** `CONCLUÍDA`
 **Objetivo:** implementar a abertura oficial, handoff, reveals, cards, notas, barras finais, skip, sessão, timeout e reduced motion.
 
-- **Arquivos criados:** a registrar.
-- **Arquivos modificados:** a registrar.
-- **Decisões aplicadas:** ADR-012; SVGs oficiais imutáveis; timeline de 5,600 segundos; execução uma vez por sessão.
-- **Comandos:** a registrar.
-- **Testes e resultados:** não executados.
-- **Screenshots:** a registrar nos checkpoints normativos.
-- **Comparação visual:** pendente contra SVGs, storyboards e timeline.
-- **Acessibilidade:** pendente, incluindo Escape, botão de pular e desbloqueio seguro.
-- **Performance:** pendente.
-- **Riscos:** a registrar.
-- **Pendências não bloqueadoras:** vídeo externo de referência ausente, sem autoridade geométrica e sem efeito no gate local.
-- **Gate:** `NÃO_AVALIADO`.
-- **Título de commit:** a definir.
+- **Arquivos criados:** `BrandIntroController`, `LocalRevealController`, CSS module, barrel e story; cópia pública byte a byte do SVG oficial; testes unitários de controller, reveals e paridade do asset; suítes E2E, axe e visual; 30 baselines de checkpoints por engine; change OpenSpec `complete-brand-opening-motion`.
+- **Arquivos modificados:** Home para montar a abertura sobre conteúdo já renderizado; layout para o lifecycle dos reveals locais; configuração e evidências acumuladas deste relatório; grafo Graphify.
+- **Decisões aplicadas:** ADR-012 e especificação de 5,600 segundos; Home é o único ponto elegível; chave de sessão `wflyer.brand-intro.completed.v1`; SVG público idêntico à fonte aprovada, com `data-state="final"` e cor do tema aplicados somente à instância runtime; overlay progressivo e fail-open; GSAP limitado à timeline e reveals finitos; handoff por medição real ao pivot visível do header; reduced motion entrega diretamente a Home final, conforme a especificação da Home.
+- **Comandos:** Context7 para React, `@gsap/react` e Vite; consultas Graphify; ciclo OpenSpec completo; `pnpm lint`; `pnpm typecheck`; `pnpm test`; `pnpm test:storybook`; `pnpm build:storybook`; Playwright E2E, visual, motion e axe nos três engines; `pnpm build`; `pnpm prepare:standalone`; `pnpm smoke:standalone`; `pnpm lighthouse`; `graphify update .`; validação OpenSpec estrita e inspeção de diff.
+- **Testes e resultados:** lint e TypeScript verdes; 214/214 unitários em 24 arquivos; 63/63 Storybook em 13 arquivos; 21 verificações Phase 07 cross-browser considerando a suíte integral e o cenário dedicado de timeout; 30/30 snapshots Phase 07; 6/6 axe da abertura; 30/30 testes motion acumulados com dois workers; build Storybook verde; build Next com 22 páginas; standalone com 17 rotas e 21 assets.
+- **Screenshots:** `tests/visual/phase07-brand-intro.visual.spec.ts-snapshots/` contém sete labels normativos, hold escuro, wordmark mobile e Home final reduced motion para Chromium, Firefox e WebKit. As variantes foram inspecionadas; os snapshots são evidência de QA, não golden references novas.
+- **Comparação visual:** a sequência progride de origem mínima para símbolo, ecos cromáticos, lockup oficial e transferência ao símbolo do header, preservando a superfície e o contraste da Home em claro e escuro. A instância runtime usa exclusivamente os paths e IDs oficiais; nenhum raster, vídeo, recorte, logo substituto ou filtro de deformação foi usado.
+- **Acessibilidade:** nome acessível `W_Flyer`, botão nativo `Pular introdução` com alvo mínimo de 44 px, Escape, desbloqueio de scroll, sessão, timeout, falha de asset, resize/orientação e teardown foram cobertos. Reduced motion não monta overlay nem motion modular. Axe encontrou zero violação crítica ou séria em claro/escuro, desktop/mobile e nos três engines.
+- **Performance:** a abertura não altera o HTML server-rendered nem o LCP reduzido; o asset local é cacheável, a timeline é única e cancelável, o timeout é finito e os observers/reveals limpam estilos. Quinze execuções Lighthouse em cinco rotas obtiveram 100 em Performance, Acessibilidade, Boas práticas e SEO.
+- **Riscos controlados:** o primeiro uso do SVG como documento substituído revelou fundo branco no tema escuro e estado inicial sem wordmark; foi substituído por uma instância Blob local derivada em memória, mantendo o arquivo aprovado byte a byte e somente ativando seu estado autorado final. Uma execução motion com quatro workers saturou Firefox/WebKit e falhou em dois timeouts antigos da Fase 5; ambos passaram isoladamente e a matriz completa passou 30/30 com os dois workers do CI.
+- **Pendências não bloqueadoras:** o vídeo externo ausente continua sem autoridade geométrica; a sessão é deliberadamente por aba; validação em staging permanece na Fase 9. Nenhuma integração, secret ou publicação externa é necessária para este gate local.
+- **Graphify/OpenSpec:** Graphify `0.9.31` atualizou o mapa final para 2.651 nós, 3.859 arestas e 282 comunidades e conectou controller, Home, header, specs e testes; o subcomando legado `validate` não existe nessa versão, sem afetar os rebuilds e a consulta concluídos. O change OpenSpec concluiu 14/14 tarefas, passou validação estrita, foi sincronizado na capability canônica `brand-opening-motion` e arquivado como `2026-07-31-complete-brand-opening-motion`.
+- **Gate:** `CONCLUÍDO`; timeline, recuperação, reduced motion, motion local, visual, acessibilidade, performance, standalone, Graphify e OpenSpec verdes.
+- **Título de commit:** `feat(brand): complete accessible opening motion`.
 
 ### Fase 8 — Contato, segurança e conteúdo final
 
-**Estado:** `AGUARDANDO_GATE_ANTERIOR`  
+**Estado:** `PRONTA_PARA_INICIAR`
 **Objetivo:** implementar `POST /api/contact`, Zod, Turnstile, Resend, honeypot, limites, origem, logs sanitizados, headers, CSP, políticas e conteúdo oficial, sem persistência ou analytics.
 
 - **Arquivos criados:** a registrar.
@@ -681,3 +682,4 @@ or blocker remains; Phase 06 is still the exact next phase.
 | 2026-07-30 | Registrado subpasso corretivo exclusivamente de tooling, documentação e CI com Graphify `0.9.31` e OpenSpec `1.7.0`, acompanhado pelos documentos 18, 19 e 20. Nenhuma feature de motion ou navegação foi implementada; a Fase 5 permanece `PRONTA_PARA_INICIAR`. |
 | 2026-07-31 | Phase 05 completed with a persistent score-transition shell, manifest-derived topology, cancelable GSAP lifecycle, truthful history/focus behavior, live reduced motion, seven deterministic evidence captures, 201 unit tests, 57 Storybook tests, 192 Chromium checks, 135 focused cross-browser Phase 05 checks, 30 motion, 207 visual, 87 axe/accessibility, standalone 17+18, and Lighthouse 100/100/100/100 in 15 final runs. Graphify refreshed to 2,493 nodes and OpenSpec archived after 33/33 tasks; Phase 06 released. |
 | 2026-07-31 | Phase 06 completed with a semantic local tablet, deterministic five-state interaction, cancellable processing, original SVG score, precise-hover GSAP tilt, privacy instrumentation, 204 unit tests, 62 Storybook tests, 15 focused cross-browser interactions, 21 cross-browser state baselines, four-state axe coverage for all three Application routes, responsive 320 px and canonical 1536 × 1024 checks, and production/Storybook builds. Graphify refreshed to 2,556 nodes and the new OpenSpec capability was synchronized and archived; Phase 07 released. |
+| 2026-07-31 | Phase 07 completed with the immutable official SVG, a 5.600-second labeled GSAP opening, measured symbol-to-header handoff, one-session eligibility, skip/Escape/timeout/fail-open recovery, direct reduced-motion Home, route-aware finite local reveals, 214 unit tests, 63 Storybook tests, 21 focused cross-browser behaviors, 30 visual baselines, 6 axe audits, 30 accumulated motion checks, standalone 17+21, and Lighthouse 100/100/100/100 across 15 runs. OpenSpec and Graphify were refreshed before Phase 08 was released. |

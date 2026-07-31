@@ -1,0 +1,101 @@
+.overlay {
+  position: fixed;
+  z-index: var(--wf-z-intro);
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--wf-bg);
+  color: var(--wf-text);
+}
+
+.stage {
+  position: relative;
+  inline-size: min(78vw, 64rem);
+  aspect-ratio: 16 / 9;
+}
+
+.origin {
+  position: absolute;
+  z-index: 3;
+  inset: 50% auto auto 50%;
+  inline-size: clamp(4rem, 8vw, 7rem);
+  block-size: 0.35rem;
+  border-radius: var(--wf-radius-pill);
+  background: linear-gradient(90deg, #844dff, #2857ff, #22d3ee);
+  box-shadow: 0 0 2rem color-mix(in oklab, #844dff 55%, transparent);
+  transform: translate(-50%, -50%);
+}
+
+.symbolStage,
+.lockup {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.symbolStage {
+  display: grid;
+  place-items: center;
+}
+
+.symbol,
+.echoOne,
+.echoTwo {
+  position: absolute;
+  inline-size: clamp(9rem, 22vw, 18rem);
+  color: var(--wf-text);
+}
+
+.echoOne {
+  color: #844dff;
+  transform: translate(-1rem, 0.65rem);
+}
+
+.echoTwo {
+  color: #22d3ee;
+  transform: translate(1rem, -0.65rem);
+}
+
+.lockup {
+  object-fit: contain;
+}
+
+.skip {
+  position: absolute;
+  inset: auto var(--wf-space-6) var(--wf-space-6) auto;
+  min-inline-size: 44px;
+  min-block-size: 44px;
+  padding: var(--wf-space-3) var(--wf-space-4);
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-pill);
+  background: var(--wf-surface);
+  color: var(--wf-text);
+  font: inherit;
+  font-weight: var(--wf-font-weight-bold);
+  cursor: pointer;
+}
+
+.skip:focus-visible {
+  outline: 3px solid var(--wf-focus);
+  outline-offset: 3px;
+}
+
+@media (width < 48rem) {
+  .stage {
+    inline-size: 94vw;
+  }
+
+  .skip {
+    inset: auto 50% var(--wf-space-6) auto;
+    transform: translateX(50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .origin,
+  .symbolStage {
+    display: none;
+  }
+}
