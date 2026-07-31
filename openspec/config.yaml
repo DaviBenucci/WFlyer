@@ -1,25 +1,26 @@
 schema: spec-driven
 
 context: |
-  Repositório exclusivo do site institucional wflyer.com.br.
-  Stack bloqueada: Next.js App Router, React, TypeScript estrito, Tailwind CSS 4,
-  GSAP/ScrollTrigger/@gsap/react, conteúdo local e SVG original.
-  A documentação normativa, ADRs, manifests e golden references aprovadas têm
-  precedência sobre artefatos OpenSpec. app.wflyer.com.br e o aplicativo musical
-  permanecem fora do escopo. Não inventar métricas, pessoas, clientes ou resultados.
-  Gates: lint, typecheck, Vitest, Storybook, Playwright, axe, build standalone e
-  Lighthouse conforme a fase. Deploy exige homologação e acessos externos.
+  This repository is exclusively for the wflyer.com.br institutional website.
+  Locked stack: Next.js App Router, React, strict TypeScript, Tailwind CSS 4,
+  GSAP/ScrollTrigger/@gsap/react, local content, and original SVG.
+  Normative documentation, ADRs, manifests, and approved golden references take
+  precedence over OpenSpec artifacts. app.wflyer.com.br and the musical
+  application remain out of scope. Do not invent metrics, people, clients, or
+  results. Gates include lint, typecheck, Vitest, Storybook, Playwright, axe,
+  standalone build, and Lighthouse as required by each phase. Deployment
+  requires approval and external access.
 
 rules:
   proposal:
-    - Declare escopo, não objetivos, documentos normativos afetados e rollback.
-    - Separe fatos comprovados, inferências e trabalho ainda pendente.
+    - Declare scope, non-goals, affected normative documents, and rollback.
+    - Separate verified facts, inferences, and pending work.
   specs:
-    - Escreva requisitos observáveis com cenários Given/When/Then.
-    - Inclua acessibilidade, reduced motion, falhas e fallback quando aplicáveis.
+    - Write observable requirements with Given/When/Then scenarios.
+    - Include accessibility, reduced motion, failures, and fallback when applicable.
   design:
-    - Rastreie decisões para ADRs, manifests ou golden references aprovadas.
-    - Registre riscos, estratégia de testes e caminho de reversão.
+    - Trace decisions to ADRs, manifests, or approved golden references.
+    - Record risks, test strategy, and rollback path.
   tasks:
-    - Marque uma tarefa concluída somente com implementação e evidência verificáveis.
-    - Não arquive o change antes de validação estrita e gates proporcionais ao risco.
+    - Mark a task complete only with verifiable implementation and evidence.
+    - Do not archive a change before strict validation and risk-proportionate gates.

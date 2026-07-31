@@ -29,8 +29,8 @@ A execução local, os testes, os workflows, o build standalone e a preparação
 | Fase 2 — Conteúdo e rotas estáticas | `CONCLUÍDA` | gate local verde |
 | Fase 3 — Home e dupla partitura | `CONCLUÍDA` | gate local verde |
 | Fase 4 — Páginas por arquétipo | `CONCLUÍDA` | gate local verde |
-| Fase 5 — Motion e navegação | `PRONTA_PARA_INICIAR` | não avaliado |
-| Fase 6 — Tablet | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
+| Fase 5 — Motion e navegação | `CONCLUÍDA` | gate local verde |
+| Fase 6 — Tablet | `PRONTA_PARA_INICIAR` | gate anterior verde |
 | Fase 7 — Abertura e motion local | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
 | Fase 8 — Contato, segurança e conteúdo final | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
 | Fase 9 — Napoleon, staging e produção | `AGUARDANDO_GATES_LOCAIS_E_ACESSOS_EXTERNOS` | não avaliado |
@@ -77,8 +77,9 @@ desse bootstrap estão documentados, respectivamente, em
 
 Esse subpasso não implementa shell, provider, interceptação, timelines,
 transições, foco ou histórico da navegação. Ele também não altera runtime,
-produto, dependências de produção ou deploy. Por isso, a Fase 5 permanece
-explicitamente `PRONTA_PARA_INICIAR`, com gate funcional ainda não avaliado.
+produto, dependências de produção ou deploy. At that historical checkpoint,
+Phase 05 therefore remained explicitly `PRONTA_PARA_INICIAR`; its completed
+implementation and gate are recorded below.
 
 ## 3. Pré-voo
 
@@ -338,27 +339,261 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 
 ### Fase 5 — Motion e navegação
 
-**Estado:** `PRONTA_PARA_INICIAR`
-**Objetivo:** implementar transições adjacentes, saltos comprimidos, pivô pela Home, deep links, histórico, foco, fallback, timeout e reduced motion.
+**Status:** `COMPLETE`
+**Objective:** implement adjacent score transitions, compressed same-branch
+jumps, cross-branch Home pivots, deep links, truthful history, focus,
+deterministic recovery, and reduced-motion behavior without changing the
+server-rendered page contract.
 
-- **Arquivos criados:** a registrar.
-- **Arquivos modificados:** a registrar.
-- **Decisões aplicadas:** GSAP como único motor coordenado; scroll nativo; navegação semântica preservada.
-- **Continuidade de tooling:** baseline auxiliar documentada com Graphify `0.9.31` e OpenSpec `1.7.0`; nenhuma implementação funcional desta fase foi realizada nesse subpasso.
-- **Comandos:** a registrar.
-- **Testes e resultados:** não executados.
-- **Screenshots:** a registrar quando aplicável.
-- **Comparação visual:** pendente.
-- **Acessibilidade:** pendente, incluindo foco e reduced motion.
-- **Performance:** pendente.
-- **Riscos:** a registrar.
-- **Pendências não bloqueadoras:** a registrar.
-- **Gate:** `NÃO_AVALIADO`.
-- **Título de commit:** a definir.
+#### Interruption recovery — 2026-07-31
+
+The interrupted implementation was recovered non-destructively on branch
+`feature/fase-5-motion-navigation` at commit `d8e0d7f367ce7ebe877e6c1c2eecde7fa8a31ae5`.
+There were no staged changes. The Phase 05 worktree contained reconciled but
+unchecked OpenSpec artifacts, a persistent experience shell and score overlay,
+the pure motion domain, real score anchor markers, a header Home-pivot marker,
+Playwright configuration, unit/component/Storybook coverage, four focused
+Playwright suites, and deterministic evidence tooling. The unrelated one-line
+indentation change in the repository `README.md` was detected after the
+interruption and is being preserved without modification.
+
+The previous session stopped during final cross-browser validation. Static
+gates were already green: exact dependency validation, ESLint, TypeScript,
+201/201 unit tests, Storybook build, and 57/57 Storybook tests. The focused new
+Chromium matrix passed 44/44. Two WebKit stress assertions initially exposed
+driver-timing and engine-load sensitivity; after measuring reduced-motion time
+inside the page and requiring full cleanup for either normal settlement or the
+specified 1,100 ms safety recovery, the affected scenarios passed 9/9 across
+Chromium, Firefox, and WebKit. The work below completed every item that was
+still unverified at that recovery point.
+
+At recovery time, OpenSpec change `complete-phase-05-motion-navigation`
+remained active and valid with 0/33 tasks checked. The evidence-based recovery
+classification was:
+
+- `verified-complete`: contract reconciliation; versions; pure topology,
+  eligibility, lifecycle, timing, geometry, and cleanup contracts; persistent
+  shell/overlay integration; deterministic controller; unit/component and
+  Storybook coverage; focused Chromium behavior.
+- `implemented-but-unverified`: the complete Firefox/WebKit matrix, durable
+  visual captures, axe matrix, production build boundaries, standalone smoke,
+  Lighthouse, and final Graphify relationships.
+- `partially-implemented`: execution-report evidence and OpenSpec task
+  completion markers.
+- `not-started`: canonical spec synchronization and archival, which must wait
+  for every gate.
+- `blocked`: none; the WebKit host libraries are available through a reversible
+  user-local Playwright shim because system package installation requires
+  interactive administrator authentication.
+- `obsolete-or-duplicated`: none.
+
+#### Continuation recovery audit — 2026-07-31
+
+The next Codex session resumed from the same branch and commit after the work
+above had already completed its local gate but before the dirty worktree was
+consolidated into a commit. The initial state still had no staged changes. The
+Phase 05 implementation, tests, evidence, canonical specs, archive, Graphify
+refresh, and report were present as intentional unstaged or untracked work;
+the unrelated one-line `README.md` indentation remained preserved and was not
+folded into Phase 05. No implementation file was found partially wired, no
+test referred to missing behavior, and the last Playwright result recorded
+`passed` with no failed tests.
+
+Repository timestamps and diffs place the latest interruption after OpenSpec
+archival at 11:24, canonical-spec synchronization and Graphify refresh at
+11:25, and final report/map updates at 11:27–11:29. Consequently, the next
+coherent action was verification and handoff rather than reopening the change
+or replacing any valid code. `openspec list --json` correctly returned no
+active changes; the archived contract remains
+`2026-07-31-complete-phase-05-motion-navigation`, its 33 checkboxes remain
+evidence-backed, and both canonical capabilities pass strict validation.
+
+The evidence-based task classification for this continuation is:
+
+- `verified-complete`: tasks 1.1–1.3 (contracts/tooling), 2.1–2.3 (pure
+  navigation contracts), 3.1–3.4 (persistent shell and rendering), 4.1–4.5
+  (score choreography and persistent state), 5.1–5.6 (accessibility, history,
+  reduced motion, native fallback, terminals, and responsive safety), 6.1–6.7
+  (required test matrix), and 7.1–7.5 (gates, evidence, Graphify, sync, and
+  archive).
+- `implemented-but-unverified`, `partially-implemented`, `not-started`,
+  `blocked`, and `obsolete-or-duplicated`: none.
+
+The continuation baseline passed ESLint, TypeScript, 136/136 focused Phase 05
+unit/component tests, 22/22 focused Chromium navigation scenarios, and strict
+OpenSpec validation. The complete rerun then passed 201/201 unit tests, 57/57
+Storybook tests, Storybook and Next production builds with 22/22 static pages,
+192/192 Chromium checks, 30/30 cross-browser motion checks, 207/207
+cross-browser visual checks, and 252/252 cross-browser functional E2E checks.
+The broad accessibility command passed 86/87 before the final WebKit case lost
+its execution context to a Next development HMR `ChunkLoadError` under load;
+the exact case immediately passed 1/1 in isolation and the complete WebKit axe
+suite passed 29/29 serially without changing product code, assertions, or
+timeouts. This is the already documented development-server saturation risk,
+not an axe violation or product failure.
+
+Standalone packaging and smoke passed for 17 routes plus 18 assets. Lighthouse
+processed all 15 local runs with every configured assertion green and all four
+category scores at 100; FCP ranged from 248.0852 to 255.6946 ms, LCP from
+633.1278 to 663.5419 ms, and both CLS and TBT remained zero. Manual
+reinspection of the seven durable captures
+confirmed the two-segment central Home pivot, correct light/dark continuity,
+left/right terminal barlines, absent reduced-motion overlay, and single-column
+mobile completion without horizontal clipping. Graphify validation remained
+green at 2,493 nodes, 3,699 edges, and 257 communities, so no second refresh was
+run: this continuation changed documentation only, not architectural
+relationships. `git diff --check` also passed. No Phase 05 implementation task
+or blocker remains; Phase 06 is still the exact next phase.
+
+#### Final implementation
+
+- **Architecture:** `RootLayout` now mounts one persistent
+  `SiteExperienceShell` around the existing server-rendered routes. A pure
+  motion domain derives topology from the chapter manifest, evaluates links
+  conservatively, controls a cancelable finite-state lifecycle, owns timing
+  budgets, measures anchors, and guarantees idempotent cleanup. No duplicate
+  route map, provider, global store, scroll engine, or client conversion of
+  page components was introduced.
+- **Navigation contract:** eligible real anchors are intercepted in capture
+  phase, the App Router request starts within 56 ms, and pathname commit drives
+  incoming presentation. Adjacent travel uses one measured score segment;
+  non-adjacent travel uses one constant-duration compressed segment;
+  cross-branch travel uses two overlapping segments through the actual Home
+  pivot without adding Home to history. Auxiliary, hash, download, modified,
+  external, new-context, and no-JavaScript navigation remains native.
+- **Lifecycle and recovery:** only the latest request survives rapid repeated
+  activation. Each request owns at most one active timeline and one safety
+  timer. Timelines, GSAP contexts, listeners, temporary styles, and timers are
+  killed or reverted on supersession, route mismatch, preference change,
+  visibility loss, error, timeout, and unmount. A committed route recovers in
+  place; an uncommitted route falls back to native loading within 1,100 ms.
+- **Motion:** GSAP and `@gsap/react` remain the only coordinated animation
+  engine. Desktop transitions draw at most two five-line score segments and six
+  notes. Mobile suppresses the overlay and limits movement to 12 px horizontally
+  and 8 px vertically. Scroll remains native; no infinite animation,
+  `ScrollTrigger`, interval, parallax loop, Canvas, WebGL, or forced-layout loop
+  was added.
+- **Accessibility:** ordinary link navigation scrolls to the top and transfers
+  focus once to `main#main-content`; Back and Forward preserve native scroll and
+  do not steal focus. The overlay is inert, `aria-hidden`, unfocusable, and
+  pointer-transparent. The framework retains one route announcer. A live
+  `prefers-reduced-motion` listener suppresses score drawing and lateral travel
+  and safely resolves incompatible active work.
+- **Terminal and visual continuity:** Benefits and Contact retain their real
+  double final barlines, previous/header access, and correct branch sides in
+  desktop, mobile, both themes, and reduced motion. The Application exploration
+  cue was moved upward by 12 px after Firefox and WebKit measured it 10.6–10.8 px
+  beyond the canonical 1536 × 1024 viewport; the complete visual matrix then
+  passed without updating a baseline to hide the mismatch.
+
+#### Files and evidence
+
+- **Created:** `src/lib/motion/` with topology, eligibility, lifecycle, timing,
+  geometry, cleanup, exports, and six unit suites;
+  `src/components/experience/` with the persistent shell, SVG transition
+  layer, scoped styles, component tests, and 11 Storybook states; shared
+  Playwright transition helpers; dedicated Phase 05 E2E, motion, visual, and
+  accessibility suites; and `scripts/capture-phase5-evidence.mjs`.
+- **Modified:** root layout, header Home-pivot metadata, `OriginScore` and
+  `ChapterScore` SVG anchors, Playwright test-mode configuration, the existing
+  static-route HTTP assertion, the product-demo cue spacing, OpenSpec artifacts,
+  Graphify outputs/map, and this report. The unrelated one-line `README.md`
+  indentation remains untouched and is not part of Phase 05.
+- **Durable captures:** [transition start](evidencias/fase-5/phase05-transition-start.png),
+  [dark Home-pivot midpoint](evidencias/fase-5/phase05-home-pivot-midpoint-dark.png),
+  [transition completion](evidencias/fase-5/phase05-transition-completion.png),
+  [Benefits terminal](evidencias/fase-5/phase05-benefits-terminal-light.png),
+  [Contact terminal](evidencias/fase-5/phase05-contact-terminal-dark.png),
+  [reduced-motion completion](evidencias/fase-5/phase05-reduced-motion-completion.png),
+  and [mobile completion](evidencias/fase-5/phase05-mobile-completion.png).
+  The [evidence index](evidencias/fase-5/README.md) records route, viewport,
+  theme, state, and deterministic capture provenance. Direct inspection
+  confirmed the two-path Home pivot, correct terminal sides, absent decorative
+  overlay under reduced motion, and zero mobile horizontal overflow. These are
+  QA evidence, not replacement golden references, and no raster is used by the
+  frontend.
+
+#### Commands and measured results
+
+- **Primary commands:** `pnpm verify`; `pnpm test:storybook`;
+  `pnpm test:e2e --workers=2`; `pnpm test:motion --workers=2`;
+  `pnpm test:visual --workers=2`; `pnpm test:a11y --workers=2`;
+  `pnpm exec playwright test tests/e2e --workers=2`; focused Firefox/WebKit
+  recovery commands; `pnpm prepare:standalone`; `pnpm smoke:standalone`;
+  `pnpm lighthouse`; production-bundle inspection; deterministic evidence
+  capture; `scripts/graphify-repository.sh update`; strict OpenSpec text/JSON
+  validation; and final diff-integrity checks.
+- **Static and component gates:** exact dependency validation, ESLint, and
+  TypeScript passed. Vitest passed 201/201 unit tests in 20 files. Storybook
+  built successfully and its browser project passed 57/57 tests in 12 files.
+  Next produced 22/22 static pages.
+- **Playwright:** the complete Chromium command passed 192/192 with the same two
+  workers configured for CI. The focused Phase 05 matrix passed 135/135 across
+  Chromium, Firefox, and WebKit. The broader category runs passed motion 30/30,
+  visual 207/207, and axe/accessibility 87/87 across all three engines. Every
+  one of the 252 functional cross-browser E2E cases has a passing final run.
+- **Transparent harness corrections:** an initial four-worker Chromium batch
+  passed 172 before one valid post-commit safety recovery was treated as a
+  nominal animation failure; the two-worker CI-equivalent rerun passed 192/192.
+  The first cross-browser visual batch passed 205/207 and exposed the genuine
+  12 px cue issue described above; the full rerun passed 207/207. The first
+  accessibility batch passed 80 with one recovery-result mismatch and six
+  serial skips; the corrected full rerun passed 87/87. One broad functional
+  batch passed 232 with a Firefox XML-DOM harness defect and a saturated WebKit
+  development fallback causing 18 serial skips. Reading sitemap/robots through
+  their HTTP response passed 3/3, and the isolated WebKit Phase 05 file passed
+  22/22. No product timeout or visual mismatch was waived.
+- **Standalone:** packaging and smoke validation passed for 17 public routes
+  and 18 static assets. No deploy, DNS, Cloudflare, Napoleon, production, or
+  `app.wflyer.com.br` action was performed.
+- **Lighthouse:** 15 final standalone runs over Home, Application, Services,
+  Contact, and Privacy scored 100 in Performance, Accessibility, Best
+  Practices, and SEO. FCP ranged from 246.5904 to 259.0004 ms; LCP from
+  633.4194 to 666.0020 ms; CLS remained 0; maximum TBT was 1.5 ms.
+- **Bundle/runtime inspection:** the transition/GSAP client chunk is 111,399
+  bytes raw and 40,036 bytes gzip. The private test controller has zero
+  production occurrences, as do OpenSpec and Graphify imports. GSAP registers
+  once, `ScrollTrigger` is absent, and repeated navigation leaves one shell,
+  zero timelines, no scroll lock, and no listener/timer growth.
+
+#### Tooling closure, risk, and gate
+
+- **Graphify:** version `0.9.31` refreshed the existing filtered graph from
+  2,117 nodes / 3,142 edges / 234 communities to 2,493 / 3,699 / 257 and passed
+  integrity validation. Ten vocabulary-expanded queries covered route motion,
+  score branches, state ownership, coordinates, GSAP cleanup, history/deep
+  links, focus, reduced motion, tests, and high-impact nodes. Eight results were
+  saved as useful and two corrected stale pre-implementation memories.
+  `SiteExperienceShell()` is now the highest-degree code node at 22 edges.
+- **OpenSpec:** change `complete-phase-05-motion-navigation` was reconciled in
+  English against the normative repository, completed 33/33 evidence-bearing
+  tasks, passed strict text and JSON validation, and is archived as
+  `openspec/changes/archive/2026-07-31-complete-phase-05-motion-navigation`.
+  Canonical specifications are synchronized under `openspec/specs/`; no
+  duplicate active Phase 05 change remains. The CLI emitted only its
+  non-blocking advisory about changes with more than ten deltas; the two
+  cohesive Phase 05 capabilities remain separately canonicalized.
+- **Controlled risk:** local WebKit requires a reversible user-level Playwright
+  host-library shim because administrator authentication is unavailable. The
+  shim is outside the repository and production artifact. Next development
+  mode can emit HMR chunk-load warnings under saturated multi-engine runs;
+  production is prebuilt, standalone smoke is green, and isolated browser runs
+  confirm the intended native fallback. Graphify warns about an inactive global
+  0.9.23 skill copy, while the repository-local 0.9.31 skill and CLI take
+  precedence. None is a product blocker.
+- **Rollback:** remove the shell wrapper from `RootLayout` to restore fully
+  native navigation, then remove the experience/motion modules and anchor data
+  attributes. Server pages, real links, static scores, and content remain
+  independently operable throughout that rollback.
+- **Gate:** `COMPLETE`; implementation, tests, cross-browser behavior, visual
+  comparison, accessibility, reduced motion, responsiveness, production build,
+  standalone smoke, performance, evidence, Graphify, and OpenSpec are green.
+- **Suggested commit:** `feat(motion): complete score-driven chapter navigation`.
+- **Next exact phase:** Phase 06 — interactive Application tablet.
 
 ### Fase 6 — Tablet
 
-**Estado:** `AGUARDANDO_GATE_ANTERIOR`  
+**Estado:** `PRONTA_PARA_INICIAR`
 **Objetivo:** implementar o tablet em DOM e CSS 3D, com demonstração local determinística, teclado, toque, estados acessíveis e sem rede ou motor musical.
 
 - **Arquivos criados:** a registrar.
@@ -443,3 +678,4 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 | 2026-07-30 | Fase 3 concluída com Home bifurcada, clave narrativa original, pauta de origem, anchors de oito capítulos, navegação direcional, barras finais e fallback vertical; 58 unitários, 38 stories, 73 Playwright, standalone 17+14 e Lighthouse 100/100/100/100 em três execuções. Fase 4 liberada. |
 | 2026-07-30 | Fase 4 concluída após auditoria e recomposição de densidade no viewport normativo, com 16 páginas pelos arquétipos autorizados, tablet estático em DOM, pautas separadas do texto, Serviços em ordem canônica, header legal simplificado, terminais corrigidos e 15 evidências; 65 unitários, 46 stories, 147 Playwright, standalone 17+17 e Lighthouse 100/100/100/100 em 15 execuções sobre cinco rotas. Três revisões independentes finais retornaram `NÃO BLOQUEIA`; Fase 5 liberada. |
 | 2026-07-30 | Registrado subpasso corretivo exclusivamente de tooling, documentação e CI com Graphify `0.9.31` e OpenSpec `1.7.0`, acompanhado pelos documentos 18, 19 e 20. Nenhuma feature de motion ou navegação foi implementada; a Fase 5 permanece `PRONTA_PARA_INICIAR`. |
+| 2026-07-31 | Phase 05 completed with a persistent score-transition shell, manifest-derived topology, cancelable GSAP lifecycle, truthful history/focus behavior, live reduced motion, seven deterministic evidence captures, 201 unit tests, 57 Storybook tests, 192 Chromium checks, 135 focused cross-browser Phase 05 checks, 30 motion, 207 visual, 87 axe/accessibility, standalone 17+18, and Lighthouse 100/100/100/100 in 15 final runs. Graphify refreshed to 2,493 nodes and OpenSpec archived after 33/33 tasks; Phase 06 released. |

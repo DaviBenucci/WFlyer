@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/footer";
+import { SiteExperienceShell } from "@/components/experience";
 import { SiteHeader } from "@/components/header";
 import { SiteStructuredData } from "@/components/seo";
 import { ThemeProvider, ThemeScript, ThemeToggle } from "@/components/theme";
@@ -45,12 +46,16 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body>
         <ThemeProvider>
           <SiteStructuredData />
-          <a className="wf-skip-link" href="#main-content">
-            Pular para o conteúdo principal
-          </a>
-          <SiteHeader themeControl={<ThemeToggle />} />
-          {children}
-          <SiteFooter />
+          <SiteExperienceShell
+            testMode={process.env.WFLYER_TRANSITION_TEST_MODE === "1"}
+          >
+            <a className="wf-skip-link" href="#main-content">
+              Pular para o conteúdo principal
+            </a>
+            <SiteHeader themeControl={<ThemeToggle />} />
+            {children}
+            <SiteFooter />
+          </SiteExperienceShell>
         </ThemeProvider>
       </body>
     </html>

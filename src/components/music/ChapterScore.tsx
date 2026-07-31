@@ -193,6 +193,18 @@ export function ChapterScore({
       viewBox={`0 0 ${SCORE_WIDTH} ${SCORE_HEIGHT}`}
       xmlns="http://www.w3.org/2000/svg"
     >
+      <circle
+        cx={edgeToX(entryEdge)}
+        cy={anchorToY(entryAnchorY)}
+        data-score-anchor="entry"
+        r="0"
+      />
+      <circle
+        cx={edgeToX(exitEdge)}
+        cy={anchorToY(exitAnchorY)}
+        data-score-anchor="exit"
+        r="0"
+      />
       {Array.from({ length: STAFF_LINE_COUNT }, (_, line) => (
         <path
           className={styles.chapterStaffLine}

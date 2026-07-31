@@ -158,6 +158,12 @@ function OriginScoreGraphic({ layout }: { readonly layout: OriginLayout }) {
       viewBox={`0 0 ${geometry.width} ${geometry.height}`}
       xmlns="http://www.w3.org/2000/svg"
     >
+      <circle
+        cx={geometry.originX}
+        cy={geometry.originY + geometry.gap * 2}
+        data-score-anchor="origin"
+        r="0"
+      />
       {(["application", "institutional"] as const).map((branch) => (
         <g data-score-branch={branch} key={branch}>
           {Array.from({ length: STAFF_LINE_COUNT }, (_, line) => (

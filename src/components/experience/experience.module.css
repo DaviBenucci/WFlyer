@@ -1,0 +1,69 @@
+.experienceShell {
+  min-inline-size: 0;
+}
+
+.experienceShell :global(main[data-navigation-focus="true"]:focus) {
+  outline: var(--wf-focus-width) solid var(--wf-focus);
+  outline-offset: calc(var(--wf-focus-offset) * -1);
+}
+
+.transitionLayer {
+  position: fixed;
+  z-index: var(--wf-z-transition, 70);
+  inset: 0;
+  contain: strict;
+  overflow: clip;
+  color: var(--wf-staff);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.transitionLayer[data-active="true"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.transitionLayer svg {
+  inline-size: 100%;
+  block-size: 100%;
+  overflow: hidden;
+}
+
+.transitionStaffLine {
+  stroke: currentColor;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0.92;
+  stroke-linecap: round;
+  stroke-width: 1.35;
+}
+
+.transitionNote {
+  color: var(--wf-note);
+  fill: currentColor;
+  opacity: 0;
+}
+
+.transitionNote path {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+@media (width < 48rem) {
+  .transitionLayer {
+    display: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .transitionStaffLine,
+  .transitionNote path {
+    stroke: CanvasText;
+  }
+
+  .transitionNote {
+    fill: CanvasText;
+  }
+}

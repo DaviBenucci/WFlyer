@@ -49,12 +49,12 @@ for (const route of routes) {
 }
 
 test("sitemap e robots expõem somente a superfície pública esperada", async ({
-  page,
+  request,
 }) => {
-  const sitemapResponse = await page.goto("/sitemap.xml");
-  const sitemap = await page.locator("body").innerText();
+  const sitemapResponse = await request.get("/sitemap.xml");
+  const sitemap = await sitemapResponse.text();
 
-  expect(sitemapResponse?.ok()).toBe(true);
+  expect(sitemapResponse.ok()).toBe(true);
   for (const route of routes) {
     expect(sitemap).toContain(
       new URL(route, "https://wflyer.com.br").toString(),
@@ -63,10 +63,10 @@ test("sitemap e robots expõem somente a superfície pública esperada", async (
   expect(sitemap).not.toContain("/api/contact");
   expect(sitemap).not.toContain("app.wflyer.com.br");
 
-  const robotsResponse = await page.goto("/robots.txt");
-  const robots = await page.locator("body").innerText();
+  const robotsResponse = await request.get("/robots.txt");
+  const robots = await robotsResponse.text();
 
-  expect(robotsResponse?.ok()).toBe(true);
+  expect(robotsResponse.ok()).toBe(true);
   expect(robots).toContain("Allow: /");
   expect(robots).toContain("Disallow: /api/");
   expect(robots).toContain(

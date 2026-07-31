@@ -305,6 +305,7 @@ export function SiteHeader({
           aria-current={currentPathname === "/" ? "page" : undefined}
           aria-label="W_Flyer — voltar à página inicial"
           className={styles.brandHomeLink}
+          data-home-pivot="desktop"
           href="/"
           ref={desktopBrandLinkRef}
         >
@@ -332,6 +333,7 @@ export function SiteHeader({
           aria-current={currentPathname === "/" ? "page" : undefined}
           aria-label="W_Flyer — voltar à página inicial"
           className={styles.mobileBrandHomeLink}
+          data-home-pivot="mobile"
           href="/"
           onClick={() => {
             closeMenu();
