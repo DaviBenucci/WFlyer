@@ -136,3 +136,34 @@ Uma fase só é `CONCLUÍDA` com:
 - validação de staging;
 - homologação por Davi Benucci;
 - smoke test de produção e confirmação de que `app.wflyer.com.br` permaneceu operacional.
+
+## 12. Graphify e OpenSpec
+
+- Em questões arquiteturais que cruzem múltiplos arquivos, consultar primeiro o
+  Graphify com `graphify query`, `path` ou `explain` quando
+  `graphify-out/graph.json` existir.
+- Buscas simples e localizadas continuam usando as ferramentas normais.
+- Atualizar o grafo após mudanças estruturais relevantes; saídas locais sujas
+  não invalidam consultas, mas qualquer suspeita de desatualização deve ser
+  declarada.
+- Mudanças não triviais passam por um change OpenSpec focado. Correções triviais
+  não exigem burocracia adicional.
+- A documentação normativa, ADRs, manifests e golden references aprovadas
+  continuam tendo precedência; OpenSpec e Graphify não os substituem.
+- Nenhum artefato gerado pode contradizer decisões aprovadas nem ampliar o
+  escopo para `app.wflyer.com.br`.
+- Um change só pode ser arquivado depois de implementação, validação e testes
+  proporcionais ao risco.
+
+## graphify
+
+This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+
+When the user types `/graphify`, use the installed graphify skill or instructions before doing anything else.
+
+Rules:
+- For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
+- Dirty graphify-out/ files are expected after hooks or incremental updates; dirty graph files are not a reason to skip graphify. Only skip graphify if the task is about stale or incorrect graph output, or the user explicitly says not to use it.
+- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
+- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
+- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).

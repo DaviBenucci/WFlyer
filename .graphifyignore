@@ -1,0 +1,72 @@
+# Dependências, caches e saídas de build
+.git/
+node_modules/
+.next/
+out/
+dist/
+build/
+storybook-static/
+coverage/
+playwright-report/
+test-results/
+.lighthouseci/
+.pnpm-store/
+.turbo/
+.cache/
+blob-report/
+release/
+tmp/
+temp/
+downloads/
+archives/
+backups/
+
+# Outputs comuns nunca entram no corpus. O Graphify 0.9.31 reinjeta
+# graphify-out/memory por design, antes da avaliação deste arquivo.
+graphify-out/
+
+# Configuração local e instruções vendorizadas de ferramentas
+.serena/
+.codex/skills/
+
+# Evidências e referências binárias são representadas pelos manifestos textuais
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.ico
+*.avif
+*.pdf
+*.mp3
+*.wav
+*.mp4
+*.mov
+*.webm
+*.woff
+*.woff2
+*.ttf
+*.otf
+
+# Exceções visuais canônicas aprovadas; todas as demais imagens ficam fora
+!docs/design-reference/golden-pages/master/wflyer-approved-master-board.png
+!docs/design-reference/golden-pages/application/application-desktop-light.png
+
+# Artefatos empacotados, mapas e arquivos gerados
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.bak
+*~
+*.map
+*.tsbuildinfo
+.DS_Store
+pnpm-lock.yaml
+next-env.d.ts
+
+# Artefatos históricos de revisão visual; os contratos vivem em docs/
+review/
+index.html

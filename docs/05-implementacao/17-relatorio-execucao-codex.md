@@ -64,6 +64,22 @@ rotas, teclado, SEO e axe, além da integridade do diff. A consolidação Git é
 registrada na Fase 2 e no histórico abaixo; nenhuma alteração em `main`,
 produção, Cloudflare ou Napoleon foi realizada.
 
+### 2.2 Subpasso corretivo de tooling antes da Fase 5
+
+Em 2026-07-30, foi registrado um subpasso restrito a tooling, documentação e CI
+para restabelecer uma baseline reproduzível de inteligência do repositório antes
+do trabalho funcional da Fase 5. As CLIs verificadas reportam Graphify `0.9.31`
+e OpenSpec `1.7.0`; o mapa arquitetural, o workflow de changes e o relatório
+desse bootstrap estão documentados, respectivamente, em
+`docs/05-implementacao/18-graphify-repository-map.md`,
+`docs/05-implementacao/19-openspec-workflow.md` e
+`docs/05-implementacao/20-bootstrap-graphify-openspec-report.md`.
+
+Esse subpasso não implementa shell, provider, interceptação, timelines,
+transições, foco ou histórico da navegação. Ele também não altera runtime,
+produto, dependências de produção ou deploy. Por isso, a Fase 5 permanece
+explicitamente `PRONTA_PARA_INICIAR`, com gate funcional ainda não avaliado.
+
 ## 3. Pré-voo
 
 ### 3.1 Resultado
@@ -328,6 +344,7 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 - **Arquivos criados:** a registrar.
 - **Arquivos modificados:** a registrar.
 - **Decisões aplicadas:** GSAP como único motor coordenado; scroll nativo; navegação semântica preservada.
+- **Continuidade de tooling:** baseline auxiliar documentada com Graphify `0.9.31` e OpenSpec `1.7.0`; nenhuma implementação funcional desta fase foi realizada nesse subpasso.
 - **Comandos:** a registrar.
 - **Testes e resultados:** não executados.
 - **Screenshots:** a registrar quando aplicável.
@@ -425,3 +442,4 @@ Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquiv
 | 2026-07-30 | Execução retomada sem perda de trabalho. A Fase 2 foi revalidada com dependências exatas, lint, tipos, 52 unitários, build de 22 páginas, standalone de 17 rotas e 14 assets e 35 cenários concentrados; o relatório recebeu o registro de continuidade e a Fase 3 foi alinhada como pronta para iniciar após a consolidação Git. |
 | 2026-07-30 | Fase 3 concluída com Home bifurcada, clave narrativa original, pauta de origem, anchors de oito capítulos, navegação direcional, barras finais e fallback vertical; 58 unitários, 38 stories, 73 Playwright, standalone 17+14 e Lighthouse 100/100/100/100 em três execuções. Fase 4 liberada. |
 | 2026-07-30 | Fase 4 concluída após auditoria e recomposição de densidade no viewport normativo, com 16 páginas pelos arquétipos autorizados, tablet estático em DOM, pautas separadas do texto, Serviços em ordem canônica, header legal simplificado, terminais corrigidos e 15 evidências; 65 unitários, 46 stories, 147 Playwright, standalone 17+17 e Lighthouse 100/100/100/100 em 15 execuções sobre cinco rotas. Três revisões independentes finais retornaram `NÃO BLOQUEIA`; Fase 5 liberada. |
+| 2026-07-30 | Registrado subpasso corretivo exclusivamente de tooling, documentação e CI com Graphify `0.9.31` e OpenSpec `1.7.0`, acompanhado pelos documentos 18, 19 e 20. Nenhuma feature de motion ou navegação foi implementada; a Fase 5 permanece `PRONTA_PARA_INICIAR`. |

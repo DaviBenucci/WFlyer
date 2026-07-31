@@ -74,6 +74,10 @@
 - [Contrato de execução integral pelo Codex](05-implementacao/14-contrato-execucao-integral-codex.md)
 - [Checklist de prontidão pré-código](05-implementacao/15-checklist-prontidao-pre-codigo.md)
 - [GitHub Actions Secrets e Napoleon](05-implementacao/16-github-actions-secrets-napoleon.md)
+- [Relatório acumulado de execução do Codex](05-implementacao/17-relatorio-execucao-codex.md)
+- [Mapa arquitetural Graphify](05-implementacao/18-graphify-repository-map.md)
+- [Workflow OpenSpec](05-implementacao/19-openspec-workflow.md)
+- [Relatório do bootstrap Graphify e OpenSpec](05-implementacao/20-bootstrap-graphify-openspec-report.md)
 
 ## 06 — Segurança
 

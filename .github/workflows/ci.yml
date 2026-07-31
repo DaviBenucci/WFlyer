@@ -57,6 +57,9 @@ jobs:
       - name: Validate dependency policy
         run: pnpm validate:dependencies
 
+      - name: Validate OpenSpec
+        run: pnpm dlx @fission-ai/openspec@1.7.0 validate --all --strict --no-interactive
+
       - name: Lint
         run: pnpm lint
 

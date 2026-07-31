@@ -1,0 +1,25 @@
+schema: spec-driven
+
+context: |
+  Repositório exclusivo do site institucional wflyer.com.br.
+  Stack bloqueada: Next.js App Router, React, TypeScript estrito, Tailwind CSS 4,
+  GSAP/ScrollTrigger/@gsap/react, conteúdo local e SVG original.
+  A documentação normativa, ADRs, manifests e golden references aprovadas têm
+  precedência sobre artefatos OpenSpec. app.wflyer.com.br e o aplicativo musical
+  permanecem fora do escopo. Não inventar métricas, pessoas, clientes ou resultados.
+  Gates: lint, typecheck, Vitest, Storybook, Playwright, axe, build standalone e
+  Lighthouse conforme a fase. Deploy exige homologação e acessos externos.
+
+rules:
+  proposal:
+    - Declare escopo, não objetivos, documentos normativos afetados e rollback.
+    - Separe fatos comprovados, inferências e trabalho ainda pendente.
+  specs:
+    - Escreva requisitos observáveis com cenários Given/When/Then.
+    - Inclua acessibilidade, reduced motion, falhas e fallback quando aplicáveis.
+  design:
+    - Rastreie decisões para ADRs, manifests ou golden references aprovadas.
+    - Registre riscos, estratégia de testes e caminho de reversão.
+  tasks:
+    - Marque uma tarefa concluída somente com implementação e evidência verificáveis.
+    - Não arquive o change antes de validação estrita e gates proporcionais ao risco.

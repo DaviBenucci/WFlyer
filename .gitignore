@@ -17,4 +17,8 @@ test-results/
 *.tsbuildinfo
 
 .serena/memories/
-graphify-out/.graphify_*
+
+# Graphify: relatório/checksums são evidência leve; grafo, HTML e caches são locais.
+graphify-out/*
+!graphify-out/GRAPH_REPORT.md
+!graphify-out/CHECKSUMS.sha256
