@@ -1,6 +1,5 @@
 export {
   ApplicationFeatureStrip,
-  ApplicationPreview,
   AudienceList,
   BenefitsGrid,
   CompanyMark,

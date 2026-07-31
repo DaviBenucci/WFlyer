@@ -1,7 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 
 const routes = [
-  { route: "/aplicacao-wflyer", selector: "[data-application-preview]" },
+  { route: "/aplicacao-wflyer", selector: "[data-application-demo]" },
   {
     route: "/aplicacao-wflyer/como-funciona",
     selector: '[data-step-sequence="application"]',
@@ -71,7 +71,7 @@ test("Aplicação preserva a composição canônica completa em 1536 × 1024", a
   await page.goto("/aplicacao-wflyer");
 
   const copy = page.locator("main header").locator("div").first();
-  const preview = page.locator("[data-application-preview]");
+  const preview = page.locator("[data-application-demo]");
   const strip = page.locator("[data-feature-strip]");
   const cue = page.getByText("Role para explorar a experiência");
   const copyBox = await copy.boundingBox();
@@ -152,7 +152,7 @@ test("a legenda da Aplicação isola o texto da pauta decorativa", async ({
   await page.goto("/aplicacao-wflyer");
 
   await expect(
-    page.locator("[data-application-preview] figcaption"),
+    page.locator("[data-application-demo] figcaption"),
   ).not.toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
 });
 
@@ -191,7 +191,7 @@ test("tablet remove inclinação quando reduced motion está ativo", async ({
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/aplicacao-wflyer");
 
-  await expect(page.locator("[data-application-preview] > div")).toHaveCSS(
+  await expect(page.locator("[data-tablet-shell]")).toHaveCSS(
     "transform",
     "none",
   );

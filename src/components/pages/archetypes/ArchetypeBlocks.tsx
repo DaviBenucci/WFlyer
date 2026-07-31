@@ -19,53 +19,6 @@ import { ContactProjectTypeSelect } from "./ContactProjectTypeSelect";
 import { PageIcon, type PageIconName } from "./PageIcons";
 import styles from "./archetypes.module.css";
 
-export function ApplicationPreview() {
-  return (
-    <figure className={styles.applicationPreview} data-application-preview="">
-      <div className={styles.tabletShell}>
-        <div className={styles.tabletScreen}>
-          <div className={styles.previewTopline}>
-            <span>Prévia da experiência</span>
-            <span>Exemplo local</span>
-          </div>
-          <div className={styles.previewBody}>
-            <div
-              aria-label="Amostra visual de uma partitura"
-              className={styles.previewScore}
-              role="img"
-            >
-              <span>Trecho musical ilustrativo</span>
-              <Staff density="regular" direction="left" />
-              <Staff density="quiet" direction="right" />
-            </div>
-            <dl className={styles.previewControls}>
-              <div>
-                <dt>Contexto de origem</dt>
-                <dd>Piano · Dó maior</dd>
-              </div>
-              <div>
-                <dt>Contexto de destino</dt>
-                <dd>Instrumento e tonalidade</dd>
-              </div>
-              <div>
-                <dt>Revisão</dt>
-                <dd>Decisão musical do usuário</dd>
-              </div>
-            </dl>
-          </div>
-          <p className={styles.previewResult}>
-            Resultado ilustrativo pronto para revisão
-          </p>
-        </div>
-      </div>
-      <figcaption>
-        Demonstração visual estática construída em HTML e SVG. Nenhum arquivo
-        é enviado ou processado nesta prévia.
-      </figcaption>
-    </figure>
-  );
-}
-
 export function ApplicationFeatureStrip({
   items,
 }: {

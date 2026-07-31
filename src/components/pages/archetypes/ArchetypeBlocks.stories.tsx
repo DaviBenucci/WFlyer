@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 import { Container, Heading } from "@/components/ui";
+import { ApplicationDemoTablet } from "@/components/pages/application-demo";
 import { siteConfig } from "@/config/site";
 import {
   applicationContent,
@@ -13,7 +14,6 @@ import {
 
 import {
   ApplicationFeatureStrip,
-  ApplicationPreview,
   BenefitsGrid,
   ContactWorkspace,
   ProjectGrid,
@@ -23,7 +23,7 @@ import {
 
 const meta = {
   title: "Pages/Archetype blocks",
-  component: ApplicationPreview,
+  component: ApplicationDemoTablet,
   decorators: [
     (Story) => (
       <Container>
@@ -43,13 +43,35 @@ const meta = {
     layout: "fullscreen",
   },
   tags: ["test"],
-} satisfies Meta<typeof ApplicationPreview>;
+} satisfies Meta<typeof ApplicationDemoTablet>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
 export const ProductPreview: Story = {};
+
+export const ProductPreviewConfigured: Story = {
+  args: { initialState: "configured" },
+};
+
+export const ProductPreviewProcessing: Story = {
+  args: { initialState: "processing" },
+};
+
+export const ProductPreviewResult: Story = {
+  args: { initialState: "result" },
+};
+
+export const ProductPreviewDark: Story = {
+  globals: { theme: "dark" },
+};
+
+export const ProductPreviewMobile: Story = {
+  parameters: {
+    viewport: { defaultViewport: "mobile1" },
+  },
+};
 
 export const FeatureStrip: Story = {
   render: () => (

@@ -30,8 +30,8 @@ A execução local, os testes, os workflows, o build standalone e a preparação
 | Fase 3 — Home e dupla partitura | `CONCLUÍDA` | gate local verde |
 | Fase 4 — Páginas por arquétipo | `CONCLUÍDA` | gate local verde |
 | Fase 5 — Motion e navegação | `CONCLUÍDA` | gate local verde |
-| Fase 6 — Tablet | `PRONTA_PARA_INICIAR` | gate anterior verde |
-| Fase 7 — Abertura e motion local | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
+| Fase 6 — Tablet | `CONCLUÍDA` | gate local verde |
+| Fase 7 — Abertura e motion local | `PRONTA_PARA_INICIAR` | gate anterior verde |
 | Fase 8 — Contato, segurança e conteúdo final | `AGUARDANDO_GATE_ANTERIOR` | não avaliado |
 | Fase 9 — Napoleon, staging e produção | `AGUARDANDO_GATES_LOCAIS_E_ACESSOS_EXTERNOS` | não avaliado |
 
@@ -593,22 +593,23 @@ or blocker remains; Phase 06 is still the exact next phase.
 
 ### Fase 6 — Tablet
 
-**Estado:** `PRONTA_PARA_INICIAR`
+**Estado:** `CONCLUÍDA`
 **Objetivo:** implementar o tablet em DOM e CSS 3D, com demonstração local determinística, teclado, toque, estados acessíveis e sem rede ou motor musical.
 
-- **Arquivos criados:** a registrar.
-- **Arquivos modificados:** a registrar.
-- **Decisões aplicadas:** tilt máximo documentado; remoção de tilt no mobile e reduced motion; nenhuma imagem achatada, WebGL ou upload.
-- **Comandos:** a registrar.
-- **Testes e resultados:** não executados.
-- **Screenshots:** a registrar.
-- **Comparação visual:** pendente contra Aplicação desktop claro e derivação autorizada.
-- **Acessibilidade:** pendente, incluindo anúncio do resultado.
-- **Performance:** pendente.
-- **Riscos:** a registrar.
-- **Pendências não bloqueadoras:** a registrar.
-- **Gate:** `NÃO_AVALIADO`.
-- **Título de commit:** a definir.
+- **Arquivos criados:** componente focado `ApplicationDemoTablet`, CSS module, teste unitário, suíte E2E de jornada/privacidade/motion/responsividade, suíte visual de sete estados, 21 baselines por engine e change OpenSpec `complete-interactive-application-demo`.
+- **Arquivos modificados:** rota e barrels da Aplicação, bloco/estilos/testes/stories de arquétipos, composição do primeiro viewport, configuração Vitest/Vite, contratos E2E/visuais existentes, este relatório e grafo Graphify.
+- **Decisões aplicadas:** estado local tipado `idle/configured/processing/result/reset`; quatro selects nativos; processamento cancelável de 650 ms e troca direta em reduced motion; resultado explicitamente ilustrativo; SVG original; foco transferido de modo previsível à restauração; tilt GSAP limitado a 6° no desktop e 3° no tablet, restrito a precise hover e viewport; retorno ao repouso em saída, foco e aba oculta; nenhum upload, FileReader, fetch, XHR, WebSocket, storage, log de escolhas ou motor musical.
+- **Comandos:** `openspec validate --strict`; `pnpm lint`; `pnpm typecheck`; `pnpm test`; `pnpm test:storybook`; `pnpm build:storybook`; `pnpm build`; Playwright focado e cross-browser; axe da aplicação; geração e repetição das evidências; `graphify update .`; consulta Graphify de integração.
+- **Testes e resultados:** 204/204 unitários; 62/62 Storybook; 15 cenários Phase 06 executados em Chromium/Firefox/WebKit (a verificação de jornada final passou 3/3 depois do ajuste de timing transitório); 21/21 comparações visuais cross-browser; 3 rotas do ramo Aplicação passaram axe nos quatro estados normativos; composição 1536 × 1024 e 320 px verdes; build Storybook e build Next com 22 rotas verdes.
+- **Screenshots:** `tests/visual/phase06-tablet.visual.spec.ts-snapshots/` contém idle claro, idle escuro, foco, processamento, resultado, reduced motion e mobile para Chromium, Firefox e WebKit. As 21 imagens foram inspecionadas; o indicador de desenvolvimento foi explicitamente excluído das evidências.
+- **Comparação visual:** a página preserva a divisão copy/tablet, a densidade, profundidade, moldura, hierarquia de controles e faixa de cinco benefícios da golden Aplicação desktop claro. A tela é DOM/SVG original e não reutiliza o raster nem simula precisão musical.
+- **Acessibilidade:** labels, fieldset, botão nativo, `aria-busy`, região única `aria-live=polite`, foco previsível após resultado, reset, 44 × 44 px no mobile, ausência de overflow e reduced motion funcional foram automatizados; axe não encontrou violação nos estados do ramo.
+- **Performance:** zero canvas contínuo, WebGL, rede ou listener de pointer fora do viewport; timers, media queries, observer e GSAP context são limpos; build de produção verde. Lighthouse completo permanece no gate acumulado da Fase 9.
+- **Riscos controlados:** o teste revelou e corrigiu leitura tardia de SyntheticEvent e a mutação cross-engine do tipo do botão no fluxo reduced motion; botões agora têm identidade DOM distinta. Logs de Fast Refresh são filtrados apenas da asserção de privacidade de escolha, sem mascarar rede/storage/file access.
+- **Graphify/OpenSpec:** grafo atualizado para 2.556 nós, 3.759 arestas e 265 comunidades; consulta localizou componente, rota, specs, stories e suítes. OpenSpec estrito permanece verde e será sincronizado/arquivado no fechamento deste checkpoint.
+- **Pendências não bloqueadoras:** validação externa real não se aplica à demonstração local. A referência em vídeo ausente continua sem autoridade geométrica. Firefox/WebKit e as variantes autorizadas já foram cobertos localmente.
+- **Gate:** `CONCLUÍDO`.
+- **Título de commit:** `feat(application): complete interactive tablet demo`.
 
 ### Fase 7 — Abertura e motion local
 
@@ -679,3 +680,4 @@ or blocker remains; Phase 06 is still the exact next phase.
 | 2026-07-30 | Fase 4 concluída após auditoria e recomposição de densidade no viewport normativo, com 16 páginas pelos arquétipos autorizados, tablet estático em DOM, pautas separadas do texto, Serviços em ordem canônica, header legal simplificado, terminais corrigidos e 15 evidências; 65 unitários, 46 stories, 147 Playwright, standalone 17+17 e Lighthouse 100/100/100/100 em 15 execuções sobre cinco rotas. Três revisões independentes finais retornaram `NÃO BLOQUEIA`; Fase 5 liberada. |
 | 2026-07-30 | Registrado subpasso corretivo exclusivamente de tooling, documentação e CI com Graphify `0.9.31` e OpenSpec `1.7.0`, acompanhado pelos documentos 18, 19 e 20. Nenhuma feature de motion ou navegação foi implementada; a Fase 5 permanece `PRONTA_PARA_INICIAR`. |
 | 2026-07-31 | Phase 05 completed with a persistent score-transition shell, manifest-derived topology, cancelable GSAP lifecycle, truthful history/focus behavior, live reduced motion, seven deterministic evidence captures, 201 unit tests, 57 Storybook tests, 192 Chromium checks, 135 focused cross-browser Phase 05 checks, 30 motion, 207 visual, 87 axe/accessibility, standalone 17+18, and Lighthouse 100/100/100/100 in 15 final runs. Graphify refreshed to 2,493 nodes and OpenSpec archived after 33/33 tasks; Phase 06 released. |
+| 2026-07-31 | Phase 06 completed with a semantic local tablet, deterministic five-state interaction, cancellable processing, original SVG score, precise-hover GSAP tilt, privacy instrumentation, 204 unit tests, 62 Storybook tests, 15 focused cross-browser interactions, 21 cross-browser state baselines, four-state axe coverage for all three Application routes, responsive 320 px and canonical 1536 × 1024 checks, and production/Storybook builds. Graphify refreshed to 2,556 nodes and the new OpenSpec capability was synchronized and archived; Phase 07 released. |

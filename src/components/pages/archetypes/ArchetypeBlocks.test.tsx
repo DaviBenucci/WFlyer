@@ -10,7 +10,6 @@ import {
 
 import {
   ApplicationFeatureStrip,
-  ApplicationPreview,
   BenefitsGrid,
   ContactWorkspace,
   ServiceSolutionGrid,
@@ -23,22 +22,6 @@ vi.mock("next/navigation", () => ({
 }));
 
 describe("blocos visuais dos arquétipos", () => {
-  it("representa o tablet da Aplicação em DOM sem controles falsos", () => {
-    const { container } = render(<ApplicationPreview />);
-
-    expect(
-      screen.getByRole("figure"),
-    ).toHaveAttribute("data-application-preview");
-    expect(
-      screen.getByRole("img", {
-        name: "Amostra visual de uma partitura",
-      }),
-    ).toBeVisible();
-    expect(screen.getByText(/Nenhum arquivo é enviado/u)).toBeVisible();
-    expect(container.querySelectorAll("[data-staff]")).toHaveLength(2);
-    expect(container.querySelector("input, select, button")).toBeNull();
-  });
-
   it("entrega a faixa de cinco benefícios como lista semântica", () => {
     render(
       <ApplicationFeatureStrip items={applicationContent.highlights} />,

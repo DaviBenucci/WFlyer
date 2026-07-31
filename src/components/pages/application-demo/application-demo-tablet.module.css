@@ -1,0 +1,463 @@
+.demo {
+  display: grid;
+  min-inline-size: 0;
+  gap: var(--wf-space-4);
+  margin: 0;
+  perspective: 88rem;
+}
+
+.perspective {
+  position: relative;
+  isolation: isolate;
+  min-inline-size: 0;
+  padding: clamp(0.4rem, 1vw, 1rem) clamp(0.2rem, 0.8vw, 0.75rem)
+    clamp(1.35rem, 2.5vw, 2.25rem);
+}
+
+.shell {
+  --wf-tablet-glare-x: 50%;
+  --wf-tablet-glare-y: 14%;
+
+  position: relative;
+  z-index: 2;
+  min-inline-size: 0;
+  padding: clamp(0.55rem, 1vw, 0.85rem);
+  border: 1px solid
+    color-mix(in oklab, var(--wf-tablet-edge) 78%, var(--wf-border));
+  border-radius: clamp(1.25rem, 2.4vw, 2rem);
+  background:
+    radial-gradient(
+      circle at var(--wf-tablet-glare-x) var(--wf-tablet-glare-y),
+      color-mix(in oklab, var(--wf-tablet-reflection) 80%, transparent),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      color-mix(in oklab, var(--wf-tablet-reflection) 62%, transparent),
+      transparent 35%
+    ),
+    color-mix(in oklab, var(--wf-tablet-edge) 88%, var(--wf-surface));
+  box-shadow:
+    0 2.2rem 3.8rem color-mix(in oklab, var(--wf-text) 22%, transparent),
+    inset 0 0 0 1px
+      color-mix(in oklab, var(--wf-tablet-reflection) 46%, transparent);
+  transform: perspective(88rem) rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.camera {
+  position: absolute;
+  z-index: 4;
+  inset: 0.34rem 42% auto;
+  block-size: 0.23rem;
+  border-radius: var(--wf-radius-pill);
+  background: color-mix(in oklab, var(--wf-text) 52%, transparent);
+  transform: translateZ(0.4rem);
+}
+
+.screen {
+  display: grid;
+  min-inline-size: 0;
+  gap: var(--wf-space-2);
+  padding: clamp(0.9rem, 1.7vw, 1.45rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--wf-border) 82%, transparent);
+  border-radius: clamp(0.9rem, 1.8vw, 1.4rem);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--wf-surface-elevated) 96%, transparent),
+      var(--wf-surface)
+    );
+  transform: translateZ(0.05rem);
+}
+
+.topline,
+.scoreHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wf-space-2);
+}
+
+.topline {
+  color: var(--wf-text-muted);
+  font-size: 0.62rem;
+  font-weight: var(--wf-font-weight-bold);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.localBadge {
+  padding: 0.22rem 0.48rem;
+  border: 1px solid color-mix(in oklab, var(--wf-accent) 32%, var(--wf-border));
+  border-radius: var(--wf-radius-pill);
+  background: color-mix(in oklab, var(--wf-accent) 7%, transparent);
+  color: var(--wf-accent);
+}
+
+.workspace {
+  display: grid;
+  min-inline-size: 0;
+  grid-template-columns: minmax(0, 1.45fr) minmax(12.5rem, 0.72fr);
+  gap: var(--wf-space-3);
+}
+
+.scorePanel,
+.controls {
+  min-inline-size: 0;
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-md);
+  background: color-mix(in oklab, var(--wf-bg) 66%, var(--wf-surface));
+}
+
+.scorePanel {
+  display: grid;
+  align-content: center;
+  gap: var(--wf-space-3);
+  min-block-size: 19rem;
+  padding: clamp(0.85rem, 1.6vw, 1.4rem);
+  overflow: hidden;
+}
+
+.scoreHeading {
+  color: var(--wf-text-muted);
+  font-size: 0.61rem;
+  font-weight: var(--wf-font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scoreHeading strong {
+  color: var(--wf-text);
+  font-size: 0.68rem;
+}
+
+.score {
+  display: block;
+  inline-size: 100%;
+  min-inline-size: 18rem;
+  color: var(--wf-note);
+}
+
+.staffLines {
+  fill: none;
+  stroke: var(--wf-staff);
+  stroke-width: 1.2;
+}
+
+.clef {
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.notes ellipse {
+  fill: currentcolor;
+  transform: rotate(-14deg);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.notes line {
+  stroke: currentcolor;
+  stroke-width: 2.2;
+}
+
+.changedNote {
+  color: var(--wf-accent);
+  transform: translateY(-5px);
+}
+
+.changedMarker {
+  fill: none;
+  stroke: currentcolor;
+  stroke-dasharray: 3 3;
+  stroke-width: 1.5;
+}
+
+.scoreLabel {
+  fill: var(--wf-text-muted);
+  font-family: var(--wf-font-sans);
+  font-size: 9px;
+  font-weight: var(--wf-font-weight-bold);
+  letter-spacing: 0.04em;
+  text-anchor: end;
+  text-transform: uppercase;
+}
+
+.scoreCaption {
+  margin: 0;
+  color: var(--wf-text-muted);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.controls {
+  display: grid;
+  align-content: start;
+  gap: var(--wf-space-2);
+  padding: var(--wf-space-2);
+  background: var(--wf-surface-muted);
+}
+
+.controls fieldset {
+  display: grid;
+  min-inline-size: 0;
+  gap: 0.38rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.controls legend {
+  inline-size: 100%;
+  margin-block-end: 0.25rem;
+  color: var(--wf-text);
+  font-family: var(--wf-font-display);
+  font-size: 0.95rem;
+  font-weight: var(--wf-font-weight-semibold);
+}
+
+.controls label {
+  display: grid;
+  min-inline-size: 0;
+  gap: 0.28rem;
+  color: var(--wf-text-muted);
+  font-size: 0.62rem;
+  font-weight: var(--wf-font-weight-bold);
+  letter-spacing: 0.04em;
+}
+
+.controls select {
+  inline-size: 100%;
+  min-block-size: 2.25rem;
+  padding-inline: 0.7rem 1.8rem;
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-sm);
+  background: var(--wf-surface);
+  color: var(--wf-text);
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: var(--wf-font-weight-semibold);
+  letter-spacing: 0;
+}
+
+.controls select:focus-visible,
+.primaryAction:focus-visible,
+.secondaryAction:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--wf-focus) 76%, transparent);
+  outline-offset: 2px;
+}
+
+.directionMark {
+  display: grid;
+  place-items: center;
+  inline-size: 1.7rem;
+  block-size: 1.7rem;
+  margin: -0.12rem auto;
+  border: 1px solid var(--wf-border);
+  border-radius: 50%;
+  color: var(--wf-accent);
+  font-size: 0.9rem;
+}
+
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 2.4rem;
+  padding: 0.52rem 0.9rem;
+  border: 1px solid var(--wf-primary);
+  border-radius: var(--wf-radius-sm);
+  font-family: var(--wf-font-sans);
+  font-size: 0.76rem;
+  font-weight: var(--wf-font-weight-bold);
+  cursor: pointer;
+}
+
+.primaryAction {
+  gap: var(--wf-space-2);
+  background: var(--wf-primary);
+  color: var(--wf-on-primary);
+}
+
+.secondaryAction {
+  background: var(--wf-surface);
+  color: var(--wf-primary);
+}
+
+.primaryAction:disabled {
+  opacity: 0.72;
+  cursor: wait;
+}
+
+.spinner {
+  inline-size: 0.85rem;
+  block-size: 0.85rem;
+  border: 2px solid color-mix(in oklab, currentcolor 36%, transparent);
+  border-block-start-color: currentcolor;
+  border-radius: 50%;
+  animation: tablet-spinner 0.7s linear infinite;
+}
+
+.status {
+  min-block-size: 2.2rem;
+  margin: 0;
+  padding: 0.45rem var(--wf-space-3);
+  border-inline-start: 3px solid var(--wf-accent);
+  background: color-mix(in oklab, var(--wf-accent) 9%, transparent);
+  color: var(--wf-text-muted);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.demo[data-demo-state="result"] .status {
+  color: var(--wf-text);
+}
+
+.shadow {
+  position: absolute;
+  z-index: 0;
+  inset: auto 8% 0;
+  block-size: 8%;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--wf-text) 32%, transparent);
+  filter: blur(1.25rem);
+  opacity: 0.62;
+  transform: translateY(-0.45rem) scaleX(0.92);
+}
+
+.demo figcaption {
+  position: relative;
+  z-index: 3;
+  max-inline-size: 54rem;
+  background: var(--wf-bg);
+  box-shadow: 0 0 0 0.35rem var(--wf-bg);
+  color: var(--wf-text-muted);
+  font-size: var(--wf-font-size-body-sm);
+  line-height: var(--wf-line-height-body);
+}
+
+@keyframes tablet-spinner {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media (width < 75rem) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .controls fieldset {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .controls legend,
+  .directionMark {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (width < 64rem) {
+  .shell {
+    transform: perspective(88rem) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+@media (width < 48rem) {
+  .demo,
+  .perspective,
+  .shell,
+  .screen,
+  .workspace,
+  .scorePanel,
+  .controls {
+    min-inline-size: 0;
+    max-inline-size: 100%;
+  }
+
+  .perspective {
+    padding-inline: 0;
+  }
+
+  .shell {
+    padding: 0.42rem;
+    border-radius: 1.25rem;
+    transform: none !important;
+    transform-style: flat;
+    will-change: auto;
+  }
+
+  .screen {
+    padding: 0.75rem;
+    border-radius: 0.9rem;
+    transform: none;
+  }
+
+  .topline,
+  .scoreHeading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .scorePanel {
+    min-block-size: 12rem;
+    padding: 0.75rem;
+  }
+
+  .score {
+    min-inline-size: 15rem;
+  }
+
+  .controls fieldset {
+    grid-template-columns: 1fr;
+  }
+
+  .controls legend,
+  .directionMark {
+    grid-column: auto;
+  }
+
+  .controls select,
+  .primaryAction,
+  .secondaryAction {
+    min-block-size: 2.75rem;
+  }
+
+  .shadow {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell,
+  .changedNote,
+  .spinner {
+    animation: none;
+    transform: none !important;
+    transition: none;
+  }
+
+  .shell {
+    will-change: auto;
+  }
+}
+
+@media (forced-colors: active) {
+  .status {
+    border-inline-start-color: CanvasText;
+  }
+
+  .localBadge,
+  .changedMarker {
+    border-color: CanvasText;
+    color: CanvasText;
+  }
+}

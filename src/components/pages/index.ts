@@ -1,8 +1,12 @@
 export { LegalPage } from "./LegalPage";
 export { ServiceDetailPage } from "./ServiceDetailPage";
 export {
+  ApplicationDemoTablet,
+  type ApplicationDemoTabletProps,
+  type DemoState,
+} from "./application-demo";
+export {
   ApplicationFeatureStrip,
-  ApplicationPreview,
   AudienceList,
   BenefitsGrid,
   CompanyMark,

@@ -8,6 +8,9 @@ import { defineConfig } from "vitest/config";
 const rootDirectory = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  optimizeDeps: {
+    include: ["@gsap/react", "gsap"],
+  },
   resolve: {
     alias: {
       "@": path.resolve(rootDirectory, "src"),

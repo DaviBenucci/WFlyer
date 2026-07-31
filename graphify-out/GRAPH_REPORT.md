@@ -1,24 +1,24 @@
 # Graph Report - WFlyer  (2026-07-31)
 
 ## Corpus Check
-- 307 files · ~268,080 words
+- 316 files · ~272,674 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2493 nodes · 3699 edges · 257 communities (163 shown, 94 thin omitted)
+- 2556 nodes · 3759 edges · 265 communities (171 shown, 94 thin omitted)
 - Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 305 edges (avg confidence: 0.92)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d8e0d7f3`
+- Built from commit: `5d794624`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - ui/index.ts
 - music/index.ts
-- theme-provider.tsx
-- Custom angular italic W_Flyer wordmark
+- app/layout.tsx
+- Angular winged WF symbol
 - Modelo de ameaças
 - properties
 - scripts
@@ -32,7 +32,7 @@
 - pages/index.ts
 - site-content.ts
 - Requirement: Transition topology is deterministic
-- topology.ts
+- eligibility.ts
 - Composição desktop em tema claro
 - Especificação application-desktop-light
 - manifest.json
@@ -54,13 +54,13 @@
 - ADDED Requirements
 - Normative rules for implementation agents
 - Catálogo de animações
-- chapters.ts
+- topology.ts
 - Package deployment candidate job
 - Chapter transition resolver
 - Relatório acumulado de execução do Codex
 - required
 - smoke-standalone.mjs
-- Angular winged WF symbol
+- Custom angular italic W_Flyer wordmark
 - Custom angular italic W_Flyer wordmark
 - OpenSpec project configuration
 - graphify-repository.sh
@@ -69,7 +69,7 @@
 - Guia operacional para Codex
 - Manifesto de capítulos da partitura
 - Critérios de aceite da versão inicial
-- Angular winged WF symbol
+- Custom angular italic W_Flyer wordmark
 - Implementation, test, visual, accessibility and performance gate evidence
 - Deploy e configuração
 - viewport
@@ -98,8 +98,8 @@
 - Fontes técnicas oficiais
 - Visual authorization page matrix
 - ADDED Requirements
-- seo/index.ts
-- Custom angular italic W_Flyer wordmark
+- ADDED Requirements
+- criacao-de-aplicacoes/page.tsx
 - SiteExperienceShell.tsx
 - Gate de autorização visual
 - Testes de acessibilidade
@@ -156,8 +156,8 @@
 - home.visual.spec.ts
 - ScoreTransitionLayer.tsx
 - geometry.ts
-- Custom angular italic W_Flyer wordmark
-- Custom angular italic W_Flyer wordmark
+- ApplicationDemoTablet.tsx
+- Decisions
 - @playwright/test
 - storybook
 - proposal.md
@@ -167,11 +167,11 @@
 - tasks.md
 - @testing-library/jest-dom
 - design.md
-- contato/page.tsx
+- Custom angular italic W_Flyer wordmark
 - @types/node
 - 2026-07-31-complete-phase-05-motion-navigation/README.md
 - typescript
-- Angular winged WF symbol
+- Custom angular italic W_Flyer wordmark
 - cleanup.ts
 - @vitest/browser
 - @vitest/browser-playwright
@@ -246,8 +246,10 @@
 - Q: Which components render the left and right musical-score branches?
 - Q: Which files control GSAP timelines and cleanup?
 - @storybook/addon-a11y
+- complete-interactive-application-demo/proposal.md
 - Visual evidence — Phase 5
 - Q: Which files control route-to-route animated navigation?
+- complete-interactive-application-demo/tasks.md
 - Q: Which files handle browser history and deep links?
 - Q: Which files handle focus restoration after navigation?
 - Q: Which files map routes to chapter coordinates?
@@ -256,6 +258,7 @@
 - Q: Which highly connected nodes may be affected by Phase 05 changes?
 - Q: Which tests currently cover Phase 05?
 - axe-core
+- portfolio/page.tsx
 - eslint-config-next
 - @lhci/cli
 - playwright
@@ -280,8 +283,6 @@
 10. `.next` - 16 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Official reusable brand geometry` --semantically_similar_to--> `Official W_Flyer vector animation master`  [INFERRED] [semantically similar]
-  svg/wflyer-intro-master.svg → docs/design-reference/LOGO/svg/master/wflyer-animation-base.svg
 - `Custom angular italic W_Flyer wordmark` --semantically_similar_to--> `Custom angular italic W_Flyer wordmark`  [INFERRED] [semantically similar]
   svg/wflyer-intro-master.svg → docs/design-reference/LOGO/svg/master/wflyer-wordmark.svg
 - `Angular winged WF symbol` --semantically_similar_to--> `Angular winged WF symbol`  [INFERRED] [semantically similar]
@@ -290,6 +291,8 @@
   README.md → docs/00-governanca/01-bloqueio-tecnologico.md
 - `Official W_Flyer header symbol production asset` --semantically_similar_to--> `Official compact W_Flyer symbol lockup`  [INFERRED] [semantically similar]
   svg/wflyer-header-symbol.svg → docs/design-reference/LOGO/svg/lockups/wflyer-compact.svg
+- `Angular winged WF symbol` --semantically_similar_to--> `Angular winged WF symbol`  [INFERRED] [semantically similar]
+  docs/design-reference/LOGO/svg/lockups/wflyer-compact.svg → src/app/icon.svg
 
 ## Import Cycles
 - None detected.
@@ -354,23 +357,23 @@
 - **Archived repository-intelligence bootstrap decisions** — openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_external_cli_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_filtered_root_corpus_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_normal_semantic_extraction_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_lightweight_graph_versioning_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_manual_graphify_strict_openspec_ci, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_bootstrap_without_functional_specs [EXTRACTED 1.00]
 - **Completed repository-intelligence bootstrap workstreams** — openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_audit_and_configuration_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_architectural_graph_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_reproducible_workflow_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_openspec_baseline_and_documentation_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_validation_gates_complete [EXTRACTED 1.00]
 
-## Communities (257 total, 94 thin omitted)
+## Communities (265 total, 94 thin omitted)
 
 ### Community 0 - "ui/index.ts"
 Cohesion: 0.05
-Nodes (71): HomePage(), metadata, staticPageStyles, Button(), ButtonProps, controlClassName(), ControlSize, ControlVariant (+63 more)
+Nodes (70): metadata, HomePage(), metadata, staticPageStyles, Button(), ButtonProps, controlClassName(), ControlSize (+62 more)
 
 ### Community 1 - "music/index.ts"
 Cohesion: 0.06
 Nodes (52): anchorToY(), ChapterScore(), ChapterScoreProps, cubicAngle(), cubicPoint(), edgeToX(), getChapterScorePath(), getControlPoints() (+44 more)
 
-### Community 2 - "theme-provider.tsx"
+### Community 2 - "app/layout.tsx"
 Cohesion: 0.07
-Nodes (39): cormorantGaramond, manrope, ApplicationChapter, Dark, Home, MobileMenuOpen, ProcessSubmeasure, Story (+31 more)
+Nodes (42): cormorantGaramond, manrope, metadata, viewport, SiteFooter(), ApplicationChapter, Dark, Home (+34 more)
 
-### Community 3 - "Custom angular italic W_Flyer wordmark"
-Cohesion: 0.09
-Nodes (32): Angular winged WF symbol, Asset version 1.0.0-review, Cinematic 1200 by 675 viewBox, Custom angular italic W_Flyer wordmark, Cyan symbol echo, Dark-background intro contrast, Initial, symbol, and final visual states, Isolated origin underscore (+24 more)
+### Community 3 - "Angular winged WF symbol"
+Cohesion: 0.12
+Nodes (23): Angular winged WF symbol, Asset version 1.0.0-review, Cinematic 1200 by 675 viewBox, Cyan symbol echo, Dark-background intro contrast, Initial, symbol, and final visual states, Isolated origin underscore, Non-focusable accessible intro identity (+15 more)
 
 ### Community 4 - "Modelo de ameaças"
 Cohesion: 0.07
@@ -397,8 +400,8 @@ Cohesion: 0.08
 Nodes (40): Cópias controladas dos assets oficiais, Coreografia compartilhada entre temas, Documentos normativos de motion e QA, Geometria imutável da animação, Referências da animação de entrada, Contrato controlado de IDs, Grupos controlados de animação, Mapa controlado de IDs SVG (+32 more)
 
 ### Community 10 - "seo.ts"
-Cohesion: 0.10
-Nodes (17): nextConfig, .next, metadata, metadata, viewport, robots(), metadata, metadata (+9 more)
+Cohesion: 0.11
+Nodes (24): nextConfig, .next, metadata, metadata, metadata, robots(), sitemap(), ApplicationFeatureStrip() (+16 more)
 
 ### Community 11 - "Grade de quatro serviços"
 Cohesion: 0.08
@@ -413,20 +416,20 @@ Cohesion: 0.06
 Nodes (30): dom, dom.iterable, esnext, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, storybook-static (+22 more)
 
 ### Community 14 - "pages/index.ts"
-Cohesion: 0.16
-Nodes (22): metadata, AudienceList(), ServiceDetailMark(), ServiceDetailPage(), Breadcrumbs(), BulletList(), CardGrid(), ChapterNavigation() (+14 more)
+Cohesion: 0.20
+Nodes (20): AudienceList(), ServiceDetailMark(), Breadcrumbs(), BulletList(), CardGrid(), ChapterNavigation(), ChapterPage(), ChapterPageProps (+12 more)
 
 ### Community 15 - "site-content.ts"
-Cohesion: 0.09
-Nodes (26): metadata, metadata, CompanyMark(), EditorialPillars(), ProjectGrid(), ContactProjectTypeSelect(), PageIcon(), PageIconName (+18 more)
+Cohesion: 0.10
+Nodes (23): metadata, CompanyMark(), EditorialPillars(), ContactProjectTypeSelect(), PageIcon(), PageIconName, PageIconProps, aboutContent (+15 more)
 
 ### Community 16 - "Requirement: Transition topology is deterministic"
 Cohesion: 0.06
 Nodes (35): Purpose, Requirement: Concurrent navigation is bounded and recoverable, Requirement: Every mode preserves its approved visual meaning, Requirement: Persistent chrome and theme remain coherent, Requirement: Terminal and responsive states preserve score semantics, Requirement: Transition checkpoints are deterministically testable, Requirement: Transition time is bounded, Requirement: Transition topology is deterministic (+27 more)
 
-### Community 17 - "topology.ts"
-Cohesion: 0.14
-Nodes (23): EligibleNavigationLink, evaluateLinkEligibility(), ineligible(), IneligibleNavigationLink, isHttpProtocol(), isUnmodifiedPrimaryActivation(), LinkActivation, LinkCandidate (+15 more)
+### Community 17 - "eligibility.ts"
+Cohesion: 0.24
+Nodes (12): EligibleNavigationLink, evaluateLinkEligibility(), ineligible(), IneligibleNavigationLink, isHttpProtocol(), isUnmodifiedPrimaryActivation(), LinkActivation, LinkCandidate (+4 more)
 
 ### Community 18 - "Composição desktop em tema claro"
 Cohesion: 0.10
@@ -469,8 +472,8 @@ Cohesion: 0.14
 Nodes (20): Accessible SVG image semantics, Angular winged WF symbol, Even-odd compound fill, Forward-slanted geometric visual rhythm, Horizontal 845 × 162 logo lockup, Monochrome currentColor treatment, Official W_Flyer visual identity, Tall left symbol anchor (+12 more)
 
 ### Community 28 - "ArchetypeBlocks.stories.tsx"
-Cohesion: 0.11
-Nodes (19): metadata, metadata, ApplicationFeatureStrip(), ApplicationPreview(), ServiceSolutionGrid(), ApplicationSequence, BenefitsDark, ContactShell (+11 more)
+Cohesion: 0.08
+Nodes (26): metadata, metadata, metadata, ServiceSolutionGrid(), StepSequence(), ApplicationSequence, BenefitsDark, ContactShell (+18 more)
 
 ### Community 29 - "Perfil de publicação"
 Cohesion: 0.12
@@ -512,9 +515,9 @@ Nodes (16): Fail-closed contact endpoint contract, Home-centered double-score na
 Cohesion: 0.17
 Nodes (16): NavigationMeasure, Especificação da homepage, Home como origem e bifurcação, Modelo espacial de dupla partitura, Páginas auxiliares, Ramo da aplicação, Ramo institucional, Sistema de dupla partitura (+8 more)
 
-### Community 39 - "chapters.ts"
-Cohesion: 0.26
-Nodes (13): auxiliaryRouteByPath, AuxiliaryRouteEntry, auxiliaryRoutes, ChapterBranch, scoreChapterById, scoreChapterByPath, scoreChapters, ScoreManifest (+5 more)
+### Community 39 - "topology.ts"
+Cohesion: 0.14
+Nodes (26): AuxiliaryRoute, auxiliaryRouteByPath, AuxiliaryRouteEntry, auxiliaryRoutes, ChapterBranch, ScoreChapter, scoreChapterById, scoreChapterByPath (+18 more)
 
 ### Community 40 - "Package deployment candidate job"
 Cohesion: 0.14
@@ -536,9 +539,9 @@ Nodes (14): additionalProperties, $id, id, sha256, ship_in_production, usage, re
 Cohesion: 0.16
 Nodes (11): child, delay(), logs, publicRoutes, readLogs(), repositoryRoot, scriptDirectory, serverPath (+3 more)
 
-### Community 45 - "Angular winged WF symbol"
-Cohesion: 0.18
-Nodes (14): Accessible W_Flyer image title and description, Official horizontal W_Flyer vector animation base, Accessible W_Flyer image title and description, Angular winged WF symbol, currentColor glyph groups, Dark monochrome on-light treatment, Forward-motion brand language, Official dark-on-light W_Flyer horizontal lockup (+6 more)
+### Community 45 - "Custom angular italic W_Flyer wordmark"
+Cohesion: 0.11
+Nodes (22): Accessible W_Flyer image title and description, Official horizontal W_Flyer vector animation base, Accessible W_Flyer image title and description, Angular winged WF symbol, currentColor glyph groups, Custom angular italic W_Flyer wordmark, Dark monochrome on-light treatment, Forward-motion brand language (+14 more)
 
 ### Community 46 - "Custom angular italic W_Flyer wordmark"
 Cohesion: 0.16
@@ -572,9 +575,9 @@ Nodes (12): Capítulo Aplicação, Capítulo Benefícios, Capítulo Como funcion
 Cohesion: 0.32
 Nodes (12): Aceite da narrativa da partitura, Aceite de design, Aceite de motion, Aceite de produto, Aceite de publicação e conteúdo operacional, Aceite de qualidade, Aceite de segurança, Aceite do tablet (+4 more)
 
-### Community 54 - "Angular winged WF symbol"
-Cohesion: 0.20
-Nodes (12): Accessible W_Flyer image title and description, Angular winged WF symbol, Central angular negative-space channel, currentColor monochrome treatment, Official vertical W_Flyer logo lockup, Separately transformed symbol and wordmark groups, Short lower symbol wing, Stacked symbol-over-wordmark composition (+4 more)
+### Community 54 - "Custom angular italic W_Flyer wordmark"
+Cohesion: 0.12
+Nodes (20): Accessible W_Flyer image title and description, Angular winged WF symbol, Central angular negative-space channel, currentColor monochrome treatment, Custom angular italic W_Flyer wordmark, Official vertical W_Flyer logo lockup, Separately transformed symbol and wordmark groups, Short lower symbol wing (+12 more)
 
 ### Community 55 - "Implementation, test, visual, accessibility and performance gate evidence"
 Cohesion: 0.24
@@ -688,17 +691,17 @@ Nodes (8): Brief — Empresa/Sobre, desktop claro e escuro, Company editorial de
 Cohesion: 0.06
 Nodes (33): ADDED Requirements, Purpose, Requirement: Browser history remains truthful, Requirement: Direct routes and no-JavaScript navigation remain valid, Requirement: Failure and interruption never block the interface, Requirement: Focus, scroll, and announcements follow page semantics, Requirement: Only eligible same-tab chapter links are intercepted, Requirement: Persistent navigation remains operable (+25 more)
 
-### Community 83 - "seo/index.ts"
-Cohesion: 0.16
-Nodes (14): metadata, metadata, StepSequence(), BreadcrumbItem, BreadcrumbStructuredData(), JsonLdPrimitive, JsonLdValue, ServiceStructuredData() (+6 more)
+### Community 83 - "ADDED Requirements"
+Cohesion: 0.12
+Nodes (16): ADDED Requirements, Purpose, Requirement: Bounded and optional depth motion, Requirement: Deterministic state flow, Requirement: No product behavior or visitor-data transport, Requirement: Required visual evidence states, Requirement: Responsive and accessible state communication, Requirement: Semantic local demonstration (+8 more)
 
-### Community 84 - "Custom angular italic W_Flyer wordmark"
-Cohesion: 0.25
-Nodes (8): Custom angular italic W_Flyer wordmark, Wordmark e glyph, Wordmark F glyph, Wordmark l glyph, Wordmark r glyph, Wordmark underscore glyph, Wordmark W glyph, Wordmark y glyph
+### Community 84 - "criacao-de-aplicacoes/page.tsx"
+Cohesion: 0.18
+Nodes (6): metadata, metadata, metadata, metadata, ServiceDetailPage(), serviceDetails
 
 ### Community 85 - "SiteExperienceShell.tsx"
 Cohesion: 0.12
-Nodes (28): ViewportPoint, currentViewport(), destinationAnchorKind(), edgeFallbackPoint(), fallbackDestinationPoint(), fallbackSourcePoint(), incomingOffset(), INITIAL_PRESENTATION (+20 more)
+Nodes (29): ViewportPoint, currentViewport(), destinationAnchorKind(), edgeFallbackPoint(), fallbackDestinationPoint(), fallbackSourcePoint(), incomingOffset(), INITIAL_PRESENTATION (+21 more)
 
 ### Community 86 - "Gate de autorização visual"
 Cohesion: 0.29
@@ -904,21 +907,21 @@ Nodes (25): createPath(), NOTE_POSITIONS, pointBetween(), resolveSegments(), Sco
 Cohesion: 0.19
 Nodes (19): AnchorPoint, anchorPointFromRect(), clamp(), createCubicPath(), createTransitionSegments(), DEFAULT_TRANSITION_VIEWPORT, fallbackPoint(), formatCoordinate() (+11 more)
 
-### Community 141 - "Custom angular italic W_Flyer wordmark"
-Cohesion: 0.25
-Nodes (8): Custom angular italic W_Flyer wordmark, Wordmark e glyph, Wordmark F glyph, Wordmark l glyph, Wordmark r glyph, Wordmark underscore glyph, Wordmark W glyph, Wordmark y glyph
+### Community 141 - "ApplicationDemoTablet.tsx"
+Cohesion: 0.24
+Nodes (8): ApplicationDemoTablet(), ApplicationDemoTabletProps, DemoSelections, DemoState, INITIAL_SELECTIONS, INSTRUMENTS, KEYS, labelFor()
 
-### Community 142 - "Custom angular italic W_Flyer wordmark"
-Cohesion: 0.25
-Nodes (8): Custom angular italic W_Flyer wordmark, Wordmark e glyph, Wordmark F glyph, Wordmark l glyph, Wordmark r glyph, Wordmark underscore glyph, Wordmark W glyph, Wordmark y glyph
+### Community 142 - "Decisions"
+Cohesion: 0.18
+Nodes (10): Acceptance split, Context, Decisions, Explicit reducer-like state transitions with controlled native fields, Focused client boundary, Goals / Non-Goals, Migration Plan, Original SVG score grammar (+2 more)
 
 ### Community 145 - "proposal.md"
 Cohesion: 0.25
 Nodes (7): Capabilities, Impact, Modified Capabilities, New Capabilities, Verified Baseline, What Changes, Why
 
 ### Community 148 - "lifecycle.ts"
-Cohesion: 0.18
-Nodes (17): ScoreChapter, advancePhase(), createInitialNavigationLifecycleState(), isCurrentNavigationRequest(), isEventForActiveRequest(), NavigationLifecycleEvent, NavigationLifecyclePhase, navigationLifecycleReducer() (+9 more)
+Cohesion: 0.21
+Nodes (15): advancePhase(), createInitialNavigationLifecycleState(), isCurrentNavigationRequest(), isEventForActiveRequest(), NavigationLifecycleEvent, NavigationLifecyclePhase, navigationLifecycleReducer(), NavigationLifecycleState (+7 more)
 
 ### Community 149 - "tasks.md"
 Cohesion: 0.25
@@ -928,13 +931,13 @@ Nodes (7): 1. Reconcile contracts and baseline, 2. Pure navigation contracts, 3.
 Cohesion: 0.29
 Nodes (6): Context, Decisions, Goals / Non-Goals, Migration Plan, Risks / Trade-offs, Verification Strategy
 
-### Community 152 - "contato/page.tsx"
-Cohesion: 0.40
-Nodes (3): metadata, ContactWorkspace(), contactContent
+### Community 152 - "Custom angular italic W_Flyer wordmark"
+Cohesion: 0.25
+Nodes (8): Custom angular italic W_Flyer wordmark, Wordmark e glyph, Wordmark F glyph, Wordmark l glyph, Wordmark r glyph, Wordmark underscore glyph, Wordmark W glyph, Wordmark y glyph
 
-### Community 156 - "Angular winged WF symbol"
-Cohesion: 0.21
-Nodes (12): Accessible W_Flyer image title and description, Angular winged WF symbol, Horizontal ink-sweep mask, Horizontal logo lockup, Independent staged vector reveal, Official W_Flyer vector animation master, Short lower symbol wing, Symbol reveal clip path (+4 more)
+### Community 156 - "Custom angular italic W_Flyer wordmark"
+Cohesion: 0.11
+Nodes (21): Accessible W_Flyer image title and description, Angular winged WF symbol, Custom angular italic W_Flyer wordmark, Horizontal ink-sweep mask, Horizontal logo lockup, Independent staged vector reveal, Official W_Flyer vector animation master, Short lower symbol wing (+13 more)
 
 ### Community 157 - "cleanup.ts"
 Cohesion: 0.38
@@ -948,6 +951,10 @@ Nodes (4): Answer, Outcome, Q: Which components render the left and right musica
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Which files control GSAP timelines and cleanup?, Source Nodes
 
+### Community 237 - "complete-interactive-application-demo/proposal.md"
+Cohesion: 0.29
+Nodes (6): Capabilities, Impact, Modified Capabilities, New Capabilities, What Changes, Why
+
 ### Community 238 - "Visual evidence — Phase 5"
 Cohesion: 0.40
 Nodes (4): Evidence set, Provenance and limits, Reproduction, Visual evidence — Phase 5
@@ -955,6 +962,10 @@ Nodes (4): Evidence set, Provenance and limits, Reproduction, Visual evidence �
 ### Community 239 - "Q: Which files control route-to-route animated navigation?"
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Which files control route-to-route animated navigation?, Source Nodes
+
+### Community 240 - "complete-interactive-application-demo/tasks.md"
+Cohesion: 0.40
+Nodes (4): 1. Component foundation, 2. Motion and responsive presentation, 3. Automated coverage and evidence, 4. Validation and closure
 
 ### Community 241 - "Q: Which files handle browser history and deep links?"
 Cohesion: 0.40
@@ -984,6 +995,10 @@ Nodes (4): Answer, Outcome, Q: Which highly connected nodes may be affected by P
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Which tests currently cover Phase 05?, Source Nodes
 
+### Community 249 - "portfolio/page.tsx"
+Cohesion: 0.40
+Nodes (3): metadata, ProjectGrid(), portfolioContent
+
 ## Ambiguous Edges - Review These
 - `Gate de aprovação de assets` → `Autorização e paradas permitidas`  [AMBIGUOUS]
   docs/05-implementacao/14-contrato-execucao-integral-codex.md · relation: conceptually_related_to
@@ -999,7 +1014,7 @@ Nodes (4): Answer, Outcome, Q: Which tests currently cover Phase 05?, Source Nod
   docs/design-reference/brand-intro/source-assets/wflyer-on-dark.svg · relation: implements
 
 ## Knowledge Gaps
-- **977 isolated node(s):** `config`, `StoryRenderer`, `StorybookFrameProps`, `fontVariableClasses`, `preview` (+972 more)
+- **1013 isolated node(s):** `config`, `StoryRenderer`, `StorybookFrameProps`, `fontVariableClasses`, `preview` (+1008 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **94 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1025,5 +1040,5 @@ _Questions this graph is uniquely positioned to answer:_
   _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
 - **What is the exact relationship between `Wide angular symbol-and-wordmark composition` and `Intended white-on-dark logo palette`?**
   _Edge tagged AMBIGUOUS (relation: implements) - confidence is low._
-- **Why does `.next` connect `seo.ts` to `ui/index.ts`, `createPageMetadata`, `compilerOptions`, `pages/index.ts`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+- **Why does `.next` connect `seo.ts` to `ui/index.ts`, `createPageMetadata`, `app/layout.tsx`, `compilerOptions`, `criacao-de-aplicacoes/page.tsx`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._

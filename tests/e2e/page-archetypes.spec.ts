@@ -4,7 +4,7 @@ const mainPageContracts = [
   {
     archetype: "product-demo",
     route: "/aplicacao-wflyer",
-    selector: "[data-application-preview]",
+    selector: "[data-application-demo]",
     count: 1,
   },
   {
@@ -67,19 +67,20 @@ for (const contract of mainPageContracts) {
   });
 }
 
-test("a Aplicação usa preview DOM, copy conservadora e faixa de cinco itens", async ({
+test("a Aplicação usa tablet DOM interativo, copy conservadora e faixa de cinco itens", async ({
   page,
 }) => {
   await page.goto("/aplicacao-wflyer");
 
-  const preview = page.locator("[data-application-preview]");
+  const preview = page.locator("[data-application-demo]");
   await expect(preview).toBeVisible();
   await expect(preview.locator("img, canvas")).toHaveCount(0);
-  await expect(preview.locator("[data-staff]")).toHaveCount(2);
-  await expect(preview.locator("input, select, button")).toHaveCount(0);
+  await expect(preview.locator("[data-demo-score]")).toHaveCount(1);
+  await expect(preview.locator("select")).toHaveCount(4);
+  await expect(preview.getByRole("button", { name: "Transpor" })).toBeVisible();
   await expect(page.locator("[data-feature-strip] > li")).toHaveCount(5);
   await expect(page.getByText("Produto em desenvolvimento.")).toBeVisible();
-  await expect(page.getByText(/Nenhum arquivo é enviado/u)).toBeVisible();
+  await expect(page.getByText(/sem envio de arquivos, rede/u)).toBeVisible();
 });
 
 test("Serviços oferece quatro destinos reais com foco equivalente ao hover", async ({

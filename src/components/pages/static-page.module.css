@@ -120,7 +120,8 @@
 }
 
 .page[data-archetype="product-demo"] .explorationCue {
-  margin-block: calc(var(--wf-space-5) * -1) var(--wf-space-8);
+  margin-block: calc(var(--wf-space-8) * -1 - 0.125rem)
+    var(--wf-space-8);
 }
 
 .page[data-archetype="service-grid"] .heroCopy,

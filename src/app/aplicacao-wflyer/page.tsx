@@ -1,6 +1,6 @@
 import {
+  ApplicationDemoTablet,
   ApplicationFeatureStrip,
-  ApplicationPreview,
   ChapterPage,
   ExplorationCue,
 } from "@/components/pages";
@@ -43,7 +43,7 @@ export default function ApplicationPage() {
         chapterId="application"
         description={applicationContent.description}
         eyebrow={applicationContent.eyebrow}
-        heroVisual={<ApplicationPreview />}
+        heroVisual={<ApplicationDemoTablet />}
         status={applicationContent.status}
         title={applicationContent.title}
       >
