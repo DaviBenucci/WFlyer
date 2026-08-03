@@ -7,6 +7,7 @@ const configDirectory = dirname(fileURLToPath(import.meta.url));
 const localBaseUrl = "http://127.0.0.1:3000";
 const externalBaseUrl = process.env.PLAYWRIGHT_BASE_URL;
 const isCi = Boolean(process.env.CI);
+const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
 const isStagingGate = process.env.WFLYER_STAGING_GATE === "1";
 
 export function resolvePlaywrightEvidenceDirectory(
@@ -98,7 +99,7 @@ export default defineConfig({
   retries: isCi ? 2 : 0,
   ...(isCi ? { workers: 1 } : {}),
   reporter: [
-    ["list"],
+    [isGitHubActions ? "github" : "list"],
     ["html", { open: "never", outputFolder: reportDir }],
   ],
   expect: {

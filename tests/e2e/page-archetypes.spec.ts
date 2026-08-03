@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 
+import { mockTurnstile } from "../helpers/turnstile";
+
 const mainPageContracts = [
   {
     archetype: "product-demo",
@@ -123,6 +125,7 @@ test("Portfólio permanece limitado aos três projetos oficiais", async ({
 test("Contato apresenta o formulário seguro sem simular envio", async ({
   page,
 }) => {
+  await mockTurnstile(page);
   await page.goto("/contato");
 
   const form = page.getByRole("form", {
