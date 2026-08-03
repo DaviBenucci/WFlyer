@@ -49,4 +49,20 @@ describe("production security baseline", () => {
     expect(configuration).not.toContain("unsafe-eval");
     expect(configuration).not.toContain("Strict-Transport-Security");
   });
+
+  it("keeps staging non-indexable without weakening production SEO", async () => {
+    const [configuration, deployment, layout, robots] = await Promise.all([
+      source("next.config.ts"),
+      source("src/config/deployment.ts"),
+      source("src/app/layout.tsx"),
+      source("src/app/robots.ts"),
+    ]);
+
+    expect(configuration).toContain("X-Robots-Tag");
+    expect(deployment).toContain('value === "production"');
+    expect(deployment).toContain('value === "staging"');
+    expect(deployment).toContain("noindex, nofollow");
+    expect(layout).toContain("createDeploymentRobotsMetadata");
+    expect(robots).toContain("createDeploymentRobotsPolicy");
+  });
 });

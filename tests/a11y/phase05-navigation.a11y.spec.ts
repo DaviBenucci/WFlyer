@@ -23,9 +23,11 @@ interface RelevantViolation {
 
 const operableCompletion = ["success", "recovered"] as const;
 
-async function findRelevantViolations(page: Page): Promise<RelevantViolation[]> {
-  await page.addScriptTag({ content: axe.source });
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript({ content: axe.source });
+});
 
+async function findRelevantViolations(page: Page): Promise<RelevantViolation[]> {
   return page.evaluate(async () => {
     const axeWindow = window as typeof window & {
       axe: typeof import("axe-core");

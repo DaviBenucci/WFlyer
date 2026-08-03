@@ -1,16 +1,16 @@
-# Graph Report - WFlyer  (2026-07-31)
+# Graph Report - WFlyer  (2026-08-03)
 
 ## Corpus Check
-- 355 files · ~289,090 words
+- 390 files · ~314,047 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2793 nodes · 4038 edges · 287 communities (200 shown, 87 thin omitted)
-- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 306 edges (avg confidence: 0.92)
+- 3081 nodes · 4322 edges · 328 communities (230 shown, 98 thin omitted)
+- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 307 edges (avg confidence: 0.92)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `eff91cba`
+- Built from commit: `51e8e626`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -25,13 +25,13 @@
 - SiteHeader.tsx
 - Angular winged WF symbol
 - Mapa de IDs SVG W_Flyer
-- seo/index.ts
+- app/layout.tsx
 - Grade de quatro serviços
 - Bootstrap repository-intelligence design
 - compilerOptions
 - pages/index.ts
-- site-content.ts
-- Requirement: Transition topology is deterministic
+- ArchetypeBlocks.stories.tsx
+- Requirements
 - topology.ts
 - Composição desktop em tema claro
 - Especificação application-desktop-light
@@ -54,7 +54,7 @@
 - ADDED Requirements
 - Normative rules for implementation agents
 - Catálogo de animações
-- chapters.ts
+- chapters.test.ts
 - Package deployment candidate job
 - Chapter transition resolver
 - Relatório acumulado de execução do Codex
@@ -98,7 +98,7 @@
 - Fontes técnicas oficiais
 - Visual authorization page matrix
 - ADDED Requirements
-- SiteFooter.tsx
+- app/page.tsx
 - Requirements
 - SiteExperienceShell.tsx
 - Gate de autorização visual
@@ -156,7 +156,7 @@
 - home.visual.spec.ts
 - ScoreTransitionLayer.tsx
 - geometry.ts
-- aplicacao-wflyer/page.tsx
+- ApplicationDemoTablet.tsx
 - Requirements
 - @playwright/test
 - storybook
@@ -167,7 +167,7 @@
 - tasks.md
 - @testing-library/jest-dom
 - design.md
-- app/layout.tsx
+- preview.ts
 - @types/node
 - 2026-07-31-complete-phase-05-motion-navigation/README.md
 - typescript
@@ -242,10 +242,11 @@
 - Motion, theme, keyboard and reduced-motion requirements
 - Non-functional requirements RNF-001 through RNF-023
 - Double-score routing and transition requirements
+- playwright.config.ts
 - Repository SHA-256 checksum manifest
 - Q: Which components render the left and right musical-score branches?
 - Q: Which files control GSAP timelines and cleanup?
-- @storybook/addon-a11y
+- eslint
 - ADDED Requirements
 - Visual evidence — Phase 5
 - Q: Which files control route-to-route animated navigation?
@@ -259,36 +260,78 @@
 - Q: Which tests currently cover Phase 05?
 - ContactForm.tsx
 - Decisions
-- dependencies
-- Requirements
+- contato/page.tsx
+- Requirement: Verified and private delivery
 - Decisions
 - ADDED Requirements
 - Requirements
-- package.json
+- deployment.ts
 - ADDED Requirements
 - 2026-07-31-complete-content-contact-security/proposal.md
 - 2026-07-31-complete-content-contact-security/tasks.md
 - Q: How does the Contact form flow through POST /api/contact, Turnstile verification, Resend delivery, security headers, tests, and external runtime configuration?
-- theme.stories.tsx
+- Requirements
 - 2026-07-31-complete-interactive-application-demo/proposal.md
 - BrandIntroController.tsx
 - 2026-07-31-complete-brand-opening-motion/design.md
 - 2026-07-31-complete-interactive-application-demo/tasks.md
 - Custom angular italic W_Flyer wordmark
 - phase07-brand-intro.a11y.spec.ts
-- beneficios/page.tsx
-- @types/react-dom
+- phase07-brand-intro.spec.ts
+- site-content.ts
+- icons.tsx
 - 2026-07-31-complete-brand-opening-motion/proposal.md
-- LocalRevealController.tsx
-- SiteHeader.stories.tsx
+- Staging, release, rollback, and homologation operations
+- Phase 09 local release-readiness report
 - 2026-07-31-complete-brand-opening-motion/tasks.md
+- ADDED Requirements
+- button.tsx
 - Custom angular italic W_Flyer wordmark
 - Phase 08 security and contact validation
+- eligibility.ts
+- Requirements
 - phase08-contact.visual.spec.ts
+- MODIFIED Requirements
+- ADDED Requirements
+- smoke-indexing.mjs
+- 2026-08-03-complete-brand-home-opening/design.md
+- Requirements
+- create-release-manifest.mjs
+- config/navigation.ts
+- 2026-08-03-correct-score-navigation-contracts/design.md
+- Requirement: Concurrent navigation is bounded and recoverable
+- 2026-08-03-stabilize-contact-delivery-retries/design.md
+- Requirement: Verified and private delivery
+- ADDED Requirements
+- LinkButton
+- button.stories.tsx
+- 2026-08-03-complete-brand-home-opening/proposal.md
+- 2026-08-03-correct-score-navigation-contracts/proposal.md
+- 2026-08-03-stabilize-contact-delivery-retries/proposal.md
+- complete-site-qa-release-preparation/design.md
+- complete-site-qa-release-preparation/proposal.md
+- complete-site-qa-release-preparation/tasks.md
+- Q: How do Phase 09 release workflows connect immutable revision, environment-specific standalone packaging, checksum, manifest, and Napoleon handoff?
+- Q: How do existing Playwright test helpers, public route SEO metadata, first-session brand intro, navigation history, and staging indexing controls connect for a production-safe deployed-staging gate?
+- 2026-08-03-complete-brand-home-opening/tasks.md
+- 2026-08-03-correct-score-navigation-contracts/tasks.md
+- 2026-08-03-stabilize-contact-delivery-retries/tasks.md
+- create-release-manifest.d.mts
+- axe-core
+- eslint-config-next
+- @lhci/cli
+- playwright
+- tailwindcss
+- @tailwindcss/postcss
+- @testing-library/react
+- @testing-library/user-event
+- @types/react
+- vite
+- vitest
 
 ## God Nodes (most connected - your core abstractions)
-1. `SiteExperienceShell()` - 22 edges
-2. `scripts` - 21 edges
+1. `scripts` - 24 edges
+2. `SiteExperienceShell()` - 22 edges
 3. `LinkButton()` - 20 edges
 4. `createPageMetadata()` - 18 edges
 5. `compilerOptions` - 18 edges
@@ -296,7 +339,7 @@
 7. `Mapa arquitetural Graphify` - 17 edges
 8. `Relatório do bootstrap Graphify e OpenSpec` - 17 edges
 9. `classifyScoreTransition()` - 16 edges
-10. `.next` - 16 edges
+10. `Manifesto de capítulos da partitura` - 16 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Custom angular italic W_Flyer wordmark` --semantically_similar_to--> `Custom angular italic W_Flyer wordmark`  [INFERRED] [semantically similar]
@@ -373,19 +416,19 @@
 - **Archived repository-intelligence bootstrap decisions** — openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_external_cli_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_filtered_root_corpus_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_normal_semantic_extraction_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_lightweight_graph_versioning_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_manual_graphify_strict_openspec_ci, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_bootstrap_without_functional_specs [EXTRACTED 1.00]
 - **Completed repository-intelligence bootstrap workstreams** — openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_audit_and_configuration_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_architectural_graph_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_reproducible_workflow_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_openspec_baseline_and_documentation_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_validation_gates_complete [EXTRACTED 1.00]
 
-## Communities (287 total, 87 thin omitted)
+## Communities (328 total, 98 thin omitted)
 
 ### Community 0 - "ui/index.ts"
-Cohesion: 0.05
-Nodes (67): HomePage(), metadata, Button(), ButtonProps, controlClassName(), ControlSize, ControlVariant, ControlVisualProps (+59 more)
+Cohesion: 0.14
+Nodes (20): CardProps, ContainerProps, ContainerSize, containerSizeClasses, paddingClasses, SurfacePadding, SurfaceProps, SurfaceTone (+12 more)
 
 ### Community 1 - "music/index.ts"
 Cohesion: 0.06
-Nodes (51): anchorToY(), ChapterScore(), ChapterScoreProps, cubicAngle(), cubicPoint(), edgeToX(), getChapterScorePath(), getControlPoints() (+43 more)
+Nodes (52): anchorToY(), ChapterScore(), ChapterScoreProps, cubicAngle(), cubicPoint(), edgeToX(), getChapterScorePath(), getControlPoints() (+44 more)
 
 ### Community 2 - "theme-provider.tsx"
-Cohesion: 0.22
-Nodes (18): isThemeName(), THEME_CHANGE_EVENT, THEME_STORAGE_KEY, ThemeName, themes, applyTheme(), getServerThemeSnapshot(), getThemeSnapshot() (+10 more)
+Cohesion: 0.10
+Nodes (33): ApplicationChapter, Dark, Home, MobileMenuOpen, ProcessSubmeasure, Story, isThemeName(), THEME_CHANGE_EVENT (+25 more)
 
 ### Community 3 - "Angular winged WF symbol"
 Cohesion: 0.12
@@ -400,12 +443,12 @@ Cohesion: 0.04
 Nodes (46): additionalProperties, type, type, $id, type, additionalProperties, properties, required (+38 more)
 
 ### Community 6 - "scripts"
-Cohesion: 0.10
-Nodes (21): scripts, build, build:storybook, dev, lighthouse, lint, prepare:standalone, smoke:standalone (+13 more)
+Cohesion: 0.04
+Nodes (48): gsap, @gsap/react, next, dependencies, gsap, @gsap/react, next, react (+40 more)
 
 ### Community 7 - "SiteHeader.tsx"
-Cohesion: 0.09
-Nodes (29): APPLICATION_NAVIGATION, getHeaderRouteState(), HeaderNavigationId, HeaderNavigationItem, HeaderRouteState, INSTITUTIONAL_NAVIGATION, normalizePathname(), NavigationMeasure() (+21 more)
+Cohesion: 0.06
+Nodes (34): ADR-0008, OfficialBrandSymbol(), OfficialBrandSymbolProps, Dark, Decorative, Informative, Story, OFFICIAL_PATHS (+26 more)
 
 ### Community 8 - "Angular winged WF symbol"
 Cohesion: 0.06
@@ -415,9 +458,9 @@ Nodes (41): Accessible W_Flyer image title and description, Angular winged WF mo
 Cohesion: 0.08
 Nodes (40): Cópias controladas dos assets oficiais, Coreografia compartilhada entre temas, Documentos normativos de motion e QA, Geometria imutável da animação, Referências da animação de entrada, Contrato controlado de IDs, Grupos controlados de animação, Mapa controlado de IDs SVG (+32 more)
 
-### Community 10 - "seo/index.ts"
-Cohesion: 0.14
-Nodes (15): metadata, metadata, metadata, StepSequence(), BreadcrumbItem, BreadcrumbStructuredData(), JsonLdPrimitive, JsonLdValue (+7 more)
+### Community 10 - "app/layout.tsx"
+Cohesion: 0.10
+Nodes (20): metadata, metadata, viewport, sitemap(), BreadcrumbItem, BreadcrumbStructuredData(), JsonLdPrimitive, JsonLdValue (+12 more)
 
 ### Community 11 - "Grade de quatro serviços"
 Cohesion: 0.08
@@ -432,20 +475,20 @@ Cohesion: 0.06
 Nodes (30): dom, dom.iterable, esnext, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, storybook-static (+22 more)
 
 ### Community 14 - "pages/index.ts"
-Cohesion: 0.13
-Nodes (26): metadata, Staff(), AudienceList(), ServiceDetailMark(), ServiceDetailPage(), Breadcrumbs(), BulletList(), CardGrid() (+18 more)
+Cohesion: 0.21
+Nodes (19): AudienceList(), ServiceDetailMark(), Breadcrumbs(), BulletList(), CardGrid(), ChapterNavigation(), ChapterPage(), ChapterPageProps (+11 more)
 
-### Community 15 - "site-content.ts"
-Cohesion: 0.08
-Nodes (32): metadata, ContactWorkspace(), ApplicationSequence, BenefitsDark, ContactShell, FeatureStrip, Portfolio, ProcessTimeline (+24 more)
+### Community 15 - "ArchetypeBlocks.stories.tsx"
+Cohesion: 0.11
+Nodes (17): metadata, ProjectGrid(), ApplicationSequence, BenefitsDark, ContactShell, FeatureStrip, Portfolio, ProcessTimeline (+9 more)
 
-### Community 16 - "Requirement: Transition topology is deterministic"
-Cohesion: 0.06
-Nodes (35): Purpose, Requirement: Concurrent navigation is bounded and recoverable, Requirement: Every mode preserves its approved visual meaning, Requirement: Persistent chrome and theme remain coherent, Requirement: Terminal and responsive states preserve score semantics, Requirement: Transition checkpoints are deterministically testable, Requirement: Transition time is bounded, Requirement: Transition topology is deterministic (+27 more)
+### Community 16 - "Requirements"
+Cohesion: 0.05
+Nodes (38): Purpose, Requirement: Concurrent navigation is bounded and recoverable, Requirement: Every mode preserves its approved visual meaning, Requirement: Explicit native navigation opt-out, Requirement: Persistent chrome and theme remain coherent, Requirement: Terminal and responsive states preserve score semantics, Requirement: Transition checkpoints are deterministically testable, Requirement: Transition time is bounded (+30 more)
 
 ### Community 17 - "topology.ts"
-Cohesion: 0.14
-Nodes (23): EligibleNavigationLink, evaluateLinkEligibility(), ineligible(), IneligibleNavigationLink, isHttpProtocol(), isUnmodifiedPrimaryActivation(), LinkActivation, LinkCandidate (+15 more)
+Cohesion: 0.15
+Nodes (21): AuxiliaryRoute, auxiliaryRouteByPath, AuxiliaryRouteEntry, ChapterBranch, ChapterRoute, ScoreChapter, scoreChapterByPath, scoreChapters (+13 more)
 
 ### Community 18 - "Composição desktop em tema claro"
 Cohesion: 0.10
@@ -489,7 +532,7 @@ Nodes (20): Accessible SVG image semantics, Angular winged WF symbol, Even-odd c
 
 ### Community 28 - "ArchetypeBlocks.tsx"
 Cohesion: 0.12
-Nodes (15): metadata, metadata, CompanyMark(), EditorialPillars(), ProjectGrid(), ServiceSolutionGrid(), PageIcon(), PageIconName (+7 more)
+Nodes (17): metadata, metadata, ApplicationFeatureStrip(), BenefitsGrid(), CompanyMark(), EditorialPillars(), ServiceSolutionGrid(), PageIcon() (+9 more)
 
 ### Community 29 - "Perfil de publicação"
 Cohesion: 0.12
@@ -512,8 +555,8 @@ Cohesion: 0.11
 Nodes (19): items, type, items, type, items, type, items, type (+11 more)
 
 ### Community 34 - "seo.ts"
-Cohesion: 0.08
-Nodes (21): contentSecurityPolicy, nextConfig, .next, metadata, metadata, metadata, robots(), metadata (+13 more)
+Cohesion: 0.10
+Nodes (14): metadata, metadata, metadata, metadata, metadata, metadata, metadata, metadata (+6 more)
 
 ### Community 35 - "Cormorant Garamond SIL Open Font License"
 Cohesion: 0.20
@@ -531,9 +574,9 @@ Nodes (16): Fail-closed contact endpoint contract, Home-centered double-score na
 Cohesion: 0.17
 Nodes (16): NavigationMeasure, Especificação da homepage, Home como origem e bifurcação, Modelo espacial de dupla partitura, Páginas auxiliares, Ramo da aplicação, Ramo institucional, Sistema de dupla partitura (+8 more)
 
-### Community 39 - "chapters.ts"
-Cohesion: 0.26
-Nodes (13): auxiliaryRouteByPath, AuxiliaryRouteEntry, auxiliaryRoutes, ChapterBranch, scoreChapterById, scoreChapterByPath, scoreChapters, ScoreManifest (+5 more)
+### Community 39 - "chapters.test.ts"
+Cohesion: 0.50
+Nodes (7): auxiliaryRoutes, ScoreManifest, findSectionLines(), parseMappingSection(), parseSequenceSection(), parseYamlScalar(), readNormativeManifest()
 
 ### Community 40 - "Package deployment candidate job"
 Cohesion: 0.14
@@ -580,8 +623,8 @@ Cohesion: 0.19
 Nodes (13): Bloqueio tecnológico, Technology exception by approved ADR, Authorized technology stack, Zod, Resend and Turnstile contact stack, GSAP programmatic motion stack, Vitest, Storybook, Playwright, axe-core and Lighthouse QA stack, Prohibited first-version technologies and services, Dependency admission policy (+5 more)
 
 ### Community 51 - "Guia operacional para Codex"
-Cohesion: 0.18
-Nodes (13): Ferramentas de desenvolvimento aprovadas, IA fora do runtime, Protocolo de desenvolvimento visual, Toolchain de IA para desenvolvimento, Guia operacional para Codex, Protocolo de implementação visual, Protocolo de infraestrutura e execução, Protocolo de QA (+5 more)
+Cohesion: 0.22
+Nodes (11): Ferramentas de desenvolvimento aprovadas, Protocolo de desenvolvimento visual, Toolchain de IA para desenvolvimento, Guia operacional para Codex, Protocolo de implementação visual, Protocolo de infraestrutura e execução, Protocolo de QA, Protocolo pré-código (+3 more)
 
 ### Community 52 - "Manifesto de capítulos da partitura"
 Cohesion: 0.30
@@ -593,7 +636,7 @@ Nodes (12): Aceite da narrativa da partitura, Aceite de design, Aceite de motion
 
 ### Community 54 - "lib/contact/index.ts"
 Cohesion: 0.11
-Nodes (29): dynamic, errorResponse(), POST(), PublicCode, responseHeaders, runtime, contactProjectTypes, ContactServerConfig (+21 more)
+Nodes (28): dynamic, errorResponse(), POST(), PublicCode, responseHeaders, runtime, ContactServerConfig, email (+20 more)
 
 ### Community 55 - "Implementation, test, visual, accessibility and performance gate evidence"
 Cohesion: 0.24
@@ -684,8 +727,8 @@ Cohesion: 0.29
 Nodes (8): Barra final, Composições do ramo da aplicação, Composições do ramo institucional, Especificação visual das páginas, Templates auxiliares de serviço e páginas legais, Orçamento de performance de motion, Orçamento de performance para motion, ApplicationDemoTablet
 
 ### Community 77 - "Modelo static-first"
-Cohesion: 0.29
-Nodes (8): Modelo static-first, Estrutura de pastas proposta, Fronteira de Client Components, Isolamento de assets de referência, Organização do projeto, Arquitetura de componentes, Componentes de partitura e experiência, Regras de componentes
+Cohesion: 0.22
+Nodes (10): Modelo static-first, Estrutura de pastas proposta, Fronteira de Client Components, Isolamento de assets de referência, Organização do projeto, Arquitetura de componentes, Componentes de partitura e experiência, Regras de componentes (+2 more)
 
 ### Community 78 - "Testes de motion e regressão visual"
 Cohesion: 0.25
@@ -707,17 +750,17 @@ Nodes (8): Brief — Empresa/Sobre, desktop claro e escuro, Company editorial de
 Cohesion: 0.06
 Nodes (33): ADDED Requirements, Purpose, Requirement: Browser history remains truthful, Requirement: Direct routes and no-JavaScript navigation remain valid, Requirement: Failure and interruption never block the interface, Requirement: Focus, scroll, and announcements follow page semantics, Requirement: Only eligible same-tab chapter links are intercepted, Requirement: Persistent navigation remains operable (+25 more)
 
-### Community 83 - "SiteFooter.tsx"
-Cohesion: 0.13
-Nodes (12): ADR-0008, OfficialBrandSymbol(), OfficialBrandSymbolProps, Dark, Decorative, Informative, Story, OFFICIAL_PATHS (+4 more)
+### Community 83 - "app/page.tsx"
+Cohesion: 0.15
+Nodes (15): HomePage(), metadata, staticPageStyles, CardHoverPreview, Dark, Light, Story, ArrowIcon() (+7 more)
 
 ### Community 84 - "Requirements"
-Cohesion: 0.13
-Nodes (14): brand-opening-motion Specification, Purpose, Requirement: Accessible interruption and reduced motion, Requirement: Approved vector choreography, Requirement: Eligible first-session opening, Requirement: Fail-open recovery and cleanup, Requirement: Finite local reveals, Requirements (+6 more)
+Cohesion: 0.12
+Nodes (16): brand-opening-motion Specification, Purpose, Requirement: Accessible interruption and reduced motion, Requirement: Approved vector choreography, Requirement: Eligible first-session opening, Requirement: Fail-open recovery and cleanup, Requirement: Finite local reveals, Requirements (+8 more)
 
 ### Community 85 - "SiteExperienceShell.tsx"
-Cohesion: 0.12
-Nodes (28): ViewportPoint, currentViewport(), destinationAnchorKind(), edgeFallbackPoint(), fallbackDestinationPoint(), fallbackSourcePoint(), incomingOffset(), INITIAL_PRESENTATION (+20 more)
+Cohesion: 0.13
+Nodes (24): currentViewport(), incomingOffset(), INITIAL_PRESENTATION, measureHomePivot(), measureScoreAnchor(), NavigationMethod, outgoingOffset(), pointFromSvgMarker() (+16 more)
 
 ### Community 86 - "Gate de autorização visual"
 Cohesion: 0.29
@@ -744,8 +787,8 @@ Cohesion: 0.38
 Nodes (7): enum, enum, entry_edge, exit_edge, center, left, right
 
 ### Community 92 - "devDependencies"
-Cohesion: 0.07
-Nodes (27): axe-core, eslint, eslint-config-next, jsdom, @lhci/cli, devDependencies, axe-core, eslint (+19 more)
+Cohesion: 0.29
+Nodes (7): jsdom, devDependencies, jsdom, @storybook/addon-a11y, @types/react-dom, @storybook/addon-a11y, @types/react-dom
 
 ### Community 93 - "capture-phase5-evidence.mjs"
 Cohesion: 0.14
@@ -917,15 +960,15 @@ Nodes (3): items, type, motion_notes
 
 ### Community 139 - "ScoreTransitionLayer.tsx"
 Cohesion: 0.10
-Nodes (25): createPath(), NOTE_POSITIONS, pointBetween(), resolveSegments(), ScoreTransitionGeometry, ScoreTransitionLayer(), ScoreTransitionLayerProps, SegmentGeometry (+17 more)
+Nodes (20): NOTE_POSITIONS, ScoreTransitionLayerProps, STAFF_LINE_OFFSETS, Adjacent, CompletionCheckpoint, Compressed, Dark, ErrorFallback (+12 more)
 
 ### Community 140 - "geometry.ts"
-Cohesion: 0.19
-Nodes (19): AnchorPoint, anchorPointFromRect(), clamp(), createCubicPath(), createTransitionSegments(), DEFAULT_TRANSITION_VIEWPORT, fallbackPoint(), formatCoordinate() (+11 more)
+Cohesion: 0.23
+Nodes (16): ScoreTransitionLayer(), createScoreTransitionPath(), DEFAULT_TRANSITION_VIEWPORT, destinationAnchorKind(), edgeFallbackPoint(), fallbackChapterPoint(), isFinitePoint(), MeasuredTransitionAnchors (+8 more)
 
-### Community 141 - "aplicacao-wflyer/page.tsx"
-Cohesion: 0.17
-Nodes (10): metadata, ApplicationDemoTablet(), ApplicationDemoTabletProps, DemoSelections, DemoState, INITIAL_SELECTIONS, INSTRUMENTS, KEYS (+2 more)
+### Community 141 - "ApplicationDemoTablet.tsx"
+Cohesion: 0.24
+Nodes (8): ApplicationDemoTablet(), ApplicationDemoTabletProps, DemoSelections, DemoState, INITIAL_SELECTIONS, INSTRUMENTS, KEYS, labelFor()
 
 ### Community 142 - "Requirements"
 Cohesion: 0.11
@@ -936,8 +979,8 @@ Cohesion: 0.25
 Nodes (7): Capabilities, Impact, Modified Capabilities, New Capabilities, Verified Baseline, What Changes, Why
 
 ### Community 148 - "lifecycle.ts"
-Cohesion: 0.18
-Nodes (17): ScoreChapter, advancePhase(), createInitialNavigationLifecycleState(), isCurrentNavigationRequest(), isEventForActiveRequest(), NavigationLifecycleEvent, NavigationLifecyclePhase, navigationLifecycleReducer() (+9 more)
+Cohesion: 0.22
+Nodes (14): advancePhase(), createInitialNavigationLifecycleState(), isCurrentNavigationRequest(), isEventForActiveRequest(), NavigationLifecycleEvent, NavigationLifecyclePhase, navigationLifecycleReducer(), NavigationLifecycleState (+6 more)
 
 ### Community 149 - "tasks.md"
 Cohesion: 0.25
@@ -947,17 +990,21 @@ Nodes (7): 1. Reconcile contracts and baseline, 2. Pure navigation contracts, 3.
 Cohesion: 0.29
 Nodes (6): Context, Decisions, Goals / Non-Goals, Migration Plan, Risks / Trade-offs, Verification Strategy
 
-### Community 152 - "app/layout.tsx"
-Cohesion: 0.19
-Nodes (8): cormorantGaramond, manrope, metadata, viewport, fontVariableClasses, preview, StorybookFrameProps, StoryRenderer
+### Community 152 - "preview.ts"
+Cohesion: 0.25
+Nodes (6): cormorantGaramond, manrope, fontVariableClasses, preview, StorybookFrameProps, StoryRenderer
 
 ### Community 156 - "Custom angular italic W_Flyer wordmark"
 Cohesion: 0.11
 Nodes (21): Accessible W_Flyer image title and description, Angular winged WF symbol, Custom angular italic W_Flyer wordmark, Horizontal ink-sweep mask, Horizontal logo lockup, Independent staged vector reveal, Official W_Flyer vector animation master, Short lower symbol wing (+13 more)
 
 ### Community 157 - "cleanup.ts"
-Cohesion: 0.38
+Cohesion: 0.42
 Nodes (6): CleanupCallback, createCleanupRegistry(), onceCleanup(), scheduleRecoveryTimeout(), getTransitionDurationMs(), NAVIGATION_TIMING_MS
+
+### Community 228 - "playwright.config.ts"
+Cohesion: 0.22
+Nodes (5): configDirectory, isCi, outputDir, reportDir, resolvePlaywrightEvidenceDirectory()
 
 ### Community 234 - "Q: Which components render the left and right musical-score branches?"
 Cohesion: 0.40
@@ -1012,20 +1059,20 @@ Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Which tests currently cover Phase 05?, Source Nodes
 
 ### Community 248 - "ContactForm.tsx"
-Cohesion: 0.18
+Cohesion: 0.17
 Nodes (10): ContactForm(), ContactFormFallback(), messages, SubmissionState, search, TurnstileApi, TurnstileOptions, VerificationState (+2 more)
 
 ### Community 249 - "Decisions"
 Cohesion: 0.18
 Nodes (10): Acceptance split, Context, Decisions, Explicit reducer-like state transitions with controlled native fields, Focused client boundary, Goals / Non-Goals, Migration Plan, Original SVG score grammar (+2 more)
 
-### Community 250 - "dependencies"
-Cohesion: 0.13
-Nodes (15): gsap, @gsap/react, next, dependencies, gsap, @gsap/react, next, react (+7 more)
+### Community 250 - "contato/page.tsx"
+Cohesion: 0.40
+Nodes (3): metadata, ContactWorkspace(), contactContent
 
-### Community 251 - "Requirements"
-Cohesion: 0.17
-Nodes (11): Purpose, Requirement: Accessible contact form lifecycle, Requirement: Strict request boundary, Requirement: Verified and private delivery, Requirements, Scenario: A provider fails or times out, Scenario: Client integration is unavailable, Scenario: Providers accept the message (+3 more)
+### Community 251 - "Requirement: Verified and private delivery"
+Cohesion: 0.14
+Nodes (13): Purpose, Requirement: Accessible contact form lifecycle, Requirement: Strict request boundary, Requirement: Verified and private delivery, Requirements, Scenario: A provider fails or times out, Scenario: Client integration is unavailable, Scenario: Providers accept the message (+5 more)
 
 ### Community 252 - "Decisions"
 Cohesion: 0.18
@@ -1039,9 +1086,9 @@ Nodes (9): ADDED Requirements, Requirement: Accessible contact form lifecycle, R
 Cohesion: 0.20
 Nodes (9): public-security-content-baseline Specification, Purpose, Requirement: External security controls remain truthful gates, Requirement: Locally enforceable browser security headers, Requirement: Public content matches implemented data use, Requirements, Scenario: Content and runtime are reconciled, Scenario: External access is absent (+1 more)
 
-### Community 255 - "package.json"
-Cohesion: 0.20
-Nodes (9): description, engines, node, pnpm, name, packageManager, private, type (+1 more)
+### Community 255 - "deployment.ts"
+Cohesion: 0.23
+Nodes (11): contentSecurityPolicy, nextConfig, robots(), createDeploymentRobotsHeader(), createDeploymentRobotsMetadata(), createDeploymentRobotsPolicy(), DeploymentEnvironment, deploymentEnvironmentVariable (+3 more)
 
 ### Community 256 - "ADDED Requirements"
 Cohesion: 0.25
@@ -1059,17 +1106,17 @@ Nodes (5): 1. Contact domain and server boundary, 2. Accessible Contact experien
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: How does the Contact form flow through POST /api/contact, Turnstile verification, Resend delivery, security headers, tests, and external runtime configuration?, Source Nodes
 
-### Community 265 - "theme.stories.tsx"
-Cohesion: 0.21
-Nodes (9): useTheme(), Claro, ComRotulo, Escuro, Story, ThemePreview(), ThemePreviewProps, ThemeToggle() (+1 more)
+### Community 265 - "Requirements"
+Cohesion: 0.12
+Nodes (15): Governed Release Candidate Specification, Purpose, Requirement: Candidate identity and integrity are immutable, Requirement: Deployable packaging is isolated from common CI, Requirement: Environment configuration is explicit and isolated, Requirement: Production requires owner approval, Requirement: Rollback preserves the separate application, Requirement: Undocumented deployment mechanisms are never inferred (+7 more)
 
 ### Community 266 - "2026-07-31-complete-interactive-application-demo/proposal.md"
 Cohesion: 0.29
 Nodes (6): Capabilities, Impact, Modified Capabilities, New Capabilities, What Changes, Why
 
 ### Community 267 - "BrandIntroController.tsx"
-Cohesion: 0.33
-Nodes (7): BRAND_INTRO_LABELS, BRAND_INTRO_SESSION_KEY, BrandIntroController(), IntroState, safelyCompleteSession(), FullTimeline, Story
+Cohesion: 0.11
+Nodes (23): AttributeSnapshot, BRAND_INTRO_LABELS, BRAND_INTRO_SESSION_KEY, BrandIntroController(), HomeOpeningTargets, IntroState, IntroTarget, isolateExperienceSiblings() (+15 more)
 
 ### Community 268 - "2026-07-31-complete-brand-opening-motion/design.md"
 Cohesion: 0.20
@@ -1083,21 +1130,37 @@ Nodes (4): 1. Component foundation, 2. Motion and responsive presentation, 3. Au
 Cohesion: 0.12
 Nodes (20): Accessible W_Flyer image title and description, Angular winged WF symbol, Central angular negative-space channel, currentColor monochrome treatment, Custom angular italic W_Flyer wordmark, Official vertical W_Flyer logo lockup, Separately transformed symbol and wordmark groups, Short lower symbol wing (+12 more)
 
+### Community 275 - "site-content.ts"
+Cohesion: 0.12
+Nodes (16): metadata, metadata, StepSequence(), benefitsContent, chapterLabels, ContactProjectType, contactProjectTypes, homeContent (+8 more)
+
+### Community 276 - "icons.tsx"
+Cohesion: 0.18
+Nodes (13): ArrowDirection, ArrowIconProps, arrowTransforms, CloseIcon(), ExternalIcon(), IconFrameProps, IconProps, MenuIcon() (+5 more)
+
 ### Community 277 - "2026-07-31-complete-brand-opening-motion/proposal.md"
 Cohesion: 0.29
 Nodes (6): Capabilities, Impact, Modified Capabilities, New Capabilities, What Changes, Why
 
-### Community 278 - "LocalRevealController.tsx"
-Cohesion: 0.33
-Nodes (4): LocalRevealController(), REVEAL_SELECTOR, gsapMocks, ObserverStub
+### Community 278 - "Staging, release, rollback, and homologation operations"
+Cohesion: 0.13
+Nodes (14): 1. Candidate identity and tag strategy, 2. External prerequisites, 3. Prepare the staging candidate, 4. External staging validation, 5. CSP, HSTS, cache, and edge gates, 6. Human homologation, 7. Production preparation and post-deploy smoke, 8. Rollback (+6 more)
 
-### Community 279 - "SiteHeader.stories.tsx"
-Cohesion: 0.29
-Nodes (6): ApplicationChapter, Dark, Home, MobileMenuOpen, ProcessSubmeasure, Story
+### Community 279 - "Phase 09 local release-readiness report"
+Cohesion: 0.13
+Nodes (14): Accessibility, Automated quality gate, Decision, External blockers and next gate, Functional coverage, Historical implementation audit matrix — 2026-08-03, Manual inspection performed locally, Performance and artifact boundary (+6 more)
 
 ### Community 280 - "2026-07-31-complete-brand-opening-motion/tasks.md"
 Cohesion: 0.33
 Nodes (5): 1. Official vector and controller foundation, 2. Timeline and recovery, 3. Local motion, 4. Tests and evidence, 5. Closure
+
+### Community 281 - "ADDED Requirements"
+Cohesion: 0.13
+Nodes (14): ADDED Requirements, Purpose, Requirement: Candidate identity and integrity are immutable, Requirement: Deployable packaging is isolated from common CI, Requirement: Environment configuration is explicit and isolated, Requirement: Production requires owner approval, Requirement: Rollback preserves the separate application, Requirement: Undocumented deployment mechanisms are never inferred (+6 more)
+
+### Community 282 - "button.tsx"
+Cohesion: 0.21
+Nodes (12): Button(), ButtonProps, controlClassName(), ControlSize, ControlVariant, ControlVisualProps, LinkButtonProps, sizeClasses (+4 more)
 
 ### Community 283 - "Custom angular italic W_Flyer wordmark"
 Cohesion: 0.25
@@ -1106,6 +1169,114 @@ Nodes (8): Custom angular italic W_Flyer wordmark, Wordmark e glyph, Wordmark F 
 ### Community 284 - "Phase 08 security and contact validation"
 Cohesion: 0.29
 Nodes (6): Accessibility and responsive review, Evidence, External gates, HTTP and content baseline, Implemented boundary, Phase 08 security and contact validation
+
+### Community 285 - "eligibility.ts"
+Cohesion: 0.27
+Nodes (11): evaluateLinkEligibility(), ineligible(), IneligibleNavigationLink, isHttpProtocol(), isUnmodifiedPrimaryActivation(), LinkActivation, LinkCandidate, LinkEligibility (+3 more)
+
+### Community 286 - "Requirements"
+Cohesion: 0.17
+Nodes (11): Complete Quality Gate Specification, Purpose, Requirement: Complete repository gate, Requirement: Deployed staging uses production-safe checks, Requirement: Evidence distinguishes local and external validation, Requirement: Supported browser and accessibility gate, Requirements, Scenario: A staging candidate is deployed (+3 more)
+
+### Community 291 - "MODIFIED Requirements"
+Cohesion: 0.18
+Nodes (10): MODIFIED Requirements, Requirement: Accessible interruption and reduced motion, Requirement: Approved vector choreography, Requirement: Fail-open recovery and cleanup, Scenario: Active overlay receives keyboard navigation, Scenario: Home opening interval is inspected, Scenario: Opening cannot finish, Scenario: Reduced motion visit (+2 more)
+
+### Community 292 - "ADDED Requirements"
+Cohesion: 0.18
+Nodes (10): ADDED Requirements, Purpose, Requirement: Complete repository gate, Requirement: Deployed staging uses production-safe checks, Requirement: Evidence distinguishes local and external validation, Requirement: Supported browser and accessibility gate, Scenario: A staging candidate is deployed, Scenario: A static or build gate fails (+2 more)
+
+### Community 293 - "smoke-indexing.mjs"
+Cohesion: 0.18
+Nodes (7): child, failClosedRobots, productionRobots, repositoryRoot, scriptDirectory, serverPath, standaloneDirectory
+
+### Community 294 - "2026-08-03-complete-brand-home-opening/design.md"
+Cohesion: 0.20
+Nodes (9): Annotate the existing semantic pieces instead of wrapping or cloning them, Context, Decisions, Encode the normative interval with transform, opacity, and stroke-safe reveals, Goals / Non-Goals, Isolate direct experience-shell siblings with reversible snapshots, Keep target cleanup independent of React unmount timing, Migration Plan (+1 more)
+
+### Community 295 - "Requirements"
+Cohesion: 0.20
+Nodes (9): Purpose, Requirement: Production remains explicitly indexable, Requirement: Staging is non-indexable at independent layers, Requirement: Unknown deployment environments fail safe, Requirements, Scenario: A production candidate is built, Scenario: A staging candidate is built, Scenario: Environment input is absent or invalid (+1 more)
+
+### Community 296 - "create-release-manifest.mjs"
+Cohesion: 0.36
+Nodes (8): assertSafeReleasePath(), createReleaseManifest(), requireText(), resolveReleaseFile(), writeReleaseManifestFromEnvironment(), digest, revision, validInput
+
+### Community 297 - "config/navigation.ts"
+Cohesion: 0.31
+Nodes (8): HeaderItem, scoreChapterById, applicationHeaderLinks, ExternalHeaderLink, getActiveHeaderItem(), institutionalHeaderLinks, InternalHeaderLink, mobileHeaderLinks
+
+### Community 298 - "2026-08-03-correct-score-navigation-contracts/design.md"
+Cohesion: 0.22
+Nodes (8): Context, Decisions, Goals / Non-Goals, Make the motion geometry module the pure runtime boundary, Migration Plan, Push only after a destination has committed, Risks / Trade-offs, Use a declarative capture-visible opt-out
+
+### Community 299 - "Requirement: Concurrent navigation is bounded and recoverable"
+Cohesion: 0.22
+Nodes (8): ADDED Requirements, MODIFIED Requirements, Requirement: Concurrent navigation is bounded and recoverable, Requirement: Explicit native navigation opt-out, Scenario: Anchor owns its activation, Scenario: Interrupted transition, Scenario: Rapid valid navigation, Scenario: Visitor continues after destination commit
+
+### Community 300 - "2026-08-03-stabilize-contact-delivery-retries/design.md"
+Cohesion: 0.22
+Nodes (8): Carry one browser-generated UUID in the strict payload, Context, Decisions, Derive the provider key directly from the validated UUID, Goals / Non-Goals, Migration Plan, Risks / Trade-offs, Tie identity lifetime to observable visitor intent
+
+### Community 301 - "Requirement: Verified and private delivery"
+Cohesion: 0.22
+Nodes (8): MODIFIED Requirements, Requirement: Strict request boundary, Requirement: Verified and private delivery, Scenario: A provider fails or times out, Scenario: Providers accept the message, Scenario: Request is not trustworthy, Scenario: Visitor changes a failed submission, Scenario: Visitor retries an unchanged timed-out submission
+
+### Community 302 - "ADDED Requirements"
+Cohesion: 0.22
+Nodes (8): ADDED Requirements, Purpose, Requirement: Production remains explicitly indexable, Requirement: Staging is non-indexable at independent layers, Requirement: Unknown deployment environments fail safe, Scenario: A production candidate is built, Scenario: A staging candidate is built, Scenario: Environment input is absent or invalid
+
+### Community 303 - "LinkButton"
+Cohesion: 0.29
+Nodes (4): metadata, StatePage(), LinkButton(), secureBlankTargetRel()
+
+### Community 304 - "button.stories.tsx"
+Cohesion: 0.25
+Nodes (7): Dark, Disabled, HoverPreview, Light, Story, Variants, WithIcons
+
+### Community 305 - "2026-08-03-complete-brand-home-opening/proposal.md"
+Cohesion: 0.29
+Nodes (6): Capabilities, Impact, Modified Capabilities, New Capabilities, What Changes, Why
+
+### Community 306 - "2026-08-03-correct-score-navigation-contracts/proposal.md"
+Cohesion: 0.29
+Nodes (6): Capabilities, Impact, Modified Capabilities, New Capabilities, What Changes, Why
+
+### Community 307 - "2026-08-03-stabilize-contact-delivery-retries/proposal.md"
+Cohesion: 0.29
+Nodes (6): Capabilities, Impact, Modified Capabilities, New Capabilities, What Changes, Why
+
+### Community 308 - "complete-site-qa-release-preparation/design.md"
+Cohesion: 0.29
+Nodes (6): Context, Decisions, Goals / Non-Goals, Migration Plan, Open Questions, Risks / Trade-offs
+
+### Community 309 - "complete-site-qa-release-preparation/proposal.md"
+Cohesion: 0.29
+Nodes (6): Capabilities, Impact, Modified Capabilities, New Capabilities, What Changes, Why
+
+### Community 310 - "complete-site-qa-release-preparation/tasks.md"
+Cohesion: 0.33
+Nodes (5): 1. Staging index isolation, 2. Complete quality workflow, 3. Governed release candidate, 4. Operational documentation, 5. Final validation and closure
+
+### Community 311 - "Q: How do Phase 09 release workflows connect immutable revision, environment-specific standalone packaging, checksum, manifest, and Napoleon handoff?"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: How do Phase 09 release workflows connect immutable revision, environment-specific standalone packaging, checksum, manifest, and Napoleon handoff?, Source Nodes
+
+### Community 312 - "Q: How do existing Playwright test helpers, public route SEO metadata, first-session brand intro, navigation history, and staging indexing controls connect for a production-safe deployed-staging gate?"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: How do existing Playwright test helpers, public route SEO metadata, first-session brand intro, navigation history, and staging indexing controls connect for a production-safe deployed-staging gate?, Source Nodes
+
+### Community 313 - "2026-08-03-complete-brand-home-opening/tasks.md"
+Cohesion: 0.50
+Nodes (3): 1. Target and interaction surface, 2. Home-opening choreography, 3. Evidence and synchronization
+
+### Community 314 - "2026-08-03-correct-score-navigation-contracts/tasks.md"
+Cohesion: 0.50
+Nodes (3): 1. Canonical geometry, 2. Navigation contracts, 3. Evidence and synchronization
+
+### Community 315 - "2026-08-03-stabilize-contact-delivery-retries/tasks.md"
+Cohesion: 0.50
+Nodes (3): 1. Contract and browser lifecycle, 2. Provider delivery, 3. Evidence and synchronization
 
 ## Ambiguous Edges - Review These
 - `Gate de aprovação de assets` → `Autorização e paradas permitidas`  [AMBIGUOUS]
@@ -1122,16 +1293,16 @@ Nodes (6): Accessibility and responsive review, Evidence, External gates, HTTP a
   docs/design-reference/brand-intro/source-assets/wflyer-on-dark.svg · relation: implements
 
 ## Knowledge Gaps
-- **1128 isolated node(s):** `config`, `StoryRenderer`, `StorybookFrameProps`, `fontVariableClasses`, `preview` (+1123 more)
+- **1298 isolated node(s):** `config`, `StoryRenderer`, `StorybookFrameProps`, `fontVariableClasses`, `preview` (+1293 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **87 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **98 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Work-memory lessons
 
 **Preferred sources** — corroborated by past sessions; start here.
-- `RootLayout()` (2× useful, score=1.999995726) _(code changed — re-verify)_
-- `ScoreTransitionLayer()` (2× useful, score=1.999995702)
-- `classifyScoreTransition()` (2× useful, score=1.999995529)
+- `RootLayout()` (2× useful, score=1.867456533)
+- `ScoreTransitionLayer()` (2× useful, score=1.867456511)
+- `classifyScoreTransition()` (2× useful, score=1.867456349)
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -1148,5 +1319,5 @@ _Questions this graph is uniquely positioned to answer:_
   _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
 - **What is the exact relationship between `Wide angular symbol-and-wordmark composition` and `Intended white-on-dark logo palette`?**
   _Edge tagged AMBIGUOUS (relation: implements) - confidence is low._
-- **Why does `.next` connect `seo.ts` to `app/layout.tsx`, `ui/index.ts`, `compilerOptions`, `pages/index.ts`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Why does `SiteExperienceShell()` connect `SiteExperienceShell.tsx` to `app/layout.tsx`, `geometry.ts`, `topology.ts`, `lifecycle.ts`, `cleanup.ts`, `eligibility.ts`?**
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._

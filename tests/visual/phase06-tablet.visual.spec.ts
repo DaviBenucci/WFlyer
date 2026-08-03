@@ -16,8 +16,15 @@ async function openTablet(
     colorScheme: options.colorScheme ?? "light",
     reducedMotion: options.reducedMotion ?? "no-preference",
   });
+  await page.addInitScript((selectedTheme) => {
+    window.localStorage.setItem("wf-theme", selectedTheme);
+  }, options.colorScheme ?? "light");
   await page.goto("/aplicacao-wflyer");
-  await page.addStyleTag({ content: "nextjs-portal { display: none !important; }" });
+  await page.evaluate(() => {
+    document
+      .querySelector("nextjs-portal")
+      ?.setAttribute("style", "display: none !important");
+  });
   await page.evaluate(() => document.fonts.ready);
   const demo = page.locator("[data-application-demo]");
   await expect(demo).toBeVisible();
@@ -48,8 +55,12 @@ test("tablet focused control evidence", async ({ page }) => {
 
 test("tablet processing evidence", async ({ page }) => {
   const demo = await openTablet(page);
-  await page.addStyleTag({
-    content: "[data-tablet-shell] { transform: none !important; }",
+  const destinationKey = demo.getByLabel("Tom de destino");
+  await destinationKey.selectOption("g-major");
+  await expect(demo).toHaveAttribute("data-demo-state", "configured");
+  await destinationKey.selectOption("bb-major");
+  await page.locator("[data-tablet-shell]").evaluate((element) => {
+    element.setAttribute("style", "transform: none !important");
   });
   await page.evaluate(() => {
     const originalSetTimeout = window.setTimeout.bind(window);

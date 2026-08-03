@@ -1,19 +1,16 @@
 import {
   applicationHeaderLinks,
   institutionalHeaderLinks,
+  type HeaderLink,
 } from "@/config/navigation";
 
 export type HeaderNavigationId =
   | (typeof applicationHeaderLinks)[number]["id"]
   | (typeof institutionalHeaderLinks)[number]["id"];
 
-export interface HeaderNavigationItem {
-  readonly id: HeaderNavigationId;
-  readonly label: string;
-  readonly href: string;
+export type HeaderNavigationItem = HeaderLink & {
   readonly branch: "application" | "institutional";
-  readonly external?: boolean;
-}
+};
 
 export const APPLICATION_NAVIGATION = applicationHeaderLinks.map((item) => ({
   ...item,

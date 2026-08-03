@@ -16,6 +16,9 @@ for (const viewport of viewports) {
         height: viewport.height,
       });
       await page.emulateMedia({ colorScheme: theme });
+      await page.addInitScript((selectedTheme) => {
+        window.localStorage.setItem("wf-theme", selectedTheme);
+      }, theme);
       await page.goto("/");
 
       await expect(page.locator("html")).toHaveAttribute("data-theme", theme);

@@ -1,6 +1,10 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+
 import { describe, expect, it } from "vitest";
 
 import { pageSeo, publicRoutes } from "@/config/seo";
+import { siteConfig } from "@/config/site";
 import {
   applicationContent,
   benefitsContent,
@@ -64,6 +68,56 @@ describe("conteúdo público tipado", () => {
         (project) => !("metrics" in project || "testimonial" in project),
       ),
     ).toBe(true);
+  });
+
+  it("matches the approved publication profile exactly", async () => {
+    const profile = await readFile(
+      path.join(
+        process.cwd(),
+        "docs",
+        "04-conteudo",
+        "08-perfil-publicacao.yaml",
+      ),
+      "utf8",
+    );
+    const approvedProjects = [
+      ["W_Flyer", "https://wflyer.com.br"],
+      ["MSN Distribuidora", "https://msndistribuidora.com.br"],
+      ["MSN Suprimentos", "https://msnsuprimentos.com.br"],
+    ] as const;
+
+    expect(siteConfig).toMatchObject({
+      applicationUrl: "https://app.wflyer.com.br",
+      email: "davi.benucci@wflyer.com.br",
+      name: "W_Flyer",
+      social: {
+        github: "https://github.com/DaviBenucci",
+        instagram: "https://www.instagram.com/davibenucci/",
+      },
+      url: "https://wflyer.com.br",
+    });
+    expect(
+      portfolioContent.projects.map(({ name, url }) => [name, url]),
+    ).toEqual(approvedProjects);
+
+    for (const approvedLine of [
+      `public_name: ${siteConfig.name}`,
+      `site_url: ${siteConfig.url}`,
+      `app_url: ${siteConfig.applicationUrl}`,
+      `public_email: ${siteConfig.email}`,
+      `recipient_email: ${siteConfig.email}`,
+      `url: ${siteConfig.social.instagram}`,
+      `url: ${siteConfig.social.github}`,
+      ...approvedProjects.flatMap(([title, url]) => [
+        `title: ${title}`,
+        `url: ${url}`,
+      ]),
+      "enabled: false",
+      "marketing_cookies: false",
+      "session_replay: false",
+    ]) {
+      expect(profile).toContain(approvedLine);
+    }
   });
 
   it("mantém quatro detalhes de serviço e quatro documentos legais", () => {

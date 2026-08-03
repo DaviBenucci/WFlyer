@@ -2,6 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import type { Route } from "next";
 import { usePathname, useRouter } from "next/navigation";
 import {
   useEffect,
@@ -692,7 +693,7 @@ export function SiteExperienceShell({
     armSafetyTimeout(request);
 
     try {
-      router[method](request.href, { scroll: false });
+      router[method](request.href as Route, { scroll: false });
     } catch (error) {
       reportAnimationError(error);
       flushRequest(request);

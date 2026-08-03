@@ -7,6 +7,7 @@ import { SiteExperienceShell } from "@/components/experience";
 import { SiteHeader } from "@/components/header";
 import { SiteStructuredData } from "@/components/seo";
 import { ThemeProvider, ThemeScript, ThemeToggle } from "@/components/theme";
+import { createDeploymentRobotsMetadata } from "@/config/deployment";
 import { pageSeo } from "@/config/seo";
 import { siteConfig } from "@/config/site";
 
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
   category: "technology",
   creator: siteConfig.name,
   publisher: siteConfig.name,
+  robots: createDeploymentRobotsMetadata(),
 };
 
 export const viewport: Viewport = {

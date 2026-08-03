@@ -1,5 +1,17 @@
 import type { NextConfig } from "next";
 
+import { createDeploymentRobotsHeader } from "./src/config/deployment";
+
+const requestedBuildId = process.env.WFLYER_BUILD_ID;
+const configuredBuildId = requestedBuildId;
+
+if (
+  requestedBuildId !== undefined &&
+  !/^[0-9a-f]{40}$/u.test(configuredBuildId ?? "")
+) {
+  throw new Error("WFLYER_BUILD_ID must be a full lowercase Git SHA.");
+}
+
 const contentSecurityPolicy = [
   "default-src 'self'",
   "base-uri 'self'",
@@ -15,7 +27,12 @@ const contentSecurityPolicy = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
+  ...(configuredBuildId
+    ? { generateBuildId: async () => configuredBuildId }
+    : {}),
   async headers() {
+    const robotsHeader = createDeploymentRobotsHeader();
+
     return [
       {
         headers: [
@@ -35,6 +52,9 @@ const nextConfig: NextConfig = {
           },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "DENY" },
+          ...(robotsHeader
+            ? [{ key: "X-Robots-Tag", value: robotsHeader }]
+            : []),
         ],
         source: "/:path*",
       },

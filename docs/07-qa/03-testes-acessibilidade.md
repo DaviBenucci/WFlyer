@@ -48,3 +48,15 @@
 - tablet operável apenas por cursor;
 - CTA externo sem indicação adequada quando abre nova aba;
 - página dependente de animação para revelar conteúdo.
+
+## Phase 09 evidence boundary
+
+Automated axe, keyboard, focus, reduced-motion, target-size, reflow, orientation,
+and route-announcement evidence is complete in Chromium, Firefox, and WebKit.
+The browser matrix also covers Contact idle, validation, verified, submitting,
+success, provider-error, mobile dark, and reduced-motion states.
+
+A physical screen-reader session, high-contrast operating-system mode, real
+mobile keyboard, and independent WCAG review have not been performed in this
+local environment. They remain staging/homologation gates and are not inferred
+from axe results.

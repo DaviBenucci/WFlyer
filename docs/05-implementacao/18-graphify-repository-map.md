@@ -4,6 +4,7 @@
 **Baseline date:** 2026-07-30
 **Phase 05 refresh:** 2026-07-31
 **Phase 08 refresh:** 2026-07-31
+**Phase 09 closure refresh:** 2026-08-03
 **Graphify:** `0.9.31`
 **Mode:** normal, undirected graph
 **Analyzed root:** W_Flyer institutional-site repository
@@ -74,7 +75,7 @@ The `generate` subcommand accepts the headless flow only when
 key, it exits with explicit guidance to use the interactive skill; it does not
 silently reduce the corpus to code.
 
-## 4. Baseline and Phase 05 refresh statistics
+## 4. Historical and current refresh statistics
 
 <!-- GRAPHIFY_STATS_START -->
 | Measure | Pre-Phase 05 | Post-Phase 05 | Delta |
@@ -130,31 +131,53 @@ saved as a correction: current source now implements and tests the client,
 server, Turnstile, and Resend workflow; edge rate limiting, HSTS, provider
 credentials, and CSP enforcement remain external staging gates.
 
+### 4.2 Phase 09 closure refresh
+
+The final filtered structural refresh re-extracted 221 code files and produced
+3,081 nodes, 4,322 undirected edges, and 328 communities. Relative to the Phase
+08 checkpoint, release-readiness work added 288 nodes, 284 edges, and 41
+communities. The existing `.graphifyignore` and repository wrapper were used;
+no broad workspace, generated-output, or secret-bearing scan was performed.
+
+`graphify diagnose multigraph` reports 3,081 verified nodes and 4,322 valid
+edges, with zero missing or dangling endpoints, self-loops, exact duplicates,
+or endpoint-pair collapses. Wrapper validation also verified the standalone
+HTML, filtered source scope, and SHA-256 checksums.
+
+The new extracted relationships connect deployment selection through
+`deployment.ts`, `layout.tsx`, `robots.ts`, `next.config.ts`, four-mode builds,
+and `smoke-indexing.mjs`; release provenance through the protected manual
+workflow, standalone preparation, `create-release-manifest.mjs`, and focused
+tests; and external operations through the Napoleon/Cloudflare runbook,
+production-safe staging suite, rollback checklist, and mandatory
+`app.wflyer.com.br` preservation boundary. These are repository contracts,
+not evidence that external staging or rollback has run.
+
 ## 5. Communities and high-impact nodes
 
 <!-- GRAPHIFY_COMMUNITIES_START -->
-The refreshed graph contains 257 communities; 163 are shown in the expanded
-report and 94 thin communities are omitted from that listing without being
-removed from JSON or the standalone HTML.
+At the Phase 05 checkpoint the refreshed graph contained 257 communities. The
+current Phase 09 closure contains 328; the generated report may omit thin
+communities from its prose without removing them from JSON or standalone HTML.
 
-Degree-ranked god nodes are now:
+Current degree-ranked god nodes are:
 
-1. `SiteExperienceShell()` — 22 edges;
-2. `scripts` — 21;
-3. `LinkButton()` — 20;
-4. `createPageMetadata()` — 18;
-5. `compilerOptions` — 18;
-6. the cumulative execution report — 18;
-7. this Graphify map — 17;
-8. the Graphify/OpenSpec bootstrap report — 17;
-9. `classifyScoreTransition()` — 16;
-10. `.next` — 16.
+1. `pages/index.ts` — 58 edges;
+2. `site-content.ts` — 57;
+3. `ui/index.ts` — 52;
+4. `SiteExperienceShell.tsx` — 48;
+5. `StaticPage.tsx` — 40;
+6. `music/index.ts` — 35;
+7. `ArchetypeBlocks.stories.tsx` — 35;
+8. `ArchetypeBlocks.tsx` — 34;
+9. `seo.ts` — 34;
+10. the shared transition-test helper — 31.
 
-`SiteExperienceShell()` becoming the highest-degree code node is the material
-architectural change that justified this refresh. `classifyScoreTransition()`
-also entered the top ten, while `chapters.ts`, `SiteHeader()`, `OriginScore()`,
-`ChapterScore()`, and the transition test community define its principal
-integration boundary.
+`SiteExperienceShell.tsx` remains the most central behavioral implementation;
+its larger current degree reflects the accumulated navigation, opening,
+accessibility, and test relationships. Barrel/content nodes rank higher because
+all authorized pages consume them. Centrality was treated as review priority,
+not as proof of missing coverage or permission to refactor.
 <!-- GRAPHIFY_COMMUNITIES_END -->
 
 Communities are probabilistic groupings. A central node indicates topological
@@ -221,6 +244,34 @@ memory remain ignored; absence from a bounded traversal is not proof of absence
 without checking current source.
 <!-- GRAPHIFY_QUERIES_END -->
 
+### 6.1 Final F00–F09 audit and release queries
+
+After the Phase 09 refresh, the required audit repeated ten bounded questions:
+main-route implementations, shared archetype components, double-score files,
+GSAP lifecycle/cleanup, theme propagation, interactive tablet, Contact
+endpoint, security headers, tests per completed phase, and changed central
+files without matching tests. The graph reconnected each domain to current
+source and test communities. The broad untested-central query was semantically
+weak and therefore was not treated as proof of absence; current diffs and
+focused tests were checked directly.
+
+Four additional queries exercised the release boundary:
+
+1. indexing connected `deployment.ts`, layout/robots/Next configuration,
+   `deployment-environment.test.ts`, four build modes, and indexing smoke;
+2. candidate identity connected the manual workflow, one resolved SHA,
+   standalone preparation, manifest generation, checksum, and workflow/
+   manifest regression tests;
+3. operations connected the staging runbook, public staging smoke, Napoleon
+   handoff, rollback checklist, incident guidance, and separate-application
+   preservation;
+4. coverage connected deployment, Next configuration, release workflow,
+   manifest, and public-staging suites to their implementation nodes.
+
+No duplicate navigation provider, second animation engine, disconnected tablet
+or Contact implementation, stale route mapping, invented deployment mechanism,
+or central changed source file without proportionate focused evidence was found.
+
 ## 7. Integrity and versioning
 
 Version-controlled outputs are:
@@ -252,6 +303,7 @@ stylesheet dependency.
   therefore benign and no reinstall was performed.
 - This map represents the local snapshot above. Later structural changes still
   require `scripts/graphify-repository.sh update`, validation, and checksums.
-- Phase 05–08 runtime relationships now exist in code. Phase 09 hosting,
-  staging, external-provider validation, and release relationships remain
-  plans until their own repository and infrastructure gates are completed.
+- Phase 05–09 repository relationships now exist in current code and
+  documentation. Hosting, deployed staging, external-provider validation,
+  rollback rehearsal, and production release remain external until their
+  infrastructure gates are completed.

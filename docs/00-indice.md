@@ -78,6 +78,7 @@
 - [Mapa arquitetural Graphify](05-implementacao/18-graphify-repository-map.md)
 - [Workflow OpenSpec](05-implementacao/19-openspec-workflow.md)
 - [Relatório do bootstrap Graphify e OpenSpec](05-implementacao/20-bootstrap-graphify-openspec-report.md)
+- [Operações de staging, release, rollback e homologação](05-implementacao/21-staging-release-operations.md)
 
 ## 06 — Segurança
 
@@ -86,6 +87,7 @@
 - [CSP e cabeçalhos](06-seguranca/03-csp-headers.md)
 - [Privacidade e logs](06-seguranca/04-privacidade-logs.md)
 - [Checklist de release](06-seguranca/05-checklist-release.md)
+- [Validação de segurança da Fase 08](06-seguranca/06-phase-08-validation-report.md)
 
 ## 07 — QA
 
@@ -96,6 +98,7 @@
 - [Critérios de aceite](07-qa/05-criterios-aceite.md)
 - [QA da animação de entrada](07-qa/06-qa-animacao-entrada.md)
 - [QA da dupla partitura e do tablet](07-qa/07-qa-dupla-partitura-tablet.md)
+- [Relatório de prontidão de release da Fase 09](07-qa/08-phase-09-release-readiness-report.md)
 
 ## 08 — Operação
 

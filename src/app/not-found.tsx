@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: {
     absolute: "Página não encontrada — W_Flyer",
   },
+  description:
+    "O endereço solicitado não corresponde a uma página publicada no site institucional W_Flyer.",
+  robots: {
+    follow: false,
+    index: false,
+    nocache: true,
+  },
 };
 
 export default function NotFoundPage() {

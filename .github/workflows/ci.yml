@@ -22,8 +22,9 @@ concurrency:
 env:
   CI: "true"
   NEXT_TELEMETRY_DISABLED: "1"
-  NEXT_PUBLIC_SITE_URL: http://127.0.0.1:3000
-  NEXT_PUBLIC_APP_URL: https://app.wflyer.com.br
+  NEXT_PUBLIC_TURNSTILE_SITE_KEY: 1x00000000000000000000AA
+  WFLYER_BUILD_ID: ${{ github.sha }}
+  WFLYER_DEPLOYMENT_ENVIRONMENT: production
 
 defaults:
   run:
@@ -36,16 +37,16 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Check out repository
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Install pnpm
-        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
         with:
-          version: 11.15.1
+          version: 11.18.0
           run_install: false
 
       - name: Configure Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "24"
           cache: pnpm
@@ -69,22 +70,28 @@ jobs:
       - name: Run unit tests
         run: pnpm test
 
+      - name: Audit production dependencies
+        run: pnpm audit --prod
+
+      - name: Validate peer dependencies
+        run: pnpm peers check
+
   storybook:
     name: Storybook build and tests
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - name: Check out repository
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Install pnpm
-        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
         with:
-          version: 11.15.1
+          version: 11.18.0
           run_install: false
 
       - name: Configure Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "24"
           cache: pnpm
@@ -103,9 +110,9 @@ jobs:
         run: pnpm test:storybook
 
       - name: Upload Storybook
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: storybook-${{ github.sha }}
+          name: storybook-${{ github.sha }}-attempt-${{ github.run_attempt }}
           path: storybook-static/
           if-no-files-found: error
           retention-days: 7
@@ -113,19 +120,19 @@ jobs:
   browser:
     name: Browser, accessibility and visual tests
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - name: Check out repository
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Install pnpm
-        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
         with:
-          version: 11.15.1
+          version: 11.18.0
           run_install: false
 
       - name: Configure Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "24"
           cache: pnpm
@@ -138,22 +145,34 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium firefox webkit
 
       - name: Run end-to-end tests
+        env:
+          WFLYER_PLAYWRIGHT_OUTPUT_DIR: test-results/e2e
+          WFLYER_PLAYWRIGHT_REPORT_DIR: playwright-report/e2e
         run: pnpm test:e2e
 
       - name: Run accessibility tests
+        env:
+          WFLYER_PLAYWRIGHT_OUTPUT_DIR: test-results/a11y
+          WFLYER_PLAYWRIGHT_REPORT_DIR: playwright-report/a11y
         run: pnpm test:a11y
 
       - name: Run visual regression tests
+        env:
+          WFLYER_PLAYWRIGHT_OUTPUT_DIR: test-results/visual
+          WFLYER_PLAYWRIGHT_REPORT_DIR: playwright-report/visual
         run: pnpm test:visual
 
       - name: Run motion tests
+        env:
+          WFLYER_PLAYWRIGHT_OUTPUT_DIR: test-results/motion
+          WFLYER_PLAYWRIGHT_REPORT_DIR: playwright-report/motion
         run: pnpm test:motion
 
       - name: Upload browser test evidence
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: playwright-${{ github.sha }}
+          name: playwright-${{ github.sha }}-attempt-${{ github.run_attempt }}
           path: |
             playwright-report/
             test-results/
@@ -167,16 +186,16 @@ jobs:
     timeout-minutes: 25
     steps:
       - name: Check out repository
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Install pnpm
-        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
         with:
-          version: 11.15.1
+          version: 11.18.0
           run_install: false
 
       - name: Configure Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "24"
           cache: pnpm
@@ -191,27 +210,10 @@ jobs:
       - name: Complete standalone package
         run: pnpm prepare:standalone
 
-      - name: Smoke standalone server
+      - name: Smoke standalone server and production indexing
         run: |
-          server_log="${RUNNER_TEMP}/wflyer-standalone.log"
-          HOSTNAME=127.0.0.1 PORT=3100 node .next/standalone/server.js >"${server_log}" 2>&1 &
-          server_pid=$!
-          trap 'kill "${server_pid}" 2>/dev/null || true' EXIT
-
-          ready=0
-          for attempt in {1..30}; do
-            if curl --fail --silent --show-error --max-time 2 \
-              http://127.0.0.1:3100/ >/dev/null; then
-              ready=1
-              break
-            fi
-            sleep 1
-          done
-
-          if [[ "${ready}" -ne 1 ]]; then
-            tail -n 80 "${server_log}"
-            exit 1
-          fi
+          pnpm smoke:standalone
+          pnpm smoke:indexing
 
       - name: Install Lighthouse browser
         run: pnpm exec playwright install --with-deps chromium
@@ -219,37 +221,33 @@ jobs:
       - name: Run Lighthouse budgets
         run: pnpm lighthouse
 
-      - name: Create immutable standalone archive
-        id: archive
+      - name: Validate fail-closed staging build
+        env:
+          WFLYER_DEPLOYMENT_ENVIRONMENT: staging
         run: |
-          mkdir -p release
-          archive="release/wflyer-standalone-${GITHUB_SHA}.tar.gz"
-          tar \
-            --sort=name \
-            --mtime="UTC 1970-01-01" \
-            --owner=0 \
-            --group=0 \
-            --numeric-owner \
-            -czf "${archive}" \
-            -C .next/standalone .
-          sha256sum "${archive}" >"${archive}.sha256"
-          echo "path=${archive}" >>"${GITHUB_OUTPUT}"
+          pnpm build
+          pnpm prepare:standalone
+          pnpm smoke:indexing
 
-      - name: Upload standalone archive
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
-        with:
-          name: standalone-${{ github.sha }}
-          path: |
-            ${{ steps.archive.outputs.path }}
-            ${{ steps.archive.outputs.path }}.sha256
-          if-no-files-found: error
-          retention-days: 14
+      - name: Validate fail-closed build without an environment selector
+        run: |
+          env -u WFLYER_DEPLOYMENT_ENVIRONMENT pnpm build
+          pnpm prepare:standalone
+          env -u WFLYER_DEPLOYMENT_ENVIRONMENT pnpm smoke:indexing
+
+      - name: Validate fail-closed build with an invalid environment selector
+        env:
+          WFLYER_DEPLOYMENT_ENVIRONMENT: preview
+        run: |
+          pnpm build
+          pnpm prepare:standalone
+          pnpm smoke:indexing
 
       - name: Upload Lighthouse evidence
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: lighthouse-${{ github.sha }}
+          name: lighthouse-${{ github.sha }}-attempt-${{ github.run_attempt }}
           path: .lighthouseci/
           if-no-files-found: ignore
           include-hidden-files: true

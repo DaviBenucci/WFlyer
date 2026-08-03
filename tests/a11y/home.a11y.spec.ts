@@ -8,9 +8,11 @@ interface RelevantViolation {
   readonly targets: readonly string[];
 }
 
-async function findRelevantViolations(page: Page): Promise<RelevantViolation[]> {
-  await page.addScriptTag({ content: axe.source });
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript({ content: axe.source });
+});
 
+async function findRelevantViolations(page: Page): Promise<RelevantViolation[]> {
   return page.evaluate(async () => {
     const axeWindow = window as typeof window & {
       axe: typeof import("axe-core");
@@ -54,6 +56,9 @@ for (const viewport of [
     }) => {
       await page.setViewportSize(viewport);
       await page.emulateMedia({ colorScheme: theme });
+      await page.addInitScript((selectedTheme) => {
+        window.localStorage.setItem("wf-theme", selectedTheme);
+      }, theme);
       await page.goto("/");
       await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
       await expect(page.getByRole("main")).toBeVisible();

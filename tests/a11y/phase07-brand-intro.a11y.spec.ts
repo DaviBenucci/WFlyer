@@ -8,9 +8,11 @@ interface RelevantViolation {
   readonly targets: readonly string[];
 }
 
-async function findRelevantViolations(page: Page): Promise<RelevantViolation[]> {
-  await page.addScriptTag({ content: axe.source });
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript({ content: axe.source });
+});
 
+async function findRelevantViolations(page: Page): Promise<RelevantViolation[]> {
   return page.evaluate(async () => {
     const axeWindow = window as typeof window & {
       axe: typeof import("axe-core");
@@ -44,6 +46,9 @@ for (const state of [
   test(`brand opening passes axe (${state.colorScheme})`, async ({ page }) => {
     await page.setViewportSize({ height: state.height, width: state.width });
     await page.emulateMedia({ colorScheme: state.colorScheme });
+    await page.addInitScript((selectedTheme) => {
+      window.localStorage.setItem("wf-theme", selectedTheme);
+    }, state.colorScheme);
     await page.goto("/?intro=1&introCheckpoint=1");
     const overlay = page.locator("[data-brand-intro]");
     await expect(overlay).toHaveAttribute("data-brand-intro", "playing");

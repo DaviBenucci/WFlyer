@@ -27,6 +27,44 @@ pnpm lighthouse
 pnpm build
 ```
 
+## Phase 09 release gate
+
+The package scripts now run functional, axe, motion, and visual Playwright
+suites in Chromium, Firefox, and WebKit with one worker. This is the proven
+stable profile for the complete cross-engine matrix. A release candidate
+also requires:
+
+```text
+pnpm validate:dependencies
+pnpm audit --prod
+pnpm peers check
+openspec validate --all --strict --no-interactive
+pnpm build:storybook
+pnpm test:storybook
+WFLYER_DEPLOYMENT_ENVIRONMENT=production pnpm build
+pnpm prepare:standalone
+pnpm smoke:standalone
+WFLYER_DEPLOYMENT_ENVIRONMENT=production pnpm smoke:indexing
+pnpm lighthouse
+WFLYER_DEPLOYMENT_ENVIRONMENT=staging pnpm build
+pnpm prepare:standalone
+WFLYER_DEPLOYMENT_ENVIRONMENT=staging pnpm smoke:indexing
+env -u WFLYER_DEPLOYMENT_ENVIRONMENT pnpm build
+pnpm prepare:standalone
+env -u WFLYER_DEPLOYMENT_ENVIRONMENT pnpm smoke:indexing
+WFLYER_DEPLOYMENT_ENVIRONMENT=preview pnpm build
+pnpm prepare:standalone
+WFLYER_DEPLOYMENT_ENVIRONMENT=preview pnpm smoke:indexing
+```
+
+Local automation does not replace physical device/screen-reader review,
+provider delivery, Cloudflare/Napoleon validation, rollback rehearsal, or Davi
+Benucci's homologation.
+
+Once an external candidate exists, its production-safe automated gate is
+`PLAYWRIGHT_BASE_URL=<staging-url> pnpm test:staging`; deterministic local
+browser suites are not executed against deployed builds.
+
 ## Matriz mínima
 
 - Chromium desktop;

@@ -1,5 +1,6 @@
 node_modules/
 .next/
+next-env.d.ts
 out/
 storybook-static/
 coverage/
@@ -7,6 +8,7 @@ playwright-report/
 test-results/
 .lighthouseci/
 .pnpm-store/
+release/
 
 .env
 .env.*
