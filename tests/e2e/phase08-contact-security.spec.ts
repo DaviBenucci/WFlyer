@@ -84,6 +84,50 @@ test("contact query, keyboard verification, finite submission, and success", asy
     turnstileToken: "browser-test-token",
     website: "",
   });
+  expect(String(submittedPayload?.submissionId)).toMatch(
+    /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/iu,
+  );
+});
+
+test("an unchanged retry keeps one private logical-submission identity", async ({
+  page,
+}) => {
+  await mockTurnstile(page);
+  const submittedPayloads: Record<string, unknown>[] = [];
+  await page.route("**/api/contact", async (route) => {
+    submittedPayloads.push(
+      route.request().postDataJSON() as Record<string, unknown>,
+    );
+    const retry = submittedPayloads.length > 1;
+    await route.fulfill({
+      body: JSON.stringify(
+        retry ? { ok: true } : { code: "service_unavailable", ok: false },
+      ),
+      contentType: "application/json",
+      status: retry ? 200 : 503,
+    });
+  });
+
+  await page.goto("/contato");
+  const form = await fillContactForm(page);
+  const verification = form.getByRole("button", {
+    name: "Concluir verificação de teste",
+  });
+  const submit = form.getByRole("button", { name: "Enviar mensagem" });
+
+  await verification.click();
+  await submit.click();
+  await expect(form).toHaveAttribute("data-contact-form", "error");
+  await expect(form.locator('[name="submissionId"]')).toHaveCount(0);
+
+  await verification.click();
+  await submit.click();
+  await expect(form).toHaveAttribute("data-contact-form", "success");
+
+  expect(submittedPayloads).toHaveLength(2);
+  expect(submittedPayloads[0]?.submissionId).toBe(
+    submittedPayloads[1]?.submissionId,
+  );
 });
 
 test("native field error and provider failure remain recoverable", async ({

@@ -73,6 +73,7 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
   const statusRef = useRef<HTMLParagraphElement>(null);
   const turnstileContainerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
+  const submissionIdRef = useRef<string | null>(null);
   const [submission, setSubmission] = useState<SubmissionState>("idle");
   const [token, setToken] = useState("");
   const [verification, setVerification] = useState<VerificationState>(
@@ -156,6 +157,8 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
     setSubmission("submitting");
 
     try {
+      const submissionId = submissionIdRef.current ?? crypto.randomUUID();
+      submissionIdRef.current = submissionId;
       const response = await fetch("/api/contact", {
         body: JSON.stringify({
           company: String(data.get("company") ?? ""),
@@ -164,6 +167,7 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
           name: String(data.get("name") ?? ""),
           privacyConsent: data.get("privacyConsent") === "on",
           projectType: String(data.get("projectType") ?? ""),
+          submissionId,
           turnstileToken: token,
           website: String(data.get("website") ?? ""),
         }),
@@ -180,6 +184,7 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
       }
 
       form.reset();
+      submissionIdRef.current = null;
       setSubmission("success");
       focusStatus();
       resetVerification();
@@ -210,7 +215,10 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
       data-contact-form={submission}
       noValidate={false}
       onInput={() => {
-        if (submission === "validation-error") setSubmission("idle");
+        if (submission === "error") submissionIdRef.current = null;
+        if (submission === "error" || submission === "validation-error") {
+          setSubmission("idle");
+        }
       }}
       onInvalid={() => {
         setSubmission("validation-error");

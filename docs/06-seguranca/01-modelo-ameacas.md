@@ -16,6 +16,7 @@
 |---|---|---|
 | spam automatizado | custo e caixa saturada | Turnstile, honeypot, rate limit |
 | abuso de endpoint | disponibilidade/custo | WAF, limite de payload, timeout |
+| duplicate delivery after a deadline | repeated contact | ephemeral UUID and idempotency key per logical submission |
 | header injection | envio malicioso | campos fixos, normalização, validação |
 | XSS | execução de script | sem HTML do usuário, CSP, escaping |
 | vazamento de segredo | abuso de APIs | env server-only, revisão de bundle |
@@ -29,5 +30,6 @@
 
 - rate limit da borda não é um contador global perfeito;
 - e-mail permanece sujeito à disponibilidade do provedor;
+- retry deduplication is limited to Resend's 24-hour idempotency window;
 - não há fila persistente; falha de envio exige nova tentativa do usuário;
 - sem banco, o site não possui histórico próprio de mensagens.

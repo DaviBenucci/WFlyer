@@ -1,5 +1,3 @@
-import { randomUUID } from "node:crypto";
-
 import { Resend } from "resend";
 
 import { contactProjectTypes } from "@/content/site-content";
@@ -55,7 +53,7 @@ export async function sendContactEmail(
 ): Promise<boolean> {
   const resend = new Resend(config.resendApiKey);
   const delivery = resend.emails.send(createContactEmail(payload, config), {
-    idempotencyKey: `contact/${randomUUID()}`,
+    idempotencyKey: `contact/${payload.submissionId}`,
   });
   let timeoutId: ReturnType<typeof setTimeout> | undefined;
 

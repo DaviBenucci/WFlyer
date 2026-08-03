@@ -22,6 +22,30 @@ vi.mock("next/script", () => ({
   },
 }));
 
+async function fillValidContactFields(
+  user: ReturnType<typeof userEvent.setup>,
+  form: HTMLElement,
+) {
+  const name = within(form).getByLabelText("Nome");
+  const email = within(form).getByLabelText("E-mail");
+  const message = within(form).getByLabelText("Mensagem");
+  const consent = within(form).getByLabelText(/Li a Política/u);
+  await user.clear(name);
+  await user.type(name, "Pessoa Visitante");
+  await user.clear(email);
+  await user.type(email, "visitante@example.com");
+  await user.selectOptions(
+    within(form).getByLabelText("Tipo de projeto"),
+    "solucao-personalizada",
+  );
+  await user.clear(message);
+  await user.type(
+    message,
+    "Preciso conversar sobre um projeto digital sob medida.",
+  );
+  if (!(consent as HTMLInputElement).checked) await user.click(consent);
+}
+
 describe("ContactForm", () => {
   const renderTurnstile = vi.fn();
   const resetTurnstile = vi.fn();
@@ -44,6 +68,7 @@ describe("ContactForm", () => {
 
   afterEach(() => {
     vi.useRealTimers();
+    vi.restoreAllMocks();
   });
 
   it("preselects only a documented query value", () => {
@@ -111,6 +136,9 @@ describe("ContactForm", () => {
       email: "visitante@example.com",
       privacyConsent: true,
       projectType: "solucao-personalizada",
+      submissionId: expect.stringMatching(
+        /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/iu,
+      ),
       turnstileToken: "turnstile-token",
       website: "",
     });
@@ -154,6 +182,89 @@ describe("ContactForm", () => {
     );
     expect(resetTurnstile).toHaveBeenCalledWith("widget-contact");
     expect(within(form).getByLabelText("Nome")).toHaveValue("Pessoa Visitante");
+  });
+
+  it("keeps, rotates, and clears its private logical-submission identity", async () => {
+    const firstSubmissionId = "11111111-1111-4111-8111-111111111111";
+    const editedSubmissionId = "22222222-2222-4222-8222-222222222222";
+    const postSuccessSubmissionId = "33333333-3333-4333-8333-333333333333";
+    const randomUuid = vi
+      .spyOn(globalThis.crypto, "randomUUID")
+      .mockReturnValueOnce(firstSubmissionId)
+      .mockReturnValueOnce(editedSubmissionId)
+      .mockReturnValueOnce(postSuccessSubmissionId);
+    const unavailable = Response.json(
+      { code: "service_unavailable", ok: false },
+      { status: 503 },
+    );
+    const fetchMock = vi
+      .mocked(fetch)
+      .mockResolvedValueOnce(unavailable)
+      .mockResolvedValueOnce(
+        Response.json(
+          { code: "service_unavailable", ok: false },
+          { status: 503 },
+        ),
+      )
+      .mockResolvedValueOnce(Response.json({ ok: true }))
+      .mockResolvedValueOnce(Response.json({ ok: true }));
+    const user = userEvent.setup();
+
+    render(<ContactForm siteKey="site-key" />);
+    const form = screen.getByRole("form", { name: "Formulário de contato" });
+    const submit = within(form).getByRole("button", {
+      name: "Enviar mensagem",
+    });
+    expect(form.querySelector('[name="submissionId"]')).toBeNull();
+
+    await fillValidContactFields(user, form);
+    await act(() => verificationCallback("turnstile-token-1"));
+    await user.click(submit);
+    await waitFor(() =>
+      expect(form).toHaveAttribute("data-contact-form", "error"),
+    );
+
+    await act(() => verificationCallback("turnstile-token-2"));
+    await user.click(submit);
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(2));
+    await waitFor(() =>
+      expect(form).toHaveAttribute("data-contact-form", "error"),
+    );
+
+    await user.type(
+      within(form).getByLabelText("Mensagem"),
+      " Agora com um novo requisito.",
+    );
+    expect(form).toHaveAttribute("data-contact-form", "idle");
+    await act(() => verificationCallback("turnstile-token-3"));
+    await user.click(submit);
+    await waitFor(() =>
+      expect(form).toHaveAttribute("data-contact-form", "success"),
+    );
+
+    const postSuccessUser = userEvent.setup();
+    await fillValidContactFields(postSuccessUser, form);
+    expect(within(form).getByLabelText("Nome")).toHaveValue("Pessoa Visitante");
+    expect(within(form).getByLabelText("Tipo de projeto")).toHaveValue(
+      "solucao-personalizada",
+    );
+    expect(within(form).getByLabelText(/Li a Política/u)).toBeChecked();
+    await act(() => verificationCallback("turnstile-token-4"));
+    await postSuccessUser.click(submit);
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(4));
+
+    const submittedIds = fetchMock.mock.calls.map(([, init]) =>
+      String(JSON.parse(String(init?.body)).submissionId),
+    );
+    expect(submittedIds).toEqual([
+      firstSubmissionId,
+      firstSubmissionId,
+      editedSubmissionId,
+      postSuccessSubmissionId,
+    ]);
+    expect(randomUuid).toHaveBeenCalledTimes(3);
+    expect(form.querySelector('[name="submissionId"]')).toBeNull();
+    expect(form).not.toHaveTextContent(firstSubmissionId);
   });
 
   it("fails closed but leaves the official contact alternative visible", () => {

@@ -1,7 +1,9 @@
 # public-security-content-baseline Specification
 
 ## Purpose
-TBD - created by archiving change complete-content-contact-security. Update Purpose after archive.
+
+Define the approved public content, legal disclosures, indexing metadata, and browser security baseline for the institutional website.
+
 ## Requirements
 ### Requirement: Locally enforceable browser security headers
 Every site response SHALL deny framing, disable MIME sniffing, use strict-origin referrers, isolate openers, restrict sensitive browser capabilities, and expose a tested report-only CSP without `unsafe-eval`; the contact response SHALL additionally be JSON and no-store.

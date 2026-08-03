@@ -23,9 +23,16 @@ company: opcional, máximo 120
 projectType: enum permitido
 message: 20..3000 caracteres
 privacyConsent: true
+submissionId: required logical-submission UUID
 turnstileToken: obrigatório, máximo 2048
 website: honeypot, deve estar vazio
 ```
+
+`submissionId` is created with browser Web Crypto only when a logical
+submission begins. A retry without form edits reuses the same UUID. After
+success, or as soon as any field in a failed attempt is edited, the identifier
+is discarded and the next send creates another. It is not a visible field,
+credential, rate-limit mechanism, or visitor identifier.
 
 ## Sequência de validação
 
@@ -76,6 +83,11 @@ Os limites devem ser calibrados com tráfego real. A Cloudflare mantém contador
 - assunto construído com valores enumerados e texto normalizado;
 - mensagem do visitante tratada como texto;
 - não interpolar entrada em cabeçalhos sem sanitização.
+- use `contact/<submissionId>` as the Resend idempotency key;
+- retain the eight-second application deadline and generic public response;
+- the key prevents a second delivery for an unchanged retry during the
+  provider's 24-hour idempotency window, including when the first send finishes
+  after the local deadline; the deadline does not imply SDK cancellation.
 
 ## Códigos
 
@@ -91,4 +103,7 @@ Os limites devem ser calibrados com tráfego real. A Cloudflare mantém contador
 
 ## Sem persistência
 
-Nenhuma submissão será gravada pelo site. A retenção ocorrerá apenas nos sistemas de e-mail/provedor conforme políticas aplicáveis.
+Nenhuma submissão será gravada pelo site. The UUID remains only in page memory
+during the logical attempt and MUST NOT be logged or returned by the API.
+A retenção ocorrerá apenas nos sistemas de e-mail/provedor conforme políticas
+aplicáveis.

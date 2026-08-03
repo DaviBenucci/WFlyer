@@ -1,21 +1,4 @@
-# secure-contact-workflow Specification
-
-## Purpose
-
-Define an accessible, strictly validated, provider-verified, and privacy-preserving path from the public contact form to server-only email delivery.
-
-## Requirements
-
-### Requirement: Accessible contact form lifecycle
-The Contact chapter SHALL expose labelled native fields for every approved payload value, SHALL render explicit verification, submitting, success, error, and unavailable states, and SHALL retain the official email channel when the form cannot submit.
-
-#### Scenario: Visitor completes a valid form
-- **WHEN** every required field, privacy consent, and Turnstile verification are complete
-- **THEN** the form submits once, announces progress and success without a focus trap, clears visitor fields and token, and keeps the terminal cadence after the interaction
-
-#### Scenario: Client integration is unavailable
-- **WHEN** the public Turnstile configuration or script is unavailable
-- **THEN** submit remains disabled with a generic explanation and the official mail link remains operable
+## MODIFIED Requirements
 
 ### Requirement: Strict request boundary
 `POST /api/contact` MUST accept only an allowed-origin JSON object at most 16 KiB with the exact documented keys, including a valid UUID that identifies one logical submission, an empty honeypot, bounded plain-text values, a valid project enum, and privacy consent equal to true.

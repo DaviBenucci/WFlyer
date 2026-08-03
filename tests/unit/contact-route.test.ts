@@ -24,6 +24,7 @@ const validPayload = {
   name: "Pessoa Visitante",
   privacyConsent: true,
   projectType: "solucao-personalizada",
+  submissionId: "11111111-1111-4111-8111-111111111111",
   turnstileToken: "token-publico",
   website: "",
 };
@@ -66,12 +67,28 @@ describe("POST /api/contact", () => {
     expect(response.headers.get("cache-control")).toBe("no-store, max-age=0");
     expect(providers.verifyTurnstile).toHaveBeenCalledOnce();
     expect(providers.sendContactEmail).toHaveBeenCalledOnce();
+    expect(providers.sendContactEmail).toHaveBeenCalledWith(
+      expect.objectContaining({ submissionId: validPayload.submissionId }),
+      expect.any(Object),
+    );
   });
 
   it.each([
     ["malformed JSON", "{", {}, 400],
     ["wrong media type", validPayload, { "content-type": "text/plain" }, 415],
     ["missing fields", { website: "" }, {}, 400],
+    [
+      "missing submission UUID",
+      { ...validPayload, submissionId: undefined },
+      {},
+      400,
+    ],
+    [
+      "invalid submission UUID",
+      { ...validPayload, submissionId: "invalid" },
+      {},
+      400,
+    ],
     ["unknown fields", { ...validPayload, role: "admin" }, {}, 400],
     ["honeypot", { ...validPayload, website: "https://spam.invalid" }, {}, 400],
     ["disallowed origin", validPayload, { origin: "https://evil.invalid" }, 403],
@@ -119,6 +136,7 @@ describe("POST /api/contact", () => {
     for (const secret of [
       validPayload.email,
       validPayload.message,
+      validPayload.submissionId,
       validPayload.turnstileToken,
       "re_secret_value",
       "turnstile_secret_value",

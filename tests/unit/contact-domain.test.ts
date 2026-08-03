@@ -36,6 +36,7 @@ const payload: ContactPayload = {
   name: "Pessoa Visitante",
   privacyConsent: true,
   projectType: "solucao-personalizada",
+  submissionId: "11111111-1111-4111-8111-111111111111",
   turnstileToken: "token-publico",
   website: "",
 };
@@ -76,6 +77,10 @@ describe("contact domain boundary", () => {
     ).toBe(false);
     expect(
       contactPayloadSchema.safeParse({ ...payload, name: "Nome\u0000" }).success,
+    ).toBe(false);
+    expect(
+      contactPayloadSchema.safeParse({ ...payload, submissionId: "not-a-uuid" })
+        .success,
     ).toBe(false);
   });
 
@@ -195,15 +200,56 @@ describe("contact domain boundary", () => {
     );
     expect(message).not.toHaveProperty("html");
     expect(message.text).toContain(payload.message);
+    expect(message.text).not.toContain(payload.submissionId);
 
     resendSend.mockResolvedValue({ data: { id: "mail-id" }, error: null });
     await expect(sendContactEmail(payload, config)).resolves.toBe(true);
     expect(resendSend).toHaveBeenCalledWith(
       message,
-      expect.objectContaining({ idempotencyKey: expect.any(String) }),
+      { idempotencyKey: `contact/${payload.submissionId}` },
     );
 
     resendSend.mockResolvedValue({ data: null, error: { message: "upstream" } });
     await expect(sendContactEmail(payload, config)).resolves.toBe(false);
+  });
+
+  it("reuses the provider identity when a timed-out delivery resolves after its retry", async () => {
+    vi.useFakeTimers();
+    let resolveLateDelivery!: (result: {
+      data: { id: string };
+      error: null;
+    }) => void;
+    const lateDelivery = new Promise<{
+      data: { id: string };
+      error: null;
+    }>((resolve) => {
+      resolveLateDelivery = resolve;
+    });
+
+    resendSend
+      .mockReturnValueOnce(lateDelivery)
+      .mockResolvedValueOnce({ data: { id: "retry-id" }, error: null });
+
+    const firstAttempt = sendContactEmail(payload, config);
+    await vi.advanceTimersByTimeAsync(8_000);
+    await expect(firstAttempt).resolves.toBe(false);
+    await expect(sendContactEmail(payload, config)).resolves.toBe(true);
+
+    const expectedOptions = {
+      idempotencyKey: `contact/${payload.submissionId}`,
+    };
+    expect(resendSend).toHaveBeenNthCalledWith(
+      1,
+      createContactEmail(payload, config),
+      expectedOptions,
+    );
+    expect(resendSend).toHaveBeenNthCalledWith(
+      2,
+      createContactEmail(payload, config),
+      expectedOptions,
+    );
+
+    resolveLateDelivery({ data: { id: "late-id" }, error: null });
+    await lateDelivery;
   });
 });

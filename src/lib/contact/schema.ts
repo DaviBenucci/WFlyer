@@ -33,6 +33,7 @@ export const contactPayloadSchema = z.strictObject({
     value.replaceAll("\r\n", "\n").replaceAll("\r", "\n"),
   ),
   privacyConsent: z.literal(true),
+  submissionId: z.uuid(),
   turnstileToken: z.string().trim().min(1).max(2_048),
   website: z.literal(""),
 });
