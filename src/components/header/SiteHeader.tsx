@@ -286,6 +286,7 @@ export function SiteHeader({
   return (
     <header
       className={styles.siteHeader}
+      data-brand-intro-header=""
       data-menu-open={menuOpen ? "true" : "false"}
       data-scrolled={scrolled ? "true" : "false"}
       data-variant={simplified ? "simplified" : "score"}
@@ -305,6 +306,7 @@ export function SiteHeader({
           aria-current={currentPathname === "/" ? "page" : undefined}
           aria-label="W_Flyer — voltar à página inicial"
           className={styles.brandHomeLink}
+          data-brand-intro-header-pivot="desktop"
           data-home-pivot="desktop"
           href="/"
           ref={desktopBrandLinkRef}
@@ -333,6 +335,7 @@ export function SiteHeader({
           aria-current={currentPathname === "/" ? "page" : undefined}
           aria-label="W_Flyer — voltar à página inicial"
           className={styles.mobileBrandHomeLink}
+          data-brand-intro-header-pivot="mobile"
           data-home-pivot="mobile"
           href="/"
           onClick={() => {

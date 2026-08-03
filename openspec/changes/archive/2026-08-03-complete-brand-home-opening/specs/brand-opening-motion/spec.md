@@ -1,15 +1,4 @@
-# brand-opening-motion Specification
-
-## Purpose
-
-Present the approved W_Flyer identity once per browser session through a recoverable, accessible vector opening while preserving the already-rendered Home and its navigation.
-## Requirements
-### Requirement: Eligible first-session opening
-The opening SHALL run only on the Home route when the session completion key is absent, SHALL leave Home rendered behind its overlay, and SHALL record completion after finish, skip, reduced motion, or recovery.
-
-#### Scenario: First Home visit
-- **WHEN** a visitor opens Home without `wflyer.brand-intro.completed.v1`
-- **THEN** the official opening becomes active above the already-rendered Home and does not run again during that session
+## MODIFIED Requirements
 
 ### Requirement: Approved vector choreography
 The full opening SHALL use only approved immutable SVG geometry and authorized GSAP eases, SHALL expose the normative labels from 0.000 through 5.600 seconds, SHALL reveal the header score and Home score from their origin before the narrative clef, branch copy, actions, and exploration cue in the documented order, and SHALL end in the same visible Home/header state as a direct completed session. Branch copy MUST travel no more than 20 px from its respective side.
@@ -43,10 +32,3 @@ An asset, animation, timeout, visibility, resize, orientation, or teardown failu
 #### Scenario: Opening cannot finish
 - **WHEN** the SVG is unavailable or the safety deadline is exceeded
 - **THEN** Home becomes interactive promptly, has no hidden or transformed opening target, and the session is marked complete without a substitute logo or sensitive log
-
-### Requirement: Finite local reveals
-Page-local hero, card, note, score, and final-barline reveals SHALL use finite transform/opacity choreography, SHALL preserve semantic DOM and focus behavior, and SHALL become direct final states for reduced motion or missing GSAP.
-
-#### Scenario: Content enters viewport
-- **WHEN** an approved reveal target becomes relevant
-- **THEN** it reaches its final readable state once without blocking scroll, links, or assistive technology

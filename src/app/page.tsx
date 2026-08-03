@@ -51,10 +51,20 @@ export default function HomePage() {
             complementares
           </h1>
 
-          <OriginScore className={styles.score} />
+          <OriginScore
+            className={styles.score}
+            data-brand-intro-home-score=""
+          />
 
-          <div className={styles.origin} data-home-origin="">
-            <NarrativeClef className={styles.clef} />
+          <div
+            className={styles.origin}
+            data-brand-intro-home-origin=""
+            data-home-origin=""
+          >
+            <NarrativeClef
+              className={styles.clef}
+              data-brand-intro-home-clef=""
+            />
             <p className={styles.originLabel}>Dois caminhos, uma origem</p>
           </div>
 
@@ -63,24 +73,38 @@ export default function HomePage() {
             className={`${styles.branch} ${styles.applicationBranch}`}
             data-home-branch="application"
           >
-            <Eyebrow className={styles.eyebrow}>
+            <Eyebrow
+              className={styles.eyebrow}
+              data-brand-intro-home-copy="application"
+            >
               {homeContent.application.eyebrow}
             </Eyebrow>
-            <p className={styles.mobileDirection}>
+            <p
+              className={styles.mobileDirection}
+              data-brand-intro-home-copy="application"
+            >
               Ramo da aplicação · avance para a esquerda
             </p>
             <Heading
               as="h2"
               className={styles.branchTitle}
+              data-brand-intro-home-copy="application"
               id="application-branch-title"
               size="lg"
             >
               {homeContent.application.title}
             </Heading>
-            <Text className={styles.description} tone="muted">
+            <Text
+              className={styles.description}
+              data-brand-intro-home-copy="application"
+              tone="muted"
+            >
               {homeContent.application.description}
             </Text>
-            <div className={styles.actions}>
+            <div
+              className={styles.actions}
+              data-brand-intro-home-actions="application"
+            >
               <LinkButton
                 external
                 href={siteConfig.applicationUrl}
@@ -103,24 +127,38 @@ export default function HomePage() {
             className={`${styles.branch} ${styles.institutionalBranch}`}
             data-home-branch="institutional"
           >
-            <Eyebrow className={styles.eyebrow}>
+            <Eyebrow
+              className={styles.eyebrow}
+              data-brand-intro-home-copy="institutional"
+            >
               {homeContent.institutional.eyebrow}
             </Eyebrow>
-            <p className={styles.mobileDirection}>
+            <p
+              className={styles.mobileDirection}
+              data-brand-intro-home-copy="institutional"
+            >
               Ramo institucional · avance para a direita
             </p>
             <Heading
               as="h2"
               className={styles.branchTitle}
+              data-brand-intro-home-copy="institutional"
               id="institutional-branch-title"
               size="lg"
             >
               {homeContent.institutional.title}
             </Heading>
-            <Text className={styles.description} tone="muted">
+            <Text
+              className={styles.description}
+              data-brand-intro-home-copy="institutional"
+              tone="muted"
+            >
               {homeContent.institutional.description}
             </Text>
-            <div className={styles.actions}>
+            <div
+              className={styles.actions}
+              data-brand-intro-home-actions="institutional"
+            >
               <LinkButton
                 href="/servicos"
                 trailingIcon={<ArrowIcon />}
@@ -136,7 +174,10 @@ export default function HomePage() {
             </div>
           </section>
 
-          <div className={styles.explorationCue}>
+          <div
+            className={styles.explorationCue}
+            data-brand-intro-home-cue=""
+          >
             <svg
               aria-hidden="true"
               className={styles.explorationIcon}

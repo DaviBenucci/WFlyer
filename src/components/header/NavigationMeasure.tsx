@@ -31,6 +31,7 @@ function MeasureGraphic({
     <svg
       aria-hidden="true"
       className={styles.measureGraphic}
+      data-brand-intro-header-score={branch}
       focusable="false"
       preserveAspectRatio="none"
       viewBox="0 0 160 48"
@@ -38,13 +39,25 @@ function MeasureGraphic({
       <StaffSegment
         amplitude={3}
         baseY={12}
+        data-brand-intro-header-score-lines=""
         direction={isApplication ? "left" : "right"}
         endX={160}
         lineGap={6}
       />
-      <MeasureBar bottom={36} top={12} x={2} />
-      <MeasureBar bottom={36} top={12} x={158} />
+      <MeasureBar
+        bottom={36}
+        data-brand-intro-header-score-detail=""
+        top={12}
+        x={2}
+      />
+      <MeasureBar
+        bottom={36}
+        data-brand-intro-header-score-detail=""
+        top={12}
+        x={158}
+      />
       <MusicalNote
+        data-brand-intro-header-score-detail=""
         filled={active}
         scale={0.45}
         stem={isApplication ? "down" : "up"}
@@ -66,7 +79,9 @@ function MeasureContent({
   return (
     <>
       <MeasureGraphic active={active === true} branch={item.branch} />
-      <span className={styles.measureLabel}>{item.label}</span>
+      <span className={styles.measureLabel} data-brand-intro-header-label="">
+        {item.label}
+      </span>
       {item.external ? (
         <>
           <span aria-hidden="true" className={styles.externalMark}>

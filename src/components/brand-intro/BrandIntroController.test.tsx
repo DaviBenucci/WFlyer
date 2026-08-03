@@ -70,6 +70,50 @@ describe("BrandIntroController", () => {
     );
   });
 
+  it("isolates shell siblings and restores their exact prior attributes", () => {
+    const { getByTestId } = render(
+      <div data-site-experience="">
+        <a data-testid="plain-sibling" href="#content">
+          Pular para conteúdo
+        </a>
+        <main aria-hidden="false" data-testid="owned-sibling" inert>
+          <button type="button">Ação da Home</button>
+        </main>
+        <div
+          aria-hidden="true"
+          data-score-transition-layer=""
+          data-testid="decorative-layer"
+          inert
+        />
+        <BrandIntroController force />
+      </div>,
+    );
+
+    act(() => vi.advanceTimersByTime(0));
+
+    const plainSibling = getByTestId("plain-sibling");
+    const ownedSibling = getByTestId("owned-sibling");
+    const decorativeLayer = getByTestId("decorative-layer");
+
+    expect(plainSibling).toHaveAttribute("aria-hidden", "true");
+    expect(plainSibling).toHaveAttribute("inert");
+    expect(ownedSibling).toHaveAttribute("aria-hidden", "true");
+    expect(ownedSibling).toHaveAttribute("inert");
+    expect(decorativeLayer).toHaveAttribute("aria-hidden", "true");
+    expect(decorativeLayer).toHaveAttribute("inert");
+
+    fireEvent.click(
+      screen.getByRole("button", { name: "Pular introdução" }),
+    );
+
+    expect(plainSibling).not.toHaveAttribute("aria-hidden");
+    expect(plainSibling).not.toHaveAttribute("inert");
+    expect(ownedSibling).toHaveAttribute("aria-hidden", "false");
+    expect(ownedSibling).toHaveAttribute("inert");
+    expect(decorativeLayer).toHaveAttribute("aria-hidden", "true");
+    expect(decorativeLayer).toHaveAttribute("inert");
+  });
+
   it("does not replay a completed session and leaves scroll unlocked", () => {
     sessionStorage.setItem(BRAND_INTRO_SESSION_KEY, "1");
     render(<BrandIntroController />);
@@ -99,12 +143,21 @@ describe("BrandIntroController", () => {
   });
 
   it("releases page locks when unmounted during the opening", () => {
-    const { unmount } = render(<BrandIntroController />);
+    const { getByTestId, unmount } = render(
+      <div data-site-experience="">
+        <main data-testid="home-surface" />
+        <BrandIntroController />
+      </div>,
+    );
     act(() => vi.advanceTimersByTime(0));
+    const homeSurface = getByTestId("home-surface");
     expect(document.body.style.overflow).toBe("hidden");
+    expect(homeSurface).toHaveAttribute("inert");
 
     unmount();
 
+    expect(homeSurface).not.toHaveAttribute("inert");
+    expect(homeSurface).not.toHaveAttribute("aria-hidden");
     expect(document.body.style.overflow).toBe("");
     expect(document.documentElement).not.toHaveAttribute(
       "data-brand-intro-active",

@@ -53,6 +53,22 @@ describe("SiteHeader", () => {
     expect(
       Array.from(applicationMeasureBars, (bar) => bar.getAttribute("x1")),
     ).toEqual(["2", "158"]);
+    expect(container.querySelector("[data-brand-intro-header]")).not.toBeNull();
+    expect(
+      container.querySelectorAll("[data-brand-intro-header-pivot]"),
+    ).toHaveLength(2);
+    expect(
+      container.querySelectorAll("[data-brand-intro-header-score]"),
+    ).toHaveLength(8);
+    expect(
+      container.querySelectorAll("[data-brand-intro-header-score-lines]"),
+    ).toHaveLength(8);
+    expect(
+      container.querySelectorAll("[data-brand-intro-header-score-detail]"),
+    ).toHaveLength(24);
+    expect(
+      container.querySelectorAll("[data-brand-intro-header-label]"),
+    ).toHaveLength(8);
   });
 
   it("indica Processo como subcompasso ativo de Serviços", () => {
