@@ -1,4 +1,4 @@
-import { scoreChapterById, type ScoreEdge } from "@/config/chapters";
+import type { ScoreEdge } from "@/config/chapters";
 
 import type { ScoreTransition, TransitionMode } from "./topology";
 
@@ -7,40 +7,31 @@ export interface ViewportDimensions {
   readonly height: number;
 }
 
-export interface AnchorPoint {
+export interface ViewportPoint {
   readonly x: number;
   readonly y: number;
 }
 
-export interface RectGeometry {
-  readonly left: number;
-  readonly top: number;
-  readonly width: number;
-  readonly height: number;
-}
+export type AnchorPoint = ViewportPoint;
 
 export interface MeasuredTransitionAnchors {
-  readonly source?: AnchorPoint | null;
-  readonly destination?: AnchorPoint | null;
+  readonly source?: ViewportPoint | null;
+  readonly destination?: ViewportPoint | null;
+  readonly pivot?: ViewportPoint | null;
 }
 
-export interface ResolvedAnchor extends AnchorPoint {
-  readonly source: "measured" | "manifest";
+export interface ScoreTransitionGeometry {
+  readonly height: number;
+  readonly pivot: ViewportPoint;
+  readonly source: ViewportPoint;
+  readonly target: ViewportPoint;
+  readonly width: number;
 }
 
-export interface ResolvedTransitionGeometry {
-  readonly viewport: ViewportDimensions;
-  readonly source: ResolvedAnchor | null;
-  readonly destination: ResolvedAnchor | null;
-  readonly pivot: AnchorPoint;
-  readonly travelDistance: number;
-}
-
-export interface TransitionSegment {
-  readonly id: "primary" | "pivot-in" | "pivot-out";
-  readonly path: string;
-  readonly start: AnchorPoint;
-  readonly end: AnchorPoint;
+export interface ScoreTransitionSegment {
+  readonly end: ViewportPoint;
+  readonly id: "direct" | "from-home" | "to-home";
+  readonly start: ViewportPoint;
 }
 
 export const DEFAULT_TRANSITION_VIEWPORT = {
@@ -48,12 +39,12 @@ export const DEFAULT_TRANSITION_VIEWPORT = {
   height: 720,
 } as const satisfies ViewportDimensions;
 
-function isFiniteNumber(value: number): boolean {
-  return Number.isFinite(value);
-}
-
-function clamp(value: number, minimum: number, maximum: number): number {
-  return Math.min(maximum, Math.max(minimum, value));
+function isFinitePoint(
+  point: ViewportPoint | null | undefined,
+): point is ViewportPoint {
+  return Boolean(
+    point && Number.isFinite(point.x) && Number.isFinite(point.y),
+  );
 }
 
 export function normalizeViewport(
@@ -61,207 +52,162 @@ export function normalizeViewport(
 ): ViewportDimensions {
   return {
     width:
-      isFiniteNumber(viewport.width) && viewport.width > 0
+      Number.isFinite(viewport.width) && viewport.width > 0
         ? viewport.width
         : DEFAULT_TRANSITION_VIEWPORT.width,
     height:
-      isFiniteNumber(viewport.height) && viewport.height > 0
+      Number.isFinite(viewport.height) && viewport.height > 0
         ? viewport.height
         : DEFAULT_TRANSITION_VIEWPORT.height,
   };
 }
 
-export function anchorPointFromRect(
-  rect: RectGeometry,
-  edge: ScoreEdge,
-  anchorY: number,
-): AnchorPoint | null {
-  if (
-    !isFiniteNumber(rect.left) ||
-    !isFiniteNumber(rect.top) ||
-    !isFiniteNumber(rect.width) ||
-    !isFiniteNumber(rect.height) ||
-    rect.width < 0 ||
-    rect.height < 0
-  ) {
-    return null;
-  }
-
-  const x =
-    edge === "left"
-      ? rect.left
-      : edge === "right"
-        ? rect.left + rect.width
-        : rect.left + rect.width / 2;
-
-  return {
-    x,
-    y: rect.top + rect.height * clamp(anchorY, 0, 1),
-  };
-}
-
-function fallbackPoint(
+function edgeFallbackPoint(
   edge: ScoreEdge,
   anchorY: number,
   viewport: ViewportDimensions,
-): AnchorPoint {
+): ViewportPoint {
   return {
-    x: edge === "left" ? 0 : edge === "right" ? viewport.width : viewport.width / 2,
-    y: viewport.height * clamp(anchorY, 0, 1),
+    x:
+      edge === "left"
+        ? 0
+        : edge === "right"
+          ? viewport.width
+          : viewport.width / 2,
+    y: viewport.height * Math.min(1, Math.max(0, anchorY)),
   };
 }
 
-function resolvePoint(
-  measured: AnchorPoint | null | undefined,
-  fallback: AnchorPoint | null,
-  viewport: ViewportDimensions,
-): ResolvedAnchor | null {
-  if (
-    measured &&
-    isFiniteNumber(measured.x) &&
-    isFiniteNumber(measured.y)
-  ) {
-    return {
-      x: clamp(measured.x, 0, viewport.width),
-      y: clamp(measured.y, 0, viewport.height),
-      source: "measured",
-    };
-  }
+function movesAwayFromHome(transition: ScoreTransition): boolean {
+  const sourceCoordinate = transition.sourceChapter?.coordinate ?? 0;
+  const destinationCoordinate =
+    transition.destinationChapter?.coordinate ?? 0;
 
-  return fallback ? { ...fallback, source: "manifest" } : null;
+  return Math.abs(destinationCoordinate) > Math.abs(sourceCoordinate);
 }
 
-export function getTransitionTravelDistance(
-  mode: TransitionMode,
-  viewportValue: ViewportDimensions,
-): number {
-  const viewport = normalizeViewport(viewportValue);
-  const mobile = viewport.width < 768;
-  const ratio =
-    mode === "home-pivot"
-      ? mobile
-        ? 0.12
-        : 0.18
-      : mode === "compressed-score-jump"
-        ? mobile
-          ? 0.1
-          : 0.14
-        : mode === "adjacent-score"
-          ? mobile
-            ? 0.08
-            : 0.1
-          : 0;
+export function sourceAnchorKind(
+  transition: ScoreTransition,
+): "entry" | "exit" {
+  if (transition.mode === "home-pivot") {
+    return "entry";
+  }
 
-  return viewport.width * ratio;
+  return movesAwayFromHome(transition) ? "exit" : "entry";
+}
+
+export function destinationAnchorKind(
+  transition: ScoreTransition,
+): "entry" | "exit" {
+  if (transition.mode === "home-pivot") {
+    return "entry";
+  }
+
+  return movesAwayFromHome(transition) ? "entry" : "exit";
+}
+
+function fallbackChapterPoint(
+  transition: ScoreTransition,
+  endpoint: "destination" | "source",
+  viewport: ViewportDimensions,
+): ViewportPoint {
+  const chapter =
+    endpoint === "source"
+      ? transition.sourceChapter
+      : transition.destinationChapter;
+
+  if (!chapter) {
+    return { x: viewport.width / 2, y: viewport.height / 2 };
+  }
+
+  const kind =
+    endpoint === "source"
+      ? sourceAnchorKind(transition)
+      : destinationAnchorKind(transition);
+
+  return edgeFallbackPoint(
+    kind === "entry" ? chapter.entry_edge : chapter.exit_edge,
+    kind === "entry" ? chapter.entry_anchor_y : chapter.exit_anchor_y,
+    viewport,
+  );
 }
 
 export function resolveTransitionGeometry(
   transition: ScoreTransition,
   viewportValue: ViewportDimensions,
   measured: MeasuredTransitionAnchors = {},
-): ResolvedTransitionGeometry {
+): ScoreTransitionGeometry {
   const viewport = normalizeViewport(viewportValue);
-  const sourceFallback = transition.sourceChapter
-    ? fallbackPoint(
-        transition.sourceChapter.exit_edge,
-        transition.sourceChapter.exit_anchor_y,
-        viewport,
-      )
-    : null;
-  const destinationFallback = transition.destinationChapter
-    ? fallbackPoint(
-        transition.destinationChapter.entry_edge,
-        transition.destinationChapter.entry_anchor_y,
-        viewport,
-      )
-    : null;
-  const home = scoreChapterById.home;
 
   return {
-    viewport,
-    source: resolvePoint(measured.source, sourceFallback, viewport),
-    destination: resolvePoint(
-      measured.destination,
-      destinationFallback,
-      viewport,
-    ),
-    pivot: fallbackPoint(
-      home.entry_edge,
-      home.entry_anchor_y,
-      viewport,
-    ),
-    travelDistance: getTransitionTravelDistance(transition.mode, viewport),
+    height: viewport.height,
+    pivot: isFinitePoint(measured.pivot)
+      ? measured.pivot
+      : {
+          x: viewport.width / 2,
+          y: Math.min(120, viewport.height * 0.14),
+        },
+    source: isFinitePoint(measured.source)
+      ? measured.source
+      : fallbackChapterPoint(transition, "source", viewport),
+    target: isFinitePoint(measured.destination)
+      ? measured.destination
+      : fallbackChapterPoint(transition, "destination", viewport),
+    width: viewport.width,
   };
 }
 
-function formatCoordinate(value: number): string {
-  return Number(value.toFixed(3)).toString();
-}
-
-function createCubicPath(
-  start: AnchorPoint,
-  end: AnchorPoint,
-  travelDistance: number,
-): string {
-  const horizontalDirection = end.x < start.x ? -1 : 1;
-  const firstControlX = start.x + horizontalDirection * travelDistance;
-  const secondControlX = end.x - horizontalDirection * travelDistance;
-
-  return [
-    `M ${formatCoordinate(start.x)} ${formatCoordinate(start.y)}`,
-    `C ${formatCoordinate(firstControlX)} ${formatCoordinate(start.y)}`,
-    `${formatCoordinate(secondControlX)} ${formatCoordinate(end.y)}`,
-    `${formatCoordinate(end.x)} ${formatCoordinate(end.y)}`,
-  ].join(" ");
-}
-
-export function createTransitionSegments(
-  transition: ScoreTransition,
-  geometry: ResolvedTransitionGeometry,
-): readonly TransitionSegment[] {
-  if (
-    transition.mode === "neutral" ||
-    !geometry.source ||
-    !geometry.destination
-  ) {
+export function resolveTransitionSegments(
+  geometry: ScoreTransitionGeometry,
+  mode: TransitionMode,
+): readonly ScoreTransitionSegment[] {
+  if (mode === "neutral") {
     return [];
   }
 
-  if (transition.mode === "home-pivot") {
+  if (mode !== "home-pivot") {
     return [
       {
-        id: "pivot-in",
-        path: createCubicPath(
-          geometry.source,
-          geometry.pivot,
-          geometry.travelDistance / 2,
-        ),
+        end: geometry.target,
+        id: "direct",
         start: geometry.source,
-        end: geometry.pivot,
-      },
-      {
-        id: "pivot-out",
-        path: createCubicPath(
-          geometry.pivot,
-          geometry.destination,
-          geometry.travelDistance / 2,
-        ),
-        start: geometry.pivot,
-        end: geometry.destination,
       },
     ];
   }
 
   return [
-    {
-      id: "primary",
-      path: createCubicPath(
-        geometry.source,
-        geometry.destination,
-        geometry.travelDistance,
-      ),
-      start: geometry.source,
-      end: geometry.destination,
-    },
+    { end: geometry.pivot, id: "to-home", start: geometry.source },
+    { end: geometry.target, id: "from-home", start: geometry.pivot },
   ];
+}
+
+export function createScoreTransitionPath(
+  start: ViewportPoint,
+  end: ViewportPoint,
+  offset: number,
+  segmentIndex: number,
+): string {
+  const distance = Math.abs(end.x - start.x);
+  const curve = Math.min(72, Math.max(24, distance * 0.09));
+  const curveSign = segmentIndex % 2 === 0 ? 1 : -1;
+  const startY = start.y + offset;
+  const endY = end.y + offset;
+
+  return [
+    `M ${start.x} ${startY}`,
+    `C ${start.x + (end.x - start.x) * 0.32} ${startY + curve * curveSign},`,
+    `${start.x + (end.x - start.x) * 0.68} ${endY - curve * curveSign},`,
+    `${end.x} ${endY}`,
+  ].join(" ");
+}
+
+export function pointBetween(
+  start: ViewportPoint,
+  end: ViewportPoint,
+  progress: number,
+): ViewportPoint {
+  return {
+    x: start.x + (end.x - start.x) * progress,
+    y: start.y + (end.y - start.y) * progress,
+  };
 }

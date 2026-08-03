@@ -120,6 +120,7 @@ describe("evaluateLinkEligibility", () => {
     [{ href: null }, "missing-href"],
     [{ href: "  " }, "missing-href"],
     [{ href: "/portfolio", download: true }, "download"],
+    [{ href: "/portfolio", enhancementOptOut: true }, "explicit-native"],
     [{ href: "/portfolio", target: "_blank" }, "new-context"],
     [{ href: "https://app.wflyer.com.br" }, "external-origin"],
     [{ href: "mailto:davi.benucci@wflyer.com.br" }, "unsupported-protocol"],

@@ -126,3 +126,14 @@ A implementação deve expor modo determinístico para:
 - informar origem, destino e direção via atributo `data-*` em ambiente de teste;
 - desativar randomização de notas;
 - capturar screenshot sem dependência de relógio real.
+
+## 11. Phase 05 audit reconciliation
+
+The delegated coordinator evaluates eligible main-chapter anchors during capture. An anchor that must retain native behavior declares `data-score-transition="native"`; this explicit contract is observable before descendant bubble handlers and does not depend on event-ordering assumptions. Modified activations, downloads, external destinations, hashes, non-self targets, and events already cancelled before capture remain native as documented elsewhere.
+
+Rapid activation has two distinct history rules:
+
+- before the first destination commits, retain only the latest pending destination and do not preserve a route that was never available to the visitor;
+- after a destination commits, any continued chapter navigation creates a new history entry, even while the incoming animation is still settling, so Back returns through every committed chapter.
+
+DOM measurement stays in the experience coordinator. Anchor-kind selection, manifest fallback, Home-pivot fallback, segment topology, SVG path construction, and point interpolation use the single pure runtime geometry module that is covered directly by unit tests.

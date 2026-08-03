@@ -38,6 +38,7 @@ vi.mock("gsap", () => ({
 
 describe("SiteExperienceShell", () => {
   beforeEach(() => {
+    vi.clearAllMocks();
     runtimeMocks.pathname = "/";
     window.history.replaceState(null, "", "/");
     Object.defineProperties(window, {
@@ -127,6 +128,36 @@ describe("SiteExperienceShell", () => {
 
     expect(preventedByShell).toBe(false);
     expect(runtimeMocks.push).not.toHaveBeenCalled();
+  });
+
+  it("leaves an explicitly native chapter link untouched during capture", () => {
+    const { container } = render(
+      <SiteExperienceShell>
+        <main id="main-content" tabIndex={-1}>
+          <a data-score-transition="native" href="/sobre">
+            Destination
+          </a>
+        </main>
+      </SiteExperienceShell>,
+    );
+    const link = container.querySelector<HTMLAnchorElement>("a")!;
+    const click = new MouseEvent("click", {
+      bubbles: true,
+      cancelable: true,
+    });
+    let preventedByShell = true;
+    link.addEventListener("click", (event) => {
+      preventedByShell = event.defaultPrevented;
+      event.preventDefault();
+    });
+
+    link.dispatchEvent(click);
+
+    expect(preventedByShell).toBe(false);
+    expect(runtimeMocks.push).not.toHaveBeenCalled();
+    expect(
+      container.querySelector("[data-site-experience]"),
+    ).toHaveAttribute("data-transition-phase", "idle");
   });
 
   it("enhances a valid chapter link and requests the route during prepare", () => {

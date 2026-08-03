@@ -402,6 +402,47 @@ test("the latest rapid activation supersedes one pending destination", async ({
   await expect(page).toHaveURL(/\/$/u);
 });
 
+test("a destination committed before continued navigation remains in history", async ({
+  page,
+}) => {
+  await page.goto("/sobre");
+  await warmRoute(page, "/servicos");
+  await warmRoute(page, "/processo");
+  const initialHistoryLength = await page.evaluate(
+    () => window.history.length,
+  );
+  await holdAt(page, "completion");
+
+  await chapterControl(page, "next").click();
+  await waitForCheckpoint(page, "completion");
+  await expect(page).toHaveURL(/\/servicos$/u);
+  const committedRequest = await transitionSnapshot(page);
+
+  await chapterControl(page, "next").click();
+  await expectTransitionMetadata(page, {
+    destination: "/processo",
+    direction: "right",
+    mode: "adjacent-score",
+    source: "/servicos",
+    sourceKind: "link",
+  });
+  await waitForCheckpoint(page, "completion");
+  const continuedRequest = await transitionSnapshot(page);
+  expect(continuedRequest.requestId).not.toBe(committedRequest.requestId);
+
+  await releaseTransition(page);
+  await waitForSettledTransition(page, "/processo");
+  expect(await page.evaluate(() => window.history.length)).toBe(
+    initialHistoryLength + 2,
+  );
+
+  await page.goBack();
+  await waitForSettledTransition(page, "/servicos", ["success", "recovered"]);
+  await page.goBack();
+  await waitForSettledTransition(page, "/sobre", ["success", "recovered"]);
+  await expectSafeSettledDocument(page);
+});
+
 test("Enter activates chapter navigation and transfers focus once to main", async ({
   page,
 }) => {

@@ -1,24 +1,20 @@
 "use client";
 
 import type {
+  ScoreTransitionGeometry,
   TransitionDirection,
   TransitionMode,
+  ViewportPoint,
+} from "@/lib/motion";
+import {
+  createScoreTransitionPath,
+  pointBetween,
+  resolveTransitionSegments,
 } from "@/lib/motion";
 
 import styles from "./experience.module.css";
 
-export interface ViewportPoint {
-  readonly x: number;
-  readonly y: number;
-}
-
-export interface ScoreTransitionGeometry {
-  readonly height: number;
-  readonly pivot?: ViewportPoint;
-  readonly source: ViewportPoint;
-  readonly target: ViewportPoint;
-  readonly width: number;
-}
+export type { ScoreTransitionGeometry, ViewportPoint } from "@/lib/motion";
 
 export interface ScoreTransitionLayerProps {
   readonly active: boolean;
@@ -29,70 +25,8 @@ export interface ScoreTransitionLayerProps {
   readonly reducedMotion: boolean;
 }
 
-interface SegmentGeometry {
-  readonly end: ViewportPoint;
-  readonly id: string;
-  readonly start: ViewportPoint;
-}
-
 const STAFF_LINE_OFFSETS = [-12, -6, 0, 6, 12] as const;
 const NOTE_POSITIONS = [0.28, 0.58, 0.82] as const;
-
-function resolveSegments(
-  geometry: ScoreTransitionGeometry,
-  mode: TransitionMode,
-): readonly SegmentGeometry[] {
-  if (mode !== "home-pivot") {
-    return [
-      {
-        end: geometry.target,
-        id: "direct",
-        start: geometry.source,
-      },
-    ];
-  }
-
-  const pivot = geometry.pivot ?? {
-    x: geometry.width / 2,
-    y: Math.min(geometry.height * 0.18, 120),
-  };
-
-  return [
-    { end: pivot, id: "to-home", start: geometry.source },
-    { end: geometry.target, id: "from-home", start: pivot },
-  ];
-}
-
-function createPath(
-  start: ViewportPoint,
-  end: ViewportPoint,
-  offset: number,
-  segmentIndex: number,
-): string {
-  const distance = Math.abs(end.x - start.x);
-  const curve = Math.min(72, Math.max(24, distance * 0.09));
-  const curveSign = segmentIndex % 2 === 0 ? 1 : -1;
-  const startY = start.y + offset;
-  const endY = end.y + offset;
-
-  return [
-    `M ${start.x} ${startY}`,
-    `C ${start.x + (end.x - start.x) * 0.32} ${startY + curve * curveSign},`,
-    `${start.x + (end.x - start.x) * 0.68} ${endY - curve * curveSign},`,
-    `${end.x} ${endY}`,
-  ].join(" ");
-}
-
-function pointBetween(
-  start: ViewportPoint,
-  end: ViewportPoint,
-  progress: number,
-): ViewportPoint {
-  return {
-    x: start.x + (end.x - start.x) * progress,
-    y: start.y + (end.y - start.y) * progress,
-  };
-}
 
 function TransitionNote({
   point,
@@ -123,7 +57,7 @@ export function ScoreTransitionLayer({
 }: ScoreTransitionLayerProps) {
   const segments =
     active && geometry && !reducedMotion && mode !== "neutral"
-      ? resolveSegments(geometry, mode)
+      ? resolveTransitionSegments(geometry, mode)
       : [];
 
   return (
@@ -152,7 +86,7 @@ export function ScoreTransitionLayer({
               {STAFF_LINE_OFFSETS.map((offset) => (
                 <path
                   className={styles.transitionStaffLine}
-                  d={createPath(
+                  d={createScoreTransitionPath(
                     segment.start,
                     segment.end,
                     offset,

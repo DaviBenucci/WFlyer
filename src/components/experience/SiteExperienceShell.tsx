@@ -18,27 +18,28 @@ import {
   classifyScoreTransition,
   createCleanupRegistry,
   createInitialNavigationLifecycleState,
+  destinationAnchorKind,
   evaluateLinkEligibility,
   getTransitionDurationMs,
   navigationLifecycleReducer,
   NAVIGATION_TIMING_MS,
   nextNavigationRequestId,
   normalizePathname,
+  resolveTransitionGeometry,
   scheduleRecoveryTimeout,
+  sourceAnchorKind,
   type AnchorPoint,
   type CleanupRegistry,
   type NavigationRecoveryReason,
   type NavigationRequest,
+  type ScoreTransitionGeometry,
   type ScoreTransition,
   type TransitionDirection,
   type TransitionMode,
+  type ViewportPoint,
 } from "@/lib/motion";
 
-import {
-  ScoreTransitionLayer,
-  type ScoreTransitionGeometry,
-  type ViewportPoint,
-} from "./ScoreTransitionLayer";
+import { ScoreTransitionLayer } from "./ScoreTransitionLayer";
 import styles from "./experience.module.css";
 
 gsap.registerPlugin(useGSAP);
@@ -216,10 +217,7 @@ function measureScoreAnchor(
   );
 }
 
-function measureHomePivot(viewport: {
-  readonly height: number;
-  readonly width: number;
-}): ViewportPoint {
+function measureHomePivot(): ViewportPoint | null {
   const pivot = visibleElement(
     document.querySelectorAll<HTMLElement>("[data-home-pivot]"),
   );
@@ -227,89 +225,7 @@ function measureHomePivot(viewport: {
 
   return rect
     ? { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 }
-    : { x: viewport.width / 2, y: Math.min(120, viewport.height * 0.14) };
-}
-
-function edgeFallbackPoint(
-  edge: "center" | "left" | "right",
-  anchorY: number,
-  viewport: { readonly height: number; readonly width: number },
-): ViewportPoint {
-  return {
-    x:
-      edge === "left"
-        ? 0
-        : edge === "right"
-          ? viewport.width
-          : viewport.width / 2,
-    y: viewport.height * Math.min(1, Math.max(0, anchorY)),
-  };
-}
-
-function movesAwayFromHome(transition: ScoreTransition): boolean {
-  const sourceCoordinate = transition.sourceChapter?.coordinate ?? 0;
-  const destinationCoordinate =
-    transition.destinationChapter?.coordinate ?? 0;
-
-  return Math.abs(destinationCoordinate) > Math.abs(sourceCoordinate);
-}
-
-function sourceAnchorKind(
-  transition: ScoreTransition,
-): "entry" | "exit" {
-  if (transition.mode === "home-pivot") {
-    return "entry";
-  }
-
-  return movesAwayFromHome(transition) ? "exit" : "entry";
-}
-
-function destinationAnchorKind(
-  transition: ScoreTransition,
-): "entry" | "exit" {
-  if (transition.mode === "home-pivot") {
-    return "entry";
-  }
-
-  return movesAwayFromHome(transition) ? "entry" : "exit";
-}
-
-function fallbackSourcePoint(
-  transition: ScoreTransition,
-  viewport: { readonly height: number; readonly width: number },
-): ViewportPoint {
-  const chapter = transition.sourceChapter;
-
-  if (!chapter) {
-    return { x: viewport.width / 2, y: viewport.height / 2 };
-  }
-
-  const kind = sourceAnchorKind(transition);
-
-  return edgeFallbackPoint(
-    kind === "entry" ? chapter.entry_edge : chapter.exit_edge,
-    kind === "entry" ? chapter.entry_anchor_y : chapter.exit_anchor_y,
-    viewport,
-  );
-}
-
-function fallbackDestinationPoint(
-  transition: ScoreTransition,
-  viewport: { readonly height: number; readonly width: number },
-): ViewportPoint {
-  const chapter = transition.destinationChapter;
-
-  if (!chapter) {
-    return { x: viewport.width / 2, y: viewport.height / 2 };
-  }
-
-  const kind = destinationAnchorKind(transition);
-
-  return edgeFallbackPoint(
-    kind === "entry" ? chapter.entry_edge : chapter.exit_edge,
-    kind === "entry" ? chapter.entry_anchor_y : chapter.exit_anchor_y,
-    viewport,
-  );
+    : null;
 }
 
 function resolveGeometry(
@@ -319,14 +235,11 @@ function resolveGeometry(
 ): ScoreTransitionGeometry {
   const viewport = currentViewport();
 
-  return {
-    height: viewport.height,
-    pivot: measureHomePivot(viewport),
-    source: sourcePoint ?? fallbackSourcePoint(transition, viewport),
-    target:
-      destinationPoint ?? fallbackDestinationPoint(transition, viewport),
-    width: viewport.width,
-  };
+  return resolveTransitionGeometry(transition, viewport, {
+    destination: destinationPoint ?? null,
+    pivot: measureHomePivot(),
+    source: sourcePoint,
+  });
 }
 
 function transitionHref(absoluteHref: string): string {
@@ -1008,7 +921,7 @@ export function SiteExperienceShell({
     });
     startRequest(
       pending,
-      active.committed ? "replace" : "push",
+      "push",
       true,
     );
   };
@@ -1044,6 +957,7 @@ export function SiteExperienceShell({
       },
       {
         download: anchor.hasAttribute("download"),
+        enhancementOptOut: anchor.dataset.scoreTransition === "native",
         href: anchor.getAttribute("href"),
         target: anchor.getAttribute("target"),
       },

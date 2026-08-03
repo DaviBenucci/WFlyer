@@ -13,6 +13,7 @@ export interface LinkCandidate {
   readonly href: string | null | undefined;
   readonly target?: string | null;
   readonly download?: boolean;
+  readonly enhancementOptOut?: boolean;
 }
 
 export type LinkIneligibilityReason =
@@ -21,6 +22,7 @@ export type LinkIneligibilityReason =
   | "modified-activation"
   | "missing-href"
   | "download"
+  | "explicit-native"
   | "new-context"
   | "invalid-current-url"
   | "invalid-destination-url"
@@ -113,6 +115,10 @@ export function evaluateLinkEligibility(
 
   if (link.download) {
     return ineligible("download");
+  }
+
+  if (link.enhancementOptOut) {
+    return ineligible("explicit-native");
   }
 
   const target = link.target?.trim().toLowerCase();

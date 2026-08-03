@@ -1,9 +1,12 @@
 # score-transition-navigation Specification
 
 ## Purpose
+
 Provide predictable visual continuity between chapters of the double score
 without rendering intermediate route content or exceeding the motion budget.
+
 ## Requirements
+
 ### Requirement: Transition topology is deterministic
 The site SHALL resolve transition mode and direction exclusively from the
 normative metadata of the source and destination routes.
@@ -99,14 +102,25 @@ finish within 900 ms, and recovery MUST release a usable destination within
 - **WHEN** coordinated animation cannot continue
 - **THEN** temporary styles and overlay are cleared and the destination becomes usable within 1,100 ms
 
+### Requirement: Explicit native navigation opt-out
+Any anchor inside the site experience MAY declare that its activation MUST remain native and MUST NOT be intercepted by the score-transition coordinator, without changing the behavior of other eligible chapter links.
+
+#### Scenario: Anchor owns its activation
+- **WHEN** an otherwise eligible main-chapter anchor declares the documented native-navigation opt-out
+- **THEN** the coordinator leaves the event and browser history untouched and creates no transition request, overlay, timer, or animation
+
 ### Requirement: Concurrent navigation is bounded and recoverable
-The site MUST retain at most one pending destination and SHALL cleanly supersede
-or cancel stale animation work.
+The site MUST retain at most one pending destination, SHALL cleanly supersede or cancel stale animation work, and MUST preserve every main chapter that has already committed and become available as a distinct browser-history entry.
 
 #### Scenario: Rapid valid navigation
 - **GIVEN** a transition has not consolidated
-- **WHEN** another eligible destination is activated
-- **THEN** the latest valid destination supersedes pending work without an unbounded queue or orphaned overlay
+- **WHEN** another eligible destination is activated before the first destination commits
+- **THEN** the latest valid destination supersedes pending work without an unbounded queue, orphaned overlay, or artificial intermediate history entry
+
+#### Scenario: Visitor continues after destination commit
+- **GIVEN** the first destination has committed while its incoming animation is still active
+- **WHEN** the visitor activates another eligible main chapter
+- **THEN** the committed destination remains in history and Back returns to it before returning to the original source chapter
 
 #### Scenario: Interrupted transition
 - **GIVEN** a running timeline
@@ -161,4 +175,3 @@ randomness or public query parameters.
 - **GIVEN** the internal test controller is enabled outside production
 - **WHEN** a start, midpoint, or completion checkpoint is requested
 - **THEN** the phase is observable through stable `data-*` metadata and the decorative geometry is deterministic
-
