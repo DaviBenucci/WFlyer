@@ -440,10 +440,10 @@ describe("release workflows", () => {
     expect(environmentExample).not.toContain("https://staging.wflyer.com.br");
     expect(environmentExample).not.toContain("https://wflyer.com.br");
     expect(release).toContain(
-      "inject the five Contact server values into its Node.js runtime",
+      "Configure the ${TARGET_ENVIRONMENT} environment selector, public Turnstile build key, and five Contact server values explicitly in Napoleon",
     );
     expect(release).not.toContain(
-      "inject the same Environment secrets into its Node.js runtime",
+      "inject the five Contact server values into its Node.js runtime",
     );
   });
 
@@ -488,6 +488,43 @@ describe("release workflows", () => {
     expect(candidateUpload).toContain("steps.manifest.outputs.path");
   });
 
+  it("keeps the Napoleon Git branch handoff read-only and SHA-bound", () => {
+    const ciTriggers = ci.slice(0, ci.indexOf("permissions:"));
+    const requestGate = step(release, "Enforce branch and homologation gates");
+    const handoff = step(release, "Record Napoleon handoff");
+
+    expect(ciTriggers).toContain("- develop/site-institucional");
+    expect(requestGate).toContain(
+      '"${RELEASE_REF}" != "develop/site-institucional"',
+    );
+    expect(requestGate).toContain(
+      "Staging candidates must use develop/site-institucional.",
+    );
+
+    for (const workflowSource of [ci, release]) {
+      expect(workflowSource).toMatch(/^permissions:\n  contents: read$/mu);
+      expect(workflowSource).not.toMatch(/^\s+[\w-]+:\s*write\s*$/mu);
+      const checkoutCount =
+        workflowSource.match(/uses: actions\/checkout@/gu)?.length ?? 0;
+      const nonPersistedCredentialCount =
+        workflowSource.match(/persist-credentials: false/gu)?.length ?? 0;
+      expect(nonPersistedCredentialCount).toBe(checkoutCount);
+      expect(workflowSource).not.toMatch(/^\s*git (?:commit|push)\b/mu);
+    }
+
+    expect(handoff).toContain("RELEASE_REF: ${{ inputs.release_ref }}");
+    expect(handoff).toContain(
+      "GitHub Actions did not create/push a commit or call a deployment endpoint.",
+    );
+    expect(handoff).toContain(
+      "selected branch head, this green run, and the manifest identify",
+    );
+    expect(handoff).toContain(
+      "Keep that branch head unchanged until Napoleon records the same selected SHA",
+    );
+    expect(handoff).toContain("GitHub Environment values are not transferred");
+  });
+
   it("uses the packageManager pnpm version in every workflow job", () => {
     const packageManager = (JSON.parse(packageJson) as {
       packageManager: string;
@@ -525,7 +562,9 @@ describe("release workflows", () => {
   });
 
   it("performs no invented Napoleon, SSH, webhook, or DNS deployment", () => {
-    expect(release).toContain("No deployment endpoint was called.");
+    expect(release).toContain(
+      "GitHub Actions did not create/push a commit or call a deployment endpoint.",
+    );
     expect(release).not.toMatch(
       /NAPOLEON_(?:DEPLOY|SSH)|\bssh\b|\bscp\b|deploy[_-]?webhook|cloudflare.*(?:put|post|delete)/iu,
     );

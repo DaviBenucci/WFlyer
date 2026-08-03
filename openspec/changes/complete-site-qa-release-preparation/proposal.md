@@ -20,8 +20,10 @@ Davi Benucci's production approval as explicit gates.
   leaving approved production builds indexable.
 - Strengthen the manual release-candidate workflow with immutable revision and
   checksum metadata, environment-scoped configuration checks, safe artifact
-  retention, and production request gates without inventing or invoking a
-  Napoleon deployment mechanism.
+  retention, and production request gates. Record the owner-confirmed Napoleon
+  integration as a Git pull/build from the environment's dedicated branch,
+  without giving GitHub Actions write access or inventing an API, webhook, SSH
+  transport, or workflow-authored commit.
 - Reconcile deployment, runtime-secret, QA, security, observability, rollback,
   staging, and homologation documentation in English with exact external
   blockers and rerun instructions.
@@ -51,8 +53,9 @@ None.
 ## Impact
 
 The change affects GitHub Actions, package scripts, deployment/SEO
-configuration, focused tests, and technical operations/QA documentation. It
-does not change public product scope, contact semantics, DNS, Cloudflare,
-Napoleon, the musical application, production data, or external provider state.
-Rollback consists of reverting the Phase 09 commit; existing standalone builds
-and the already completed site remain operable.
+configuration, focused tests, branch-handoff rules, and technical operations/
+QA documentation. It does not change public product scope, contact semantics,
+DNS, Cloudflare, Napoleon settings, the musical application, production data,
+or external provider state. Rollback consists of selecting the prior verified
+institutional revision through the inventoried Napoleon rollback control;
+existing standalone builds and the already completed site remain operable.

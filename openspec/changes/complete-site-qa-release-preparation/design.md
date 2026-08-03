@@ -4,11 +4,12 @@ See `proposal.md` for motivation. The site has durable historical phase
 checkpoints and three archived 2026-08-03 corrections, but the final-current-
 revision closure is still pending. It produces a Next.js standalone package
 and has comprehensive local tests plus a manual workflow that intentionally
-stops at artifact handoff. The actual Napoleon integration,
-GitHub Environment settings, provider credentials, Cloudflare inventory, and
-staging hostname are unavailable and must not be invented. ADR-018, ADR-020,
-ADR-021, ADR-023, the publication operations record, and `AGENTS.md` control
-the boundary.
+stops at artifact handoff. The owner has now confirmed that Napoleon can pull
+and build a selected GitHub branch. GitHub Environment settings, provider
+credentials, the precise Napoleon build/start and environment-scope controls,
+Cloudflare inventory, and the staging hostname remain unavailable and must not
+be invented. ADR-018, ADR-020, ADR-021, ADR-023, the publication operations
+record, and `AGENTS.md` control the boundary.
 
 ## Goals / Non-Goals
 
@@ -20,14 +21,17 @@ the boundary.
   robots, and header defenses.
 - Produce an immutable, checksummed, non-secret candidate plus exact external
   handoff and rollback documentation.
+- Bind the Git-based staging handoff to `develop/site-institucional`, its full
+  commit SHA, and the CI result for that exact SHA without workflow-authored
+  commits or write credentials.
 - Leave every unavailable external prerequisite named, located, and paired with
   a rerun command.
 
 **Non-Goals:**
 
 - Deploying to staging or production, creating GitHub Environments, registering
-  secrets, configuring Napoleon, changing Cloudflare/DNS, enabling HSTS/CSP
-  enforcement, or validating provider delivery.
+  secrets, configuring the Napoleon application, changing Cloudflare/DNS,
+  enabling HSTS/CSP enforcement, or validating provider delivery.
 - Merging to `main`, tagging a public release, publishing contact delivery, or
   claiming physical-device, screen-reader, legal, staging, rollback, or
   production validation that did not occur.
@@ -47,11 +51,14 @@ the boundary.
    metadata, and standalone HTTP tests prove production, staging, absent, and
    invalid environment outputs. The latter three fail closed. No test key or
    fake credential is promoted as external provider-validation evidence.
-4. **Artifact handoff, not fictional deployment.** The GitHub workflow keeps its
-   environment-scoped job, pinned actions, immutable SHA archive, and
-   `cancel-in-progress: false`; it adds a machine-readable manifest and stronger
-   environment/ref validation. It still calls no Napoleon endpoint because none
-   is documented.
+4. **Read-only CI plus a Git-branch Napoleon handoff.** GitHub Actions validates
+   the pushed commit and may package its immutable SHA, but retains
+   `contents: read`, `persist-credentials: false`, and no `git push` or commit
+   step. Napoleon's confirmed integration is to pull/build the selected
+   environment branch. For staging that branch is
+   `develop/site-institucional`; its head SHA must match the reviewed CI run and
+   release manifest before the application is pointed or restarted. No API,
+   webhook, SSH transport, or Actions-authored deployment commit is introduced.
 5. **Build and runtime values have separate ownership.** Exactly one public
    Environment value, the Turnstile site key, is required while building the
    pre-rendered contact page. Exactly five server values—the Turnstile secret,
@@ -83,10 +90,17 @@ the boundary.
 - **[Risk] GitHub Environment protection cannot be created from repository
   files** → Document exact settings and keep the workflow job bound to the
   selected Environment so secrets remain inaccessible until approval.
-- **[Risk] Napoleon may pull Git rather than accept an archive** → Treat the
-  archive plus checksum as candidate-integrity evidence, not proof that two
-  independent builds are byte-reproducible, and adapt only after a read-only
-  inventory of the actual application configuration.
+- **[Risk] A branch-tracking Napoleon application can observe a new commit
+  before its CI finishes** → Publish the audited staging SHA while the
+  application is not yet attached, require the exact SHA's CI result to be
+  green, freeze that branch head until Napoleon records the same selected SHA,
+  and only then point/restart Napoleon. Any intervening branch advance
+  invalidates the handoff. For later releases, advance the tracked branch only
+  through the reviewed staging promotion procedure.
+- **[Risk] A Napoleon source build is independent from the checksummed Actions
+  archive** → Use the branch head/full SHA as deployment identity, retain the
+  archive as quality evidence, record the exact Napoleon build output, and do
+  not claim byte identity between the two builds.
 - **[Risk] Report-only CSP and absent HSTS are less strict than the intended
   production policy** → Observe CSP reports and validate all hostnames/HTTPS
   before separate owner-approved enforcement.
@@ -95,23 +109,31 @@ the boundary.
 
 ## Migration Plan
 
-1. Merge the reviewed Phase 09 repository change into the staging branch only
-   after CI passes.
+1. Publish the audited commit as `develop/site-institucional` while no Napoleon
+   application is yet attached to that branch, then require the CI run for its
+   full SHA to pass.
 2. Configure GitHub `staging` and `production` Environments and their scoped
    values; require Davi Benucci for production.
-3. Inventory Napoleon and Cloudflare read-only, then configure a separate
-   staging Node.js application with `WFLYER_DEPLOYMENT_ENVIRONMENT=staging`.
-4. Run the documented staging matrix and obtain human homologation.
-5. Only after explicit approval, prepare the production candidate with
+3. Inventory Napoleon and Cloudflare read-only. Record the Git repository,
+   staging branch, exact head SHA, build/start commands, build/runtime variable
+   scopes, process user, port, health check, restart, and rollback controls.
+4. Configure a separate Napoleon staging Node.js application to pull only
+   `develop/site-institucional` with
+   `WFLYER_DEPLOYMENT_ENVIRONMENT=staging`, then verify that its selected SHA
+   equals the green CI/manifest SHA before starting it.
+5. Run the documented staging matrix and obtain human homologation.
+6. Only after explicit approval, prepare the production candidate with
    `WFLYER_DEPLOYMENT_ENVIRONMENT=production` and the verified deployment path.
-6. Roll back by selecting the prior institutional commit/artifact, restarting
-   only that Napoleon application, running smoke checks, and confirming
+7. Roll back by selecting the prior institutional commit through the verified
+   Napoleon rollback control, restarting only that application, running smoke
+   checks, and confirming
    `app.wflyer.com.br` and mail records remain unchanged.
 
 ## Open Questions
 
-- What deployment mechanism does the existing Napoleon account expose: Git
-  pull, artifact upload, webhook, or another documented path?
+- What exact build command, standalone start command, environment-variable
+  scope, port/health contract, and rollback selector does the Napoleon Node.js
+  application expose for the confirmed Git-branch integration?
 - What staging hostname and Cloudflare access scope will Davi Benucci approve?
 - Which institutional commit is the previous known-good external release after
   the first successful staging and production deployment?

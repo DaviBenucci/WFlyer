@@ -7,7 +7,7 @@
 ## Approved topology
 
 ```text
-GitHub revision or checksummed candidate
+GitHub environment branch at a validated full commit SHA
   → Napoleon Node.js application
   → Cloudflare DNS / proxy / HTTPS / WAF
   → wflyer.com.br
@@ -132,16 +132,27 @@ requires an owner-approved edge rate rule.
 
 ## Napoleon handoff
 
-The repository does not know whether Napoleon uses Git pull, artifact upload,
-a documented webhook, or another mechanism. The manual workflow therefore
-stops after producing an environment-specific immutable standalone archive,
-basename-compatible SHA-256 file, and non-secret release manifest. The
-manifest generator hashes the actual archive and rejects a mismatched checksum
-before writing output. It validates the repository, resolved revision, source
-ref, environment, workflow run ID, attempt and canonical run URL, archive,
-checksum, creation time, and `deployment.performed=false` as one provenance
-record. Add a deployment step only after the actual method is inspected and
-recorded; do not invent an API, token, SSH process, or hook.
+The owner-confirmed Napoleon integration pulls and builds a selected GitHub
+branch. Staging uses `develop/site-institucional`; production remains limited
+to `main` after explicit homologation. A push triggers read-only GitHub Actions
+CI for that commit, but Actions does not create or advance a deployment branch.
+
+The manual workflow continues to produce an environment-specific immutable
+standalone archive, basename-compatible SHA-256 file, and non-secret release
+manifest as quality/provenance evidence. The manifest generator hashes the
+actual archive and validates repository, resolved revision, source ref,
+environment, workflow run ID, attempt and canonical run URL, archive, checksum,
+creation time, and `deployment.performed=false`. Before Napoleon is attached or
+restarted, record that its selected branch head equals the full green CI and
+manifest SHA. A Napoleon source build is independent from the Actions archive,
+so do not claim byte identity between them. Keep the environment branch at that
+head until Napoleon records the same selected SHA. If it advances first, abort
+the handoff and repeat CI/candidate validation for the new head.
+
+The remaining Napoleon inventory must identify its build command, standalone
+start command, build/runtime variable scopes, port, health check, process user,
+restart behavior, and rollback selector. Until those controls are observed, do
+not invent an API, token, SSH process, hook, or executable deployment command.
 
 ## Completed local verification
 

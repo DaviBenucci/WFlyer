@@ -32,6 +32,12 @@ on floating hosted runners are byte-reproducible. A byte-identity statement is
 permitted only after two packaging executions over the same already-prepared
 standalone tree produce the same digest, with that scope recorded explicitly.
 
+Napoleon does not consume this archive directly. The owner-confirmed
+integration pulls/builds the environment branch from GitHub. The deployed
+identity is therefore the full head SHA selected by Napoleon; the Actions
+archive and manifest remain independent quality/provenance evidence for that
+same source SHA.
+
 Staging uses `develop/site-institucional`. After staging passes and Davi
 Benucci approves the exact revision, the release tag strategy is
 `wflyer-vX.Y.Z-rc.N`, followed by `wflyer-vX.Y.Z` only for the authorized
@@ -50,9 +56,15 @@ approval.
 
 ### Napoleon
 
-- the actual deployment mechanism is recorded;
+- source integration is Git pull/build from
+  `git@github.com:DaviBenucci/WFlyer.git`;
+- staging selects only `develop/site-institucional` after that branch's exact
+  head SHA has a green CI run and matching release manifest;
 - staging is a separate Node.js application using Node 24 and the standalone
   start path;
+- the exact build command, standalone start command, build/runtime variable
+  scopes, working directory, port, health check, process user, restart
+  behavior, and rollback selector are recorded from the Napoleon panel;
 - runtime values are configured independently of Actions;
 - the process user is isolated and non-administrative;
 - health/restart behavior and the prior revision selector are known.
@@ -79,22 +91,36 @@ institutional release can claim preservation of the separate application.
 
 ## 3. Prepare the staging candidate
 
-1. Make the reviewed Phase 09 revision available on
-   `develop/site-institucional` without merging to `main`.
-2. In GitHub Actions, dispatch **Prepare Napoleon release** with:
+1. Publish the reviewed revision as `develop/site-institucional` without
+   merging to `main`, while no Napoleon application is yet attached to that
+   branch.
+2. Wait for the ordinary **CI** workflow triggered by that push and record a
+   green result for the branch's full head SHA. GitHub Actions validates the
+   pushed commit; it does not create or push another commit.
+3. In GitHub Actions, dispatch **Prepare Napoleon release** with:
    `environment=staging`,
    `release_ref=develop/site-institucional`, and no production confirmation.
-3. Confirm both complete quality jobs pass before the environment-scoped job
+4. Confirm both complete quality jobs pass before the environment-scoped job
    starts.
-4. Download the archive, checksum, and manifest; verify repository,
+5. Download the archive, checksum, and manifest; verify repository,
    environment, source ref, revision, run ID, run attempt, canonical run URL,
    artifact basename, and digest together; run
    `sha256sum -c <archive-name>.sha256` from the download directory; and
    confirm that the manifest says no deployment occurred.
-5. Transfer or select that exact revision through the verified Napoleon method.
-6. Confirm the selected artifact was built with
-   `WFLYER_DEPLOYMENT_ENVIRONMENT=staging`, configure the staging runtime
-   values, then start or restart only the institutional staging application.
+6. Confirm `git ls-remote origin refs/heads/develop/site-institucional`, the
+   green CI run, and the manifest all identify the same full SHA.
+7. Freeze that branch head until Napoleon records the same selected SHA. If the
+   head changes first, abort this handoff and repeat CI/candidate validation for
+   the new full SHA.
+8. In Napoleon, select the repository and
+   `develop/site-institucional`; record the observed build/start and variable-
+   scope controls before entering values or starting the application.
+9. Configure `WFLYER_DEPLOYMENT_ENVIRONMENT=staging`, ensure the build derives
+   `WFLYER_BUILD_ID` from the selected full Git SHA, configure the staging
+   public Turnstile key and five Contact runtime values, then start or restart
+   only the institutional staging application. If build and runtime values
+   cannot be scoped separately, inspect the resulting server/client output for
+   credential values before accepting staging.
 
 ## 4. External staging validation
 
@@ -104,9 +130,10 @@ run `git rev-parse HEAD`, confirm exact equality, and confirm
 `git status --porcelain` is empty. Do not run a newer worktree's tests against
 an older candidate and describe them as revision-specific evidence.
 
-Record the staging URL, manifest, revision, tester, date, browser/device, and
-result. The staging report must also record the operator's confirmation that
-the Napoleon application and host were selected from that same manifest/SHA.
+Record the staging URL, manifest, branch head, revision, tester, date,
+browser/device, and result. The staging report must also record the operator's
+confirmation that the Napoleon application and host were selected from that
+same branch/manifest/SHA.
 The public URL currently exposes no documented revision header or endpoint, so
 URL-to-artifact identity remains an external operational verification; do not
 invent a public header or diagnostic route to claim it. Then run from the clean
@@ -193,7 +220,9 @@ Only after approval:
 3. review the production Environment gate;
 4. verify the candidate has `WFLYER_DEPLOYMENT_ENVIRONMENT=production` and
    passes production indexing smoke;
-5. deploy only through the documented Napoleon method;
+5. point the production Napoleon application only to the approved `main`
+   revision (or select the verified tag if the panel supports tags), confirm
+   its observed SHA, then build/restart through the inventoried controls;
 6. smoke all routes, contact, HTTPS, headers, metadata, sitemap, error states,
    cache, provider delivery, logs, `app.wflyer.com.br`, and mail records;
 7. record the release manifest, operator, start/end time, and observations.
@@ -228,8 +257,8 @@ not mark the checklist item complete before that evidence exists.
 | Blocker | Configuration owner/location | Rerun after resolution |
 |---|---|---|
 | GitHub Environments and values | Repository Settings → Environments | Dispatch `Prepare Napoleon release` for staging |
-| Napoleon application/method/runtime values | Napoleon application settings | Deploy exact candidate, then run section 4 |
-| Staging URL-to-artifact identity | Napoleon application selection plus the release manifest/SHA | Record operator confirmation for the selected application/host and exact manifest; do not infer identity from an undocumented public header |
+| Napoleon build/start/runtime controls | Napoleon application settings | Record source, branch, SHA, commands, variable scopes, port, health, process user, restart, and rollback controls; then run section 4 |
+| Staging URL-to-source identity | Napoleon branch selection plus the release manifest/SHA | Record operator confirmation that `develop/site-institucional`, CI, manifest, selected application, and host identify the same SHA; do not infer identity from an undocumented public header |
 | Cloudflare inventory/staging host/rate rule | Cloudflare read-only inventory, then approved change | Repeat header, HTTPS, cache, WAF/rate, app/mail checks |
 | Independent `app.wflyer.com.br` DNS/availability baseline | Separate application/DNS owner and read-only Cloudflare inventory | Resolve the 2026-08-03 DNS failure cause, then record DNS, HTTPS, and application health before and after staging without mutating the application as part of this release |
 | Turnstile and Resend staging configuration | Provider dashboards and Napoleon runtime | Repeat Contact success/failure/delivery checks |
@@ -237,7 +266,9 @@ not mark the checklist item complete before that evidence exists.
 | Legal and physical accessibility review | Davi Benucci and qualified reviewers | Update reports, then repeat homologation |
 | Production approval | Davi Benucci on exact manifest | Dispatch production candidate workflow only |
 
-The repository-owned closure is green. The current state is
-`CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`; every remaining blocker in the
-table is external. It is not `READY_FOR_HUMAN_HOMOLOGATION` or
-`READY_FOR_PRODUCTION` until deployed staging and owner approval pass.
+The repository-owned validation and controlled publication only to
+`develop/site-institucional` are complete. The exact branch-head CI result must
+still be recorded and pass before Napoleon is pointed to that frozen SHA. The
+state remains `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`; it is not
+`READY_FOR_HUMAN_HOMOLOGATION` or `READY_FOR_PRODUCTION` until deployed staging
+and owner approval pass.

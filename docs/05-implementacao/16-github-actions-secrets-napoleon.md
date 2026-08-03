@@ -2,11 +2,11 @@
 
 ## Ownership boundary
 
-GitHub Actions can validate and build a revision with environment-scoped
-values. Napoleon runs a separate Node.js process and must receive its runtime
-configuration through the hosting mechanism that is actually available. A
-successful Actions build does not prove that the Napoleon process has any
-secret.
+GitHub Actions validates and may package a revision with environment-scoped
+values. Napoleon's owner-confirmed integration independently pulls/builds a
+selected GitHub branch and runs a separate Node.js process. A successful
+Actions build does not transfer any value to that process and does not prove
+that the Napoleon source build selected the same SHA.
 
 ## Required GitHub Environments
 
@@ -54,12 +54,16 @@ Napoleon runtime setting.
 
 For each separate Napoleon Node.js application:
 
-1. record the application name, selected Git revision/artifact, start command,
-   working directory, port contract, runtime user, restart behavior, and
-   rollback control;
-2. configure the five environment-appropriate Contact server values in the
-   Node.js runtime; the public Turnstile site key is already fixed in the
-   environment-specific browser build;
+1. record the application name, `git@github.com:DaviBenucci/WFlyer.git` source,
+   selected environment branch, full branch-head SHA, build command, standalone
+   start command, working directory, port contract, runtime user, health check,
+   restart behavior, and rollback control;
+2. configure `WFLYER_DEPLOYMENT_ENVIRONMENT` for that separate application
+   (`staging` for the currently authorized path; `production` only after
+   homologation), plus the environment-appropriate public Turnstile site key
+   and five Contact server values; ensure the recorded build derives
+   `WFLYER_BUILD_ID` from the selected full Git SHA rather than a manual or
+   mutable value;
 3. keep `TURNSTILE_SECRET_KEY` and `RESEND_API_KEY` server-only;
 4. confirm the Resend sender domain before using
    `davi.benucci@wflyer.com.br`;
@@ -69,11 +73,18 @@ For each separate Napoleon Node.js application:
 7. record who configured the values and when, without copying them into the
    repository or report.
 
-If Napoleon only pulls Git, configure runtime variables in its application
-panel. If it accepts the checksummed artifact, use the manifest revision and
-verify the repository, environment, source ref, workflow run provenance, and
-SHA-256 before extraction. Do not create `NAPOLEON_*` credentials until the
-real integration documents their exact purpose and transport.
+Napoleon pulls Git, so configure the public build value and five server values
+explicitly in its application panel using the environment-appropriate values.
+The GitHub workflow must retain `contents: read`, checkout without persisted
+credentials, and no `git commit`/`git push` step. Before first startup or later
+restart, verify that Napoleon's selected branch head, the green CI run, and the
+release manifest identify the same full SHA. The checksummed Actions artifact
+remains independent quality evidence; it is not the byte source for the
+Napoleon build. Do not advance the environment branch until Napoleon records
+that selected SHA; a changed head invalidates the handoff and requires a new
+green CI/manifest cycle. Do not create `NAPOLEON_*` credentials because this
+integration requires no repository-side deploy token, webhook, or SSH
+transport.
 
 ## CI without provider secrets
 
@@ -101,10 +112,13 @@ dispatched workflow after its quality gates and selected GitHub Environment.
   builds remain non-indexable;
 - unavailable provider: no message is persisted, and the visitor receives a
   recoverable generic error;
-- unknown deployment method: the workflow uploads the candidate and records a
-  pending handoff without external mutation.
+- branch SHA differs from the green CI/manifest SHA: do not attach or restart
+  the Napoleon application;
+- unknown build/start or environment-scope controls: keep the branch handoff
+  pending and invent no command or credential.
 
 Current state: `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`.
-Repository-owned gates are green. GitHub Environment configuration, Napoleon
-runtime/integration inventory, provider verification, and deployed staging are
-the next externally owned gates.
+Repository-owned gates are green and the Git branch mechanism is confirmed.
+GitHub Environment configuration, Napoleon build/start/runtime inventory,
+provider verification, and deployed staging are the next externally owned
+gates.

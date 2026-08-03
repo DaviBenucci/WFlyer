@@ -131,18 +131,35 @@ saved as a correction: current source now implements and tests the client,
 server, Turnstile, and Resend workflow; edge rate limiting, HSTS, provider
 credentials, and CSP enforcement remain external staging gates.
 
-### 4.2 Phase 09 closure refresh
+### 4.2 Phase 09 closure and Graphify 0.9.31 semantic refresh
 
-The final filtered structural refresh re-extracted 221 code files and produced
-3,081 nodes, 4,322 undirected edges, and 328 communities. Relative to the Phase
-08 checkpoint, release-readiness work added 288 nodes, 284 edges, and 41
-communities. The existing `.graphifyignore` and repository wrapper were used;
-no broad workspace, generated-output, or secret-bearing scan was performed.
+The initial Phase 09 closure snapshot contained 3,081 nodes, 4,322 undirected
+edges, and 328 communities. After ADR-024 and the Napoleon branch contract were
+added, the Graphify 0.9.31 refresh re-extracted 95 changed semantic sources and
+the final filtered 189-file code corpus. The semantic fragments contributed
+237 nodes, 282 edges, and 15 hyperedges before merge; replacement and the new
+deduplication pass compacted 202 nodes. After the final two-file semantic
+reconciliation and structural pass, that snapshot contained 2,308 nodes, 3,633
+edges, and 239 communities. The subsequent branch-freeze correction triggered
+one bounded incremental refresh over ten semantic sources and one changed test.
+Its semantic fragments contributed 45 nodes, 79 edges, and 5 hyperedges, while
+AST extraction contributed 4 nodes and 9 edges; replacement deduplicated 6
+exact nodes. The wrapper's final 189-file structural reconciliation restored 6
+additional AST nodes and reclustered the result. The current persisted graph
+contains 2,307 nodes, 3,640 edges, and 247 communities across a filtered
+390-file / approximately 316,259-word report corpus.
 
-`graphify diagnose multigraph` reports 3,081 verified nodes and 4,322 valid
+The decrease is therefore a versioned re-extraction/compaction event, not a
+Phase 09 feature delta and not evidence that repository code was removed. The
+existing `.graphifyignore` and repository wrapper were preserved; no broad
+workspace, generated-output, or secret-bearing scan was performed.
+
+`graphify diagnose multigraph` reports 2,307 verified nodes and 3,640 valid
 edges, with zero missing or dangling endpoints, self-loops, exact duplicates,
 or endpoint-pair collapses. Wrapper validation also verified the standalone
-HTML, filtered source scope, and SHA-256 checksums.
+HTML, filtered source scope, and SHA-256 checksums. During the semantic merge,
+legacy visual-asset hyperedges whose members no longer matched rebuilt node IDs
+were dropped; no persisted ordinary edge failed the final diagnostics.
 
 The new extracted relationships connect deployment selection through
 `deployment.ts`, `layout.tsx`, `robots.ts`, `next.config.ts`, four-mode builds,
@@ -157,27 +174,27 @@ not evidence that external staging or rollback has run.
 
 <!-- GRAPHIFY_COMMUNITIES_START -->
 At the Phase 05 checkpoint the refreshed graph contained 257 communities. The
-current Phase 09 closure contains 328; the generated report may omit thin
+current Graphify 0.9.31 snapshot contains 247; the generated report may omit thin
 communities from its prose without removing them from JSON or standalone HTML.
 
 Current degree-ranked god nodes are:
 
-1. `pages/index.ts` — 58 edges;
-2. `site-content.ts` — 57;
-3. `ui/index.ts` — 52;
-4. `SiteExperienceShell.tsx` — 48;
-5. `StaticPage.tsx` — 40;
-6. `music/index.ts` — 35;
-7. `ArchetypeBlocks.stories.tsx` — 35;
-8. `ArchetypeBlocks.tsx` — 34;
-9. `seo.ts` — 34;
-10. the shared transition-test helper — 31.
+1. the angular winged W_Flyer symbol — 39 edges;
+2. `scripts` — 24;
+3. the custom angular italic W_Flyer wordmark — 23;
+4. `SiteExperienceShell()` — 22;
+5. `LinkButton()` — 20;
+6. `createPageMetadata()` — 18;
+7. `compilerOptions` — 18;
+8. the normative documentation index — 18;
+9. `classifyScoreTransition()` — 16;
+10. the chapter-score manifest — 16.
 
-`SiteExperienceShell.tsx` remains the most central behavioral implementation;
-its larger current degree reflects the accumulated navigation, opening,
-accessibility, and test relationships. Barrel/content nodes rank higher because
-all authorized pages consume them. Centrality was treated as review priority,
-not as proof of missing coverage or permission to refactor.
+`SiteExperienceShell()` remains the most central behavioral implementation.
+The refreshed semantic graph also exposes the brand vectors, operational
+scripts, and normative index as high-degree cross-community nodes. Centrality
+was treated as review priority, not as proof of missing coverage or permission
+to refactor.
 <!-- GRAPHIFY_COMMUNITIES_END -->
 
 Communities are probabilistic groupings. A central node indicates topological
@@ -267,10 +284,17 @@ Four additional queries exercised the release boundary:
    preservation;
 4. coverage connected deployment, Next configuration, release workflow,
    manifest, and public-staging suites to their implementation nodes.
+5. the owner-confirmed Napoleon handoff connected
+   `develop/site-institucional`, the read-only CI workflow, the full release
+   SHA, explicit provider configuration, and public staging validation. The
+   branch integration is now known; the provider-specific build/start,
+   environment-scope, health, and rollback controls still require panel
+   inventory before staging can be claimed.
 
 No duplicate navigation provider, second animation engine, disconnected tablet
 or Contact implementation, stale route mapping, invented deployment mechanism,
-or central changed source file without proportionate focused evidence was found.
+write-enabled deployment automation, or central changed source file without
+proportionate focused evidence was found.
 
 ## 7. Integrity and versioning
 
@@ -291,16 +315,20 @@ stylesheet dependency.
 
 ## 8. Limitations
 
-- The structural refresh uses local AST extraction. Historical semantic nodes
-  are retained until a future full semantic rebuild; corrected query memories
-  and current source resolve the known Phase 05 contradictions.
+- The 0.9.31 semantic refresh replaced every changed document/image source;
+  semantic nodes for untouched sources remain from their last successful
+  extraction. Corrected query memories and current source resolve known
+  historical contradictions.
+- Legacy visual hyperedges with members absent after node-ID replacement were
+  dropped during merge. The persisted graph has no missing/dangling ordinary
+  edges or endpoint collapse, while the approved visual sources remain the
+  normative evidence.
 - Semantic subagent extraction does not expose token counts to the current
   orchestrator, so recorded cost remains zero/unknown rather than estimated.
 - The active installation is Graphify `0.9.31` through `uv`; an inactive
   alternative `pipx` installation was not removed.
-- The user's global skill remains `0.9.23`, while the repository-local skill is
-  `0.9.31` and takes precedence. The CLI warning about the global copy is
-  therefore benign and no reinstall was performed.
+- The global and repository-local Graphify skills are both aligned with
+  `0.9.31`; the active CLI is also `0.9.31`.
 - This map represents the local snapshot above. Later structural changes still
   require `scripts/graphify-repository.sh update`, validation, and checksums.
 - Phase 05–09 repository relationships now exist in current code and

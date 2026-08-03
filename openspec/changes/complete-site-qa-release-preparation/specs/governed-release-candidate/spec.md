@@ -1,7 +1,7 @@
 ## Purpose
 
-Defines a traceable, approval-aware release artifact and safe Napoleon handoff
-without assuming credentials or an undocumented deployment integration.
+Defines a traceable, approval-aware release artifact and safe Napoleon Git
+branch handoff without assuming credentials or unobserved provider settings.
 
 ## ADDED Requirements
 
@@ -52,14 +52,29 @@ deploy production.
 - **WHEN** the request lacks the approved revision, exact confirmation, or required environment review
 - **THEN** the workflow stops before accessing production secrets or packaging the candidate
 
-### Requirement: Undocumented deployment mechanisms are never inferred
-The repository SHALL prepare a Napoleon handoff but MUST NOT invoke a webhook,
-API, SSH process, token, or DNS mutation until the actual integration is
-provided and documented.
+### Requirement: Git branch handoff preserves the validated revision
+The repository SHALL document Napoleon's owner-confirmed Git pull/build
+integration, keep GitHub Actions read-only, and require the selected staging
+branch head, complete CI result, and release manifest to identify the same full
+commit SHA before the Napoleon staging application is attached or restarted.
+The selected environment branch MUST remain at that SHA until Napoleon records
+the same selected revision; an intervening branch advance SHALL invalidate the
+handoff and require validation of the new head.
+Staging MUST use `develop/site-institucional`. The workflow MUST NOT create or
+push a deployment commit, invoke an undocumented webhook, API, SSH transport,
+token, or DNS mutation.
 
-#### Scenario: Napoleon integration is unknown
-- **WHEN** no verified deployment mechanism is available
-- **THEN** the workflow produces a candidate and exact handoff instructions but performs no external mutation
+#### Scenario: Audited staging branch is handed to Napoleon
+- **WHEN** `develop/site-institucional` points to the reviewed SHA and the complete CI run for that SHA passes
+- **THEN** the operator can select that repository and branch in Napoleon, record the same deployed SHA, configure the approved build/runtime settings, and begin public staging validation
+
+#### Scenario: Staging branch advances before provider selection
+- **WHEN** the environment branch head changes after validation but before Napoleon records the selected SHA
+- **THEN** the operator aborts the handoff and repeats CI and candidate validation for the new full SHA
+
+#### Scenario: Napoleon application settings remain unknown
+- **WHEN** the branch integration is known but build, start, environment-scope, health, or rollback controls have not been inventoried
+- **THEN** the repository publishes no invented command or credential and does not claim that staging has started
 
 ### Requirement: Rollback preserves the separate application
 Release documentation SHALL identify the previous known-good institutional

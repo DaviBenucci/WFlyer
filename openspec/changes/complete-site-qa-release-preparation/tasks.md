@@ -32,3 +32,10 @@
 - [x] 5.2 Refresh and validate Graphify for CI, indexing, candidate packaging, operations, and rollback relationships.
 - [x] 5.3 Strict-validate OpenSpec and preserve the active change if external staging gates remain incomplete.
 - [x] 5.4 Create a focused repository checkpoint while preserving unrelated work and performing no external deployment.
+
+## 6. Confirmed Napoleon Git-branch handoff
+
+- [x] 6.1 Reconcile the OpenSpec design, governed candidate contract, deployment guides, runbook, and execution evidence with the owner-confirmed Napoleon Git pull/build integration on `develop/site-institucional`.
+- [x] 6.2 Add regression evidence that CI observes the staging branch, remains read-only, creates no deployment commit, and requires one full branch/CI/manifest SHA before Napoleon activation.
+- [x] 6.3 Strict-validate and sync the revised OpenSpec contract, then refresh Graphify for the branch-to-CI-to-Napoleon relationship.
+- [x] 6.4 Create a focused checkpoint and publish only `develop/site-institucional` after local gates pass, without changing `main`, configuring Napoleon, or claiming deployed-staging evidence.

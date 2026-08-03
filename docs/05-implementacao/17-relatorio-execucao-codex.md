@@ -228,8 +228,12 @@ O campo `source_of_truth` de `manifest.json` aponta para um caminho absoluto de 
 As pendências abaixo não bloqueiam as Fases 0 a 8 nem o preparo local da Fase 9:
 
 - register the six environment-specific values `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_RECIPIENT_EMAIL`, and `CONTACT_ALLOWED_ORIGINS` in the appropriate GitHub Environments;
-- definir o mecanismo real disponibilizado pela Napoleon e, somente se aplicável, cadastrar a credencial correspondente;
-- configurar as variáveis também no runtime da aplicação Napoleon quando o provedor operar por pull do GitHub;
+- use the owner-confirmed Napoleon Git pull/build integration with
+  `develop/site-institucional` for staging; no repository-side Napoleon deploy
+  credential is required;
+- inventory the exact Napoleon build/start, environment-scope, port, health,
+  process-user, restart, rollback, and selected-SHA controls, then configure the
+  public build value and five Contact server values explicitly in its panel;
 - obter acesso somente leitura para inventário de zona, registros, SSL/TLS, cache, WAF, rate limiting e origem Cloudflare;
 - provisionar e validar staging;
 - executar testes externos reais de Turnstile, Resend, HTTPS, cache, headers e entrega de e-mail;
@@ -812,12 +816,17 @@ Napoleon, Cloudflare, DNS, providers, or production.
   Contact server-runtime values by name, and produces a normalized standalone
   archive, SHA-256 file, and non-secret manifest. It calls no undocumented
   Napoleon, SSH, webhook, API, DNS, merge, tag, or deployment mechanism.
+  ADR-024 now records the owner-confirmed deployment boundary: read-only GitHub
+  Actions validates/packages the pushed SHA, while Napoleon independently
+  pulls/builds `develop/site-institucional`; Actions authors no deployment
+  commit and the branch, CI, manifest, and Napoleon selection must share one
+  full SHA.
 - **Public staging contract:** `pnpm test:staging` accepts only an explicit
   HTTPS origin except for loopback development, uses one worker across
   Chromium, Firefox, and WebKit, and exercises public visitor behavior without
   deterministic controllers or forced timeline checkpoints. A locally started
   staging-mode standalone server is not deployed Napoleon staging.
-- **Measured current-revision evidence:** 297/297 unit/component tests in 33
+- **Measured current-revision evidence:** 298/298 unit/component tests in 33
   files; coverage at 69.40% statements (1277/1840), 68.29% branches
   (896/1312), 74.59% functions (279/374), and 69.86% lines (1231/1762);
   63/63 Storybook, 315/315 E2E, 102/102 axe, 30/30 motion, 291/291 visual
@@ -844,15 +853,18 @@ Napoleon, Cloudflare, DNS, providers, or production.
   regression register are maintained in
   `docs/07-qa/08-phase-09-release-readiness-report.md`. In addition to the
   durable F05 navigation correction `f61d995`, F08 delivery-retry correction
-  `3c4940c`, and F07 Home-opening correction `51e8e62`, twelve F09 audit
+  `3c4940c`, and F07 Home-opening correction `51e8e62`, thirteen F09 audit
   regressions are now `verified-complete`: common-CI artifact isolation,
   Playwright evidence-directory separation, immutable release identity, rerun
   manifest provenance, environment ownership, staging/quality ordering,
   scoped reproducibility wording, staging revision identity, and cross-engine
   Application density, plus current Next route type generation, raw canonical
-  build-ID validation, and symlink-safe evidence/release path containment. The
-  density correction is verified by focused cross-engine inspection and the
-  unchanged-baseline 291/291 visual matrix.
+  build-ID validation, symlink-safe evidence/release path containment, and the
+  previously unknown Napoleon handoff. The handoff correction records the
+  confirmed Git-branch integration without conflating the Actions archive and
+  Napoleon's independent source build. The density correction is verified by
+  focused cross-engine inspection and the unchanged-baseline 291/291 visual
+  matrix.
 - **Visual/accessibility/performance boundary:** the complete current visual,
   accessibility, responsive, and Lighthouse matrices are
   `verified-complete`. Physical devices, screen readers, high contrast,
@@ -862,26 +874,31 @@ Napoleon, Cloudflare, DNS, providers, or production.
 - **Repository closure:** frozen dependency installation, exact-version policy,
   lint, Next typegen/strict TypeScript, unit/coverage, production audit, peers,
   actionlint, strict OpenSpec validation, Graphify refresh/diagnostics/queries,
-  and the focused checkpoint are green. The active OpenSpec change stays active
-  and unarchived because deployed-staging evidence remains external.
+  and the focused handoff checkpoint are green. The checkpoint is published
+  only as `develop/site-institucional`; its exact CI result still has to be
+  recorded before Napoleon can select the frozen branch head. The active
+  OpenSpec change stays active and unarchived because deployed-staging evidence
+  remains external.
 - **External blockers:** protected GitHub Environments and six scoped values;
-  the actual Napoleon application, runtime, identity, restart, and rollback
-  method; Cloudflare read-only inventory and approved staging host; Turnstile
+  the Napoleon application's exact build/start, variable-scope, selected-SHA,
+  port, health, process-user, restart, and rollback controls; Cloudflare
+  read-only inventory and approved staging host; Turnstile
   and Resend staging configuration/delivery; CSP/HSTS/cache/WAF/rate decisions;
   privacy-safe external logs; physical accessibility and professional legal
   review; an independent `app.wflyer.com.br` DNS/availability investigation;
   staging evidence; and Davi Benucci's exact-revision homologation.
-- **Exact next action:** configure the six values in the protected GitHub
-  `staging` Environment; inventory Napoleon and Cloudflare read-only; resolve
-  the independent `app.wflyer.com.br` baseline; then prepare the staging
-  candidate and run `pnpm test:staging` from a clean checkout of its manifest
-  SHA.
+- **Exact next action:** confirm that the CI run for the published
+  `develop/site-institucional` head passes, keep that head frozen, configure the
+  six protected staging values, inventory Napoleon/Cloudflare read-only,
+  resolve the independent `app.wflyer.com.br` baseline, then select the same
+  branch/SHA in Napoleon and run `pnpm test:staging` from a clean checkout of
+  its manifest SHA.
 - **Local gate:** `verified-complete`.
 - **External gate:** `blocked`; the operational macrostate remains
   `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`. Production remains
   unauthorized.
-- **Proposed checkpoint title:**
-  `chore(release): complete local staging readiness`.
+- **Handoff checkpoint title:**
+  `chore(release): govern Napoleon branch handoff`.
 
 ## 5. Histórico de atualizações
 
@@ -898,4 +915,4 @@ Napoleon, Cloudflare, DNS, providers, or production.
 | 2026-07-31 | Phase 06 completed with a semantic local tablet, deterministic five-state interaction, cancellable processing, original SVG score, precise-hover GSAP tilt, privacy instrumentation, 204 unit tests, 62 Storybook tests, 15 focused cross-browser interactions, 21 cross-browser state baselines, four-state axe coverage for all three Application routes, responsive 320 px and canonical 1536 × 1024 checks, and production/Storybook builds. Graphify refreshed to 2,556 nodes and the new OpenSpec capability was synchronized and archived; Phase 07 released. |
 | 2026-07-31 | Phase 07 completed with the immutable official SVG, a 5.600-second labeled GSAP opening, measured symbol-to-header handoff, one-session eligibility, skip/Escape/timeout/fail-open recovery, direct reduced-motion Home, route-aware finite local reveals, 214 unit tests, 63 Storybook tests, 21 focused cross-browser behaviors, 30 visual baselines, 6 axe audits, 30 accumulated motion checks, standalone 17+21, and Lighthouse 100/100/100/100 across 15 runs. OpenSpec and Graphify were refreshed before Phase 08 was released. |
 | 2026-07-31 | Phase 08 completed with strict 16 KiB contact validation, Turnstile and Resend boundaries, accessible recoverable client states, truthful privacy/legal content, report-only CSP and browser headers, zero known production dependency vulnerabilities, 239 unit/component tests, 63 Storybook tests, 239 complete Chromium checks, a 48-case dedicated cross-browser matrix, 27 reviewed form baselines, standalone 17+19, and Lighthouse 100/100/100/100 across 15 runs. Graphify advanced to 2,793 nodes and OpenSpec was synchronized and archived before Phase 09. |
-| 2026-08-03 | A repo-wide audit preserved the historical F00–F08 checkpoints and verified three bounded corrections in durable commits: navigation/history/geometry `f61d995`, Contact retry identity `3c4940c`, and Home-opening choreography/isolation `51e8e62`. Twelve F09 regressions, including cross-engine Application density, current Next route type generation, raw canonical build-ID validation, and symlink-safe evidence/release path containment, are `verified-complete`; the measured local candidate passed 297/297 unit, 63/63 Storybook, 315/315 E2E, 102/102 axe, 30/30 motion, 291/291 unchanged-baseline visual, 69/69 local staging, four 22-route builds, standalone/indexing, 15/15 Lighthouse, and artifact/bundle checks. Source/dependency, OpenSpec, Graphify, and focused-checkpoint closure are complete; external integration is `blocked`, no external system or production state was changed, and the macrostate is `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`. |
+| 2026-08-03 | A repo-wide audit preserved the historical F00–F08 checkpoints and verified three bounded corrections in durable commits: navigation/history/geometry `f61d995`, Contact retry identity `3c4940c`, and Home-opening choreography/isolation `51e8e62`. Thirteen F09 regressions, including cross-engine Application density, current Next route type generation, raw canonical build-ID validation, symlink-safe evidence/release path containment, and the read-only Napoleon branch handoff, are `verified-complete`; the measured local candidate passed 298/298 unit, 63/63 Storybook, 315/315 E2E, 102/102 axe, 30/30 motion, 291/291 unchanged-baseline visual, 69/69 local staging, four 22-route builds, standalone/indexing, 15/15 Lighthouse, and artifact/bundle checks. Source/dependency, OpenSpec, Graphify, and the focused handoff checkpoint are complete; only `develop/site-institucional` is published, external integration is `blocked`, Napoleon, `main`, DNS, and production remain unchanged, and the macrostate is `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`. |

@@ -1,9 +1,9 @@
 name: Prepare Napoleon release
 
-# This workflow deliberately creates a deployment candidate without contacting
-# Napoleon. The approved Napoleon integration method must be configured before
-# a deployment step can be added. Protect the GitHub "production" Environment
-# with Davi Benucci as a required reviewer in the repository settings.
+# This read-only workflow creates a deployment candidate without advancing a
+# branch or contacting Napoleon. Napoleon's owner-confirmed integration pulls
+# and builds the selected environment branch independently. Protect the GitHub
+# "production" Environment with Davi Benucci as a required reviewer.
 
 on:
   workflow_dispatch:
@@ -384,17 +384,21 @@ jobs:
       - name: Record Napoleon handoff
         env:
           RELEASE_SHA: ${{ needs.validate-request.outputs.release_sha }}
+          RELEASE_REF: ${{ inputs.release_ref }}
           TARGET_ENVIRONMENT: ${{ inputs.environment }}
           ARCHIVE_PATH: ${{ steps.archive.outputs.path }}
           MANIFEST_PATH: ${{ steps.manifest.outputs.path }}
         run: |
           {
-            echo "## Napoleon handoff pending"
+            echo "## Napoleon Git branch handoff pending configuration"
             echo
             echo "- Environment: \`${TARGET_ENVIRONMENT}\`"
+            echo "- Source branch/ref: \`${RELEASE_REF}\`"
             echo "- Commit: \`${RELEASE_SHA}\`"
             echo "- Candidate: \`${ARCHIVE_PATH}\` plus SHA-256 file"
             echo "- Manifest: \`${MANIFEST_PATH}\`"
-            echo "- No deployment endpoint was called."
-            echo "- Configure the approved Napoleon integration and inject the five Contact server values into its Node.js runtime; the public Turnstile site key is fixed in the artifact."
+            echo "- GitHub Actions did not create/push a commit or call a deployment endpoint."
+            echo "- Before attaching/restarting Napoleon, verify that its selected branch head, this green run, and the manifest identify \`${RELEASE_SHA}\`."
+            echo "- Keep that branch head unchanged until Napoleon records the same selected SHA; abort the handoff if it advances."
+            echo "- Configure the ${TARGET_ENVIRONMENT} environment selector, public Turnstile build key, and five Contact server values explicitly in Napoleon; GitHub Environment values are not transferred."
           } >>"${GITHUB_STEP_SUMMARY}"

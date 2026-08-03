@@ -108,8 +108,13 @@ O site será mantido no GitHub e executado como aplicação Node.js na Napoleon,
 
 ## ADR-021 — GitHub Actions Secrets como fonte de segredos
 
-**Status:** aprovado  
-Turnstile, Resend e credenciais de deploy ficam em GitHub Actions Secrets. O workflow deve injetar ou sincronizar os valores com o runtime da Napoleon. É proibido presumir que secrets do Actions aparecem automaticamente no processo hospedado.
+**Status:** aprovado; mecanismo de entrega esclarecido pelo ADR-024
+Turnstile e Resend ficam em GitHub Environment Secrets para validar e empacotar
+o candidato. Os valores equivalentes de runtime devem ser configurados
+explicitamente na Napoleon; o GitHub Actions não os transporta nem os
+sincroniza. A integração por branch não exige credencial de deploy no workflow,
+e é proibido presumir que secrets do Actions aparecem automaticamente no
+processo hospedado.
 
 ## ADR-022 — Canais, portfólio e analytics
 
@@ -120,3 +125,17 @@ O e-mail público e destinatário é `davi.benucci@wflyer.com.br`. As únicas re
 
 **Status:** aprovado  
 Davi Benucci é o responsável pela homologação final. O Codex executa desenvolvimento e QA, mas somente a aprovação registrada pelo responsável libera a produção.
+
+## ADR-024 — Napoleon Git branch handoff
+
+**Status:** approved on 2026-08-03
+The owner confirmed that Napoleon can pull and build a selected branch from the
+GitHub repository. Staging uses `develop/site-institucional`; production may
+use `main` only after Davi Benucci's explicit homologation. GitHub Actions
+validates and packages the selected commit but remains read-only: it does not
+create or push a deployment commit. Before Napoleon is attached or restarted,
+the branch head, green CI run, and release manifest must identify the same full
+commit SHA. That branch head remains frozen until Napoleon records the same
+selected SHA; any intervening advance invalidates the handoff and requires a
+new CI/manifest cycle. Provider values must still be configured explicitly in
+Napoleon; GitHub Environment values do not appear there automatically.

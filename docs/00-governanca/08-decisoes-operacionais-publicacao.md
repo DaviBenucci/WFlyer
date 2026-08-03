@@ -8,19 +8,29 @@
 - proprietário: `DaviBenucci`;
 - repositório normativo: o repositório GitHub que contém este pacote W_Flyer;
 - aplicação musical permanece em projeto separado;
-- GitHub Actions executa CI, testes e automação de deploy.
+- GitHub Actions executes CI, tests, and immutable candidate packaging. It has
+  read-only repository permission and does not author or push deployment
+  commits.
 
 ## Hospedagem
 
 - provedor de origem: Napoleon;
 - modelo: aplicação Node.js vinculada ao repositório GitHub;
+- confirmed source integration: Napoleon pulls/builds the selected GitHub
+  branch; staging uses `develop/site-institucional` and production remains
+  gated on `main` plus explicit homologation;
 - Cloudflare continua responsável por DNS, proxy, HTTPS, WAF, rate limit e Turnstile;
 - não utilizar VPS ou EasyPanel;
 - Docker pode existir apenas como ferramenta local opcional, nunca como dependência normativa de produção.
 
 ## Segredos
 
-A fonte canônica dos valores confidenciais é GitHub Actions Secrets. O workflow deve validar e transmitir os valores ao ambiente de execução da Napoleon. Secrets nunca entram no repositório, logs, screenshots ou artefatos públicos.
+A fonte canônica dos valores confidenciais é GitHub Actions Secrets. The
+corresponding runtime values must be configured explicitly in the Napoleon
+application panel because a Git branch link does not transfer GitHub Secrets.
+The workflow validates names and candidate configuration but does not print or
+transport values through an invented integration. Secrets nunca entram no
+repositório, logs, screenshots ou artefatos públicos.
 
 ## Contato e redes
 
