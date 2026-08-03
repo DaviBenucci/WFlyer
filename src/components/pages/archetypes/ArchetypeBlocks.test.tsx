@@ -1,5 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import {
   applicationContent,
@@ -20,6 +20,10 @@ import { PageIcon } from "./PageIcons";
 vi.mock("next/navigation", () => ({
   useSearchParams: () => new URLSearchParams(),
 }));
+
+afterEach(() => {
+  vi.unstubAllEnvs();
+});
 
 describe("blocos visuais dos arquétipos", () => {
   it("entrega a faixa de cinco benefícios como lista semântica", () => {
@@ -83,6 +87,8 @@ describe("blocos visuais dos arquétipos", () => {
   });
 
   it("mantém o formulário operável e falha fechado sem Turnstile", () => {
+    vi.stubEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY", undefined);
+
     render(
       <ContactWorkspace
         email="davi.benucci@wflyer.com.br"

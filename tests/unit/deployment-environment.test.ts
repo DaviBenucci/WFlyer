@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
   createDeploymentRobotsHeader,
@@ -10,6 +10,10 @@ import {
 
 afterEach(() => {
   vi.unstubAllEnvs();
+});
+
+beforeEach(() => {
+  vi.stubEnv("WFLYER_DEPLOYMENT_ENVIRONMENT", undefined);
 });
 
 describe("deployment indexing environment", () => {
