@@ -154,6 +154,11 @@ jobs:
       - name: Validate standalone runtime and production quality baseline
         run: |
           pnpm prepare:standalone
+          test -f .next/standalone/index.html
+          test -f .next/standalone/icon.svg
+          test -f .next/standalone/robots.txt
+          test -f .next/standalone/sitemap.xml
+          test -f .next/standalone/404.html
           pnpm smoke:standalone
           pnpm smoke:indexing
           pnpm lighthouse
@@ -165,6 +170,7 @@ jobs:
         run: |
           pnpm build
           pnpm prepare:standalone
+          test -f .next/standalone/index.html
           pnpm smoke:indexing
 
   candidate-browser:
@@ -315,6 +321,14 @@ jobs:
 
       - name: Complete standalone package
         run: pnpm prepare:standalone
+
+      - name: Validate candidate document root
+        run: |
+          test -f .next/standalone/index.html
+          test -f .next/standalone/icon.svg
+          test -f .next/standalone/robots.txt
+          test -f .next/standalone/sitemap.xml
+          test -f .next/standalone/404.html
 
       - name: Smoke standalone server and indexing policy
         env:

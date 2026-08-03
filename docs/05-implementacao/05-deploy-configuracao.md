@@ -32,8 +32,11 @@ The package contains `public/`, `.next/static/`, server output, and no source
 documentation, Graphify output, OpenSpec artifact, golden reference, test
 report, or provider credential value. Required server-runtime variable names
 remain in server code by design; their values are supplied only to the
-Napoleon process. `pnpm smoke:standalone` validates all 17 public routes and
-their referenced static assets.
+Napoleon process. The standalone package also exposes the document root files
+needed by Napoleon-style uploads: `index.html`, `icon.svg`, `robots.txt`,
+`sitemap.xml`, and `404.html`, plus a mirrored `_next/static/` tree for direct
+file hosting. `pnpm smoke:standalone` validates all 17 public routes and their
+referenced static assets.
 
 `WFLYER_BUILD_ID` is a build-only traceability input. The manual workflow
 resolves the approved source ref once, passes that immutable SHA to every
@@ -115,6 +118,11 @@ must be built with `WFLYER_DEPLOYMENT_ENVIRONMENT=staging`, its own Turnstile
 configuration, and an allowed-origin list that does not broaden production.
 Mirroring the selector in Napoleon can aid operations, but changing it at
 runtime does not convert an already built artifact to another environment.
+
+The hosting panel documentation for Napoleon uses `public_html` as the example
+application root. That is the only document-root name evidenced in this
+repository, so manual uploads should target `public_html` unless the owner
+confirms a different Napoleon root.
 
 ## Cloudflare precondition
 

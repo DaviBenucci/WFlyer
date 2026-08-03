@@ -214,6 +214,12 @@ integrity contract, not a claim that independent Next.js builds on floating
 hosted environments are byte-reproducible. No Napoleon API, webhook, SSH
 command, DNS mutation, deploy call, merge, tag, or public release is performed.
 
+The final standalone candidate now exposes the document-root files expected by
+Napoleon-style uploads: `index.html`, `icon.svg`, `robots.txt`, `sitemap.xml`,
+`404.html`, and the mirrored `_next/static/` tree. The root `index.html`
+references the actual production assets rather than a placeholder landing
+page.
+
 ## Manual inspection performed locally
 
 Historical phase screenshots and the 2026-08-03 corrective Phase 07 images were

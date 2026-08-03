@@ -1,17 +1,9 @@
 # Relatório acumulado de execução do Codex
 
-**Projeto:** site institucional `wflyer.com.br`
-
-**Início da execução:** 2026-07-29
-
-**Local implementation classification:** `verified-complete`
-
-**External integration classification:** `blocked`
-
-**Operational macrostate:** `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`
-
-**Publication:** `NOT_AUTHORIZED`
-
+**Projeto:** site institucional `wflyer.com.br`  
+**Início da execução:** 2026-07-29  
+**Implementação:** `EM_EXECUÇÃO_LOCAL`  
+**Publicação:** `NÃO_AUTORIZADA`  
 **Responsável pela homologação:** Davi Benucci
 
 ## 1. Escopo e regra de publicação
@@ -31,22 +23,19 @@ A execução local, os testes, os workflows, o build standalone e a preparação
 
 | Etapa | Estado atual | Gate |
 |---|---|---|
-| Pré-voo | `verified-complete` | sem bloqueio normativo real |
-| Fase 0 — Fundação | `verified-complete` | gate local verde |
-| Fase 1 — Sistema visual | `verified-complete` | gate local verde |
-| Fase 2 — Conteúdo e rotas estáticas | `verified-complete` | gate local verde |
-| Fase 3 — Home e dupla partitura | `verified-complete` | gate local verde |
-| Fase 4 — Páginas por arquétipo | `verified-complete` | gate local verde |
-| Fase 5 — Motion e navegação | `verified-complete` | gate local verde |
-| Fase 6 — Tablet | `verified-complete` | gate local verde |
-| Fase 7 — Abertura e motion local | `verified-complete` | gate local verde |
-| Fase 8 — Contato, segurança e conteúdo final | `verified-complete` | gate local verde |
-| Fase 9 — escopo local do repositório | `verified-complete` | gates locais medidos verdes |
-| Fase 9 — integrações externas | `blocked` | staging, provedores, infraestrutura e homologação sob controle externo |
+| Pré-voo | `CONCLUÍDO` | sem bloqueio normativo real |
+| Fase 0 — Fundação | `CONCLUÍDA` | gate local verde |
+| Fase 1 — Sistema visual | `CONCLUÍDA` | gate local verde |
+| Fase 2 — Conteúdo e rotas estáticas | `CONCLUÍDA` | gate local verde |
+| Fase 3 — Home e dupla partitura | `CONCLUÍDA` | gate local verde |
+| Fase 4 — Páginas por arquétipo | `CONCLUÍDA` | gate local verde |
+| Fase 5 — Motion e navegação | `CONCLUÍDA` | gate local verde |
+| Fase 6 — Tablet | `CONCLUÍDA` | gate local verde |
+| Fase 7 — Abertura e motion local | `CONCLUÍDA` | gate local verde |
+| Fase 8 — Contato, segurança e conteúdo final | `CONCLUÍDA` | gate local verde |
+| Fase 9 — Napoleon, staging e produção | `IMPLEMENTATION_IN_PROGRESS` | final local closure pending |
 
-Os estados acima usam a taxonomia obrigatória de auditoria. A classificação
-local `verified-complete` não autoriza publicação, merge em `main` ou alteração
-de infraestrutura; os gates sob controle externo permanecem `blocked`.
+Cada fase somente muda para `CONCLUÍDA` depois de satisfazer integralmente seu gate. A conclusão local não autoriza publicação, merge em `main` ou alteração de infraestrutura.
 
 ### 2.1 Continuidade da execução
 
@@ -89,15 +78,14 @@ desse bootstrap estão documentados, respectivamente, em
 Esse subpasso não implementa shell, provider, interceptação, timelines,
 transições, foco ou histórico da navegação. Ele também não altera runtime,
 produto, dependências de produção ou deploy. At that historical checkpoint,
-Phase 05 therefore remained explicitly `not-started`; its completed
+Phase 05 therefore remained explicitly `PRONTA_PARA_INICIAR`; its completed
 implementation and gate are recorded below.
 
 ## 3. Pré-voo
 
 ### 3.1 Resultado
 
-**Status:** `verified-complete`
-
+**Estado:** `CONCLUÍDO`  
 **Decisão:** iniciar imediatamente a Fase 0.
 
 Não foi encontrado conflito normativo verdadeiro. O repositório está em `READY_FOR_IMPLEMENTATION`, e o conjunto visual está autorizado para implementação integral por referência individual, painel aprovado ou herança de arquétipo.
@@ -228,12 +216,8 @@ O campo `source_of_truth` de `manifest.json` aponta para um caminho absoluto de 
 As pendências abaixo não bloqueiam as Fases 0 a 8 nem o preparo local da Fase 9:
 
 - register the six environment-specific values `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_RECIPIENT_EMAIL`, and `CONTACT_ALLOWED_ORIGINS` in the appropriate GitHub Environments;
-- use the owner-confirmed Napoleon Git pull/build integration with
-  `develop/site-institucional` for staging; no repository-side Napoleon deploy
-  credential is required;
-- inventory the exact Napoleon build/start, environment-scope, port, health,
-  process-user, restart, rollback, and selected-SHA controls, then configure the
-  public build value and five Contact server values explicitly in its panel;
+- definir o mecanismo real disponibilizado pela Napoleon e, somente se aplicável, cadastrar a credencial correspondente;
+- configurar as variáveis também no runtime da aplicação Napoleon quando o provedor operar por pull do GitHub;
 - obter acesso somente leitura para inventário de zona, registros, SSL/TLS, cache, WAF, rate limiting e origem Cloudflare;
 - provisionar e validar staging;
 - executar testes externos reais de Turnstile, Resend, HTTPS, cache, headers e entrega de e-mail;
@@ -247,15 +231,9 @@ Nenhum endpoint, webhook, token ou credencial Napoleon será inventado.
 
 Cada fase usa os mesmos campos obrigatórios: objetivo, arquivos criados, arquivos modificados, decisões aplicadas, comandos, testes e resultados, screenshots, comparação visual, acessibilidade, performance, riscos, pendências não bloqueadoras, gate e título de commit.
 
-Nas Fases 0–8, o campo “Pendências não bloqueadoras” preserva somente o estado
-histórico daquele checkpoint; itens posteriormente executados não continuam
-abertos. Repository-owned source/dependency, OpenSpec, Graphify, and focused
-checkpoint closure is complete. The integration gates listed in section 3.6
-and Phase 09 are `blocked` on external owners or environments.
-
 ### Fase 0 — Fundação
 
-**Status:** `verified-complete`
+**Estado:** `CONCLUÍDA`
 **Objetivo:** criar a fundação reproduzível com Next.js App Router, Node.js 24, pnpm, dependências exatas, TypeScript estrito, lint, testes, Storybook, Playwright, axe-core, Lighthouse CI, GitHub Actions e build standalone.
 
 - **Arquivos criados:** projeto Next.js em `src/`; manifesto tipado de capítulos e configuração pública; `package.json`, `pnpm-lock.yaml`, configurações Next/TypeScript/ESLint/Tailwind; Vitest, Testing Library, Storybook, Playwright e Lighthouse CI; testes-base; workflows de CI e preparação de release; scripts de validação de dependências, Lighthouse e pacote standalone; este relatório.
@@ -271,12 +249,12 @@ and Phase 09 are `blocked` on external owners or environments.
 - **Performance:** três execuções isoladas do Lighthouse: Performance 100, Acessibilidade 100, SEO 100 e Boas práticas 100 em todas; budgets de LCP e CLS verdes.
 - **Riscos controlados:** Storybook 10.5 exigiu normalização isolada do filepath do worker devido ao caminho local não ASCII `Área de trabalho`; o workaround fica apenas no setup de testes e o CI usa caminho ASCII.
 - **Pendências não bloqueadoras:** Firefox e WebKit estão configurados e serão exercitados na matriz final; secrets, reviewer obrigatório do Environment `production`, método Napoleon e acessos externos permanecem na seção 3.6.
-- **Gate:** `verified-complete`.
+- **Gate:** `CONCLUÍDO`.
 - **Título de commit:** `chore(site): establish reproducible Next.js foundation`.
 
 ### Fase 1 — Sistema visual
 
-**Status:** `verified-complete`
+**Estado:** `CONCLUÍDA`
 **Objetivo:** implementar tokens, fontes, temas, primitivos próprios, header, elementos musicais, navegação, Storybook e mapa tipado de arquétipos.
 
 - **Arquivos criados:** camadas `src/styles/tokens.css` e `base.css`; três fontes variáveis WOFF2 locais com licenças e checksums; carregamento por `next/font/local`; componentes próprios de marca oficial, tema, ações, superfícies, tipografia, ícones, pauta, notas, compassos, barra final, header e menu; configuração tipada de navegação e espelho exato dos arquétipos; stories e testes; smoke standalone de assets; quatro evidências visuais locais em `docs/05-implementacao/evidencias/fase-1/`.
@@ -291,12 +269,12 @@ and Phase 09 are `blocked` on external owners or environments.
 - **Performance:** três execuções finais isoladas do Lighthouse obtiveram Performance 100, Acessibilidade 100, Boas práticas 100 e SEO 100 em todas; nenhum budget ou assertion falhou.
 - **Riscos controlados:** o primeiro smoke standalone verificava somente HTTP 200 e permitia falso positivo sem CSS; ele foi substituído por verificação executável de todos os assets estáticos referenciados. O script inline anti-FOUC precisará receber a política CSP definitiva na Fase 8. O chunk grande de axe aparece apenas no catálogo/teste Storybook e não integra o bundle produtivo.
 - **Pendências não bloqueadoras:** a Home desta fase é uma vitrine estática dos primitivos e será substituída pela composição normativa na Fase 3; rotas e conteúdo entram na Fase 2; Firefox/WebKit e matriz ampliada ficam para o QA final; acessos externos e produção continuam limitados pela seção 3.6.
-- **Gate:** `verified-complete`.
+- **Gate:** `CONCLUÍDO`.
 - **Título de commit:** `feat(design-system): build visual foundations and musical header`.
 
 ### Fase 2 — Conteúdo e rotas estáticas
 
-**Status:** `verified-complete`
+**Estado:** `CONCLUÍDA`
 **Objetivo:** implementar todas as rotas, conteúdo local, páginas legais, SEO, sitemap, robots, estados de erro, 404, footer e navegação funcional sem depender de motion.
 
 - **Arquivos criados:** 17 páginas públicas no App Router; conteúdo tipado local em `src/content/site-content.ts`; contrato central de SEO; JSON-LD de `Organization`, `WebSite`, `Service` e `BreadcrumbList`; componentes compartilhados de capítulo, seção, cards, etapas, detalhes de serviço, páginas legais e estados; footer global; `sitemap.ts`, `robots.ts`, `not-found.tsx`, `error.tsx` e `global-error.tsx`; testes de conteúdo, rotas, teclado e axe; runner robusto do servidor Lighthouse; seis evidências visuais e seu índice.
@@ -313,12 +291,12 @@ and Phase 09 are `blocked` on external owners or environments.
 - **Performance:** três coletas finais do Lighthouse no pacote standalone obtiveram Performance 100, Acessibilidade 100, Boas práticas 100 e SEO 100 em todas. LCP variou de aproximadamente 604 ms a 620 ms e CLS foi 0 nas três execuções.
 - **Riscos controlados:** a base jurídica não inventa razão social, CNPJ, endereço, telefone, DPO ou prazo legal; revisão jurídica e homologação continuam obrigatórias antes da produção. O status público dos projetos será reconferido próximo ao lançamento. Golden references não foram incorporadas ao frontend. Nenhuma dependência ou integração externa nova foi adicionada.
 - **Pendências não bloqueadoras:** em 2026-07-29, Instagram, GitHub, MSN Distribuidora e MSN Suprimentos responderam publicamente, mas `app.wflyer.com.br` não resolveu DNS durante a revisão independente. O link configurado corresponde ao perfil aprovado, portanto isso não bloqueia o gate local da Fase 2; restaurações/validações do subdomínio e o smoke externo são bloqueadores de homologação e publicação. Firefox/WebKit e matriz final permanecem para a Fase 9.
-- **Gate:** `verified-complete`; revisão independente sem bloqueador de implementação após a atualização deste registro.
+- **Gate:** `CONCLUÍDO`; revisão independente sem bloqueador de implementação após a atualização deste registro.
 - **Título de commit:** `feat(content): publish static routes and verified public content`.
 
 ### Fase 3 — Home e dupla partitura
 
-**Status:** `verified-complete`
+**Estado:** `CONCLUÍDA`
 **Objetivo:** implementar Home, origem, bifurcação, pautas, âncoras, continuidade, terminações e fallback mobile conforme o manifesto de capítulos.
 
 - **Arquivos criados:** `NarrativeClef`, clave SVG original e separada da marca; `OriginScore`, bifurcação determinística com variantes desktop e compacta; `ChapterScore`, segmento vetorial dirigido pelas bordas e alturas do manifesto; stories e testes unitários do sistema; suíte E2E de continuidade; oito evidências visuais e seu índice.
@@ -335,12 +313,12 @@ and Phase 09 are `blocked` on external owners or environments.
 - **Performance:** três execuções Lighthouse no pacote standalone obtiveram 100 em Performance, Acessibilidade, Boas práticas e SEO. LCP variou de aproximadamente 604 ms a 617 ms; FCP, de 250 ms a 258 ms; CLS permaneceu 0.
 - **Riscos controlados:** `:has()` aprimora a ênfase dos ramos em navegadores modernos, mas o fallback mantém ambas as pautas visíveis e todos os links operáveis. A clave usa poucas camadas vetoriais, sem filtro pesado, Canvas, WebGL ou raster. O conteúdo do formulário não foi antecipado; o gate terminal de Contato é explicitamente reaberto na Fase 8.
 - **Pendências não bloqueadoras:** acabamento individual das outras páginas pertence à Fase 4; transições GSAP, tablet e abertura pertencem às Fases 5 a 7; Firefox/WebKit permanecem para a matriz final; `app.wflyer.com.br` continua dependência externa de homologação/publicação.
-- **Gate:** `verified-complete`; narrativa correta em claro/escuro e desktop/mobile, com continuidade estática, acessibilidade, performance e evidências verdes.
+- **Gate:** `CONCLUÍDO`; narrativa correta em claro/escuro e desktop/mobile, com continuidade estática, acessibilidade, performance e evidências verdes.
 - **Título de commit:** `feat(score): compose bifurcated home and chapter continuity`.
 
 ### Fase 4 — Páginas por arquétipo
 
-**Status:** `verified-complete`
+**Estado:** `CONCLUÍDA`
 **Objetivo:** implementar, na ordem normativa, Aplicação, Como funciona, Benefícios, Empresa, Serviços, Processo, Portfólio, Contato, quatro detalhes de serviço e páginas legais.
 
 - **Arquivos criados:** catálogo de ícones SVG originais; blocos semânticos para os arquétipos normativos `product-demo`, `editorial-sequence`, `editorial-benefits-terminal`, `service-grid`, `process-timeline`, `portfolio-grid`, `contact-terminal`, `service-detail` e `legal-editorial`; seletor cliente isolado para refletir a pré-seleção validada do tipo de projeto sem tornar Contato dinâmico; estilos próprios; testes unitários, stories, cenários E2E e matriz visual; gerador de capturas e 15 evidências documentadas.
@@ -356,12 +334,12 @@ and Phase 09 are `blocked` on external owners or environments.
 - **Performance:** 15 coletas no pacote standalone final — três para Home, Aplicação, Serviços, Contato e Privacidade — obtiveram 100 em Performance, Acessibilidade, Boas práticas e SEO. FCP variou de 247 ms a 263 ms; LCP, de 492 ms a 669 ms; o maior CLS foi 0,039 na Aplicação e TBT foi 0 ms em todas.
 - **Riscos controlados:** o tablet desta fase é somente uma prévia estática e determinística; sua operação acessível pertence à Fase 6 e sua inclinação já é removida em reduced motion. O shell de Contato não aceita nem transmite dados até que validação, Turnstile, Resend e falha fechada sejam implementados na Fase 8; a pré-seleção atual somente apresenta um valor permitido no controle desabilitado. Não foram adicionadas dependências, métricas, depoimentos, clientes, analytics, CMS ou lógica da aplicação musical.
 - **Pendências não bloqueadoras:** reabrir o tablet na Fase 6; reabrir o formulário e a barra terminal de Contato na Fase 8; reconferir o estado público dos projetos próximo ao lançamento; obter revisão jurídica e homologação de Davi Benucci antes da produção; executar Firefox/WebKit na matriz final. `app.wflyer.com.br` permanece uma dependência externa de homologação/publicação, não do gate local.
-- **Gate:** `verified-complete`; as 16 rotas da fase têm composição autorizada, conteúdo oficial, responsividade, acessibilidade, performance, testes e evidências verdes. Três revisões independentes finais — requisitos, código e auditoria integral — retornaram `NÃO BLOQUEIA`.
+- **Gate:** `CONCLUÍDO`; as 16 rotas da fase têm composição autorizada, conteúdo oficial, responsividade, acessibilidade, performance, testes e evidências verdes. Três revisões independentes finais — requisitos, código e auditoria integral — retornaram `NÃO BLOQUEIA`.
 - **Título de commit:** `feat(pages): implement authorized visual archetypes`.
 
 ### Fase 5 — Motion e navegação
 
-**Status:** `verified-complete`
+**Status:** `COMPLETE`
 **Objective:** implement adjacent score transitions, compressed same-branch
 jumps, cross-branch Home pivots, deep links, truthful history, focus,
 deterministic recovery, and reduced-motion behavior without changing the
@@ -609,7 +587,7 @@ or blocker remains; Phase 06 is still the exact next phase.
   native navigation, then remove the experience/motion modules and anchor data
   attributes. Server pages, real links, static scores, and content remain
   independently operable throughout that rollback.
-- **Gate:** `verified-complete`; implementation, tests, cross-browser behavior, visual
+- **Gate:** `COMPLETE`; implementation, tests, cross-browser behavior, visual
   comparison, accessibility, reduced motion, responsiveness, production build,
   standalone smoke, performance, evidence, Graphify, and OpenSpec are green.
 - **Suggested commit:** `feat(motion): complete score-driven chapter navigation`.
@@ -617,7 +595,7 @@ or blocker remains; Phase 06 is still the exact next phase.
 
 ### Fase 6 — Tablet
 
-**Status:** `verified-complete`
+**Estado:** `CONCLUÍDA`
 **Objetivo:** implementar o tablet em DOM e CSS 3D, com demonstração local determinística, teclado, toque, estados acessíveis e sem rede ou motor musical.
 
 - **Arquivos criados:** componente focado `ApplicationDemoTablet`, CSS module, teste unitário, suíte E2E de jornada/privacidade/motion/responsividade, suíte visual de sete estados, 21 baselines por engine e change OpenSpec `complete-interactive-application-demo`.
@@ -632,12 +610,12 @@ or blocker remains; Phase 06 is still the exact next phase.
 - **Riscos controlados:** o teste revelou e corrigiu leitura tardia de SyntheticEvent e a mutação cross-engine do tipo do botão no fluxo reduced motion; botões agora têm identidade DOM distinta. Logs de Fast Refresh são filtrados apenas da asserção de privacidade de escolha, sem mascarar rede/storage/file access.
 - **Graphify/OpenSpec:** grafo atualizado para 2.556 nós, 3.759 arestas e 265 comunidades; consulta localizou componente, rota, specs, stories e suítes. O change OpenSpec foi validado, sincronizado e arquivado como `2026-07-31-complete-interactive-application-demo`.
 - **Pendências não bloqueadoras:** validação externa real não se aplica à demonstração local. A referência em vídeo ausente continua sem autoridade geométrica. Firefox/WebKit e as variantes autorizadas já foram cobertos localmente.
-- **Gate:** `verified-complete`.
+- **Gate:** `CONCLUÍDO`.
 - **Título de commit:** `feat(application): complete interactive tablet demo`.
 
 ### Fase 7 — Abertura e motion local
 
-**Status:** `verified-complete`
+**Estado:** `CONCLUÍDA`
 **Objetivo:** implementar a abertura oficial, handoff, reveals, cards, notas, barras finais, skip, sessão, timeout e reduced motion.
 
 - **Arquivos criados:** `BrandIntroController`, `LocalRevealController`, CSS module, barrel e story; cópia pública byte a byte do SVG oficial; testes unitários de controller, reveals e paridade do asset; suítes E2E, axe e visual; 30 baselines de checkpoints por engine; change OpenSpec `complete-brand-opening-motion`.
@@ -687,21 +665,13 @@ or blocker remains; Phase 06 is still the exact next phase.
   passed in isolation, and the historical two-worker closure matrix passed
   30/30. The current Phase 09 release profile is one worker.
 - **Pendências não bloqueadoras:** o vídeo externo ausente continua sem autoridade geométrica; a sessão é deliberadamente por aba; validação em staging permanece na Fase 9. Nenhuma integração, secret ou publicação externa é necessária para este gate local.
-- **Graphify/OpenSpec:** the 2,651-node / 3,859-edge / 282-community
-  Graphify snapshot belongs to the original Phase 07 checkpoint and predates
-  the corrective Home choreography. The original OpenSpec change remains
-  archived as `2026-07-31-complete-brand-opening-motion`; the corrective
-  capability delta was strictly validated, synchronized, archived as
-  `2026-08-03-complete-brand-home-opening`, and committed as `51e8e62`.
-  The final filtered structural refresh now includes that commit and the Phase
-  09 relationships at 3,081 nodes, 4,322 edges, and 328 communities. The older
-  statistics above remain historical only.
-- **Gate:** `verified-complete`; timeline, recuperação, reduced motion, motion local, visual, acessibilidade, performance, standalone, Graphify e OpenSpec verdes.
+- **Graphify/OpenSpec:** Graphify `0.9.31` atualizou o mapa final para 2.651 nós, 3.859 arestas e 282 comunidades e conectou controller, Home, header, specs e testes; o subcomando legado `validate` não existe nessa versão, sem afetar os rebuilds e a consulta concluídos. O change OpenSpec concluiu 14/14 tarefas, passou validação estrita, foi sincronizado na capability canônica `brand-opening-motion` e arquivado como `2026-07-31-complete-brand-opening-motion`.
+- **Gate:** `CONCLUÍDO`; timeline, recuperação, reduced motion, motion local, visual, acessibilidade, performance, standalone, Graphify e OpenSpec verdes.
 - **Título de commit:** `feat(brand): complete accessible opening motion`.
 
 ### Phase 08 — Final content, secure contact, and browser security
 
-**Status:** `verified-complete`
+**Status:** `COMPLETE`
 **Objective:** finish the approved public content and legal routes, implement
 the private `POST /api/contact` boundary, and establish the locally enforceable
 security baseline without persistence, analytics, fabricated claims, or
@@ -780,125 +750,30 @@ premature production policy.
   inventory, edge rate limit/WAF decision, staging CSP observation, HSTS review,
   log-retention approval, and professional legal review remain Phase 09 owner
   or infrastructure actions. No external system was mutated.
-- **Gate:** `verified-complete`; local implementation, content, tests, cross-browser
+- **Gate:** `COMPLETE`; local implementation, content, tests, cross-browser
   behavior, reviewed visuals, accessibility automation, responsiveness,
   dependency/security inspection, build, standalone, Lighthouse, Graphify, and
   OpenSpec are green.
 - **Commit title:** `feat(contact): complete secure contact workflow`.
 
-### Phase 09 — Napoleon, staging, and production preparation
+### Fase 9 — Napoleon, staging e produção
 
-**Local status:** `verified-complete`
-**External integration status:** `blocked`
-**Operational macrostate:** `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`
-**Objective:** finish every repository-owned release-readiness control, create
-a traceable no-deploy candidate handoff, and document the external staging,
-homologation, and rollback sequence without changing GitHub settings,
-Napoleon, Cloudflare, DNS, providers, or production.
+**Estado:** `IMPLEMENTATION_IN_PROGRESS`
+**Objetivo:** validar build standalone, preparar o procedimento Napoleon, workflows e rollback; publicar staging; executar QA externo; obter homologação; somente então publicar produção.
 
-- **Created files:** strict deployment-environment configuration; indexing
-  smoke and release-manifest scripts; deployment, release-manifest, workflow,
-  and public-staging unit/browser suites; the Phase 09 readiness report; the
-  staging/release/rollback runbook; and active OpenSpec change
-  `complete-site-qa-release-preparation` with three focused capabilities.
-- **Modified files:** CI and manual release workflows; Next headers/build-ID
-  configuration; root metadata, robots policy, and unique 404 metadata;
-  package and Playwright commands; responsive page CSS and accumulated browser
-  harnesses; content/security tests; environment example and ignore policy;
-  deployment, Environment/runtime-value, QA, security, observability,
-  acceptance, index, and accumulated execution documentation.
-- **Implemented decisions:** only explicit `production` is indexable; staging,
-  absent, and invalid selectors fail closed at HTML, `robots.txt`, and
-  `X-Robots-Tag` layers. Common CI runs the quality baseline and four indexing
-  builds but never packages a deployable candidate. The protected manual
-  workflow resolves one immutable source SHA, checks pinned actions and exact
-  request policy, validates exactly one public Turnstile build value plus five
-  Contact server-runtime values by name, and produces a normalized standalone
-  archive, SHA-256 file, and non-secret manifest. It calls no undocumented
-  Napoleon, SSH, webhook, API, DNS, merge, tag, or deployment mechanism.
-  ADR-024 now records the owner-confirmed deployment boundary: read-only GitHub
-  Actions validates/packages the pushed SHA, while Napoleon independently
-  pulls/builds `develop/site-institucional`; Actions authors no deployment
-  commit and the branch, CI, manifest, and Napoleon selection must share one
-  full SHA.
-- **Public staging contract:** `pnpm test:staging` accepts only an explicit
-  HTTPS origin except for loopback development, uses one worker across
-  Chromium, Firefox, and WebKit, and exercises public visitor behavior without
-  deterministic controllers or forced timeline checkpoints. A locally started
-  staging-mode standalone server is not deployed Napoleon staging.
-- **Measured current-revision evidence:** 298/298 unit/component tests in 33
-  files; coverage at 69.40% statements (1277/1840), 68.29% branches
-  (896/1312), 74.59% functions (279/374), and 69.86% lines (1231/1762);
-  63/63 Storybook, 315/315 E2E, 102/102 axe, 30/30 motion, 291/291 visual
-  checks without a baseline update, and 69/69 checks against a locally started
-  public staging-mode standalone server.
-- **Build/runtime evidence:** production, staging, absent, and preview each
-  built 22 routes; standalone smoke passed 17 public routes and 20 assets;
-  indexing smoke passed 4/4; and Lighthouse passed 15/15 with every minimum
-  category score at 1.00, maximum LCP 755 ms, maximum CLS 0.0034, and maximum
-  TBT 3 ms.
-- **Artifact and isolation evidence:** the prepared standalone tree measured
-  29 MiB and its normalized archive 4.4 MiB. Two packages of the same tree
-  produced SHA-256
-  `b1c262ff65624c234fe7822aa5829a5c0872616d12f3fd47fa5ad7ee030e3a53`.
-  The local manifest validates repository, revision, source ref, environment,
-  workflow run ID/attempt/URL, archive, checksum, creation time, and
-  `deployment.performed=false`; regression tests reject inconsistent
-  provenance. Inspection found no credential values or prohibited
-  tooling/content. Required server-runtime variable names remain in the server
-  bundle by design. Dormant checkpoint code strings may remain in production
-  client chunks, but `testMode=false` exposes no private global/controller; the
-  public staging suite verifies those hooks are disabled and not exposed.
-- **Historical audit and regressions:** the 2026-08-03 F00–F09 matrix and
-  regression register are maintained in
-  `docs/07-qa/08-phase-09-release-readiness-report.md`. In addition to the
-  durable F05 navigation correction `f61d995`, F08 delivery-retry correction
-  `3c4940c`, and F07 Home-opening correction `51e8e62`, thirteen F09 audit
-  regressions are now `verified-complete`: common-CI artifact isolation,
-  Playwright evidence-directory separation, immutable release identity, rerun
-  manifest provenance, environment ownership, staging/quality ordering,
-  scoped reproducibility wording, staging revision identity, and cross-engine
-  Application density, plus current Next route type generation, raw canonical
-  build-ID validation, symlink-safe evidence/release path containment, and the
-  previously unknown Napoleon handoff. The handoff correction records the
-  confirmed Git-branch integration without conflating the Actions archive and
-  Napoleon's independent source build. The density correction is verified by
-  focused cross-engine inspection and the unchanged-baseline 291/291 visual
-  matrix.
-- **Visual/accessibility/performance boundary:** the complete current visual,
-  accessibility, responsive, and Lighthouse matrices are
-  `verified-complete`. Physical devices, screen readers, high contrast,
-  on-screen keyboard behavior, independent WCAG/legal review, real
-  network/provider latency, edge caching, and Napoleon process behavior are
-  `blocked` on external staging, access, hardware, or professional review.
-- **Repository closure:** frozen dependency installation, exact-version policy,
-  lint, Next typegen/strict TypeScript, unit/coverage, production audit, peers,
-  actionlint, strict OpenSpec validation, Graphify refresh/diagnostics/queries,
-  and the focused handoff checkpoint are green. The checkpoint is published
-  only as `develop/site-institucional`; its exact CI result still has to be
-  recorded before Napoleon can select the frozen branch head. The active
-  OpenSpec change stays active and unarchived because deployed-staging evidence
-  remains external.
-- **External blockers:** protected GitHub Environments and six scoped values;
-  the Napoleon application's exact build/start, variable-scope, selected-SHA,
-  port, health, process-user, restart, and rollback controls; Cloudflare
-  read-only inventory and approved staging host; Turnstile
-  and Resend staging configuration/delivery; CSP/HSTS/cache/WAF/rate decisions;
-  privacy-safe external logs; physical accessibility and professional legal
-  review; an independent `app.wflyer.com.br` DNS/availability investigation;
-  staging evidence; and Davi Benucci's exact-revision homologation.
-- **Exact next action:** confirm that the CI run for the published
-  `develop/site-institucional` head passes, keep that head frozen, configure the
-  six protected staging values, inventory Napoleon/Cloudflare read-only,
-  resolve the independent `app.wflyer.com.br` baseline, then select the same
-  branch/SHA in Napoleon and run `pnpm test:staging` from a clean checkout of
-  its manifest SHA.
-- **Local gate:** `verified-complete`.
-- **External gate:** `blocked`; the operational macrostate remains
-  `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`. Production remains
-  unauthorized.
-- **Handoff checkpoint title:**
-  `chore(release): govern Napoleon branch handoff`.
+- **Arquivos criados:** a registrar.
+- **Arquivos modificados:** a registrar.
+- **Decisões aplicadas:** ADR-018, ADR-020, ADR-021 e ADR-023.
+- **Comandos:** a registrar.
+- **Testes e resultados:** não executados.
+- **Screenshots:** a registrar para staging e evidências externas.
+- **Comparação visual:** pendente em staging.
+- **Acessibilidade:** pendente em staging.
+- **Performance:** pendente em staging e produção.
+- **Riscos:** credenciais, método real de deploy, inventário Cloudflare, HSTS e preservação da aplicação existente.
+- **Pendências não bloqueadoras:** preparação local; as dependências externas tornam-se bloqueadoras somente no ponto de integração correspondente.
+- **Gate:** `NÃO_AVALIADO`; produção exige homologação explícita.
+- **Título de commit:** a definir.
 
 ## 5. Histórico de atualizações
 
@@ -910,9 +785,8 @@ Napoleon, Cloudflare, DNS, providers, or production.
 | 2026-07-30 | Execução retomada sem perda de trabalho. A Fase 2 foi revalidada com dependências exatas, lint, tipos, 52 unitários, build de 22 páginas, standalone de 17 rotas e 14 assets e 35 cenários concentrados; o relatório recebeu o registro de continuidade e a Fase 3 foi alinhada como pronta para iniciar após a consolidação Git. |
 | 2026-07-30 | Fase 3 concluída com Home bifurcada, clave narrativa original, pauta de origem, anchors de oito capítulos, navegação direcional, barras finais e fallback vertical; 58 unitários, 38 stories, 73 Playwright, standalone 17+14 e Lighthouse 100/100/100/100 em três execuções. Fase 4 liberada. |
 | 2026-07-30 | Fase 4 concluída após auditoria e recomposição de densidade no viewport normativo, com 16 páginas pelos arquétipos autorizados, tablet estático em DOM, pautas separadas do texto, Serviços em ordem canônica, header legal simplificado, terminais corrigidos e 15 evidências; 65 unitários, 46 stories, 147 Playwright, standalone 17+17 e Lighthouse 100/100/100/100 em 15 execuções sobre cinco rotas. Três revisões independentes finais retornaram `NÃO BLOQUEIA`; Fase 5 liberada. |
-| 2026-07-30 | Registrado subpasso corretivo exclusivamente de tooling, documentação e CI com Graphify `0.9.31` e OpenSpec `1.7.0`, acompanhado pelos documentos 18, 19 e 20. Nenhuma feature de motion ou navegação havia sido implementada naquele checkpoint; a Fase 5 estava `not-started`. |
+| 2026-07-30 | Registrado subpasso corretivo exclusivamente de tooling, documentação e CI com Graphify `0.9.31` e OpenSpec `1.7.0`, acompanhado pelos documentos 18, 19 e 20. Nenhuma feature de motion ou navegação foi implementada; a Fase 5 permanece `PRONTA_PARA_INICIAR`. |
 | 2026-07-31 | Phase 05 completed with a persistent score-transition shell, manifest-derived topology, cancelable GSAP lifecycle, truthful history/focus behavior, live reduced motion, seven deterministic evidence captures, 201 unit tests, 57 Storybook tests, 192 Chromium checks, 135 focused cross-browser Phase 05 checks, 30 motion, 207 visual, 87 axe/accessibility, standalone 17+18, and Lighthouse 100/100/100/100 in 15 final runs. Graphify refreshed to 2,493 nodes and OpenSpec archived after 33/33 tasks; Phase 06 released. |
 | 2026-07-31 | Phase 06 completed with a semantic local tablet, deterministic five-state interaction, cancellable processing, original SVG score, precise-hover GSAP tilt, privacy instrumentation, 204 unit tests, 62 Storybook tests, 15 focused cross-browser interactions, 21 cross-browser state baselines, four-state axe coverage for all three Application routes, responsive 320 px and canonical 1536 × 1024 checks, and production/Storybook builds. Graphify refreshed to 2,556 nodes and the new OpenSpec capability was synchronized and archived; Phase 07 released. |
 | 2026-07-31 | Phase 07 completed with the immutable official SVG, a 5.600-second labeled GSAP opening, measured symbol-to-header handoff, one-session eligibility, skip/Escape/timeout/fail-open recovery, direct reduced-motion Home, route-aware finite local reveals, 214 unit tests, 63 Storybook tests, 21 focused cross-browser behaviors, 30 visual baselines, 6 axe audits, 30 accumulated motion checks, standalone 17+21, and Lighthouse 100/100/100/100 across 15 runs. OpenSpec and Graphify were refreshed before Phase 08 was released. |
 | 2026-07-31 | Phase 08 completed with strict 16 KiB contact validation, Turnstile and Resend boundaries, accessible recoverable client states, truthful privacy/legal content, report-only CSP and browser headers, zero known production dependency vulnerabilities, 239 unit/component tests, 63 Storybook tests, 239 complete Chromium checks, a 48-case dedicated cross-browser matrix, 27 reviewed form baselines, standalone 17+19, and Lighthouse 100/100/100/100 across 15 runs. Graphify advanced to 2,793 nodes and OpenSpec was synchronized and archived before Phase 09. |
-| 2026-08-03 | A repo-wide audit preserved the historical F00–F08 checkpoints and verified three bounded corrections in durable commits: navigation/history/geometry `f61d995`, Contact retry identity `3c4940c`, and Home-opening choreography/isolation `51e8e62`. Thirteen F09 regressions, including cross-engine Application density, current Next route type generation, raw canonical build-ID validation, symlink-safe evidence/release path containment, and the read-only Napoleon branch handoff, are `verified-complete`; the measured local candidate passed 298/298 unit, 63/63 Storybook, 315/315 E2E, 102/102 axe, 30/30 motion, 291/291 unchanged-baseline visual, 69/69 local staging, four 22-route builds, standalone/indexing, 15/15 Lighthouse, and artifact/bundle checks. Source/dependency, OpenSpec, Graphify, and the focused handoff checkpoint are complete; only `develop/site-institucional` is published, external integration is `blocked`, Napoleon, `main`, DNS, and production remain unchanged, and the macrostate is `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`. |

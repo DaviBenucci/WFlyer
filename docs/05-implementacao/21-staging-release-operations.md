@@ -69,6 +69,10 @@ approval.
 - the process user is isolated and non-administrative;
 - health/restart behavior and the prior revision selector are known.
 
+The Napoleon setup guide uses `public_html` as the application-root example.
+Use that directory name for manual uploads unless the owner records a different
+document root in the panel.
+
 ### Cloudflare and providers
 
 - a read-only inventory confirms apex, `www`, mail, application, certificates,
@@ -121,6 +125,22 @@ institutional release can claim preservation of the separate application.
    only the institutional staging application. If build and runtime values
    cannot be scoped separately, inspect the resulting server/client output for
    credential values before accepting staging.
+
+### 3.1 Manual upload procedure for a checked artifact
+
+If Napoleon expects a direct web-root upload, use the generated standalone
+artifact instead of the source tree:
+
+1. run `pnpm build`;
+2. run `pnpm prepare:standalone`;
+3. verify `.next/standalone/index.html` exists;
+4. back up the current `public_html` contents on Napoleon;
+5. upload the contents of `.next/standalone/` into `public_html`;
+6. confirm `public_html/index.html` exists and references the uploaded
+   `_next/static/` assets and `icon.svg`;
+7. verify the route files or server output for the expected public pages;
+8. test the domain root and the documented deep links;
+9. restore the backup if any route, asset, or header check fails.
 
 ## 4. External staging validation
 

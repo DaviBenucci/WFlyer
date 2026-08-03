@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { lstat } from "node:fs/promises";
+import { lstat, readFile } from "node:fs/promises";
 import { createServer } from "node:net";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -8,6 +8,11 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "..");
 const standaloneDirectory = resolve(repositoryRoot, ".next", "standalone");
 const serverPath = resolve(standaloneDirectory, "server.js");
+const rootIndexPath = resolve(standaloneDirectory, "index.html");
+const rootIconPath = resolve(standaloneDirectory, "icon.svg");
+const rootRobotsPath = resolve(standaloneDirectory, "robots.txt");
+const rootSitemapPath = resolve(standaloneDirectory, "sitemap.xml");
+const rootNotFoundPath = resolve(standaloneDirectory, "404.html");
 const host = "127.0.0.1";
 const startupTimeoutMs = 20_000;
 const publicRoutes = [
@@ -137,6 +142,27 @@ async function terminate(child) {
 }
 
 await lstat(serverPath);
+
+for (const [label, path] of [
+  ["document-root index", rootIndexPath],
+  ["document-root icon", rootIconPath],
+  ["document-root robots", rootRobotsPath],
+  ["document-root sitemap", rootSitemapPath],
+  ["document-root 404", rootNotFoundPath],
+]) {
+  await lstat(path).catch(() => {
+    throw new Error(`Missing ${label} in the standalone document root.`);
+  });
+}
+
+const rootIndexHtml = await readFile(rootIndexPath, "utf8");
+for (const requiredAsset of ["/_next/static/", "/icon.svg"]) {
+  if (!rootIndexHtml.includes(requiredAsset)) {
+    throw new Error(
+      `Standalone document-root index is missing the ${requiredAsset} reference.`,
+    );
+  }
+}
 
 const port = await reserveAvailablePort();
 const baseUrl = `http://${host}:${port}/`;

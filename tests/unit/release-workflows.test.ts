@@ -486,6 +486,15 @@ describe("release workflows", () => {
     );
     expect(candidateUpload).toContain("steps.archive.outputs.path");
     expect(candidateUpload).toContain("steps.manifest.outputs.path");
+    expect(step(release, "Validate candidate document root")).toContain(
+      "test -f .next/standalone/index.html",
+    );
+    expect(step(release, "Validate candidate document root")).toContain(
+      "test -f .next/standalone/icon.svg",
+    );
+    expect(step(release, "Validate standalone runtime and production quality baseline")).toContain(
+      "test -f .next/standalone/index.html",
+    );
   });
 
   it("keeps the Napoleon Git branch handoff read-only and SHA-bound", () => {
