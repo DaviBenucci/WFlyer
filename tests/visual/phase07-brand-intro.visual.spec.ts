@@ -7,6 +7,7 @@ async function openCheckpoint(page: Page, at: number) {
       .querySelector("nextjs-portal")
       ?.setAttribute("style", "display: none !important");
   });
+  await page.evaluate(() => document.fonts.ready);
   const overlay = page.locator("[data-brand-intro]");
   await expect(overlay).toHaveAttribute("data-brand-intro", "playing");
   await expect(overlay).not.toHaveAttribute("aria-hidden");
