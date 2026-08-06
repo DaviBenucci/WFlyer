@@ -7,7 +7,7 @@ provider dashboards were not accessed
 **Public read-only reachability:** observed separately on 2026-08-03
 **Production action:** not authorized or performed
 
-## Decision
+## Historical decision — 2026-08-03
 
 Repository-owned implementation and measured local validation are
 `verified-complete`. GitHub settings, Napoleon, Cloudflare, provider delivery,
@@ -16,6 +16,34 @@ rehearsal, and human homologation remain `blocked` on owner-controlled access
 or decisions. The operational macrostate is therefore
 `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`. Production remains
 unauthorized.
+
+## Browser-evidence correction — 2026-08-05
+
+The measurements below remain historical evidence for the 2026-08-03 source
+state; they are not current release proof for the later interrupted working
+tree. Public Actions run `30918790636` subsequently reported 268/291 visual
+checks passing and 23 failures. Its retained evidence exposed a development-
+server surface in the changing WebKit reduced-motion Home retry and stable
+cross-host text-edge differences in Firefox Phase 06. Therefore every later
+use of “current” or `verified-complete` below must be read within the dated
+2026-08-03 audit only.
+
+The corrective implementation is tracked by OpenSpec change
+`stabilize-browser-visual-regression`. Its repository-owned local evidence is
+now `verified-complete`: the exact Playwright 1.62.0 Noble image produced 34
+reviewed replacement snapshots, five consecutive reduced-motion WebKit passes,
+two unchanged 291/291 zero-tolerance visual runs, E2E 318/318, axe 102/102, and
+motion 30/30 with retries disabled. Unit/component 305/305, Storybook 63/63,
+four 22-route builds, standalone 17 routes + 20 assets, indexing 4/4, and
+Lighthouse 15/15 also passed. No previous baseline result was reused to satisfy
+the new canonical-environment gate.
+
+This local proof belongs to an uncommitted working tree at base SHA
+`5a4ea8529582931e287cc667ab436544c9a176ee`. It is not a GitHub-hosted result.
+After an authorized commit and push, common CI must pass for the resulting full
+SHA; the manual candidate browser workflow must separately pass for that same
+SHA before candidate acceptance. Until then, remote release evidence remains
+`implemented-but-unverified`.
 
 The public reachability observation was intentionally narrower than an
 infrastructure inventory. `wflyer.com.br` returned an HTTP 200 placeholder, and
@@ -32,7 +60,7 @@ part of the institutional-site release.
 This matrix uses only the required audit taxonomy: `verified-complete`,
 `implemented-but-unverified`, `partially-implemented`, `regressed`,
 `not-started`, `blocked`, and `obsolete-or-duplicated`. F00–F08 retain their
-durable historical evidence, while F09 records the current measured local
+durable historical evidence, while F09 records the dated 2026-08-03 local
 candidate and separates unavailable external integration.
 
 | Phase | Requirement | Documentation | Implementation | Test evidence | Runtime evidence | Status | Action |
@@ -70,7 +98,7 @@ candidate and separates unavailable external integration.
 | `REG-F09-SYMLINK-CONTAINMENT` | Lexical evidence and release-path containment could traverse a symlink below an allowed root. | Playwright evidence paths and release-manifest inputs now walk existing path components with `lstat` and reject symlinks before use. | Dedicated workflow/manifest symlink regressions and the complete 298/298 unit suite passed. | `verified-complete` | None locally. |
 | `REG-F09-NAPOLEON-HANDOFF-ASSUMPTION` | Operations treated the Napoleon transport as unknown and could not distinguish an Actions artifact from a provider-side source build. | ADR-024 and the release contract now record a read-only GitHub Actions pipeline plus Napoleon Git pull/build from `develop/site-institucional`, with one branch/CI/manifest SHA and no Actions-authored commit. | Focused workflow tests verify the branch trigger, read-only permissions, non-persisted checkout credentials, immutable SHA, and absence of commit/push/deploy commands. | `verified-complete` | Napoleon build/start, environment scopes, selected SHA, and public runtime remain `blocked` until panel inventory. |
 
-## Automated quality gate
+## Historical automated quality gate — 2026-08-03
 
 The measured repository-owned gate and administrative closure are complete:
 
@@ -100,7 +128,7 @@ worker.
 These results establish the repository-owned implementation as
 `verified-complete`. They do not complete any external gate.
 
-## Functional coverage
+## Historical functional coverage — 2026-08-03
 
 The 315/315 E2E journeys cover both Home branches,
 adjacent and compressed score navigation, Home-pivot cross-branch navigation,
@@ -114,7 +142,7 @@ When executed locally, provider checks use deterministic mocks or official
 public test configuration. They can prove application behavior but not external
 Turnstile or Resend readiness.
 
-## Accessibility
+## Historical accessibility — 2026-08-03
 
 The 102/102 axe matrix and functional assertions cover semantic
 landmarks, headings, skip navigation, keyboard access, visible focus, route
@@ -128,7 +156,7 @@ high-contrast mode, real on-screen keyboard, independent WCAG review, and a
 qualified accessibility audit. These remain explicit staging/homologation
 checks.
 
-## Responsive and visual evidence
+## Historical responsive and visual evidence — 2026-08-03
 
 The 291/291 unchanged-baseline visual matrix and responsive assertions cover
 320 px portrait,
@@ -220,7 +248,7 @@ Napoleon-style uploads: `index.html`, `icon.svg`, `robots.txt`, `sitemap.xml`,
 references the actual production assets rather than a placeholder landing
 page.
 
-## Manual inspection performed locally
+## Historical manual inspection performed locally — 2026-08-03
 
 Historical phase screenshots and the 2026-08-03 corrective Phase 07 images were
 inspected across engines. The final visual suite passed 291/291 without a
@@ -237,12 +265,14 @@ hosting, or legal review.
 
 Exact owners, configuration locations, rerun commands, staging checks,
 homologation steps, and rollback procedure are maintained in
-`docs/05-implementacao/21-staging-release-operations.md`. The local
-implementation is `verified-complete`; external integration is `blocked`.
-The audited checkpoint is published only to `develop/site-institucional`.
-Next, record a green CI result for its full head SHA, keep that head frozen,
-configure the six values in the protected GitHub `staging` Environment,
-inventory Napoleon/Cloudflare read-only, and resolve the independent
-`app.wflyer.com.br` baseline. Then select that branch in Napoleon, record the
-same SHA, prepare/verify the staging candidate, and run `pnpm test:staging` from
-a clean checkout of its manifest SHA. Production is not authorized.
+`docs/05-implementacao/21-staging-release-operations.md`. The current working
+tree is `verified-complete` locally; remote and external integration remain
+`blocked`. No commit or push was authorized for this correction. Next, commit
+the reviewed tree when authorized, push `develop/site-institucional`, and
+record a green common-CI result for that new full SHA. Keep that head frozen,
+run the manual candidate workflow for the same SHA, configure the six values in
+the protected GitHub `staging` Environment, inventory Napoleon/Cloudflare
+read-only, and resolve the independent `app.wflyer.com.br` baseline. Then
+select that branch in Napoleon, record the same SHA, prepare/verify the staging
+candidate, and run `pnpm test:staging` from a clean checkout of its manifest
+SHA. Production is not authorized.

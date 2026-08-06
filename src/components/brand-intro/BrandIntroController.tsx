@@ -293,6 +293,12 @@ function safelyCompleteSession(): void {
   }
 }
 
+function setHomeBrandIntroState(state: "pending" | "ready"): void {
+  document
+    .querySelector<HTMLElement>("[data-brand-intro-home-state]")
+    ?.setAttribute("data-brand-intro-home-state", state);
+}
+
 export function BrandIntroController({
   force = false,
   testMode = false,
@@ -333,6 +339,8 @@ export function BrandIntroController({
   }, []);
 
   useEffect(() => {
+    setHomeBrandIntroState("pending");
+
     const handleEscape = (event: KeyboardEvent): void => {
       if (event.key === "Escape") complete();
     };
@@ -399,6 +407,12 @@ export function BrandIntroController({
       ).__wfBrandIntroTimeline;
     };
   }, [complete, force, testMode]);
+
+  useEffect(() => {
+    if (state === "completed") {
+      setHomeBrandIntroState("ready");
+    }
+  }, [state]);
 
   const introActive = state === "waiting" || state === "playing";
 

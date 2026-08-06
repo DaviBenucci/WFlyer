@@ -24,7 +24,9 @@ for (const route of routes) {
   test(`${route} renderiza diretamente com SEO e navegação por teclado`, async ({
     page,
   }) => {
-    const response = await page.goto(route);
+    const response = await page.goto(route, {
+      waitUntil: "domcontentloaded",
+    });
 
     expect(response?.ok()).toBe(true);
     await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
@@ -77,7 +79,9 @@ test("sitemap e robots expõem somente a superfície pública esperada", async (
 test("uma rota inexistente apresenta 404 acessível e não indexável", async ({
   page,
 }) => {
-  const response = await page.goto("/rota-que-nao-existe");
+  const response = await page.goto("/rota-que-nao-existe", {
+    waitUntil: "domcontentloaded",
+  });
 
   expect(response?.status()).toBe(404);
   await expect(

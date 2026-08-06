@@ -11,6 +11,10 @@ describe("HomePage brand-opening targets", () => {
   it("annotates the existing score, origin, branch copy, actions, and cue", () => {
     const { container } = render(<HomePage />);
 
+    expect(container.querySelector("main")).toHaveAttribute(
+      "data-brand-intro-home-state",
+      "pending",
+    );
     expect(
       container.querySelector("[data-brand-intro-home-score]"),
     ).not.toBeNull();

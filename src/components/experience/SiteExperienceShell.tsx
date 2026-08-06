@@ -1206,7 +1206,7 @@ export function SiteExperienceShell({
   }, []);
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "production" || !testMode) {
+    if (!testMode) {
       return;
     }
 

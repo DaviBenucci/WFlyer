@@ -123,8 +123,15 @@ jobs:
 
   browser:
     name: Browser, accessibility and visual tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    container:
+      image: mcr.microsoft.com/playwright:v1.62.0-noble@sha256:baed2032d533817f3dbe6425de795788430ba345e819a1201337009ba17c9d07
+      options: --ipc=host
     timeout-minutes: 60
+    env:
+      PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
+      WFLYER_PLAYWRIGHT_TEST_SERVER: production
+      WFLYER_TRANSITION_TEST_MODE: "1"
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -144,11 +151,76 @@ jobs:
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
 
+      - name: Verify writable browser workspace
+        run: |
+          set -euo pipefail
+          pnpm_store="$(pnpm store path --silent)"
+          mkdir -p \
+            "${pnpm_store}" \
+            "${GITHUB_WORKSPACE}/.next" \
+            "${GITHUB_WORKSPACE}/test-results" \
+            "${GITHUB_WORKSPACE}/playwright-report"
+          test "$(id -u)" -eq 0
+          test -w "${HOME}"
+          test -w "${GITHUB_WORKSPACE}"
+          test -w "${pnpm_store}"
+          test -w "${GITHUB_WORKSPACE}/.next"
+          test -w "${GITHUB_WORKSPACE}/test-results"
+          test -w "${GITHUB_WORKSPACE}/playwright-report"
+
       - name: Install locked dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps chromium firefox webkit
+      - name: Verify canonical browser environment
+        run: |
+          set -euo pipefail
+          cat /etc/os-release
+          . /etc/os-release
+          node_version="$(node --version)"
+          pnpm_version="$(pnpm --version)"
+          playwright_version="$(pnpm exec playwright --version)"
+          browser_path="${PLAYWRIGHT_BROWSERS_PATH:?PLAYWRIGHT_BROWSERS_PATH is required}"
+          printf 'Node.js %s\n' "${node_version}"
+          printf 'pnpm %s\n' "${pnpm_version}"
+          printf 'Playwright %s\n' "${playwright_version}"
+          printf 'PLAYWRIGHT_BROWSERS_PATH=%s\n' "${browser_path}"
+          test "${ID}" = "ubuntu"
+          test "${VERSION_ID}" = "24.04"
+          test "${node_version%%.*}" = "v24"
+          test "${pnpm_version}" = "11.18.0"
+          test "${playwright_version}" = "Version 1.62.0"
+          test "${browser_path}" = "/ms-playwright"
+          test -d "${browser_path}"
+          test -r "${browser_path}"
+          browser_plan="$(pnpm exec playwright install --dry-run)"
+          printf '%s\n' "${browser_plan}"
+          for expected_browser in \
+            "(playwright chromium v1234)" \
+            "(playwright chromium-headless-shell v1234)" \
+            "(playwright firefox v1538)" \
+            "(playwright webkit v2336)" \
+            "(playwright ffmpeg v1011)"
+          do
+            grep -Fq "${expected_browser}" <<<"${browser_plan}"
+          done
+          mapfile -t browser_locations < <(
+            sed -n 's/^[[:space:]]*Install location:[[:space:]]*//p' \
+              <<<"${browser_plan}"
+          )
+          test "${#browser_locations[@]}" -eq 5
+          for install_location in "${browser_locations[@]}"; do
+            case "${install_location}" in
+              "${browser_path}"/*) ;;
+              *) exit 1 ;;
+            esac
+            test -d "${install_location}"
+            test -r "${install_location}/INSTALLATION_COMPLETE"
+          done
+
+      - name: Build and prepare browser-test application
+        run: |
+          pnpm build
+          pnpm prepare:standalone
 
       - name: Run end-to-end tests
         env:
@@ -162,17 +234,17 @@ jobs:
           WFLYER_PLAYWRIGHT_REPORT_DIR: playwright-report/a11y
         run: pnpm test:a11y
 
-      - name: Run visual regression tests
-        env:
-          WFLYER_PLAYWRIGHT_OUTPUT_DIR: test-results/visual
-          WFLYER_PLAYWRIGHT_REPORT_DIR: playwright-report/visual
-        run: pnpm test:visual
-
       - name: Run motion tests
         env:
           WFLYER_PLAYWRIGHT_OUTPUT_DIR: test-results/motion
           WFLYER_PLAYWRIGHT_REPORT_DIR: playwright-report/motion
         run: pnpm test:motion
+
+      - name: Run visual regression tests
+        env:
+          WFLYER_PLAYWRIGHT_OUTPUT_DIR: test-results/visual
+          WFLYER_PLAYWRIGHT_REPORT_DIR: playwright-report/visual
+        run: pnpm test:visual
 
       - name: Upload browser test evidence
         if: ${{ !cancelled() }}

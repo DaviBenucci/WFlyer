@@ -50,7 +50,21 @@ describe("BrandIntroController", () => {
   });
 
   it("mounts only after eligibility and releases safely through the skip button", () => {
-    render(<BrandIntroController />);
+    const { getByTestId } = render(
+      <div data-site-experience="">
+        <main
+          data-brand-intro-home-state="pending"
+          data-testid="home-surface"
+        />
+        <BrandIntroController />
+      </div>,
+    );
+    const homeSurface = getByTestId("home-surface");
+
+    expect(homeSurface).toHaveAttribute(
+      "data-brand-intro-home-state",
+      "pending",
+    );
     expect(screen.queryByRole("button")).not.toBeInTheDocument();
 
     act(() => vi.advanceTimersByTime(0));
@@ -61,12 +75,20 @@ describe("BrandIntroController", () => {
       "data-brand-intro-active",
       "true",
     );
+    expect(homeSurface).toHaveAttribute(
+      "data-brand-intro-home-state",
+      "pending",
+    );
 
     fireEvent.click(screen.getByRole("button", { name: "Pular introdução" }));
     expect(screen.queryByRole("button")).not.toBeInTheDocument();
     expect(sessionStorage.getItem(BRAND_INTRO_SESSION_KEY)).toBe("1");
     expect(document.documentElement).not.toHaveAttribute(
       "data-brand-intro-active",
+    );
+    expect(homeSurface).toHaveAttribute(
+      "data-brand-intro-home-state",
+      "ready",
     );
   });
 
@@ -116,18 +138,76 @@ describe("BrandIntroController", () => {
 
   it("does not replay a completed session and leaves scroll unlocked", () => {
     sessionStorage.setItem(BRAND_INTRO_SESSION_KEY, "1");
-    render(<BrandIntroController />);
+    const { getByTestId } = render(
+      <>
+        <main
+          data-brand-intro-home-state="pending"
+          data-testid="home-surface"
+        />
+        <BrandIntroController />
+      </>,
+    );
 
     act(() => vi.advanceTimersByTime(0));
 
     expect(screen.queryByRole("button")).not.toBeInTheDocument();
     expect(document.body.style.overflow).toBe("");
+    expect(getByTestId("home-surface")).toHaveAttribute(
+      "data-brand-intro-home-state",
+      "ready",
+    );
   });
 
   it("keeps ordinary automated routes intro-free in test mode", () => {
-    render(<BrandIntroController testMode />);
+    const { getByTestId } = render(
+      <>
+        <main
+          data-brand-intro-home-state="pending"
+          data-testid="home-surface"
+        />
+        <BrandIntroController testMode />
+      </>,
+    );
     act(() => vi.advanceTimersByTime(0));
     expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    expect(getByTestId("home-surface")).toHaveAttribute(
+      "data-brand-intro-home-state",
+      "ready",
+    );
+  });
+
+  it("marks the direct final Home ready when reduced motion is requested", () => {
+    vi.stubGlobal(
+      "matchMedia",
+      vi.fn(() => ({ matches: true })),
+    );
+    const { getByTestId } = render(
+      <>
+        <main
+          data-brand-intro-home-state="pending"
+          data-testid="home-surface"
+        />
+        <BrandIntroController force />
+      </>,
+    );
+    const homeSurface = getByTestId("home-surface");
+
+    expect(homeSurface).toHaveAttribute(
+      "data-brand-intro-home-state",
+      "pending",
+    );
+    act(() => vi.advanceTimersByTime(0));
+
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    expect(homeSurface).toHaveAttribute(
+      "data-brand-intro-home-state",
+      "ready",
+    );
+    expect(sessionStorage.getItem(BRAND_INTRO_SESSION_KEY)).toBe("1");
+    expect(document.documentElement).not.toHaveAttribute(
+      "data-brand-intro-active",
+    );
+    expect(document.body.style.overflow).toBe("");
   });
 
   it("fails open at the hard deadline and records completion", () => {
@@ -145,7 +225,10 @@ describe("BrandIntroController", () => {
   it("releases page locks when unmounted during the opening", () => {
     const { getByTestId, unmount } = render(
       <div data-site-experience="">
-        <main data-testid="home-surface" />
+        <main
+          data-brand-intro-home-state="pending"
+          data-testid="home-surface"
+        />
         <BrandIntroController />
       </div>,
     );
@@ -158,6 +241,10 @@ describe("BrandIntroController", () => {
 
     expect(homeSurface).not.toHaveAttribute("inert");
     expect(homeSurface).not.toHaveAttribute("aria-hidden");
+    expect(homeSurface).toHaveAttribute(
+      "data-brand-intro-home-state",
+      "pending",
+    );
     expect(document.body.style.overflow).toBe("");
     expect(document.documentElement).not.toHaveAttribute(
       "data-brand-intro-active",

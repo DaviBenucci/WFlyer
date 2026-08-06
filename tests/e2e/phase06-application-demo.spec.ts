@@ -32,13 +32,48 @@ test("tablet completes the local deterministic journey and restores defaults", a
   await expect(destinationKey).toHaveValue("bb-major");
 });
 
-test("tablet interaction emits no network, file, storage, or visitor logs", async ({
+test("native selects retain keyboard-visible focus", async ({ page }) => {
+  await page.goto("/aplicacao-wflyer");
+
+  const demo = page.locator("[data-application-demo]");
+  const originInstrument = demo.getByLabel("Instrumento de origem");
+  const originKey = demo.getByLabel("Tom de origem");
+
+  await originInstrument.focus();
+  await page.keyboard.press("Tab");
+  await expect(originKey).toBeFocused();
+
+  const focusPresentation = await originKey.evaluate((element) => {
+    const style = getComputedStyle(element);
+
+    return {
+      directImplicitLabel: element.parentElement?.tagName === "LABEL",
+      focusVisible: element.matches(":focus-visible"),
+      outlineOffset: Number.parseFloat(style.outlineOffset),
+      outlineStyle: style.outlineStyle,
+      outlineWidth: Number.parseFloat(style.outlineWidth),
+      tagName: element.tagName,
+    };
+  });
+
+  expect(focusPresentation).toMatchObject({
+    directImplicitLabel: true,
+    focusVisible: true,
+    outlineStyle: "solid",
+    tagName: "SELECT",
+  });
+  expect(focusPresentation.outlineWidth).toBeGreaterThanOrEqual(3);
+  expect(focusPresentation.outlineOffset).toBeGreaterThanOrEqual(2);
+});
+
+test("tablet interaction emits no demo network, file, storage, or visitor logs", async ({
   page,
 }) => {
   await page.addInitScript(() => {
     const audit = {
       active: false,
       fileReads: 0,
+      frameworkNetwork: [] as string[],
       logs: [] as string[],
       network: [] as string[],
       storage: [] as string[],
@@ -47,7 +82,25 @@ test("tablet interaction emits no network, file, storage, or visitor logs", asyn
 
     const originalFetch = window.fetch.bind(window);
     window.fetch = (...args) => {
-      if (audit.active) audit.network.push(`fetch:${String(args[0])}`);
+      if (audit.active) {
+        const input = args[0];
+        const requestUrl = input instanceof Request ? input.url : String(input);
+        const requestMethod =
+          args[1]?.method ?? (input instanceof Request ? input.method : "GET");
+        const url = new URL(requestUrl, window.location.href);
+        const entry = `fetch:${url.href}`;
+        const isRootRscPrefetch =
+          requestMethod.toUpperCase() === "GET" &&
+          url.origin === window.location.origin &&
+          url.pathname === "/" &&
+          url.searchParams.has("_rsc");
+
+        // Next.js production prefetch is shell traffic, not tablet I/O.
+        (isRootRscPrefetch
+          ? audit.frameworkNetwork
+          : audit.network
+        ).push(entry);
+      }
       return originalFetch(...args);
     };
 
@@ -127,6 +180,7 @@ test("tablet interaction emits no network, file, storage, or visitor logs", asyn
         __wfDemoAudit: {
           active: boolean;
           fileReads: number;
+          frameworkNetwork: string[];
           logs: string[];
           network: string[];
           storage: string[];
@@ -135,12 +189,19 @@ test("tablet interaction emits no network, file, storage, or visitor logs", asyn
     ).__wfDemoAudit;
     return {
       fileReads: audit.fileReads,
+      frameworkNetwork: audit.frameworkNetwork,
       logs: audit.logs,
       network: audit.network,
       storage: audit.storage,
     };
   });
   expect(audit.fileReads).toBe(0);
+  for (const request of audit.frameworkNetwork) {
+    const url = new URL(request.slice("fetch:".length));
+    expect(url.origin).toBe("http://127.0.0.1:3000");
+    expect(url.pathname).toBe("/");
+    expect(url.searchParams.has("_rsc")).toBe(true);
+  }
   expect(audit.network).toEqual([]);
   expect(audit.storage).toEqual([]);
   expect(audit.logs.join(" ")).not.toMatch(

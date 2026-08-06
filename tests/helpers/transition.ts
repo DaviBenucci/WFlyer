@@ -87,7 +87,7 @@ export async function waitForTransitionController(page: Page): Promise<void> {
         ),
       {
         message:
-          "the non-production transition controller should be available",
+          "the explicitly enabled transition test controller should be available",
       },
     )
     .toBe(true);

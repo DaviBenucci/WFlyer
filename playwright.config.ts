@@ -10,6 +10,29 @@ const isCi = Boolean(process.env.CI);
 const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
 const isStagingGate = process.env.WFLYER_STAGING_GATE === "1";
 
+export function resolvePlaywrightTestServerMode(
+  value: string | undefined,
+): "production" | undefined {
+  if (value === undefined) return undefined;
+
+  if (value !== "production") {
+    throw new Error(
+      "WFLYER_PLAYWRIGHT_TEST_SERVER must be unset or equal production.",
+    );
+  }
+
+  return value;
+}
+
+const playwrightTestServerMode = resolvePlaywrightTestServerMode(
+  process.env.WFLYER_PLAYWRIGHT_TEST_SERVER,
+);
+const isProductionTestServer = playwrightTestServerMode === "production";
+const screenshotStylePath = resolve(
+  configDirectory,
+  "tests/visual/screenshot.css",
+);
+
 export function resolvePlaywrightEvidenceDirectory(
   value: string | undefined,
   root: string,
@@ -84,6 +107,26 @@ if (isStagingGate) {
 
 const baseURL = externalBaseUrl ?? localBaseUrl;
 
+if (isProductionTestServer) {
+  let productionTestOrigin: URL | null = null;
+
+  try {
+    productionTestOrigin = new URL(baseURL);
+  } catch {
+    productionTestOrigin = null;
+  }
+
+  if (
+    !productionTestOrigin ||
+    productionTestOrigin.origin !== localBaseUrl ||
+    productionTestOrigin.href !== `${localBaseUrl}/`
+  ) {
+    throw new Error(
+      "WFLYER_PLAYWRIGHT_TEST_SERVER=production requires PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000.",
+    );
+  }
+}
+
 export default defineConfig({
   testDir: "./tests",
   testMatch: [
@@ -104,6 +147,12 @@ export default defineConfig({
   ],
   expect: {
     timeout: 5_000,
+    toHaveScreenshot: {
+      animations: "disabled",
+      caret: "hide",
+      maxDiffPixels: 0,
+      stylePath: screenshotStylePath,
+    },
   },
   use: {
     baseURL,
@@ -133,11 +182,12 @@ export default defineConfig({
       use: { ...devices["Desktop Safari"] },
     },
   ],
-  ...(externalBaseUrl
-    ? {}
-    : {
+  ...(isProductionTestServer || !externalBaseUrl
+    ? {
         webServer: {
-          command: "pnpm dev --hostname 127.0.0.1",
+          command: isProductionTestServer
+            ? "node .next/standalone/server.js"
+            : "pnpm dev --hostname 127.0.0.1",
           env: {
             NEXT_TELEMETRY_DISABLED: "1",
             NEXT_PUBLIC_TURNSTILE_SITE_KEY: "1x00000000000000000000AA",
@@ -145,10 +195,18 @@ export default defineConfig({
               ? "staging"
               : "production",
             ...(isStagingGate ? {} : { WFLYER_TRANSITION_TEST_MODE: "1" }),
+            ...(isProductionTestServer
+              ? {
+                  HOSTNAME: "127.0.0.1",
+                  NODE_ENV: "production",
+                  PORT: "3000",
+                }
+              : {}),
           },
-          reuseExistingServer: !isCi,
-          timeout: 180_000,
+          reuseExistingServer: !isCi && !isProductionTestServer,
+          timeout: isProductionTestServer ? 240_000 : 180_000,
           url: localBaseUrl,
         },
-      }),
+      }
+    : {}),
 });

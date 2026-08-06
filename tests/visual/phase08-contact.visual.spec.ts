@@ -1,5 +1,10 @@
 import { expect, test, type Page } from "@playwright/test";
 
+import {
+  stabilizeVisualCapture,
+  waitForStableFrames,
+} from "../helpers/visual";
+
 async function mockTurnstile(page: Page) {
   await page.route("**/turnstile/v0/api.js**", (route) =>
     route.fulfill({
@@ -62,25 +67,11 @@ async function expectFormScreenshot(
   name: string,
 ) {
   const page = form.page();
-  await page.locator("header[data-menu-open]").evaluate((element) => {
-    (element as HTMLElement).style.setProperty("display", "none", "important");
-  });
-  await page.locator(".wf-skip-link").evaluate((element) => {
-    (element as HTMLElement).style.setProperty("display", "none", "important");
-  });
-  const developmentPortal = page.locator("nextjs-portal");
-  if ((await developmentPortal.count()) > 0) {
-    await developmentPortal.evaluate((element) => {
-      (element as HTMLElement).style.setProperty("display", "none", "important");
-    });
-  }
   await form.evaluate((element) => {
     element.scrollIntoView({ block: "center", inline: "nearest" });
   });
+  await stabilizeVisualCapture(page, { stateLocator: form });
   await expect(form).toHaveScreenshot(name, {
-    animations: "disabled",
-    caret: "hide",
-    maxDiffPixelRatio: 0.01,
     timeout: 10_000,
   });
 }
@@ -92,12 +83,29 @@ test("contact idle", async ({ page }) => {
 
 test("contact field error", async ({ page }) => {
   const form = await openContact(page);
+  const name = form.getByLabel("Nome");
+  const projectType = form.getByLabel("Tipo de projeto");
+  const status = page.locator("#contact-form-status");
   await verify(form);
-  await form.getByRole("button", { name: "Enviar mensagem" }).click();
+  // Exercise the authored invalid state without capturing browser-native UI.
+  // Native submit validation remains covered by the E2E and axe suites.
+  await name.fill("A");
+  await name.fill("");
+  await form.getByLabel("E-mail").fill("invalid@example");
+  await form.getByLabel("E-mail").fill("");
+  await projectType.focus();
+  await projectType.press("ArrowDown");
+  await projectType.press("Home");
+  await expect(projectType).toHaveValue("");
+  await form.getByLabel("Mensagem").fill("Mensagem temporária");
+  await form.getByLabel("Mensagem").fill("");
+  await form.getByLabel(/Li a Política de Privacidade/u).check();
+  await form.getByLabel(/Li a Política de Privacidade/u).uncheck();
+  await name.dispatchEvent("invalid");
   await expect(form).toHaveAttribute("data-contact-form", "validation-error");
-  await form.getByLabel("Nome").fill("A");
-  await form.getByLabel("Nome").fill("");
-  await form.getByLabel("Nome").dispatchEvent("invalid");
+  await waitForStableFrames(page);
+  await status.focus();
+  await expect(status).toBeFocused();
   await expectFormScreenshot(form, "contact-field-error.png");
 });
 

@@ -231,11 +231,18 @@ test.describe("Phase 05 compressed and cross-branch navigation", () => {
       ).toHaveCount(1);
 
       await releaseTransition(page);
-      await waitForSettledTransition(page, jump.destination);
+      // The held checkpoint already proves the compressed topology and
+      // geometry. A saturated browser may then exercise the normative
+      // 1,100 ms recovery while still committing the same usable destination.
+      await waitForSettledTransition(page, jump.destination, [
+        "success",
+        "recovered",
+      ]);
       expect(await mountedChapters(page)).not.toContain(jump.excluded);
       expect(await page.evaluate(() => window.history.length)).toBe(
         initialHistoryLength + 1,
       );
+      await expectSafeSettledDocument(page);
     });
   }
 

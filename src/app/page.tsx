@@ -29,6 +29,7 @@ export default function HomePage() {
       />
       <main
         className={styles.shell}
+        data-brand-intro-home-state="pending"
         data-branch={homeChapter.branch}
         data-chapter={homeChapter.id}
         data-coordinate={homeChapter.coordinate}

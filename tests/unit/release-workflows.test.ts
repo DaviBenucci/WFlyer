@@ -10,7 +10,10 @@ import path from "node:path";
 
 import { beforeAll, describe, expect, it } from "vitest";
 
-import { resolvePlaywrightEvidenceDirectory } from "../../playwright.config";
+import {
+  resolvePlaywrightEvidenceDirectory,
+  resolvePlaywrightTestServerMode,
+} from "../../playwright.config";
 
 async function workflow(name: string) {
   return readFile(path.join(process.cwd(), ".github", "workflows", name), "utf8");
@@ -36,8 +39,11 @@ describe("release workflows", () => {
   let ci = "";
   let release = "";
   let packageJson = "";
+  let pnpmLock = "";
   let nextConfiguration = "";
   let playwrightConfiguration = "";
+  let screenshotStyles = "";
+  let vitestConfiguration = "";
   let environmentExample = "";
   let indexingSmoke = "";
 
@@ -46,16 +52,25 @@ describe("release workflows", () => {
       ci,
       release,
       packageJson,
+      pnpmLock,
       nextConfiguration,
       playwrightConfiguration,
+      screenshotStyles,
+      vitestConfiguration,
       environmentExample,
       indexingSmoke,
     ] = await Promise.all([
       workflow("ci.yml"),
       workflow("deploy.yml"),
       readFile(path.join(process.cwd(), "package.json"), "utf8"),
+      readFile(path.join(process.cwd(), "pnpm-lock.yaml"), "utf8"),
       readFile(path.join(process.cwd(), "next.config.ts"), "utf8"),
       readFile(path.join(process.cwd(), "playwright.config.ts"), "utf8"),
+      readFile(
+        path.join(process.cwd(), "tests", "visual", "screenshot.css"),
+        "utf8",
+      ),
+      readFile(path.join(process.cwd(), "vitest.config.ts"), "utf8"),
       readFile(path.join(process.cwd(), ".env.example"), "utf8"),
       readFile(
         path.join(process.cwd(), "scripts", "smoke-indexing.mjs"),
@@ -79,12 +94,216 @@ describe("release workflows", () => {
       expect(scripts[scriptName]).not.toContain("--project=chromium");
     }
 
-    expect(ci).toContain(
-      "pnpm exec playwright install --with-deps chromium firefox webkit",
-    );
     expect(ci).toContain("pnpm audit --prod");
     expect(ci).toContain("pnpm peers check");
     expect(ci).toContain("pnpm smoke:indexing");
+    expect(vitestConfiguration).toMatch(
+      /name: "storybook",[\s\S]*?fileParallelism: false,[\s\S]*?browser:/u,
+    );
+  });
+
+  it("pins matching canonical environments and bundled browsers", () => {
+    const manifest = JSON.parse(packageJson) as {
+      packageManager: string;
+      devDependencies: Record<string, string>;
+    };
+    const playwrightVersion = manifest.devDependencies["@playwright/test"];
+    const pnpmVersion = manifest.packageManager.match(/^pnpm@([^+]+)/u)?.[1];
+    const ciBrowser = job(ci, "browser");
+    const releaseBrowser = job(release, "candidate-browser");
+    const browserJobs = [ciBrowser, releaseBrowser];
+    const image = `mcr.microsoft.com/playwright:v${playwrightVersion}-noble@sha256:baed2032d533817f3dbe6425de795788430ba345e819a1201337009ba17c9d07`;
+
+    expect(playwrightVersion).toBe("1.62.0");
+    expect(manifest.devDependencies.playwright).toBe(playwrightVersion);
+    expect(pnpmVersion).toBe("11.18.0");
+    expect(pnpmLock).toMatch(
+      /'@playwright\/test':\n\s+specifier: 1\.62\.0\n\s+version: 1\.62\.0/u,
+    );
+    expect(pnpmLock).toMatch(
+      /playwright:\n\s+specifier: 1\.62\.0\n\s+version: 1\.62\.0/u,
+    );
+    expect(pnpmLock).toContain("playwright-core@1.62.0:");
+
+    for (const source of browserJobs) {
+      expect(source).toContain("runs-on: ubuntu-24.04");
+      expect(source).toContain(`image: ${image}`);
+      expect(source).toContain("options: --ipc=host");
+      expect(source).not.toContain("--user");
+      expect(step(source, "Install pnpm")).toContain(
+        `version: ${pnpmVersion}`,
+      );
+      expect(step(source, "Configure Node.js")).toContain(
+        'node-version: "24"',
+      );
+      expect(source).toContain(
+        "PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000",
+      );
+      expect(source).toContain(
+        "WFLYER_PLAYWRIGHT_TEST_SERVER: production",
+      );
+      expect(source).not.toContain("playwright install --with-deps");
+      expect(source).not.toContain("continue-on-error");
+      expect(
+        source.match(/pnpm exec playwright install/gu),
+      ).toHaveLength(1);
+      expect(
+        source.match(/pnpm exec playwright install --dry-run/gu),
+      ).toHaveLength(1);
+    }
+
+    for (const stepName of [
+      "Install pnpm",
+      "Configure Node.js",
+      "Verify writable browser workspace",
+      "Install locked dependencies",
+      "Verify canonical browser environment",
+      "Build and prepare browser-test application",
+    ]) {
+      expect(step(ciBrowser, stepName)).toBe(step(releaseBrowser, stepName));
+    }
+  });
+
+  it("verifies writable paths before dependency installation", () => {
+    const browserJobs = [
+      {
+        firstSuite: "Run end-to-end tests",
+        source: job(ci, "browser"),
+      },
+      {
+        firstSuite: "Run supported-browser functional gate",
+        source: job(release, "candidate-browser"),
+      },
+    ];
+
+    for (const { firstSuite, source } of browserJobs) {
+      const preflight = step(source, "Verify writable browser workspace");
+      const mkdirBlock = preflight.slice(
+        preflight.indexOf("mkdir -p"),
+        preflight.indexOf('test "$(id -u)"'),
+      );
+
+      expect(mkdirBlock).toContain("mkdir -p");
+      for (const createdPath of [
+        '"${pnpm_store}"',
+        '"${GITHUB_WORKSPACE}/.next"',
+        '"${GITHUB_WORKSPACE}/test-results"',
+        '"${GITHUB_WORKSPACE}/playwright-report"',
+      ]) {
+        expect(mkdirBlock).toContain(createdPath);
+      }
+      for (const contract of [
+        'pnpm_store="$(pnpm store path --silent)"',
+        'test "$(id -u)" -eq 0',
+        'test -w "${HOME}"',
+        'test -w "${GITHUB_WORKSPACE}"',
+        'test -w "${pnpm_store}"',
+        'test -w "${GITHUB_WORKSPACE}/.next"',
+        'test -w "${GITHUB_WORKSPACE}/test-results"',
+        'test -w "${GITHUB_WORKSPACE}/playwright-report"',
+      ]) {
+        expect(preflight).toContain(contract);
+      }
+
+      const orderedSteps = [
+        "Verify writable browser workspace",
+        "Install locked dependencies",
+        "Verify canonical browser environment",
+        "Build and prepare browser-test application",
+        firstSuite,
+      ];
+      let previousPosition = -1;
+
+      for (const stepName of orderedSteps) {
+        const position = source.indexOf(`- name: ${stepName}`);
+        expect(position).toBeGreaterThan(previousPosition);
+        previousPosition = position;
+      }
+    }
+  });
+
+  it("fingerprints the exact canonical environment and browser bundle", () => {
+    const fingerprints = [
+      step(job(ci, "browser"), "Verify canonical browser environment"),
+      step(
+        job(release, "candidate-browser"),
+        "Verify canonical browser environment",
+      ),
+    ];
+
+    for (const fingerprint of fingerprints) {
+      for (const contract of [
+        "cat /etc/os-release",
+        'node_version="$(node --version)"',
+        'pnpm_version="$(pnpm --version)"',
+        'playwright_version="$(pnpm exec playwright --version)"',
+        'browser_path="${PLAYWRIGHT_BROWSERS_PATH:?PLAYWRIGHT_BROWSERS_PATH is required}"',
+        'test "${ID}" = "ubuntu"',
+        'test "${VERSION_ID}" = "24.04"',
+        'test "${node_version%%.*}" = "v24"',
+        'test "${pnpm_version}" = "11.18.0"',
+        'test "${playwright_version}" = "Version 1.62.0"',
+        'test "${browser_path}" = "/ms-playwright"',
+        'test -d "${browser_path}"',
+        'test -r "${browser_path}"',
+        'browser_plan="$(pnpm exec playwright install --dry-run)"',
+        '"(playwright chromium v1234)"',
+        '"(playwright chromium-headless-shell v1234)"',
+        '"(playwright firefox v1538)"',
+        '"(playwright webkit v2336)"',
+        '"(playwright ffmpeg v1011)"',
+        'grep -Fq "${expected_browser}" <<<"${browser_plan}"',
+        "mapfile -t browser_locations",
+        'test "${#browser_locations[@]}" -eq 5',
+        '"${browser_path}"/*) ;;',
+        'test -d "${install_location}"',
+        'test -r "${install_location}/INSTALLATION_COMPLETE"',
+      ]) {
+        expect(fingerprint).toContain(contract);
+      }
+      expect(fingerprint).not.toContain("$HOME/.cache/ms-playwright");
+    }
+  });
+
+  it("prepares standalone browser-test input without packaging a candidate", () => {
+    const ciBrowser = job(ci, "browser");
+    const releaseBrowser = job(release, "candidate-browser");
+    const buildSteps = [
+      step(ciBrowser, "Build and prepare browser-test application"),
+      step(releaseBrowser, "Build and prepare browser-test application"),
+    ];
+
+    for (const buildStep of buildSteps) {
+      expect(buildStep).toContain("pnpm build");
+      expect(buildStep).toContain("pnpm prepare:standalone");
+      expect(buildStep.indexOf("pnpm build")).toBeLessThan(
+        buildStep.indexOf("pnpm prepare:standalone"),
+      );
+      expect(buildStep).not.toContain("release:manifest");
+      expect(buildStep).not.toContain("wflyer-standalone-");
+      expect(buildStep).not.toContain("sha256sum");
+    }
+
+    expect(ciBrowser.indexOf("Run motion tests")).toBeGreaterThanOrEqual(0);
+    expect(ciBrowser.indexOf("Run motion tests")).toBeLessThan(
+      ciBrowser.indexOf("Run visual regression tests"),
+    );
+    expect(
+      releaseBrowser.indexOf("Run supported-browser motion gate"),
+    ).toBeGreaterThanOrEqual(0);
+    expect(
+      releaseBrowser.indexOf("Run supported-browser motion gate"),
+    ).toBeLessThan(
+      releaseBrowser.indexOf("Run supported-browser visual gate"),
+    );
+    expect(ciBrowser.indexOf("Upload browser test evidence")).toBeGreaterThan(
+      ciBrowser.indexOf("Run visual regression tests"),
+    );
+    expect(
+      releaseBrowser.indexOf("Upload candidate browser evidence"),
+    ).toBeGreaterThan(
+      releaseBrowser.indexOf("Run supported-browser visual gate"),
+    );
   });
 
   it("forbids focused tests in CI and in the public staging gate", () => {
@@ -96,6 +315,52 @@ describe("release workflows", () => {
     expect(playwrightConfiguration).toContain(
       "forbidOnly: isCi || isStagingGate",
     );
+  });
+
+  it("uses a loopback standalone server and an exact central capture policy", () => {
+    expect(playwrightConfiguration).toContain(
+      "resolvePlaywrightTestServerMode(",
+    );
+    expect(playwrightConfiguration).toContain(
+      'productionTestOrigin.origin !== localBaseUrl',
+    );
+    expect(playwrightConfiguration).toContain(
+      'productionTestOrigin.href !== `${localBaseUrl}/`',
+    );
+    expect(playwrightConfiguration).toContain(
+      'command: isProductionTestServer',
+    );
+    expect(playwrightConfiguration).toContain(
+      '? "node .next/standalone/server.js"',
+    );
+    expect(playwrightConfiguration).not.toContain("pnpm exec next start");
+    expect(playwrightConfiguration).toContain('HOSTNAME: "127.0.0.1"');
+    expect(playwrightConfiguration).toContain('NODE_ENV: "production"');
+    expect(playwrightConfiguration).toContain('PORT: "3000"');
+    expect(playwrightConfiguration).toContain(
+      "reuseExistingServer: !isCi && !isProductionTestServer",
+    );
+    expect(playwrightConfiguration).toContain("toHaveScreenshot:");
+    expect(playwrightConfiguration).toContain('animations: "disabled"');
+    expect(playwrightConfiguration).toContain('caret: "hide"');
+    expect(playwrightConfiguration).toContain("maxDiffPixels: 0");
+    expect(playwrightConfiguration).toContain(
+      '"tests/visual/screenshot.css"',
+    );
+    expect(screenshotStyles.trim()).toBe(
+      "nextjs-portal {\n  display: none !important;\n}",
+    );
+  });
+
+  it("fails closed for unknown Playwright test-server modes", () => {
+    expect(resolvePlaywrightTestServerMode(undefined)).toBeUndefined();
+    expect(resolvePlaywrightTestServerMode("production")).toBe("production");
+
+    for (const unsafeMode of ["", "development", "prodution", "staging"]) {
+      expect(() => resolvePlaywrightTestServerMode(unsafeMode)).toThrow(
+        "WFLYER_PLAYWRIGHT_TEST_SERVER must be unset or equal production.",
+      );
+    }
   });
 
   it("keeps configurable Playwright evidence inside its safe roots", () => {
@@ -203,12 +468,19 @@ describe("release workflows", () => {
       }
     }
 
-    expect(step(ci, "Upload browser test evidence")).toContain(
-      "playwright-report/\n            test-results/",
-    );
-    expect(step(release, "Upload candidate browser evidence")).toContain(
-      "playwright-report/\n            test-results/",
-    );
+    const evidenceUploads = [
+      step(ci, "Upload browser test evidence"),
+      step(release, "Upload candidate browser evidence"),
+    ];
+
+    for (const upload of evidenceUploads) {
+      expect(upload).toContain("if: ${{ !cancelled() }}");
+      expect(upload).toContain(
+        "path: |\n            playwright-report/\n            test-results/",
+      );
+      expect(upload).toContain("if-no-files-found: ignore");
+      expect(upload).toContain("include-hidden-files: true");
+    }
   });
 
   it("distinguishes immutable artifacts and manifests across run attempts", () => {

@@ -1,6 +1,8 @@
 # Staging, release, rollback, and homologation operations
 
-**Current state:** `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`
+**Current state:** `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING` (local
+repository gates green; exact-revision remote CI and external configuration
+pending)
 
 This guide begins only after the repository quality gate is green. It does not
 authorize production deployment, DNS changes, provider activation, or a merge
@@ -37,6 +39,15 @@ integration pulls/builds the environment branch from GitHub. The deployed
 identity is therefore the full head SHA selected by Napoleon; the Actions
 archive and manifest remain independent quality/provenance evidence for that
 same source SHA.
+
+The workflow's `candidate-browser` job is also not a deployment artifact. It
+uses the same pinned Playwright Noble environment and deterministic standalone
+repository-test build as common CI, including test-only transition controls.
+When successful, that disposable build proves functional, accessibility,
+motion, and visual behavior for the selected SHA. Only the later
+environment-protected quality and packaging path builds the staging/production
+configuration that becomes the checksummed Napoleon candidate. Never copy,
+relabel, or deploy the browser-test standalone tree.
 
 Staging uses `develop/site-institucional`. After staging passes and Davi
 Benucci approves the exact revision, the release tag strategy is
@@ -276,6 +287,7 @@ not mark the checklist item complete before that evidence exists.
 
 | Blocker | Configuration owner/location | Rerun after resolution |
 |---|---|---|
+| Corrective working tree has no remote revision | Repository owner; current local base is `5a4ea8529582931e287cc667ab436544c9a176ee` | After an authorized commit and push, require common CI and then `Prepare Napoleon release` to pass for the resulting identical full SHA |
 | GitHub Environments and values | Repository Settings → Environments | Dispatch `Prepare Napoleon release` for staging |
 | Napoleon build/start/runtime controls | Napoleon application settings | Record source, branch, SHA, commands, variable scopes, port, health, process user, restart, and rollback controls; then run section 4 |
 | Staging URL-to-source identity | Napoleon branch selection plus the release manifest/SHA | Record operator confirmation that `develop/site-institucional`, CI, manifest, selected application, and host identify the same SHA; do not infer identity from an undocumented public header |
@@ -286,9 +298,12 @@ not mark the checklist item complete before that evidence exists.
 | Legal and physical accessibility review | Davi Benucci and qualified reviewers | Update reports, then repeat homologation |
 | Production approval | Davi Benucci on exact manifest | Dispatch production candidate workflow only |
 
-The repository-owned validation and controlled publication only to
-`develop/site-institucional` are complete. The exact branch-head CI result must
-still be recorded and pass before Napoleon is pointed to that frozen SHA. The
-state remains `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`; it is not
+Local visual regression is stabilized with 34 reviewed replacement snapshots,
+five consecutive reduced-motion WebKit passes, and two unchanged 291/291
+zero-tolerance runs. The complete local browser, source, build, standalone,
+indexing, and Lighthouse gates are green. The exact branch-head common CI and
+manual candidate results must still be recorded after an authorized commit and
+push before Napoleon is pointed to that frozen SHA. The state remains
+`CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`; it is not
 `READY_FOR_HUMAN_HOMOLOGATION` or `READY_FOR_PRODUCTION` until deployed staging
 and owner approval pass.

@@ -1,5 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 
+import { stabilizeVisualCapture } from "../helpers/visual";
+
 async function openTablet(
   page: Page,
   options: {
@@ -20,37 +22,27 @@ async function openTablet(
     window.localStorage.setItem("wf-theme", selectedTheme);
   }, options.colorScheme ?? "light");
   await page.goto("/aplicacao-wflyer");
-  await page.evaluate(() => {
-    document
-      .querySelector("nextjs-portal")
-      ?.setAttribute("style", "display: none !important");
-  });
-  await page.evaluate(() => document.fonts.ready);
   const demo = page.locator("[data-application-demo]");
   await expect(demo).toBeVisible();
+  await stabilizeVisualCapture(page, { stateLocator: demo });
   return demo;
 }
 
 test("tablet idle light evidence", async ({ page }) => {
   const demo = await openTablet(page);
-  await expect(demo).toHaveScreenshot("tablet-idle-light.png", {
-    animations: "disabled",
-  });
+  await expect(demo).toHaveScreenshot("tablet-idle-light.png");
 });
 
 test("tablet idle dark evidence", async ({ page }) => {
   const demo = await openTablet(page, { colorScheme: "dark" });
-  await expect(demo).toHaveScreenshot("tablet-idle-dark.png", {
-    animations: "disabled",
-  });
+  await expect(demo).toHaveScreenshot("tablet-idle-dark.png");
 });
 
 test("tablet focused control evidence", async ({ page }) => {
   const demo = await openTablet(page);
   await demo.getByLabel("Instrumento de origem").focus();
-  await expect(demo).toHaveScreenshot("tablet-focus-control.png", {
-    animations: "disabled",
-  });
+  await stabilizeVisualCapture(page, { stateLocator: demo });
+  await expect(demo).toHaveScreenshot("tablet-focus-control.png");
 });
 
 test("tablet processing evidence", async ({ page }) => {
@@ -59,9 +51,6 @@ test("tablet processing evidence", async ({ page }) => {
   await destinationKey.selectOption("g-major");
   await expect(demo).toHaveAttribute("data-demo-state", "configured");
   await destinationKey.selectOption("bb-major");
-  await page.locator("[data-tablet-shell]").evaluate((element) => {
-    element.setAttribute("style", "transform: none !important");
-  });
   await page.evaluate(() => {
     const originalSetTimeout = window.setTimeout.bind(window);
     window.setTimeout = ((handler: TimerHandler, timeout?: number) => {
@@ -71,30 +60,24 @@ test("tablet processing evidence", async ({ page }) => {
   });
   await demo.getByRole("button", { name: "Transpor" }).click();
   await expect(demo).toHaveAttribute("data-demo-state", "processing");
-  await expect(demo).toHaveScreenshot("tablet-processing.png", {
-    animations: "disabled",
-  });
+  await stabilizeVisualCapture(page, { stateLocator: demo });
+  await expect(demo).toHaveScreenshot("tablet-processing.png");
 });
 
 test("tablet result evidence", async ({ page }) => {
   const demo = await openTablet(page);
   await demo.getByRole("button", { name: "Transpor" }).click();
   await expect(demo).toHaveAttribute("data-demo-state", "result");
-  await expect(demo).toHaveScreenshot("tablet-result.png", {
-    animations: "disabled",
-  });
+  await stabilizeVisualCapture(page, { stateLocator: demo });
+  await expect(demo).toHaveScreenshot("tablet-result.png");
 });
 
 test("tablet reduced motion evidence", async ({ page }) => {
   const demo = await openTablet(page, { reducedMotion: "reduce" });
-  await expect(demo).toHaveScreenshot("tablet-reduced-motion.png", {
-    animations: "disabled",
-  });
+  await expect(demo).toHaveScreenshot("tablet-reduced-motion.png");
 });
 
 test("tablet mobile evidence", async ({ page }) => {
   const demo = await openTablet(page, { width: 390 });
-  await expect(demo).toHaveScreenshot("tablet-mobile.png", {
-    animations: "disabled",
-  });
+  await expect(demo).toHaveScreenshot("tablet-mobile.png");
 });
