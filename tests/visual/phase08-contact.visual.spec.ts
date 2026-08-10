@@ -45,6 +45,7 @@ async function openContact(page: Page) {
 
 async function fillValidForm(page: Page) {
   const form = page.getByRole("form", { name: "Formulário de contato" });
+  const consent = form.getByLabel(/Li a Política de Privacidade/u);
   await form.getByLabel("Nome").fill("Pessoa Visitante");
   await form.getByLabel("E-mail").fill("visitante@example.com");
   await form.getByLabel("Empresa (opcional)").fill("W_Flyer");
@@ -52,7 +53,10 @@ async function fillValidForm(page: Page) {
   await form
     .getByLabel("Mensagem")
     .fill("Preciso conversar sobre um projeto digital sob medida.");
-  await form.getByLabel(/Li a Política de Privacidade/u).check();
+  // Visual tests prepare the authored state directly; real actionability stays
+  // covered by the E2E and axe suites.
+  await consent.check({ force: true });
+  await expect(consent).toBeChecked();
   return form;
 }
 

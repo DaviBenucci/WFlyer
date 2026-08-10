@@ -51,7 +51,7 @@ Alternative considered: keep the interrupted custom select shell. It changes pro
 
 ### 5. Regenerate only invalidated Linux evidence under governance
 
-Snapshots are updated only inside the pinned Noble image after focused specs pass repeatedly. Every changed image is reviewed against approved references and its expected/actual/diff context. The three pre-correction reduced-motion Home baselines were invalid because they contained the development indicator and were replaced. In total, 34 images were reviewed and replaced: 7 Phase 06, 16 Phase 07, and 11 Phase 08. Five consecutive reduced-motion WebKit runs and two complete 291/291 visual runs then passed unchanged at zero tolerance. No `maxDiffPixels` or `maxDiffPixelRatio` allowance is introduced.
+Snapshots are updated only inside the pinned Noble image after focused specs pass repeatedly. Every changed image is reviewed against approved references and its expected/actual/diff context. The three pre-correction reduced-motion Home baselines were invalid because they contained the development indicator and were replaced. The published correction initially replaced 34 images: 7 Phase 06, 16 Phase 07, and 11 Phase 08. The later evidence audit identified one additional unique invalidated path, the Chromium processing capture that still encoded the removed test-only flat transform, bringing the governed set to 35 images: 8 Phase 06, 16 Phase 07, and 11 Phase 08. No `maxDiffPixels` or `maxDiffPixelRatio` allowance is introduced.
 
 ### 6. Separate common CI proof, candidate proof, and deployable archive
 
@@ -67,6 +67,37 @@ files had passed. Sequential execution passed all 63 assertions in 13 files in
 17.5 seconds. The modest duration trade-off makes the repository gate reliable
 on constrained runners without changing application behavior or test coverage.
 
+### 8. Capture processing at authored tablet depth
+
+The historical processing spec alone applied
+`transform: none !important` to the tablet shell before capture. Removing that
+test-only flattening restored the same productive perspective used by idle and
+result states, but the unchanged Chromium processing baseline still encoded
+the old flat rendering. The current spec moves the precise pointer outside the
+demo, waits until both authored tilt axes reach exact rest, verifies the default
+glare coordinates, and then waits for shared stable frames. It never overwrites
+the productive transform.
+
+Expected/actual/diff inspection confirmed that the canonical Chromium actual
+matches the approved tablet depth and that Firefox has a stable four-pixel edge
+invalidation; WebKit is unchanged. Those two invalidated processing baselines
+may be regenerated only in the pinned Noble image, after which focused repeated
+runs and the complete visual matrix must pass unchanged. This correction does
+not modify CSS, component behavior, or approved product references.
+
+### 9. Prepare Contact visual state without long-suite actionability stalls
+
+One clean 291-case pass reached a rare WebKit actionability stall while the
+visual-only helper was checking Contact consent. The trace proved that the
+test had not reached Turnstile verification, the Contact request, or the
+screenshot assertion; no actual/diff image existed and all 84 baseline hashes
+remained unchanged. The exact case then passed 10/10 in isolation.
+
+The visual helper now sets that prerequisite with a forced checkbox action and
+immediately asserts the checked state. This is limited to deterministic visual
+state preparation. E2E and axe suites retain the visitor-facing pointer,
+keyboard, label, validation, and disabled-state coverage.
+
 ## Risks / Trade-offs
 
 - [Root inside the trusted CI job container reduces Chromium sandbox isolation] → The job visits only the repository-owned loopback site, keeps the runner ephemeral, uses the official pinned image, and sets `--ipc=host`; external staging remains a separate gate.
@@ -76,6 +107,8 @@ on constrained runners without changing application behavior or test coverage.
 - [Removing only `nextjs-portal` may miss a future development surface] → Production standalone is the primary defense; the stylesheet remains narrowly auditable and semantic assertions reject unexpected page state.
 - [Zero tolerance can expose legitimate engine upgrades] → Versions are exact, upgrades are explicit reviewed changes, and expected/actual/diff artifacts remain complete.
 - [Serial Storybook files increase wall-clock duration] → The measured 63-test gate completes in seconds and avoids nondiagnostic browser-worker OOM termination.
+- [An interaction capture can encode a test-only or transient tablet transform] → The visual spec waits for exact authored rest without overwriting the transform, reviewed baselines retain productive depth, and motion tests continue to prove the interactive tilt itself.
+- [A long serial visual suite can expose an engine actionability stall while preparing a non-target form prerequisite] → The visual helper sets and verifies the prerequisite directly, while functional and accessibility suites continue to own real actionability.
 
 ## Migration Plan
 
@@ -94,5 +127,8 @@ The workstation started the Docker service and exercised
 `sha256:baed2032d533817f3dbe6425de795788430ba345e819a1201337009ba17c9d07`.
 The observed CI fingerprint is Ubuntu 24.04.4, Node.js 24.18.0, pnpm 11.18.0,
 Playwright 1.62.0, `/ms-playwright`, Chromium 1234, Firefox 1538, and WebKit
-2336. This closes local canonical visual proof; exact-SHA GitHub Actions
+2336. This establishes the canonical local validation environment. Two
+unchanged complete 291/291 visual runs, E2E 318/318, axe 102/102, motion
+30/30, and the focused Firefox/WebKit repeats subsequently passed with zero
+retries and an unchanged 84-PNG manifest. Exact-SHA GitHub Actions
 orchestration remains a separate external gate.

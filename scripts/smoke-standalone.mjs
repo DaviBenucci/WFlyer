@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { lstat, readFile } from "node:fs/promises";
+import { lstat } from "node:fs/promises";
 import { createServer } from "node:net";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -8,11 +8,6 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "..");
 const standaloneDirectory = resolve(repositoryRoot, ".next", "standalone");
 const serverPath = resolve(standaloneDirectory, "server.js");
-const rootIndexPath = resolve(standaloneDirectory, "index.html");
-const rootIconPath = resolve(standaloneDirectory, "icon.svg");
-const rootRobotsPath = resolve(standaloneDirectory, "robots.txt");
-const rootSitemapPath = resolve(standaloneDirectory, "sitemap.xml");
-const rootNotFoundPath = resolve(standaloneDirectory, "404.html");
 const host = "127.0.0.1";
 const startupTimeoutMs = 20_000;
 const publicRoutes = [
@@ -141,27 +136,12 @@ async function terminate(child) {
   ]);
 }
 
-await lstat(serverPath);
+const serverStat = await lstat(serverPath);
 
-for (const [label, path] of [
-  ["document-root index", rootIndexPath],
-  ["document-root icon", rootIconPath],
-  ["document-root robots", rootRobotsPath],
-  ["document-root sitemap", rootSitemapPath],
-  ["document-root 404", rootNotFoundPath],
-]) {
-  await lstat(path).catch(() => {
-    throw new Error(`Missing ${label} in the standalone document root.`);
-  });
-}
-
-const rootIndexHtml = await readFile(rootIndexPath, "utf8");
-for (const requiredAsset of ["/_next/static/", "/icon.svg"]) {
-  if (!rootIndexHtml.includes(requiredAsset)) {
-    throw new Error(
-      `Standalone document-root index is missing the ${requiredAsset} reference.`,
-    );
-  }
+if (serverStat.isSymbolicLink() || !serverStat.isFile()) {
+  throw new Error(
+    ".next/standalone/server.js must be a regular file, not a symbolic link.",
+  );
 }
 
 const port = await reserveAvailablePort();
@@ -195,6 +175,19 @@ try {
 
   if (!contentType.includes("text/html")) {
     throw new Error(`Home returned unexpected Content-Type: ${contentType}`);
+  }
+
+  for (const [header, expectedValue] of [
+    ["content-security-policy-report-only", "default-src 'self'"],
+    ["referrer-policy", "strict-origin-when-cross-origin"],
+    ["x-content-type-options", "nosniff"],
+    ["x-frame-options", "DENY"],
+  ]) {
+    if (!(homeResponse.headers.get(header) ?? "").includes(expectedValue)) {
+      throw new Error(
+        `Home is missing the expected ${header} response header.`,
+      );
+    }
   }
 
   const html = await homeResponse.text();
@@ -253,6 +246,55 @@ try {
     for (const assetUrl of referencedStaticAssets(routeHtml)) {
       assetUrls.add(assetUrl);
     }
+  }
+
+  const notFoundResponse = await fetch(
+    new URL("/standalone-smoke-missing-route", baseUrl),
+    {
+      cache: "no-store",
+      redirect: "error",
+      signal: AbortSignal.timeout(5_000),
+    },
+  );
+  const notFoundHtml = await notFoundResponse.text();
+
+  if (
+    notFoundResponse.status !== 404 ||
+    !notFoundHtml.includes("Página não encontrada")
+  ) {
+    throw new Error("The standalone server did not return the custom HTTP 404.");
+  }
+
+  const contactGetResponse = await fetch(new URL("/api/contact", baseUrl), {
+    cache: "no-store",
+    signal: AbortSignal.timeout(5_000),
+  });
+
+  if (contactGetResponse.status !== 405) {
+    throw new Error(
+      `GET /api/contact responded with HTTP ${contactGetResponse.status}; expected 405.`,
+    );
+  }
+
+  const contactInvalidResponse = await fetch(
+    new URL("/api/contact", baseUrl),
+    {
+      body: "invalid",
+      headers: { "content-type": "text/plain" },
+      method: "POST",
+      signal: AbortSignal.timeout(5_000),
+    },
+  );
+
+  if (
+    contactInvalidResponse.status !== 415 ||
+    !(contactInvalidResponse.headers.get("cache-control") ?? "").includes(
+      "no-store",
+    )
+  ) {
+    throw new Error(
+      "POST /api/contact did not reject invalid media safely without caching.",
+    );
   }
 
   const cssPayloads = [];

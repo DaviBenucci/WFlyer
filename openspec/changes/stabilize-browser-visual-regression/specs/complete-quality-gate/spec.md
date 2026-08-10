@@ -43,4 +43,3 @@ Motion validation SHALL execute even when visual regression later fails, and bro
 #### Scenario: Visual comparison fails
 - **WHEN** a browser job reaches motion and visual validation and the visual suite fails
 - **THEN** motion results from that revision already exist and expected, actual, diff, trace, video, error-context, and report evidence is uploaded when produced
-

@@ -92,7 +92,7 @@ jobs:
         id: resolve-release
         run: |
           set -euo pipefail
-          release_sha="$(git rev-parse --verify HEAD^{commit})"
+          release_sha="$(git rev-parse --verify 'HEAD^{commit}')"
           if [[ ! "${release_sha}" =~ ^[0-9a-f]{40}$ ]]; then
             echo "::error::The requested release ref did not resolve to a full Git SHA."
             exit 1
@@ -154,11 +154,9 @@ jobs:
       - name: Validate standalone runtime and production quality baseline
         run: |
           pnpm prepare:standalone
-          test -f .next/standalone/index.html
-          test -f .next/standalone/icon.svg
-          test -f .next/standalone/robots.txt
-          test -f .next/standalone/sitemap.xml
-          test -f .next/standalone/404.html
+          test -f .next/standalone/server.js
+          test -d .next/standalone/.next/static
+          test -d .next/standalone/public
           pnpm smoke:standalone
           pnpm smoke:indexing
           pnpm lighthouse
@@ -170,7 +168,7 @@ jobs:
         run: |
           pnpm build
           pnpm prepare:standalone
-          test -f .next/standalone/index.html
+          test -f .next/standalone/server.js
           pnpm smoke:indexing
 
   candidate-browser:
@@ -395,13 +393,11 @@ jobs:
       - name: Complete standalone package
         run: pnpm prepare:standalone
 
-      - name: Validate candidate document root
+      - name: Validate candidate Node.js runtime files
         run: |
-          test -f .next/standalone/index.html
-          test -f .next/standalone/icon.svg
-          test -f .next/standalone/robots.txt
-          test -f .next/standalone/sitemap.xml
-          test -f .next/standalone/404.html
+          test -f .next/standalone/server.js
+          test -d .next/standalone/.next/static
+          test -d .next/standalone/public
 
       - name: Smoke standalone server and indexing policy
         env:
@@ -453,7 +449,8 @@ jobs:
           RELEASE_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
           RELEASE_SHA: ${{ needs.validate-request.outputs.release_sha }}
         run: |
-          export RELEASE_CREATED_AT="$(date -u +'%Y-%m-%dT%H:%M:%S.000Z')"
+          RELEASE_CREATED_AT="$(date -u +'%Y-%m-%dT%H:%M:%S.000Z')"
+          export RELEASE_CREATED_AT
           pnpm release:manifest
           echo "path=${RELEASE_MANIFEST_PATH}" >>"${GITHUB_OUTPUT}"
 

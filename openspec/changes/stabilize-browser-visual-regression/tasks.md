@@ -22,6 +22,8 @@
 - [x] 4.2 Repair Phase 07 checkpoint ordering/exactness and reduced-motion assertions so every capture proves terminal productive state and no development UI
 - [x] 4.3 Migrate applicable Phase 06/07/08 screenshots to the shared contract and remove broad ratio tolerance
 - [x] 4.4 Serialize Storybook browser test files after reproduced parallel-worker OOM and verify all 63 assertions remain enabled
+- [x] 4.5 Settle the Phase 06 processing capture at exact authored depth, regenerate only the two inspected invalidated processing baselines, and prove the result repeatedly in Chromium, Firefox, and WebKit without changing productive code
+- [x] 4.6 Make Contact visual-state preparation explicit after a traced WebKit actionability stall, while retaining real consent interaction coverage in E2E and axe suites
 
 ## 5. Governed evidence and documentation
 
@@ -35,3 +37,4 @@
 - [x] 6.1 Run lint, typecheck, focused/unit/full tests, dependency validation, build, standalone smoke tests, and diff hygiene in proportion to the change
 - [x] 6.2 Validate the OpenSpec change strictly and update Graphify after structural changes
 - [x] 6.3 Record remote GitHub Actions and manual candidate workflow validation as required external follow-up unless an authorized revision is available on the remote
+- [x] 6.4 Synchronize the visual-stabilization delta requirements into the canonical quality and release-candidate specifications without archiving the active change

@@ -3,10 +3,10 @@
 Phases 00–08 have durable historical checkpoints, and the 2026-08-03 audit
 closed three bounded regressions in navigation (`f61d995`), Contact delivery
 identity (`3c4940c`), and the Home opening (`51e8e62`). Those focused corrective
-gates do not replace one auditable final-current-revision quality run. The
-repository therefore still needs that closure and a safe, environment-aware
-release-candidate handoff before any Napoleon staging or production action can
-be authorized. This change closes repository-owned Phase 09 work while
+gates do not replace one auditable final-current-revision quality run. This
+change now records that closure and a safe, environment-aware release-candidate
+handoff before any Napoleon staging or production action can be authorized. It
+closes repository-owned Phase 09 work while
 preserving external access, infrastructure decisions, staging validation, and
 Davi Benucci's production approval as explicit gates.
 
@@ -24,6 +24,13 @@ Davi Benucci's production approval as explicit gates.
   integration as a Git pull/build from the environment's dedicated branch,
   without giving GitHub Actions write access or inventing an API, webhook, SSH
   transport, or workflow-authored commit.
+- Make that manual workflow discoverable from the default branch through a
+  temporary infrastructure-only bootstrap while the institutional application
+  remains isolated on `develop/site-institucional`.
+- Define the deployable artifact exclusively as a Next.js Node.js standalone
+  application started by `.next/standalone/server.js`; remove static
+  `public_html` mirrors and file-presence gates that could misrepresent the
+  application as a static website.
 - Reconcile deployment, runtime-secret, QA, security, observability, rollback,
   staging, and homologation documentation in English with exact external
   blockers and rerun instructions.
@@ -52,10 +59,12 @@ None.
 
 ## Impact
 
-The change affects GitHub Actions, package scripts, deployment/SEO
-configuration, focused tests, branch-handoff rules, and technical operations/
-QA documentation. It does not change public product scope, contact semantics,
-DNS, Cloudflare, Napoleon settings, the musical application, production data,
-or external provider state. Rollback consists of selecting the prior verified
-institutional revision through the inventoried Napoleon rollback control;
-existing standalone builds and the already completed site remain operable.
+The change affects GitHub Actions, package scripts, standalone preparation,
+deployment/SEO configuration, focused tests, branch-handoff rules, the
+default-branch workflow bootstrap, and technical operations/QA documentation.
+It does not change the placeholder application on `main`, public product
+scope, contact semantics, DNS, Cloudflare, Napoleon settings, the musical
+application, production data, or external provider state. Rollback consists
+of selecting the prior verified institutional revision through the
+inventoried Napoleon rollback control; existing standalone builds and the
+already completed site remain operable.

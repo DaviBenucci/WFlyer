@@ -1,10 +1,11 @@
 ## Context
 
 See `proposal.md` for motivation. The site has durable historical phase
-checkpoints and three archived 2026-08-03 corrections, but the final-current-
-revision closure is still pending. It produces a Next.js standalone package
-and has comprehensive local tests plus a manual workflow that intentionally
-stops at artifact handoff. The owner has now confirmed that Napoleon can pull
+checkpoints and three archived 2026-08-03 corrections. Repository-owned
+final-current content, browser, build, standalone, documentation, OpenSpec, and
+Graphify gates are now complete; exact-SHA remote CI and external staging
+remain pending. The workflow intentionally stops at artifact handoff. The
+owner has confirmed that Napoleon can pull
 and build a selected GitHub branch. GitHub Environment settings, provider
 credentials, the precise Napoleon build/start and environment-scope controls,
 Cloudflare inventory, and the staging hostname remain unavailable and must not
@@ -24,6 +25,12 @@ record, and `AGENTS.md` control the boundary.
 - Bind the Git-based staging handoff to `develop/site-institucional`, its full
   commit SHA, and the CI result for that exact SHA without workflow-authored
   commits or write credentials.
+- Keep the application on `develop/site-institucional` while making the manual
+  workflow discoverable through the smallest infrastructure-only bootstrap on
+  the default branch.
+- Treat `.next/standalone/server.js` as the only deployment entry point and
+  reject static document-root hosting as incompatible with the current Route
+  Handler and response-header architecture.
 - Leave every unavailable external prerequisite named, located, and paired with
   a rerun command.
 
@@ -81,6 +88,21 @@ record, and `AGENTS.md` control the boundary.
    and invalid indexing modes. They never create or upload a standalone release
    archive. Only the environment-bound manual workflow may produce the
    normalized archive, checksum, and manifest used for a handoff.
+9. **Standalone means a Node.js process, not static export.** The preparation
+   step copies only `public/` and `.next/static/` into Next.js' documented
+   standalone locations, then acceptance runs
+   `node .next/standalone/server.js` from the repository root and exercises
+   routes, assets, headers, indexing, and `/api/contact`. Root `index.html`,
+   `404.html`, metadata mirrors, `_next/static/`, and `public_html` are not
+   produced or accepted as deployment proof. A static-only Napoleon product
+   would require a separately approved architecture change rather than a
+   misleading upload workaround.
+10. **The default-branch workflow copy is temporary infrastructure.** GitHub
+    only exposes manual dispatch workflows from the default branch. Until the
+    application itself is homologated for `main`, an infrastructure-only PR
+    adds the identical release workflow without touching `index.html` or
+    `package-lock.json`. The arrangement ends when the homologated application
+    reaches `main` and that path becomes the single source.
 
 ## Risks / Trade-offs
 
@@ -101,6 +123,13 @@ record, and `AGENTS.md` control the boundary.
   archive** → Use the branch head/full SHA as deployment identity, retain the
   archive as quality evidence, record the exact Napoleon build output, and do
   not claim byte identity between the two builds.
+- **[Risk] The default-branch workflow copy can drift from the development
+  branch** → Keep the bootstrap byte-identical when proposed, review future
+  workflow changes against both refs, and delete the temporary distinction as
+  part of the eventual homologated merge.
+- **[Risk] Napoleon may expose only static hosting** → Record the observed
+  panel capability and stop the handoff; do not convert the application or
+  treat copied HTML as a successful deployment.
 - **[Risk] Report-only CSP and absent HSTS are less strict than the intended
   production policy** → Observe CSP reports and validate all hostnames/HTTPS
   before separate owner-approved enforcement.
@@ -109,22 +138,24 @@ record, and `AGENTS.md` control the boundary.
 
 ## Migration Plan
 
-1. Publish the audited commit as `develop/site-institucional` while no Napoleon
+1. Open the infrastructure-only default-branch bootstrap PR and obtain owner
+   approval before merging it; do not merge application files.
+2. Publish the audited commit as `develop/site-institucional` while no Napoleon
    application is yet attached to that branch, then require the CI run for its
    full SHA to pass.
-2. Configure GitHub `staging` and `production` Environments and their scoped
+3. Configure GitHub `staging` and `production` Environments and their scoped
    values; require Davi Benucci for production.
-3. Inventory Napoleon and Cloudflare read-only. Record the Git repository,
+4. Inventory Napoleon and Cloudflare read-only. Record the Git repository,
    staging branch, exact head SHA, build/start commands, build/runtime variable
    scopes, process user, port, health check, restart, and rollback controls.
-4. Configure a separate Napoleon staging Node.js application to pull only
+5. Configure a separate Napoleon staging Node.js application to pull only
    `develop/site-institucional` with
    `WFLYER_DEPLOYMENT_ENVIRONMENT=staging`, then verify that its selected SHA
    equals the green CI/manifest SHA before starting it.
-5. Run the documented staging matrix and obtain human homologation.
-6. Only after explicit approval, prepare the production candidate with
+6. Run the documented staging matrix and obtain human homologation.
+7. Only after explicit approval, prepare the production candidate with
    `WFLYER_DEPLOYMENT_ENVIRONMENT=production` and the verified deployment path.
-7. Roll back by selecting the prior institutional commit through the verified
+8. Roll back by selecting the prior institutional commit through the verified
    Napoleon rollback control, restarting only that application, running smoke
    checks, and confirming
    `app.wflyer.com.br` and mail records remain unchanged.

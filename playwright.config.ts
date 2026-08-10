@@ -150,7 +150,6 @@ export default defineConfig({
     toHaveScreenshot: {
       animations: "disabled",
       caret: "hide",
-      maxDiffPixels: 0,
       stylePath: screenshotStylePath,
     },
   },

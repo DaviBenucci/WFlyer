@@ -39,3 +39,18 @@
 - [x] 6.2 Add regression evidence that CI observes the staging branch, remains read-only, creates no deployment commit, and requires one full branch/CI/manifest SHA before Napoleon activation.
 - [x] 6.3 Strict-validate and sync the revised OpenSpec contract, then refresh Graphify for the branch-to-CI-to-Napoleon relationship.
 - [x] 6.4 Create a focused checkpoint and publish only `develop/site-institucional` after local gates pass, without changing `main`, configuring Napoleon, or claiming deployed-staging evidence.
+
+## 7. Node-only runtime correction and default-branch bootstrap
+
+- [x] 7.1 Remove document-root mirror generation and acceptance gates; require the generated standalone Node.js server for deep routes, `/api/contact`, headers, assets, indexing, and 404 behavior.
+- [x] 7.2 Add the canonical Napoleon Node.js, staging homologation, rollback, and blocked evidence runbooks; update indexes, review registers, and release status without inventing panel facts.
+- [x] 7.3a Create, validate, and publish an infrastructure-only branch from `main` that adds the manual release workflow without changing the placeholder application.
+- [ ] 7.3b Open the owner-review PR for `ci/napoleon-release-workflow-bootstrap`; the connected GitHub App is externally blocked by `403 Resource not accessible by integration`, so the owner must use the recorded compare URL.
+- [x] 7.4 Re-run the complete source, browser, visual, accessibility, motion, build, standalone, indexing, Lighthouse, dependency, OpenSpec, and Graphify gates.
+
+## 8. External release and homologation gates
+
+- [ ] 8.1 Obtain a green ordinary CI run for the exact final `develop/site-institucional` SHA; GitHub billing or authorization failures remain external blockers rather than code failures.
+- [ ] 8.2 Merge the reviewed infrastructure-only bootstrap so `Prepare Napoleon release` becomes dispatchable from the default branch, then configure protected GitHub Environments and dispatch staging for the same green SHA.
+- [ ] 8.3 Inventory and configure the actual Napoleon Node.js and Cloudflare staging controls, deploy the exact candidate SHA, and retain provider evidence without exposing secrets.
+- [ ] 8.4 Run deployed-staging automation, manual device/accessibility/security checks, a rollback rehearsal, and obtain Davi Benucci's explicit homologation; production remains unauthorized in this change.

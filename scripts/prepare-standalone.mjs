@@ -6,62 +6,26 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "..");
 const nextDirectory = resolve(repositoryRoot, ".next");
 const standaloneDirectory = resolve(nextDirectory, "standalone");
+const legacyMirrorNames = [
+  "index.html",
+  "404.html",
+  "icon.svg",
+  "robots.txt",
+  "sitemap.xml",
+  "_next",
+];
 
 const sources = [
   {
     label: "public assets",
     path: resolve(repositoryRoot, "public"),
     destination: resolve(standaloneDirectory, "public"),
-    kind: "directory",
-    optional: true,
+    optional: false,
   },
   {
     label: "Next.js static assets",
     path: resolve(nextDirectory, "static"),
     destination: resolve(standaloneDirectory, ".next", "static"),
-    kind: "directory",
-    optional: false,
-  },
-  {
-    label: "document-root index",
-    path: resolve(nextDirectory, "server", "app", "index.html"),
-    destination: resolve(standaloneDirectory, "index.html"),
-    kind: "file",
-    optional: false,
-  },
-  {
-    label: "document-root icon",
-    path: resolve(nextDirectory, "server", "app", "icon.svg.body"),
-    destination: resolve(standaloneDirectory, "icon.svg"),
-    kind: "file",
-    optional: false,
-  },
-  {
-    label: "document-root robots",
-    path: resolve(nextDirectory, "server", "app", "robots.txt.body"),
-    destination: resolve(standaloneDirectory, "robots.txt"),
-    kind: "file",
-    optional: false,
-  },
-  {
-    label: "document-root sitemap",
-    path: resolve(nextDirectory, "server", "app", "sitemap.xml.body"),
-    destination: resolve(standaloneDirectory, "sitemap.xml"),
-    kind: "file",
-    optional: false,
-  },
-  {
-    label: "document-root 404 page",
-    path: resolve(nextDirectory, "server", "pages", "404.html"),
-    destination: resolve(standaloneDirectory, "404.html"),
-    kind: "file",
-    optional: false,
-  },
-  {
-    label: "root asset mirror",
-    path: resolve(nextDirectory, "static"),
-    destination: resolve(standaloneDirectory, "_next", "static"),
-    kind: "directory",
     optional: false,
   },
 ];
@@ -124,18 +88,14 @@ async function assertRegularTree(root, label) {
 }
 
 async function assertRegularFile(path, label) {
-  const fileStat = await lstat(path);
+  const stat = await lstat(path);
 
-  if (fileStat.isSymbolicLink()) {
-    throw new Error(`${label} must not be a symbolic link.`);
-  }
-
-  if (!fileStat.isFile()) {
-    throw new Error(`${label} must be a file.`);
+  if (stat.isSymbolicLink() || !stat.isFile()) {
+    throw new Error(`${label} must be a regular file, not a symbolic link.`);
   }
 }
 
-async function copySource({ label, path, destination, kind, optional }) {
+async function copySource({ label, path, destination, optional }) {
   if (!(await pathExists(path))) {
     if (optional) {
       console.log(`Skipping absent ${label}.`);
@@ -146,16 +106,12 @@ async function copySource({ label, path, destination, kind, optional }) {
   }
 
   assertInside(standaloneDirectory, destination, label);
-  if (kind === "directory") {
-    await assertRegularTree(path, label);
-  } else {
-    await assertRegularFile(path, label);
-  }
+  await assertRegularTree(path, label);
 
-  await rm(destination, { recursive: kind === "directory", force: true });
+  await rm(destination, { recursive: true, force: true });
   await mkdir(dirname(destination), { recursive: true });
   await cp(path, destination, {
-    recursive: kind === "directory",
+    recursive: true,
     force: true,
     errorOnExist: false,
     dereference: false,
@@ -165,10 +121,19 @@ async function copySource({ label, path, destination, kind, optional }) {
   console.log(`Copied ${label} into the standalone package.`);
 }
 
-if (!(await pathExists(resolve(standaloneDirectory, "server.js")))) {
+const serverPath = resolve(standaloneDirectory, "server.js");
+
+if (!(await pathExists(serverPath))) {
   throw new Error(
     "Missing .next/standalone/server.js. Run a Next.js build with output: \"standalone\" first.",
   );
+}
+await assertRegularFile(serverPath, ".next/standalone/server.js");
+
+for (const legacyMirrorName of legacyMirrorNames) {
+  const legacyMirrorPath = resolve(standaloneDirectory, legacyMirrorName);
+  assertInside(standaloneDirectory, legacyMirrorPath, legacyMirrorName);
+  await rm(legacyMirrorPath, { force: true, recursive: true });
 }
 
 for (const source of sources) {

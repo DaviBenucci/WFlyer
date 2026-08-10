@@ -1,4 +1,4 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Locator, type Page } from "@playwright/test";
 
 import { stabilizeVisualCapture } from "../helpers/visual";
 
@@ -26,6 +26,34 @@ async function openTablet(
   await expect(demo).toBeVisible();
   await stabilizeVisualCapture(page, { stateLocator: demo });
   return demo;
+}
+
+async function settleTabletTilt(page: Page, demo: Locator): Promise<void> {
+  const shell = demo.locator("[data-tablet-shell]");
+
+  await page.mouse.move(0, 0);
+  await expect
+    .poll(() =>
+      shell.evaluate((element) => {
+        const matrix = new DOMMatrixReadOnly(
+          getComputedStyle(element).transform,
+        );
+        return Math.abs(matrix.m13) + Math.abs(matrix.m23);
+      }),
+    )
+    .toBe(0);
+  await expect
+    .poll(() =>
+      shell.evaluate((element) => {
+        const style = getComputedStyle(element);
+        return {
+          x: style.getPropertyValue("--wf-tablet-glare-x").trim(),
+          y: style.getPropertyValue("--wf-tablet-glare-y").trim(),
+        };
+      }),
+    )
+    .toEqual({ x: "50%", y: "14%" });
+  await stabilizeVisualCapture(page, { stateLocator: demo });
 }
 
 test("tablet idle light evidence", async ({ page }) => {
@@ -60,7 +88,7 @@ test("tablet processing evidence", async ({ page }) => {
   });
   await demo.getByRole("button", { name: "Transpor" }).click();
   await expect(demo).toHaveAttribute("data-demo-state", "processing");
-  await stabilizeVisualCapture(page, { stateLocator: demo });
+  await settleTabletTilt(page, demo);
   await expect(demo).toHaveScreenshot("tablet-processing.png");
 });
 

@@ -46,6 +46,8 @@ describe("release workflows", () => {
   let vitestConfiguration = "";
   let environmentExample = "";
   let indexingSmoke = "";
+  let standalonePreparation = "";
+  let standaloneSmoke = "";
 
   beforeAll(async () => {
     [
@@ -59,6 +61,8 @@ describe("release workflows", () => {
       vitestConfiguration,
       environmentExample,
       indexingSmoke,
+      standalonePreparation,
+      standaloneSmoke,
     ] = await Promise.all([
       workflow("ci.yml"),
       workflow("deploy.yml"),
@@ -74,6 +78,14 @@ describe("release workflows", () => {
       readFile(path.join(process.cwd(), ".env.example"), "utf8"),
       readFile(
         path.join(process.cwd(), "scripts", "smoke-indexing.mjs"),
+        "utf8",
+      ),
+      readFile(
+        path.join(process.cwd(), "scripts", "prepare-standalone.mjs"),
+        "utf8",
+      ),
+      readFile(
+        path.join(process.cwd(), "scripts", "smoke-standalone.mjs"),
         "utf8",
       ),
     ]);
@@ -306,6 +318,51 @@ describe("release workflows", () => {
     );
   });
 
+  it("keeps standalone preparation and smoke evidence Node-only", () => {
+    expect(standalonePreparation).toContain(
+      'const serverPath = resolve(standaloneDirectory, "server.js")',
+    );
+    expect(standalonePreparation).toContain(
+      'await assertRegularFile(serverPath, ".next/standalone/server.js")',
+    );
+    expect(standalonePreparation).toMatch(
+      /label: "public assets",[\s\S]*?optional: false/u,
+    );
+    expect(standalonePreparation).toMatch(
+      /label: "Next\.js static assets",[\s\S]*?optional: false/u,
+    );
+    expect(standalonePreparation).toContain(
+      "for (const legacyMirrorName of legacyMirrorNames)",
+    );
+    for (const legacyMirror of [
+      "index.html",
+      "404.html",
+      "icon.svg",
+      "robots.txt",
+      "sitemap.xml",
+      "_next",
+    ]) {
+      expect(standalonePreparation).toContain(`"${legacyMirror}"`);
+    }
+
+    expect(standaloneSmoke).toContain(
+      'const serverPath = resolve(standaloneDirectory, "server.js")',
+    );
+    expect(standaloneSmoke).toContain(
+      'spawn(process.execPath, ["server.js"]',
+    );
+    expect(standaloneSmoke).toContain(
+      "serverStat.isSymbolicLink() || !serverStat.isFile()",
+    );
+    expect(standaloneSmoke).toContain('new URL("/api/contact", baseUrl)');
+    expect(standaloneSmoke).toContain(
+      'new URL("/standalone-smoke-missing-route", baseUrl)',
+    );
+    expect(standaloneSmoke).not.toMatch(
+      /standaloneDirectory,\s*"(?:index\.html|404\.html|icon\.svg|robots\.txt|sitemap\.xml|_next)"/u,
+    );
+  });
+
   it("forbids focused tests in CI and in the public staging gate", () => {
     const scripts = (JSON.parse(packageJson) as {
       scripts: Record<string, string>;
@@ -343,7 +400,9 @@ describe("release workflows", () => {
     expect(playwrightConfiguration).toContain("toHaveScreenshot:");
     expect(playwrightConfiguration).toContain('animations: "disabled"');
     expect(playwrightConfiguration).toContain('caret: "hide"');
-    expect(playwrightConfiguration).toContain("maxDiffPixels: 0");
+    expect(playwrightConfiguration).not.toMatch(
+      /maxDiffPixels|maxDiffPixelRatio/u,
+    );
     expect(playwrightConfiguration).toContain(
       '"tests/visual/screenshot.css"',
     );
@@ -580,7 +639,7 @@ describe("release workflows", () => {
       validation.match(/ref: \$\{\{ inputs\.release_ref \}\}/gu),
     ).toHaveLength(1);
     expect(
-      release.match(/git rev-parse --verify HEAD\^\{commit\}/gu),
+      release.match(/git rev-parse --verify 'HEAD\^\{commit\}'/gu),
     ).toHaveLength(1);
     expect(release.split(immutableCheckout)).toHaveLength(4);
     expect(job(release, "candidate-quality")).toContain(immutableCheckout);
@@ -758,14 +817,17 @@ describe("release workflows", () => {
     );
     expect(candidateUpload).toContain("steps.archive.outputs.path");
     expect(candidateUpload).toContain("steps.manifest.outputs.path");
-    expect(step(release, "Validate candidate document root")).toContain(
-      "test -f .next/standalone/index.html",
+    expect(step(release, "Validate candidate Node.js runtime files")).toContain(
+      "test -f .next/standalone/server.js",
     );
-    expect(step(release, "Validate candidate document root")).toContain(
-      "test -f .next/standalone/icon.svg",
+    expect(step(release, "Validate candidate Node.js runtime files")).toContain(
+      "test -d .next/standalone/.next/static",
     );
     expect(step(release, "Validate standalone runtime and production quality baseline")).toContain(
-      "test -f .next/standalone/index.html",
+      "test -f .next/standalone/server.js",
+    );
+    expect(release).not.toMatch(
+      /\.next\/standalone\/(?:index\.html|404\.html|icon\.svg|robots\.txt|sitemap\.xml)/u,
     );
   });
 

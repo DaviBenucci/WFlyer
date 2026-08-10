@@ -275,6 +275,25 @@ test("normal completion restores siblings and every owned Home/header property",
   await expect(page.locator("[data-brand-intro]")).toHaveCount(0);
   await expect(page.getByRole("main")).not.toHaveAttribute("inert");
   await expect(page.getByRole("main")).not.toHaveAttribute("aria-hidden");
+  await expect(page.getByRole("main")).toHaveAttribute(
+    "data-brand-intro-home-state",
+    "ready",
+  );
+  await expect(page.locator("html")).not.toHaveAttribute(
+    "data-brand-intro-active",
+  );
+  await expect(page.locator("body")).not.toHaveCSS("overflow", "hidden");
+  expect(
+    await page.evaluate(() => ({
+      completed: sessionStorage.getItem(
+        "wflyer.brand-intro.completed.v1",
+      ),
+      timelinePresent: Boolean(
+        (window as typeof window & { __wfBrandIntroTimeline?: unknown })
+          .__wfBrandIntroTimeline,
+      ),
+    })),
+  ).toEqual({ completed: "1", timelinePresent: false });
 
   const residue = await page.evaluate(() => {
     const targets = Array.from(

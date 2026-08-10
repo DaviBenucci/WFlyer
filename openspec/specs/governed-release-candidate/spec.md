@@ -44,6 +44,52 @@ by the selected GitHub Environment.
 - **WHEN** a pull request or ordinary push runs the repository CI workflow
 - **THEN** build, standalone smoke, Lighthouse, and indexing checks complete without packaging or uploading a release candidate
 
+### Requirement: Candidate browser evidence matches common CI
+The manual candidate browser gate SHALL use the same pinned supported-browser environment, version fingerprint, production-like repository test runtime, and required browser suites as common CI for the selected revision. Its browser-test build MUST remain distinct from the environment-specific standalone archive prepared for Napoleon.
+
+#### Scenario: Manual candidate browser gate runs
+- **WHEN** an authorized staging or production candidate revision reaches browser validation
+- **THEN** the revision is tested with the canonical common-CI browser environment before any environment-specific candidate package is accepted
+
+#### Scenario: Browser-test build completes
+- **WHEN** the candidate workflow builds the application for repository-owned browser suites
+- **THEN** that build is used only as test input and is not represented as the checksummed Napoleon deployment candidate
+
+#### Scenario: Browser environment drifts between workflows
+- **WHEN** the manual candidate browser job no longer matches common CI's pinned runner or supported-browser toolchain
+- **THEN** workflow contract tests fail and candidate readiness remains unproven
+
+### Requirement: Standalone deployment requires the Node.js runtime
+The deployable application MUST be the generated Next.js standalone server
+started with `node .next/standalone/server.js`. Standalone preparation SHALL
+copy `public/` and `.next/static/` into the locations served by that process,
+but MUST NOT create or require root `index.html`, `404.html`, metadata files,
+or a mirrored `_next/static/` tree as static-hosting acceptance evidence.
+
+#### Scenario: A provider exposes only static document-root hosting
+- **WHEN** Napoleon cannot run the generated Node.js server process and only accepts a static `public_html` upload
+- **THEN** the handoff reports an architecture/provider incompatibility and does not claim a deployment
+
+#### Scenario: Standalone smoke passes
+- **WHEN** the prepared candidate is validated locally or in CI
+- **THEN** the generated server starts and serves deep routes, `/api/contact`, static assets, headers, indexing policy, and the custom 404 through the Node.js runtime
+
+### Requirement: Manual release workflow is discoverable without merging the application
+Until the institutional application is homologated and merged to the default
+branch, `main` SHALL contain an infrastructure-only copy of the manual release
+workflow so GitHub exposes `workflow_dispatch`. The bootstrap MUST leave the
+placeholder application files unchanged, retain every release gate, and be
+removed as a separate arrangement when the homologated application makes the
+workflow single-source on `main`.
+
+#### Scenario: Staging candidate dispatch is requested before application merge
+- **WHEN** an operator opens the workflow from the default branch
+- **THEN** the workflow accepts `environment=staging`, resolves `develop/site-institucional` once to a full SHA, and applies the same immutable quality and packaging contract
+
+#### Scenario: Bootstrap changes application files
+- **WHEN** a proposed default-branch bootstrap modifies `index.html`, `package-lock.json`, or adds application source
+- **THEN** the proposal is rejected as broader than the infrastructure-only bootstrap
+
 ### Requirement: Production requires owner approval
 Production candidate preparation and deployment MUST require a protected
 `production` Environment, an approved main/tag revision, and Davi Benucci's
