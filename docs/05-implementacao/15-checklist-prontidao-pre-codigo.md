@@ -1,6 +1,12 @@
 # Checklist de prontidão antes do código definitivo
 
-**Estado atual:** `READY_FOR_IMPLEMENTATION`
+**Historical checkpoint:** `READY_FOR_IMPLEMENTATION`
+
+This file preserves the pre-code authorization checkpoint. It is not the
+current release or deployment contract. Current GitHub Environment ownership,
+Napoleon Node.js build/runtime configuration, and external evidence are defined
+in `16-github-actions-secrets-napoleon.md`,
+`22-napoleon-node-runtime-runbook.md`, and the Phase 09 QA reports.
 
 ## A. Design e referências
 
@@ -40,11 +46,12 @@
 ## D. Segredos e serviços
 
 - [x] nomes das variáveis definidos;
-- [x] GitHub Actions Secrets definido como fonte canônica;
-- [x] fluxo de injeção no runtime documentado;
+- [x] nomes e escopos dos valores do GitHub Environment documentados;
+- [x] configuração independente de build/runtime na Napoleon documentada;
 - [x] e-mail remetente/destinatário definido;
 - [ ] valores reais Turnstile e Resend cadastrados — gate de staging/produção;
-- [ ] credencial de deploy Napoleon cadastrada, caso a integração exija — gate de deploy.
+- [x] nenhuma credencial de deploy Napoleon é inventada: a integração confirmada
+  usa Git pull/build e a configuração do painel permanece um gate externo.
 
 ## E. Engenharia
 

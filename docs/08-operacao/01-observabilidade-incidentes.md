@@ -41,8 +41,9 @@ are not fabricated in repository code.
 
 1. Identify affected host, revision, environment, route, start time, and scope.
 2. Confirm `app.wflyer.com.br` and mail service independently before any action.
-3. If Contact alone is affected, preserve the static site and official email
-   fallback; disable only the form through a reviewed revision if required.
+3. If Contact alone is affected, preserve the statically generated pages
+   served by the standalone Node.js process and the official email fallback;
+   disable only the form through a reviewed revision if required.
 4. Rotate a compromised secret in its provider, GitHub Environment, and
    Napoleon runtime; never paste it into the incident record.
 5. Roll back only the institutional Napoleon application to the checksummed

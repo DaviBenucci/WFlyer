@@ -1,0 +1,387 @@
+{
+  "id": "WF-DOC-MANIFEST-P09-001",
+  "project": "wflyer-site",
+  "phase": "09",
+  "kind": "additive-documentation-manifest",
+  "version": "1.0.0",
+  "generated_at": "2026-08-10T16:49:56.532Z",
+  "language": "en",
+  "repository": "DaviBenucci/WFlyer",
+  "branch": "develop/site-institucional",
+  "phase_baseline_revision": "5a4ea8529582931e287cc667ab436544c9a176ee",
+  "status": "CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING",
+  "production_authorized": false,
+  "deployment_performed": false,
+  "revision_identity": {
+    "containing_commit": "Resolved by the Git commit containing this manifest; intentionally not self-embedded.",
+    "final_branch_head": "Record after commit and push in the external execution evidence."
+  },
+  "historical_baseline": {
+    "revision": "83ec160bc2c2d00d09c2f2c3bf586d119ebc660a",
+    "documentation_manifest": {
+      "path": "DOCUMENTATION_MANIFEST.json",
+      "bytes": 44720,
+      "sha256": "3cfc30bb8bc202be01b93389012c718e94dc490723566f8eeaf315fbe8144b64",
+      "mutated": false
+    },
+    "patch_manifest": {
+      "path": "PATCH-MANIFEST.json",
+      "bytes": 2851,
+      "sha256": "c6913fdaed5887e4beff9a1bde98f16941a63f8b7858126beb000ef9a3259544",
+      "mutated": false
+    },
+    "checksums": {
+      "path": "SHA256SUMS.txt",
+      "bytes": 22482,
+      "sha256": "53edc56a05f9175898048efdcc07de7c497226ad5e687d3dbec394115f7be728",
+      "mutated": false
+    },
+    "note": "The 2026-07-29 pre-code artifacts are immutable historical evidence and are not rewritten by this addendum."
+  },
+  "current_contract": {
+    "implementation_readiness": "CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING",
+    "repository_final_gates": "pass",
+    "external_configuration": "pending",
+    "production_state": "NOT_AUTHORIZED",
+    "runtime_entry_point": ".next/standalone/server.js",
+    "source_handoff": "napoleon-git-pull-and-build",
+    "package_manager": "pnpm@11.18.0",
+    "build_command": "corepack enable && pnpm install --frozen-lockfile && pnpm build && pnpm prepare:standalone",
+    "start_command": "node .next/standalone/server.js",
+    "static_document_root_is_accepted": false,
+    "github_environment_values_transfer_to_napoleon": false,
+    "staging_hostname": "owner-approved-value-pending",
+    "homologation_owner": "Davi Benucci"
+  },
+  "scope": {
+    "selection": "Every added or modified README.md, docs/**, and openspec/** path between phase_baseline_revision and this validated content set.",
+    "ordering": "lexicographic-by-UTF-8-path",
+    "historical_baseline_files_excluded": true,
+    "generated_graph_outputs_excluded": true,
+    "manifest_self_excluded": true,
+    "companion_self_excluded": true
+  },
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 6935,
+      "sha256": "5065cb98b5a9c0bfd00f78f809abf9967af6607d71d564009396b2ac48fa0a5f",
+      "media_type": "text/markdown",
+      "role": "repository-entrypoint",
+      "state": "current"
+    },
+    {
+      "path": "docs/00-indice.md",
+      "bytes": 6759,
+      "sha256": "b1893f5b971de35695f724f5a2f5ef15ab6704f1177fee8276ceff882098f960",
+      "media_type": "text/markdown",
+      "role": "documentation-index",
+      "state": "current"
+    },
+    {
+      "path": "docs/05-implementacao/02-estrutura-pastas.md",
+      "bytes": 3949,
+      "sha256": "9023ecde1a47c61587c117ecb1dda1c8558869d2253b45a563be36b504b6c3e5",
+      "media_type": "text/markdown",
+      "role": "repository-structure-contract",
+      "state": "current"
+    },
+    {
+      "path": "docs/05-implementacao/05-deploy-configuracao.md",
+      "bytes": 9917,
+      "sha256": "7192b9562564885336c5f2d959c4d38b93c8742107131423472e8636a8a99d74",
+      "media_type": "text/markdown",
+      "role": "deployment-configuration-contract",
+      "state": "current"
+    },
+    {
+      "path": "docs/05-implementacao/09-manifesto-tecnologico.yaml",
+      "bytes": 3517,
+      "sha256": "21f659c2f13b4ef8353b9f6588afa747fab9b3e150d874fb8bc0e17c21bd6f3e",
+      "media_type": "application/yaml",
+      "role": "technology-manifest",
+      "state": "current"
+    },
+    {
+      "path": "docs/05-implementacao/13-estado-infraestrutura-cloudflare.md",
+      "bytes": 4286,
+      "sha256": "c96f5abf6486d43a2bd8958d588e5e07343cdad9bb0e207df4877592b3ccbf8e",
+      "media_type": "text/markdown",
+      "role": "infrastructure-state-record",
+      "state": "current"
+    },
+    {
+      "path": "docs/05-implementacao/15-checklist-prontidao-pre-codigo.md",
+      "bytes": 2600,
+      "sha256": "4f1ae5ac72b763a7c962d5d4db899cde19fe55bc6cb2939f43ad5f0cc1828628",
+      "media_type": "text/markdown",
+      "role": "implementation-readiness-checklist",
+      "state": "current"
+    },
+    {
+      "path": "docs/05-implementacao/16-github-actions-secrets-napoleon.md",
+      "bytes": 6912,
+      "sha256": "d9b56ff770bb246064b9be9c43dd770af26d7fd7b0f2518b2506fa4ebcc856e2",
+      "media_type": "text/markdown",
+      "role": "secrets-and-environment-contract",
+      "state": "current"
+    },
+    {
+      "path": "docs/05-implementacao/17-relatorio-execucao-codex.md",
+      "bytes": 87024,
+      "sha256": "dab10495b84319e7fd83a3efa9bea4e7fcf189cc8b1383b9436e95010d8c6192",
+      "media_type": "text/markdown",
+      "role": "execution-evidence-report",
+      "state": "current"
+    },
+    {
+      "path": "docs/05-implementacao/18-graphify-repository-map.md",
+      "bytes": 18384,
+      "sha256": "5e4c6f44eb9ba439e0db93d7f8ed32acdda89caf1fb87023af4dada795c866a1",
+      "media_type": "text/markdown",
+      "role": "graphify-architecture-map",
+      "state": "current"
+    },
+    {
+      "path": "docs/05-implementacao/21-staging-release-operations.md",
+      "bytes": 18100,
+      "sha256": "3a354f0122e663037255a073431f9a9070d431610dec25883de1feb804402481",
+      "media_type": "text/markdown",
+      "role": "staging-release-operations",
+      "state": "current"
+    },
+    {
+      "path": "docs/05-implementacao/22-napoleon-node-runtime-runbook.md",
+      "bytes": 18044,
+      "sha256": "6c2d8216d96ee740ca67da0b5adb1e3902be57d4e27bf54453ae5d17537d887a",
+      "media_type": "text/markdown",
+      "role": "napoleon-node-runtime-runbook",
+      "state": "current"
+    },
+    {
+      "path": "docs/06-seguranca/05-checklist-release.md",
+      "bytes": 5354,
+      "sha256": "787bc6b8e79737d7bb0a6f0cba26c2d131362018fd9683c635ca669e3d6704ec",
+      "media_type": "text/markdown",
+      "role": "release-security-checklist",
+      "state": "current"
+    },
+    {
+      "path": "docs/07-qa/02-testes-motion-visual.md",
+      "bytes": 25352,
+      "sha256": "b7191f02e3999d49418b9b8816e5140fb32e4179c3afce43fd10782c017b01d8",
+      "media_type": "text/markdown",
+      "role": "browser-visual-qa-contract",
+      "state": "current"
+    },
+    {
+      "path": "docs/07-qa/05-criterios-aceite.md",
+      "bytes": 9175,
+      "sha256": "6940ebb6c77b189a85ae0140ac7daa4a9da5880c1661c57db36ea4afdb16f7e5",
+      "media_type": "text/markdown",
+      "role": "acceptance-criteria",
+      "state": "current"
+    },
+    {
+      "path": "docs/07-qa/08-phase-09-release-readiness-report.md",
+      "bytes": 34892,
+      "sha256": "56df51b3e4ec9cad6c4b82707123c817732b927ee963b204217ff1f3b394fa01",
+      "media_type": "text/markdown",
+      "role": "phase-09-readiness-evidence",
+      "state": "current"
+    },
+    {
+      "path": "docs/07-qa/09-staging-homologation-runbook.md",
+      "bytes": 23068,
+      "sha256": "8cdd90cfade3ebac7d83dca4d0066e488de20c0c9ce48c552b15439ee434621a",
+      "media_type": "text/markdown",
+      "role": "staging-homologation-runbook",
+      "state": "current"
+    },
+    {
+      "path": "docs/07-qa/10-staging-homologation-report.md",
+      "bytes": 14016,
+      "sha256": "fea6aad13aef7485e1746a2653e06b2e7dca46958aeab43136340d57f7b509ea",
+      "media_type": "text/markdown",
+      "role": "staging-homologation-evidence-template",
+      "state": "current"
+    },
+    {
+      "path": "docs/08-operacao/01-observabilidade-incidentes.md",
+      "bytes": 3315,
+      "sha256": "4955f36411a2639fdc3a559a0af0ed4b0e5cdcfce357fa904e4be22da37cd341",
+      "media_type": "text/markdown",
+      "role": "observability-and-incident-runbook",
+      "state": "current"
+    },
+    {
+      "path": "docs/08-operacao/03-napoleon-rollback-runbook.md",
+      "bytes": 14598,
+      "sha256": "8124aaa3da8e7590ae1428f1d22470394022abd017f8aff1a8c9feec0a885f71",
+      "media_type": "text/markdown",
+      "role": "napoleon-rollback-runbook",
+      "state": "current"
+    },
+    {
+      "path": "docs/PROMPT_CODEX_FASE_09_NAPOLEON.md",
+      "bytes": 21037,
+      "sha256": "e11631a7ea4ed19114386a4afdaabb01de758d6aad4239b882466d49fae20a2d",
+      "media_type": "text/markdown",
+      "role": "phase-09-execution-contract",
+      "state": "current"
+    },
+    {
+      "path": "openspec/changes/complete-site-qa-release-preparation/design.md",
+      "bytes": 10424,
+      "sha256": "bb4843ea1a32b1ac6ea8726719c3ef2667025455f218b7a686a7f3cd394ec918",
+      "media_type": "text/markdown",
+      "role": "openspec-change-design",
+      "state": "current"
+    },
+    {
+      "path": "openspec/changes/complete-site-qa-release-preparation/proposal.md",
+      "bytes": 3624,
+      "sha256": "4ce2cfd9b03543198c14cf6856a9bf65dbbca45f13e3798ea619768ddc75ba99",
+      "media_type": "text/markdown",
+      "role": "openspec-change-proposal",
+      "state": "current"
+    },
+    {
+      "path": "openspec/changes/complete-site-qa-release-preparation/specs/governed-release-candidate/spec.md",
+      "bytes": 7240,
+      "sha256": "f43d05d04d87c1406489636d7369f3c057238bd8edc638098456b69764f0b707",
+      "media_type": "text/markdown",
+      "role": "openspec-delta-specification",
+      "state": "current"
+    },
+    {
+      "path": "openspec/changes/complete-site-qa-release-preparation/tasks.md",
+      "bytes": 5923,
+      "sha256": "b80ec0e69c300ca9f0c3fa89e22d4e00cd7e04b9818a1f940af7fd8a6b973a22",
+      "media_type": "text/markdown",
+      "role": "openspec-change-task-ledger",
+      "state": "current"
+    },
+    {
+      "path": "openspec/changes/stabilize-browser-visual-regression/.openspec.yaml",
+      "bytes": 40,
+      "sha256": "1613d2c15ac2e1743059176022d807603786da900e8e52409def96654c26b412",
+      "media_type": "application/yaml",
+      "role": "openspec-change-metadata",
+      "state": "current"
+    },
+    {
+      "path": "openspec/changes/stabilize-browser-visual-regression/design.md",
+      "bytes": 13987,
+      "sha256": "4e6949614e982915209c59b479cacf3fa64b982047d21f08e350226e4ef627c7",
+      "media_type": "text/markdown",
+      "role": "openspec-change-design",
+      "state": "current"
+    },
+    {
+      "path": "openspec/changes/stabilize-browser-visual-regression/proposal.md",
+      "bytes": 5937,
+      "sha256": "3afc528c1ca509924bd89d3d256f5ac61c99dbe318efd31bc748c83c6755615e",
+      "media_type": "text/markdown",
+      "role": "openspec-change-proposal",
+      "state": "current"
+    },
+    {
+      "path": "openspec/changes/stabilize-browser-visual-regression/specs/complete-quality-gate/spec.md",
+      "bytes": 3689,
+      "sha256": "8b0a30c05d34f8ff8cc8ef4c218c4f521ef162b8b87a32c69cea012d092c7b98",
+      "media_type": "text/markdown",
+      "role": "openspec-delta-specification",
+      "state": "current"
+    },
+    {
+      "path": "openspec/changes/stabilize-browser-visual-regression/specs/governed-release-candidate/spec.md",
+      "bytes": 1231,
+      "sha256": "0a32446e7e44ee18bd2ff389d9f4ca43165f074fc006c6502acbbd07849145a2",
+      "media_type": "text/markdown",
+      "role": "openspec-delta-specification",
+      "state": "current"
+    },
+    {
+      "path": "openspec/changes/stabilize-browser-visual-regression/tasks.md",
+      "bytes": 3859,
+      "sha256": "a7da98591dc27e3d473b803d552114c174d8fb848aff1eec45abb4f95ca3e73f",
+      "media_type": "text/markdown",
+      "role": "openspec-change-task-ledger",
+      "state": "current"
+    },
+    {
+      "path": "openspec/specs/complete-quality-gate/spec.md",
+      "bytes": 5936,
+      "sha256": "7517ca6a6926d22a3d7220e816f37380de885eb46f0ac55f51706702f169dcc6",
+      "media_type": "text/markdown",
+      "role": "openspec-canonical-specification",
+      "state": "current"
+    },
+    {
+      "path": "openspec/specs/governed-release-candidate/spec.md",
+      "bytes": 8487,
+      "sha256": "2a38f3dd85c41fccbcf0e760ca82859f568a64437c07c7a53e6a22a66619c70e",
+      "media_type": "text/markdown",
+      "role": "openspec-canonical-specification",
+      "state": "current"
+    }
+  ],
+  "validation": {
+    "git_diff_check": "pass",
+    "structured_files": "pass",
+    "markdown_relative_links": {
+      "state": "pass",
+      "checked": 154,
+      "broken": 0
+    },
+    "openspec_strict": {
+      "passed": 11,
+      "failed": 0
+    },
+    "graphify": "pass",
+    "graphify_checksums": "pass",
+    "final_repository_gate": "pass-local",
+    "ordinary_remote_ci": {
+      "state": "blocked-external",
+      "latest_observed_run_id": 31118939281,
+      "latest_observed_run_url": "https://github.com/DaviBenucci/WFlyer/actions/runs/31118939281",
+      "observed_revision": "065a077f9425943af8bc3ea821660bb356aef1da",
+      "cause": "GitHub account billing lock; no runner or workflow step started.",
+      "final_revision_run": "pending-after-push"
+    },
+    "visual_repository_review": "complete-35-path-register",
+    "visual_owner_approval": "pending-Davi-Benucci",
+    "staging": "not-deployed",
+    "homologation": "pending"
+  },
+  "external_evidence": {
+    "github_environment": "pending",
+    "github_secret_values": "not-recorded",
+    "napoleon_application": "pending",
+    "napoleon_runtime_values": "pending",
+    "cloudflare_record": "pending-owner-configuration",
+    "staging_url": null,
+    "deployed_revision": null,
+    "candidate_workflow_run": null,
+    "owner_decision": "pending",
+    "owner_decision_timestamp": null
+  },
+  "protected_boundaries": {
+    "app_wflyer_com_br_must_not_be_modified": true,
+    "cloudflare_zone_must_not_be_modified_without_owner_approval": true,
+    "secrets_must_not_be_recorded": true,
+    "production_merge_or_deploy_requires_explicit_owner_approval": true
+  },
+  "integrity": {
+    "algorithm": "sha256",
+    "companion": "PHASE-09-SHA256SUMS.txt",
+    "companion_bytes": 3966,
+    "companion_sha256": "8b9c199015592865199ddb2724dfe88485cedb4cfc8fbcf206049734abb7875b",
+    "companion_file_count": 33,
+    "companion_canonicalization": "sha256sum-v1-lf-path-sort",
+    "companion_contains_exact_artifact_set": true,
+    "companion_excludes_manifest": true,
+    "companion_excludes_itself": true
+  }
+}

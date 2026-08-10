@@ -70,3 +70,6 @@ next-env.d.ts
 # Artefatos históricos de revisão visual; os contratos vivem em docs/
 review/
 index.html
+
+# Phase 09 integrity companion; the JSON manifest remains in the graph.
+PHASE-09-SHA256SUMS.txt

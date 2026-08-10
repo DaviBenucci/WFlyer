@@ -80,15 +80,19 @@ approval.
 - the process user is isolated and non-administrative;
 - health/restart behavior and the prior revision selector are known.
 
-The Napoleon setup guide uses `public_html` as the application-root example.
-Use that directory name for manual uploads unless the owner records a different
-document root in the panel.
+The Napoleon application must expose a persistent Node.js process and start
+`.next/standalone/server.js`. A panel that exposes only `public_html`, a static
+document root, or a mandatory root `index.html` is incompatible with the
+current application. Record that limitation and stop; do not upload the
+standalone directory as static files. The field-by-field provider inventory is
+maintained in `22-napoleon-node-runtime-runbook.md`.
 
 ### Cloudflare and providers
 
 - a read-only inventory confirms apex, `www`, mail, application, certificates,
   proxy, cache, WAF, and existing rate rules;
-- the planned `staging.wflyer.com.br` host is owner-approved before creation;
+- the exact `https://<approved-staging-host>` origin is owner-approved before
+  any record is created;
 - staging and production use appropriate Turnstile site/secret keys;
 - the Resend sender domain is verified and staging delivery is safe;
 - an owner-approved `/api/contact` edge rate rule is defined;
@@ -137,21 +141,26 @@ institutional release can claim preservation of the separate application.
    cannot be scoped separately, inspect the resulting server/client output for
    credential values before accepting staging.
 
-### 3.1 Manual upload procedure for a checked artifact
+### 3.1 Node.js provider compatibility gate
 
-If Napoleon expects a direct web-root upload, use the generated standalone
-artifact instead of the source tree:
+Before entering any value or attaching the staging branch, verify from the
+actual panel that Napoleon can:
 
-1. run `pnpm build`;
-2. run `pnpm prepare:standalone`;
-3. verify `.next/standalone/index.html` exists;
-4. back up the current `public_html` contents on Napoleon;
-5. upload the contents of `.next/standalone/` into `public_html`;
-6. confirm `public_html/index.html` exists and references the uploaded
-   `_next/static/` assets and `icon.svg`;
-7. verify the route files or server output for the expected public pages;
-8. test the domain root and the documented deep links;
-9. restore the backup if any route, asset, or header check fails.
+1. select a Node.js application rather than a static site;
+2. pull the GitHub repository and exact staging branch;
+3. use Node.js 24 and pnpm 11.18.0 through Corepack;
+4. run the governed build from the repository root;
+5. start `node .next/standalone/server.js` as a persistent process;
+6. inject or configure the actual `PORT` contract and, only when required,
+   `HOSTNAME=0.0.0.0`;
+7. keep build-time and runtime values in their correct scopes;
+8. expose health, logs, restart, selected revision, and rollback controls.
+
+Copy the actual field labels and non-secret values into
+`22-napoleon-node-runtime-runbook.md`. If any of items 1, 4, or 5 is
+unavailable, report a provider/architecture incompatibility. A static upload
+cannot implement deep routes, `/api/contact`, Next.js response headers, or the
+custom HTTP 404 and must not be accepted as staging.
 
 ## 4. External staging validation
 
@@ -171,7 +180,7 @@ invent a public header or diagnostic route to claim it. Then run from the clean
 checkout:
 
 ```bash
-PLAYWRIGHT_BASE_URL=https://staging.wflyer.com.br pnpm test:staging
+PLAYWRIGHT_BASE_URL="https://<approved-staging-host>" pnpm test:staging
 ```
 
 This production-safe staging suite uses only public behavior. Do not run the
@@ -269,7 +278,8 @@ an operational token, not a fabricated revision.
 If staging or an authorized production release fails:
 
 1. disable or bypass only the Contact form if provider behavior is the sole
-   incident; keep the official email and static site available;
+   incident; keep the official email and statically generated pages available
+   through the standalone Node.js process;
 2. select the previous institutional commit/artifact in Napoleon through the
    verified control;
 3. verify its checksum, runtime values, and deployment environment;
@@ -287,7 +297,8 @@ not mark the checklist item complete before that evidence exists.
 
 | Blocker | Configuration owner/location | Rerun after resolution |
 |---|---|---|
-| Corrective working tree has no remote revision | Repository owner; current local base is `5a4ea8529582931e287cc667ab436544c9a176ee` | After an authorized commit and push, require common CI and then `Prepare Napoleon release` to pass for the resulting identical full SHA |
+| Ordinary CI cannot start because the GitHub account is locked for billing | Repository owner, GitHub **Settings → Billing and licensing**; run `31118939281` for `065a077f9425943af8bc3ea821660bb356aef1da` contains no runner steps | Resolve the account lock, push or rerun the final branch-head revision, and require every ordinary CI job to pass for that exact SHA |
+| Default-branch workflow PR cannot be opened by the connected GitHub App | Repository owner; branch `ci/napoleon-release-workflow-bootstrap`, commit `d67554be7ceee4f2e744380275860781d302d145` | Open the draft PR from `https://github.com/DaviBenucci/WFlyer/compare/main...ci%2Fnapoleon-release-workflow-bootstrap?expand=1`, review its one-file diff, and merge only after approval |
 | GitHub Environments and values | Repository Settings → Environments | Dispatch `Prepare Napoleon release` for staging |
 | Napoleon build/start/runtime controls | Napoleon application settings | Record source, branch, SHA, commands, variable scopes, port, health, process user, restart, and rollback controls; then run section 4 |
 | Staging URL-to-source identity | Napoleon branch selection plus the release manifest/SHA | Record operator confirmation that `develop/site-institucional`, CI, manifest, selected application, and host identify the same SHA; do not infer identity from an undocumented public header |
@@ -298,12 +309,13 @@ not mark the checklist item complete before that evidence exists.
 | Legal and physical accessibility review | Davi Benucci and qualified reviewers | Update reports, then repeat homologation |
 | Production approval | Davi Benucci on exact manifest | Dispatch production candidate workflow only |
 
-Local visual regression is stabilized with 34 reviewed replacement snapshots,
-five consecutive reduced-motion WebKit passes, and two unchanged 291/291
-zero-tolerance runs. The complete local browser, source, build, standalone,
-indexing, and Lighthouse gates are green. The exact branch-head common CI and
-manual candidate results must still be recorded after an authorized commit and
-push before Napoleon is pointed to that frozen SHA. The state remains
+The 35 unique replacement snapshots have a path-by-path automated review register in
+`../07-qa/02-testes-motion-visual.md`; Davi Benucci's human review remains
+pending. Current rerun results belong in
+`../07-qa/08-phase-09-release-readiness-report.md` and must never be inferred
+from an older Playwright report. The exact branch-head common CI and manual
+candidate results must still be recorded before Napoleon is pointed to that
+frozen SHA. The state remains
 `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`; it is not
 `READY_FOR_HUMAN_HOMOLOGATION` or `READY_FOR_PRODUCTION` until deployed staging
 and owner approval pass.

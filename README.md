@@ -1,59 +1,89 @@
-# W_Flyer — documentação do site institucional
+# W_Flyer institutional site
 
-**Domínio:** `wflyer.com.br`  
-**Aplicação separada:** `app.wflyer.com.br`  
-**Status:** `READY_FOR_IMPLEMENTATION` — versão 1.4  
-**Data-base:** 2026-07-29
+- **Domain:** `wflyer.com.br`
+- **Separate application:** `app.wflyer.com.br`
+- **Current status:** `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`
+- **External configuration:** pending
+- **Production:** not authorized
+- **Status date:** 2026-08-10
 
-Este pacote é a fonte normativa para a implementação integral do site institucional da W_Flyer. O site apresenta a empresa, os serviços, a aplicação musical em linguagem pública, o processo, o portfólio, o contato e as políticas institucionais.
+This repository contains the normative documentation and implementation of the
+W_Flyer institutional site. It presents the company, services, the music
+application in public language, the delivery process, the portfolio, contact
+channels, and institutional policies.
 
-O site institucional é independente do aplicativo musical. OCR/OMR, transposição real, harmonização, banco de dados e administração da aplicação não integram este repositório.
+The institutional site is independent from the music application. OCR/OMR,
+real transposition, harmonization, a database, authentication, and music
+application administration are outside this repository.
 
-## Arquitetura de entrega
+## Delivery architecture
 
-O projeto é **static-first**, mas não um `static export` puro:
+The project is static-first, but it is not a pure static export:
 
-- páginas, textos, imagens e políticas são gerados estaticamente no build;
-- não há banco, CMS, autenticação ou painel administrativo na versão inicial;
-- somente `POST /api/contact` exige runtime Node.js;
-- o código fica no GitHub e é implantado como aplicação Node.js na Napoleon;
-- Cloudflare permanece como DNS, proxy, HTTPS, WAF, rate limit e Turnstile;
-- não utilizar VPS, EasyPanel ou Docker como requisito de produção;
-- `app.wflyer.com.br` permanece separado e intocável.
+- pages, copy, images, and policies are statically generated where possible;
+- the initial release has no database, CMS, authentication, or administration
+  panel;
+- only `POST /api/contact` requires a Node.js runtime;
+- Napoleon's owner-confirmed integration independently pulls and builds the
+  selected GitHub revision;
+- the persistent runtime entry point is `.next/standalone/server.js`;
+- GitHub Actions validates and records candidate provenance; it does not deploy
+  the Actions archive to Napoleon;
+- GitHub Environment values do not transfer automatically to Napoleon, so the
+  Napoleon build/runtime values must be configured independently;
+- Cloudflare remains the DNS, proxy, HTTPS, WAF, rate-limit, and Turnstile
+  edge;
+- VPS, EasyPanel, Docker, and a static `public_html` document root are not
+  production requirements;
+- `app.wflyer.com.br` remains separate and must not be modified.
 
-## Referências visuais autorizadas
+The exact staging hostname and Napoleon target are owner-approved external
+inputs that have not yet been recorded. No staging hostname is assumed by this
+repository. Production deployment, production DNS changes, and a merge to
+`main` require Davi Benucci's explicit approval.
 
-O Codex deve usar os exemplos já aprovados como sistema visual, e não aguardar 60 screenshots independentes:
+## Authorized visual references
 
-1. `docs/design-reference/golden-pages/master/wflyer-approved-master-board.png` define a identidade global e os painéis aprovados;
-2. `docs/design-reference/golden-pages/application/application-desktop-light.png` define a página Aplicação e o tablet;
-3. `docs/design-reference/golden-pages/visual-archetypes.yaml` define como as demais páginas herdam composição;
-4. `docs/02-design/10-especificacao-visual-paginas.md` define conteúdo e estrutura por rota;
-5. tokens, motion e responsividade completam os estados escuros e mobile.
+The implementation uses the approved examples as a visual system rather than
+waiting for independent screenshots for every state:
 
-As imagens nunca podem ser usadas como background, textura, mapa de cliques ou frontend. A implementação deve ser semântica e original.
+1. [`wflyer-approved-master-board.png`](docs/design-reference/golden-pages/master/wflyer-approved-master-board.png)
+   defines the global identity and approved panels;
+2. [`application-desktop-light.png`](docs/design-reference/golden-pages/application/application-desktop-light.png)
+   defines the Application page and tablet;
+3. [`visual-archetypes.yaml`](docs/design-reference/golden-pages/visual-archetypes.yaml)
+   defines how the remaining pages inherit composition;
+4. [`10-especificacao-visual-paginas.md`](docs/02-design/10-especificacao-visual-paginas.md)
+   defines route-specific content and structure;
+5. the token, motion, and responsive specifications complete dark and mobile
+   states.
 
-## Decisões visuais consolidadas
+Reference images must never become a background, texture, click map, or
+frontend implementation. The production interface is semantic and original.
 
-- símbolo oficial centralizado no header desktop;
-- Home como origem de duas partituras;
-- ramo da aplicação: Aplicação → Como funciona → Benefícios → app → barra final;
-- ramo institucional: Empresa → Serviços → Processo → Portfólio → Contato → barra final;
-- tablet em DOM com CSS 3D limitado e GSAP;
-- temas claro e escuro com a mesma geometria;
-- mobile derivado das regras normativas, sem copiar literalmente a composição desktop.
+## Consolidated visual decisions
 
-## Dados de publicação
+- the official symbol is centered in the desktop header;
+- Home is the origin of two score branches;
+- application branch: Application → How it works → Benefits → app →
+  final barline;
+- institutional branch: Company → Services → Process → Portfolio →
+  Contact → final barline;
+- the tablet is operable DOM content with bounded CSS 3D and GSAP motion;
+- light and dark themes preserve the same geometry;
+- mobile follows the normative responsive rules rather than copying the
+  desktop composition literally.
 
-- contato público: `davi.benucci@wflyer.com.br`;
-- destinatário do formulário: `davi.benucci@wflyer.com.br`;
-- Instagram: `https://www.instagram.com/davibenucci/`;
-- GitHub: `https://github.com/DaviBenucci`;
-- portfólio inicial: W_Flyer, `msndistribuidora.com.br` e `msnsuprimentos.com.br`;
-- analytics: desabilitado na versão inicial;
-- homologação: Davi Benucci.
+## Publication profile
 
-## Leitura obrigatória
+- public contact and form recipient: `davi.benucci@wflyer.com.br`;
+- Instagram: [`@davibenucci`](https://www.instagram.com/davibenucci/);
+- GitHub: [`DaviBenucci`](https://github.com/DaviBenucci);
+- initial portfolio: W_Flyer, MSN Distribuidora, and MSN Suprimentos;
+- analytics: disabled for the initial release;
+- homologation owner: Davi Benucci.
+
+## Required reading
 
 1. [`AGENTS.md`](AGENTS.md)
 2. [`PRE-CODE-STATUS.md`](PRE-CODE-STATUS.md)
@@ -67,21 +97,29 @@ As imagens nunca podem ser usadas como background, textura, mapa de cliques ou f
 10. [`docs/03-motion/03-catalogo-animacoes.md`](docs/03-motion/03-catalogo-animacoes.md)
 11. [`docs/05-implementacao/14-contrato-execucao-integral-codex.md`](docs/05-implementacao/14-contrato-execucao-integral-codex.md)
 12. [`docs/05-implementacao/16-github-actions-secrets-napoleon.md`](docs/05-implementacao/16-github-actions-secrets-napoleon.md)
-13. [`docs/07-qa/05-criterios-aceite.md`](docs/07-qa/05-criterios-aceite.md)
+13. [`docs/05-implementacao/22-napoleon-node-runtime-runbook.md`](docs/05-implementacao/22-napoleon-node-runtime-runbook.md)
+14. [`docs/07-qa/05-criterios-aceite.md`](docs/07-qa/05-criterios-aceite.md)
+15. [`docs/07-qa/09-staging-homologation-runbook.md`](docs/07-qa/09-staging-homologation-runbook.md)
 
-## Regra de implementação
+## Execution rule
 
-O estado `READY_FOR_IMPLEMENTATION` autoriza o Codex a percorrer todas as fases. A ausência de uma referência individual adicional não é bloqueio quando a página estiver marcada como `authorized-derived` na matriz. O Codex só interrompe por impedimento externo real, conflito normativo, falha de segurança/teste ou ausência de credencial necessária para publicar.
+The implementation authorization and authorized-derived visual states remain
+valid. The complete repository-owned source, browser, build, standalone,
+indexing, dependency, documentation, OpenSpec, and Graphify gates are recorded
+for the Phase 09 candidate. The current operational status is therefore
+`CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`. Exact-SHA remote CI, external
+configuration, staging deployment, human homologation, and production approval
+remain separate gates.
 
-## Execução local
+## Local execution
 
-Pré-requisitos:
+Prerequisites:
 
 - Node.js 24;
-- Corepack habilitado;
-- pnpm 11.15.1.
+- Corepack enabled;
+- pnpm 11.18.0.
 
-Comandos principais:
+Primary commands:
 
 ```bash
 pnpm install --frozen-lockfile
@@ -97,8 +135,17 @@ pnpm prepare:standalone
 pnpm lighthouse
 ```
 
-O build standalone fica em `.next/standalone`. `pnpm prepare:standalone` deve ser executado após `pnpm build` para incluir assets públicos e `.next/static`.
+After `pnpm build`, run `pnpm prepare:standalone` to copy public assets and
+`.next/static` into the standalone tree. Start the deployable runtime with:
 
-Os candidatos `staging` e `production` são apenas empacotados pelo workflow manual enquanto o método real de integração da Napoleon não estiver aprovado. Nenhum workflow atual publica em produção, altera DNS ou toca em `app.wflyer.com.br`.
+```bash
+node .next/standalone/server.js
+```
 
-O histórico da implementação e os gates por fase ficam em [`docs/05-implementacao/17-relatorio-execucao-codex.md`](docs/05-implementacao/17-relatorio-execucao-codex.md).
+The manual release workflow validates and checksums a candidate while recording
+`deployment.performed=false`. Napoleon separately pulls and builds the selected
+Git revision. No current workflow publishes production, changes DNS, or touches
+`app.wflyer.com.br`.
+
+The accumulated phase record is maintained in
+[`docs/05-implementacao/17-relatorio-execucao-codex.md`](docs/05-implementacao/17-relatorio-execucao-codex.md).

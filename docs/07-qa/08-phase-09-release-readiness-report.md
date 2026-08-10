@@ -1,10 +1,12 @@
 # Phase 09 local release-readiness report
 
-**Date:** 2026-08-03
+**Historical report date:** 2026-08-03
+**Current reconciliation date:** 2026-08-10
 **Scope:** `wflyer.com.br` institutional repository and local standalone runtime
 **Administrative infrastructure:** GitHub settings, Napoleon, Cloudflare, and
 provider dashboards were not accessed
 **Public read-only reachability:** observed separately on 2026-08-03
+**Current repository state:** `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`
 **Production action:** not authorized or performed
 
 ## Historical decision — 2026-08-03
@@ -24,26 +26,31 @@ state; they are not current release proof for the later interrupted working
 tree. Public Actions run `30918790636` subsequently reported 268/291 visual
 checks passing and 23 failures. Its retained evidence exposed a development-
 server surface in the changing WebKit reduced-motion Home retry and stable
-cross-host text-edge differences in Firefox Phase 06. Therefore every later
-use of “current” or `verified-complete` below must be read within the dated
-2026-08-03 audit only.
+cross-host text-edge differences in Firefox Phase 06. Therefore uses of
+“current” or `verified-complete` inside the explicitly historical sections
+below must be read within their dated checkpoint only; the separate 2026-08-10
+reconciliation controls the present repository state.
 
-The corrective implementation is tracked by OpenSpec change
-`stabilize-browser-visual-regression`. Its repository-owned local evidence is
-now `verified-complete`: the exact Playwright 1.62.0 Noble image produced 34
-reviewed replacement snapshots, five consecutive reduced-motion WebKit passes,
-two unchanged 291/291 zero-tolerance visual runs, E2E 318/318, axe 102/102, and
-motion 30/30 with retries disabled. Unit/component 305/305, Storybook 63/63,
-four 22-route builds, standalone 17 routes + 20 assets, indexing 4/4, and
-Lighthouse 15/15 also passed. No previous baseline result was reused to satisfy
-the new canonical-environment gate.
+The first corrective checkpoint is tracked by OpenSpec change
+`stabilize-browser-visual-regression`. For the tree that became commit
+`065a077f9425943af8bc3ea821660bb356aef1da`, its dated repository-owned local
+evidence reached `verified-complete`: the exact Playwright 1.62.0 Noble image
+produced 34 reviewed replacement snapshots (7 Phase 06, 16 Phase 07, and 11
+Phase 08), five consecutive reduced-motion WebKit passes, two unchanged
+291/291 zero-tolerance visual runs, E2E 318/318, axe 102/102, and motion 30/30
+with retries disabled. Unit/component 305/305, Storybook 63/63, four 22-route
+builds, standalone 17 routes + 20 assets, indexing 4/4, and Lighthouse 15/15
+also passed for that checkpoint. No previous baseline result was reused to
+satisfy its canonical-environment gate. These measurements remain historical;
+they do not close the later 2026-08-10 working tree.
 
-This local proof belongs to an uncommitted working tree at base SHA
-`5a4ea8529582931e287cc667ab436544c9a176ee`. It is not a GitHub-hosted result.
-After an authorized commit and push, common CI must pass for the resulting full
-SHA; the manual candidate browser workflow must separately pass for that same
-SHA before candidate acceptance. Until then, remote release evidence remains
-`implemented-but-unverified`.
+This local proof was originally recorded for an uncommitted working tree at
+base SHA `5a4ea8529582931e287cc667ab436544c9a176ee`. That tree was subsequently
+published as commit `065a077f9425943af8bc3ea821660bb356aef1da` without
+rewriting its parent. Ordinary CI run `31118939281` targeted that exact SHA but
+executed no runner step because the GitHub account was locked for billing.
+Therefore the historical local result is not a green GitHub-hosted result, and
+remote release evidence remains `implemented-but-unverified`.
 
 The public reachability observation was intentionally narrower than an
 infrastructure inventory. `wflyer.com.br` returned an HTTP 200 placeholder, and
@@ -54,6 +61,32 @@ configuration, application health, staging readiness, nor the cause of the
 application-host failure. The unresolved application host is an independent
 baseline blocker that must be investigated by its owner without changing it as
 part of the institutional-site release.
+
+## Current reconciliation — 2026-08-10
+
+The current repository-owned Phase 09 content is
+`CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`. The dated
+`verified-complete` statements elsewhere in this report preserve their original
+checkpoint evidence and remain separate from the current proof below.
+Production remains unauthorized, no staging
+deployment has been performed, and Davi Benucci's human approval is pending.
+
+| Current area | Repository evidence | State and remaining boundary |
+|---|---|---|
+| Node-only standalone runtime | Standalone preparation now copies only `public/` and `.next/static/` into their generated locations. The accepted persistent process is `node .next/standalone/server.js`; root `index.html`, `404.html`, metadata mirrors, `_next/static/`, and `public_html` are neither created nor accepted as runtime evidence. Smoke coverage exercises deep routes, `/api/contact`, headers, assets, indexing, and the custom 404 through that Node.js server. | Implemented and locally validated. Static hosting is incompatible; exact-SHA remote CI remains external. |
+| Transitive `nanoid` remediation | The prior production path was `next@16.2.12` → `postcss@8.5.25` → `nanoid@3.3.16`. GitHub Reviewed advisory [`GHSA-2v37-7h3g-55p8`](https://github.com/advisories/GHSA-2v37-7h3g-55p8) / `CVE-2026-67213` affects versions below `3.3.17`. The scoped override `nanoid@<3.3.17: 3.3.17` now resolves the production path to `3.3.17`. Frozen install, dependency validation, lint, typecheck, 306 unit tests, coverage, Storybook, builds/smokes/Lighthouse, strict OpenSpec 11/11, `pnpm audit --prod`, and peer checks passed after the lock change. | Repository-side supply-chain correction is measured; no exploitation is claimed. Exact-SHA remote CI proof remains pending. |
+| Governed visual replacement register | The published checkpoint contained 34 unique replacement paths. A later audit proved that Chromium's Phase 06 processing baseline still encoded a removed test-only flat transform; its inspected replacement adds one unique path, while the Firefox processing replacement revises a path already in the 34-path set. The current register therefore contains 35 unique paths: 8 Phase 06, 16 Phase 07, and 11 Phase 08. | Repository-side inspection is recorded path by path. Davi Benucci's approval of all 35 images remains pending. |
+| Contact visual actionability stall | A clean pre-fix matrix passed 290/291. Its only failure was WebKit `contact submitting`: the 30-second actionability timeout occurred in `fillValidForm` at the consent `.check()`, while the checkbox remained unchecked and before Turnstile verification, `POST /api/contact`, or the screenshot assertion. No actual/diff image or Contact network call was produced, and the 84-snapshot manifest was unchanged. The exact pre-fix case passed a focused 10/10, confirming an intermittent preparation stall rather than a pixel mismatch. | The visual-only helper now uses `consent.check({ force: true })` and immediately asserts `toBeChecked()`. Functional E2E and axe suites retain normal visitor actionability coverage. The patched WebKit case passed 10/10 in 106 seconds. |
+| Clean visual matrix #1 after the Contact correction | `pnpm exec playwright test tests/visual --retries=0 --workers=1` ran against the internal production standalone server in the pinned Playwright 1.62.0 Noble image at digest `sha256:baed2032d533817f3dbe6425de795788430ba345e819a1201337009ba17c9d07`, with read-only source and snapshots. It passed 291/291 in 501 seconds: Chromium 97/97, Firefox 97/97, and WebKit 97/97, with zero retries or flakes. The WebKit Contact case passed in 3.9 seconds. The 84-PNG manifest was byte-identical before and after at `ba4f23c08613c1c1c9a1481fa6d8466dd7bfa0641cf3b6ae898424966ccc6b63`; the Contact spec hash was `feb669db0767030c539784dbee8ee674130ad6b0c0b7c77f8f1f936c4b8978f8`. | This is the first clean post-fix matrix, not final closure. Clean matrix #2 and the required complete E2E, accessibility, motion, and focused repeat sequence were still pending at this checkpoint. |
+| Final canonical browser sequence | The same pinned Noble source/build passed E2E 318/318 in 593 seconds, axe 102/102 in 293 seconds, motion 30/30 in 81 seconds, and clean visual matrix #2 291/291 in 521 seconds. Focused repeats passed Firefox branch direction 10/10 in 58 seconds, WebKit final barlines 5/5 in 24 seconds, and WebKit reduced-motion final Home 5/5 in 18 seconds. The complete-sequence summary SHA-256 is `dce40df46fc2d5733ae771d614bd4e673c47e4dfc204bda3bdefa0df00f3f58a`. | Repository browser evidence complete. The 84-PNG manifest remained byte-identical from sequence start to end at `ba4f23c08613c1c1c9a1481fa6d8466dd7bfa0641cf3b6ae898424966ccc6b63`; remote CI and human review remain separate. |
+| Default-branch workflow bootstrap | Remote branch `ci/napoleon-release-workflow-bootstrap` points to infrastructure-only commit `d67554be7ceee4f2e744380275860781d302d145`, adding the manual release workflow without merging the institutional application into `main`. | Branch evidence exists. Owner review, PR creation/merge, and default-branch dispatch remain external and incomplete. |
+| Remote ordinary CI | Run [`31118939281`](https://github.com/DaviBenucci/WFlyer/actions/runs/31118939281) targeted published SHA `065a077f9425943af8bc3ea821660bb356aef1da`; all four jobs acquired no runner and executed no step because the GitHub account was locked for billing. | External billing blocker, not green CI and not a code-failure result. The exact final branch-head run must be recorded after the forward-only commit series is pushed; it cannot be inferred from this prior run. |
+
+Repository-owned closure includes the two clean visual matrices, complete and
+focused browser sequence, refreshed Graphify/checksums, strict OpenSpec task
+evidence, additive documentation integrity records, and reviewed forward-only
+commits. Those results are current proof and are not inferred from clean matrix
+#1 or from the historical 2026-08-03/2026-08-05 checkpoints.
 
 ## Historical implementation audit matrix — 2026-08-03
 
@@ -178,25 +211,26 @@ canonicals, Open Graph/Twitter metadata, favicon, structured data limited to
 verified facts, the 17-route sitemap, and a crawler policy that excludes
 `/api/`. Staging and unknown builds fail closed through HTML
 noindex/nofollow metadata, `X-Robots-Tag`, and a disallow-all `robots.txt`
-without a sitemap advertisement. Production, staging, absent, and preview
-builds each emitted 22 routes and passed standalone indexing smoke, 4/4.
+without a sitemap advertisement. At the 2026-08-03 checkpoint, production,
+staging, absent, and preview builds each emitted 22 routes and passed standalone
+indexing smoke, 4/4; current closure is governed by the reconciliation above.
 
 ## Performance and artifact boundary
 
 The build remains predominantly static with `/api/contact` as the intentional
-dynamic route. Standalone smoke passed all 17 public routes and 20 referenced
-assets. Bundle inspection found no credential values or prohibited
-tooling/content. Required server-runtime variable names remain in the server
-bundle by design. Dormant checkpoint code strings may remain in production
-client chunks, but `testMode=false` exposes no private global/controller; the
-production-safe public staging suite verified that hooks are disabled and not
-exposed. The only intended Contact browser third party is the scoped, finite
-Turnstile script.
+dynamic route. At the 2026-08-03 checkpoint, standalone smoke passed all 17
+public routes and 20 referenced assets. Bundle inspection found no credential
+values or prohibited tooling/content. Required server-runtime variable names
+remain in the server bundle by design. Dormant checkpoint code strings may
+remain in production client chunks, but `testMode=false` exposes no private
+global/controller; the production-safe public staging suite verified that hooks
+are disabled and not exposed. The only intended Contact browser third party is
+the scoped, finite Turnstile script.
 
-Lighthouse passed 15/15 runs with every category score at least 1.00. Maximum
-observed LCP was 755 ms, CLS 0.0034, and TBT 3 ms. External Core Web Vitals,
-real network/provider latency, Napoleon process behavior, and edge caching
-cannot be inferred locally.
+The historical Lighthouse checkpoint passed 15/15 runs with every category
+score at least 1.00. Maximum observed LCP was 755 ms, CLS 0.0034, and TBT 3 ms.
+External Core Web Vitals, real network/provider latency, Napoleon process
+behavior, and edge caching cannot be inferred locally.
 
 ## Security
 
@@ -206,8 +240,11 @@ fixed
 plain-text Resend construction, no persistence, no contact-payload logging in
 application source, generic no-store responses, safe browser headers,
 report-only CSP without `unsafe-eval`, safe external links, and release
-artifact isolation. Final source/dependency closure is green; external logs
-and controls are not inferred from local bundle inspection.
+artifact isolation. The historical source/dependency closure was green. The
+current transitive `nanoid` correction and its measured checks are recorded in
+the 2026-08-10 reconciliation, but they do not by themselves close the final
+current-tree gate; external logs and controls are not inferred from local
+bundle inspection.
 
 Still external: Cloudflare read-only inventory, WAF/rate policy, HTTPS/HSTS
 decision, CSP report observation/enforcement, Napoleon process isolation and
@@ -232,8 +269,8 @@ does not advance that branch. Before the first staging start, the remote
 Napoleon-selected SHA must match. The Actions archive proves candidate quality;
 it is not asserted to be byte-identical to Napoleon's source build.
 
-The prepared standalone tree measured 29 MiB and its normalized archive 4.4
-MiB. Two packaging executions over that same tree produced SHA-256
+The historical prepared standalone tree measured 29 MiB and its normalized
+archive 4.4 MiB. Two packaging executions over that same tree produced SHA-256
 `b1c262ff65624c234fe7822aa5829a5c0872616d12f3fd47fa5ad7ee030e3a53`.
 The local non-secret manifest matched repository, revision, source ref,
 environment, workflow run ID/attempt/URL, archive, checksum, creation time, and
@@ -242,11 +279,12 @@ integrity contract, not a claim that independent Next.js builds on floating
 hosted environments are byte-reproducible. No Napoleon API, webhook, SSH
 command, DNS mutation, deploy call, merge, tag, or public release is performed.
 
-The final standalone candidate now exposes the document-root files expected by
-Napoleon-style uploads: `index.html`, `icon.svg`, `robots.txt`, `sitemap.xml`,
-`404.html`, and the mirrored `_next/static/` tree. The root `index.html`
-references the actual production assets rather than a placeholder landing
-page.
+The deployable candidate is the generated Node.js process at
+`.next/standalone/server.js`, completed with `public/` and
+`.next/standalone/.next/static/`. Root `index.html`, `404.html`, metadata
+mirrors, `_next/static/`, and `public_html` are neither generated nor accepted
+as deployment evidence. A static file host is incompatible with the deep-route,
+`/api/contact`, response-header, custom HTTP 404, and runtime contracts.
 
 ## Historical manual inspection performed locally — 2026-08-03
 
@@ -266,13 +304,20 @@ hosting, or legal review.
 Exact owners, configuration locations, rerun commands, staging checks,
 homologation steps, and rollback procedure are maintained in
 `docs/05-implementacao/21-staging-release-operations.md`. The current working
-tree is `verified-complete` locally; remote and external integration remain
-`blocked`. No commit or push was authorized for this correction. Next, commit
-the reviewed tree when authorized, push `develop/site-institucional`, and
-record a green common-CI result for that new full SHA. Keep that head frozen,
-run the manual candidate workflow for the same SHA, configure the six values in
-the protected GitHub `staging` Environment, inventory Napoleon/Cloudflare
-read-only, and resolve the independent `app.wflyer.com.br` baseline. Then
-select that branch in Napoleon, record the same SHA, prepare/verify the staging
-candidate, and run `pnpm test:staging` from a clean checkout of its manifest
-SHA. Production is not authorized.
+repository state is `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`.
+Repository-owned gates are complete; the first clean post-fix matrix remains
+intermediate evidence within the two-run proof.
+
+The reviewed tree is committed and published through a forward-only series;
+the exact final SHA is recorded in Git and the external execution handoff
+rather than self-embedded in this containing commit. Require green common CI
+for that full SHA; run `31118939281` is unusable as green proof because billing
+prevented every job from starting. Keep the resulting head frozen, obtain owner review and
+merge of bootstrap commit `d67554be7ceee4f2e744380275860781d302d145`, run the
+manual candidate workflow for the same SHA, configure the six values in the
+protected GitHub `staging` Environment, inventory Napoleon/Cloudflare
+read-only, and resolve the independent `app.wflyer.com.br` baseline without
+modifying that application. Then select the branch in Napoleon, record the same
+SHA, prepare and verify staging, and run `pnpm test:staging` from a clean
+checkout of its manifest SHA. Davi Benucci's visual and staging homologation
+decisions remain pending. Production is not authorized.

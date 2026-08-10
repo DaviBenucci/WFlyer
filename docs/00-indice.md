@@ -11,6 +11,8 @@
 - [ADR — animação de entrada programática](00-governanca/06-adr-animacao-entrada-programatica.md)
 - [ADR — dupla partitura e páginas visuais](00-governanca/07-adr-dupla-partitura-e-paginas-visuais.md)
 - [Decisões operacionais e publicação](00-governanca/08-decisoes-operacionais-publicacao.md)
+- [Manifesto documental aditivo da Fase 09](../PHASE-09-DOCUMENTATION-MANIFEST.json)
+- [Checksums documentais da Fase 09](../PHASE-09-SHA256SUMS.txt)
 
 ## 01 — Produto
 
@@ -79,6 +81,7 @@
 - [Workflow OpenSpec](05-implementacao/19-openspec-workflow.md)
 - [Relatório do bootstrap Graphify e OpenSpec](05-implementacao/20-bootstrap-graphify-openspec-report.md)
 - [Operações de staging, release, rollback e homologação](05-implementacao/21-staging-release-operations.md)
+- [Runbook do runtime Node.js na Napoleon](05-implementacao/22-napoleon-node-runtime-runbook.md)
 
 ## 06 — Segurança
 
@@ -99,11 +102,14 @@
 - [QA da animação de entrada](07-qa/06-qa-animacao-entrada.md)
 - [QA da dupla partitura e do tablet](07-qa/07-qa-dupla-partitura-tablet.md)
 - [Relatório de prontidão de release da Fase 09](07-qa/08-phase-09-release-readiness-report.md)
+- [Runbook de homologação em staging](07-qa/09-staging-homologation-runbook.md)
+- [Relatório de homologação em staging](07-qa/10-staging-homologation-report.md)
 
 ## 08 — Operação
 
 - [Observabilidade e incidentes](08-operacao/01-observabilidade-incidentes.md)
 - [Manutenção de dependências](08-operacao/02-manutencao-dependencias.md)
+- [Rollback da aplicação Node.js na Napoleon](08-operacao/03-napoleon-rollback-runbook.md)
 
 ## 09 — Referências
 

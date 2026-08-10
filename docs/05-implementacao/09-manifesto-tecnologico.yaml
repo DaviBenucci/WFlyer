@@ -1,6 +1,6 @@
 project: wflyer-site
 status: normative
-updated_at: 2026-07-29
+updated_at: 2026-08-10
 architecture:
   classification: static-first
   pure_static_export: false
@@ -12,6 +12,11 @@ architecture:
 runtime:
   node: "24 LTS"
   package_manager: pnpm
+  package_manager_version: "11.18.0"
+  corepack: required
+  output: standalone
+  entry_point: .next/standalone/server.js
+  start_command: node .next/standalone/server.js
 framework:
   next: {line: "16.2", minimum_security_patch: "16.2.11", output: standalone}
   react: {line: "19.2"}
@@ -69,13 +74,25 @@ deployment:
   provider: napoleon
   repository_provider: github
   repository_owner: DaviBenucci
+  source_handoff: napoleon-git-pull-and-build
+  actions_role: candidate-validation-and-provenance
+  actions_archive_deployed_to_napoleon: false
+  static_document_root: prohibited
   docker_required: false
   vps_required: false
   easypanel: prohibited
   edge: cloudflare
-  secret_store: github-actions-secrets
+  github_environment_values:
+    store: github-environment-secrets
+    transfer_to_napoleon: false
+    configuration_state: external-pending
+  napoleon_build_and_runtime_values:
+    store: napoleon-application-configuration
+    configured_independently: required
+    configuration_state: external-pending
   production_hostname: wflyer.com.br
-  staging_hostname: staging.wflyer.com.br
+  staging_hostname: owner-approved-value-pending
+  staging_hostname_owner: Davi Benucci
   existing_application_hostname: app.wflyer.com.br
   existing_application_mutation: prohibited
   nameserver_change: prohibited
@@ -86,7 +103,9 @@ deployment:
 homologation:
   responsible: Davi Benucci
 implementation_readiness:
-  current: READY_FOR_IMPLEMENTATION
-  production_state: READY_FOR_DEPLOYMENT_CONFIGURATION
+  current: CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING
+  repository_final_gates: complete
+  external_configuration: pending
+  production_state: NOT_AUTHORIZED
   contract: docs/05-implementacao/14-contrato-execucao-integral-codex.md
   checklist: docs/05-implementacao/15-checklist-prontidao-pre-codigo.md

@@ -5,6 +5,7 @@
 **Phase 05 refresh:** 2026-07-31
 **Phase 08 refresh:** 2026-07-31
 **Phase 09 closure refresh:** 2026-08-03
+**Phase 09 Node-only closure refresh:** 2026-08-10
 **Graphify:** `0.9.31`
 **Mode:** normal, undirected graph
 **Analyzed root:** W_Flyer institutional-site repository
@@ -131,7 +132,7 @@ saved as a correction: current source now implements and tests the client,
 server, Turnstile, and Resend workflow; edge rate limiting, HSTS, provider
 credentials, and CSP enforcement remain external staging gates.
 
-### 4.2 Phase 09 closure and Graphify 0.9.31 semantic refresh
+### 4.2 Historical Phase 09 closure and Graphify 0.9.31 semantic refresh
 
 The initial Phase 09 closure snapshot contained 3,081 nodes, 4,322 undirected
 edges, and 328 communities. After ADR-024 and the Napoleon branch contract were
@@ -145,8 +146,8 @@ one bounded incremental refresh over ten semantic sources and one changed test.
 Its semantic fragments contributed 45 nodes, 79 edges, and 5 hyperedges, while
 AST extraction contributed 4 nodes and 9 edges; replacement deduplicated 6
 exact nodes. The wrapper's final 189-file structural reconciliation restored 6
-additional AST nodes and reclustered the result. The current persisted graph
-contains 2,307 nodes, 3,640 edges, and 247 communities across a filtered
+additional AST nodes and reclustered the result. That 2026-08-03 checkpoint
+contained 2,307 nodes, 3,640 edges, and 247 communities across a filtered
 390-file / approximately 316,259-word report corpus.
 
 The decrease is therefore a versioned re-extraction/compaction event, not a
@@ -154,8 +155,9 @@ Phase 09 feature delta and not evidence that repository code was removed. The
 existing `.graphifyignore` and repository wrapper were preserved; no broad
 workspace, generated-output, or secret-bearing scan was performed.
 
-`graphify diagnose multigraph` reports 2,307 verified nodes and 3,640 valid
-edges, with zero missing or dangling endpoints, self-loops, exact duplicates,
+At that checkpoint, `graphify diagnose multigraph` reported 2,307 verified
+nodes and 3,640 valid edges, with zero missing or dangling endpoints,
+self-loops, exact duplicates,
 or endpoint-pair collapses. Wrapper validation also verified the standalone
 HTML, filtered source scope, and SHA-256 checksums. During the semantic merge,
 legacy visual-asset hyperedges whose members no longer matched rebuilt node IDs
@@ -170,12 +172,30 @@ production-safe staging suite, rollback checklist, and mandatory
 `app.wflyer.com.br` preservation boundary. These are repository contracts,
 not evidence that external staging or rollback has run.
 
+### 4.3 Phase 09 Node-only closure refresh
+
+The 2026-08-10 structural refresh incorporates the Node-only standalone
+correction, canonical browser-evidence updates, dependency remediation,
+Napoleon/staging/rollback runbooks, synchronized OpenSpec capabilities, and the
+additive Phase 09 documentation-integrity records. The generated
+`graphify-out/GRAPH_REPORT.md` is the canonical numeric record for this refresh;
+its node, edge, community, file, and word counts are intentionally not copied
+into this hand-maintained map, which avoids presenting a later generated
+refresh as the older checkpoint above.
+
+The documented wrapper validates the graph schema, filtered source scope,
+standalone HTML, multigraph integrity, and `graphify-out/CHECKSUMS.sha256`.
+`graphify update .` is structural and has no LLM/API cost. Existing semantic
+community labels can therefore retain historical wording; current normative
+source, OpenSpec, and code take precedence over those labels.
+
 ## 5. Communities and high-impact nodes
 
 <!-- GRAPHIFY_COMMUNITIES_START -->
-At the Phase 05 checkpoint the refreshed graph contained 257 communities. The
-current Graphify 0.9.31 snapshot contains 247; the generated report may omit thin
-communities from its prose without removing them from JSON or standalone HTML.
+At the Phase 05 checkpoint the refreshed graph contained 257 communities, and
+the 2026-08-03 Phase 09 checkpoint contained 247. The current value is recorded
+only in the generated report; that report may omit thin communities from its
+prose without removing them from JSON or standalone HTML.
 
 Current degree-ranked god nodes are:
 

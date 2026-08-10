@@ -1,41 +1,75 @@
-# Relatório acumulado de execução do Codex
+# Accumulated Codex execution report
 
-**Projeto:** site institucional `wflyer.com.br`  
-**Início da execução:** 2026-07-29  
-**Implementação:** `EM_EXECUÇÃO_LOCAL`  
-**Publicação:** `NÃO_AUTORIZADA`  
-**Responsável pela homologação:** Davi Benucci
+- **Project:** `wflyer.com.br` institutional site
+- **Execution started:** 2026-07-29
+- **Current implementation status:** `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`
+- **External configuration:** pending
+- **Production:** `NOT_AUTHORIZED`
+- **Homologation owner:** Davi Benucci
 
-## 1. Escopo e regra de publicação
+## 1. Scope and publication rule
 
-Este relatório acompanha a implementação integral do site institucional W_Flyer, das Fases 0 a 9, conforme o contrato de execução e a ordem normativa do repositório.
+This report records the implementation of the W_Flyer institutional site from
+Phase 0 through Phase 09 under the repository execution contract and normative
+sequence.
 
-O trabalho está limitado ao repositório do site institucional. Não inclui código ou regras da aplicação musical, OCR/OMR, transposição real, autenticação, banco de dados, CMS, analytics ou alteração de `app.wflyer.com.br`.
+Work is limited to the institutional-site repository. It does not include music
+application code or rules, OCR/OMR, real transposition, authentication, a
+database, CMS, analytics, or any modification to `app.wflyer.com.br`.
 
-A execução local, os testes, os workflows, o build standalone e a preparação de staging estão autorizados. Permanecem proibidos, sem homologação explícita de Davi Benucci:
+Repository implementation, tests, workflows, standalone preparation, and
+staging preparation are authorized. The following remain prohibited without
+Davi Benucci's explicit approval:
 
-- merge final em `main`;
-- publicação em produção;
-- alteração destrutiva ou não inventariada de DNS, Cloudflare ou Napoleon;
-- qualquer ação que possa interromper `app.wflyer.com.br`.
+- a final merge to `main`;
+- a production deployment;
+- a destructive or uninventoried DNS, Cloudflare, or Napoleon change;
+- any action that could interrupt `app.wflyer.com.br`.
 
-## 2. Estado atual das fases
+## 2. Current phase state
 
-| Etapa | Estado atual | Gate |
+| Stage | Current state | Gate |
 |---|---|---|
-| Pré-voo | `CONCLUÍDO` | sem bloqueio normativo real |
-| Fase 0 — Fundação | `CONCLUÍDA` | gate local verde |
-| Fase 1 — Sistema visual | `CONCLUÍDA` | gate local verde |
-| Fase 2 — Conteúdo e rotas estáticas | `CONCLUÍDA` | gate local verde |
-| Fase 3 — Home e dupla partitura | `CONCLUÍDA` | gate local verde |
-| Fase 4 — Páginas por arquétipo | `CONCLUÍDA` | gate local verde |
-| Fase 5 — Motion e navegação | `CONCLUÍDA` | gate local verde |
-| Fase 6 — Tablet | `CONCLUÍDA` | gate local verde |
-| Fase 7 — Abertura e motion local | `CONCLUÍDA` | gate local verde |
-| Fase 8 — Contato, segurança e conteúdo final | `CONCLUÍDA` | gate local verde |
-| Fase 9 — Napoleon, staging e produção | `IMPLEMENTATION_IN_PROGRESS` | final local closure pending |
+| Preflight | `COMPLETE` | historical normative checkpoint |
+| Phase 0 — Foundation | `COMPLETE` | historical phase checkpoint |
+| Phase 1 — Visual system | `COMPLETE` | historical phase checkpoint |
+| Phase 2 — Content and static routes | `COMPLETE` | historical phase checkpoint |
+| Phase 3 — Home and dual score | `COMPLETE` | historical phase checkpoint |
+| Phase 4 — Archetype pages | `COMPLETE` | historical phase checkpoint |
+| Phase 5 — Motion and navigation | `COMPLETE` | historical phase checkpoint |
+| Phase 6 — Tablet | `COMPLETE` | historical phase checkpoint |
+| Phase 7 — Opening and local motion | `COMPLETE` | historical phase checkpoint |
+| Phase 8 — Contact, security, and final content | `COMPLETE` | historical phase checkpoint |
+| Phase 09 — Napoleon, staging, and production | `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING` | repository gates complete; remote CI and external gates pending |
 
-Cada fase somente muda para `CONCLUÍDA` depois de satisfazer integralmente seu gate. A conclusão local não autoriza publicação, merge em `main` ou alteração de infraestrutura.
+Historical phase completion records are retained below. They do not prove the
+final state of the exact current working tree. Local completion never authorizes
+a production deployment, a merge to `main`, or an infrastructure mutation.
+
+### Current Phase 09 reconciliation — 2026-08-10
+
+- The current package-manager pin is pnpm 11.18.0. Older pnpm values below are
+  preserved as dated historical checkpoint evidence and are not the current
+  execution contract.
+- Napoleon's owner-confirmed integration independently pulls and builds the
+  selected Git revision. GitHub Actions validates and checksums the candidate
+  for provenance; the Actions archive is not deployed to Napoleon.
+- The persistent runtime is `node .next/standalone/server.js`. A repository-root
+  adapter or static `public_html` document root is not the supported runtime.
+- GitHub Environment values do not automatically transfer to Napoleon. The
+  required public build value and server-only runtime values must be configured
+  independently in the Napoleon application.
+- The exact staging hostname, Napoleon target, panel inventory, values, DNS,
+  Cloudflare inventory, and provider validation remain owner/provider external
+  dependencies. No hostname is assumed.
+- Final repository-owned validation is recorded for the current Phase 09
+  content: 306 unit tests, 63 Storybook tests, 318 E2E checks, 102 axe checks,
+  30 motion checks, two unchanged 291/291 visual runs, 22-route builds,
+  standalone 17-route/20-asset smoke, indexing modes, Lighthouse 15/15,
+  dependency audit/peers, OpenSpec, and Graphify integrity. The repository is
+  therefore `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`.
+- Production remains unauthorized. `app.wflyer.com.br` remains separate and
+  protected from all institutional-site work.
 
 ### 2.1 Continuidade da execução
 
@@ -211,21 +245,42 @@ O campo `source_of_truth` de `manifest.json` aponta para um caminho absoluto de 
 - A validação de links cobreu referências relativas locais. URLs externas, painéis privados e serviços remotos não foram tratados como verificáveis neste pré-voo local.
 - O baseline pré-código, seus manifests e seus checksums são evidência histórica imutável. Este relatório novo não altera retroativamente esse baseline.
 
-### 3.6 Dependências externas de staging e produção
+### 3.6 External staging and production dependencies
 
-As pendências abaixo não bloqueiam as Fases 0 a 8 nem o preparo local da Fase 9:
+These items do not invalidate the historical Phase 0–08 checkpoints, but they
+block the corresponding staging, homologation, and production gates:
 
-- register the six environment-specific values `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_RECIPIENT_EMAIL`, and `CONTACT_ALLOWED_ORIGINS` in the appropriate GitHub Environments;
-- definir o mecanismo real disponibilizado pela Napoleon e, somente se aplicável, cadastrar a credencial correspondente;
-- configurar as variáveis também no runtime da aplicação Napoleon quando o provedor operar por pull do GitHub;
-- obter acesso somente leitura para inventário de zona, registros, SSL/TLS, cache, WAF, rate limiting e origem Cloudflare;
-- provisionar e validar staging;
-- executar testes externos reais de Turnstile, Resend, HTTPS, cache, headers e entrega de e-mail;
-- obter homologação explícita de Davi Benucci;
-- validar `app.wflyer.com.br` antes e depois de qualquer publicação;
-- executar smoke test de produção e teste de rollback após a homologação.
+- configure the six environment-specific names
+  `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `RESEND_API_KEY`,
+  `CONTACT_FROM_EMAIL`, `CONTACT_RECIPIENT_EMAIL`, and
+  `CONTACT_ALLOWED_ORIGINS` in the appropriate GitHub Environments without
+  exposing their values;
+- configure the corresponding public build value and five server-only values
+  independently in each Napoleon application; GitHub Environment values are not
+  transferred to Napoleon;
+- record the actual Napoleon application type, repository, selected branch and
+  SHA, build command, start command, injected port, process user, health check,
+  restart policy, rollback selector, and target;
+- obtain Davi Benucci's approval for the exact staging hostname; no hostname is
+  assumed by repository documentation;
+- obtain read-only access to inventory the Cloudflare zone, DNS records,
+  SSL/TLS, cache, WAF, rate limiting, origin, and the independent
+  `app.wflyer.com.br` baseline;
+- provision and validate the staging Node.js runtime using
+  `node .next/standalone/server.js` from the exact selected Git revision;
+- execute real external Turnstile, Resend, HTTPS, cache, header, and email
+  delivery checks;
+- inspect relevant external logs under an owner-approved retention policy
+  without exposing visitor data or configured values;
+- exercise and document staging rollback;
+- obtain an explicit dated homologation decision from Davi Benucci;
+- validate `app.wflyer.com.br` before and after every authorized publication;
+- after separate production approval, execute production smoke and rollback
+  evidence.
 
-Nenhum endpoint, webhook, token ou credencial Napoleon será inventado.
+The Napoleon source handoff is already confirmed as Git pull/build. No panel
+field, hostname, endpoint, webhook, token, or credential is invented while the
+authenticated external inventory remains pending.
 
 ## 4. Registro por fase
 
@@ -756,24 +811,72 @@ premature production policy.
   OpenSpec are green.
 - **Commit title:** `feat(contact): complete secure contact workflow`.
 
-### Fase 9 — Napoleon, staging e produção
+### Phase 09 — Napoleon, staging, and production
 
-**Estado:** `IMPLEMENTATION_IN_PROGRESS`
-**Objetivo:** validar build standalone, preparar o procedimento Napoleon, workflows e rollback; publicar staging; executar QA externo; obter homologação; somente então publicar produção.
+**State:** `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`
 
-- **Arquivos criados:** a registrar.
-- **Arquivos modificados:** a registrar.
-- **Decisões aplicadas:** ADR-018, ADR-020, ADR-021 e ADR-023.
-- **Comandos:** a registrar.
-- **Testes e resultados:** não executados.
-- **Screenshots:** a registrar para staging e evidências externas.
-- **Comparação visual:** pendente em staging.
-- **Acessibilidade:** pendente em staging.
-- **Performance:** pendente em staging e produção.
-- **Riscos:** credenciais, método real de deploy, inventário Cloudflare, HSTS e preservação da aplicação existente.
-- **Pendências não bloqueadoras:** preparação local; as dependências externas tornam-se bloqueadoras somente no ponto de integração correspondente.
-- **Gate:** `NÃO_AVALIADO`; produção exige homologação explícita.
-- **Título de commit:** a definir.
+**Objective:** complete repository-owned release preparation, prove the exact
+candidate, prepare the Napoleon Git pull/build handoff and rollback procedure,
+deploy and validate staging after external configuration, obtain homologation,
+and only then request separate production approval.
+
+- **Repository work complete:** the manual candidate workflow, standalone
+  preparation and smoke corrections, release/operations documentation, the
+  Napoleon Node.js runtime runbook, the staging homologation runbook and factual
+  pending report, and the Napoleon rollback runbook passed repository-owned
+  review and validation. Their forward-only commit series preserves the
+  published `065a077f9425943af8bc3ea821660bb356aef1da` checkpoint.
+- **Git identity boundary:**
+  `065a077f9425943af8bc3ea821660bb356aef1da` is the preserved published
+  checkpoint before the forward-only Phase 09 closure series. The final
+  containing commit is resolved with `git rev-parse HEAD` after creation and
+  recorded in the external handoff; it is not self-embedded in this document.
+- **Remote CI evidence:** ordinary CI run `31118939281` for that revision
+  failed before any job steps were recorded; all four jobs have no runner or
+  steps, and the retained workflow annotation reports that the GitHub account
+  is locked for billing. This is an external account blocker, not a code result.
+- **Release-workflow bootstrap:** remote branch
+  `ci/napoleon-release-workflow-bootstrap` identifies
+  `d67554be7ceee4f2e744380275860781d302d145` and carries the release workflow
+  bootstrap. Owner review and merge into the protected execution path remain
+  pending; the bootstrap branch is not a deployment.
+- **Runtime and handoff:** Napoleon independently pulls and builds the selected
+  Git revision, then runs `node .next/standalone/server.js` as a persistent
+  Node.js process. The Actions archive is candidate-validation and provenance
+  evidence only.
+- **Configuration boundary:** GitHub Environment values and Napoleon
+  build/runtime values are separate and must be configured independently. No
+  secret value is recorded in this report.
+- **Current validation:** frozen install, dependency policy, lint, typecheck,
+  306 unit tests, 63 Storybook tests, four 22-route build modes, Node-only
+  standalone/indexing smoke, Lighthouse 15/15 with all four category scores at
+  1.00, production audit, peers, strict OpenSpec 11/11, actionlint, syntax,
+  documentation, and Graphify integrity passed. In the pinned Noble image,
+  E2E passed 318/318 in 593 seconds, axe 102/102 in 293 seconds, motion 30/30
+  in 81 seconds, and two unchanged visual runs passed 291/291 in 501 and 521
+  seconds. Focused repeats passed Firefox 10/10 and WebKit 5/5 + 5/5. The
+  84-PNG manifest remained byte-identical at `ba4f23c08613c1c1c9a1481fa6d8466dd7bfa0641cf3b6ae898424966ccc6b63`.
+- **External evidence pending:** GitHub Environment configuration; actual
+  Napoleon panel inventory, values, target, and source-build SHA; Davi
+  Benucci-approved staging hostname; read-only Cloudflare inventory; deployed
+  staging; real Turnstile and Resend checks; HTTPS/cache/WAF/rate-limit checks;
+  log review; physical-device and screen-reader review; rollback exercise; and
+  dated homologation.
+- **Visual, accessibility, and performance:** current repository-side evidence
+  is complete at zero tolerance. All 35 replacement paths have a granular
+  repository review; Davi Benucci's human visual decision and deployed-staging
+  evidence remain pending.
+- **Protection:** production is unauthorized. No merge to `main`, production
+  deployment, production DNS mutation, or change to `app.wflyer.com.br` is
+  authorized by repository preparation.
+- **Gate:** repository-owned work complete; remote CI, default-branch bootstrap
+  merge, GitHub Environments, Napoleon, Cloudflare/DNS, deployed staging,
+  physical review, rollback, and homologation remain external.
+- **Reviewed commit series:** `fix(deps): override vulnerable nanoid`,
+  `fix(quality): align Node release and browser evidence`, and
+  `docs(release): prepare Napoleon staging and homologation`. Full SHAs are
+  recorded by Git after creation and in the final execution handoff rather than
+  self-embedded into their own content.
 
 ## 5. Histórico de atualizações
 
@@ -790,3 +893,5 @@ premature production policy.
 | 2026-07-31 | Phase 06 completed with a semantic local tablet, deterministic five-state interaction, cancellable processing, original SVG score, precise-hover GSAP tilt, privacy instrumentation, 204 unit tests, 62 Storybook tests, 15 focused cross-browser interactions, 21 cross-browser state baselines, four-state axe coverage for all three Application routes, responsive 320 px and canonical 1536 × 1024 checks, and production/Storybook builds. Graphify refreshed to 2,556 nodes and the new OpenSpec capability was synchronized and archived; Phase 07 released. |
 | 2026-07-31 | Phase 07 completed with the immutable official SVG, a 5.600-second labeled GSAP opening, measured symbol-to-header handoff, one-session eligibility, skip/Escape/timeout/fail-open recovery, direct reduced-motion Home, route-aware finite local reveals, 214 unit tests, 63 Storybook tests, 21 focused cross-browser behaviors, 30 visual baselines, 6 axe audits, 30 accumulated motion checks, standalone 17+21, and Lighthouse 100/100/100/100 across 15 runs. OpenSpec and Graphify were refreshed before Phase 08 was released. |
 | 2026-07-31 | Phase 08 completed with strict 16 KiB contact validation, Turnstile and Resend boundaries, accessible recoverable client states, truthful privacy/legal content, report-only CSP and browser headers, zero known production dependency vulnerabilities, 239 unit/component tests, 63 Storybook tests, 239 complete Chromium checks, a 48-case dedicated cross-browser matrix, 27 reviewed form baselines, standalone 17+19, and Lighthouse 100/100/100/100 across 15 runs. Graphify advanced to 2,793 nodes and OpenSpec was synchronized and archived before Phase 09. |
+| 2026-08-10 | Phase 09 facts reconciled without declaring final gates: pnpm 11.18.0; Napoleon Git pull/build with `.next/standalone/server.js`; separate GitHub and Napoleon values; owner-approved staging hostname pending; final current-revision validation and external configuration pending; production unauthorized. Historical dated checkpoints above remain unchanged. |
+| 2026-08-10 | Phase 09 repository closure completed: Node-only standalone, two immutable 291/291 visual matrices, 318 E2E, 102 axe, 30 motion, focused repeats, source/build/dependency gates, runbooks, additive integrity manifest, strict OpenSpec, and Graphify passed. GitHub billing, bootstrap PR/merge, provider configuration, staging, human review, rollback, and homologation remain external; production is unauthorized. |

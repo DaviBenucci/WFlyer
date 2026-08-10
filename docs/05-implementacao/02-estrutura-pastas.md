@@ -1,4 +1,8 @@
-# Estrutura de pastas proposta
+# Repository folder structure
+
+The following tree documents the repository-owned source layout. Generated and
+ignored build output is described separately because it must not be committed
+or treated as source.
 
 ```text
 wflyer-site/
@@ -83,15 +87,42 @@ wflyer-site/
 │   ├── motion/
 │   └── accessibility/
 ├── docs/
-│   └── design-reference/        não enviado ao build
-├── server.js                    adaptador de inicialização somente se exigido pela Napoleon
+│   └── design-reference/        excluded from production output
 └── openspec/
 ```
 
-## Regra de Client Components
+The tree is a responsibility map, not an assertion that every optional folder
+must exist. Actual tracked paths remain authoritative.
 
-Somente componentes que precisam de eventos, estado do navegador, `localStorage`, GSAP ou controles do tablet recebem `"use client"`. Layout, conteúdo e páginas permanecem server/static sempre que possível.
+## Generated Node.js runtime
 
-## Regra para assets de referência
+`pnpm build` creates ignored `.next/` output. Running
+`pnpm prepare:standalone` after the build copies the required public assets and
+`.next/static` files into the standalone tree. The resulting persistent Node.js
+entry point is:
 
-`docs/design-reference/` não pode ser importado por código produtivo, não pode ser copiado para `public/` e deve ser excluído de qualquer etapa que publique assets. Testes visuais podem ler os arquivos diretamente no workspace de CI.
+```text
+.next/standalone/server.js
+```
+
+The supported start command is:
+
+```bash
+node .next/standalone/server.js
+```
+
+There is no repository-root `server.js` adapter. The deployment must not use a
+static `public_html` document root because `POST /api/contact` requires the
+standalone Node.js process.
+
+## Client Component rule
+
+Only components that require browser events, browser state, `localStorage`,
+GSAP, or tablet controls receive the `"use client"` directive. Layout, content,
+and pages remain Server Components or static output whenever possible.
+
+## Reference asset rule
+
+Production code must not import `docs/design-reference/`, copy it into
+`public/`, or include it in any published asset step. Visual tests may read
+those files directly from the CI workspace.

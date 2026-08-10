@@ -118,7 +118,19 @@ dispatched workflow after its quality gates and selected GitHub Environment.
   pending and invent no command or credential.
 
 Current state: `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`.
-Repository-owned gates are green and the Git branch mechanism is confirmed.
-GitHub Environment configuration, Napoleon build/start/runtime inventory,
-provider verification, and deployed staging are the next externally owned
-gates.
+The infrastructure-only workflow bootstrap is published as commit
+`d67554be7ceee4f2e744380275860781d302d145`
+on `ci/napoleon-release-workflow-bootstrap`; it changes only
+`.github/workflows/deploy.yml`. The connected GitHub App cannot open its draft
+pull request (`403 Resource not accessible by integration`), so owner review
+and merge to the default branch remain external. Ordinary CI run `31118939281`
+for `065a077f9425943af8bc3ea821660bb356aef1da` also started no runner because
+the GitHub account is locked for billing. Resolve that account lock and require
+a green ordinary CI run for the exact final branch-head SHA before candidate
+dispatch.
+
+GitHub Environment configuration, the bootstrap merge, Napoleon
+build/start/runtime inventory, provider verification, and deployed staging are
+the next externally owned gates. The canonical panel contract is
+`22-napoleon-node-runtime-runbook.md`; staging and owner-decision evidence is
+recorded in `../07-qa/10-staging-homologation-report.md`.

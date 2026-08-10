@@ -28,15 +28,19 @@ change to the separate `app.wflyer.com.br` application.
   Napoleon;
 - use `HOSTNAME=0.0.0.0` only when the Napoleon process contract requires it.
 
-The package contains `public/`, `.next/static/`, server output, and no source
-documentation, Graphify output, OpenSpec artifact, golden reference, test
-report, or provider credential value. Required server-runtime variable names
-remain in server code by design; their values are supplied only to the
-Napoleon process. The standalone package also exposes the document root files
-needed by Napoleon-style uploads: `index.html`, `icon.svg`, `robots.txt`,
-`sitemap.xml`, and `404.html`, plus a mirrored `_next/static/` tree for direct
-file hosting. `pnpm smoke:standalone` validates all 17 public routes and their
-referenced static assets.
+The package contains the generated Node.js server, `public/`, `.next/static/`,
+and the traced runtime dependencies. It contains no source documentation,
+Graphify output, OpenSpec artifact, golden reference, test report, or provider
+credential value. Required server-runtime variable names remain in server code
+by design; their values are supplied only to the Napoleon process.
+
+The package is not a static document root. An `index.html`, whether generated
+by Next.js or left by the legacy placeholder, is not a runtime entry point and
+is never deployment evidence. Direct file serving from `public_html` is
+rejected because it cannot preserve server-rendered deep routes,
+`POST /api/contact`, Next.js response headers, the custom HTTP 404, or dynamic
+runtime behavior. `pnpm smoke:standalone` starts
+`.next/standalone/server.js` and validates the Node.js application instead.
 
 `WFLYER_BUILD_ID` is a build-only traceability input. The manual workflow
 resolves the approved source ref once, passes that immutable SHA to every
@@ -71,7 +75,7 @@ archive; each environment gets its own build, filename, checksum, and manifest.
 
 | Name | Build | Napoleon runtime | Secret |
 |---|---:|---:|---:|
-| `WFLYER_DEPLOYMENT_ENVIRONMENT` | yes | no; fixed in artifact | no |
+| `WFLYER_DEPLOYMENT_ENVIRONMENT` | yes | same value at runtime | no |
 | `WFLYER_BUILD_ID` | release only | no | no |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | yes, required for a candidate | no; fixed in browser output | public key |
 | `TURNSTILE_SECRET_KEY` | no | yes | yes |
@@ -80,11 +84,13 @@ archive; each environment gets its own build, filename, checksum, and manifest.
 | `CONTACT_RECIPIENT_EMAIL` | no | yes | configuration |
 | `CONTACT_ALLOWED_ORIGINS` | no | yes | configuration |
 
-The protected GitHub Environment supplies exactly six values: the public
-Turnstile site key used by the build and the five Contact server values used by
-the Napoleon runtime. `WFLYER_DEPLOYMENT_ENVIRONMENT` comes from the controlled
-workflow input and `WFLYER_BUILD_ID` comes from the resolved revision, so
-neither is an Environment secret.
+The protected GitHub Environment gates exactly six value names. Only the public
+Turnstile site key is exposed to the candidate build; the five Contact server
+values are presence-checked but excluded from the build and archive. Napoleon
+must receive corresponding runtime values through its own independently
+configured secret store. `WFLYER_DEPLOYMENT_ENVIRONMENT` comes from the
+controlled workflow input and `WFLYER_BUILD_ID` comes from the resolved
+revision, so neither is an Environment secret.
 
 The canonical institutional and application URLs are version-controlled in
 the approved site configuration. They are not release environment variables.
@@ -94,7 +100,8 @@ not become Napoleon runtime variables automatically.
 
 ## Environment values
 
-Production candidate build values are:
+Production candidate build values are shown only to define scope. They do not
+authorize a production build or deployment:
 
 ```text
 WFLYER_DEPLOYMENT_ENVIRONMENT=production
@@ -102,27 +109,32 @@ WFLYER_BUILD_ID=<approved-full-40-character-release-sha>
 NEXT_PUBLIC_TURNSTILE_SITE_KEY=<production-public-site-key>
 ```
 
-The production Napoleon runtime separately requires:
+The production Napoleon runtime separately requires values with the following
+formats. Secret values must exist only in the provider secret store:
 
 ```text
-TURNSTILE_SECRET_KEY=<production-server-secret>
-RESEND_API_KEY=<production-server-secret>
-CONTACT_FROM_EMAIL=davi.benucci@wflyer.com.br
+TURNSTILE_SECRET_KEY=<production Turnstile secret; never record the value>
+RESEND_API_KEY=<production Resend secret; never record the value>
+CONTACT_FROM_EMAIL=<verified Resend sender>
 CONTACT_RECIPIENT_EMAIL=davi.benucci@wflyer.com.br
 CONTACT_ALLOWED_ORIGINS=https://wflyer.com.br,https://www.wflyer.com.br
 ```
 
-The planned staging host is `https://staging.wflyer.com.br`, subject to the
-read-only Cloudflare/Napoleon inventory and owner confirmation. Its artifact
-must be built with `WFLYER_DEPLOYMENT_ENVIRONMENT=staging`, its own Turnstile
-configuration, and an allowed-origin list that does not broaden production.
-Mirroring the selector in Napoleon can aid operations, but changing it at
-runtime does not convert an already built artifact to another environment.
+The staging host remains an external owner-approved value and must be recorded
+as `https://<approved-staging-host>` until DNS and Napoleon evidence exists. Its
+artifact must be built with `WFLYER_DEPLOYMENT_ENVIRONMENT=staging`, its own
+Turnstile configuration, and one exact HTTPS allowed origin. Wildcards and
+production origins are prohibited. The same deployment selector must be
+provided to the runtime; changing only its runtime value does not convert an
+already built artifact to another environment.
 
-The hosting panel documentation for Napoleon uses `public_html` as the example
-application root. That is the only document-root name evidenced in this
-repository, so manual uploads should target `public_html` unless the owner
-confirms a different Napoleon root.
+Napoleon must expose a Node.js application connected to the GitHub repository.
+The repository root is the working directory, and
+`.next/standalone/server.js` is the runtime entry point. A panel that exposes
+only static document-root hosting, FTP-style uploads, or a mandatory
+`public_html/index.html` contract is incompatible with this application. Stop
+the handoff and record the provider limitation instead of changing the site to
+a static export.
 
 ## Cloudflare precondition
 
@@ -157,10 +169,14 @@ so do not claim byte identity between them. Keep the environment branch at that
 head until Napoleon records the same selected SHA. If it advances first, abort
 the handoff and repeat CI/candidate validation for the new head.
 
-The remaining Napoleon inventory must identify its build command, standalone
-start command, build/runtime variable scopes, port, health check, process user,
-restart behavior, and rollback selector. Until those controls are observed, do
-not invent an API, token, SSH process, hook, or executable deployment command.
+The remaining Napoleon inventory must identify its application type, GitHub
+source connection, selected branch and SHA, automatic/manual deploy behavior,
+Node.js and pnpm versions, repository working directory, install/build/start
+commands, build/runtime variable scopes, injected port, health check, process
+user, restart behavior, log access and retention, and rollback selector. Until
+those controls are observed, do not invent an API, token, SSH process, hook, or
+executable deployment command. The canonical field-by-field procedure and
+evidence form are in `22-napoleon-node-runtime-runbook.md`.
 
 ## Completed local verification
 
@@ -190,5 +206,6 @@ WFLYER_DEPLOYMENT_ENVIRONMENT=preview pnpm smoke:indexing
 ```
 
 External staging, rollback, and homologation procedures are in
-`21-staging-release-operations.md`. No production command is authorized by
+`21-staging-release-operations.md` and
+`22-napoleon-node-runtime-runbook.md`. No production command is authorized by
 this document.
