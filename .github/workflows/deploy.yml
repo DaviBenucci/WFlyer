@@ -1,0 +1,487 @@
+name: Prepare Napoleon release
+
+# This read-only workflow creates a deployment candidate without advancing a
+# branch or contacting Napoleon. Napoleon's owner-confirmed integration pulls
+# and builds the selected environment branch independently. Protect the GitHub
+# "production" Environment with Davi Benucci as a required reviewer.
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: GitHub Environment that owns this release
+        required: true
+        default: staging
+        type: choice
+        options:
+          - staging
+          - production
+      release_ref:
+        description: Staging branch, main, or an approved release tag
+        required: true
+        default: develop/site-institucional
+        type: string
+      production_confirmation:
+        description: For production only, type HOMOLOGADO_POR_DAVI
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: napoleon-${{ inputs.environment }}
+  cancel-in-progress: false
+
+env:
+  CI: "true"
+  NEXT_TELEMETRY_DISABLED: "1"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  validate-request:
+    name: Validate release request
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      release_sha: ${{ steps.resolve-release.outputs.sha }}
+    steps:
+      - name: Enforce branch and homologation gates
+        env:
+          TARGET_ENVIRONMENT: ${{ inputs.environment }}
+          RELEASE_REF: ${{ inputs.release_ref }}
+          PRODUCTION_CONFIRMATION: ${{ inputs.production_confirmation }}
+        run: |
+          set -euo pipefail
+
+          if [[ "${TARGET_ENVIRONMENT}" == "staging" ]]; then
+            if [[ "${RELEASE_REF}" != "develop/site-institucional" ]]; then
+              echo "::error::Staging candidates must use develop/site-institucional."
+              exit 1
+            fi
+            exit 0
+          fi
+
+          if [[ "${TARGET_ENVIRONMENT}" != "production" ]]; then
+            echo "::error::Only staging and production are supported."
+            exit 1
+          fi
+
+          if [[ "${RELEASE_REF}" != "main" \
+            && ! "${RELEASE_REF}" =~ ^refs/tags/wflyer-v[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?$ ]]; then
+            echo "::error::Production candidates must use main or an approved release tag."
+            exit 1
+          fi
+
+          if [[ "${PRODUCTION_CONFIRMATION}" != "HOMOLOGADO_POR_DAVI" ]]; then
+            echo "::error::Production preparation requires recorded homologation."
+            exit 1
+          fi
+
+      - name: Check out requested release ref
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.release_ref }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Resolve immutable release revision
+        id: resolve-release
+        run: |
+          set -euo pipefail
+          release_sha="$(git rev-parse --verify HEAD^{commit})"
+          if [[ ! "${release_sha}" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::The requested release ref did not resolve to a full Git SHA."
+            exit 1
+          fi
+          echo "sha=${release_sha}" >>"${GITHUB_OUTPUT}"
+          echo "Resolved the requested release ref to ${release_sha}."
+
+  candidate-quality:
+    name: Complete candidate quality gate
+    needs: validate-request
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: 1x00000000000000000000AA
+      WFLYER_BUILD_ID: ${{ needs.validate-request.outputs.release_sha }}
+      WFLYER_DEPLOYMENT_ENVIRONMENT: production
+    steps:
+      - name: Check out requested revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.validate-request.outputs.release_sha }}
+          persist-credentials: false
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
+        with:
+          version: 11.18.0
+          run_install: false
+
+      - name: Configure Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Chromium for Storybook and Lighthouse
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Validate dependencies, OpenSpec, source, types, unit, Storybook and build
+        run: |
+          pnpm validate:dependencies
+          pnpm dlx @fission-ai/openspec@1.7.0 validate --all --strict --no-interactive
+          pnpm lint
+          pnpm typecheck
+          pnpm test
+          pnpm build:storybook
+          pnpm test:storybook
+          pnpm build
+
+      - name: Audit production and peer dependencies
+        run: |
+          pnpm audit --prod
+          pnpm peers check
+
+      - name: Validate standalone runtime and production quality baseline
+        run: |
+          pnpm prepare:standalone
+          test -f .next/standalone/server.js
+          test -d .next/standalone/.next/static
+          test -d .next/standalone/public
+          pnpm smoke:standalone
+          pnpm smoke:indexing
+          pnpm lighthouse
+
+      - name: Validate staging indexing when requested
+        if: ${{ inputs.environment == 'staging' }}
+        env:
+          WFLYER_DEPLOYMENT_ENVIRONMENT: staging
+        run: |
+          pnpm build
+          pnpm prepare:standalone
+          test -f .next/standalone/server.js
+          pnpm smoke:indexing
+
+  candidate-browser:
+    name: Complete candidate browser gate
+    needs: validate-request
+    runs-on: ubuntu-24.04
+    container:
+      image: mcr.microsoft.com/playwright:v1.62.0-noble@sha256:baed2032d533817f3dbe6425de795788430ba345e819a1201337009ba17c9d07
+      options: --ipc=host
+    timeout-minutes: 60
+    env:
+      WFLYER_BUILD_ID: ${{ needs.validate-request.outputs.release_sha }}
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: 1x00000000000000000000AA
+      PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
+      WFLYER_DEPLOYMENT_ENVIRONMENT: production
+      WFLYER_PLAYWRIGHT_TEST_SERVER: production
+      WFLYER_TRANSITION_TEST_MODE: "1"
+    steps:
+      - name: Check out requested revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.validate-request.outputs.release_sha }}
+          persist-credentials: false
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
+        with:
+          version: 11.18.0
+          run_install: false
+
+      - name: Configure Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Verify writable browser workspace
+        run: |
+          set -euo pipefail
+          pnpm_store="$(pnpm store path --silent)"
+          mkdir -p \
+            "${pnpm_store}" \
+            "${GITHUB_WORKSPACE}/.next" \
+            "${GITHUB_WORKSPACE}/test-results" \
+            "${GITHUB_WORKSPACE}/playwright-report"
+          test "$(id -u)" -eq 0
+          test -w "${HOME}"
+          test -w "${GITHUB_WORKSPACE}"
+          test -w "${pnpm_store}"
+          test -w "${GITHUB_WORKSPACE}/.next"
+          test -w "${GITHUB_WORKSPACE}/test-results"
+          test -w "${GITHUB_WORKSPACE}/playwright-report"
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify canonical browser environment
+        run: |
+          set -euo pipefail
+          cat /etc/os-release
+          . /etc/os-release
+          node_version="$(node --version)"
+          pnpm_version="$(pnpm --version)"
+          playwright_version="$(pnpm exec playwright --version)"
+          browser_path="${PLAYWRIGHT_BROWSERS_PATH:?PLAYWRIGHT_BROWSERS_PATH is required}"
+          printf 'Node.js %s\n' "${node_version}"
+          printf 'pnpm %s\n' "${pnpm_version}"
+          printf 'Playwright %s\n' "${playwright_version}"
+          printf 'PLAYWRIGHT_BROWSERS_PATH=%s\n' "${browser_path}"
+          test "${ID}" = "ubuntu"
+          test "${VERSION_ID}" = "24.04"
+          test "${node_version%%.*}" = "v24"
+          test "${pnpm_version}" = "11.18.0"
+          test "${playwright_version}" = "Version 1.62.0"
+          test "${browser_path}" = "/ms-playwright"
+          test -d "${browser_path}"
+          test -r "${browser_path}"
+          browser_plan="$(pnpm exec playwright install --dry-run)"
+          printf '%s\n' "${browser_plan}"
+          for expected_browser in \
+            "(playwright chromium v1234)" \
+            "(playwright chromium-headless-shell v1234)" \
+            "(playwright firefox v1538)" \
+            "(playwright webkit v2336)" \
+            "(playwright ffmpeg v1011)"
+          do
+            grep -Fq "${expected_browser}" <<<"${browser_plan}"
+          done
+          mapfile -t browser_locations < <(
+            sed -n 's/^[[:space:]]*Install location:[[:space:]]*//p' \
+              <<<"${browser_plan}"
+          )
+          test "${#browser_locations[@]}" -eq 5
+          for install_location in "${browser_locations[@]}"; do
+            case "${install_location}" in
+              "${browser_path}"/*) ;;
+              *) exit 1 ;;
+            esac
+            test -d "${install_location}"
+            test -r "${install_location}/INSTALLATION_COMPLETE"
+          done
+
+      - name: Build and prepare browser-test application
+        run: |
+          pnpm build
+          pnpm prepare:standalone
+
+      - name: Run supported-browser functional gate
+        env:
+          WFLYER_PLAYWRIGHT_OUTPUT_DIR: test-results/e2e
+          WFLYER_PLAYWRIGHT_REPORT_DIR: playwright-report/e2e
+        run: pnpm test:e2e
+
+      - name: Run supported-browser accessibility gate
+        env:
+          WFLYER_PLAYWRIGHT_OUTPUT_DIR: test-results/a11y
+          WFLYER_PLAYWRIGHT_REPORT_DIR: playwright-report/a11y
+        run: pnpm test:a11y
+
+      - name: Run supported-browser motion gate
+        env:
+          WFLYER_PLAYWRIGHT_OUTPUT_DIR: test-results/motion
+          WFLYER_PLAYWRIGHT_REPORT_DIR: playwright-report/motion
+        run: pnpm test:motion
+
+      - name: Run supported-browser visual gate
+        env:
+          WFLYER_PLAYWRIGHT_OUTPUT_DIR: test-results/visual
+          WFLYER_PLAYWRIGHT_REPORT_DIR: playwright-report/visual
+        run: pnpm test:visual
+
+      - name: Upload candidate browser evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: candidate-browser-${{ inputs.environment }}-${{ needs.validate-request.outputs.release_sha }}-attempt-${{ github.run_attempt }}
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          include-hidden-files: true
+          retention-days: 30
+
+  package-candidate:
+    name: Package ${{ inputs.environment }} candidate
+    needs:
+      - validate-request
+      - candidate-quality
+      - candidate-browser
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment:
+      name: ${{ inputs.environment }}
+    steps:
+      - name: Check out approved revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.validate-request.outputs.release_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
+        with:
+          version: 11.18.0
+          run_install: false
+
+      - name: Configure Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate required Environment secrets
+        env:
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+          TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          CONTACT_FROM_EMAIL: ${{ secrets.CONTACT_FROM_EMAIL }}
+          CONTACT_RECIPIENT_EMAIL: ${{ secrets.CONTACT_RECIPIENT_EMAIL }}
+          CONTACT_ALLOWED_ORIGINS: ${{ secrets.CONTACT_ALLOWED_ORIGINS }}
+        run: |
+          set -euo pipefail
+          required=(
+            NEXT_PUBLIC_TURNSTILE_SITE_KEY
+            TURNSTILE_SECRET_KEY
+            RESEND_API_KEY
+            CONTACT_FROM_EMAIL
+            CONTACT_RECIPIENT_EMAIL
+            CONTACT_ALLOWED_ORIGINS
+          )
+          missing=()
+
+          for variable_name in "${required[@]}"; do
+            if [[ -z "${!variable_name:-}" ]]; then
+              missing+=("${variable_name}")
+            fi
+          done
+
+          if (( ${#missing[@]} > 0 )); then
+            printf "::error::Missing required Environment secret: %s\n" "${missing[@]}"
+            exit 1
+          fi
+
+          echo "All required Environment secrets are configured."
+
+      - name: Validate dependency policy
+        run: pnpm validate:dependencies
+
+      - name: Build application
+        env:
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+          WFLYER_BUILD_ID: ${{ needs.validate-request.outputs.release_sha }}
+          WFLYER_DEPLOYMENT_ENVIRONMENT: ${{ inputs.environment }}
+        run: pnpm build
+
+      - name: Complete standalone package
+        run: pnpm prepare:standalone
+
+      - name: Validate candidate Node.js runtime files
+        run: |
+          test -f .next/standalone/server.js
+          test -d .next/standalone/.next/static
+          test -d .next/standalone/public
+
+      - name: Smoke standalone server and indexing policy
+        env:
+          WFLYER_DEPLOYMENT_ENVIRONMENT: ${{ inputs.environment }}
+        run: |
+          pnpm smoke:standalone
+          pnpm smoke:indexing
+
+      - name: Create checksummed release archive
+        id: archive
+        env:
+          RELEASE_ENVIRONMENT: ${{ inputs.environment }}
+          RELEASE_SHA: ${{ needs.validate-request.outputs.release_sha }}
+        run: |
+          set -euo pipefail
+          build_id="$(cat .next/standalone/.next/BUILD_ID)"
+          if [[ "${build_id}" != "${RELEASE_SHA}" ]]; then
+            echo "::error::Standalone BUILD_ID does not match the resolved release revision."
+            exit 1
+          fi
+
+          mkdir -p release
+          archive="release/wflyer-standalone-${RELEASE_ENVIRONMENT}-${RELEASE_SHA}.tar.gz"
+          tar \
+            --sort=name \
+            --mtime="UTC 1970-01-01" \
+            --owner=0 \
+            --group=0 \
+            --numeric-owner \
+            -czf "${archive}" \
+            -C .next/standalone .
+          (
+            cd "$(dirname "${archive}")"
+            sha256sum "$(basename "${archive}")" >"$(basename "${archive}").sha256"
+          )
+          echo "path=${archive}" >>"${GITHUB_OUTPUT}"
+
+      - name: Create non-secret release manifest
+        id: manifest
+        env:
+          RELEASE_ARCHIVE: ${{ steps.archive.outputs.path }}
+          RELEASE_CHECKSUM_FILE: ${{ steps.archive.outputs.path }}.sha256
+          RELEASE_ENVIRONMENT: ${{ inputs.environment }}
+          RELEASE_MANIFEST_PATH: release/wflyer-release-${{ inputs.environment }}-${{ needs.validate-request.outputs.release_sha }}.json
+          RELEASE_REF: ${{ inputs.release_ref }}
+          RELEASE_REPOSITORY: ${{ github.repository }}
+          RELEASE_RUN_ATTEMPT: ${{ github.run_attempt }}
+          RELEASE_RUN_ID: ${{ github.run_id }}
+          RELEASE_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          RELEASE_SHA: ${{ needs.validate-request.outputs.release_sha }}
+        run: |
+          export RELEASE_CREATED_AT="$(date -u +'%Y-%m-%dT%H:%M:%S.000Z')"
+          pnpm release:manifest
+          echo "path=${RELEASE_MANIFEST_PATH}" >>"${GITHUB_OUTPUT}"
+
+      - name: Upload deployment candidate
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: wflyer-${{ inputs.environment }}-${{ needs.validate-request.outputs.release_sha }}-attempt-${{ github.run_attempt }}
+          path: |
+            ${{ steps.archive.outputs.path }}
+            ${{ steps.archive.outputs.path }}.sha256
+            ${{ steps.manifest.outputs.path }}
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Record Napoleon handoff
+        env:
+          RELEASE_SHA: ${{ needs.validate-request.outputs.release_sha }}
+          RELEASE_REF: ${{ inputs.release_ref }}
+          TARGET_ENVIRONMENT: ${{ inputs.environment }}
+          ARCHIVE_PATH: ${{ steps.archive.outputs.path }}
+          MANIFEST_PATH: ${{ steps.manifest.outputs.path }}
+        run: |
+          {
+            echo "## Napoleon Git branch handoff pending configuration"
+            echo
+            echo "- Environment: \`${TARGET_ENVIRONMENT}\`"
+            echo "- Source branch/ref: \`${RELEASE_REF}\`"
+            echo "- Commit: \`${RELEASE_SHA}\`"
+            echo "- Candidate: \`${ARCHIVE_PATH}\` plus SHA-256 file"
+            echo "- Manifest: \`${MANIFEST_PATH}\`"
+            echo "- GitHub Actions did not create/push a commit or call a deployment endpoint."
+            echo "- Before attaching/restarting Napoleon, verify that its selected branch head, this green run, and the manifest identify \`${RELEASE_SHA}\`."
+            echo "- Keep that branch head unchanged until Napoleon records the same selected SHA; abort the handoff if it advances."
+            echo "- Configure the ${TARGET_ENVIRONMENT} environment selector, public Turnstile build key, and five Contact server values explicitly in Napoleon; GitHub Environment values are not transferred."
+          } >>"${GITHUB_STEP_SUMMARY}"
