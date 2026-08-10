@@ -92,7 +92,7 @@ jobs:
         id: resolve-release
         run: |
           set -euo pipefail
-          release_sha="$(git rev-parse --verify HEAD^{commit})"
+          release_sha="$(git rev-parse --verify 'HEAD^{commit}')"
           if [[ ! "${release_sha}" =~ ^[0-9a-f]{40}$ ]]; then
             echo "::error::The requested release ref did not resolve to a full Git SHA."
             exit 1
@@ -449,7 +449,8 @@ jobs:
           RELEASE_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
           RELEASE_SHA: ${{ needs.validate-request.outputs.release_sha }}
         run: |
-          export RELEASE_CREATED_AT="$(date -u +'%Y-%m-%dT%H:%M:%S.000Z')"
+          RELEASE_CREATED_AT="$(date -u +'%Y-%m-%dT%H:%M:%S.000Z')"
+          export RELEASE_CREATED_AT
           pnpm release:manifest
           echo "path=${RELEASE_MANIFEST_PATH}" >>"${GITHUB_OUTPUT}"
 
