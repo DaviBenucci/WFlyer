@@ -1,0 +1,25 @@
+# Motion Acceptance Contracts
+
+- `MOTION-G-001`: `/` reveals Home without visible initial jump.
+- `MOTION-G-002`: wheel down from Home follows professional branch.
+- `MOTION-G-003`: wheel up from Home follows application branch.
+- `MOTION-G-004`: partial scroll produces partial progress; no required snap.
+- `MOTION-G-005`: header traversal passes intermediate chapters.
+- `MOTION-G-006`: extreme traversal duration ≤ 3.0 s.
+- `MOTION-G-007`: wheel/touch/navigation key/Escape cancels automation.
+- `MOTION-G-008`: no global wheel/touch preventDefault story driver.
+- `MOTION-G-009`: branch score remains perceptually continuous.
+- `MOTION-G-010`: each score ends in a final barline.
+- `MOTION-G-011`: breakpoint change preserves semantic chapter.
+- `MOTION-G-012`: cleanup leaves zero owned motion resources.
+- `MOTION-G-013`: reduced motion has no horizontal pinning.
+- `MOTION-G-014`: Back/Forward restores coherent position.
+- `MOTION-G-015`: valid deep link is positioned before intro exit.
+- `MOTION-G-016`: APP-04 never starts from preload/mount/refresh alone.
+- `MOTION-G-017`: APP-04 starts only when active.
+- `MOTION-G-018`: video never blocks navigation.
+- `MOTION-G-019`: missing GSAP preserves a navigable vertical document.
+- `MOTION-G-020`: no required interaction depends only on hover.
+- `MOTION-G-021`: no React render is induced per scroll frame.
+- `MOTION-G-022`: user input during header traversal produces no corrective snap.
+- `MOTION-G-023`: hidden-tab/resume does not create stale media or timeline callbacks.

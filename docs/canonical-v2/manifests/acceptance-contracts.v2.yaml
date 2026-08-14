@@ -1,0 +1,64 @@
+version: "2.0"
+contracts:
+  HOME-AC-001: Home has no previous/next controls.
+  HOME-AC-002: Home has no primary navigation CTA competing with scroll.
+  HOME-AC-003: Home is positioned before intro exit without visible jump.
+  HOME-AC-004: Invalid hash falls back safely to Home.
+  HOME-AC-005: Reduced motion renders complete vertical Home/story.
+  MOTION-G-001: Native scroll is the canonical story source.
+  MOTION-G-002: Wheel down from Home follows professional branch.
+  MOTION-G-003: Wheel up from Home follows application branch.
+  MOTION-G-004: Partial scroll produces partial progress without required snap.
+  MOTION-G-005: Header traversal crosses intermediate chapters.
+  MOTION-G-006: Extreme traversal duration is at most 3.0 seconds.
+  MOTION-G-007: Explicit input cancels or supersedes traversal.
+  MOTION-G-008: No global wheel/touch preventDefault drives story.
+  MOTION-G-009: Scores remain perceptually continuous.
+  MOTION-G-010: Each branch ends with final barline before terminal.
+  MOTION-G-011: Responsive rebuild preserves semantic chapter.
+  MOTION-G-012: Cleanup leaves zero owned motion resources.
+  MOTION-G-013: Reduced motion has no horizontal pinning.
+  MOTION-G-014: Back/Forward restores coherent canonical position.
+  MOTION-G-015: Deep link positions before intro exit.
+  MOTION-G-016: APP-04 does not start from preload/mount/refresh.
+  MOTION-G-017: APP-04 starts only when active.
+  MOTION-G-018: Video never blocks navigation.
+  MOTION-G-019: Motion failure preserves vertical functionality.
+  MOTION-G-020: No required interaction depends only on hover.
+  MOTION-G-021: No React render per scroll frame.
+  DEMO-AC-001: Media has no audio use and is muted/playsInline.
+  DEMO-AC-002: First autoplay occurs at most once per experience cycle.
+  DEMO-AC-003: Video never loops.
+  DEMO-AC-004: Ended state shows approved static final frame.
+  DEMO-AC-005: Replay appears top-center in screen.
+  DEMO-AC-006: Replay supports pointer Enter Space and touch.
+  DEMO-AC-007: Replay seeks to zero and hides final state while playing.
+  DEMO-AC-008: Replay completion restores final state.
+  DEMO-AC-009: Simulated application UI is inert.
+  DEMO-AC-010: Replay is the sole interactive screen control.
+  DEMO-AC-011: Media failure preserves a valid static state.
+  DEMO-AC-012: Demo never blocks or reverses scroll.
+  DEMO-AC-013: Returning after completion does not autoplay.
+  DEMO-AC-014: Reduced motion has no autoplay.
+  PERSONA-AC-001: Persona does not reproduce identifiable physical appearance.
+  PERSONA-AC-002: Persona is hooded humanized Concept D derived from brand geometry.
+  PERSONA-AC-003: Persona is mandatory in About.
+  PERSONA-AC-004: Optional appearances obey session limits/exclusions.
+  PROJECT-AC-001: Only authorized projects appear.
+  PROJECT-AC-002: Every desktop card remains identifiable in fan state.
+  PROJECT-AC-003: Focus and hover have equivalent selection presentation.
+  PROJECT-AC-004: Mobile does not depend on hover or horizontal carousel.
+  RENDER-AC-001: Pitch is derived from staffStep, never pitch-specific pixels.
+  RENDER-AC-002: G4 maps to treble second line and C5 to third space.
+  RENDER-AC-003: Ledger lines include all required intermediate lines.
+  RENDER-AC-004: Approved glyph paths remain unchanged.
+  RENDER-AC-005: Key signatures derive from clef plus fifths.
+  RENDER-AC-006: Final barline is thin plus gap plus thick.
+  COMPOSER-AC-001: Composition uses versioned session-seeded PRNG.
+  COMPOSER-AC-002: No Math.random participates.
+  COMPOSER-AC-003: Same seed/version/chapter/slots yields same result.
+  COMPOSER-AC-004: Only whitelisted motifs exist.
+  COMPOSER-AC-005: No identical adjacent motifs.
+  COMPOSER-AC-006: Triplet always has three eighths bracket and centered 3.
+  COMPOSER-AC-007: Landing pitch stays C4 through A5.
+  COMPOSER-AC-008: Key signature is explicit and occurs at most once per branch.

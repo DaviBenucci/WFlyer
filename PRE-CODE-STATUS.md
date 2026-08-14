@@ -1,38 +1,43 @@
-# Estado de fechamento pré-código
+# W_Flyer v2 — Pre-code status
 
-**Versão:** 1.4  
-**Data:** 2026-07-29  
-**Estado de implementação:** `READY_FOR_IMPLEMENTATION`  
-**Estado de publicação:** `READY_FOR_DEPLOYMENT_CONFIGURATION`
+**Status:** `V2_CANONICAL_DOCUMENTATION_APPROVED_IMPLEMENTATION_PENDING`
 
-## Liberação concedida
+## Approved
 
-O Codex está autorizado a implementar o site institucional do início ao fim usando o conjunto visual atualmente aprovado, sem aguardar a geração de uma imagem individual para cada página, tema e viewport.
+- product/brand positioning;
+- alternative-A landing + detailed-page model;
+- professional and application story order;
+- native-scroll desktop architecture;
+- vertical mobile architecture and ordering;
+- header traversal/history contract;
+- intro/bootstrap/deep-link contract;
+- continuous dual-score visual system;
+- visual asset governance;
+- Music Renderer, Procedural Score Composer, and Visual Lab gates;
+- project-card system;
+- Persona concept and easter-egg rules;
+- APP-04 video state machine;
+- accessibility, reduced-motion, performance, lifecycle, testing, and deployment boundaries;
+- linear implementation plan.
 
-A autorização visual é baseada em:
+## Current code baseline
 
-- prancha mestra aprovada para linguagem global, Home, Serviços, Portfólio, Contato e Footer;
-- referência individual aprovada de Aplicação — desktop claro;
-- tokens claro/escuro;
-- especificação textual de cada página;
-- arquétipos visuais e regras de herança em `docs/design-reference/golden-pages/visual-archetypes.yaml`;
-- regras responsivas, de acessibilidade e de motion já documentadas.
+The repository still implements the legacy route-per-chapter model, including route-transition overlays, previous/next chapter controls, company terminology, a header app-access link, programmatic music geometry, and an interactive DOM tablet demo.
 
-O Codex deve reconstruir tudo com HTML, CSS, SVG e componentes. As imagens de referência não entram no produto.
+Those behaviors are not the approved target. They remain only to provide a functioning rollback baseline during migration.
 
-## Decisões operacionais fechadas
+## Human-gated pending assets/calibrations
 
-- repositório: GitHub, conta `DaviBenucci`, repositório deste projeto;
-- origem de hospedagem: Napoleon, aplicação Node.js conectada ao GitHub;
-- borda, DNS, HTTPS, WAF e Turnstile: Cloudflare;
-- não utilizar VPS ou EasyPanel;
-- segredos e variáveis de automação: GitHub Actions Secrets;
-- contato público e destinatário: `davi.benucci@wflyer.com.br`;
-- redes públicas: Instagram `@davibenucci` e GitHub `DaviBenucci`;
-- portfólio inicial: W_Flyer, MSN Distribuidora e MSN Suprimentos;
-- analytics: não utilizar na versão inicial;
-- homologação final: Davi Benucci.
+- Music glyph metrics and anchors (Gate B);
+- Music visual/composer approval (Gate C);
+- final Score Path control points/layout approval;
+- final W_Flyer Persona SVG/rig approval;
+- final APP-04 WebM/MP4/poster/final-frame assets;
+- final project media where applicable;
+- final editorial copy review;
+- calibrated horizontal-mode breakpoint and mobile activation thresholds;
+- staging homologation and production authorization.
 
-## Limite externo
+## Authorization
 
-A ausência temporária dos valores reais de Turnstile, Resend ou acesso de deploy não bloqueia a implementação. O Codex deve concluir código, testes, workflows, `.env.example` e documentação. A publicação em produção somente ocorre depois que os valores forem cadastrados nos GitHub Actions Secrets e disponibilizados ao runtime da Napoleon.
+Codex may begin Phase 0 from `WFLYER_IMPLEMENTATION_PLAN.md`. Codex may not skip human gates or deploy production.

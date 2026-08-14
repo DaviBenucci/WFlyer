@@ -1,0 +1,130 @@
+version: "2.0"
+status: approved
+canonicalLanguage: en
+publicLanguage: pt-BR
+branches:
+  application:
+    desktopDirection: left
+    mobileOrder: 2
+  professional:
+    desktopDirection: right
+    mobileOrder: 1
+chapters:
+  - id: home
+    label: Home
+    hash: "#home"
+    branch: origin
+    timelineLabel: home
+    header: center-brand
+    detailRoute: "/"
+  - id: application-overview
+    label: Aplicação
+    hash: "#aplicacao"
+    branch: application
+    timelineLabel: app-overview
+    header: true
+    detailRoute: "/aplicacao-wflyer"
+  - id: application-how-it-works
+    label: Como funciona
+    hash: "#como-funciona"
+    branch: application
+    timelineLabel: app-how
+    header: true
+    detailRoute: "/aplicacao-wflyer/como-funciona"
+  - id: application-benefits
+    label: Benefícios
+    hash: "#beneficios"
+    branch: application
+    timelineLabel: app-benefits
+    header: true
+    detailRoute: "/aplicacao-wflyer/beneficios"
+  - id: application-demo
+    label: Demonstração
+    hash: "#demonstracao"
+    branch: application
+    timelineLabel: app-demo
+    header: false
+    detailRoute: "/aplicacao-wflyer#demonstracao"
+  - id: application-access
+    label: Acessar W_Flyer
+    hash: "#acessar-wflyer"
+    branch: application
+    timelineLabel: app-access
+    header: false
+    externalAction: "https://app.wflyer.com.br"
+  - id: application-terminal
+    label: Application terminal
+    branch: application
+    timelineLabel: app-terminal
+    header: false
+    finalBarlineBefore: true
+  - id: professional-about
+    label: Sobre
+    hash: "#sobre"
+    branch: professional
+    timelineLabel: pro-about
+    header: true
+    detailRoute: "/sobre"
+  - id: professional-services
+    label: Serviços
+    hash: "#servicos"
+    branch: professional
+    timelineLabel: pro-services
+    header: true
+    detailRoute: "/servicos"
+  - id: professional-process
+    label: Processo
+    hash: "#processo"
+    branch: professional
+    timelineLabel: pro-process
+    header: false
+    detailRoute: "/processo"
+  - id: professional-projects
+    label: Projetos
+    hash: "#projetos"
+    branch: professional
+    timelineLabel: pro-projects
+    header: true
+    detailRoute: "/portfolio"
+  - id: professional-contact
+    label: Contato
+    hash: "#contato"
+    branch: professional
+    timelineLabel: pro-contact
+    header: true
+    detailRoute: "/contato"
+  - id: professional-terminal
+    label: Professional terminal
+    branch: professional
+    timelineLabel: pro-terminal
+    header: false
+    finalBarlineBefore: true
+desktopTimelineOrder:
+  - application-terminal
+  - application-access
+  - application-demo
+  - application-benefits
+  - application-how-it-works
+  - application-overview
+  - home
+  - professional-about
+  - professional-services
+  - professional-process
+  - professional-projects
+  - professional-contact
+  - professional-terminal
+mobileDocumentOrder:
+  - home
+  - professional-about
+  - professional-services
+  - professional-process
+  - professional-projects
+  - professional-contact
+  - professional-terminal
+  - application-overview
+  - application-how-it-works
+  - application-benefits
+  - application-demo
+  - application-access
+  - application-terminal
+  - global-footer

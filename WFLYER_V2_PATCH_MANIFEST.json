@@ -1,0 +1,801 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageId": "wflyer-canonical-implementation-package-v1.0",
+  "generatedOn": "2026-08-14",
+  "sourceArchive": {
+    "name": "Wflyer(20260814-194446).zip",
+    "sha256": "39659cf3f039317a0b8140adad988a1adb279d4ba6bbd0cf81bab6696994325d"
+  },
+  "overlayRoot": "<repository-root>",
+  "classification": {
+    "ADD": "File does not exist in the audited source archive and will be added.",
+    "REPLACE": "File exists in the audited source archive and this package supplies the v2 canonical replacement."
+  },
+  "summary": {
+    "totalFiles": 123,
+    "add": 102,
+    "replace": 21
+  },
+  "entries": [
+    {
+      "path": "AGENTS.md",
+      "action": "REPLACE",
+      "sizeBytes": 4346,
+      "sha256": "b96bcae2b60465e827276b157e4059e2309a586bbf77e72cc19f0e631b9c003a",
+      "sourceSha256": "65a114acffd8d9b7e093629f23382186c638d258aff6427e632abf77a2f0a239",
+      "contentChanged": true
+    },
+    {
+      "path": "DOCUMENTATION_MANIFEST.json",
+      "action": "REPLACE",
+      "sizeBytes": 666,
+      "sha256": "d022650a1e1680620ad4133e88840eec663813050ae03c91fa96fda9d3d0c281",
+      "sourceSha256": "3cfc30bb8bc202be01b93389012c718e94dc490723566f8eeaf315fbe8144b64",
+      "contentChanged": true
+    },
+    {
+      "path": "INSTALLATION_AND_MERGE.md",
+      "action": "ADD",
+      "sizeBytes": 1507,
+      "sha256": "51822f16fa5dbb84e780c3228d68ec0329eb71c03c5e1189263561db630f4cfe"
+    },
+    {
+      "path": "PACKAGE_README.md",
+      "action": "ADD",
+      "sizeBytes": 721,
+      "sha256": "cc21092134458f00bfab6a0189d1de41b17ada53eb27e52c3122dbe0f6af015c"
+    },
+    {
+      "path": "PRE-CODE-STATUS.md",
+      "action": "REPLACE",
+      "sizeBytes": 1756,
+      "sha256": "37330df9f4f18467c50601290712e08b3f6e507f8eed7e6d8ef037cb19982432",
+      "sourceSha256": "53da810b1ca4c99daa513465c33650a57ac5153ad9c0a7c43a8a81398125f8b0",
+      "contentChanged": true
+    },
+    {
+      "path": "README.md",
+      "action": "REPLACE",
+      "sizeBytes": 2521,
+      "sha256": "a2deabb3c4782326ddbb3f6730dd61be7d457207ef0bbdb08cca74f6b5d1f59b",
+      "sourceSha256": "5065cb98b5a9c0bfd00f78f809abf9967af6607d71d564009396b2ac48fa0a5f",
+      "contentChanged": true
+    },
+    {
+      "path": "WFLYER_CANONICAL_DOCUMENTATION_MANIFEST.md",
+      "action": "ADD",
+      "sizeBytes": 1916,
+      "sha256": "82b956e28163ce29b3fba6ee53c67e176add1819fe6772742e88ce9a14286e0a"
+    },
+    {
+      "path": "WFLYER_CODEX_START_HERE.md",
+      "action": "ADD",
+      "sizeBytes": 4017,
+      "sha256": "89954968e31c1d84213d98bae2047d507cc77597ce3a4efabf4d34e414eac1f4"
+    },
+    {
+      "path": "WFLYER_IMPLEMENTATION_PLAN.md",
+      "action": "ADD",
+      "sizeBytes": 15747,
+      "sha256": "0004fb2a59989fa7ac8428733e102b58abbc85f191b57bb649a5309b4608703d"
+    },
+    {
+      "path": "docs/00-governanca/00-fonte-da-verdade.md",
+      "action": "REPLACE",
+      "sizeBytes": 412,
+      "sha256": "8b7aaa707a869d6e9fcb803c170b86de36dc1705bf031d9fb9619b846967b88b",
+      "sourceSha256": "f7c2eeffc5316ce9f74850387b506065f0175b5e4e72cbb95e9cdc886970289f",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/00-governanca/02-hierarquia-documental.md",
+      "action": "REPLACE",
+      "sizeBytes": 183,
+      "sha256": "5c57ca7acd5f49c9e567eec518e0214dc3277ef3618311a5af78d7fa4ef53fe4",
+      "sourceSha256": "1099a04bef10a068ee69ed3ee2b87dd921837f19df7342ce47e1eb2c74168e6f",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/00-governanca/05-registro-decisoes.md",
+      "action": "REPLACE",
+      "sizeBytes": 273,
+      "sha256": "44fd6c1d72e438c5019a3e16f5fd286410698f7a2db2027a32b2e931b152866c",
+      "sourceSha256": "eb4fe985f2af444e0a0e6e7823bbd1939272fa182b783b06dd8b6593ce1600bc",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/00-governanca/07-adr-dupla-partitura-e-paginas-visuais.md",
+      "action": "REPLACE",
+      "sizeBytes": 281,
+      "sha256": "c0d060951cd18034a8d645e32cd00f1088dfb5cf9e05d2d13d648594031745a0",
+      "sourceSha256": "0f6c6793957620e922105c23b7837d18f6e54686c2c1283b695d5bf629812455",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/00-indice.md",
+      "action": "REPLACE",
+      "sizeBytes": 248,
+      "sha256": "08cbf0edf8ad0c083091421a170f2c3720314b163e1e7668c55a308d6fd1deae",
+      "sourceSha256": "b1893f5b971de35695f724f5a2f5ef15ab6704f1177fee8276ceff882098f960",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/01-produto/04-arquitetura-informacao.md",
+      "action": "REPLACE",
+      "sizeBytes": 254,
+      "sha256": "0e65b88e8cfeccf2912e1db17f7a9e7f40813bcb3c68a6a6bca4fd5719df66db",
+      "sourceSha256": "efd1b0b5d890f8897c05b36ebb2ade9367d8827b7573f2c0ba668cd9fe0ad20e",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/02-design/09-sistema-dupla-partitura.md",
+      "action": "REPLACE",
+      "sizeBytes": 252,
+      "sha256": "657184210b756ea459e196b34cd16a3aed1e57335124306663be1af458615106",
+      "sourceSha256": "61b71ea6b21be8bcebd13e3cb1db8f7bddbaa68d18590047ac07859149fb474d",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/03-motion/02-narrativa-dupla-partitura.md",
+      "action": "REPLACE",
+      "sizeBytes": 232,
+      "sha256": "a718457e10842ae4545de3d6e20a591b9fabd5c55a4c0da407a6781ec24574ff",
+      "sourceSha256": "6302000639bcf1a217bc6420008cf5258f8118787e96b85421d5f48315a697ed",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/03-motion/08-tablet-interativo.md",
+      "action": "REPLACE",
+      "sizeBytes": 221,
+      "sha256": "cb347a526b5c3c559b08dcd3d0f6b497ce9803514ff2ea1cc2ca66dfc3a026a1",
+      "sourceSha256": "f04e555f5568bf69c88c8344513788c991f34c4e1e07fb95f4fb1fcec46c265f",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/05-implementacao/07-fases-implementacao.md",
+      "action": "REPLACE",
+      "sizeBytes": 138,
+      "sha256": "6ea2231eb9098f0c0b7af7b89048c78e4eaa9c2f1bf6d95be50bc8c5c641bcec",
+      "sourceSha256": "e39fb563eede71f7c2f525b11f170bd803510afa7af28b2fc98eaadc3a237b5b",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/05-implementacao/14-contrato-execucao-integral-codex.md",
+      "action": "REPLACE",
+      "sizeBytes": 212,
+      "sha256": "270e9a4bba2ff0d90970cf201018cd707b04411baca053f7aa379fe813055bec",
+      "sourceSha256": "dcb446aef952e72ae1bd311b17da7a09ee2176091237a7f9c1a44511036e9827",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/05-implementacao/22-music-system-v0.1-implementation-contract.md",
+      "action": "ADD",
+      "sizeBytes": 14689,
+      "sha256": "2c9a89657821c82e0414ce879036a156d71bfe2bb2ab42fdd7456254a9b364b9"
+    },
+    {
+      "path": "docs/07-qa/05-criterios-aceite.md",
+      "action": "REPLACE",
+      "sizeBytes": 280,
+      "sha256": "039dfec58be214074418a5890bfe31f8291622c4f4add1838a488c0a33e33078",
+      "sourceSha256": "6940ebb6c77b189a85ae0140ac7daa4a9da5880c1661c57db36ea4afdb16f7e5",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/07-qa/09-music-system-v0.1-validation.md",
+      "action": "ADD",
+      "sizeBytes": 3720,
+      "sha256": "b3f67bd82f04cb5c8bea1e7f4e5b2321681413b1ccbb3db34fc5b150de789948"
+    },
+    {
+      "path": "docs/README.md",
+      "action": "REPLACE",
+      "sizeBytes": 204,
+      "sha256": "80ca591b1867f21417e484bc5e6575501e82019b0080f39d0ee968d5f8eb943f",
+      "sourceSha256": "7434873b9f5182c6627ba8cdd2ab5412bec9220cb9c2f6a4f15bfcfe0a360bd5",
+      "contentChanged": true
+    },
+    {
+      "path": "docs/canonical-v2/00-governance/01-source-of-truth.md",
+      "action": "ADD",
+      "sizeBytes": 1286,
+      "sha256": "561e48969928fca158cca896531ec8bfdb6a92acb002a25011121ac3674ef34a"
+    },
+    {
+      "path": "docs/canonical-v2/00-governance/02-scope-status-and-terminology.md",
+      "action": "ADD",
+      "sizeBytes": 1279,
+      "sha256": "82bb88b31ec3c70ed6e61e6f869343e39cbad7aaeee057ccc8a772541b3c22da"
+    },
+    {
+      "path": "docs/canonical-v2/00-governance/03-decision-register.md",
+      "action": "ADD",
+      "sizeBytes": 7263,
+      "sha256": "c693adbe3a493db1a08d8011b530b92d74e444fcc9ec77194cc65ca20943a7ec"
+    },
+    {
+      "path": "docs/canonical-v2/00-governance/04-supersession-map.md",
+      "action": "ADD",
+      "sizeBytes": 2019,
+      "sha256": "964cc74afd1bebb509bd1d168441a67c3d69ef414d4198ae3cd1f0e5168774c2"
+    },
+    {
+      "path": "docs/canonical-v2/00-governance/05-calibration-and-pending-items.md",
+      "action": "ADD",
+      "sizeBytes": 1156,
+      "sha256": "4ba143c82e1562fbe3093085d9b439ae31106b1aad0d54f28429eda9a67a58cd"
+    },
+    {
+      "path": "docs/canonical-v2/00-governance/06-decision-traceability.md",
+      "action": "ADD",
+      "sizeBytes": 2581,
+      "sha256": "028bea84242f8b57f3c7cb84705e29f016643098430c766216921bdb6b4abea6"
+    },
+    {
+      "path": "docs/canonical-v2/01-product/01-brand-positioning-and-goals.md",
+      "action": "ADD",
+      "sizeBytes": 1055,
+      "sha256": "3438cc9366fc66a0fb905586c96ea78b0caf6ad874c89edc2316d6dd9f996689"
+    },
+    {
+      "path": "docs/canonical-v2/01-product/02-information-architecture-and-routes.md",
+      "action": "ADD",
+      "sizeBytes": 1301,
+      "sha256": "f794d332c2705ede139c59d5b5580b4be77ffe5e4558bb86f40875335651e76c"
+    },
+    {
+      "path": "docs/canonical-v2/01-product/03-user-journeys-conversion-and-content-boundaries.md",
+      "action": "ADD",
+      "sizeBytes": 1210,
+      "sha256": "20e6de5ebada1a1c8ad777b80f07c43f51acc47f729c96d7999cabc8ca2bac93"
+    },
+    {
+      "path": "docs/canonical-v2/02-experience/01-global-story-architecture.md",
+      "action": "ADD",
+      "sizeBytes": 1092,
+      "sha256": "217f0762181477744616988e63b0ace70ebd631c7ce296d8a38cc9ba24c8feb4"
+    },
+    {
+      "path": "docs/canonical-v2/02-experience/02-chapter-contracts.md",
+      "action": "ADD",
+      "sizeBytes": 9647,
+      "sha256": "ed85d21ac55b15abdc8181ca087ddacce5d2fdf7a942b11f9919d3f02e56ade0"
+    },
+    {
+      "path": "docs/canonical-v2/02-experience/03-desktop-scroll-header-history.md",
+      "action": "ADD",
+      "sizeBytes": 1454,
+      "sha256": "b1a89cf9c6559e3e1e95dc7a827aae8138a6e3da3e1ff0075c9b6ae121df6c4b"
+    },
+    {
+      "path": "docs/canonical-v2/02-experience/04-mobile-responsive-reduced-motion.md",
+      "action": "ADD",
+      "sizeBytes": 1294,
+      "sha256": "279ae2e562133414964fb60fc6134954b9f074d363d744a873f0ce7717bfd565"
+    },
+    {
+      "path": "docs/canonical-v2/02-experience/05-intro-bootstrap-deep-links-and-recovery.md",
+      "action": "ADD",
+      "sizeBytes": 1225,
+      "sha256": "49f08e194c16d7fc4e8e4c55e20af572a711dee925e7b57534bfca1e31bf92eb"
+    },
+    {
+      "path": "docs/canonical-v2/02-experience/06-terminals-footers-and-navigation-semantics.md",
+      "action": "ADD",
+      "sizeBytes": 1019,
+      "sha256": "ec53497ff7f3cd954d282632dad7d2863ffe554f4db6c42acef8fbf3ab6912b5"
+    },
+    {
+      "path": "docs/canonical-v2/03-visual/01-continuous-dual-score-system.md",
+      "action": "ADD",
+      "sizeBytes": 1744,
+      "sha256": "68107418d69cddc54cf7f42dacfe3a37651f3563eaef3b2363c3e93d5efcd6bf"
+    },
+    {
+      "path": "docs/canonical-v2/03-visual/02-visual-asset-library.md",
+      "action": "ADD",
+      "sizeBytes": 1268,
+      "sha256": "4db9362da924dc563e1c4c429a1d1b7e1deaf10d61efcd4e2d76e5632b784f1c"
+    },
+    {
+      "path": "docs/canonical-v2/03-visual/03-wflyer-persona.md",
+      "action": "ADD",
+      "sizeBytes": 1526,
+      "sha256": "0d7290fa9c2951bc20552c33f4a38f584f0c7cf52c9befae46042a6bc426bb59"
+    },
+    {
+      "path": "docs/canonical-v2/03-visual/04-project-card-system.md",
+      "action": "ADD",
+      "sizeBytes": 1037,
+      "sha256": "76abf0ae9b719a74639606b5d2f47a3ffcefd9df177e3b9c3bee413b4bd5491c"
+    },
+    {
+      "path": "docs/canonical-v2/03-visual/05-application-demo-device.md",
+      "action": "ADD",
+      "sizeBytes": 1696,
+      "sha256": "cd352bbe7403ac56aa71fd12bbc83595ee7994e373e43a8487de05f59cc58658"
+    },
+    {
+      "path": "docs/canonical-v2/03-visual/06-scene-wireframes.md",
+      "action": "ADD",
+      "sizeBytes": 6361,
+      "sha256": "67e3587c73ec35c684c83bcbd05745e9c71044d4a7551eaf2002e83db41d74a0"
+    },
+    {
+      "path": "docs/canonical-v2/04-music/01-music-renderer-v0.1.md",
+      "action": "ADD",
+      "sizeBytes": 2441,
+      "sha256": "83d7bb942ad0ec58cb1022379581ef72d23992d45c5d830e5455e2fa055b3030"
+    },
+    {
+      "path": "docs/canonical-v2/04-music/02-procedural-score-composer-v0.1.md",
+      "action": "ADD",
+      "sizeBytes": 2244,
+      "sha256": "64748fbdf4d3fd73a9cdaad64ea553f549cb301e591158c83f2e2fe5fb0c9089"
+    },
+    {
+      "path": "docs/canonical-v2/04-music/03-music-visual-lab-and-gates.md",
+      "action": "ADD",
+      "sizeBytes": 1444,
+      "sha256": "18c43a16c771faee36bd2d0fc61df8bcb1540aaf1641c21b9de73ab9fd551309"
+    },
+    {
+      "path": "docs/canonical-v2/04-music/04-music-data-contracts.md",
+      "action": "ADD",
+      "sizeBytes": 1478,
+      "sha256": "428bc329141dc96d38e20c006f7c875765387ea59cad7f63c400e3a9a96dda2a"
+    },
+    {
+      "path": "docs/canonical-v2/05-architecture/01-target-frontend-architecture.md",
+      "action": "ADD",
+      "sizeBytes": 1215,
+      "sha256": "bbb20c877f6b1d0971ca60588add8b990e86b7f8fc6a7c90e8c7cdd997d1ad09"
+    },
+    {
+      "path": "docs/canonical-v2/05-architecture/02-motion-lifecycle-and-performance.md",
+      "action": "ADD",
+      "sizeBytes": 1451,
+      "sha256": "103824e2bedc5dbc629bb44bbf300acf1b118978099cfb02477dc41a11071e50"
+    },
+    {
+      "path": "docs/canonical-v2/05-architecture/03-security-contact-seo-and-operations.md",
+      "action": "ADD",
+      "sizeBytes": 1170,
+      "sha256": "a3ce7767dfbfbc5241ce5862c1d2a3da40a61e1acfbe244f19dd513154b1bb49"
+    },
+    {
+      "path": "docs/canonical-v2/05-architecture/04-state-machines.md",
+      "action": "ADD",
+      "sizeBytes": 1789,
+      "sha256": "42a5f2e41da9ac1eae151e03d1973f8e5b929b3394a5802695362029be0251af"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/01-current-state-audit.md",
+      "action": "ADD",
+      "sizeBytes": 3053,
+      "sha256": "c4032f713ffbca0735c930d1fafcda1eec7b94cee58f5d3b03c7f849370d03bc"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/02-file-by-file-migration-map.md",
+      "action": "ADD",
+      "sizeBytes": 4037,
+      "sha256": "03c72090815f8a533583aa9770ef608a7c47f0e70ea538f315c1be6151c7ac22"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/03-legacy-test-migration-map.md",
+      "action": "ADD",
+      "sizeBytes": 1645,
+      "sha256": "8cb802289f1c88b1c81708d2b9d9c6825bbaa55db66a5bf823a19d67f9e2f747"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/04-cutover-and-rollback.md",
+      "action": "ADD",
+      "sizeBytes": 1300,
+      "sha256": "2b0637cff50cf05e11d923dd7c5197800348a5e46021782dda23093b24c3d1d4"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/05-target-file-and-module-map.md",
+      "action": "ADD",
+      "sizeBytes": 1358,
+      "sha256": "a95f583c81054dfa590b15191eae6e55f16635901a8eac4e45148b9d2a1caa7f"
+    },
+    {
+      "path": "docs/canonical-v2/07-quality/01-test-strategy-and-evidence.md",
+      "action": "ADD",
+      "sizeBytes": 1257,
+      "sha256": "7065f19c5e9158ca4b48430746bd3b0b4379f538e45ccf6cbbf013a09f9eb7f9"
+    },
+    {
+      "path": "docs/canonical-v2/07-quality/02-motion-acceptance-contracts.md",
+      "action": "ADD",
+      "sizeBytes": 1539,
+      "sha256": "34f73e183385e93a834c1077340561b2c119fb5a078c6d9261dc4eed18abe467"
+    },
+    {
+      "path": "docs/canonical-v2/07-quality/03-chapter-acceptance-criteria.md",
+      "action": "ADD",
+      "sizeBytes": 1720,
+      "sha256": "6f2549cca660766b0c8a748e7e7023c76080814f5218d1b67d69b12196dc34ad"
+    },
+    {
+      "path": "docs/canonical-v2/07-quality/04-definition-of-done.md",
+      "action": "ADD",
+      "sizeBytes": 993,
+      "sha256": "62706016df43fd7bb438fa0970567b7616ae50617ee45434ef88464ad258d017"
+    },
+    {
+      "path": "docs/canonical-v2/README.md",
+      "action": "ADD",
+      "sizeBytes": 1675,
+      "sha256": "30bf47f46f1a237ef19a86e7303a55db65d808f405f5eb23bc1ff4777ce7a7bb"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-025-continuous-organic-dual-score.md",
+      "action": "ADD",
+      "sizeBytes": 852,
+      "sha256": "719caf4ac078d4346737c534508ef18967be2dc7e1cbb0cfc5def97b3080941d"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-026-music-renderer-v0.1.md",
+      "action": "ADD",
+      "sizeBytes": 780,
+      "sha256": "d2a0717d9334a64f8cab72d81cc947d53fbe5ee6fd0e7c8e025ffd0960b215ef"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-027-seeded-procedural-score-composer.md",
+      "action": "ADD",
+      "sizeBytes": 753,
+      "sha256": "a72aac1903ea05b7419f1b7085b5a73bf1c7568143a0deab57aaf648fd65169d"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-028-music-visual-lab-gates.md",
+      "action": "ADD",
+      "sizeBytes": 785,
+      "sha256": "60b8d8724c5115072d10df73d1be3b21ffabec8eb8b1a58df3cb4046c1afb364"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-029-brand-personal-portfolio-positioning.md",
+      "action": "ADD",
+      "sizeBytes": 719,
+      "sha256": "7dcd1f41d14318fea04b4abb100b23e929ff0701fcea80b87e9ed3016e00642b"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-030-alternative-a-landing-and-details.md",
+      "action": "ADD",
+      "sizeBytes": 730,
+      "sha256": "7994a7d0a001907c17b97627305f7941db1bea9b043a58b54a0263a2b6762447"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-031-native-scroll-and-header-traversal.md",
+      "action": "ADD",
+      "sizeBytes": 787,
+      "sha256": "923d0773b335f861aa124861d38879b5c977c3f5d0e92e8cec7c520933da8e7c"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-032-responsive-vertical-story.md",
+      "action": "ADD",
+      "sizeBytes": 719,
+      "sha256": "8e83ebaf0a7e53a4b77ecf29464b709e6d266ae22113af564d4fa3f9dbcc2771"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-033-readiness-intro-deeplink-history.md",
+      "action": "ADD",
+      "sizeBytes": 784,
+      "sha256": "1f8289ce205927c5849880fbf64e8433d9da5e4e673b1067aa82f6f1cc4eb101"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-034-professional-branch-project-cards.md",
+      "action": "ADD",
+      "sizeBytes": 724,
+      "sha256": "1064be80bdbb614e12b17727485ae221a26dfc50e4742ca32599e8c226a1755e"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-035-humanized-hooded-persona.md",
+      "action": "ADD",
+      "sizeBytes": 746,
+      "sha256": "edfc3b0d8bf962638dd0fefac9d7935f3a3077245543815e50659fc1038939e3"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-036-video-application-demo.md",
+      "action": "ADD",
+      "sizeBytes": 706,
+      "sha256": "5a26420bf0c4b59bb072a6733540c646261ef8c2a0ac64c65ec4c6ced6139935"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-037-terminals-and-footer-semantics.md",
+      "action": "ADD",
+      "sizeBytes": 751,
+      "sha256": "872c70f163b7086f93bbcdd304b4b2ae9955b146d16d9777b94e159cc2f0c042"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-038-progressive-enhancement-performance.md",
+      "action": "ADD",
+      "sizeBytes": 781,
+      "sha256": "19c17d60293aaf06c4c0f5d6ce5010ba8c2513fd4f7a1da9be69d595967e05ad"
+    },
+    {
+      "path": "docs/canonical-v2/adr/ADR-039-visual-asset-governance.md",
+      "action": "ADD",
+      "sizeBytes": 721,
+      "sha256": "7949eefcfdc63c95098939b6d9f80598b58177bf90bcf9153ad7fa76d23458e2"
+    },
+    {
+      "path": "docs/canonical-v2/manifests/acceptance-contracts.v2.yaml",
+      "action": "ADD",
+      "sizeBytes": 3902,
+      "sha256": "d78ad9022025b1ae4da24e36c8665764491d93fa7f78bde77c2980d7c27ee006"
+    },
+    {
+      "path": "docs/canonical-v2/manifests/calibration-register.v2.yaml",
+      "action": "ADD",
+      "sizeBytes": 910,
+      "sha256": "be10fea7aec07f8ae670377a95d920cbff009870178ab0f7f7bf681b30765607"
+    },
+    {
+      "path": "docs/canonical-v2/manifests/implementation-phases.v2.yaml",
+      "action": "ADD",
+      "sizeBytes": 1278,
+      "sha256": "2209365d6f3db228a623ec90bb30d2b548c2ec09c46970f5ea663d8dae69ecb3"
+    },
+    {
+      "path": "docs/canonical-v2/manifests/story-chapters.v2.yaml",
+      "action": "ADD",
+      "sizeBytes": 3205,
+      "sha256": "60f7231f7ff2d86e20837875020842c044616de9271ac76638d59958243dabde"
+    },
+    {
+      "path": "docs/design-reference/visual-library/manifest.json",
+      "action": "ADD",
+      "sizeBytes": 12175,
+      "sha256": "3b39e43cf79216e0143f6fc9fd9dd39d68a50f07f15bd63f3175ee556eba4d08"
+    },
+    {
+      "path": "docs/design-reference/visual-library/musical/MIGRATION_NOTES.md",
+      "action": "ADD",
+      "sizeBytes": 1034,
+      "sha256": "fbb0cefa74c57ccc68734d8856bc97da2974d500cc03b538b0420bbe5c22ad89"
+    },
+    {
+      "path": "docs/design-reference/visual-library/musical/composer/COMPOSER_CONTRACT.md",
+      "action": "ADD",
+      "sizeBytes": 3901,
+      "sha256": "bd61e82baf248cb99b9f3bc734c0623dfa98b4638f8289cd6937d0f90d118a45"
+    },
+    {
+      "path": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-accidental-flat-master.svg",
+      "action": "ADD",
+      "sizeBytes": 3217,
+      "sha256": "2ac206d58b2c90709595653e79f56a5acb558f9e8379ec2db81f9c16909823ff"
+    },
+    {
+      "path": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-accidental-natural-master.svg",
+      "action": "ADD",
+      "sizeBytes": 2406,
+      "sha256": "77ea774437b79958a86e61eddd98912cd4c350a2dab7015ce63329669750cb05"
+    },
+    {
+      "path": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-accidental-sharp-master.svg",
+      "action": "ADD",
+      "sizeBytes": 3305,
+      "sha256": "1306551170b06814ae1874cfa7b759c1f3269878bd46516f0d1d4852e0f75227"
+    },
+    {
+      "path": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-eighth-flag-master.svg",
+      "action": "ADD",
+      "sizeBytes": 2935,
+      "sha256": "ca10cf10414caf67584de93ab91b42b125f45848fe9d09beeb6491d0b74a04f3"
+    },
+    {
+      "path": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-notehead-filled-master.svg",
+      "action": "ADD",
+      "sizeBytes": 2159,
+      "sha256": "37f888799e03c4f2274b02275a7e742b69ef228683bdabbc142ca5485d82b8c1"
+    },
+    {
+      "path": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-notehead-open-master.svg",
+      "action": "ADD",
+      "sizeBytes": 4485,
+      "sha256": "c0a69eba08fa256883469c96c63abede90074b0afa4cc613eb4ee8fb0578cc50"
+    },
+    {
+      "path": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-sixteenth-double-flag-master.svg",
+      "action": "ADD",
+      "sizeBytes": 4583,
+      "sha256": "e69df994c6ec4369f80f57a08cb686cac8838f417a13798123d114cb650a7446"
+    },
+    {
+      "path": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-treble-clef-master.svg",
+      "action": "ADD",
+      "sizeBytes": 12709,
+      "sha256": "4d88345cb486a5f5aa5012adfa5b8ff5b373f30d5e51ce74c3236ac770e66f17"
+    },
+    {
+      "path": "docs/design-reference/visual-library/musical/renderer/MUSIC_VISUAL_LAB.md",
+      "action": "ADD",
+      "sizeBytes": 1426,
+      "sha256": "d6f9523efd2cc0f60cc11a17db6dade7ffa9b8decfd406e5d150668d09036163"
+    },
+    {
+      "path": "docs/design-reference/visual-library/musical/renderer/RENDERER_CONTRACT.md",
+      "action": "ADD",
+      "sizeBytes": 4107,
+      "sha256": "1692f3489a3de1fe43362a2ff9f74b0f88d22a0ee17867c0da6b0da0700e8426"
+    },
+    {
+      "path": "openspec/changes/implement-music-system-v0-1/.openspec.yaml",
+      "action": "ADD",
+      "sizeBytes": 40,
+      "sha256": "cfa0dd24ffbc3529beee2a707cfd385b458247b1b5cca61fbcc99f934e83600e"
+    },
+    {
+      "path": "openspec/changes/implement-music-system-v0-1/design.md",
+      "action": "ADD",
+      "sizeBytes": 5047,
+      "sha256": "1e719c0e5916c4a22cd6e6fd345e3df3e41719efe0b72c1764c668aae13517b2"
+    },
+    {
+      "path": "openspec/changes/implement-music-system-v0-1/proposal.md",
+      "action": "ADD",
+      "sizeBytes": 2691,
+      "sha256": "6d0f8d730f18554ad8bfea23306da3ea4f7939b27360c31ff57058e81aa9bca6"
+    },
+    {
+      "path": "openspec/changes/implement-music-system-v0-1/specs/music-renderer/spec.md",
+      "action": "ADD",
+      "sizeBytes": 3161,
+      "sha256": "69599258bfac276c421666aa83b70b94ff56047c5387ea03c51eaa1a4addf996"
+    },
+    {
+      "path": "openspec/changes/implement-music-system-v0-1/specs/music-visual-lab/spec.md",
+      "action": "ADD",
+      "sizeBytes": 1721,
+      "sha256": "e0ca839a7d06cc5f7845efa5cd0b70b0a058b3c9ddb8c03af89b5e3c93a37f9e"
+    },
+    {
+      "path": "openspec/changes/implement-music-system-v0-1/specs/procedural-score-composer/spec.md",
+      "action": "ADD",
+      "sizeBytes": 2634,
+      "sha256": "36b668b58b1e9bc3270e15b389957cff4067d931a0e02a36f0096f4e2c5419ac"
+    },
+    {
+      "path": "openspec/changes/implement-music-system-v0-1/tasks.md",
+      "action": "ADD",
+      "sizeBytes": 5556,
+      "sha256": "a75597fb79c7d135df01e49efe18e5010c3977f8e3be6b7e6edc15c325734ea9"
+    },
+    {
+      "path": "openspec/changes/rebuild-scroll-driven-wflyer-v2/.openspec.yaml",
+      "action": "ADD",
+      "sizeBytes": 40,
+      "sha256": "cfa0dd24ffbc3529beee2a707cfd385b458247b1b5cca61fbcc99f934e83600e"
+    },
+    {
+      "path": "openspec/changes/rebuild-scroll-driven-wflyer-v2/design.md",
+      "action": "ADD",
+      "sizeBytes": 1620,
+      "sha256": "538c0bd42bade2252fb8222b20f961127d175ec5dc84e83bb237758046efebba"
+    },
+    {
+      "path": "openspec/changes/rebuild-scroll-driven-wflyer-v2/proposal.md",
+      "action": "ADD",
+      "sizeBytes": 1736,
+      "sha256": "6fc26e027b1d629b8dbf05d2414badbec578945eb766a0e281419ee3fee848d4"
+    },
+    {
+      "path": "openspec/changes/rebuild-scroll-driven-wflyer-v2/specs/continuous-dual-score/spec.md",
+      "action": "ADD",
+      "sizeBytes": 690,
+      "sha256": "61afc05a55aaec751e4b140c2cee59d622d3c373c105c86e5044b81bbfa1f237"
+    },
+    {
+      "path": "openspec/changes/rebuild-scroll-driven-wflyer-v2/specs/persona-easter-eggs/spec.md",
+      "action": "ADD",
+      "sizeBytes": 462,
+      "sha256": "97b593e8f4738ba323346dc8a18644f3d65b9ddf5f4bb42e6eb1271190781167"
+    },
+    {
+      "path": "openspec/changes/rebuild-scroll-driven-wflyer-v2/specs/professional-portfolio-presentation/spec.md",
+      "action": "ADD",
+      "sizeBytes": 515,
+      "sha256": "c0dfcdfd9074a7471e66f816de1097c9174ce4710e3f6a99e6882dc7cf14c4d1"
+    },
+    {
+      "path": "openspec/changes/rebuild-scroll-driven-wflyer-v2/specs/responsive-story-mode/spec.md",
+      "action": "ADD",
+      "sizeBytes": 521,
+      "sha256": "827bd709a80bca1685fa412393ed8c78fdee500eb91c367b0d80341d36843b4b"
+    },
+    {
+      "path": "openspec/changes/rebuild-scroll-driven-wflyer-v2/specs/scroll-driven-portfolio-landing/spec.md",
+      "action": "ADD",
+      "sizeBytes": 976,
+      "sha256": "00a2bceb7bb5823229169982849930e9091b7dd60352c587de953cbf746f3df7"
+    },
+    {
+      "path": "openspec/changes/rebuild-scroll-driven-wflyer-v2/tasks.md",
+      "action": "ADD",
+      "sizeBytes": 2088,
+      "sha256": "6dd338e45249571abfbb629dbbb77866f56b0e3657c3ccce72a9aac06afb9c00"
+    },
+    {
+      "path": "openspec/specs/accessible-navigation-lifecycle/spec.md",
+      "action": "REPLACE",
+      "sizeBytes": 1056,
+      "sha256": "4bb4a7ba5e2a5eebac30ffd8ee5051c9bf758c7c4273ee7aa39b24aacb1e647a",
+      "sourceSha256": "2483c4649b3b8c34b5da7079534c738b68e47460a186a380ea53be778a7c5f3b",
+      "contentChanged": true
+    },
+    {
+      "path": "openspec/specs/brand-opening-motion/spec.md",
+      "action": "REPLACE",
+      "sizeBytes": 1046,
+      "sha256": "4a554f63f93736ec981b5a5d18df0000097c1f4c61216ed9623ca2a5ae6f50fc",
+      "sourceSha256": "f028278d50baf2c0f695693b55d8a8185a7a5b1978a96ba1005bd586d74adebb",
+      "contentChanged": true
+    },
+    {
+      "path": "openspec/specs/interactive-application-demo/spec.md",
+      "action": "REPLACE",
+      "sizeBytes": 996,
+      "sha256": "9269797de33568bdc9cf0399c596e331b55e83ec887e811c5ca8c19d93313610",
+      "sourceSha256": "f7ea64234ce2050a77cc8c5410ae8a9a4a186b52d919fcb0732f3cb6684195d8",
+      "contentChanged": true
+    },
+    {
+      "path": "openspec/specs/score-transition-navigation/spec.md",
+      "action": "REPLACE",
+      "sizeBytes": 1072,
+      "sha256": "5ba66df9d1cc90c525f22976b8aeae6c6a05576cb57e3f30ac51d956181b3263",
+      "sourceSha256": "9383c237f108c76f0bab5784dcc48f38d99336ee580d6c20c001cfaf8b703a70",
+      "contentChanged": true
+    },
+    {
+      "path": "src/assets/visuals/musical/wf-music-accidental-flat.svg",
+      "action": "ADD",
+      "sizeBytes": 3245,
+      "sha256": "005894cfdc22e462302ec142dbb1b7fd6641f2e714e47481fcdcbfddf241cfcb"
+    },
+    {
+      "path": "src/assets/visuals/musical/wf-music-accidental-natural.svg",
+      "action": "ADD",
+      "sizeBytes": 2434,
+      "sha256": "8e316378a06088afb4bd528b2b64f31424abc2282d60a632cdccd2b1d0d463af"
+    },
+    {
+      "path": "src/assets/visuals/musical/wf-music-accidental-sharp.svg",
+      "action": "ADD",
+      "sizeBytes": 3334,
+      "sha256": "63108db9625ded7c712c8a6cfca9ee644d166a2ab81ad62ea478ea89b1ac8222"
+    },
+    {
+      "path": "src/assets/visuals/musical/wf-music-eighth-flag.svg",
+      "action": "ADD",
+      "sizeBytes": 2964,
+      "sha256": "b57a19e3a299abde7f300f5a32ed91bedf86d530cc7528eaef965394809e0bad"
+    },
+    {
+      "path": "src/assets/visuals/musical/wf-music-notehead-filled.svg",
+      "action": "ADD",
+      "sizeBytes": 2188,
+      "sha256": "026c358f82ef3e1f4c8532584570e7c9756748d823a02c6d03c8b0c437e0421f"
+    },
+    {
+      "path": "src/assets/visuals/musical/wf-music-notehead-open.svg",
+      "action": "ADD",
+      "sizeBytes": 4514,
+      "sha256": "2655c9bfb810b223431aa2bf74e17902f223da24d1034c7708836d7b07693e1c"
+    },
+    {
+      "path": "src/assets/visuals/musical/wf-music-sixteenth-double-flag.svg",
+      "action": "ADD",
+      "sizeBytes": 4612,
+      "sha256": "59df5110560ec9f8542c38cc4c7e2b84d11a9353f284958a45fa4d6674dd682f"
+    },
+    {
+      "path": "src/assets/visuals/musical/wf-music-treble-clef.svg",
+      "action": "ADD",
+      "sizeBytes": 12737,
+      "sha256": "44a96b7cdcf968cf02c4f12673ed848fff387836f56e1fcb9a74070ae4c9064d"
+    }
+  ]
+}

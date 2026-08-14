@@ -1,0 +1,31 @@
+version: "2.0"
+status: open
+parameters:
+  horizontalModeEligibility:
+    status: calibration
+    approvedRule: considers width height pointer/context and reduced-motion
+    exactValue: null
+  mobileActiveChapterThreshold:
+    status: calibration
+    exactValue: null
+  app04MobileActivationThreshold:
+    status: calibration
+    exactValue: null
+  storyChapterWeights:
+    status: calibration
+    exactValue: null
+  scorePathControlPoints:
+    status: human-visual-approval-required
+    exactValue: null
+  musicGlyphMetricsAnchors:
+    status: music-gate-b-human
+    manifest: docs/design-reference/visual-library/manifest.json
+  composerWeights:
+    status: music-visual-lab-calibration
+    exactValue: null
+  personaAsset:
+    status: pending-owner-approved-asset
+  app04MediaAssets:
+    status: pending-owner-approved-assets
+  publicCopy:
+    status: semantic-intent-approved-final-editorial-review-pending
