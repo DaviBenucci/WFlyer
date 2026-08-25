@@ -23,7 +23,7 @@
 
 | Path | Action | Notes |
 |---|---|---|
-| `src/app/page.tsx` | REPLACE | semantic v2 story host |
+| `src/app/page.tsx` | REPLACE AT APPROVED CUTOVER | semantic v2 story host; keep the legacy public `/` unchanged through isolated Phase 4 |
 | `src/app/page.module.css` | REPLACE | new vertical fallback/horizontal stage |
 | `src/components/experience/SiteExperienceShell.tsx` | REPLACE/RENAME AFTER CUTOVER | route coordinator becomes story lifecycle shell |
 | `ScoreTransitionLayer.tsx` | REMOVE AFTER CUTOVER | no route overlay in v2 landing |
@@ -42,7 +42,10 @@
 
 | Path | Action | Notes |
 |---|---|---|
-| `BrandIntroController.tsx` | REFACTOR | readiness + positioning + fail-open; preserve approved vector choreography where compatible |
+| `BrandIntroController.tsx` | KEEP LEGACY THROUGH PHASE 4; REPLACE/REFACTOR AT CUTOVER | retain public `/` rollback behavior while parallel bootstrap is validated |
+| `src/lib/story/bootstrap/**` | ADD | pure readiness, semantic destination, versioned history envelope, timing, and projection-positioning contracts |
+| `StoryBootstrapExperience.tsx` | ADD PARALLEL | owns overlay, interaction locks, readiness effects, skip/Escape, fail-open, and exact cleanup |
+| `/__visual-lab/story/bootstrap` | ADD DEV-ONLY | Phase-4 composition and validation surface; production must fail closed |
 | `LocalRevealController.tsx` | REFACTOR/REDUCE | local finite reveals only; avoid competing scroll authority |
 | intro tests/stories | MIGRATE | retain skip/session/recovery, replace fixed target assumptions as required |
 
@@ -76,7 +79,7 @@
 | `/sobre` | REFACTOR | personal About + Persona |
 | `/servicos` and details | KEEP/REFINE | personal voice and approved offers |
 | `/processo` | KEEP/REFINE | approved four stages |
-| `/portfolio` | KEEP URL/REFINE | public label Projects; authorized cases |
+| `/portfolio` and allowlisted `/portfolio/[slug]` | KEEP URL/REFINE + ADD DETAILS | public label Projects; authorized cases only; invalid/nonpublic slugs fail closed |
 | `/contato` | KEEP/REFINE | secure conversion page |
 | application routes | KEEP/REFINE | approved public content; no internal details |
 | legal/accessibility routes | KEEP | update naming references only if necessary |

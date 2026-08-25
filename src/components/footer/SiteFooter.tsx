@@ -17,10 +17,10 @@ const applicationLinks = [
 ] as const;
 
 const institutionalLinks = [
-  { href: "/sobre", label: "Empresa" },
+  { href: "/sobre", label: "Sobre" },
   { href: "/servicos", label: "Serviços" },
   { href: "/processo", label: "Processo" },
-  { href: "/portfolio", label: "Portfólio" },
+  { href: "/portfolio", label: "Projetos" },
   { href: "/contato", label: "Contato" },
 ] as const;
 
@@ -105,8 +105,8 @@ export function SiteFooter() {
           <FooterLinkList links={applicationLinks} />
         </nav>
 
-        <nav aria-label="Empresa no rodapé" className={styles.column}>
-          <h2>Empresa</h2>
+        <nav aria-label="Trabalho profissional no rodapé" className={styles.column}>
+          <h2>Trabalho profissional</h2>
           <FooterLinkList links={institutionalLinks} />
         </nav>
 
@@ -117,7 +117,7 @@ export function SiteFooter() {
       </Container>
 
       <Container className={styles.bottom}>
-        <span>© W_Flyer. Conteúdo institucional.</span>
+        <span>© W_Flyer. Portfólio profissional.</span>
         <span>
           <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
           {" · "}

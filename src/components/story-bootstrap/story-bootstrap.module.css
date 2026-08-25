@@ -1,0 +1,115 @@
+.root {
+  display: contents;
+}
+
+.cover {
+  position: fixed;
+  z-index: var(--wf-z-intro);
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 44%,
+      color-mix(in oklab, var(--wf-primary) 9%, transparent),
+      transparent 34rem
+    ),
+    var(--wf-bg);
+  color: var(--wf-text);
+  opacity: 1;
+  isolation: isolate;
+  animation: bootstrapFailOpen 1ms linear 5s forwards;
+}
+
+.cover[data-revealing="true"] {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms var(--wf-ease-out);
+}
+
+.stage {
+  display: grid;
+  justify-items: center;
+  gap: var(--wf-space-6);
+  inline-size: min(78vw, 30rem);
+  color: var(--wf-text);
+}
+
+.symbol {
+  inline-size: clamp(8rem, 22vw, 14rem);
+  filter: drop-shadow(0 1rem 2rem color-mix(in oklab, var(--wf-primary) 18%, transparent));
+}
+
+.wordmark {
+  font-family: var(--wf-font-display);
+  font-size: clamp(2rem, 7vw, 4rem);
+  font-weight: var(--wf-font-weight-medium);
+  letter-spacing: var(--wf-tracking-display);
+  line-height: var(--wf-line-height-title);
+}
+
+.pulse {
+  inline-size: min(18rem, 62vw);
+  block-size: 2px;
+  overflow: hidden;
+  border-radius: var(--wf-radius-pill);
+  background: var(--wf-border);
+}
+
+.pulse::after {
+  display: block;
+  inline-size: 42%;
+  block-size: 100%;
+  border-radius: inherit;
+  background: var(--wf-primary);
+  content: "";
+  animation: bootstrapPulse 1200ms var(--wf-ease-in-out) infinite alternate;
+}
+
+.skip {
+  position: absolute;
+  inset: auto var(--wf-space-6) var(--wf-space-6) auto;
+  min-inline-size: var(--wf-control-min-size);
+  min-block-size: var(--wf-control-min-size);
+  padding: var(--wf-space-3) var(--wf-space-4);
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-pill);
+  background: var(--wf-surface-elevated);
+  box-shadow: var(--wf-shadow-soft);
+  color: var(--wf-text);
+  font-weight: var(--wf-font-weight-bold);
+  cursor: pointer;
+}
+
+@keyframes bootstrapPulse {
+  from {
+    transform: translateX(-5%);
+  }
+
+  to {
+    transform: translateX(145%);
+  }
+}
+
+/* The fixed SSR cover must never trap a no-JavaScript document. */
+@keyframes bootstrapFailOpen {
+  to {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (width < 48rem) {
+  .skip {
+    inset: auto 50% var(--wf-space-6) auto;
+    transform: translateX(50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse::after {
+    animation: none;
+  }
+}

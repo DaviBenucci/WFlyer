@@ -24,7 +24,7 @@ describe("SiteHeader", () => {
       screen.getByRole("navigation", { name: "Navegação da aplicação" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("navigation", { name: "Navegação institucional" }),
+      screen.getByRole("navigation", { name: "Navegação profissional" }),
     ).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: "Aplicação" })[0]).toHaveAttribute(
       "href",
@@ -36,10 +36,15 @@ describe("SiteHeader", () => {
       })[0],
     ).toHaveAttribute("href", "/aplicacao-wflyer/como-funciona");
     expect(
-      screen.getAllByRole("link", {
-        name: /Acessar app/u,
-      })[0],
-    ).toHaveAttribute("href", "https://app.wflyer.com.br");
+      screen.queryByRole("link", { name: /Acessar (?:app|W_Flyer)/u }),
+    ).not.toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: "Sobre" })[0]).toHaveAttribute(
+      "href",
+      "/sobre",
+    );
+    expect(
+      screen.getAllByRole("link", { name: "Projetos" })[0],
+    ).toHaveAttribute("href", "/portfolio");
     expect(
       screen.getAllByRole("link", {
         name: "W_Flyer — voltar à página inicial",
@@ -59,16 +64,16 @@ describe("SiteHeader", () => {
     ).toHaveLength(2);
     expect(
       container.querySelectorAll("[data-brand-intro-header-score]"),
-    ).toHaveLength(8);
+    ).toHaveLength(7);
     expect(
       container.querySelectorAll("[data-brand-intro-header-score-lines]"),
-    ).toHaveLength(8);
+    ).toHaveLength(7);
     expect(
       container.querySelectorAll("[data-brand-intro-header-score-detail]"),
-    ).toHaveLength(24);
+    ).toHaveLength(21);
     expect(
       container.querySelectorAll("[data-brand-intro-header-label]"),
-    ).toHaveLength(8);
+    ).toHaveLength(7);
   });
 
   it("indica Processo como subcompasso ativo de Serviços", () => {

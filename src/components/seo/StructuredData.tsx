@@ -30,12 +30,17 @@ export function SiteStructuredData() {
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
-            "@id": `${siteConfig.url}/#organization`,
-            name: siteConfig.name,
+            "@type": "Person",
+            "@id": `${siteConfig.url}/#owner`,
+            name: siteConfig.ownerName,
             url: siteConfig.url,
             email: siteConfig.email,
             sameAs: [siteConfig.social.instagram, siteConfig.social.github],
+          },
+          {
+            "@type": "Brand",
+            "@id": `${siteConfig.url}/#brand`,
+            name: siteConfig.name,
           },
           {
             "@type": "WebSite",
@@ -44,7 +49,10 @@ export function SiteStructuredData() {
             url: siteConfig.url,
             inLanguage: "pt-BR",
             publisher: {
-              "@id": `${siteConfig.url}/#organization`,
+              "@id": `${siteConfig.url}/#owner`,
+            },
+            brand: {
+              "@id": `${siteConfig.url}/#brand`,
             },
           },
         ],
@@ -99,7 +107,7 @@ export function ServiceStructuredData({
         description,
         url: absoluteUrl(route),
         provider: {
-          "@id": `${siteConfig.url}/#organization`,
+          "@id": `${siteConfig.url}/#owner`,
         },
       }}
     />

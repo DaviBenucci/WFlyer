@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 
 const routes = [
   "/",
@@ -14,11 +14,38 @@ const routes = [
   "/servicos/criacao-de-aplicacoes",
   "/servicos/integracoes",
   "/servicos/solucoes-sob-medida",
+  "/portfolio/w-flyer",
+  "/portfolio/msn-distribuidora",
+  "/portfolio/msn-suprimentos",
   "/politica-de-privacidade",
   "/politica-de-cookies",
   "/termos-de-uso",
   "/acessibilidade",
 ] as const;
+
+async function releaseRetainedHomeIntro(page: Page) {
+  await page.waitForFunction(() => {
+    const home = document.querySelector<HTMLElement>(
+      "[data-brand-intro-home-state]",
+    );
+
+    return (
+      home?.dataset.brandIntroHomeState === "ready" ||
+      document.documentElement.dataset.brandIntroActive === "true"
+    );
+  });
+
+  if (
+    (await page.locator("html").getAttribute("data-brand-intro-active")) ===
+    "true"
+  ) {
+    await page.keyboard.press("Escape");
+  }
+
+  await expect(
+    page.locator('[data-brand-intro-home-state="ready"]'),
+  ).toHaveCount(1);
+}
 
 for (const route of routes) {
   test(`${route} renderiza diretamente com SEO e navegação por teclado`, async ({
@@ -29,6 +56,7 @@ for (const route of routes) {
     });
 
     expect(response?.ok()).toBe(true);
+    if (route === "/") await releaseRetainedHomeIntro(page);
     await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
     await expect(page.getByRole("main")).toBeVisible();
     await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);

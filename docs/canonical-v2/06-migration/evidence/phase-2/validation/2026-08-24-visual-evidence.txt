@@ -1,0 +1,27 @@
+Phase: P2 — Static Vertical v2 Skeleton
+Capture completed: 2026-08-24T15:27:54-03:00
+Command: NEXT_TELEMETRY_DISABLED=1 node scripts/capture-phase-2-static-evidence.mjs
+Exit code: 0
+Result: PASS — 4/4 deterministic full-page RGB PNG captures.
+
+01-static-v2-mobile-390x844.png
+  dimensions: 390x13241
+  sha256: 92bbd924a921ab8ad70b65ab40ac4f3650e35675abd5a71c79d51330571d6489
+
+02-static-v2-tablet-768x1024.png
+  dimensions: 768x11079
+  sha256: 75aab82d129c584feccd0a716c65d848e2ddd71ce04e850b3dd231b2a79a9d48
+
+03-static-v2-desktop-1536x1024.png
+  dimensions: 1536x13142
+  sha256: d6a6bc8282796d8316fa7e35271492560766c1072ca88f63b2bebbfa390593f7
+
+04-static-v2-reduced-motion-1536x1024.png
+  dimensions: 1536x13142
+  sha256: d6a6bc8282796d8316fa7e35271492560766c1072ca88f63b2bebbfa390593f7
+
+The desktop and reduced-motion images are byte-identical by design: Phase 2
+contains no advanced motion or hidden motion-only state. The captures were
+visually inspected for order, legibility, placeholder treatment, terminal and
+footer separation, and gross overflow. They are implementation evidence, not
+approved visual references or public cutover authorization.

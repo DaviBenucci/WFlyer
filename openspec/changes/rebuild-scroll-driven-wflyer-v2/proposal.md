@@ -7,6 +7,8 @@ The current website is a completed implementation of a superseded route-per-chap
 - Reposition public language from company/institutional to personal professional portfolio/services.
 - Rebuild `/` as a scroll-driven bifurcated story with Home origin, application left, professional right.
 - Preserve detailed routes as independent long-form surfaces.
+- Add a typed, geometry-free content and publication domain for the preferred
+  v2 detailed routes while retaining legacy route compatibility until cutover.
 - Replace route-transition overlays/previous-next controls with native-scroll master progress and header traversal.
 - Add responsive vertical story order and reduced-motion fallback.
 - Integrate continuous score paths only after Music System Gates A/B/C.
@@ -32,4 +34,4 @@ The current website is a completed implementation of a superseded route-per-chap
 
 ## Impact
 
-Major impact to Home, header/navigation, story lifecycle, music presentation, tablet/demo, content terminology, tests, and motion. Detailed routes, Contact security, deployment, legal routes, theme, Cloudflare/Napoleon, and the separate application remain protected.
+Major impact to Home, header/navigation, story lifecycle, music presentation, tablet/demo, content terminology, detailed-route contracts, tests, and motion. Contact security, deployment, legal routes, theme, Cloudflare/Napoleon, and the separate application remain protected.

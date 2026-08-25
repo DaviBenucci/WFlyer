@@ -1,4 +1,5 @@
 import type { AuxiliaryRoute, ChapterId, ChapterRoute } from "@/config/chapters";
+import { CONTACT_PROJECT_TYPES } from "@/content/public";
 
 export type ContentIconName =
   | "applications"
@@ -42,10 +43,10 @@ export const chapterLabels = {
   application: "Aplicação",
   "application-how-it-works": "Como funciona",
   "application-benefits": "Benefícios",
-  company: "Empresa",
+  company: "Sobre",
   services: "Serviços",
   process: "Processo",
-  portfolio: "Portfólio",
+  portfolio: "Projetos",
   contact: "Contato",
 } as const satisfies Record<ChapterId, string>;
 
@@ -408,15 +409,7 @@ export const contactContent = {
   emailCta: "Enviar e-mail",
 } as const;
 
-export const contactProjectTypes = [
-  { label: "Site institucional", value: "site-institucional" },
-  { label: "Landing page", value: "landing-page" },
-  { label: "Aplicação web", value: "aplicacao-web" },
-  { label: "Integração", value: "integracao" },
-  { label: "Automação", value: "automacao" },
-  { label: "Solução personalizada", value: "solucao-personalizada" },
-  { label: "Outro", value: "outro" },
-] as const;
+export const contactProjectTypes = CONTACT_PROJECT_TYPES;
 
 export type ContactProjectType =
   (typeof contactProjectTypes)[number]["value"];

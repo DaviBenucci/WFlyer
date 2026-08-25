@@ -1,38 +1,45 @@
 import {
   ChapterPage,
-  ProjectGrid,
+  PageSection,
+  ProjectListing,
 } from "@/components/pages";
 import { BreadcrumbStructuredData } from "@/components/seo";
 import { createPageMetadata } from "@/config/seo";
-import { portfolioContent } from "@/content/site-content";
+import {
+  getFeaturedPublicProjects,
+  PHASE3_EDITORIAL_STATUS,
+  PUBLIC_STORY_CONTENT,
+} from "@/content/public";
+
+const content = PUBLIC_STORY_CONTENT["professional-projects"];
 
 export const metadata = createPageMetadata("/portfolio");
 
 export default function PortfolioPage() {
+  const projects = getFeaturedPublicProjects();
+
   return (
     <>
       <BreadcrumbStructuredData
         items={[
           { label: "Home", route: "/" },
-          { label: portfolioContent.title, route: "/portfolio" },
+          { label: "Projetos", route: "/portfolio" },
         ]}
       />
       <ChapterPage
         chapterId="portfolio"
-        description={portfolioContent.description}
-        eyebrow={portfolioContent.eyebrow}
-        title={portfolioContent.title}
+        description={content.description}
+        eyebrow={content.eyebrow}
+        status={PHASE3_EDITORIAL_STATUS}
+        title={content.title}
       >
-        <section
-          aria-labelledby="projetos-title"
-          data-compact-archetype-section=""
+        <PageSection
+          description="A listagem é derivada somente do allowlist público. Registros ausentes ou não publicados não geram cartões, sitemap ou páginas detalhadas."
           id="projetos"
+          title="Projetos aprovados para publicação"
         >
-          <h2 className="wf-sr-only" id="projetos-title">
-            Projetos aprovados para a versão inicial
-          </h2>
-          <ProjectGrid projects={portfolioContent.projects} />
-        </section>
+          <ProjectListing projects={projects} />
+        </PageSection>
       </ChapterPage>
     </>
   );

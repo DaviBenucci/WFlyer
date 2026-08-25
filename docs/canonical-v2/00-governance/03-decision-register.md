@@ -89,6 +89,12 @@ The opening is readiness-driven, fail-open, session-bounded, skippable, and nonc
 
 Professional sequence is About → Services → Process → Projects → Contact. Process is a narrative chapter but not a required header item. Projects are authorized cases displayed as partially overlapped hand/fan cards on desktop and a staggered vertical stack on mobile. Hover/focus raises and foregrounds the selected card.
 
+**Phase-3 route clarification:** APPROVED by repository owner instruction on
+2026-08-24. `/portfolio` remains the stable current-release listing URL;
+allowlisted details use `/portfolio/[slug]`. This is an additive detail
+contract, not approval to migrate the namespace to `/projetos`. Unknown or
+nonpublic slugs fail closed and remain absent from sitemap output.
+
 ## ADR-035 — Humanized hooded W_Flyer Persona
 
 **Status:** APPROVED CONCEPT / FINAL ASSET PENDING

@@ -1,0 +1,9 @@
+Phase: P2 — Static Vertical v2 Skeleton
+Recorded at: 2026-08-24T15:51:12-03:00
+Command: pnpm prepare:standalone
+Exit code: 0
+Result: PASS
+
+Public assets and Next static assets were copied into `.next/standalone`; the
+standalone package completed without including prohibited design-reference
+material.

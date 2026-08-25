@@ -6,43 +6,43 @@ const mainPageContracts = [
   {
     archetype: "product-demo",
     route: "/aplicacao-wflyer",
-    selector: "[data-application-demo]",
+    selector: "main #demonstracao",
     count: 1,
   },
   {
     archetype: "editorial-sequence",
     route: "/aplicacao-wflyer/como-funciona",
-    selector: '[data-step-sequence="application"] > ol > li',
+    selector: "main #etapas article",
     count: 5,
   },
   {
     archetype: "editorial-benefits-terminal",
     route: "/aplicacao-wflyer/beneficios",
-    selector: "[data-benefits-grid] > li",
-    count: 6,
+    selector: "main #beneficios article",
+    count: 4,
   },
   {
     archetype: "editorial-sequence",
     route: "/sobre",
-    selector: "[data-editorial-pillars] > li",
+    selector: "main #perspectiva article",
     count: 3,
   },
   {
     archetype: "service-grid",
     route: "/servicos",
-    selector: "[data-service-grid] > li",
+    selector: "main #categorias article",
     count: 4,
   },
   {
     archetype: "process-timeline",
     route: "/processo",
-    selector: '[data-step-sequence="institutional"] > ol > li',
+    selector: "main #etapas article",
     count: 4,
   },
   {
     archetype: "portfolio-grid",
     route: "/portfolio",
-    selector: "[data-project-grid] > li",
+    selector: "main [data-project-list] article",
     count: 3,
   },
   {
@@ -69,20 +69,19 @@ for (const contract of mainPageContracts) {
   });
 }
 
-test("a Aplicação usa tablet DOM interativo, copy conservadora e faixa de cinco itens", async ({
+test("a Aplicação preserva o contrato público sem restaurar o tablet interativo", async ({
   page,
 }) => {
   await page.goto("/aplicacao-wflyer");
 
-  const preview = page.locator("[data-application-demo]");
-  await expect(preview).toBeVisible();
-  await expect(preview.locator("img, canvas")).toHaveCount(0);
-  await expect(preview.locator("[data-demo-score]")).toHaveCount(1);
-  await expect(preview.locator("select")).toHaveCount(4);
-  await expect(preview.getByRole("button", { name: "Transpor" })).toBeVisible();
-  await expect(page.locator("[data-feature-strip] > li")).toHaveCount(5);
-  await expect(page.getByText("Produto em desenvolvimento.")).toBeVisible();
-  await expect(page.getByText(/sem envio de arquivos, rede/u)).toBeVisible();
+  const main = page.getByRole("main");
+  const demoContract = main.locator("#demonstracao");
+  await expect(demoContract).toBeVisible();
+  await expect(main.locator("select, canvas, video")).toHaveCount(0);
+  await expect(main.getByRole("button", { name: "Transpor" })).toHaveCount(0);
+  await expect(main.locator("#proposta article")).toHaveCount(3);
+  await expect(demoContract).toContainText(/WebM, MP4, poster e quadro final/u);
+  await expect(main).toContainText(/revisão humana/u);
 });
 
 test("Serviços oferece quatro destinos reais com foco equivalente ao hover", async ({
@@ -90,7 +89,7 @@ test("Serviços oferece quatro destinos reais com foco equivalente ao hover", as
 }) => {
   await page.goto("/servicos");
 
-  const links = page.locator("[data-service-grid] a");
+  const links = page.locator('main #categorias a[href^="/servicos/"]');
   await expect(links).toHaveCount(4);
 
   await links.first().focus();
@@ -99,26 +98,24 @@ test("Serviços oferece quatro destinos reais com foco equivalente ao hover", as
     "href",
     "/servicos/criacao-de-sites",
   );
-  await expect(
-    page.getByRole("link", { name: "Ver todos os serviços" }),
-  ).toHaveAttribute("href", "#categorias");
+  await expect(page.locator("main #processo article")).toHaveCount(4);
   await expect(
     page.locator('[data-score-chapter="services"]'),
   ).toHaveCount(1);
 });
 
-test("Portfólio permanece limitado aos três projetos oficiais", async ({
+test("Projetos permanece limitado aos três registros públicos autorizados", async ({
   page,
 }) => {
   await page.goto("/portfolio");
 
-  const projects = page.locator("[data-project-grid] > li");
+  const projects = page.locator("main [data-project-list] article");
   await expect(projects).toHaveCount(3);
   await expect(projects.nth(0)).toContainText("W_Flyer");
   await expect(projects.nth(1)).toContainText("MSN Distribuidora");
   await expect(projects.nth(2)).toContainText("MSN Suprimentos");
   await expect(
-    page.locator("[data-project-artwork] img"),
+    page.locator("main [data-project-list] img"),
   ).toHaveCount(0);
 });
 
@@ -221,10 +218,8 @@ for (const { contactType, route } of serviceDetailRoutes) {
     await expect(main).toHaveAttribute("data-route-kind", "auxiliary");
     await expect(main).not.toHaveAttribute("data-chapter");
     await expect(page.locator("[data-service-detail-mark]")).toHaveCount(1);
-    await expect(page.locator("[data-audience-list] > li")).toHaveCount(3);
-    await expect(
-      page.locator('[data-step-sequence="institutional"] > ol > li'),
-    ).toHaveCount(4);
+    await expect(page.locator("[data-audience-list] > li")).toHaveCount(2);
+    await expect(main.locator("#processo article")).toHaveCount(4);
     await expect(main.locator("[data-final-barline]")).toHaveCount(0);
 
     const contactLink = main.getByRole("link", {
@@ -274,7 +269,7 @@ for (const { route, updatedAt } of legalRoutes) {
       page.getByRole("navigation", { name: "Navegação da aplicação" }),
     ).toBeVisible();
     await expect(
-      page.getByRole("navigation", { name: "Navegação institucional" }),
+      page.getByRole("navigation", { name: "Navegação profissional" }),
     ).toBeVisible();
     await expect(
       page.locator(

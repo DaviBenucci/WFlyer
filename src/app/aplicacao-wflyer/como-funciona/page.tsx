@@ -1,11 +1,18 @@
 import {
+  CardGrid,
   ChapterPage,
-  StepSequence,
+  PageSection,
+  StepCard,
 } from "@/components/pages";
 import { BreadcrumbStructuredData } from "@/components/seo";
 import { ArrowIcon, LinkButton } from "@/components/ui";
 import { createPageMetadata } from "@/config/seo";
-import { howItWorksContent } from "@/content/site-content";
+import {
+  PHASE3_EDITORIAL_STATUS,
+  PUBLIC_STORY_CONTENT,
+} from "@/content/public";
+
+const content = PUBLIC_STORY_CONTENT["application-how-it-works"];
 
 export const metadata = createPageMetadata(
   "/aplicacao-wflyer/como-funciona",
@@ -29,28 +36,33 @@ export default function HowItWorksPage() {
           <LinkButton
             href="/aplicacao-wflyer/beneficios"
             trailingIcon={<ArrowIcon />}
+            variant="secondary"
           >
-            Ver benefícios
+            Conhecer os benefícios
           </LinkButton>
         }
         chapterId="application-how-it-works"
-        description={howItWorksContent.description}
-        eyebrow={howItWorksContent.eyebrow}
-        title={howItWorksContent.title}
+        description={content.description}
+        eyebrow={content.eyebrow}
+        status={PHASE3_EDITORIAL_STATUS}
+        title={content.title}
       >
-        <section
-          aria-labelledby="etapas-title"
-          data-compact-archetype-section=""
+        <PageSection
+          description="O fluxo descreve somente as cinco etapas públicas aprovadas e preserva uma revisão explícita antes de prosseguir."
           id="etapas"
+          title="Cinco etapas claras"
         >
-          <h2 className="wf-sr-only" id="etapas-title">
-            Cinco etapas claras
-          </h2>
-          <StepSequence
-            branch="application"
-            steps={howItWorksContent.steps}
-          />
-        </section>
+          <CardGrid columns={5}>
+            {content.items?.map((step, index) => (
+              <StepCard
+                description={step.description}
+                key={step.title}
+                number={step.label ?? String(index + 1).padStart(2, "0")}
+                title={step.title}
+              />
+            ))}
+          </CardGrid>
+        </PageSection>
       </ChapterPage>
     </>
   );

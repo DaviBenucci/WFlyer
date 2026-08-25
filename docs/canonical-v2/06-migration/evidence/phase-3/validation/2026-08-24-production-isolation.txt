@@ -1,0 +1,28 @@
+Phase 3 production route/isolation browser evidence — 2026-08-24
+
+Server: prepared Next standalone production package on 127.0.0.1:3000.
+
+Scope:
+
+- focused Phase-3 route/publication suite;
+- Music Visual Lab production guard;
+- static-story development-only guard;
+- Chromium, Firefox, WebKit; workers=1; retries=0.
+
+Final clean run: PASS, 24/24; Playwright `.last-run.json` status `passed`, zero
+failed tests.
+
+Evidence:
+
+- all Music Visual Lab routes returned 404 without fixture content;
+- `/__visual-lab/story` returned 404 without the story surface;
+- all three public project details resolved;
+- invalid project and service slugs returned non-indexable 404;
+- application routes retained the no-early-access/no-tablet boundary;
+- services, sitemap filtering, and narrow reduced-motion behavior passed.
+
+An initial strict-fallback implementation returned the correct 404s but made
+Next log internal `NoFallbackError` control-flow messages. The explicit public
+lookup + `notFound()` denial was retained while the noisy
+`dynamicParams=false` fallback path was removed. The final 24-test production
+run passed without those server errors.

@@ -1,6 +1,5 @@
 import type { ChapterId, ChapterRoute, HeaderItem } from "./chapters";
 import { scoreChapterById } from "./chapters";
-import { siteConfig } from "./site";
 
 export interface InternalHeaderLink {
   readonly id: HeaderItem;
@@ -9,14 +8,7 @@ export interface InternalHeaderLink {
   readonly external?: false;
 }
 
-export interface ExternalHeaderLink {
-  readonly id: "application-access";
-  readonly label: "Acessar app";
-  readonly href: typeof siteConfig.applicationUrl;
-  readonly external: true;
-}
-
-export type HeaderLink = InternalHeaderLink | ExternalHeaderLink;
+export type HeaderLink = InternalHeaderLink;
 
 export const applicationHeaderLinks = [
   {
@@ -34,18 +26,12 @@ export const applicationHeaderLinks = [
     label: "Benefícios",
     href: scoreChapterById["application-benefits"].route,
   },
-  {
-    id: "application-access",
-    label: "Acessar app",
-    href: siteConfig.applicationUrl,
-    external: true,
-  },
 ] as const satisfies readonly HeaderLink[];
 
 export const institutionalHeaderLinks = [
   {
     id: "company",
-    label: "Empresa",
+    label: "Sobre",
     href: scoreChapterById.company.route,
   },
   {
@@ -55,7 +41,7 @@ export const institutionalHeaderLinks = [
   },
   {
     id: "portfolio",
-    label: "Portfólio",
+    label: "Projetos",
     href: scoreChapterById.portfolio.route,
   },
   {

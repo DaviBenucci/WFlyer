@@ -1,0 +1,20 @@
+Phase: P2 — Static Vertical v2 Skeleton
+Recorded at: 2026-08-24T15:51:12-03:00
+Command: pnpm test
+Resolved command: vitest run --project=unit
+Exit code: 0
+Result: PASS — 64 files, 552 tests.
+
+Focused Phase-2 structural subset:
+
+  pnpm exec vitest run --project=unit \
+    tests/unit/story/manifest.test.ts \
+    src/components/story/StaticStorySkeleton.test.tsx \
+    src/components/experience/RouteAwareExperienceBoundary.test.tsx
+
+Result: PASS — 3 files, 15 tests. This verifies canonical manifest parity,
+branch/order/hash/route identity, empty geometry-free Music seams, one H1,
+placeholder boundaries, the single application-access action, and public-route
+legacy-shell preservation, including the production-disabled fail-closed
+branch. The full unit suite includes Contact and Music public-isolation
+regressions.

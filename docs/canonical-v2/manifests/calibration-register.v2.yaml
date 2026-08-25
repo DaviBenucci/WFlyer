@@ -14,6 +14,36 @@ parameters:
   storyChapterWeights:
     status: calibration
     exactValue: null
+  phase4IntroMinimumVisualDurationMs:
+    status: phase-4-operational-default
+    exactValue: 1500
+    unit: ms
+    tunable: true
+    final: false
+    pendingCalibration: later-human-motion-review
+  phase4IntroRevealDurationMs:
+    status: phase-4-operational-default
+    exactValue: 280
+    unit: ms
+    tunable: true
+    final: false
+    pendingCalibration: later-human-motion-review
+  phase4ReducedOrCompletedSessionPresentationMs:
+    status: phase-4-operational-default
+    exactValue: 0
+    unit: ms
+    appliesTo: [minimum-visual-duration, reveal-duration]
+    tunable: true
+    final: false
+    pendingCalibration: later-human-motion-review
+  phase4HardFailOpenTimeoutMs:
+    status: owner-normalized
+    exactValue: 5000
+    unit: ms
+    startsAt: bootstrap-start
+    tunable: false
+    finalForPhase4: true
+    behaviorOnExpiry: best-effort-position-release-locks-enter-degraded
   scorePathControlPoints:
     status: human-visual-approval-required
     exactValue: null

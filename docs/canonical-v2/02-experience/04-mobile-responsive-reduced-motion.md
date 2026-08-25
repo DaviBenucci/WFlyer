@@ -40,9 +40,25 @@ RUNNING → FREEZE → CAPTURE ACTIVE CHAPTER → DESTROY OWNED CONTEXT → BUIL
 
 The semantic score composition and session seed do not change.
 
+## Bootstrap positioning seam
+
+Phase-4 bootstrap resolves a semantic `StoryChapterId` before selecting physical
+geometry. Its initial projection-positioning adapter targets the native
+static/vertical document and is shared by compact, reduced-motion, and failure
+recovery paths. The adapter seam must accept later responsive projections
+without changing destination precedence, history shape, or Home semantics.
+
+Horizontal projection and responsive rebuild ownership begin in Phase 5. They
+are not Phase-4 critical readiness resources. The Phase-9 final score and Home
+score geometry are also outside Phase-4 readiness and cannot block bootstrap.
+
 ## Reduced motion
 
 - force vertical static mode;
+- resolve and position the same valid hash/history/Home destination as the
+  full-motion path before reveal;
+- use the Phase-4 `0ms` minimum/reveal operational default; this skips the
+  opening presentation, not destination/bootstrap semantics;
 - no horizontal pinning/scrub requirement;
 - score and Persona render final states;
 - header navigation uses immediate/short non-narrative positioning;

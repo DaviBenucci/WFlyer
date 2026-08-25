@@ -5,7 +5,12 @@ import {
 import { BreadcrumbStructuredData } from "@/components/seo";
 import { createPageMetadata } from "@/config/seo";
 import { siteConfig } from "@/config/site";
-import { contactContent } from "@/content/site-content";
+import {
+  PHASE3_EDITORIAL_STATUS,
+  PUBLIC_STORY_CONTENT,
+} from "@/content/public";
+
+const content = PUBLIC_STORY_CONTENT["professional-contact"];
 
 export const metadata = createPageMetadata("/contato");
 
@@ -15,14 +20,15 @@ export default function ContactPage() {
       <BreadcrumbStructuredData
         items={[
           { label: "Home", route: "/" },
-          { label: contactContent.title, route: "/contato" },
+          { label: "Contato", route: "/contato" },
         ]}
       />
       <ChapterPage
         chapterId="contact"
-        description={contactContent.description}
-        eyebrow={contactContent.eyebrow}
-        title={contactContent.title}
+        description={content.description}
+        eyebrow={content.eyebrow}
+        status={PHASE3_EDITORIAL_STATUS}
+        title={content.title}
       >
         <ContactWorkspace
           email={siteConfig.email}

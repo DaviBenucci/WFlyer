@@ -1,0 +1,15 @@
+Phase 3 unit/component validation — 2026-08-24
+
+Command: pnpm exec vitest run --project=unit
+Exit: 0
+Result: PASS
+
+Test files: 66 passed / 66
+Tests: 561 passed / 561
+
+Phase-3 additions cover semantic-domain purity, all 13 chapter records, four
+services/process stages, three public projects, synthetic unpublished
+project/service denial, application CTA boundaries, 20-route SEO registry,
+project empty state, and header semantics. The aggregate also includes the
+unchanged Contact, story, deployment, release, and Music public-isolation
+tests.

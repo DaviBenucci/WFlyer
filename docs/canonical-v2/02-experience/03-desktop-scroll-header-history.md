@@ -23,14 +23,41 @@ Automated traversal ends immediately on explicit wheel, touch, navigation key, E
 
 ## History
 
+History stores semantic identity in a typed, namespaced envelope and never
+stores a pixel offset, progress value, hash copy, or physical projection:
+
+```ts
+history.state.__wflyerStoryV2 = {
+  version: 1,
+  chapterId: StoryChapterId,
+};
+```
+
+Every write preserves foreign and Next.js-owned `history.state` fields.
+
+Phase-4 initial bootstrap may merge or refresh the validated envelope on the
+current entry with `history.replaceState` after stable or best-effort
+positioning. It never calls `pushState`, appends an entry, or rewrites the
+current pathname, search, or hash. `popstate` validates the envelope, resolves
+the semantic destination through the current projection adapter, and positions
+without any history mutation.
+
+Phase 6 owns the later story-navigation policy:
+
 - passive chapter dominance change: `history.replaceState`;
 - successful explicit header traversal: `history.pushState`;
 - cancelled traversal: no new entry;
-- `popstate`: cancel automation, resolve requested canonical target, restore scroll, derive all visual state.
+- `popstate`: cancel automation, resolve requested canonical target, restore
+  scroll, derive all visual state, and add no entry.
 
 ## Hashes
 
-Hashes represent semantic chapters, not arbitrary pixel offsets. Invalid hashes fall back to Home. A deep link is positioned before intro exit and does not traverse from Home.
+Hashes represent semantic chapters, not arbitrary pixel offsets, and are
+accepted only through the story manifest allowlist. A valid explicit landing
+hash outranks history restoration. A nonempty invalid hash falls directly back
+to Home without consulting history or mutating/removing that URL fragment. A
+deep link is positioned behind the overlay through the current projection
+adapter before intro exit and does not visibly traverse from Home.
 
 ## Active chapter
 

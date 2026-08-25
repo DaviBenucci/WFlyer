@@ -1,6 +1,5 @@
 import type { Metadata, MetadataRoute } from "next";
 
-import { absoluteUrl } from "./seo";
 import { siteConfig } from "./site";
 
 export const deploymentEnvironmentVariable =
@@ -65,6 +64,6 @@ export function createDeploymentRobotsPolicy(
       disallow: "/api/",
       userAgent: "*",
     },
-    sitemap: absoluteUrl("/sitemap.xml"),
+    sitemap: new URL("/sitemap.xml", siteConfig.url).toString(),
   };
 }

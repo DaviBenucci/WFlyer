@@ -34,7 +34,12 @@
 
 Service detail routes and legal routes remain.
 
-`/portfolio` retains the stable URL in this release; public labels use `Projetos`. A future `/projetos` URL migration requires separate explicit approval and redirect/SEO planning.
+`/portfolio` retains the stable URL in this release; public labels use `Projetos`.
+Phase 3 adds only allowlisted project details beneath that stable namespace as
+`/portfolio/[slug]`. Unknown or nonpublic project slugs fail closed as
+non-indexable `404` responses and never enter the sitemap. A future
+`/projetos` URL migration still requires separate explicit approval and
+redirect/SEO planning.
 
 ## Relationship between landing and detailed routes
 

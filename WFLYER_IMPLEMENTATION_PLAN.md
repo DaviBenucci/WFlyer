@@ -72,6 +72,12 @@ No public landing integration is allowed before Gates A, B, and C are complete.
 
 ## Phase 2 — Story v2 domain model and static vertical skeleton
 
+**Execution status:** complete; Gate 2 passed on 2026-08-24. The typed story
+model and static vertical document are available on the development-only
+`/__visual-lab/story` surface while the legacy public `/` landing remains the
+rollback baseline. Evidence is recorded under
+`docs/canonical-v2/06-migration/evidence/phase-2/`.
+
 ### Required work
 
 - Introduce v2 story types, chapter IDs, timeline labels, hash mapping, and semantic slot IDs in parallel with legacy configuration.
@@ -92,6 +98,13 @@ No public landing integration is allowed before Gates A, B, and C are complete.
 
 ## Phase 3 — Content, detailed routes, and conversion contracts
 
+**Execution status:** complete; Gate 3 passed on 2026-08-24. Typed public
+content/publication contracts, retained detailed routes, allowlisted project
+details, metadata, Contact regression protection, and production isolation
+evidence are recorded under
+`docs/canonical-v2/06-migration/evidence/phase-3/`. The legacy public `/`
+landing remains the rollback baseline; no Phase-4 readiness work has started.
+
 ### Required work
 
 - Refactor Portuguese public copy to the approved semantic intent.
@@ -111,6 +124,10 @@ No public landing integration is allowed before Gates A, B, and C are complete.
 
 ## Phase 4 — Readiness-driven intro, bootstrap, deep links, and recovery
 
+**Execution status:** complete; Gate 4 passed on 2026-08-25. The validated
+implementation remains isolated at `/__visual-lab/story/bootstrap`; public `/`
+is still the legacy rollback baseline.
+
 ### Required work
 
 - Refactor the intro from a fixed-delay authority into the approved readiness state machine.
@@ -126,6 +143,9 @@ No public landing integration is allowed before Gates A, B, and C are complete.
 - No noncritical asset blocks `STORY_READY`.
 
 ## Phase 5 — Desktop Motion Lab and native-scroll master story
+
+**Execution status:** next permitted phase; not started by the Phase-4
+closure.
 
 ### Required work
 

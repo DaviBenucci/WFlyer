@@ -1,10 +1,18 @@
 import {
+  CardGrid,
   ChapterPage,
-  StepSequence,
+  PageSection,
+  StepCard,
 } from "@/components/pages";
 import { BreadcrumbStructuredData } from "@/components/seo";
 import { createPageMetadata } from "@/config/seo";
-import { processContent } from "@/content/site-content";
+import {
+  PHASE3_EDITORIAL_STATUS,
+  PROCESS_STEPS,
+  PUBLIC_STORY_CONTENT,
+} from "@/content/public";
+
+const content = PUBLIC_STORY_CONTENT["professional-process"];
 
 export const metadata = createPageMetadata("/processo");
 
@@ -14,28 +22,27 @@ export default function ProcessPage() {
       <BreadcrumbStructuredData
         items={[
           { label: "Home", route: "/" },
-          { label: processContent.eyebrow, route: "/processo" },
+          { label: "Processo", route: "/processo" },
         ]}
       />
       <ChapterPage
         chapterId="process"
-        description={processContent.description}
-        eyebrow={processContent.eyebrow}
-        title={processContent.title}
+        description={content.description}
+        eyebrow={content.eyebrow}
+        status={PHASE3_EDITORIAL_STATUS}
+        title={content.title}
       >
-        <section
-          aria-labelledby="etapas-title"
-          data-compact-archetype-section=""
+        <PageSection
+          description="As quatro etapas explicam como o trabalho avança sem prometer resultado comercial nem esconder limites do escopo."
           id="etapas"
+          title="Quatro etapas verificáveis"
         >
-          <h2 className="wf-sr-only" id="etapas-title">
-            Etapas do trabalho
-          </h2>
-          <StepSequence
-            branch="institutional"
-            steps={processContent.steps}
-          />
-        </section>
+          <CardGrid columns={4}>
+            {PROCESS_STEPS.map((step) => (
+              <StepCard key={step.number} {...step} />
+            ))}
+          </CardGrid>
+        </PageSection>
       </ChapterPage>
     </>
   );

@@ -1,0 +1,20 @@
+Phase 3 standalone smoke — 2026-08-24
+
+Commands:
+
+1. `pnpm prepare:standalone`
+2. `WFLYER_DEPLOYMENT_ENVIRONMENT=production ... pnpm smoke:standalone`
+3. `WFLYER_DEPLOYMENT_ENVIRONMENT=production ... pnpm smoke:indexing`
+
+Exit: 0 for every command.
+
+Results:
+
+- public and Next static assets copied into the standalone package;
+- 20/20 public routes returned HTML with the main landmark, exactly one H1,
+  and the canonical URL;
+- 22 referenced static assets returned nonempty payloads;
+- custom 404 passed;
+- Contact GET returned 405 and invalid media returned safe uncached 415;
+- expected response security headers passed;
+- production robots/indexing policy passed.

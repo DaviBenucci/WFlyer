@@ -20,7 +20,10 @@ Rest → hover/focus:
 - selected card moves to foreground;
 - focus ring remains visible.
 
-Click/Enter follows the semantic card link. Hover is preview only and never the exclusive access path.
+Click/Enter follows the semantic card link to an allowlisted
+`/portfolio/[slug]` detail. Unknown or nonpublic records generate neither a
+card nor a route/sitemap entry. Hover is preview only and never the exclusive
+access path.
 
 ## Mobile
 

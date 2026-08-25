@@ -1,0 +1,46 @@
+Phase: P2 — Static Vertical v2 Skeleton
+Recorded at: 2026-08-24T15:51:12-03:00
+Environment: owned Next development server; CI=1; workers=1; retries=0
+Harness-only public key: 1x00000000000000000000AA
+Projects: Chromium, Firefox, WebKit
+Exit code: 0
+Result: PASS — 159/159.
+
+Command:
+
+  CI=1 NEXT_TELEMETRY_DISABLED=1 \
+  NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA \
+  WFLYER_TRANSITION_TEST_MODE=1 \
+  WFLYER_PLAYWRIGHT_OUTPUT_DIR=test-results/phase-2-gate/final-dev \
+  WFLYER_PLAYWRIGHT_REPORT_DIR=playwright-report/phase-2-gate/final-dev \
+  pnpm exec playwright test \
+    tests/e2e/phase02-static-story.spec.ts \
+    tests/e2e/static-routes.spec.ts \
+    tests/e2e/phase08-contact-security.spec.ts \
+    tests/a11y/phase02-static-story.a11y.spec.ts \
+    tests/a11y/static-routes.a11y.spec.ts \
+    tests/a11y/phase08-contact.a11y.spec.ts \
+    --project=chromium --project=firefox --project=webkit \
+    --workers=1 --retries=0
+
+Registration/result breakdown:
+
+- Phase-2 structural E2E: 21/21 (7 per engine).
+- Phase-2 accessibility: 9/9 (3 per engine).
+- Retained detailed/legal route E2E: 57/57 (19 per engine).
+- Retained detailed/legal route accessibility: 48/48 (16 per engine).
+- Retained Contact E2E: 15/15 (5 per engine).
+- Retained Contact accessibility: 9/9 (3 per engine).
+
+The first aggregate discovery run exposed a test-harness-only focus assumption:
+Firefox and WebKit retain fragment-target focus across reload. That run was
+157/159, with no product behavior or axe failure. The test was corrected to
+start its second keyboard sequence from a fresh document, the focused rerun was
+9/9, and the complete authoritative rerun above was 159/159.
+
+After a direct production-body audit tightened the story route's fail-closed
+chrome boundary, the complete Phase-2 development slice was rerun against the
+final source in all engines: 30/30 passed (10 per engine). The modified root
+boundary continues to choose the same retained legacy branch for all public
+paths; those paths are covered by the 129 retained-route/Contact registrations
+in the clean aggregate run above and by the final standalone smoke.

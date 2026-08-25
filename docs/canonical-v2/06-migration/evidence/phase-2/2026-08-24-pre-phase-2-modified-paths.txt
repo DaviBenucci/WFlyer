@@ -1,0 +1,45 @@
+Command: git diff --cached --name-status
+Captured: 2026-08-24T15:01:39-03:00
+
+[staged]
+(none)
+
+Command: git diff --name-status
+Captured: 2026-08-24T15:01:39-03:00
+
+[unstaged tracked]
+M	WFLYER_IMPLEMENTATION_PLAN.md
+M	docs/05-implementacao/22-music-system-v0.1-implementation-contract.md
+M	docs/07-qa/09-music-system-v0.1-validation.md
+M	docs/canonical-v2/00-governance/02-scope-status-and-terminology.md
+M	docs/canonical-v2/00-governance/03-decision-register.md
+M	docs/canonical-v2/00-governance/05-calibration-and-pending-items.md
+M	docs/canonical-v2/00-governance/06-decision-traceability.md
+M	docs/canonical-v2/02-experience/04-mobile-responsive-reduced-motion.md
+M	docs/canonical-v2/03-visual/01-continuous-dual-score-system.md
+M	docs/canonical-v2/03-visual/02-visual-asset-library.md
+M	docs/canonical-v2/04-music/01-music-renderer-v0.1.md
+M	docs/canonical-v2/04-music/02-procedural-score-composer-v0.1.md
+M	docs/canonical-v2/04-music/03-music-visual-lab-and-gates.md
+M	docs/canonical-v2/adr/ADR-025-continuous-organic-dual-score.md
+M	docs/canonical-v2/adr/ADR-026-music-renderer-v0.1.md
+M	docs/canonical-v2/adr/ADR-027-seeded-procedural-score-composer.md
+M	docs/canonical-v2/adr/ADR-028-music-visual-lab-gates.md
+M	docs/canonical-v2/adr/ADR-032-responsive-vertical-story.md
+M	docs/canonical-v2/manifests/calibration-register.v2.yaml
+M	docs/canonical-v2/manifests/implementation-phases.v2.yaml
+M	docs/design-reference/visual-library/manifest.json
+M	docs/design-reference/visual-library/musical/composer/COMPOSER_CONTRACT.md
+M	docs/design-reference/visual-library/musical/renderer/MUSIC_VISUAL_LAB.md
+M	docs/design-reference/visual-library/musical/renderer/RENDERER_CONTRACT.md
+M	graphify-out/CHECKSUMS.sha256
+M	graphify-out/GRAPH_REPORT.md
+D	openspec/changes/implement-music-system-v0-1/.openspec.yaml
+D	openspec/changes/implement-music-system-v0-1/design.md
+D	openspec/changes/implement-music-system-v0-1/proposal.md
+D	openspec/changes/implement-music-system-v0-1/specs/music-renderer/spec.md
+D	openspec/changes/implement-music-system-v0-1/specs/music-visual-lab/spec.md
+D	openspec/changes/implement-music-system-v0-1/specs/procedural-score-composer/spec.md
+D	openspec/changes/implement-music-system-v0-1/tasks.md
+M	openspec/changes/rebuild-scroll-driven-wflyer-v2/tasks.md
+M	tsconfig.json

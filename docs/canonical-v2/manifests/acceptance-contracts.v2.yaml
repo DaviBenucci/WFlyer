@@ -5,6 +5,19 @@ contracts:
   HOME-AC-003: Home is positioned before intro exit without visible jump.
   HOME-AC-004: Invalid hash falls back safely to Home.
   HOME-AC-005: Reduced motion renders complete vertical Home/story.
+  BOOTSTRAP-AC-001: Normal readiness follows INITIAL through REVEALED and fail-open terminates in usable DEGRADED.
+  BOOTSTRAP-AC-002: Phase-4 critical readiness excludes the Phase-5 master timeline and Phase-9 final score.
+  BOOTSTRAP-AC-003: Initial destination priority is valid manifest hash then validated history then Home.
+  BOOTSTRAP-AC-004: A nonempty invalid hash resolves Home without consulting history or mutating the URL.
+  BOOTSTRAP-AC-005: History uses the version-1 __wflyerStoryV2 semantic chapter envelope and preserves foreign state fields.
+  BOOTSTRAP-AC-006: Initial bootstrap may replace the current history entry only and never pushes or appends.
+  BOOTSTRAP-AC-007: Popstate positions its validated semantic destination without mutating history.
+  BOOTSTRAP-AC-008: A projection adapter positions the semantic target behind the overlay without hard-coded Home geometry.
+  BOOTSTRAP-AC-009: Normal Phase-4 presentation defaults are a 1500ms minimum and 280ms reveal.
+  BOOTSTRAP-AC-010: Reduced motion and completed-session presentation defaults are 0ms and preserve destination semantics.
+  BOOTSTRAP-AC-011: The owner-normalized 5000ms timeout releases locks and reveals usable degraded content.
+  BOOTSTRAP-AC-012: Skip Escape failure and teardown release interaction and clean every owned bootstrap resource.
+  BOOTSTRAP-AC-013: The Phase-4 bootstrap surface is development-only and public root remains legacy until cutover.
   MOTION-G-001: Native scroll is the canonical story source.
   MOTION-G-002: Wheel down from Home follows professional branch.
   MOTION-G-003: Wheel up from Home follows application branch.

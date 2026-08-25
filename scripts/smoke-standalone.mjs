@@ -24,10 +24,18 @@ const publicRoutes = [
   "/servicos/criacao-de-aplicacoes",
   "/servicos/integracoes",
   "/servicos/solucoes-sob-medida",
+  "/portfolio/w-flyer",
+  "/portfolio/msn-distribuidora",
+  "/portfolio/msn-suprimentos",
   "/politica-de-privacidade",
   "/politica-de-cookies",
   "/termos-de-uso",
   "/acessibilidade",
+];
+const prohibitedDevelopmentRoutes = [
+  "/__visual-lab/story",
+  "/__visual-lab/story/bootstrap",
+  "/__visual-lab/music",
 ];
 
 function delay(durationMs) {
@@ -265,6 +273,27 @@ try {
     throw new Error("The standalone server did not return the custom HTTP 404.");
   }
 
+  for (const route of prohibitedDevelopmentRoutes) {
+    const response = await fetch(new URL(route, baseUrl), {
+      cache: "no-store",
+      redirect: "error",
+      signal: AbortSignal.timeout(5_000),
+    });
+    const routeHtml = await response.text();
+
+    if (response.status !== 404 || !routeHtml.includes("Página não encontrada")) {
+      throw new Error(`${route} did not fail closed with the custom HTTP 404.`);
+    }
+
+    if (
+      routeHtml.includes("data-story-bootstrap") ||
+      routeHtml.includes("data-music-visual-lab") ||
+      routeHtml.includes("data-story-v2=\"phase-2\"")
+    ) {
+      throw new Error(`${route} leaked development-only fixture markup.`);
+    }
+  }
+
   const contactGetResponse = await fetch(new URL("/api/contact", baseUrl), {
     cache: "no-store",
     signal: AbortSignal.timeout(5_000),
@@ -333,7 +362,7 @@ try {
   }
 
   console.log(
-    `Standalone smoke passed: ${publicRoutes.length} public routes + ${assetUrls.size} static assets on ${baseUrl}`,
+    `Standalone smoke passed: ${publicRoutes.length} public routes + ${prohibitedDevelopmentRoutes.length} development-route 404s + ${assetUrls.size} static assets on ${baseUrl}`,
   );
 } finally {
   await terminate(child);

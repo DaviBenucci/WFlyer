@@ -1,0 +1,9 @@
+{
+  "change": "rebuild-scroll-driven-wflyer-v2",
+  "completed": 19,
+  "total": 45,
+  "firstIncompleteTaskNumber": 20,
+  "firstIncompleteTask": "Build Motion Lab with placeholder chapters",
+  "phase4TasksCompleted": [17, 18, 19],
+  "phase5Started": false
+}

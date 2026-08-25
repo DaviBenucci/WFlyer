@@ -1,0 +1,23 @@
+Phase: P2 — Static Vertical v2 Skeleton
+Recorded at: 2026-08-24T15:51:12-03:00
+Projects: Chromium, Firefox, WebKit
+Exit code: 0
+Result: PASS — 66/66 accessibility registrations in the final browser matrix.
+
+- Phase-2 story: 9/9.
+- Retained detailed/legal routes: 48/48.
+- Retained Contact states: 9/9.
+- No critical or serious axe violation in the tested light, dark, mobile,
+  desktop, and reduced-motion states.
+- The skip link is first-focusable from a fresh document and moves focus to
+  `main#main-content`.
+- Header anchors follow the canonical application → Home → professional
+  desktop navigation sequence.
+- The main document keeps all thirteen chapters visible and in the canonical
+  vertical reading order, including under reduced motion and with JavaScript
+  disabled.
+- No duplicate IDs, hidden essential content, or focusable decorative
+  scaffolding was found.
+
+The final-source post-isolation-hardening rerun repeated all nine Phase-2
+accessibility registrations across Chromium, Firefox, and WebKit: 9/9 passed.

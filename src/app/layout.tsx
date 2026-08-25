@@ -3,9 +3,10 @@ import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/footer";
 import { LocalRevealController } from "@/components/brand-intro";
-import { SiteExperienceShell } from "@/components/experience";
+import { RouteAwareExperienceBoundary } from "@/components/experience";
 import { SiteHeader } from "@/components/header";
 import { SiteStructuredData } from "@/components/seo";
+import { StoryGlobalFooter, StoryV2Header } from "@/components/story";
 import { ThemeProvider, ThemeScript, ThemeToggle } from "@/components/theme";
 import { createDeploymentRobotsMetadata } from "@/config/deployment";
 import { pageSeo } from "@/config/seo";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   description: pageSeo["/"].description,
   applicationName: siteConfig.name,
   category: "technology",
-  creator: siteConfig.name,
+  creator: siteConfig.ownerName,
   publisher: siteConfig.name,
   robots: createDeploymentRobotsMetadata(),
 };
@@ -49,17 +50,17 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body>
         <ThemeProvider>
           <SiteStructuredData />
-          <SiteExperienceShell
+          <RouteAwareExperienceBoundary
+            legacyFooter={<SiteFooter />}
+            legacyHeader={<SiteHeader themeControl={<ThemeToggle />} />}
+            legacyPrelude={<LocalRevealController />}
+            storyFooter={<StoryGlobalFooter />}
+            storyHeader={<StoryV2Header themeControl={<ThemeToggle />} />}
+            storyVisualLabEnabled={process.env.NODE_ENV !== "production"}
             testMode={process.env.WFLYER_TRANSITION_TEST_MODE === "1"}
           >
-            <LocalRevealController />
-            <a className="wf-skip-link" href="#main-content">
-              Pular para o conteúdo principal
-            </a>
-            <SiteHeader themeControl={<ThemeToggle />} />
             {children}
-            <SiteFooter />
-          </SiteExperienceShell>
+          </RouteAwareExperienceBoundary>
         </ThemeProvider>
       </body>
     </html>

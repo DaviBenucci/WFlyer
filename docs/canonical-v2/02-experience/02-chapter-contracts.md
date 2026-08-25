@@ -68,7 +68,9 @@ Each chapter contract defines: objective, content, CTA, visual elements, drawing
 6. **Timeline:** largest professional scene weight.
 7. **Desktop:** partially overlapped fan with every project identifiable.
 8. **Mobile:** staggered vertical stack, no hover dependency or horizontal carousel requirement.
-9. **Detail route:** `/portfolio` for the current release.
+9. **Detail route:** `/portfolio` for the current-release listing and
+   allowlisted `/portfolio/[slug]` details; unknown or nonpublic slugs fail
+   closed.
 10. **Entry/exit:** Process blocks → stack/fan → cards partially close and open space for Contact.
 11. **Acceptance:** authorized projects only; focus visible; selected card not clipped; keyboard/touch equivalent.
 

@@ -8,20 +8,19 @@ import {
 } from "@/config/navigation";
 
 describe("navegação principal", () => {
-  it("preserva quatro itens em cada lado do símbolo", () => {
+  it("preserva os alvos canônicos sem antecipar o acesso ao app", () => {
     expect(applicationHeaderLinks.map(({ label }) => label)).toEqual([
       "Aplicação",
       "Como funciona",
       "Benefícios",
-      "Acessar app",
     ]);
     expect(institutionalHeaderLinks.map(({ label }) => label)).toEqual([
-      "Empresa",
+      "Sobre",
       "Serviços",
-      "Portfólio",
+      "Projetos",
       "Contato",
     ]);
-    expect(mobileHeaderLinks).toHaveLength(8);
+    expect(mobileHeaderLinks).toHaveLength(7);
   });
 
   it("mantém Processo como subcapítulo de Serviços", () => {
@@ -29,12 +28,11 @@ describe("navegação principal", () => {
     expect(institutionalHeaderLinks.map(({ id }) => id)).not.toContain("process");
   });
 
-  it("expõe Acessar app como único link externo do header", () => {
+  it("não expõe links externos no header principal", () => {
     const externalLinks = mobileHeaderLinks.filter(
       (link) => "external" in link && link.external,
     );
 
-    expect(externalLinks).toHaveLength(1);
-    expect(externalLinks[0]?.href).toBe("https://app.wflyer.com.br");
+    expect(externalLinks).toHaveLength(0);
   });
 });

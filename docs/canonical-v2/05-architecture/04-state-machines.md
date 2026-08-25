@@ -3,9 +3,30 @@
 ## Story readiness
 
 ```text
-BOOTING → POSITIONING → INTRO_EXIT → STORY_READY
-   └──────── error/timeout ───────→ FAIL_OPEN_VERTICAL_READY
+INITIAL
+  → WAITING_CRITICAL
+  → RESOLVING_DESTINATION
+  → POSITIONING
+  → READY_TO_REVEAL
+  → REVEALING
+  → REVEALED
+
+any nonterminal state + critical failure/timeout/recovery condition
+  → best-effort POSITIONING
+  → DEGRADED
 ```
+
+`REVEALED` and `DEGRADED` are usable terminal states. `DEGRADED` means the
+static vertical story is revealed and interactive; it is not an error overlay.
+The legacy shorthand maps as follows: `BOOTING` = `INITIAL` through
+`RESOLVING_DESTINATION`, `INTRO_EXIT` = `READY_TO_REVEAL` plus `REVEALING`,
+`STORY_READY` = `REVEALED`, and `FAIL_OPEN_VERTICAL_READY` = `DEGRADED`.
+
+Skip/Escape bypass the presentation hold but do not bypass semantic destination
+resolution or best-effort positioning. Reduced motion and an already-completed
+session use zero-duration presentation transitions while following the same
+semantic state progression. Timeout or critical failure supersedes presentation
+timing, releases owned locks/resources, and terminates in `DEGRADED`.
 
 ## Header traversal
 

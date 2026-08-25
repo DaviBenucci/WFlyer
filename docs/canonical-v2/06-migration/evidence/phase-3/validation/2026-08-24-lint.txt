@@ -1,0 +1,9 @@
+Phase 3 lint — 2026-08-24
+
+Command: pnpm lint
+Resolved command: eslint . --max-warnings=0
+Exit: 0
+Result: PASS; zero warnings.
+
+The final run occurred after the content, route, header/footer, tests, capture
+tooling, canonical status, and evidence sources were in place.

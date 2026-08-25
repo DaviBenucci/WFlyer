@@ -1,0 +1,10 @@
+Phase 3 typecheck — 2026-08-24
+
+Command: pnpm typecheck
+Resolved command: next typegen && tsc --noEmit
+Exit: 0
+Result: PASS
+
+Next route types were regenerated successfully and strict TypeScript reported
+no errors. Next.js 16 async project-detail params and all 20 public route keys
+are included in the checked graph.

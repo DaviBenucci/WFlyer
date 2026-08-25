@@ -1,0 +1,17 @@
+Phase 3 focused OpenSpec closure — 2026-08-24
+
+Validation command:
+`pnpm exec openspec validate rebuild-scroll-driven-wflyer-v2 --strict --json`
+
+Exit: 0
+Result: PASS — 1/1 active change, zero issues.
+
+Progress command:
+`pnpm exec openspec instructions apply --change rebuild-scroll-driven-wflyer-v2 --json`
+
+Exit: 0
+State: ready
+Progress: 16/45 complete, 29 remaining.
+Phase-3 tasks P3.1 through P3.6 are complete.
+The first incomplete row is task 17, `Implement readiness state machine`,
+under Phase 4. It was not started.

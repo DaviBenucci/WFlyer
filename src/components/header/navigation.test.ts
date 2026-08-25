@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   APPLICATION_NAVIGATION,
   getHeaderRouteState,
+  INSTITUTIONAL_NAVIGATION,
 } from "./navigation";
 
 describe("getHeaderRouteState", () => {
@@ -27,15 +28,15 @@ describe("getHeaderRouteState", () => {
     });
   });
 
-  it("deriva o CTA externo da fonte tipada global", () => {
-    const externalItem = APPLICATION_NAVIGATION.find(
-      (item) => item.id === "application-access",
-    );
-
-    expect(externalItem).toMatchObject({
-      href: "https://app.wflyer.com.br",
-      branch: "application",
-      external: true,
-    });
+  it("mantém o acesso ao app fora do cabeçalho e usa rótulos profissionais", () => {
+    expect(
+      APPLICATION_NAVIGATION.some((item) => item.href.startsWith("http")),
+    ).toBe(false);
+    expect(INSTITUTIONAL_NAVIGATION.map(({ label }) => label)).toEqual([
+      "Sobre",
+      "Serviços",
+      "Projetos",
+      "Contato",
+    ]);
   });
 });

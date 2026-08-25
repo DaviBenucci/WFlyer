@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-08-24T15:51:12-03:00",
+  "command": "pnpm exec openspec validate rebuild-scroll-driven-wflyer-v2 --strict --json",
+  "exitCode": 0,
+  "change": "rebuild-scroll-driven-wflyer-v2",
+  "valid": true,
+  "issues": [],
+  "summary": {
+    "items": 1,
+    "passed": 1,
+    "failed": 0
+  },
+  "taskProgress": {
+    "startingComplete": 6,
+    "endingComplete": 10,
+    "total": 39,
+    "remaining": 29,
+    "nextTaskId": "11",
+    "nextTaskDescription": "Implement readiness state machine"
+  },
+  "formatRepair": {
+    "scope": "active change only",
+    "reason": "The focused strict validator initially found no delta sections in the five active change specs, directly blocking Gate 2 evidence.",
+    "result": "Converted only the active spec headings/scenarios to valid ADDED Requirements delta format without changing requirement semantics."
+  }
+}

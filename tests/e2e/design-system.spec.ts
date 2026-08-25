@@ -36,7 +36,11 @@ test("o menu mobile fecha por Escape e devolve o foco", async ({ page }) => {
   const dialog = page.getByRole("dialog", { name: "Navegação W_Flyer" });
   await expect(dialog).toBeVisible();
   await expect(dialog.getByRole("link", { name: "Aplicação" })).toBeVisible();
-  await expect(dialog.getByRole("link", { name: /Acessar app/u })).toBeVisible();
+  await expect(dialog.getByRole("link", { name: "Sobre" })).toBeVisible();
+  await expect(dialog.getByRole("link", { name: "Projetos" })).toBeVisible();
+  await expect(
+    dialog.getByRole("link", { name: /Acessar (?:app|W_Flyer)/u }),
+  ).toHaveCount(0);
 
   await page.keyboard.press("Escape");
 

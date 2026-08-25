@@ -9,15 +9,19 @@ phases:
     gates: [MUSIC-A, MUSIC-B-HUMAN, MUSIC-C-HUMAN]
   - id: P2
     name: Story v2 model and static vertical skeleton
+    status: gate-2-complete
     gate: G2
   - id: P3
     name: Content and detailed routes
+    status: gate-3-complete
     gate: G3
   - id: P4
     name: Intro/bootstrap/deep links
+    status: gate-4-complete
     gate: G4
   - id: P5
     name: Desktop Motion Lab and master story
+    status: next-permitted-not-started
     gate: G5
   - id: P6
     name: Header traversal and history

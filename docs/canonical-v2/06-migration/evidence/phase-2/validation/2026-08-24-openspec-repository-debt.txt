@@ -1,0 +1,17 @@
+Phase: P2 — Static Vertical v2 Skeleton
+Recorded at: 2026-08-24T15:51:12-03:00
+Command: pnpm exec openspec validate --all --strict --json
+Exit code: 1
+Repository-wide result: KNOWN LEGACY DEBT — 11/15 valid; 4 unchanged legacy main specs invalid.
+
+Unchanged failures:
+
+- accessible-navigation-lifecycle
+- brand-opening-motion
+- interactive-application-demo
+- score-transition-navigation
+
+Each still lacks required level-4 scenarios. The prior historical total was
+11/16 with five failures; the completed Music change has since been archived,
+and the one active Phase-2 change that directly blocked focused validation was
+repaired. The four unrelated failures were not edited.

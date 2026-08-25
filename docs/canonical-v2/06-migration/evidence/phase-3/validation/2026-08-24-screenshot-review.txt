@@ -1,0 +1,24 @@
+Phase 3 screenshot review — 2026-08-24
+
+Command: NEXT_TELEMETRY_DISABLED=1 node scripts/capture-phase-3-content-evidence.mjs
+Exit: 0
+Result: PASS
+
+The capture script owned a development server on 127.0.0.1:43123, refused
+server reuse and overwrite, staged captures before exclusive publication,
+asserted HTTP 200, one H1, no early application-access link, no horizontal
+overflow, no page errors, and valid nonempty PNG files. It then stopped all
+owned processes. The Contact capture uses a local deterministic Turnstile
+widget only for screenshot state; runtime Contact code is unchanged.
+
+Reviewed files and SHA-256:
+
+- `01-services-desktop-1536x1024.png` — `de85c92cd18e6cbd924ce9833dd744659f71c3b935fe9690fbe0bc15879534d7`
+- `02-projects-desktop-1536x1024.png` — `bad144c7143262ed655d0e63e4218a45516cc2e9d6e4f292550a8f1050ecae14`
+- `03-project-detail-mobile-390x844.png` — `06996d0ad2514e4494dddaeac0dd4beda50144632667ffd6ca7fc7264cee921f`
+- `04-application-tablet-768x1024.png` — `49a4f09af3a0ce24f9a6581263e3da01f2758f6df46c6ae816db587331e73580`
+- `05-contact-desktop-1536x1024.png` — `9f249cf3ec771f34ee8255b6c9af269ee8a604ac9bb5f7b4ad6ca962aa12a3e9`
+- `06-benefits-reduced-motion-1536x1024.png` — `d6ee59d2e5655a14fade385a0d93feed5c0decb5cc00b1c71205db230d7c63a2`
+
+These PNGs are implementation review evidence only. They are not approved
+goldens, design references, final editorial approval, or staging/device proof.

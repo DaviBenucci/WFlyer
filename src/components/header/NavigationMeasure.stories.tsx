@@ -5,7 +5,7 @@ import { NavigationMeasure } from "./NavigationMeasure";
 import { APPLICATION_NAVIGATION } from "./navigation";
 
 const applicationItem = APPLICATION_NAVIGATION[0]!;
-const externalItem = APPLICATION_NAVIGATION[3]!;
+const benefitsItem = APPLICATION_NAVIGATION[2]!;
 
 const meta = {
   title: "Navigation/Navigation measure",
@@ -62,16 +62,18 @@ export const Focus: Story = {
   },
 };
 
-export const External: Story = {
+export const Benefits: Story = {
   args: {
-    item: externalItem,
+    item: benefitsItem,
   },
   play: async ({ canvasElement }) => {
     const link = within(canvasElement).getByRole("link", {
-      name: /Acessar app.*abre em nova aba/u,
+      name: "Benefícios",
     });
 
-    await expect(link).toHaveAttribute("target", "_blank");
-    await expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    await expect(link).toHaveAttribute(
+      "href",
+      "/aplicacao-wflyer/beneficios",
+    );
   },
 };

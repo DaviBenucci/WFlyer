@@ -1,11 +1,17 @@
 import {
+  CardGrid,
   ChapterPage,
-  CompanyMark,
-  EditorialPillars,
+  InfoCard,
+  PageSection,
 } from "@/components/pages";
 import { BreadcrumbStructuredData } from "@/components/seo";
 import { createPageMetadata } from "@/config/seo";
-import { aboutContent } from "@/content/site-content";
+import {
+  PHASE3_EDITORIAL_STATUS,
+  PUBLIC_STORY_CONTENT,
+} from "@/content/public";
+
+const content = PUBLIC_STORY_CONTENT["professional-about"];
 
 export const metadata = createPageMetadata("/sobre");
 
@@ -15,26 +21,50 @@ export default function AboutPage() {
       <BreadcrumbStructuredData
         items={[
           { label: "Home", route: "/" },
-          { label: aboutContent.title, route: "/sobre" },
+          { label: "Sobre", route: "/sobre" },
         ]}
       />
       <ChapterPage
         chapterId="company"
-        description={aboutContent.description}
-        eyebrow={aboutContent.eyebrow}
-        heroVisual={<CompanyMark />}
-        title={aboutContent.title}
+        description={content.description}
+        eyebrow={content.eyebrow}
+        status={PHASE3_EDITORIAL_STATUS}
+        title={content.title}
       >
-        <section
-          aria-labelledby="principios-title"
-          data-compact-archetype-section=""
-          id="principios"
+        <PageSection
+          description="O conteúdo detalhado apresenta a responsabilidade profissional sem transformar esta página em currículo, lista genérica de tecnologias ou narrativa empresarial."
+          id="perspectiva"
+          title="Uma prática profissional orientada pelo contexto"
         >
-          <h2 className="wf-sr-only" id="principios-title">
-            Missão, visão e valores
-          </h2>
-          <EditorialPillars items={aboutContent.pillars} />
-        </section>
+          <CardGrid columns={3}>
+            <InfoCard
+              description="Cada trabalho parte de uma necessidade real, com decisões, limites e responsabilidades explícitos."
+              title="Responsabilidade pessoal"
+            />
+            <InfoCard
+              description="Software, produto e design são tratados como partes da mesma solução, não como uma lista de ferramentas."
+              title="Visão integrada"
+            />
+            <InfoCard
+              description="A direção é construída em etapas verificáveis, com espaço para revisar o que foi aprendido."
+              title="Evolução consciente"
+            />
+          </CardGrid>
+        </PageSection>
+
+        <PageSection
+          description={
+            content.structuralPlaceholder?.status ??
+            "Ativo final pendente de fornecimento e aprovação humana."
+          }
+          id="persona"
+          title={content.structuralPlaceholder?.label ?? "Persona W_Flyer"}
+        >
+          <p>
+            Este espaço registra somente o contrato de integração. Nenhuma
+            ilustração final, aparência física ou ativo substituto foi inventado.
+          </p>
+        </PageSection>
       </ChapterPage>
     </>
   );

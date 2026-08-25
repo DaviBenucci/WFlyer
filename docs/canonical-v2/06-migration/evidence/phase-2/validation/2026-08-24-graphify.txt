@@ -1,0 +1,20 @@
+Phase: P2 — Static Vertical v2 Skeleton
+Recorded at: 2026-08-24T15:51:12-03:00
+Result: QUERY PASS; REFRESH N/A for Gate 2.
+
+Graphify query vocabulary:
+
+  phase, static, vertical, skeleton, chapter, story, route, contact, music,
+  legacy, openspec, tasks
+
+The query mapped Phase 2 to the canonical chapter manifest, migration module
+map, legacy landing/config, Contact boundary, Music isolation, and active
+OpenSpec tasks. It also exposed the non-authoritative duplicate
+`WFLYER_IMPLEMENTATION_PLAN(1).md`; the canonical root plan was used instead.
+
+Ignored query memory:
+
+  graphify-out/memory/query_20260824_175805_which_files__canonical_ids__routes__tasks__tests.md
+
+The implementation plan first requires a Graphify refresh at Phase 14, not
+Gate 2. No repository graph refresh or checksum claim is made here.

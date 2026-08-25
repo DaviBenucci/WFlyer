@@ -1,0 +1,14 @@
+Phase 3 final diff/integrity hygiene — 2026-08-24
+
+Checks:
+
+- `git diff --check`: PASS
+- `git diff --quiet -- src/app/page.tsx`: PASS; legacy public landing unchanged
+- `git diff --quiet -- tests/visual`: PASS; tracked visual goldens unchanged
+- `git diff --quiet -- src/lib/music src/components/score`: PASS; tracked Music implementation unchanged by Phase 3
+- `node --check scripts/capture-phase-3-content-evidence.mjs`: PASS
+- PyYAML parse of `implementation-phases.v2.yaml` and `story-chapters.v2.yaml`: PASS, 2/2
+
+The worktree remains intentionally dirty with preserved Phase-0/1/2, Music,
+and Phase-3 work. No reset, restore, broad cleanup, commit, push, merge, or
+deployment operation was performed.

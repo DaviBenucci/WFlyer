@@ -32,3 +32,8 @@
 ## Implementation
 
 - `MUSIC-IMP-PROP-001..012`: module separation, pure TypeScript, straight/Bézier paths, draft calibration only, Visual Lab, tie-break, internal versioned PRNG, semantic slots, aria-hidden narrative score, dev-only lab, no landing integration before Gates A/B/C, isolated next implementation.
+- `PHASE3-OWNER-2026-08-24`: execute Phase 3 only; normalize OpenSpec so
+  content/detailed-route/conversion work precedes Phase-4 readiness; retain
+  canonical current-release URLs; add fail-closed project details under the
+  stable `/portfolio` namespace; preserve Contact, legacy `/`, Music isolation,
+  and production Visual Lab denial.

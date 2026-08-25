@@ -317,7 +317,7 @@ export function SiteHeader({
         <DesktopMeasureGroup
           activeId={activeId}
           items={INSTITUTIONAL_NAVIGATION}
-          label="Navegação institucional"
+          label="Navegação profissional"
           processSubchapter={processSubchapter}
         />
 
@@ -417,7 +417,7 @@ export function SiteHeader({
               <MobileMenuGroup
                 activeId={activeId}
                 items={INSTITUTIONAL_NAVIGATION}
-                label="Empresa"
+                label="Trabalho profissional"
                 onNavigate={() => {
                   closeMenu();
                 }}

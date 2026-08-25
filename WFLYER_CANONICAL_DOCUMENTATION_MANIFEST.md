@@ -1,5 +1,9 @@
 # W_Flyer v2 — Canonical Documentation Manifest
 
+**Current execution checkpoint:** Phase 4 / Gate 4 complete on 2026-08-25;
+Phase 5 is next permitted and not started. Gate-4 evidence is under
+`docs/canonical-v2/06-migration/evidence/phase-4/`.
+
 ## Root execution documents
 
 | Path | Purpose |

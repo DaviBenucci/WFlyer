@@ -1,0 +1,24 @@
+Phase 3 optimized production build — 2026-08-24
+
+Command:
+
+`WFLYER_DEPLOYMENT_ENVIRONMENT=production NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA NEXT_TELEMETRY_DISABLED=1 pnpm build`
+
+Exit: 0
+Result: PASS
+
+- Next.js: 16.2.12 (Turbopack)
+- Compiled successfully
+- TypeScript passed
+- 34/34 static pages generated
+- `/portfolio/[slug]` generated exactly:
+  - `/portfolio/w-flyer`
+  - `/portfolio/msn-distribuidora`
+  - `/portfolio/msn-suprimentos`
+- No unapproved project detail was generated.
+- The service catch-all generated no dynamic public slug; the four retained
+  explicit service pages remain the public records.
+
+The production build lists development routes because App Router compiles the
+guarded modules; standalone browser evidence proves their HTTP responses are
+404 and contain no lab surface.

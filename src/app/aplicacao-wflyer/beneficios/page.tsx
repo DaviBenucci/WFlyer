@@ -1,13 +1,17 @@
 import {
-  BenefitsGrid,
+  CardGrid,
   ChapterPage,
-  PageCallout,
+  InfoCard,
+  PageSection,
 } from "@/components/pages";
 import { BreadcrumbStructuredData } from "@/components/seo";
-import { LinkButton } from "@/components/ui";
 import { createPageMetadata } from "@/config/seo";
-import { siteConfig } from "@/config/site";
-import { benefitsContent } from "@/content/site-content";
+import {
+  PHASE3_EDITORIAL_STATUS,
+  PUBLIC_STORY_CONTENT,
+} from "@/content/public";
+
+const content = PUBLIC_STORY_CONTENT["application-benefits"];
 
 export const metadata = createPageMetadata(
   "/aplicacao-wflyer/beneficios",
@@ -28,33 +32,26 @@ export default function BenefitsPage() {
       />
       <ChapterPage
         chapterId="application-benefits"
-        description={benefitsContent.description}
-        eyebrow={benefitsContent.eyebrow}
-        title={benefitsContent.title}
+        description={content.description}
+        eyebrow={content.eyebrow}
+        status={PHASE3_EDITORIAL_STATUS}
+        title={content.title}
       >
-        <section
-          aria-labelledby="beneficios-title"
-          data-compact-archetype-section=""
+        <PageSection
+          description="Os grupos abaixo permanecem qualitativos. Não há números, garantias de precisão ou promessas de resultado."
           id="beneficios"
+          title="Quatro benefícios públicos"
         >
-          <h2 className="wf-sr-only" id="beneficios-title">
-            Benefícios para o trabalho musical
-          </h2>
-          <BenefitsGrid items={benefitsContent.benefits} />
-        </section>
-        <PageCallout
-          action={
-            <LinkButton
-              external
-              href={siteConfig.applicationUrl}
-              target="_blank"
-            >
-              Acessar aplicação
-            </LinkButton>
-          }
-          description="Continue no ambiente separado da aplicação quando quiser conhecer a experiência disponível."
-          title="Pronto para seguir para a aplicação?"
-        />
+          <CardGrid columns={4}>
+            {content.items?.map((benefit) => (
+              <InfoCard
+                description={benefit.description}
+                key={benefit.title}
+                title={benefit.title}
+              />
+            ))}
+          </CardGrid>
+        </PageSection>
       </ChapterPage>
     </>
   );

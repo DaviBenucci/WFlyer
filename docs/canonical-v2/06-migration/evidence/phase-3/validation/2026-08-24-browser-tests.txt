@@ -1,0 +1,25 @@
+Phase 3 three-engine browser validation — 2026-08-24
+
+Command scope:
+
+- `tests/e2e/static-routes.spec.ts`
+- `tests/e2e/phase03-content-routes.spec.ts`
+- `tests/e2e/phase08-contact-security.spec.ts`
+- `tests/e2e/phase02-static-story.spec.ts`
+- Chromium, Firefox, WebKit; workers=1; retries=0
+
+Exit: 0
+Result: PASS — 120/120 in 4.7 minutes.
+
+Covered direct navigation, one H1, canonical metadata, keyboard skip links,
+all 20 sitemap routes, robots, custom 404, exact service/project publication,
+invalid slug denial, application access boundaries, narrow reduced motion,
+Contact lifecycle/security, legacy `/`, and Phase-2 story isolation/regression.
+
+An earlier focused Chromium replacement audit also passed 26/26 for header,
+page archetypes, service details, Contact, and legal templates after obsolete
+interactive-tablet expectations were replaced with equivalent Phase-3
+content-contract coverage. A first sub-run exposed four exact audience-count
+expectation mismatches (new typed contract has two per service); after the test
+was reconciled to the implemented typed contract and new process hook, all four
+service-detail cases passed. No product code was weakened to resolve it.

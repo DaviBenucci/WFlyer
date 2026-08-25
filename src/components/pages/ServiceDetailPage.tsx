@@ -1,15 +1,11 @@
 import { BreadcrumbStructuredData, ServiceStructuredData } from "@/components/seo";
 import { ArrowIcon, LinkButton } from "@/components/ui";
 import { pageSeo } from "@/config/seo";
-import type {
-  ServiceDetail,
-  ServiceRoute,
-} from "@/content/site-content";
+import type { ServiceRecord, ServiceRoute } from "@/content/public";
 
 import {
   AudienceList,
   ServiceDetailMark,
-  StepSequence,
   type PageIconName,
 } from "./archetypes";
 import {
@@ -20,6 +16,7 @@ import {
   InfoCard,
   PageCallout,
   PageSection,
+  StepCard,
 } from "./StaticPage";
 
 const servicePresentation = {
@@ -55,7 +52,7 @@ const servicePresentation = {
 export function ServiceDetailPage({
   service,
 }: {
-  readonly service: ServiceDetail;
+  readonly service: ServiceRecord;
 }) {
   const contactHref = `/contato?tipo=${encodeURIComponent(service.contactType)}`;
   const presentation = servicePresentation[service.route];
@@ -150,10 +147,11 @@ export function ServiceDetailPage({
           id="processo"
           title="Processo de trabalho"
         >
-          <StepSequence
-            branch="institutional"
-            steps={service.process}
-          />
+          <CardGrid columns={4}>
+            {service.process.map((step) => (
+              <StepCard key={step.number} {...step} />
+            ))}
+          </CardGrid>
         </PageSection>
 
         <PageSection

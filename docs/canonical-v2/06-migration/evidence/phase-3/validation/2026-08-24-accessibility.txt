@@ -1,0 +1,18 @@
+Phase 3 accessibility validation — 2026-08-24
+
+Command scope:
+
+- `tests/a11y/static-routes.a11y.spec.ts`
+- `tests/a11y/phase08-contact.a11y.spec.ts`
+- `tests/a11y/phase02-static-story.a11y.spec.ts`
+- Chromium, Firefox, WebKit; workers=1; retries=0
+
+Exit: 0
+Result: PASS — 75/75 in 6.0 minutes.
+
+Every detailed/legal route was audited in light/dark desktop and light/dark
+mobile states. Contact idle, validation, verification, submitting, success,
+provider-error, and mobile dark reduced-motion states were included. The
+development-only static story retained first-focus skip navigation, canonical
+header order, visible reduced-motion content, and zero critical/serious axe
+findings.

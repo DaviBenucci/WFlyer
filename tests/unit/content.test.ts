@@ -31,6 +31,9 @@ const expectedRoutes = [
   "/servicos/criacao-de-aplicacoes",
   "/servicos/integracoes",
   "/servicos/solucoes-sob-medida",
+  "/portfolio/w-flyer",
+  "/portfolio/msn-distribuidora",
+  "/portfolio/msn-suprimentos",
   "/politica-de-privacidade",
   "/politica-de-cookies",
   "/termos-de-uso",
@@ -38,7 +41,7 @@ const expectedRoutes = [
 ] as const;
 
 describe("conteúdo público tipado", () => {
-  it("mantém exatamente as 17 rotas públicas aprovadas", () => {
+  it("mantém exatamente as 20 rotas públicas aprovadas", () => {
     expect(publicRoutes).toEqual(expectedRoutes);
     expect(Object.keys(pageSeo)).toEqual(expectedRoutes);
   });

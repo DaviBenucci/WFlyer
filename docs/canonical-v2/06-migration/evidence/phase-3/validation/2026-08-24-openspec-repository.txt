@@ -1,0 +1,19 @@
+Phase 3 repository-wide OpenSpec audit — 2026-08-24
+
+Command: `pnpm exec openspec validate --all --strict --json`
+Exit: 1
+Result: 11/15 items passed; 4 unchanged legacy main specs failed because their
+requirements do not yet contain level-4 OpenSpec scenarios.
+
+Out-of-scope legacy failures:
+
+- `accessible-navigation-lifecycle`
+- `brand-opening-motion`
+- `interactive-application-demo`
+- `score-transition-navigation`
+
+All three active changes passed. In particular,
+`rebuild-scroll-driven-wflyer-v2` passed strict validation with zero issues.
+The four legacy-format failures predate Phase 3, do not alter the focused
+change result, and were not broadened into this phase merely to make the
+repository-wide command green.
