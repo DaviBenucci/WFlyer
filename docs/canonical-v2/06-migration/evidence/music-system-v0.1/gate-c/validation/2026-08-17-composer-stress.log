@@ -1,0 +1,21 @@
+
+ RUN  v4.1.10 /home/davi-benucci/Área de trabalho/WFlyer
+
+ ✓ |unit| tests/unit/music/composer/compose-segment.test.ts > deterministic semantic segment composition > returns deep-equal semantic composition for identical inputs 5ms
+ ✓ |unit| tests/unit/music/composer/compose-segment.test.ts > deterministic semantic segment composition > produces nontrivial seeded variation while structural wf-* IDs stay stable 21ms
+ ✓ |unit| tests/unit/music/composer/compose-segment.test.ts > deterministic semantic segment composition > ignores responsive geometry changes while stable semantic slots remain 1ms
+ ✓ |unit| tests/unit/music/composer/compose-segment.test.ts > deterministic semantic segment composition > keeps reserved zones empty and uses half-open boundary overlap 1ms
+ ✓ |unit| tests/unit/music/composer/compose-segment.test.ts > deterministic semantic segment composition > enforces terminal grammar regardless of a non-terminal profile 1ms
+ ✓ |unit| tests/unit/music/composer/compose-segment.test.ts > deterministic semantic segment composition > accepts explicit draft calibration weights instead of freezing profile numbers 1ms
+MUSIC_COMPOSER_STRESS_RESULT {"generatedSegments":10000,"illegalMotifCount":0,"illegalRhythmicGroupingCount":0,"invalidTripletCount":0,"unseededRandomCallCount":0,"outOfRangePitchCount":0,"immediateRepetitionCount":0,"nondeterminismCount":0,"reservedZoneViolationCount":0,"keySignatureMutationCount":0,"contourMutationCount":0,"terminalGrammarViolationCount":0,"pitchRunViolationCount":0,"identityViolationCount":0}
+ ✓ |unit| tests/unit/music/composer/compose-segment.test.ts > deterministic semantic segment composition > draft anchor weights favor the optical range while keeping ledgers occasional 82ms
+ ✓ |unit| tests/unit/music/composer/compose-segment.test.ts > deterministic semantic segment composition > uses only calm simple motifs throughout the TERMINAL profile 1ms
+ ✓ |unit| tests/unit/music/composer/compose-segment.test.ts > deterministic semantic segment composition > raises typed deterministic exhaustion when no family is allowed 1ms
+ ✓ |unit| tests/unit/music/composer/compose-segment.test.ts > deterministic semantic segment composition > keeps key signatures completely outside composer state 4ms
+ ✓ |unit| tests/unit/music/composer/compose-segment.test.ts > 10,000-segment composer stress validation > produces zero grammar, contour, reservation, or determinism violations 1674ms
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  09:06:42
+   Duration  2.49s (transform 94ms, setup 101ms, import 92ms, tests 1.79s, environment 399ms)
+

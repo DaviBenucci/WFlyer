@@ -1,0 +1,22 @@
+$ vitest run --project=storybook
+
+ RUN  v4.1.10 /home/davi-benucci/Área de trabalho/WFlyer
+
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: ENOSPC: System limit for number of file watchers reached, watch '/home/davi-benucci/Área de trabalho/WFlyer/.next/standalone/.next/server/app/sobre'
+ ❯ FSWatcher.<computed> node:internal/fs/watchers:321:19
+ ❯ Object.watch node:fs:2548:36
+ ❯ createFsWatchInstance ../../%C3%81rea%20de%20trabalho/WFlyer/node_modules/.pnpm/vite@8.1.5_@types+node@24.13.3_esbuild@0.28.1_jiti@2.7.0/node_modules/vite/dist/node/chunks/node.js:9201:16
+ ❯ setFsWatchListener ../../%C3%81rea%20de%20trabalho/WFlyer/node_modules/.pnpm/vite@8.1.5_@types+node@24.13.3_esbuild@0.28.1_jiti@2.7.0/node_modules/vite/dist/node/chunks/node.js:9243:14
+ ❯ NodeFsHandler._watchWithNodeFs ../../%C3%81rea%20de%20trabalho/WFlyer/node_modules/.pnpm/vite@8.1.5_@types+node@24.13.3_esbuild@0.28.1_jiti@2.7.0/node_modules/vite/dist/node/chunks/node.js:9358:20
+ ❯ NodeFsHandler._handleDir ../../%C3%81rea%20de%20trabalho/WFlyer/node_modules/.pnpm/vite@8.1.5_@types+node@24.13.3_esbuild@0.28.1_jiti@2.7.0/node_modules/vite/dist/node/chunks/node.js:9521:19
+ ❯ processTicksAndRejections node:internal/process/task_queues:104:5
+ ❯ NodeFsHandler._addToNodeFs ../../%C3%81rea%20de%20trabalho/WFlyer/node_modules/.pnpm/vite@8.1.5_@types+node@24.13.3_esbuild@0.28.1_jiti@2.7.0/node_modules/vite/dist/node/chunks/node.js:9564:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { errno: -28, syscall: 'watch', code: 'ENOSPC', path: '/home/davi-benucci/Área de trabalho/WFlyer/.next/standalone/.next/server/app/sobre', filename: '/home/davi-benucci/Área de trabalho/WFlyer/.next/standalone/.next/server/app/sobre' }
+
+
+
+[ELIFECYCLE] Command failed with exit code 1.

@@ -1,0 +1,25 @@
+command: pnpm test
+phase: source
+repositoryRoot: /home/davi-benucci/Área de trabalho/WFlyer
+platform: linux
+architecture: x64
+osRelease: 7.0.0-29-generic
+nodeVersion: v24.18.0
+startedAt: 2026-08-18T19:58:26.242Z
+finishedAt: 2026-08-18T19:58:46.682Z
+elapsedMs: 20440
+timeoutMs: 900000
+timedOut: false
+exitCode: 0
+signal: none
+spawnError: none
+$ vitest run --project=unit
+
+ RUN  v4.1.10 /home/davi-benucci/Área de trabalho/WFlyer
+
+
+ Test Files  61 passed (61)
+      Tests  537 passed (537)
+   Start at  16:58:28
+   Duration  18.36s (transform 3.78s, setup 16.74s, import 8.31s, tests 12.72s, environment 70.43s)
+

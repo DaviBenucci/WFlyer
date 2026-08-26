@@ -1,0 +1,27 @@
+command: pnpm exec vitest run --project=unit tests/unit/music/public-isolation.test.ts tests/unit/music/pure-boundary.test.ts
+phase: post
+environmentBoundary: local-worktree/noncanonical-visual-host
+repositoryRoot: /home/davi-benucci/Área de trabalho/WFlyer
+platform: linux
+architecture: x64
+osRelease: 7.0.0-29-generic
+nodeVersion: v24.18.0
+testServerMode: development-or-not-applicable
+playwrightBaseUrl: playwright-config-default-or-not-applicable
+startedAt: 2026-08-18T20:04:02.410Z
+finishedAt: 2026-08-18T20:04:06.370Z
+elapsedMs: 3960
+timeoutMs: 300000
+timedOut: false
+exitCode: 0
+signal: none
+spawnError: none
+
+ RUN  v4.1.10 /home/davi-benucci/Área de trabalho/WFlyer
+
+
+ Test Files  2 passed (2)
+      Tests  3 passed (3)
+   Start at  17:04:05
+   Duration  1.21s (transform 101ms, setup 327ms, import 31ms, tests 11ms, environment 1.73s)
+

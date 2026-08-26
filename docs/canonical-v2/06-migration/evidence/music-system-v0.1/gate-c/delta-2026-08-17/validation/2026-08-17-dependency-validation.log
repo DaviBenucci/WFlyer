@@ -1,0 +1,22 @@
+command: pnpm validate:dependencies
+phase: source
+repositoryRoot: /home/davi-benucci/Área de trabalho/WFlyer
+platform: linux
+architecture: x64
+osRelease: 7.0.0-29-generic
+nodeVersion: v24.18.0
+startedAt: 2026-08-18T19:58:06.983Z
+finishedAt: 2026-08-18T19:58:08.094Z
+elapsedMs: 1111
+timeoutMs: 300000
+timedOut: false
+exitCode: 0
+signal: none
+spawnError: none
+✓ Lockfile passes supply-chain policies (verified 8d ago)
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+Done in 703ms using pnpm v11.18.0
+$ node scripts/validate-locked-dependencies.mjs
+Todas as dependências usam versões exatas.

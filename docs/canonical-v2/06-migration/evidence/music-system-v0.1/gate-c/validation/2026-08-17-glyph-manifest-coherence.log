@@ -1,0 +1,9 @@
+
+ RUN  v4.1.10 /home/davi-benucci/Área de trabalho/WFlyer
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  09:48:32
+   Duration  1.48s (transform 98ms, setup 246ms, import 61ms, tests 4ms, environment 916ms)
+

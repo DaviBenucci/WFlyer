@@ -1,0 +1,16 @@
+Started isolated development server at http://127.0.0.1:43120.
+Music Gate-C candidate evidence captured: 9 PNGs and 4 JSON payloads in /home/davi-benucci/Área de trabalho/WFlyer/docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c.
+No aggregate SHA manifest was created; candidate artifact hashes:
+b6ba5319dfb3d033e97663781c60da87752346934a03e5e8c460d103178e13f4  01-motif-matrix-light.png  (306881 bytes)
+fb141cbcb04a818c2506300bbf1cb8dd35e340704b98fa3fe9844eeeedec48da  02-motif-matrix-dark.png  (316544 bytes)
+59df55aeacfb31cbbfd96f5ae29313e2260fa3013eb4dda85df6e8cc8d77ab78  03-key-signatures-light.png  (141401 bytes)
+dca2e27a71dce24383b5d8721c8c29d279f026a8ca2c45aa14537ee3d1fdf7f9  04-key-signatures-dark.png  (143738 bytes)
+f546cad62e9f5dc40e0af7fd51339551d665a0b7ebbdf9f3cfe50d574496a046  05-composer-fixed-seeds-light.png  (141550 bytes)
+d813f2629b7f4bfb26c8b059378c6d344937b9a2e9ae97bf3a1aba1979c32ce9  06-composer-fixed-seeds-dark.png  (141652 bytes)
+c229e700bfea3ef16ea309d9a8b5494e91c4460e96b63cb27d5ade33d6f58e7c  07-responsive-horizontal-desktop.png  (52684 bytes)
+bc1e800a9cd8b8d01123481fba50e96ae0b47dd0950f1bd73191734163a60222  08-responsive-vertical-mobile.png  (85611 bytes)
+a3737f0cfa6df766231ee0f4d55533784a1a1c3d20ffde049e96936dc7f59a54  09-reduced-motion-static.png  (93810 bytes)
+10d1d9366930c6df3a0b8346b9a5b725c32b0a6e9c30a3694c2c548990e9478d  gate-c-composer-fixed-seeds.json  (40638 bytes)
+2d82abf420d3972e47acb20954ff681ab3a1b107c0082661d9056c175ba73899  gate-c-draft-configuration.json  (7089 bytes)
+e9bd576d5def34d5af1d3a63df8dc838b9cb04cbca379d98a9503479782e2dea  gate-c-performance.json  (5868 bytes)
+3e10f6a4a63cd5529ab70e382483cc033b7bc8e040440defd2ff1797b93a871c  gate-c-semantic-stability.json  (16309 bytes)

@@ -1,0 +1,74 @@
+command: pnpm build
+phase: production
+environmentBoundary: local-worktree/noncanonical-visual-host
+repositoryRoot: /home/davi-benucci/Área de trabalho/WFlyer
+platform: linux
+architecture: x64
+osRelease: 7.0.0-29-generic
+nodeVersion: v24.18.0
+testServerMode: development-or-not-applicable
+playwrightBaseUrl: playwright-config-default-or-not-applicable
+startedAt: 2026-08-18T20:03:32.687Z
+finishedAt: 2026-08-18T20:03:49.262Z
+elapsedMs: 16575
+timeoutMs: 900000
+timedOut: false
+exitCode: 0
+signal: none
+spawnError: none
+✓ Lockfile passes supply-chain policies (verified 8d ago)
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+Done in 743ms using pnpm v11.18.0
+$ next build
+▲ Next.js 16.2.12 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.6s
+  Running TypeScript ...
+  Finished TypeScript in 6.8s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/30) ...
+  Generating static pages using 7 workers (7/30) 
+  Generating static pages using 7 workers (14/30) 
+  Generating static pages using 7 workers (22/30) 
+✓ Generating static pages using 7 workers (30/30) in 515ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /__visual-lab/music
+├ ○ /__visual-lab/music/beams
+├ ○ /__visual-lab/music/calibration
+├ ○ /__visual-lab/music/composer
+├ ○ /__visual-lab/music/curved-score
+├ ○ /__visual-lab/music/glyphs
+├ ○ /__visual-lab/music/key-signatures
+├ ○ /__visual-lab/music/pitches
+├ ○ /_not-found
+├ ○ /acessibilidade
+├ ƒ /api/contact
+├ ○ /aplicacao-wflyer
+├ ○ /aplicacao-wflyer/beneficios
+├ ○ /aplicacao-wflyer/como-funciona
+├ ○ /contato
+├ ○ /icon.svg
+├ ○ /politica-de-cookies
+├ ○ /politica-de-privacidade
+├ ○ /portfolio
+├ ○ /processo
+├ ○ /robots.txt
+├ ○ /servicos
+├ ○ /servicos/criacao-de-aplicacoes
+├ ○ /servicos/criacao-de-sites
+├ ○ /servicos/integracoes
+├ ○ /servicos/solucoes-sob-medida
+├ ○ /sitemap.xml
+├ ○ /sobre
+└ ○ /termos-de-uso
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

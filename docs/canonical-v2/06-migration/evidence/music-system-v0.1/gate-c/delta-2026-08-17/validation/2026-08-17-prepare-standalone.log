@@ -1,0 +1,22 @@
+command: pnpm prepare:standalone
+phase: production
+environmentBoundary: local-worktree/noncanonical-visual-host
+repositoryRoot: /home/davi-benucci/Área de trabalho/WFlyer
+platform: linux
+architecture: x64
+osRelease: 7.0.0-29-generic
+nodeVersion: v24.18.0
+testServerMode: development-or-not-applicable
+playwrightBaseUrl: playwright-config-default-or-not-applicable
+startedAt: 2026-08-18T20:03:49.263Z
+finishedAt: 2026-08-18T20:03:49.707Z
+elapsedMs: 444
+timeoutMs: 300000
+timedOut: false
+exitCode: 0
+signal: none
+spawnError: none
+$ node scripts/prepare-standalone.mjs
+Copied public assets into the standalone package.
+Copied Next.js static assets into the standalone package.
+Standalone package is ready.

@@ -1,0 +1,23 @@
+command: scripts/graphify-repository.sh update
+recordedAt: 2026-08-24T14:39:53Z
+repositoryRoot: /home/davi-benucci/Área de trabalho/WFlyer
+branch: develop/site-institucional
+head: 784856b5b34ef87c8be24ab666d5d37756573ded
+exitCode: 0
+
+Graphify 0.9.31 (/home/davi-benucci/.local/bin/graphify)
+OpenSpec 1.7.0
+Python 3.13.14 (/home/davi-benucci/.local/share/uv/tools/graphifyy/bin/python3)
+Corpus: /home/davi-benucci/Área de trabalho/WFlyer
+Re-extracting code files in . (no LLM needed)...
+AST extraction: 310/310 uncached files (100%) [8 workers]
+warning: 17 source file(s) produced zero nodes and are absent from the graph.
+community-label diagnostic: 427 saved labels, 430 current communities; 61 communities received hub-derived names.
+backup: graphify-out/2026-08-24/
+result: 4465 nodes, 7342 edges, 430 communities
+outputs: graphify-out/graph.json, graphify-out/graph.html, graphify-out/GRAPH_REPORT.md
+semanticBoundary: structural code graph refreshed; the project wrapper explicitly reports document/image semantic extraction as a separate optional full-Graphify operation.
+validation: graphify check-update passed; standalone HTML/checksums/output validation passed.
+integrity: 0 missing endpoints, 0 dangling endpoints, 0 self loops, 0 duplicate/collapsed edges.
+
+Graphify válido: 4465 nós, 7342 arestas, 430 comunidades

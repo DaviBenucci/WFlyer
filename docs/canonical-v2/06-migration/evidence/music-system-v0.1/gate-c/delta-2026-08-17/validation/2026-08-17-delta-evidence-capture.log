@@ -1,0 +1,11 @@
+command: node scripts/capture-music-gate-c-delta-evidence.mjs
+phase: capture
+startedAt: 2026-08-18T19:52:51.486Z
+finishedAt: 2026-08-18T19:53:13.067Z
+elapsedMs: 21581
+timeoutMs: 600000
+timedOut: false
+exitCode: 0
+signal: none
+spawnError: none
+Gate-C delta capture complete: 7 PNG, 2 JSON, 4 immutable manifests.

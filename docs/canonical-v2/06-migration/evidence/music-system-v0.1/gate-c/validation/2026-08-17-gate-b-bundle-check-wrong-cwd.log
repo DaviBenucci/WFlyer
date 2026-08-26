@@ -1,0 +1,41 @@
+sha256sum: 00-music-visual-lab-index.png: No such file or directory
+00-music-visual-lab-index.png: FAILED open or read
+sha256sum: 01-glyph-gallery-light.png: No such file or directory
+01-glyph-gallery-light.png: FAILED open or read
+sha256sum: 02-glyph-gallery-dark.png: No such file or directory
+02-glyph-gallery-dark.png: FAILED open or read
+sha256sum: 03-calibration-treble-clef.png: No such file or directory
+03-calibration-treble-clef.png: FAILED open or read
+sha256sum: 03-glyph-calibration-composites-light.png: No such file or directory
+03-glyph-calibration-composites-light.png: FAILED open or read
+sha256sum: 04-calibration-notehead-filled.png: No such file or directory
+04-calibration-notehead-filled.png: FAILED open or read
+sha256sum: 04-glyph-calibration-composites-dark.png: No such file or directory
+04-glyph-calibration-composites-dark.png: FAILED open or read
+sha256sum: 05-calibration-notehead-open.png: No such file or directory
+05-calibration-notehead-open.png: FAILED open or read
+sha256sum: 06-calibration-accidental-sharp.png: No such file or directory
+06-calibration-accidental-sharp.png: FAILED open or read
+sha256sum: 07-calibration-accidental-flat.png: No such file or directory
+07-calibration-accidental-flat.png: FAILED open or read
+sha256sum: 08-calibration-accidental-natural.png: No such file or directory
+08-calibration-accidental-natural.png: FAILED open or read
+sha256sum: 09-calibration-eighth-flag.png: No such file or directory
+09-calibration-eighth-flag.png: FAILED open or read
+sha256sum: 10-calibration-sixteenth-double-flag.png: No such file or directory
+10-calibration-sixteenth-double-flag.png: FAILED open or read
+sha256sum: 11-calibration-accidentals-line-space.png: No such file or directory
+11-calibration-accidentals-line-space.png: FAILED open or read
+sha256sum: 12-pitches-ledgers-stems-flags.png: No such file or directory
+12-pitches-ledgers-stems-flags.png: FAILED open or read
+sha256sum: 13-beams-triplets-hooks.png: No such file or directory
+13-beams-triplets-hooks.png: FAILED open or read
+sha256sum: 14-key-signatures-and-barlines.png: No such file or directory
+14-key-signatures-and-barlines.png: FAILED open or read
+sha256sum: 15-straight-arc-s-curve-score-paths.png: No such file or directory
+15-straight-arc-s-curve-score-paths.png: FAILED open or read
+sha256sum: 16-composer-four-profiles-explicit-seed.png: No such file or directory
+16-composer-four-profiles-explicit-seed.png: FAILED open or read
+sha256sum: draft-glyph-calibration.json: No such file or directory
+draft-glyph-calibration.json: FAILED open or read
+sha256sum: WARNING: 20 listed files could not be read

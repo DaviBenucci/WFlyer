@@ -1,0 +1,4 @@
+$ node scripts/prepare-standalone.mjs
+Copied public assets into the standalone package.
+Copied Next.js static assets into the standalone package.
+Standalone package is ready.

@@ -1,0 +1,34 @@
+command: sha256sum --check --strict docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-post-gate-c-approved-svg-files.sha256
+phase: post
+environmentBoundary: local-worktree/noncanonical-visual-host
+repositoryRoot: /home/davi-benucci/Área de trabalho/WFlyer
+platform: linux
+architecture: x64
+osRelease: 7.0.0-29-generic
+nodeVersion: v24.18.0
+testServerMode: development-or-not-applicable
+playwrightBaseUrl: playwright-config-default-or-not-applicable
+startedAt: 2026-08-18T20:08:23.417Z
+finishedAt: 2026-08-18T20:08:23.424Z
+elapsedMs: 7
+timeoutMs: 120000
+timedOut: false
+exitCode: 0
+signal: none
+spawnError: none
+docs/design-reference/visual-library/musical/glyphs/source/wf-music-accidental-flat-master.svg: OK
+docs/design-reference/visual-library/musical/glyphs/source/wf-music-accidental-natural-master.svg: OK
+docs/design-reference/visual-library/musical/glyphs/source/wf-music-accidental-sharp-master.svg: OK
+docs/design-reference/visual-library/musical/glyphs/source/wf-music-eighth-flag-master.svg: OK
+docs/design-reference/visual-library/musical/glyphs/source/wf-music-notehead-filled-master.svg: OK
+docs/design-reference/visual-library/musical/glyphs/source/wf-music-notehead-open-master.svg: OK
+docs/design-reference/visual-library/musical/glyphs/source/wf-music-sixteenth-double-flag-master.svg: OK
+docs/design-reference/visual-library/musical/glyphs/source/wf-music-treble-clef-master.svg: OK
+src/assets/visuals/musical/wf-music-accidental-flat.svg: OK
+src/assets/visuals/musical/wf-music-accidental-natural.svg: OK
+src/assets/visuals/musical/wf-music-accidental-sharp.svg: OK
+src/assets/visuals/musical/wf-music-eighth-flag.svg: OK
+src/assets/visuals/musical/wf-music-notehead-filled.svg: OK
+src/assets/visuals/musical/wf-music-notehead-open.svg: OK
+src/assets/visuals/musical/wf-music-sixteenth-double-flag.svg: OK
+src/assets/visuals/musical/wf-music-treble-clef.svg: OK

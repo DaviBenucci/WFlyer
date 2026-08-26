@@ -1,0 +1,11 @@
+Re-extracting code files in . (no LLM needed)...
+  AST extraction: 100/296 uncached files (33%) [8 workers]
+  AST extraction: 200/296 uncached files (67%) [8 workers]
+  AST extraction: 296/296 uncached files (100%) [8 workers]
+  warning: 15 source file(s) produced zero nodes and are absent from the graph: hooks.json, DOCUMENTATION_MANIFEST.json, PATCH-MANIFEST.json, PHASE-09-DOCUMENTATION-MANIFEST.json, WFLYER_V2_PATCH_MANIFEST.json (+10 more). A re-run will retry them (empties are no longer cached); if it persists, please report the file(s) (#1666).
+[graphify watch] community set changed since labeling (428 saved labels, 427 communities now; renamed 54 community(ies) by their hub). Run `graphify label` to refresh names with the LLM.
+[graphify] backed up curated graph (6 files) -> 2026-08-17/
+[graphify watch] Rebuilt: 4263 nodes, 6866 edges, 427 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+Code graph updated. For doc/paper/image changes run /graphify --update in your AI assistant.
+Tip: set GEMINI_API_KEY or GOOGLE_API_KEY to use Gemini for semantic extraction.

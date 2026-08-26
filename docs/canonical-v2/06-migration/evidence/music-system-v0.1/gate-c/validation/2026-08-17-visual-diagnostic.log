@@ -1,0 +1,311 @@
+[WebServer] (node:133299) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:133324) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/visual/phase06-tablet.visual.spec.ts:59:1 › tablet idle light evidence (1.5s)
+  ✘   2 [chromium] › tests/visual/phase07-brand-intro.visual.spec.ts:200:1 › intro reduced-motion final Home (1.7s)
+(node:133682) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chromium] › tests/visual/phase08-contact.visual.spec.ts:83:1 › contact idle (1.3s)
+  ✓   4 [chromium] › tests/visual/score-transitions.visual.spec.ts:57:1 › captures the deterministic transition midpoint checkpoint (2.1s)
+(node:134062) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   5 [firefox] › tests/visual/phase06-tablet.visual.spec.ts:59:1 › tablet idle light evidence (3.0s)
+(node:134371) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   6 [firefox] › tests/visual/phase07-brand-intro.visual.spec.ts:200:1 › intro reduced-motion final Home (2.2s)
+(node:134621) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   7 [firefox] › tests/visual/phase08-contact.visual.spec.ts:83:1 › contact idle (2.0s)
+(node:134883) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [firefox] › tests/visual/score-transitions.visual.spec.ts:57:1 › captures the deterministic transition midpoint checkpoint (2.1s)
+(node:135131) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [webkit] › tests/visual/phase06-tablet.visual.spec.ts:59:1 › tablet idle light evidence (2.8s)
+  ✘  10 [webkit] › tests/visual/phase07-brand-intro.visual.spec.ts:200:1 › intro reduced-motion final Home (2.4s)
+(node:135460) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [webkit] › tests/visual/phase08-contact.visual.spec.ts:83:1 › contact idle (3.4s)
+  ✓  12 [webkit] › tests/visual/score-transitions.visual.spec.ts:57:1 › captures the deterministic transition midpoint checkpoint (3.7s)
+
+
+  1) [chromium] › tests/visual/phase07-brand-intro.visual.spec.ts:200:1 › intro reduced-motion final Home 
+
+    Error: expect(page).toHaveScreenshot(expected) failed
+
+      10 pixels (ratio 0.01 of all image pixels) are different.
+
+      Snapshot: intro-reduced-home.png
+
+    Call log:
+      - Expect "toHaveScreenshot(intro-reduced-home.png)" with timeout 5000ms
+        - verifying given screenshot expectation
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 10 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - captured a stable screenshot
+      - 10 pixels (ratio 0.01 of all image pixels) are different.
+
+
+      287 |   await expect(home).toHaveAttribute("data-brand-intro-home-state", "ready");
+      288 |   await expect(homeCue).toHaveCSS("opacity", "1");
+    > 289 |   await expect(page).toHaveScreenshot("intro-reduced-home.png", {
+          |                      ^
+      290 |     fullPage: false,
+      291 |   });
+      292 | });
+        at /home/davi-benucci/Área de trabalho/WFlyer/tests/visual/phase07-brand-intro.visual.spec.ts:289:22
+
+    attachment #1: intro-reduced-home (image/png) ──────────────────────────────────────────────────
+    Expected: tests/visual/phase07-brand-intro.visual.spec.ts-snapshots/intro-reduced-home-chromium-linux.png
+    Received: test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-chromium/intro-reduced-home-actual.png
+    Diff:     test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-chromium/intro-reduced-home-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-chromium/error-context.md
+
+  2) [firefox] › tests/visual/phase06-tablet.visual.spec.ts:59:1 › tablet idle light evidence ──────
+
+    Error: expect(locator).toHaveScreenshot(expected) failed
+
+    Locator: locator('[data-application-demo]')
+      13 pixels (ratio 0.01 of all image pixels) are different.
+
+      Snapshot: tablet-idle-light.png
+
+    Call log:
+      - Expect "toHaveScreenshot(tablet-idle-light.png)" with timeout 5000ms
+        - verifying given screenshot expectation
+      - waiting for locator('[data-application-demo]')
+        - locator resolved to <figure data-demo-state="idle" data-tilt-active="true" data-application-demo="" class="application-demo-tablet-module__5DaXuq__demo">…</figure>
+      - taking element screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - attempting scroll into view action
+        - waiting for element to be stable
+      - 13 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - waiting for locator('[data-application-demo]')
+        - locator resolved to <figure data-demo-state="idle" data-tilt-active="true" data-application-demo="" class="application-demo-tablet-module__5DaXuq__demo">…</figure>
+      - taking element screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - attempting scroll into view action
+        - waiting for element to be stable
+      - captured a stable screenshot
+      - 13 pixels (ratio 0.01 of all image pixels) are different.
+
+
+      59 | test("tablet idle light evidence", async ({ page }) => {
+      60 |   const demo = await openTablet(page);
+    > 61 |   await expect(demo).toHaveScreenshot("tablet-idle-light.png");
+         |                      ^
+      62 | });
+      63 |
+      64 | test("tablet idle dark evidence", async ({ page }) => {
+        at /home/davi-benucci/Área de trabalho/WFlyer/tests/visual/phase06-tablet.visual.spec.ts:61:22
+
+    attachment #1: tablet-idle-light (image/png) ───────────────────────────────────────────────────
+    Expected: tests/visual/phase06-tablet.visual.spec.ts-snapshots/tablet-idle-light-firefox-linux.png
+    Received: test-results/gate-c/visual-diagnostic/visual-phase06-tablet.visual-tablet-idle-light-evidence-firefox/tablet-idle-light-actual.png
+    Diff:     test-results/gate-c/visual-diagnostic/visual-phase06-tablet.visual-tablet-idle-light-evidence-firefox/tablet-idle-light-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gate-c/visual-diagnostic/visual-phase06-tablet.visual-tablet-idle-light-evidence-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/gate-c/visual-diagnostic/visual-phase06-tablet.visual-tablet-idle-light-evidence-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gate-c/visual-diagnostic/visual-phase06-tablet.visual-tablet-idle-light-evidence-firefox/error-context.md
+
+  3) [firefox] › tests/visual/phase07-brand-intro.visual.spec.ts:200:1 › intro reduced-motion final Home 
+
+    Error: expect(page).toHaveScreenshot(expected) failed
+
+      26 pixels (ratio 0.01 of all image pixels) are different.
+
+      Snapshot: intro-reduced-home.png
+
+    Call log:
+      - Expect "toHaveScreenshot(intro-reduced-home.png)" with timeout 5000ms
+        - verifying given screenshot expectation
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 26 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - captured a stable screenshot
+      - 26 pixels (ratio 0.01 of all image pixels) are different.
+
+
+      287 |   await expect(home).toHaveAttribute("data-brand-intro-home-state", "ready");
+      288 |   await expect(homeCue).toHaveCSS("opacity", "1");
+    > 289 |   await expect(page).toHaveScreenshot("intro-reduced-home.png", {
+          |                      ^
+      290 |     fullPage: false,
+      291 |   });
+      292 | });
+        at /home/davi-benucci/Área de trabalho/WFlyer/tests/visual/phase07-brand-intro.visual.spec.ts:289:22
+
+    attachment #1: intro-reduced-home (image/png) ──────────────────────────────────────────────────
+    Expected: tests/visual/phase07-brand-intro.visual.spec.ts-snapshots/intro-reduced-home-firefox-linux.png
+    Received: test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-firefox/intro-reduced-home-actual.png
+    Diff:     test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-firefox/intro-reduced-home-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-firefox/error-context.md
+
+  4) [firefox] › tests/visual/phase08-contact.visual.spec.ts:83:1 › contact idle ───────────────────
+
+    Error: expect(locator).toHaveScreenshot(expected) failed
+
+    Locator: getByRole('form', { name: 'Formulário de contato' })
+      8 pixels (ratio 0.01 of all image pixels) are different.
+
+      Snapshot: contact-idle.png
+
+    Call log:
+      - Expect "toHaveScreenshot(contact-idle.png)" with timeout 10000ms
+        - verifying given screenshot expectation
+      - waiting for getByRole('form', { name: 'Formulário de contato' })
+        - locator resolved to <form aria-busy="false" data-contact-form="idle" aria-label="Formulário de contato" class="contact-form-module__zNt6CG__form" aria-describedby="contact-form-status contact-verification-status">…</form>
+      - taking element screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - attempting scroll into view action
+        - waiting for element to be stable
+      - 8 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - waiting for getByRole('form', { name: 'Formulário de contato' })
+        - locator resolved to <form aria-busy="false" data-contact-form="idle" aria-label="Formulário de contato" class="contact-form-module__zNt6CG__form" aria-describedby="contact-form-status contact-verification-status">…</form>
+      - taking element screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - attempting scroll into view action
+        - waiting for element to be stable
+      - captured a stable screenshot
+      - 8 pixels (ratio 0.01 of all image pixels) are different.
+
+
+      76 |   });
+      77 |   await stabilizeVisualCapture(page, { stateLocator: form });
+    > 78 |   await expect(form).toHaveScreenshot(name, {
+         |                      ^
+      79 |     timeout: 10_000,
+      80 |   });
+      81 | }
+        at expectFormScreenshot (/home/davi-benucci/Área de trabalho/WFlyer/tests/visual/phase08-contact.visual.spec.ts:78:22)
+        at /home/davi-benucci/Área de trabalho/WFlyer/tests/visual/phase08-contact.visual.spec.ts:85:3
+
+    attachment #1: contact-idle (image/png) ────────────────────────────────────────────────────────
+    Expected: tests/visual/phase08-contact.visual.spec.ts-snapshots/contact-idle-firefox-linux.png
+    Received: test-results/gate-c/visual-diagnostic/visual-phase08-contact.visual-contact-idle-firefox/contact-idle-actual.png
+    Diff:     test-results/gate-c/visual-diagnostic/visual-phase08-contact.visual-contact-idle-firefox/contact-idle-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gate-c/visual-diagnostic/visual-phase08-contact.visual-contact-idle-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/gate-c/visual-diagnostic/visual-phase08-contact.visual-contact-idle-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gate-c/visual-diagnostic/visual-phase08-contact.visual-contact-idle-firefox/error-context.md
+
+  5) [webkit] › tests/visual/phase07-brand-intro.visual.spec.ts:200:1 › intro reduced-motion final Home 
+
+    Error: expect(page).toHaveScreenshot(expected) failed
+
+      13 pixels (ratio 0.01 of all image pixels) are different.
+
+      Snapshot: intro-reduced-home.png
+
+    Call log:
+      - Expect "toHaveScreenshot(intro-reduced-home.png)" with timeout 5000ms
+        - verifying given screenshot expectation
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 13 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - captured a stable screenshot
+      - 13 pixels (ratio 0.01 of all image pixels) are different.
+
+
+      287 |   await expect(home).toHaveAttribute("data-brand-intro-home-state", "ready");
+      288 |   await expect(homeCue).toHaveCSS("opacity", "1");
+    > 289 |   await expect(page).toHaveScreenshot("intro-reduced-home.png", {
+          |                      ^
+      290 |     fullPage: false,
+      291 |   });
+      292 | });
+        at /home/davi-benucci/Área de trabalho/WFlyer/tests/visual/phase07-brand-intro.visual.spec.ts:289:22
+
+    attachment #1: intro-reduced-home (image/png) ──────────────────────────────────────────────────
+    Expected: tests/visual/phase07-brand-intro.visual.spec.ts-snapshots/intro-reduced-home-webkit-linux.png
+    Received: test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-webkit/intro-reduced-home-actual.png
+    Diff:     test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-webkit/intro-reduced-home-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gate-c/visual-diagnostic/visual-phase07-brand-intro-189d9-o-reduced-motion-final-Home-webkit/error-context.md
+
+  5 failed
+    [chromium] › tests/visual/phase07-brand-intro.visual.spec.ts:200:1 › intro reduced-motion final Home 
+    [firefox] › tests/visual/phase06-tablet.visual.spec.ts:59:1 › tablet idle light evidence ───────
+    [firefox] › tests/visual/phase07-brand-intro.visual.spec.ts:200:1 › intro reduced-motion final Home 
+    [firefox] › tests/visual/phase08-contact.visual.spec.ts:83:1 › contact idle ────────────────────
+    [webkit] › tests/visual/phase07-brand-intro.visual.spec.ts:200:1 › intro reduced-motion final Home 
+  7 passed (36.5s)

@@ -1,0 +1,18 @@
+command: git diff --exit-code -- tests/visual
+phase: post
+environmentBoundary: local-worktree/noncanonical-visual-host
+repositoryRoot: /home/davi-benucci/Área de trabalho/WFlyer
+platform: linux
+architecture: x64
+osRelease: 7.0.0-29-generic
+nodeVersion: v24.18.0
+testServerMode: development-or-not-applicable
+playwrightBaseUrl: playwright-config-default-or-not-applicable
+startedAt: 2026-08-18T20:08:23.282Z
+finishedAt: 2026-08-18T20:08:23.285Z
+elapsedMs: 3
+timeoutMs: 120000
+timedOut: false
+exitCode: 0
+signal: none
+spawnError: none

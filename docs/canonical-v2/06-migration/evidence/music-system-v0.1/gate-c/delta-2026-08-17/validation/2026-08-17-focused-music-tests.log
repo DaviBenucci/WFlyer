@@ -1,0 +1,24 @@
+command: pnpm exec vitest run --project=unit tests/unit/music/geometry tests/unit/music/renderer tests/unit/music/composer tests/unit/music/presentation/score-svg.test.tsx 'src/app/%5F_visual-lab/music/_fixtures/lab-score-models.test.ts' 'src/app/%5F_visual-lab/music/_fixtures/gate-c-review.test.ts'
+phase: source
+repositoryRoot: /home/davi-benucci/Área de trabalho/WFlyer
+platform: linux
+architecture: x64
+osRelease: 7.0.0-29-generic
+nodeVersion: v24.18.0
+startedAt: 2026-08-18T19:58:18.557Z
+finishedAt: 2026-08-18T19:58:26.241Z
+elapsedMs: 7684
+timeoutMs: 600000
+timedOut: false
+exitCode: 0
+signal: none
+spawnError: none
+
+ RUN  v4.1.10 /home/davi-benucci/Área de trabalho/WFlyer
+
+
+ Test Files  21 passed (21)
+      Tests  211 passed (211)
+   Start at  16:58:20
+   Duration  5.48s (transform 1.84s, setup 4.93s, import 2.64s, tests 4.93s, environment 18.60s)
+

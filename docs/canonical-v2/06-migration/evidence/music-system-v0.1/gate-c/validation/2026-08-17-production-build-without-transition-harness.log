@@ -1,0 +1,51 @@
+$ next build
+▲ Next.js 16.2.12 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.9s
+  Running TypeScript ...
+  Finished TypeScript in 6.3s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/30) ...
+  Generating static pages using 7 workers (7/30) 
+  Generating static pages using 7 workers (14/30) 
+  Generating static pages using 7 workers (22/30) 
+✓ Generating static pages using 7 workers (30/30) in 653ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /__visual-lab/music
+├ ○ /__visual-lab/music/beams
+├ ○ /__visual-lab/music/calibration
+├ ○ /__visual-lab/music/composer
+├ ○ /__visual-lab/music/curved-score
+├ ○ /__visual-lab/music/glyphs
+├ ○ /__visual-lab/music/key-signatures
+├ ○ /__visual-lab/music/pitches
+├ ○ /_not-found
+├ ○ /acessibilidade
+├ ƒ /api/contact
+├ ○ /aplicacao-wflyer
+├ ○ /aplicacao-wflyer/beneficios
+├ ○ /aplicacao-wflyer/como-funciona
+├ ○ /contato
+├ ○ /icon.svg
+├ ○ /politica-de-cookies
+├ ○ /politica-de-privacidade
+├ ○ /portfolio
+├ ○ /processo
+├ ○ /robots.txt
+├ ○ /servicos
+├ ○ /servicos/criacao-de-aplicacoes
+├ ○ /servicos/criacao-de-sites
+├ ○ /servicos/integracoes
+├ ○ /servicos/solucoes-sob-medida
+├ ○ /sitemap.xml
+├ ○ /sobre
+└ ○ /termos-de-uso
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

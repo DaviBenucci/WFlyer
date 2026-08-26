@@ -1,0 +1,2 @@
+$ node scripts/validate-locked-dependencies.mjs
+Todas as dependências usam versões exatas.

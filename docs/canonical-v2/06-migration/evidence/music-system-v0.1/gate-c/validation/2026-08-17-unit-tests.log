@@ -1,0 +1,10 @@
+$ vitest run --project=unit
+
+ RUN  v4.1.10 /home/davi-benucci/Área de trabalho/WFlyer
+
+
+ Test Files  59 passed (59)
+      Tests  500 passed (500)
+   Start at  09:33:13
+   Duration  22.33s (transform 4.90s, setup 20.09s, import 11.33s, tests 15.37s, environment 86.39s)
+

@@ -1,0 +1,4 @@
+No path found between 'SiteExperienceShell()' and 'ScoreSvg()'.
+No path found between 'composeSegment()' and 'SiteExperienceShell()'.
+Shortest path (2 hops):
+  composeSegment() <--imports [EXTRACTED]-- lab-score-models.ts --contains [EXTRACTED]--> renderLabSegment()

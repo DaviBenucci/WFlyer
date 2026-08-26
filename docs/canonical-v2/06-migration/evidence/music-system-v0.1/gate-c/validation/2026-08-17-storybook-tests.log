@@ -1,0 +1,10 @@
+$ vitest run --project=storybook
+
+ RUN  v4.1.10 /home/davi-benucci/Área de trabalho/WFlyer
+
+
+ Test Files  13 passed (13)
+      Tests  63 passed (63)
+   Start at  09:34:09
+   Duration  28.48s (transform 0ms, setup 7.47s, import 3.97s, tests 6.92s, environment 0ms)
+

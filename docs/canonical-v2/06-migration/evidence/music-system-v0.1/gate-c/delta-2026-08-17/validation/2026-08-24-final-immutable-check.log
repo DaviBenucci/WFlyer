@@ -1,0 +1,23 @@
+Gate-C corrective delta final immutable-baseline verification
+Recorded at: 2026-08-24T14:47:52Z
+Working directory: /home/davi-benucci/Área de trabalho/WFlyer
+
+Approved SVG aggregate command:
+find docs/design-reference/visual-library/musical/glyphs/source src/assets/visuals/musical -type f -name '*.svg' -print0 | LC_ALL=C sort -z | xargs -0 sha256sum | sha256sum
+Approved SVG file count: 16
+Approved SVG aggregate: 38ad23abbd642bac57bae9781f66124a46efde90b2921de2c0811966d93bab65
+
+Committed visual snapshot aggregate command:
+find tests/visual -type f -path '*-snapshots/*.png' -print0 | LC_ALL=C sort -z | xargs -0 sha256sum | sha256sum
+Committed visual snapshot file count: 84
+Committed visual snapshot aggregate: ba4f23c08613c1c1c9a1481fa6d8466dd7bfa0641cf3b6ae898424966ccc6b63
+
+Approved SVG pinned-manifest command:
+sha256sum --check --strict docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-post-gate-c-approved-svg-files.sha256
+Approved SVG pinned-manifest result: 16 OK, 0 failed, exit code 0
+
+Committed visual snapshot pinned-manifest command:
+sha256sum --check --strict docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-post-gate-c-committed-snapshots.sha256
+Committed visual snapshot pinned-manifest result: 84 OK, 0 failed, exit code 0
+
+Overall exit code: 0

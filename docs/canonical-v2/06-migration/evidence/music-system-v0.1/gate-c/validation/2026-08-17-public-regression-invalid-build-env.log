@@ -1,0 +1,42 @@
+[WebServer] (node:106021) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 153 tests using 1 worker
+
+(node:106034) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘    1 [chromium] › tests/e2e/home.spec.ts:3:1 › a Home entrega a origem e os dois caminhos oficiais (5.6s)
+(node:106249) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    2 [chromium] › tests/e2e/home.spec.ts:60:1 › foco enfatiza somente a pauta do ramo selecionado (8.1s)
+  ✘    3 [chromium] › tests/e2e/phase05-navigation.spec.ts:142:5 › Phase 05 adjacent score navigation › / to /aplicacao-wflyer connects adjacent score anchors (5.5s)
+  -    4 [chromium] › tests/e2e/phase05-navigation.spec.ts:142:5 › Phase 05 adjacent score navigation › /aplicacao-wflyer to /aplicacao-wflyer/como-funciona connects adjacent score anchors
+  -    5 [chromium] › tests/e2e/phase05-navigation.spec.ts:142:5 › Phase 05 adjacent score navigation › /aplicacao-wflyer/como-funciona to /aplicacao-wflyer/beneficios connects adjacent score anchors
+  -    6 [chromium] › tests/e2e/phase05-navigation.spec.ts:142:5 › Phase 05 adjacent score navigation › / to /sobre connects adjacent score anchors
+  -    7 [chromium] › tests/e2e/phase05-navigation.spec.ts:142:5 › Phase 05 adjacent score navigation › /sobre to /servicos connects adjacent score anchors
+  -    8 [chromium] › tests/e2e/phase05-navigation.spec.ts:142:5 › Phase 05 adjacent score navigation › /servicos to /processo connects adjacent score anchors
+  -    9 [chromium] › tests/e2e/phase05-navigation.spec.ts:142:5 › Phase 05 adjacent score navigation › /processo to /portfolio connects adjacent score anchors
+  -   10 [chromium] › tests/e2e/phase05-navigation.spec.ts:142:5 › Phase 05 adjacent score navigation › /portfolio to /contato connects adjacent score anchors
+  -   11 [chromium] › tests/e2e/phase05-navigation.spec.ts:208:5 › Phase 05 compressed and cross-branch navigation › /aplicacao-wflyer to /aplicacao-wflyer/beneficios is one compressed traversal
+  -   12 [chromium] › tests/e2e/phase05-navigation.spec.ts:208:5 › Phase 05 compressed and cross-branch navigation › /sobre to /contato is one compressed traversal
+  -   13 [chromium] › tests/e2e/phase05-navigation.spec.ts:261:5 › Phase 05 compressed and cross-branch navigation › /aplicacao-wflyer to /sobre pivots through Home without adding it to history
+  -   14 [chromium] › tests/e2e/phase05-navigation.spec.ts:261:5 › Phase 05 compressed and cross-branch navigation › /sobre to /aplicacao-wflyer pivots through Home without adding it to history
+  -   15 [chromium] › tests/e2e/phase05-navigation.spec.ts:307:1 › Back and Forward restore one route without focus theft or route loops
+  -   16 [chromium] › tests/e2e/phase05-navigation.spec.ts:348:1 › every main chapter remains a clean direct deep link
+  -   17 [chromium] › tests/e2e/phase05-navigation.spec.ts:376:1 › the latest rapid activation supersedes one pending destination
+  -   18 [chromium] › tests/e2e/phase05-navigation.spec.ts:412:1 › a destination committed before continued navigation remains in history
+  -   19 [chromium] › tests/e2e/phase05-navigation.spec.ts:453:1 › Enter activates chapter navigation and transfers focus once to main
+  -   20 [chromium] › tests/e2e/phase05-navigation.spec.ts:477:1 › Process remains the Services subchapter after client navigation
+  -   21 [chromium] › tests/e2e/phase05-navigation.spec.ts:493:1 › auxiliary links keep native navigation and do not create a chapter
+  -   22 [chromium] › tests/e2e/phase05-navigation.spec.ts:508:1 › the public application CTA remains an external new-context link
+  -   23 [chromium] › tests/e2e/phase05-navigation.spec.ts:538:3 › /aplicacao-wflyer/beneficios retains its final barline and previous navigation
+  -   24 [chromium] › tests/e2e/phase05-navigation.spec.ts:538:3 › /contato retains its final barline and previous navigation
+  -   25 [chromium] › tests/e2e/phase05-navigation.spec.ts:568:1 › both final barlines persist on mobile and with reduced motion
+(node:106580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   26 [chromium] › tests/e2e/phase06-application-demo.spec.ts:3:1 › tablet completes the local deterministic journey and restores defaults (1.6s)
+  ✓   27 [chromium] › tests/e2e/phase06-application-demo.spec.ts:35:1 › native selects retain keyboard-visible focus (573ms)
+  ✓   28 [chromium] › tests/e2e/phase06-application-demo.spec.ts:69:1 › tablet interaction emits no demo network, file, storage, or visitor logs (1.5s)
+  ✓   29 [chromium] › tests/e2e/phase06-application-demo.spec.ts:212:1 › reduced motion keeps the full result flow and removes tilt (563ms)
+  ✓   30 [chromium] › tests/e2e/phase06-application-demo.spec.ts:228:1 › mobile tablet preserves 44px controls and prevents horizontal overflow (472ms)
+  ✓   31 [chromium] › tests/e2e/phase06-application-demo.spec.ts:254:1 › precise pointer tilt responds and returns to rest (1.7s)

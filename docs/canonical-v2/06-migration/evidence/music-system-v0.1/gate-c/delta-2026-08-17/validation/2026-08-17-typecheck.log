@@ -1,0 +1,18 @@
+command: pnpm typecheck
+phase: source
+repositoryRoot: /home/davi-benucci/Área de trabalho/WFlyer
+platform: linux
+architecture: x64
+osRelease: 7.0.0-29-generic
+nodeVersion: v24.18.0
+startedAt: 2026-08-18T19:58:15.754Z
+finishedAt: 2026-08-18T19:58:18.556Z
+elapsedMs: 2802
+timeoutMs: 600000
+timedOut: false
+exitCode: 0
+signal: none
+spawnError: none
+$ next typegen && tsc --noEmit
+Generating route types...
+✓ Types generated successfully

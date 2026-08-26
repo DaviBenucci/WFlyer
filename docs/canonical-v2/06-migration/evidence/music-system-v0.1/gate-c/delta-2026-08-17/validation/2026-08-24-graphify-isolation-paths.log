@@ -1,0 +1,25 @@
+commandSet:
+  - graphify path 'SiteExperienceShell()' 'ScoreSvg()'
+  - graphify path 'composeSegment()' 'SiteExperienceShell()'
+  - graphify path 'ScoreSvg()' 'ChapterScore()'
+  - graphify path 'ScoreSvg()' 'OriginScore()'
+  - graphify path 'ResponsiveScoreProjection' 'SiteExperienceShell()'
+recordedAt: 2026-08-24T14:39:53Z
+graph: 4465 nodes, 7342 edges, 430 communities
+exitCode: 0
+
+No path found between 'SiteExperienceShell()' and 'ScoreSvg()'.
+No path found between 'composeSegment()' and 'SiteExperienceShell()'.
+No path found between 'ScoreSvg()' and 'ChapterScore()'.
+No path found between 'ScoreSvg()' and 'OriginScore()'.
+No path found between 'ResponsiveScoreProjection' and 'SiteExperienceShell()'.
+
+Corroborating automated boundary evidence:
+  command: pnpm exec vitest run --project=unit tests/unit/music/public-isolation.test.ts tests/unit/music/pure-boundary.test.ts
+  result: 2 files passed, 3 tests passed, 0 failed, exitCode 0
+  evidence: validation/2026-08-17-music-boundary-tests.log
+
+Source inspection:
+  new music imports remain confined to src/components/score and src/app/%5F_visual-lab/music.
+  public Home continues to use the legacy NarrativeClef and OriginScore baseline.
+  no public landing integration is present or authorized.

@@ -1,0 +1,25 @@
+command: pnpm test:storybook
+phase: source
+repositoryRoot: /home/davi-benucci/Área de trabalho/WFlyer
+platform: linux
+architecture: x64
+osRelease: 7.0.0-29-generic
+nodeVersion: v24.18.0
+startedAt: 2026-08-18T19:58:52.156Z
+finishedAt: 2026-08-18T19:59:21.571Z
+elapsedMs: 29415
+timeoutMs: 900000
+timedOut: false
+exitCode: 0
+signal: none
+spawnError: none
+$ vitest run --project=storybook
+
+ RUN  v4.1.10 /home/davi-benucci/Área de trabalho/WFlyer
+
+
+ Test Files  13 passed (13)
+      Tests  63 passed (63)
+   Start at  16:58:55
+   Duration  25.55s (transform 0ms, setup 7.07s, import 3.65s, tests 5.89s, environment 0ms)
+

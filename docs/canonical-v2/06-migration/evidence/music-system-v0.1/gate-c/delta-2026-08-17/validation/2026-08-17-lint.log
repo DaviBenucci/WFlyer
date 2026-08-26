@@ -1,0 +1,16 @@
+command: pnpm lint
+phase: source
+repositoryRoot: /home/davi-benucci/Área de trabalho/WFlyer
+platform: linux
+architecture: x64
+osRelease: 7.0.0-29-generic
+nodeVersion: v24.18.0
+startedAt: 2026-08-18T19:58:08.097Z
+finishedAt: 2026-08-18T19:58:15.754Z
+elapsedMs: 7657
+timeoutMs: 600000
+timedOut: false
+exitCode: 0
+signal: none
+spawnError: none
+$ eslint . --max-warnings=0
