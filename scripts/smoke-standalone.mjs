@@ -35,6 +35,7 @@ const publicRoutes = [
 const prohibitedDevelopmentRoutes = [
   "/__visual-lab/story",
   "/__visual-lab/story/bootstrap",
+  "/__visual-lab/story/motion",
   "/__visual-lab/music",
 ];
 

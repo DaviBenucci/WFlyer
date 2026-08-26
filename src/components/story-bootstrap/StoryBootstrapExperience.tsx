@@ -106,6 +106,10 @@ interface ActivePositionRequest {
 interface PositionRequestOptions {
   readonly adapter?: StoryPositioningAdapter;
   readonly forceRestart?: boolean;
+  readonly intent?:
+    | "position-destination"
+    | "preserve-active-chapter"
+    | "semantic-navigation";
   readonly preserveFailureStatus?: boolean;
 }
 
@@ -452,6 +456,7 @@ export function StoryBootstrapExperience({
           scenario === "projection-failure" && requestOptions.adapter === undefined
             ? Promise.reject(new Error("Injected projection failure."))
             : activeAdapter.position(resolved.chapterId, {
+                intent: requestOptions.intent ?? "position-destination",
                 signal: positionController.signal,
               })
         ).then((result) => {
@@ -609,7 +614,10 @@ export function StoryBootstrapExperience({
       pendingNavigationTrigger = null;
       pendingNavigationState = undefined;
       const resolved = resolveCurrentDestination(historyState);
-      void position(resolved, trigger).catch(() => undefined);
+      void position(resolved, trigger, {
+        forceRestart: true,
+        intent: "semantic-navigation",
+      }).catch(() => undefined);
     };
     const scheduleSemanticNavigation = (
       trigger: "hashchange" | "popstate",
@@ -629,7 +637,10 @@ export function StoryBootstrapExperience({
     };
     const handleViewportChange = () => {
       if ((!contentReleased && !hasPositioned) || destinationRef === null) return;
-      void position(destinationRef, "viewport-change").catch(() => undefined);
+      void position(destinationRef, "viewport-change", {
+        forceRestart: true,
+        intent: "preserve-active-chapter",
+      }).catch(() => undefined);
     };
 
     const handleHashChange = () => scheduleSemanticNavigation("hashchange");
@@ -641,6 +652,7 @@ export function StoryBootstrapExperience({
     window.addEventListener("popstate", handlePopState);
     window.addEventListener("resize", handleViewportChange);
     window.addEventListener("orientationchange", handleViewportChange);
+    window.visualViewport?.addEventListener("resize", handleViewportChange);
     document.addEventListener("visibilitychange", handleVisibility);
     motionQuery.addEventListener("change", handleMotionChange);
 
@@ -755,6 +767,10 @@ export function StoryBootstrapExperience({
       window.removeEventListener("popstate", handlePopState);
       window.removeEventListener("resize", handleViewportChange);
       window.removeEventListener("orientationchange", handleViewportChange);
+      window.visualViewport?.removeEventListener(
+        "resize",
+        handleViewportChange,
+      );
       document.removeEventListener("visibilitychange", handleVisibility);
       serverCover?.removeEventListener("animationend", handleCssFailOpen);
       motionQuery.removeEventListener("change", handleMotionChange);

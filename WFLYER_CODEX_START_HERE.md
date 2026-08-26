@@ -2,10 +2,10 @@
 
 You are Codex working in the **root directory of the W_Flyer website repository**.
 
-**Current checkpoint:** Phase 4 / Gate 4 is complete as of 2026-08-25.
-Phase 5 — Desktop Motion Lab and Master Story — is the next permitted phase and
-has not started. Verify the sealed Phase-4 evidence before resuming; do not
-rerun or reopen completed Phases 0–4 without a demonstrated inconsistency.
+**Current checkpoint:** Phase 5 / Gate 5 is complete as of 2026-08-26.
+Phase 6 — Header Traversal, URL, and History — is the next permitted phase and
+has not started. Verify the sealed Phase-5 evidence before resuming; do not
+rerun or reopen completed Phases 0–5 without a demonstrated inconsistency.
 
 The repository root is the directory that contains:
 
@@ -73,10 +73,11 @@ When a conflict exists, use this precedence:
 
 1. Confirm the repository root and the presence of every mandatory file above.
 2. Verify the current phase/gate status and the latest sealed evidence bundle.
-3. Inspect the active OpenSpec progress and confirm Phase 5 is the first
+3. Inspect the active OpenSpec progress and confirm Phase 6 is the first
    incomplete executable phase.
 4. Record failures without weakening tests or deleting evidence.
-5. Begin Phase 5 only under a new explicit execution instruction; do not skip
-   its Gate 5 requirements or modify the completed Phase-4 bootstrap contract.
+5. Begin Phase 6 only under a new explicit execution instruction; do not skip
+   its Gate 6 requirements or modify the completed Phase-4/5 bootstrap and
+   master-story contracts.
 
 Do not restart the project from scratch. Reuse retained infrastructure and components where the migration map says `KEEP` or `REFACTOR`; replace only what the canonical target supersedes.

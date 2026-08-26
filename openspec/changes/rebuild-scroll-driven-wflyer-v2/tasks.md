@@ -33,9 +33,9 @@ retained; only its phase classification and later execution position changed.
 - [x] Validate skip/reduced/fail-open
 
 ## 5. Desktop Motion Lab and master story
-- [ ] Build Motion Lab with placeholder chapters
-- [ ] Implement native-scroll horizontal mapping and cleanup
-- [ ] Preserve semantic chapter on mode rebuild
+- [x] Build Motion Lab with placeholder chapters
+- [x] Implement native-scroll horizontal mapping and cleanup
+- [x] Preserve semantic chapter on mode rebuild
 
 ## 6. Header traversal and history
 - [ ] Implement approved header targets

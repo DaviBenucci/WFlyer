@@ -153,8 +153,9 @@ is still the legacy rollback baseline.
 
 ## Phase 5 — Desktop Motion Lab and native-scroll master story
 
-**Execution status:** next permitted phase; not started by the Phase-4
-closure.
+**Execution status:** complete; Gate 5 passed on 2026-08-26. The validated
+surface remains development-only at `/__visual-lab/story/motion`; public `/`
+is unchanged.
 
 ### Required work
 
@@ -174,6 +175,9 @@ closure.
 - All owned GSAP/ScrollTrigger resources clean up exactly once.
 
 ## Phase 6 — Header traversal, URL, and history
+
+**Execution status:** next permitted phase; not started by the Phase-5
+closure.
 
 ### Required work
 

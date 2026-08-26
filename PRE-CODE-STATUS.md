@@ -1,6 +1,6 @@
 # W_Flyer v2 — Pre-code status
 
-**Status:** `V2_PHASE_4_GATE_4_COMPLETE_PHASE_5_AUTHORIZED_NOT_STARTED`
+**Status:** `V2_PHASE_5_GATE_5_COMPLETE_PHASE_6_AUTHORIZED_NOT_STARTED`
 
 ## Approved
 
@@ -30,16 +30,19 @@ interactive DOM tablet demo.
 Those behaviors are not the approved target. They remain only to provide a
 functioning rollback baseline during migration.
 
-Phases 2, 3, and 4 are complete. A typed, geometry-free v2 story model and the
+Phases 2, 3, 4, and 5 are complete. A typed, geometry-free v2 story model and the
 accessible static vertical skeleton exist in parallel at the development-only
 `/__visual-lab/story` surface. The readiness-driven intro/bootstrap lifecycle,
 semantic destination/history contracts, static positioning adapter, and
 failure/reduced-motion recovery are validated at the development-only
-`/__visual-lab/story/bootstrap` surface. Typed public content, publication allowlists,
+`/__visual-lab/story/bootstrap` surface. The native-scroll desktop master story,
+measured Home origin, responsive projection adapter, and owned ScrollTrigger
+lifecycle are validated at the development-only
+`/__visual-lab/story/motion` surface. Typed public content, publication allowlists,
 retained detailed routes, three fail-closed project details, route metadata,
 and the preserved Contact contract passed Gate 3 on 2026-08-24. Gate 4 passed
-on 2026-08-25. The public landing has not been cut over, and Phase 5 has not
-started.
+on 2026-08-25 and Gate 5 passed on 2026-08-26. The public landing has not been
+cut over, and Phase 6 has not started.
 
 ## Human-gated pending assets/calibrations
 
@@ -53,5 +56,5 @@ started.
 
 ## Authorization
 
-Phase 5 is the next permitted phase under `WFLYER_IMPLEMENTATION_PLAN.md`.
+Phase 6 is the next permitted phase under `WFLYER_IMPLEMENTATION_PLAN.md`.
 Codex may not skip later human gates or deploy production.

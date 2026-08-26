@@ -7,6 +7,14 @@ export type StoryProjectionMode =
   | "static";
 
 export interface StoryPositioningOptions {
+  /**
+   * Phase 5 uses this semantic intent to distinguish destination resolution
+   * from a viewport rebuild that must retain the currently active chapter.
+   */
+  readonly intent?:
+    | "position-destination"
+    | "preserve-active-chapter"
+    | "semantic-navigation";
   readonly signal?: AbortSignal;
 }
 

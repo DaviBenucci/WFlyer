@@ -31,7 +31,7 @@ The stable detailed URL `/portfolio` is retained for the current release unless 
 ## Status
 
 - Product/architecture decisions: approved.
-- Migration implementation: Phases 2–4 complete behind development-only
+- Migration implementation: Phases 2–5 complete behind development-only
   surfaces; the public `/` landing remains the retained legacy rollback
   baseline until cutover.
 - Music glyph metrics/anchors and down-flag transform: Gate B approved on 2026-08-15.
@@ -39,7 +39,8 @@ The stable detailed URL `/portfolio` is retained for the current release unless 
   approved by external human review on 2026-08-24 for future landing
   integration; public landing integration has not occurred.
 - Phase 2 Gate 2 and Phase 3 Gate 3: passed on 2026-08-24.
-- Phase 4 Gate 4: passed on 2026-08-25; Phase 5 is next permitted and has not
+- Phase 4 Gate 4: passed on 2026-08-25.
+- Phase 5 Gate 5: passed on 2026-08-26; Phase 6 is next permitted and has not
   started.
 - Persona final asset: pending asset.
 - APP-04 final media: pending asset.

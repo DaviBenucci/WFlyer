@@ -22,10 +22,11 @@ phases:
     gate: G4
   - id: P5
     name: Desktop Motion Lab and master story
-    status: next-permitted-not-started
+    status: gate-5-complete
     gate: G5
   - id: P6
     name: Header traversal and history
+    status: next-permitted-not-started
     gate: G6
   - id: P7
     name: Professional scenes

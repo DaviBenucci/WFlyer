@@ -661,10 +661,32 @@ describe("StoryBootstrapExperience", () => {
     await waitFor(() => expect(position).toHaveBeenCalledTimes(2));
     expect(position).toHaveBeenLastCalledWith(
       "professional-about",
-      expect.any(Object),
+      expect.objectContaining({ intent: "semantic-navigation" }),
     );
     expect(replaceState).not.toHaveBeenCalled();
     expect(window.__WFLYER_PHASE4_BOOTSTRAP__?.positionCalls).toHaveLength(2);
+  });
+
+  it("marks viewport positioning as an active-chapter preservation intent", async () => {
+    const { adapter, position } = createAdapter();
+
+    render(
+      <StoryBootstrapExperience
+        positioningAdapter={adapter}
+        timing={IMMEDIATE_TIMING}
+      >
+        {storyDocument()}
+      </StoryBootstrapExperience>,
+    );
+    await expectTerminalState("REVEALED");
+
+    fireEvent(window, new Event("resize"));
+
+    await waitFor(() => expect(position).toHaveBeenCalledTimes(2));
+    expect(position).toHaveBeenLastCalledWith(
+      "home",
+      expect.objectContaining({ intent: "preserve-active-chapter" }),
+    );
   });
 
   it("cleans timers, listeners, locks, and pending work across Strict Mode remounts", async () => {
