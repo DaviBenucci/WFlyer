@@ -5,8 +5,21 @@
     "version": "0.1.0",
     "generatedOn": "2026-08-14",
     "canonicalLanguage": "en",
-    "status": "visual-reference-approved-runtime-pending",
+    "status": "visual-reference-approved-runtime-approved",
     "purpose": "Canonical musical glyph package for W_Flyer Music Renderer and Music Visual Lab."
+  },
+  "runtimeCalibrationApproval": {
+    "status": "approved",
+    "gate": "music-gate-b-human",
+    "approvedOn": "2026-08-15",
+    "approvedByRole": "external-human-reviewer",
+    "evidence": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/2026-08-15-gate-b-calibration-review.md",
+    "coordinateSpace": "normalized-view-box",
+    "downFlagTransform": {
+      "mirrorX": false,
+      "mirrorY": true,
+      "rotationRadians": 0
+    }
   },
   "rules": {
     "approvedGlyphGeometryMayBeRedesignedByCode": false,
@@ -21,16 +34,19 @@
       "name": "Treble Clef",
       "type": "GLYPH",
       "status": "visual-reference-approved",
-      "runtimeStatus": "pending-metrics-and-visual-lab",
+      "runtimeStatus": "approved",
       "sourceMaster": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-treble-clef-master.svg",
       "runtimeCandidate": "src/assets/visuals/musical/wf-music-treble-clef.svg",
       "geometryPolicy": "immutable-without-explicit-human-reapproval",
       "requiredAnchors": {
-        "gLine": null
+        "gLine": {
+          "x": 0.5,
+          "y": 0.62
+        }
       },
       "metrics": {
-        "nominalWidthSp": null,
-        "nominalHeightSp": null
+        "nominalWidthSp": 2.614,
+        "nominalHeightSp": 6.4
       },
       "provenance": {
         "legacyFilename": "Clave-de-sol-WFlyer.svg",
@@ -58,18 +74,27 @@
       "name": "Filled Notehead",
       "type": "GLYPH",
       "status": "visual-reference-approved",
-      "runtimeStatus": "pending-metrics-and-visual-lab",
+      "runtimeStatus": "approved",
       "sourceMaster": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-notehead-filled-master.svg",
       "runtimeCandidate": "src/assets/visuals/musical/wf-music-notehead-filled.svg",
       "geometryPolicy": "immutable-without-explicit-human-reapproval",
       "requiredAnchors": {
-        "opticalCenter": null,
-        "stemUp": null,
-        "stemDown": null
+        "opticalCenter": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "stemUp": {
+          "x": 0.925,
+          "y": 0.34
+        },
+        "stemDown": {
+          "x": 0.075,
+          "y": 0.66
+        }
       },
       "metrics": {
-        "nominalWidthSp": null,
-        "nominalHeightSp": null
+        "nominalWidthSp": 1.248,
+        "nominalHeightSp": 0.9
       },
       "provenance": {
         "legacyFilename": "Notehead-preenchida.svg",
@@ -97,18 +122,27 @@
       "name": "Open Notehead",
       "type": "GLYPH",
       "status": "visual-reference-approved",
-      "runtimeStatus": "pending-metrics-and-visual-lab",
+      "runtimeStatus": "approved",
       "sourceMaster": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-notehead-open-master.svg",
       "runtimeCandidate": "src/assets/visuals/musical/wf-music-notehead-open.svg",
       "geometryPolicy": "immutable-without-explicit-human-reapproval",
       "requiredAnchors": {
-        "opticalCenter": null,
-        "stemUp": null,
-        "stemDown": null
+        "opticalCenter": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "stemUp": {
+          "x": 0.925,
+          "y": 0.34
+        },
+        "stemDown": {
+          "x": 0.075,
+          "y": 0.66
+        }
       },
       "metrics": {
-        "nominalWidthSp": null,
-        "nominalHeightSp": null
+        "nominalWidthSp": 1.248,
+        "nominalHeightSp": 0.9
       },
       "provenance": {
         "legacyFilename": "Notehead-aberta.svg",
@@ -136,16 +170,19 @@
       "name": "Sharp Accidental",
       "type": "GLYPH",
       "status": "visual-reference-approved",
-      "runtimeStatus": "pending-metrics-and-visual-lab",
+      "runtimeStatus": "approved",
       "sourceMaster": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-accidental-sharp-master.svg",
       "runtimeCandidate": "src/assets/visuals/musical/wf-music-accidental-sharp.svg",
       "geometryPolicy": "immutable-without-explicit-human-reapproval",
       "requiredAnchors": {
-        "pitchCenter": null
+        "pitchCenter": {
+          "x": 0.5,
+          "y": 0.515
+        }
       },
       "metrics": {
-        "nominalWidthSp": null,
-        "nominalHeightSp": null
+        "nominalWidthSp": 1.164,
+        "nominalHeightSp": 2
       },
       "provenance": {
         "legacyFilename": "Sustenido.svg",
@@ -173,16 +210,19 @@
       "name": "Flat Accidental",
       "type": "GLYPH",
       "status": "visual-reference-approved",
-      "runtimeStatus": "pending-metrics-and-visual-lab",
+      "runtimeStatus": "approved",
       "sourceMaster": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-accidental-flat-master.svg",
       "runtimeCandidate": "src/assets/visuals/musical/wf-music-accidental-flat.svg",
       "geometryPolicy": "immutable-without-explicit-human-reapproval",
       "requiredAnchors": {
-        "pitchCenter": null
+        "pitchCenter": {
+          "x": 0.5,
+          "y": 0.68
+        }
       },
       "metrics": {
-        "nominalWidthSp": null,
-        "nominalHeightSp": null
+        "nominalWidthSp": 0.869,
+        "nominalHeightSp": 2.4
       },
       "provenance": {
         "legacyFilename": "Bemol.svg",
@@ -210,16 +250,19 @@
       "name": "Natural Accidental",
       "type": "GLYPH",
       "status": "visual-reference-approved",
-      "runtimeStatus": "pending-metrics-and-visual-lab",
+      "runtimeStatus": "approved",
       "sourceMaster": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-accidental-natural-master.svg",
       "runtimeCandidate": "src/assets/visuals/musical/wf-music-accidental-natural.svg",
       "geometryPolicy": "immutable-without-explicit-human-reapproval",
       "requiredAnchors": {
-        "pitchCenter": null
+        "pitchCenter": {
+          "x": 0.5,
+          "y": 0.5
+        }
       },
       "metrics": {
-        "nominalWidthSp": null,
-        "nominalHeightSp": null
+        "nominalWidthSp": 0.835,
+        "nominalHeightSp": 2.2
       },
       "provenance": {
         "legacyFilename": "Bequadro.svg",
@@ -247,16 +290,19 @@
       "name": "Eighth Flag (Up Master)",
       "type": "GLYPH",
       "status": "visual-reference-approved",
-      "runtimeStatus": "pending-metrics-and-visual-lab",
+      "runtimeStatus": "approved",
       "sourceMaster": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-eighth-flag-master.svg",
       "runtimeCandidate": "src/assets/visuals/musical/wf-music-eighth-flag.svg",
       "geometryPolicy": "immutable-without-explicit-human-reapproval",
       "requiredAnchors": {
-        "stemAttachment": null
+        "stemAttachment": {
+          "x": 0.105,
+          "y": 0.125
+        }
       },
       "metrics": {
-        "nominalWidthSp": null,
-        "nominalHeightSp": null
+        "nominalWidthSp": 1.431,
+        "nominalHeightSp": 2.25
       },
       "provenance": {
         "legacyFilename": "Colchete.svg",
@@ -284,16 +330,19 @@
       "name": "Sixteenth Double Flag (Up Master)",
       "type": "GLYPH",
       "status": "visual-reference-approved",
-      "runtimeStatus": "pending-metrics-and-visual-lab",
+      "runtimeStatus": "approved",
       "sourceMaster": "docs/design-reference/visual-library/musical/glyphs/source/wf-music-sixteenth-double-flag-master.svg",
       "runtimeCandidate": "src/assets/visuals/musical/wf-music-sixteenth-double-flag.svg",
       "geometryPolicy": "immutable-without-explicit-human-reapproval",
       "requiredAnchors": {
-        "stemAttachment": null
+        "stemAttachment": {
+          "x": 0.105,
+          "y": 0.125
+        }
       },
       "metrics": {
-        "nominalWidthSp": null,
-        "nominalHeightSp": null
+        "nominalWidthSp": 1.538,
+        "nominalHeightSp": 2.5
       },
       "provenance": {
         "legacyFilename": "Colchetes-duplos.svg",

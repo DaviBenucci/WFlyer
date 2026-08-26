@@ -33,25 +33,44 @@
 
 **Status:** APPROVED — 2026-08-14
 
-Home is the common origin of two perceptually continuous five-line scores. Desktop application travels left and professional travels right. Each branch uses geometrically compatible modular segments, long smooth master-guide curves, coherent offsets, and a final barline before its terminal. Mobile uses a vertical/serpentine adaptation with shared semantic IDs.
+**Responsive functional clarification:** APPROVED — external human Gate-C
+follow-up review, 2026-08-24
+
+Home is the common origin of two perceptually continuous five-line scores. Desktop application travels left and professional travels right. Each branch uses geometrically compatible modular segments, long smooth master-guide curves, coherent offsets, and a final barline before its terminal. Mobile uses vertical document progression while conventional notation remains in locally left-to-right notation-safe zones joined by event-free connector zones; semantic IDs and composition remain shared across projections.
+
+`maxNotationTangentAngleDeg=18` is approved for notation-safe zoning. The
+current piecewise returning connector is a validation-only noncanonical fixture,
+not the final mobile aesthetic. Final public vertical Score Paths require
+`Organic Soft` and `Organic Flowing` candidates in both vertical modes and both
+themes, authored against real chapter/reserved zones and explicitly approved at
+the blocking Phase-9 Score Path subgate.
 
 ## ADR-026 — W_Flyer Music Renderer v0.1
 
 **Status:** APPROVED
 
-Designer-owned SVG glyph geometry is separated from deterministic engraving primitives. `staffSpace`, `staffStep`, ScorePath point/tangent/normal frames, ledger-line rules, stems, beams/hooks, accidentals, key signatures, and barlines are deterministic. Pure geometry is independent of React.
+Designer-owned SVG glyph geometry is separated from deterministic engraving primitives. `staffSpace`, `staffStep`, ScorePath point/tangent/normal frames, ledger-line rules, stems, beams/hooks, accidentals, key signatures, and barlines are deterministic. The ScorePath master guide is the B4/staffStep-4 middle-line geometry, while all five visible lines remain rendered coherent offsets. `normalAt(t)` is the pitch-increasing normal and does not invert when branch traversal is reversed. Pure geometry is independent of React.
 
 ## ADR-027 — Seeded procedural score composition
 
 **Status:** APPROVED
 
-The public score is a session-seeded assembly of whitelisted motifs and controlled pitch contours, not free music generation. Same session/version/chapter/semantic slots yield the same composition across reload, theme, responsive mode, and reduced motion. `Math.random()` is prohibited.
+The public score is a session-seeded assembly of whitelisted motifs and versioned per-length pitch contours, not free music generation. Same session/version/chapter/semantic slots yield the same composition across reload, theme, responsive mode, and reduced motion. Boundary correction may translate a complete contour by one smallest uniform integer staffStep offset only; it may not clamp, reflect, reverse, truncate, or mutate individual intervals. An unfit contour is rejected deterministically. `Math.random()` is prohibited.
 
 ## ADR-028 — Music calibration and Visual Lab gates
 
 **Status:** APPROVED
 
 Eight SVG glyphs are visual-reference approved but runtime approval requires human-calibrated metrics/anchors. Gate A validates geometry, Gate B is human calibration, and Gate C validates renderer/composer visual behavior. Landing integration is forbidden before all gates.
+
+**Gate-C final decision:** APPROVED — external human review, 2026-08-24.
+The reviewed renderer tokens, Composer calibration, final triplet presentation,
+responsive semantic rules, and `maxNotationTangentAngleDeg=18` are canonical for
+Music System v0.1. Responsive activation thresholds remain noncanonical; the
+current connector geometry remains a validation-only noncanonical fixture; and
+final public organic Score Paths remain blocked on separate Phase-9 human
+approval. Authority and evidence are recorded in
+`docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/approval-2026-08-24/`.
 
 ## ADR-029 — W_Flyer brand and personal professional positioning
 
@@ -75,7 +94,15 @@ Native vertical scroll is the canonical story progress. Desktop maps it to one h
 
 **Status:** APPROVED
 
-Horizontal story is progressive enhancement for eligible wide/full-motion viewports. Vertical story is universal fallback. Mobile order is Home → professional branch → professional ending → application branch → application ending → global footer. Access W_Flyer is the last application content scene.
+**Responsive functional clarification:** APPROVED — external human Gate-C
+follow-up review, 2026-08-24
+
+Horizontal story is progressive enhancement, not a width-only breakpoint. Responsive score presentation supports `horizontal-enhanced`, `vertical-wide`, `vertical-compact`, and `static`; selection can consider width, height, pointer/input capability, reduced-motion preference, and effective layout capacity while exact thresholds remain Motion Lab calibration. Vertical document progression is the universal fallback and does not rotate conventional musical notation. Mobile order is Home → professional branch → professional ending → application branch → application ending → global footer. Access W_Flyer is the last application content scene.
+
+The approved responsive semantics and `maxNotationTangentAngleDeg=18` do not
+approve the current connector curve aesthetic. Responsive activation thresholds
+remain noncanonical; final organic connector layouts are deferred to the
+blocking Phase-9 Score Path human subgate.
 
 ## ADR-033 — Readiness-driven opening, deep links, and history restoration
 

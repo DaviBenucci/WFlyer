@@ -1,0 +1,4 @@
+8d4471c25aa398d0577a89a8127f82bf1edd53623ac39004ba56444970d5c430  ./2026-08-24-gate-c-final-human-approval.md
+f478e2550dcd3d17ff3087366d5aefca266dd572f754f655f9cfc51f2413657a  ./2026-08-24-gate-c-closure-changed-files.txt
+d47e10c11c6b3e60cbb02358c17e23db595d32fed442755b751e6a9ad8e709de  ./2026-08-24-music-system-closeout-validation.md
+b06fa5c834545f04e7a312b201283bec2b374afd8d8a49c3d07b749c4e633dc5  ./gate-c-approved-evidence-manifest.v1.json

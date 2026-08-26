@@ -21,6 +21,14 @@ Straight and curved staffs use the same path abstraction. At a normalized path p
 - normalized tangent `T`
 - local normal `N`
 
+`P` is the logical staff master guide and coincides geometrically with the visible middle staff line, `B4 / staffStep 4`. The visible middle line remains one of the five rendered staff lines; the guide does not replace it.
+
+`N` always points toward increasing pitch independently of path traversal direction. Reversing a branch path must preserve pitch placement at corresponding geometric points. The pitch offset is:
+
+```text
+pitchOffset = (staffStep - 4) * (staffSpace / 2)
+```
+
 Visible staff lines and pitch offsets are derived from this local frame. Curved score composition zones must use long, smooth curves with locally stable tangents.
 
 ## Ledger lines
@@ -75,6 +83,23 @@ All notes in the group share the resolved direction.
 
 Beams are renderer primitives. Primary/secondary beams and hooks must be computed deterministically. Beam groups must be authored only inside ScorePath regions with locally stable curvature.
 
+## Triplets
+
+`E8_TRIPLET_3` always contains exactly three eighth notes, one primary beam, one
+visible bracket, and the numeral `3`. The numeral uses score
+foreground/`currentColor`, is centered from the complete group bounding span,
+and remains external to the primary beam. Split the horizontal bracket around
+the numeral with this central gap:
+
+```text
+renderedNumeralWidth + 2 * tupletNumeralSideGapSp
+```
+
+The bracket must not pass behind or through the numeral. Final external human
+Gate-C review on 2026-08-24 approved `tupletNumeralSizeSp=0.85`,
+`tupletNumeralSideGapSp=0.18`, `bracketClearanceSp=0.65`,
+`bracketEndCapSp=0.30`, and `bracketThicknessSp=0.07`.
+
 ## Accidentals
 
 Individual accidental vertical position equals the note `staffStep`. Horizontal placement is computed from glyph bounds and staffSpace-relative gaps.
@@ -109,6 +134,45 @@ Treble-clef flat order and steps:
 ## Barlines
 
 Ordinary and final barlines are primitives. Final barline is always `thin line + gap + thick line` and follows the local staff normal. The final barline ends the score narrative before the terminal/footer begins.
+
+## Responsive ScorePath projection
+
+Responsive presentation modes are `horizontal-enhanced`, `vertical-wide`,
+`vertical-compact`, and `static`. Selection must be capable of considering
+viewport width, viewport height, pointer/input capability, reduced-motion
+preference, and effective layout capacity. Exact activation thresholds remain
+Motion Lab calibration parameters.
+
+Every physical projection distinguishes:
+
+- **notation-safe composition zones**, which read left-to-right, are locally
+  horizontal or gently inclined, and may contain musical events; and
+- **connector zones**, which preserve continuity of all five lines and may
+  descend, curve, become steep, or return across the viewport, but contain no
+  musical events.
+
+Vertical document progression does not rotate musical notation into a vertical
+staff. A returning span is a connector rather than a reversed notation zone.
+Correct the ScorePath zoning itself; never counter-rotate arbitrary glyphs
+independently while leaving a vertical or steep staff underneath them. The
+approved notation-safe limit is `maxNotationTangentAngleDeg=18`; responsive
+activation thresholds remain Motion Lab calibration.
+
+The current piecewise returning connector remains a validation-only
+noncanonical fixture. Final public organic Score Paths require the separate
+blocking Phase-9 human approval recorded in the canonical implementation plan.
+
+The approved treble-clef path remains byte-identical, upright, unmirrored,
+unflipped, and aligned through its approved `gLine` anchor in a notation-safe
+origin zone. The final barline remains thin vertical bar + gap + thick vertical
+bar inside a notation-safe terminal zone and is not rotated with document flow.
+`normalAt()` continues to point toward increasing pitch independently of path
+traversal.
+
+Responsive projection preserves the semantic score—seed, motif IDs/order,
+durations, staffSteps, contour IDs/translations, reserved slots, and key
+signature. It may change only ScorePath geometry, physical slot ranges, spacing,
+local-zone capacity, and scene arrangement; resize never recomposes.
 
 ## Runtime performance
 

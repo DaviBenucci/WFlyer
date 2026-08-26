@@ -1,0 +1,36 @@
+{
+  "approvalStatus": "pending-human-gate-c-review",
+  "connectorStrategy": {
+    "canonical": false,
+    "description": "piecewise curvature-safe returning connectors with four cubic quarter turns and straight spans; complete-curve curvature and outer offsets are validated",
+    "responsiveActivationThresholdsCanonicalized": false
+  },
+  "previousGateCProposal": {
+    "composerDeepEqual": true,
+    "originalConfigurationSha256": "2d82abf420d3972e47acb20954ff681ab3a1b107c0082661d9056c175ba73899",
+    "rendererDeepEqualAfterRemovingOnlyNamedTripletFields": true,
+    "unchangedOutsideNamedDeltaAreas": true
+  },
+  "responsive": {
+    "maxNotationTangentAngleDeg": 18,
+    "modes": [
+      "horizontal-enhanced",
+      "vertical-wide",
+      "vertical-compact",
+      "static"
+    ],
+    "status": "draft-human-review-pending",
+    "thresholdsCanonicalized": false
+  },
+  "schemaVersion": 1,
+  "triplet": {
+    "preserved": {
+      "bracketClearanceSp": 0.65,
+      "bracketEndCapSp": 0.3,
+      "bracketThicknessSp": 0.07
+    },
+    "status": "draft-human-review-pending",
+    "tupletNumeralSideGapSp": 0.18,
+    "tupletNumeralSizeSp": 0.75
+  }
+}

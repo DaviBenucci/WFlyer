@@ -36,7 +36,7 @@ The directory is grouped into governance, product, experience, visual systems, m
 | Path | Purpose |
 |---|---|
 | `openspec/changes/rebuild-scroll-driven-wflyer-v2/` | Umbrella v2 re-architecture change |
-| `openspec/changes/implement-music-system-v0-1/` | Isolated music renderer/composer/lab change |
+| `openspec/changes/archive/2026-08-24-implement-music-system-v0-1/` | Archived, completed isolated music renderer/composer/lab change |
 
 ## Visual library
 

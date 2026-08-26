@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "decision": "APPROVED",
+  "approvalDate": "2026-08-24",
+  "authority": {
+    "type": "external-human-review",
+    "role": "repository-owner",
+    "record": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/approval-2026-08-24/2026-08-24-gate-c-final-human-approval.md"
+  },
+  "scope": "isolated-wflyer-music-system-v0.1-gate-c",
+  "finalStatus": "APPROVED FOR FUTURE LANDING INTEGRATION",
+  "gateB": {
+    "status": "approved-unchanged",
+    "approvalRecord": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/2026-08-15-gate-b-calibration-review.md",
+    "approvalRecordSha256": "4055bb891e0d750177d65e635800b3b09786de8715966cd10d361e0402ba677b",
+    "seal": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/SHA256SUMS.txt",
+    "sealSha256": "e2c086d1b61491e95f6c5e1df30f24569d8209b98ffc6ee6d5b8e0fb9e51a9f8",
+    "sealedEntries": 20
+  },
+  "canonicalValues": {
+    "renderer": {
+      "reviewedBase": {
+        "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/gate-c-draft-configuration.json",
+        "sha256": "2d82abf420d3972e47acb20954ff681ab3a1b107c0082661d9056c175ba73899",
+        "jsonPointer": "/renderer/tokens",
+        "embeddedHistoricalStatusesAreNonAuthoritative": true
+      },
+      "inheritedGateBAuthority": [
+        "/note/flagTransform"
+      ],
+      "finalTripletOverlay": {
+        "tupletNumeralSizeSp": 0.85,
+        "tupletNumeralSideGapSp": 0.18,
+        "bracketClearanceSp": 0.65,
+        "bracketEndCapSp": 0.3,
+        "bracketThicknessSp": 0.07
+      }
+    },
+    "composer": {
+      "reviewedConfiguration": {
+        "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/gate-c-draft-configuration.json",
+        "sha256": "2d82abf420d3972e47acb20954ff681ab3a1b107c0082661d9056c175ba73899",
+        "jsonPointer": "/composer/profiles",
+        "embeddedHistoricalStatusesAreNonAuthoritative": true
+      },
+      "approvedScope": "complete-four-profile-object"
+    },
+    "responsive": {
+      "modes": [
+        "horizontal-enhanced",
+        "vertical-wide",
+        "vertical-compact",
+        "static"
+      ],
+      "maxNotationTangentAngleDeg": 18,
+      "semanticCompositionIndependentFromPhysicalProjection": true,
+      "notationSafeCompositionZones": true,
+      "connectorZonesEventFree": true,
+      "musicalNotationReadsLeftToRight": true,
+      "trebleClefUprightAndUnmirrored": true,
+      "finalBarlineConventionallyOriented": true,
+      "resizeRecomposes": false,
+      "reducedMotionPreservesSemanticComposition": true,
+      "responsiveActivationThresholdsCanonical": false,
+      "connectorGeometryClassification": "VALIDATION-ONLY NONCANONICAL RESPONSIVE PROJECTION FIXTURE"
+    }
+  },
+  "sealedBundles": [
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/SHA256SUMS.txt",
+      "sha256": "2ef09d8122f03f2bf4820c235b7e0be9f916f8a8d3f44b93932794823aa20a96",
+      "verifiedEntries": 62,
+      "role": "original-gate-c-candidate-history"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/delta-2026-08-17/SHA256SUMS.txt",
+      "sha256": "fc8257cd1966426784a39bfe4207abc3bcc35c2c101e9ae4d387c2286015f277",
+      "verifiedEntries": 40,
+      "role": "corrective-delta-history"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/SHA256SUMS.txt",
+      "sha256": "19897e16ee7d6bcdd05bb643d81fe4880c393efd5812b0e30a5c0e1e61710569",
+      "verifiedEntries": 12,
+      "role": "final-triplet-candidate-history-and-approved-optical-source"
+    }
+  ],
+  "approvedFinalTripletEvidence": [
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/01-motif-matrix-light.png",
+      "sha256": "e869028f378f69549977392900867b1c36f0ca1eaa192886e32ad836e4628a48"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/02-motif-matrix-dark.png",
+      "sha256": "ddf553d1a2a74494650e5cfb739c293b40da947ffb24a297b7197bfda5e0f44a"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/10-triplet-detail-light.png",
+      "sha256": "fc59e1e6d9739c772c7f557ee24357a1da3d009239571c93c1678f823d13334d"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/11-triplet-detail-dark.png",
+      "sha256": "e1946a8a8641637a88c5155e7421c65886be411b08280c161b105355e7e2c913"
+    }
+  ],
+  "approvedUnchangedSupportingEvidence": [
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/03-key-signatures-light.png",
+      "sha256": "59df55aeacfb31cbbfd96f5ae29313e2260fa3013eb4dda85df6e8cc8d77ab78"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/04-key-signatures-dark.png",
+      "sha256": "dca2e27a71dce24383b5d8721c8c29d279f026a8ca2c45aa14537ee3d1fdf7f9"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/05-composer-fixed-seeds-light.png",
+      "sha256": "f546cad62e9f5dc40e0af7fd51339551d665a0b7ebbdf9f3cfe50d574496a046"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/06-composer-fixed-seeds-dark.png",
+      "sha256": "d813f2629b7f4bfb26c8b059378c6d344937b9a2e9ae97bf3a1aba1979c32ce9"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/07-responsive-horizontal-desktop.png",
+      "sha256": "c229e700bfea3ef16ea309d9a8b5494e91c4460e96b63cb27d5ade33d6f58e7c",
+      "classification": "supporting-not-a-cross-host-golden"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/09-reduced-motion-static.png",
+      "sha256": "a3737f0cfa6df766231ee0f4d55533784a1a1c3d20ffde049e96936dc7f59a54",
+      "classification": "supporting-not-a-cross-host-golden"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/gate-c-composer-fixed-seeds.json",
+      "sha256": "10d1d9366930c6df3a0b8346b9a5b725c32b0a6e9c30a3694c2c548990e9478d"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/gate-c-semantic-stability.json",
+      "sha256": "3e10f6a4a63cd5529ab70e382483cc033b7bc8e040440defd2ff1797b93a871c"
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/gate-c-performance.json",
+      "sha256": "e9bd576d5def34d5af1d3a63df8dc838b9cb04cbca379d98a9503479782e2dea"
+    }
+  ],
+  "approvedResponsiveValidationEvidence": {
+    "geometryCanonical": false,
+    "classification": "approved-functional-validation-evidence",
+    "artifacts": [
+      {
+        "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/delta-2026-08-17/08-responsive-vertical-mobile.png",
+        "sha256": "ea3c1d1ac72107da914f9a038a703e9e61612d7aaec21d41dfd8d622e57820d4"
+      },
+      {
+        "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/delta-2026-08-17/12-responsive-orientation-light.png",
+        "sha256": "75d758326b4d462f561d21594a0a189cb490c4e9e04741bd78bc0a5a99b2fb03"
+      },
+      {
+        "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/delta-2026-08-17/13-responsive-orientation-dark.png",
+        "sha256": "772bc737f69eb538a36b94d7616fe1dfdc68323997136558e9b3342a6e9193e6"
+      },
+      {
+        "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/delta-2026-08-17/gate-c-delta-semantic-equivalence.json",
+        "sha256": "ba25e7ebde9fb59679a78b5847000fa32d489ee26278a166fe35f79456d8e25a"
+      }
+    ]
+  },
+  "immutableProofs": {
+    "approvedSvgFiles": {
+      "count": 16,
+      "manifest": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/2026-08-24-post-final-triplet-approved-svg-files.sha256",
+      "manifestSha256": "38ad23abbd642bac57bae9781f66124a46efde90b2921de2c0811966d93bab65"
+    },
+    "committedVisualSnapshots": {
+      "count": 84,
+      "manifest": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/2026-08-24-post-final-triplet-committed-snapshots.sha256",
+      "manifestSha256": "ba4f23c08613c1c1c9a1481fa6d8466dd7bfa0641cf3b6ae898424966ccc6b63"
+    }
+  },
+  "supersession": [
+    {
+      "superseded": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/01-motif-matrix-light.png",
+      "supersededSha256": "b6ba5319dfb3d033e97663781c60da87752346934a03e5e8c460d103178e13f4",
+      "intermediate": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/delta-2026-08-17/01-motif-matrix-light.png",
+      "intermediateSha256": "18a849d4952fead97ec2274987a775db396c6bcaf67ed2e7fad79e2f66af2027",
+      "approvedFinal": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/01-motif-matrix-light.png"
+    },
+    {
+      "superseded": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/02-motif-matrix-dark.png",
+      "supersededSha256": "fb141cbcb04a818c2506300bbf1cb8dd35e340704b98fa3fe9844eeeedec48da",
+      "intermediate": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/delta-2026-08-17/02-motif-matrix-dark.png",
+      "intermediateSha256": "e2b6ba40501ecfe541fa1c6fac2e951a80e4bdc52ec39fb7a3692f0debce5485",
+      "approvedFinal": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/02-motif-matrix-dark.png"
+    },
+    {
+      "superseded": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/delta-2026-08-17/10-triplet-detail-light.png",
+      "supersededSha256": "60989f764cf258623cfd26cf3aafcba49d0229c97fd79f02d1263f27cd4c7f9a",
+      "approvedFinal": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/10-triplet-detail-light.png"
+    },
+    {
+      "superseded": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/delta-2026-08-17/11-triplet-detail-dark.png",
+      "supersededSha256": "6d5d136406f0d628104a47d06e54cbe6b39694a76a52be8291a236bf8aac552f",
+      "approvedFinal": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/11-triplet-detail-dark.png"
+    },
+    {
+      "superseded": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/08-responsive-vertical-mobile.png",
+      "supersededSha256": "bc1e800a9cd8b8d01123481fba50e96ae0b47dd0950f1bd73191734163a60222",
+      "approvedValidationReplacement": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/delta-2026-08-17/08-responsive-vertical-mobile.png",
+      "replacementGeometryCanonical": false
+    },
+    {
+      "path": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/delta-2026-08-17/gate-c-delta-proposals.json",
+      "sha256": "3c263df36bdbfb33e112d65c2cd00bbdba817c3c87d9e8566bfeea84545064a4",
+      "supersededJsonPointers": [
+        "/approvalStatus",
+        "/responsive/status",
+        "/triplet/status",
+        "/triplet/tupletNumeralSizeSp"
+      ],
+      "tupletNumeralSizeSpSupersession": "0.75 -> 0.85"
+    },
+    {
+      "supersededDecisionAuthority": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/2026-08-24-gate-c-human-decision.md",
+      "supersededDecisionAuthoritySha256": "92fec271aff11234397063d19077e2264c81cc53bbaf6f760bda9e3b1d305307",
+      "retainedAs": "immutable-conditional-decision-history",
+      "finalDecisionAuthority": "docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/approval-2026-08-24/2026-08-24-gate-c-final-human-approval.md"
+    }
+  ],
+  "excludedFromApproval": [
+    "responsive-activation-thresholds",
+    "current-responsive-connector-aesthetic",
+    "final-public-score-path-control-points",
+    "landing-specific-score-path-geometry",
+    "public-landing-integration",
+    "staging",
+    "deployment",
+    "production",
+    "napoleon",
+    "cloudflare",
+    "dns",
+    "app.wflyer.com.br"
+  ],
+  "phase9HumanSubgate": {
+    "status": "pending",
+    "candidateStyles": [
+      "Organic Soft",
+      "Organic Flowing"
+    ],
+    "modes": [
+      "vertical-wide",
+      "vertical-compact"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "mustUseRealChapterAndReservedZones": true,
+    "approvalAuthority": "future-external-human-review"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "approvalStatus": "pending-human-gate-c-review",
+  "cases": [
+    {
+      "mode": "horizontal-enhanced",
+      "semanticHash": "sha256-v1-910adf829c908a0f6e076bc7dcbce3ede3cd6c60df321b3464a1e7279831cf50"
+    },
+    {
+      "mode": "vertical-wide",
+      "semanticHash": "sha256-v1-910adf829c908a0f6e076bc7dcbce3ede3cd6c60df321b3464a1e7279831cf50"
+    },
+    {
+      "mode": "vertical-compact",
+      "semanticHash": "sha256-v1-910adf829c908a0f6e076bc7dcbce3ede3cd6c60df321b3464a1e7279831cf50"
+    },
+    {
+      "mode": "static",
+      "semanticHash": "sha256-v1-910adf829c908a0f6e076bc7dcbce3ede3cd6c60df321b3464a1e7279831cf50"
+    }
+  ],
+  "invariants": {
+    "actualResizeRecomposes": false,
+    "keySignatureConfigurationPreserved": true,
+    "modeChangeRecomposes": false,
+    "reducedMotionRecomposes": false,
+    "semanticCompositionDeepEqual": true
+  },
+  "responsiveReview": {
+    "configuredKeySignatureFifths": 2,
+    "connectorEvidence": [
+      {
+        "angle": 180,
+        "events": 0,
+        "measurement": "display-sampled",
+        "minimumCurvatureRadiusSp": 3.100183135826078,
+        "slots": ""
+      },
+      {
+        "angle": 180,
+        "events": 0,
+        "measurement": "display-sampled",
+        "minimumCurvatureRadiusSp": 3.100183135826078,
+        "slots": ""
+      }
+    ],
+    "notationEvidence": [
+      {
+        "angle": 0,
+        "events": 2,
+        "measurement": "analytic-constant",
+        "slots": "opening,response"
+      },
+      {
+        "angle": 0,
+        "events": 2,
+        "measurement": "analytic-constant",
+        "slots": "reserved-transition,development-a"
+      },
+      {
+        "angle": 0,
+        "events": 6,
+        "measurement": "analytic-constant",
+        "slots": "development-b,release,terminal"
+      }
+    ],
+    "semanticsByMode": [
+      {
+        "contourIds": "step-up,step-up,step-up,step-up,small-leap-down,step-up",
+        "contourTranslations": "0,4,1,0,4,4",
+        "durations": "quarter,half,eighth,eighth,eighth,eighth,eighth,quarter,quarter,half",
+        "emptySlotIds": "reserved-transition",
+        "keySignatureFifths": "2",
+        "mode": "horizontal-enhanced",
+        "motifIds": "Q1,H1,E8_E8,E8_TRIPLET_3,Q2,H1",
+        "semanticSlotIds": "opening,response,reserved-transition,development-a,development-b,release,terminal",
+        "staffSteps": "0,4,1,2,0,1,2,4,2,4"
+      },
+      {
+        "contourIds": "step-up,step-up,step-up,step-up,small-leap-down,step-up",
+        "contourTranslations": "0,4,1,0,4,4",
+        "durations": "quarter,half,eighth,eighth,eighth,eighth,eighth,quarter,quarter,half",
+        "emptySlotIds": "reserved-transition",
+        "keySignatureFifths": "2",
+        "mode": "vertical-wide",
+        "motifIds": "Q1,H1,E8_E8,E8_TRIPLET_3,Q2,H1",
+        "semanticSlotIds": "opening,response,reserved-transition,development-a,development-b,release,terminal",
+        "staffSteps": "0,4,1,2,0,1,2,4,2,4"
+      },
+      {
+        "contourIds": "step-up,step-up,step-up,step-up,small-leap-down,step-up",
+        "contourTranslations": "0,4,1,0,4,4",
+        "durations": "quarter,half,eighth,eighth,eighth,eighth,eighth,quarter,quarter,half",
+        "emptySlotIds": "reserved-transition",
+        "keySignatureFifths": "2",
+        "mode": "vertical-compact",
+        "motifIds": "Q1,H1,E8_E8,E8_TRIPLET_3,Q2,H1",
+        "semanticSlotIds": "opening,response,reserved-transition,development-a,development-b,release,terminal",
+        "staffSteps": "0,4,1,2,0,1,2,4,2,4"
+      },
+      {
+        "contourIds": "step-up,step-up,step-up,step-up,small-leap-down,step-up",
+        "contourTranslations": "0,4,1,0,4,4",
+        "durations": "quarter,half,eighth,eighth,eighth,eighth,eighth,quarter,quarter,half",
+        "emptySlotIds": "reserved-transition",
+        "keySignatureFifths": "2",
+        "mode": "static",
+        "motifIds": "Q1,H1,E8_E8,E8_TRIPLET_3,Q2,H1",
+        "semanticSlotIds": "opening,response,reserved-transition,development-a,development-b,release,terminal",
+        "staffSteps": "0,4,1,2,0,1,2,4,2,4"
+      }
+    ]
+  },
+  "schemaVersion": 1,
+  "semanticHash": "sha256-v1-910adf829c908a0f6e076bc7dcbce3ede3cd6c60df321b3464a1e7279831cf50",
+  "semanticInputs": {
+    "branchId": "visual-lab-branch",
+    "chapterId": "gate-c-delta-responsive",
+    "keySignatureConfiguration": null,
+    "profile": "ALL",
+    "sessionSeed": "wflyer-gate-c-delta-v1"
+  }
+}

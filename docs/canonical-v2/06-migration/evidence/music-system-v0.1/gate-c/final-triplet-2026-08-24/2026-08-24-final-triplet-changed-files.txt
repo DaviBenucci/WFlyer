@@ -1,0 +1,76 @@
+Gate-C final triplet correction changed-file inventory
+Recorded: 2026-08-24
+Baseline: sealed 2026-08-17 corrective delta
+Scope: one 0.75 -> 0.85 renderer-token change, evidence, authority
+reconciliation, and Phase-9 deferred-path requirement
+
+IMPLEMENTATION, PRESENTATION, TESTS, AND CAPTURE
+scripts/capture-music-gate-c-delta-evidence.mjs
+src/app/%5F_visual-lab/music/_fixtures/draft-calibration.ts
+src/app/%5F_visual-lab/music/_fixtures/lab-score-models.test.ts
+src/app/%5F_visual-lab/music/curved-score/page.tsx
+tests/unit/music/presentation/score-svg.test.tsx
+tests/unit/music/renderer/fixtures.ts
+tests/unit/music/renderer/triplet-numeral.test.ts
+
+GOVERNANCE, CONTRACTS, AND OPENSPEC DELTAS
+WFLYER_IMPLEMENTATION_PLAN.md
+docs/05-implementacao/22-music-system-v0.1-implementation-contract.md
+docs/07-qa/09-music-system-v0.1-validation.md
+docs/canonical-v2/00-governance/03-decision-register.md
+docs/canonical-v2/00-governance/05-calibration-and-pending-items.md
+docs/canonical-v2/02-experience/04-mobile-responsive-reduced-motion.md
+docs/canonical-v2/03-visual/01-continuous-dual-score-system.md
+docs/canonical-v2/04-music/01-music-renderer-v0.1.md
+docs/canonical-v2/04-music/02-procedural-score-composer-v0.1.md
+docs/canonical-v2/04-music/03-music-visual-lab-and-gates.md
+docs/canonical-v2/adr/ADR-025-continuous-organic-dual-score.md
+docs/canonical-v2/adr/ADR-032-responsive-vertical-story.md
+docs/canonical-v2/manifests/calibration-register.v2.yaml
+docs/canonical-v2/manifests/implementation-phases.v2.yaml
+docs/design-reference/visual-library/musical/composer/COMPOSER_CONTRACT.md
+docs/design-reference/visual-library/musical/renderer/MUSIC_VISUAL_LAB.md
+docs/design-reference/visual-library/musical/renderer/RENDERER_CONTRACT.md
+openspec/changes/implement-music-system-v0-1/design.md
+openspec/changes/implement-music-system-v0-1/specs/music-renderer/spec.md
+openspec/changes/implement-music-system-v0-1/specs/music-visual-lab/spec.md
+openspec/changes/implement-music-system-v0-1/specs/procedural-score-composer/spec.md
+
+FINAL-TRIPLET EVIDENCE BUNDLE
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/01-motif-matrix-light.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/02-motif-matrix-dark.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/10-triplet-detail-light.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/11-triplet-detail-dark.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/2026-08-24-gate-c-human-decision.md
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/2026-08-24-triplet-numeral-comparison.md
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/2026-08-24-final-triplet-validation.md
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/2026-08-24-final-triplet-changed-files.txt
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/2026-08-24-pre-final-triplet-approved-svg-files.sha256
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/2026-08-24-post-final-triplet-approved-svg-files.sha256
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/2026-08-24-pre-final-triplet-committed-snapshots.sha256
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/2026-08-24-post-final-triplet-committed-snapshots.sha256
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/final-triplet-2026-08-24/SHA256SUMS.txt
+
+GRAPHIFY DURABLE OUTPUTS
+graphify-out/graph.json
+graphify-out/graph.html
+graphify-out/GRAPH_REPORT.md
+graphify-out/manifest.json
+graphify-out/CHECKSUMS.sha256
+
+EXPLICITLY UNCHANGED / NOT PART OF THIS CORRECTION
+src/lib/music/renderer/build-motif-model.ts
+src/lib/music/renderer/types.ts
+src/components/score/ScoreSvg.tsx
+src/lib/music/geometry/responsive-score-projection.ts
+src/app/%5F_visual-lab/music/_fixtures/lab-score-models.ts
+tests/unit/music/geometry/responsive-score-projection.test.ts
+docs/design-reference/visual-library/musical/glyphs/source/*.svg
+src/assets/visuals/musical/*.svg
+tests/visual/**/*-snapshots/*.png
+openspec/changes/implement-music-system-v0-1/tasks.md
+
+No public landing, legacy music component, Composer implementation/weight,
+responsive projection implementation, approved SVG, committed snapshot,
+app.wflyer.com.br, staging, production, DNS, Cloudflare, or Napoleon file was
+changed by this final correction.

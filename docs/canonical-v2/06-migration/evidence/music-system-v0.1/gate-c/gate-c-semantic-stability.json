@@ -1,0 +1,672 @@
+{
+  "approvalStatus": "pending-human-gate-c-review",
+  "baselineProjection": [
+    {
+      "versions": {
+        "composer": 1,
+        "pitchContourTable": 1
+      },
+      "branchId": "visual-lab-branch",
+      "chapterId": "music-gate-c-semantic-stability",
+      "derivedSeed": "wf-chapter-seed-v1-81193a0c",
+      "profile": "CALM",
+      "motifs": [
+        {
+          "instanceId": "wf-motif-opening-af1112a5",
+          "slotId": "opening",
+          "motifId": "Q1",
+          "family": "quarter",
+          "durations": [
+            "quarter"
+          ],
+          "staffSteps": [
+            1
+          ],
+          "contour": {
+            "id": "step-down",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-response-d83c5891",
+          "slotId": "response",
+          "motifId": "H1",
+          "family": "half",
+          "durations": [
+            "half"
+          ],
+          "staffSteps": [
+            1
+          ],
+          "contour": {
+            "id": "step-down",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-development-a-3fdceef4",
+          "slotId": "development-a",
+          "motifId": "W1",
+          "family": "whole",
+          "durations": [
+            "whole"
+          ],
+          "staffSteps": [
+            -2
+          ],
+          "contour": {
+            "id": "step-down",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-development-b-42dcf3ad",
+          "slotId": "development-b",
+          "motifId": "Q3",
+          "family": "quarter",
+          "durations": [
+            "quarter",
+            "quarter",
+            "quarter"
+          ],
+          "staffSteps": [
+            2,
+            1,
+            2
+          ],
+          "contour": {
+            "id": "valley",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-release-20c9e144",
+          "slotId": "release",
+          "motifId": "H2",
+          "family": "half",
+          "durations": [
+            "half",
+            "half"
+          ],
+          "staffSteps": [
+            7,
+            5
+          ],
+          "contour": {
+            "id": "small-leap-down",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-terminal-50cf8fee",
+          "slotId": "terminal",
+          "motifId": "H1",
+          "family": "half",
+          "durations": [
+            "half"
+          ],
+          "staffSteps": [
+            4
+          ],
+          "contour": {
+            "id": "step-down",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        }
+      ],
+      "emptySlots": [
+        {
+          "slotId": "reserved-transition",
+          "reason": "reserved-zone",
+          "reservedReason": "transition"
+        }
+      ]
+    },
+    {
+      "versions": {
+        "composer": 1,
+        "pitchContourTable": 1
+      },
+      "branchId": "visual-lab-branch",
+      "chapterId": "music-gate-c-semantic-stability",
+      "derivedSeed": "wf-chapter-seed-v1-81193a0c",
+      "profile": "BALANCED",
+      "motifs": [
+        {
+          "instanceId": "wf-motif-opening-af1112a5",
+          "slotId": "opening",
+          "motifId": "Q1",
+          "family": "quarter",
+          "durations": [
+            "quarter"
+          ],
+          "staffSteps": [
+            0
+          ],
+          "contour": {
+            "id": "step-down",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-response-d83c5891",
+          "slotId": "response",
+          "motifId": "H2",
+          "family": "half",
+          "durations": [
+            "half",
+            "half"
+          ],
+          "staffSteps": [
+            5,
+            7
+          ],
+          "contour": {
+            "id": "small-leap-up",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-development-a-3fdceef4",
+          "slotId": "development-a",
+          "motifId": "Q4",
+          "family": "quarter",
+          "durations": [
+            "quarter",
+            "quarter",
+            "quarter",
+            "quarter"
+          ],
+          "staffSteps": [
+            6,
+            7,
+            5,
+            6
+          ],
+          "contour": {
+            "id": "alternating",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-development-b-42dcf3ad",
+          "slotId": "development-b",
+          "motifId": "S16_S16_E8",
+          "family": "mixed",
+          "durations": [
+            "sixteenth",
+            "sixteenth",
+            "eighth"
+          ],
+          "staffSteps": [
+            7,
+            6,
+            5
+          ],
+          "contour": {
+            "id": "step-down",
+            "translation": 0
+          },
+          "dense": true,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-release-20c9e144",
+          "slotId": "release",
+          "motifId": "Q3",
+          "family": "quarter",
+          "durations": [
+            "quarter",
+            "quarter",
+            "quarter"
+          ],
+          "staffSteps": [
+            2,
+            3,
+            2
+          ],
+          "contour": {
+            "id": "arch",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-terminal-50cf8fee",
+          "slotId": "terminal",
+          "motifId": "Q2",
+          "family": "quarter",
+          "durations": [
+            "quarter",
+            "quarter"
+          ],
+          "staffSteps": [
+            6,
+            7
+          ],
+          "contour": {
+            "id": "step-up",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        }
+      ],
+      "emptySlots": [
+        {
+          "slotId": "reserved-transition",
+          "reason": "reserved-zone",
+          "reservedReason": "transition"
+        }
+      ]
+    },
+    {
+      "versions": {
+        "composer": 1,
+        "pitchContourTable": 1
+      },
+      "branchId": "visual-lab-branch",
+      "chapterId": "music-gate-c-semantic-stability",
+      "derivedSeed": "wf-chapter-seed-v1-81193a0c",
+      "profile": "ACTIVE",
+      "motifs": [
+        {
+          "instanceId": "wf-motif-opening-af1112a5",
+          "slotId": "opening",
+          "motifId": "S16_S16_E8",
+          "family": "mixed",
+          "durations": [
+            "sixteenth",
+            "sixteenth",
+            "eighth"
+          ],
+          "staffSteps": [
+            0,
+            1,
+            0
+          ],
+          "contour": {
+            "id": "arch",
+            "translation": 0
+          },
+          "dense": true,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-response-d83c5891",
+          "slotId": "response",
+          "motifId": "S16_E8_S16",
+          "family": "mixed",
+          "durations": [
+            "sixteenth",
+            "eighth",
+            "sixteenth"
+          ],
+          "staffSteps": [
+            6,
+            7,
+            6
+          ],
+          "contour": {
+            "id": "arch",
+            "translation": 0
+          },
+          "dense": true,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-development-a-3fdceef4",
+          "slotId": "development-a",
+          "motifId": "Q4",
+          "family": "quarter",
+          "durations": [
+            "quarter",
+            "quarter",
+            "quarter",
+            "quarter"
+          ],
+          "staffSteps": [
+            1,
+            3,
+            4,
+            5
+          ],
+          "contour": {
+            "id": "small-leap-up",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-development-b-42dcf3ad",
+          "slotId": "development-b",
+          "motifId": "E8_S16_S16",
+          "family": "mixed",
+          "durations": [
+            "eighth",
+            "sixteenth",
+            "sixteenth"
+          ],
+          "staffSteps": [
+            5,
+            6,
+            5
+          ],
+          "contour": {
+            "id": "arch",
+            "translation": 0
+          },
+          "dense": true,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-release-20c9e144",
+          "slotId": "release",
+          "motifId": "S16_E8_S16",
+          "family": "mixed",
+          "durations": [
+            "sixteenth",
+            "eighth",
+            "sixteenth"
+          ],
+          "staffSteps": [
+            7,
+            8,
+            6
+          ],
+          "contour": {
+            "id": "alternating",
+            "translation": 0
+          },
+          "dense": true,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-terminal-50cf8fee",
+          "slotId": "terminal",
+          "motifId": "Q2",
+          "family": "quarter",
+          "durations": [
+            "quarter",
+            "quarter"
+          ],
+          "staffSteps": [
+            3,
+            2
+          ],
+          "contour": {
+            "id": "step-down",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        }
+      ],
+      "emptySlots": [
+        {
+          "slotId": "reserved-transition",
+          "reason": "reserved-zone",
+          "reservedReason": "transition"
+        }
+      ]
+    },
+    {
+      "versions": {
+        "composer": 1,
+        "pitchContourTable": 1
+      },
+      "branchId": "visual-lab-branch",
+      "chapterId": "music-gate-c-semantic-stability",
+      "derivedSeed": "wf-chapter-seed-v1-81193a0c",
+      "profile": "TERMINAL",
+      "motifs": [
+        {
+          "instanceId": "wf-motif-opening-af1112a5",
+          "slotId": "opening",
+          "motifId": "Q1",
+          "family": "quarter",
+          "durations": [
+            "quarter"
+          ],
+          "staffSteps": [
+            4
+          ],
+          "contour": {
+            "id": "step-down",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-response-d83c5891",
+          "slotId": "response",
+          "motifId": "Q2",
+          "family": "quarter",
+          "durations": [
+            "quarter",
+            "quarter"
+          ],
+          "staffSteps": [
+            6,
+            8
+          ],
+          "contour": {
+            "id": "small-leap-up",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-development-a-3fdceef4",
+          "slotId": "development-a",
+          "motifId": "H2",
+          "family": "half",
+          "durations": [
+            "half",
+            "half"
+          ],
+          "staffSteps": [
+            3,
+            2
+          ],
+          "contour": {
+            "id": "step-down",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-development-b-42dcf3ad",
+          "slotId": "development-b",
+          "motifId": "H1",
+          "family": "half",
+          "durations": [
+            "half"
+          ],
+          "staffSteps": [
+            3
+          ],
+          "contour": {
+            "id": "step-down",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-release-20c9e144",
+          "slotId": "release",
+          "motifId": "W1",
+          "family": "whole",
+          "durations": [
+            "whole"
+          ],
+          "staffSteps": [
+            6
+          ],
+          "contour": {
+            "id": "step-up",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        },
+        {
+          "instanceId": "wf-motif-terminal-50cf8fee",
+          "slotId": "terminal",
+          "motifId": "H1",
+          "family": "half",
+          "durations": [
+            "half"
+          ],
+          "staffSteps": [
+            6
+          ],
+          "contour": {
+            "id": "step-down",
+            "translation": 0
+          },
+          "dense": false,
+          "tuplet": null
+        }
+      ],
+      "emptySlots": [
+        {
+          "slotId": "reserved-transition",
+          "reason": "reserved-zone",
+          "reservedReason": "transition"
+        }
+      ]
+    }
+  ],
+  "baselineSemanticHash": "sha256-v1-bfa4670f53bec3038417ea3159b9e74f176e0892062b78062421b8ba9e4f6340",
+  "cases": [
+    {
+      "context": {
+        "colorScheme": "light",
+        "reducedMotion": "no-preference",
+        "themeControl": "light",
+        "viewport": {
+          "height": 1024,
+          "width": 1536
+        },
+        "viewportControl": "horizontal"
+      },
+      "equalsBaseline": true,
+      "id": "horizontal-desktop",
+      "semanticHash": "sha256-v1-bfa4670f53bec3038417ea3159b9e74f176e0892062b78062421b8ba9e4f6340"
+    },
+    {
+      "context": {
+        "colorScheme": "light",
+        "reducedMotion": "no-preference",
+        "themeControl": "light",
+        "viewport": {
+          "height": 1024,
+          "width": 1536
+        },
+        "viewportControl": "vertical"
+      },
+      "equalsBaseline": true,
+      "id": "vertical-desktop",
+      "semanticHash": "sha256-v1-bfa4670f53bec3038417ea3159b9e74f176e0892062b78062421b8ba9e4f6340"
+    },
+    {
+      "context": {
+        "colorScheme": "light",
+        "reducedMotion": "no-preference",
+        "themeControl": "light",
+        "viewport": {
+          "height": 844,
+          "width": 390
+        },
+        "viewportControl": "vertical"
+      },
+      "equalsBaseline": true,
+      "id": "actual-resize-mobile",
+      "semanticHash": "sha256-v1-bfa4670f53bec3038417ea3159b9e74f176e0892062b78062421b8ba9e4f6340"
+    },
+    {
+      "context": {
+        "colorScheme": "dark",
+        "reducedMotion": "no-preference",
+        "themeControl": "dark",
+        "viewport": {
+          "height": 844,
+          "width": 390
+        },
+        "viewportControl": "vertical"
+      },
+      "equalsBaseline": true,
+      "id": "dark-theme",
+      "semanticHash": "sha256-v1-bfa4670f53bec3038417ea3159b9e74f176e0892062b78062421b8ba9e4f6340"
+    },
+    {
+      "context": {
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "themeControl": "dark",
+        "viewport": {
+          "height": 844,
+          "width": 390
+        },
+        "viewportControl": "vertical"
+      },
+      "equalsBaseline": true,
+      "id": "reduced-motion",
+      "semanticHash": "sha256-v1-bfa4670f53bec3038417ea3159b9e74f176e0892062b78062421b8ba9e4f6340"
+    },
+    {
+      "context": {
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "reappliedSemanticInputs": true,
+        "themeControl": "dark",
+        "viewport": {
+          "height": 844,
+          "width": 390
+        },
+        "viewportControl": "vertical"
+      },
+      "equalsBaseline": true,
+      "id": "reload-same-inputs",
+      "semanticHash": "sha256-v1-bfa4670f53bec3038417ea3159b9e74f176e0892062b78062421b8ba9e4f6340"
+    }
+  ],
+  "invariants": {
+    "actualResizePreservesSemantics": true,
+    "reloadWithSameInputsPreservesSemantics": true,
+    "reducedMotionPreservesSemantics": true,
+    "themePreservesSemantics": true,
+    "viewportGeometryPreservesSemantics": true
+  },
+  "schemaVersion": 1,
+  "semanticInputs": {
+    "chapterId": "music-gate-c-semantic-stability",
+    "profile": "ALL",
+    "seed": "wflyer-music-gate-c-stability-v1"
+  }
+}

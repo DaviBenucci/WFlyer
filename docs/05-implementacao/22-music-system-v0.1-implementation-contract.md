@@ -2,6 +2,7 @@
 
 **Status:** NORMATIVE / APPROVED  
 **Date:** 2026-08-14  
+**Amended:** 2026-08-17 — external Gate-C review responsive projection and triplet-legibility clarification
 **Scope:** isolated Music Renderer, Procedural Score Composer, and Music Visual Lab  
 **Canonical language:** English
 
@@ -74,7 +75,7 @@ src/lib/music/glyphs/      # registry, metrics, anchors, validation types
 src/lib/music/renderer/    # pure render models, no React
 src/lib/music/composer/    # pure deterministic composition, no React/DOM
 src/components/score/      # React/SVG presentation only
-src/app/__visual-lab/music # development-only UI
+src/app/%5F_visual-lab/music # filesystem escape for /__visual-lab; development-only UI
 ```
 
 Pure modules MUST NOT import React, `window`, `document`, GSAP, or browser SVG APIs.
@@ -123,6 +124,14 @@ N = normalized normalAt(t)
 ```
 
 Staff offsets and pitch offsets use `N`; ledger-line width and score progression use `T`. The five staff lines are coherent offsets of one master guide, not five independently authored curves.
+
+`P` is the logical staff master guide and coincides with the visible middle staff line, `B4 / staffStep 4`. The guide does not replace or remove that visible line. `N` always points toward increasing pitch independently of path traversal direction, so reversing a branch path does not invert pitch placement.
+
+```text
+pitchOffset = (staffStep - 4) * (staffSpace / 2)
+```
+
+The visible staff-line offsets from the master guide are therefore `-2, -1, 0, +1, +2 staffSpaces` for staffSteps `0, 2, 4, 6, 8`.
 
 ## 6. Renderer-owned primitives
 
@@ -243,7 +252,28 @@ No other automatic beamed grouping is permitted in v0.1.
 
 ### Triplet
 
-`E8_TRIPLET_3` SHALL always contain exactly three eighth notes, one primary beam, a visible tuplet bracket, and a centered `3`. Three linked eighth notes without the triplet marker are invalid.
+`E8_TRIPLET_3` SHALL always contain exactly three eighth notes, one primary beam,
+a visible tuplet bracket, and a centered `3`. Three linked eighth notes without
+the triplet marker are invalid.
+
+The numeral SHALL:
+
+- use score foreground/`currentColor`;
+- be centered from the complete group bounding span;
+- remain external to the primary beam;
+- remain valid for UP/DOWN stems and straight/gentle-arc/gentle-S ScorePaths;
+- overlap neither the primary beam nor bracket.
+
+The horizontal bracket SHALL be split around the numeral. Its central gap is:
+
+```text
+renderedNumeralWidth + 2 * tupletNumeralSideGapSp
+```
+
+Final external human Gate-C review on 2026-08-24 approved
+`tupletNumeralSizeSp=0.85`, `tupletNumeralSideGapSp=0.18`,
+`bracketClearanceSp=0.65`, `bracketEndCapSp=0.30`, and
+`bracketThicknessSp=0.07`. The `0.75` numeral-size candidate is superseded.
 
 ### Mixed sixteenth hooks
 
@@ -299,7 +329,12 @@ A small internal hash + PRNG is preferred over adding a dependency.
 
 ### Responsive stability
 
-Horizontal and vertical Score Path layouts share semantic slot IDs. The same seed produces the same motif IDs, durations, and staffSteps across responsive mode changes. Geometry may change; semantic composition may not.
+`horizontal-enhanced`, `vertical-wide`, `vertical-compact`, and `static` ScorePath
+layouts share semantic slot IDs. For the same composer version, session seed,
+branch, chapter, semantic slots, and configuration, every mode preserves motif
+IDs/order, durations, staffSteps, contour IDs/translations, reserved slots, and
+key-signature configuration. Geometry and physical grouping may change;
+semantic composition may not.
 
 ## 14. Composer profiles
 
@@ -310,7 +345,9 @@ Profiles:
 - `ACTIVE`;
 - `TERMINAL`.
 
-Exact motif weights are Visual Lab calibration parameters, not frozen normative constants.
+The exact v0.1 motif weights in the Gate-C configuration were accepted by the
+2026-08-24 external human follow-up review. Any later change requires a new
+explicit calibration decision and Composer version review.
 
 Initial intended chapter character:
 
@@ -352,6 +389,21 @@ Pitch SHALL be selected through whitelisted contours rather than independent ran
 - `small-leap-up`;
 - `small-leap-down`.
 
+The version-1 per-length delta table is normative (`1 = one diatonic staffStep`; `— = unsupported`):
+
+| contour | n=1 | n=2 | n=3 | n=4 |
+| --- | --- | --- | --- | --- |
+| `step-up` | `[0]` | `[0,1]` | `[0,1,2]` | `[0,1,2,3]` |
+| `step-down` | `[0]` | `[0,-1]` | `[0,-1,-2]` | `[0,-1,-2,-3]` |
+| `arch` | — | — | `[0,1,0]` | `[0,1,1,0]` |
+| `valley` | — | — | `[0,-1,0]` | `[0,-1,-1,0]` |
+| `alternating` | — | — | `[0,1,-1]` | `[0,1,-1,0]` |
+| `repeat-then-step` | — | — | `[0,0,1]` | `[0,0,1,2]` |
+| `small-leap-up` | — | `[0,2]` | `[0,2,3]` | `[0,2,3,4]` |
+| `small-leap-down` | — | `[0,-2]` | `[0,-2,-3]` | `[0,-2,-3,-4]` |
+
+A selected contour preserves its complete interval vector. Range correction may apply only one uniform integer translation to the complete contour. It chooses the minimum-absolute translation that places every note in `-2..10`; if zero is valid, it is selected. Individual notes are never clamped, reflected, reversed, truncated, or mutated. An unfit contour is rejected deterministically and the next valid seeded candidate is evaluated. Preferred-range weighting for `0..8` is soft and cannot override these invariants.
+
 ## 16. Semantic composition slots and reserved zones
 
 The composer never chooses free screen coordinates.
@@ -375,6 +427,53 @@ interface ReservedScoreZone {
 ```
 
 Visual Lab uses synthetic slots. Final landing slots are out of scope until the later Score Path Layout integration.
+
+### Responsive ScorePath projection
+
+Responsive mode selection SHALL be capable of considering viewport width,
+viewport height, pointer/input capability, `prefers-reduced-motion`, and
+effective layout capacity. Width alone is insufficient. Exact activation
+thresholds remain Motion Lab calibration parameters and are not part of Gate-C
+approval.
+
+Every projected path distinguishes:
+
+1. **notation-safe composition zones**, locally horizontal or gently inclined
+   spans that read left-to-right and may contain musical events; and
+2. **connector zones**, continuous five-line spans that may descend, curve,
+   become steep, or return across the viewport but contain no musical events.
+
+Only notation-safe zones may contain clefs, key signatures, noteheads, stems,
+flags, beams/hooks, accidentals, tuplets, ledger lines, or barlines. A
+180-degree-returning span is a connector, not a reversed notation zone.
+
+Correct the ScorePath zoning itself. Do not counter-rotate arbitrary glyphs
+independently while leaving a vertical or steep staff underneath them.
+
+The 2026-08-24 human follow-up decision approved
+`maxNotationTangentAngleDeg=18` for notation-safe zoning. Responsive activation
+thresholds remain noncanonical Motion Lab calibration.
+
+The approved treble-clef path SHALL remain byte-identical, upright, unmirrored,
+unflipped, and never sideways. Its approved `gLine` anchor aligns to G4 in a
+notation-safe origin zone. `normalAt()` retains pitch-increasing orientation
+independently of path traversal.
+
+The final barline SHALL occupy a notation-safe terminal zone and retain
+conventional orientation: thin vertical bar + gap + thick vertical bar across a
+locally horizontal staff. Vertical document progression SHALL NOT rotate it by
+90 degrees.
+
+When mode changes, the implementation preserves the active semantic chapter,
+seed, and complete semantic composition; destroys only old responsive projection
+ownership; builds the new projection; maps the same slots into its notation
+zones; and restores the same chapter. Resize never recomposes or returns the user
+to Home.
+
+The current piecewise returning connector is retained only as a validation
+fixture. It is noncanonical and is not the final mobile Score Path aesthetic.
+Final `Organic Soft`/`Organic Flowing` public layouts are deferred to the
+blocking Phase-9 human Score Path subgate.
 
 ## 17. React/SVG presentation contract
 
@@ -408,6 +507,18 @@ Required dev-only routes:
 
 The parent lab layout MUST call `notFound()` when running as a production deployment. The lab MUST NOT appear in sitemap, public navigation, or analytics.
 
+Next.js treats literal underscore-prefixed App Router directories as private and
+non-routable. The filesystem segment therefore uses `%5F_visual-lab`, the
+framework-supported escape that normalizes to the required URL segment
+`__visual-lab`. This is an implementation-path exception only; the development
+pathname remains exactly `/__visual-lab/music/*`.
+
+Next.js 16 may retain the escaped `/%5F_visual-lab` spelling in generated
+`.next/dev/types` while production `next typegen` correctly emits
+`/__visual-lab`. The repository excludes only `.next/dev/types/**/*.ts` from the
+standalone `tsc` program, matching the framework's own production-build stale-dev
+type filtering; `.next/types/**/*.ts` remains authoritative and included.
+
 Calibration controls may change metrics/anchors only in local lab state and export a proposed calibration payload. They MUST NOT silently rewrite approved source SVG paths.
 
 ## 19. Required visual fixtures
@@ -425,6 +536,12 @@ Calibration controls may change metrics/anchors only in local lab state and expo
 - gentle arc score;
 - gentle S-curve score;
 - Composer `CALM`, `BALANCED`, `ACTIVE`, `TERMINAL` with explicit seeds.
+- triplet detail with split bracket and legible centered `3` for both stem
+  directions, all three ScorePaths, and both themes;
+- responsive mobile orientation showing an upright clef, a left-to-right
+  notation-safe zone, an event-free steep connector, a subsequent notation-safe
+  zone, quarter/half notes, a beamed motif, a triplet, a conventional final
+  barline, and five continuous staff lines.
 
 ## 20. Performance/lifecycle contract
 
@@ -470,6 +587,15 @@ Codex MUST STOP and request human review if this gate is reached without approve
 
 ### Gate C — Visual Composer
 
+Current status: **approved by final external human review on 2026-08-24**.
+The earlier 2026-08-17 `approve-with-two-named-changes` and first 2026-08-24
+follow-up decisions remain historical checkpoints. Both corrections were
+implemented, tested, and recaptured; the final review approved the reviewed
+renderer values, Composer weights, responsive functional semantics,
+`maxNotationTangentAngleDeg=18`, and the `0.85` triplet result. The connector
+fixture remains validation-only and noncanonical, activation thresholds remain
+noncanonical calibration, and final organic paths remain deferred to Phase 9.
+
 Required before landing integration can be planned:
 
 - all motifs visually approved on straight and curved staff;
@@ -497,3 +623,44 @@ This implementation change is complete only when:
 10. Graphify is updated after structural changes;
 11. landing/public behavior remains unchanged;
 12. no landing integration work has begun.
+
+## 24. Gate-C corrective delta automated closeout
+
+The two corrections requested by the external 2026-08-17 Gate-C review are
+implemented, tested, and captured as deterministic candidate evidence. The
+automated delta workflow completed on the local noncanonical visual host and was
+sealed on 2026-08-24 after repository-state rehydration.
+
+Verified automated facts:
+
+- the split triplet bracket protects a `0.75 staffSpace` numeral with a
+  `0.18 staffSpace` side gap on each side;
+- responsive projections preserve one semantic composition across
+  `horizontal-enhanced`, `vertical-wide`, `vertical-compact`, and `static`;
+- notation-bearing zones read left-to-right and satisfied the then-active draft
+  `18 degree` tangent limit;
+- steep/returning connectors contain zero musical events;
+- the approved clef remains upright and byte-identical;
+- the terminal final barline remains conventionally oriented;
+- public landing behavior remains isolated and unchanged;
+- all 16 approved SVG files and all 84 committed visual snapshots remain
+  byte-identical to their pinned baselines.
+
+The sealed evidence index is
+`docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/delta-2026-08-17/2026-08-24-gate-c-delta-review.md`.
+
+At this historical checkpoint these facts did not approve the optical
+candidates, and Gate C/task `7.7` still awaited renewed human review. The later
+2026-08-24 final approval record supersedes that status without rewriting this
+sealed evidence. No landing integration, deployment, or production action was
+performed.
+
+## 25. Final Gate-C triplet correction
+
+The final named correction changes only `tupletNumeralSizeSp` from `0.75` to
+`0.85`. The historical `0.75` evidence remains sealed. Only the two motif
+matrices and two triplet-detail images were recaptured in
+`gate-c/final-triplet-2026-08-24/`. Final external human optical review on
+2026-08-24 approved those four images and the exact five-value triplet contract.
+The canonical authority record and evidence manifest are in
+`gate-c/approval-2026-08-24/`; public landing integration remains future work.

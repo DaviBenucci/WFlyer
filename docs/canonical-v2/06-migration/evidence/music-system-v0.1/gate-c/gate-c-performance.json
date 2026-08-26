@@ -1,0 +1,242 @@
+{
+  "approvalStatus": "pending-human-gate-c-review",
+  "instrumentation": {
+    "counterMeaning": "committed-memo-result-identities",
+    "markNames": {
+      "compositionResult": "wflyer.music-lab.composer.composition-result-commit",
+      "geometryResult": "wflyer.music-lab.composer.geometry-result-commit",
+      "reactRender": "wflyer.music-lab.composer.react-render-commit"
+    },
+    "schemaVersion": "memo-result-commit-v1"
+  },
+  "invariants": {
+    "reducedMotionDoesNotComposeOrMapGeometry": true,
+    "scrollAndAnimationFramesDoNoComposerGeometryOrReactWork": true,
+    "semanticInputRecomposesAndRemapsGeometry": true,
+    "themeDoesNotComposeOrMapGeometry": true,
+    "viewportControlRemapsGeometryWithoutComposition": true
+  },
+  "schemaVersion": 1,
+  "steps": [
+    {
+      "after": {
+        "counters": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 1
+        },
+        "marks": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 1
+        }
+      },
+      "assertions": {
+        "compositionDelta": 0,
+        "geometryDelta": 0,
+        "reactRenderDelta": 0
+      },
+      "before": {
+        "counters": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 1
+        },
+        "marks": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 1
+        }
+      },
+      "delta": {
+        "counters": {
+          "compositionResult": 0,
+          "geometryResult": 0,
+          "reactRender": 0
+        },
+        "marks": {
+          "compositionResult": 0,
+          "geometryResult": 0,
+          "reactRender": 0
+        }
+      },
+      "id": "scroll-plus-five-animation-frames"
+    },
+    {
+      "after": {
+        "counters": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 2
+        },
+        "marks": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 2
+        }
+      },
+      "assertions": {
+        "compositionDelta": 0,
+        "geometryDelta": 0,
+        "reactRenderDelta": "greater-than-zero"
+      },
+      "before": {
+        "counters": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 1
+        },
+        "marks": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 1
+        }
+      },
+      "delta": {
+        "counters": {
+          "compositionResult": 0,
+          "geometryResult": 0,
+          "reactRender": 1
+        },
+        "marks": {
+          "compositionResult": 0,
+          "geometryResult": 0,
+          "reactRender": 1
+        }
+      },
+      "id": "theme-control-change"
+    },
+    {
+      "after": {
+        "counters": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 2
+        },
+        "marks": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 2
+        }
+      },
+      "assertions": {
+        "compositionDelta": 0,
+        "geometryDelta": 0,
+        "reactRenderDelta": "unconstrained"
+      },
+      "before": {
+        "counters": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 2
+        },
+        "marks": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 2
+        }
+      },
+      "delta": {
+        "counters": {
+          "compositionResult": 0,
+          "geometryResult": 0,
+          "reactRender": 0
+        },
+        "marks": {
+          "compositionResult": 0,
+          "geometryResult": 0,
+          "reactRender": 0
+        }
+      },
+      "id": "reduced-motion-media-change"
+    },
+    {
+      "after": {
+        "counters": {
+          "compositionResult": 1,
+          "geometryResult": 2,
+          "reactRender": 3
+        },
+        "marks": {
+          "compositionResult": 1,
+          "geometryResult": 2,
+          "reactRender": 3
+        }
+      },
+      "assertions": {
+        "compositionDelta": 0,
+        "geometryDelta": "greater-than-zero",
+        "reactRenderDelta": "greater-than-zero"
+      },
+      "before": {
+        "counters": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 2
+        },
+        "marks": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 2
+        }
+      },
+      "delta": {
+        "counters": {
+          "compositionResult": 0,
+          "geometryResult": 1,
+          "reactRender": 1
+        },
+        "marks": {
+          "compositionResult": 0,
+          "geometryResult": 1,
+          "reactRender": 1
+        }
+      },
+      "id": "viewport-geometry-control-change"
+    },
+    {
+      "after": {
+        "counters": {
+          "compositionResult": 2,
+          "geometryResult": 3,
+          "reactRender": 4
+        },
+        "marks": {
+          "compositionResult": 2,
+          "geometryResult": 3,
+          "reactRender": 4
+        }
+      },
+      "assertions": {
+        "compositionDelta": "greater-than-zero",
+        "geometryDelta": "greater-than-zero",
+        "reactRenderDelta": "greater-than-zero"
+      },
+      "before": {
+        "counters": {
+          "compositionResult": 1,
+          "geometryResult": 2,
+          "reactRender": 3
+        },
+        "marks": {
+          "compositionResult": 1,
+          "geometryResult": 2,
+          "reactRender": 3
+        }
+      },
+      "delta": {
+        "counters": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 1
+        },
+        "marks": {
+          "compositionResult": 1,
+          "geometryResult": 1,
+          "reactRender": 1
+        }
+      },
+      "id": "semantic-seed-input-change"
+    }
+  ]
+}

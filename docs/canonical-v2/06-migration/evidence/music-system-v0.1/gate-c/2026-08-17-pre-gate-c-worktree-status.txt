@@ -1,0 +1,178 @@
+ M docs/05-implementacao/22-music-system-v0.1-implementation-contract.md
+ M docs/canonical-v2/00-governance/02-scope-status-and-terminology.md
+ M docs/canonical-v2/00-governance/03-decision-register.md
+ M docs/canonical-v2/00-governance/05-calibration-and-pending-items.md
+ M docs/canonical-v2/03-visual/02-visual-asset-library.md
+ M docs/canonical-v2/04-music/01-music-renderer-v0.1.md
+ M docs/canonical-v2/04-music/02-procedural-score-composer-v0.1.md
+ M docs/canonical-v2/04-music/03-music-visual-lab-and-gates.md
+ M docs/canonical-v2/adr/ADR-026-music-renderer-v0.1.md
+ M docs/canonical-v2/adr/ADR-027-seeded-procedural-score-composer.md
+ M docs/canonical-v2/manifests/calibration-register.v2.yaml
+ M docs/design-reference/visual-library/manifest.json
+ M docs/design-reference/visual-library/musical/composer/COMPOSER_CONTRACT.md
+ M docs/design-reference/visual-library/musical/renderer/MUSIC_VISUAL_LAB.md
+ M docs/design-reference/visual-library/musical/renderer/RENDERER_CONTRACT.md
+ M graphify-out/GRAPH_REPORT.md
+ M openspec/changes/implement-music-system-v0-1/design.md
+ M openspec/changes/implement-music-system-v0-1/proposal.md
+ M openspec/changes/implement-music-system-v0-1/specs/music-renderer/spec.md
+ M openspec/changes/implement-music-system-v0-1/specs/music-visual-lab/spec.md
+ M openspec/changes/implement-music-system-v0-1/specs/procedural-score-composer/spec.md
+ M openspec/changes/implement-music-system-v0-1/tasks.md
+ M openspec/changes/rebuild-scroll-driven-wflyer-v2/tasks.md
+ M tsconfig.json
+?? CANONICAL_DECISION_DELTA.md
+?? CODEX_PROMPT.md
+?? PACKAGE_MANIFEST.txt
+?? REPOSITORY_CONFLICT_MAP.md
+?? WFLYER_IMPLEMENTATION_PLAN(1).md
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-a/2026-08-15-gate-a-report.md
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/00-music-visual-lab-index.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/01-glyph-gallery-light.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/02-glyph-gallery-dark.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/03-calibration-treble-clef.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/03-glyph-calibration-composites-light.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/04-calibration-notehead-filled.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/04-glyph-calibration-composites-dark.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/05-calibration-notehead-open.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/06-calibration-accidental-sharp.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/07-calibration-accidental-flat.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/08-calibration-accidental-natural.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/09-calibration-eighth-flag.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/10-calibration-sixteenth-double-flag.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/11-calibration-accidentals-line-space.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/12-pitches-ledgers-stems-flags.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/13-beams-triplets-hooks.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/14-key-signatures-and-barlines.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/15-straight-arc-s-curve-score-paths.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/16-composer-four-profiles-explicit-seed.png
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/2026-08-15-gate-b-calibration-review.md
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/SHA256SUMS.txt
+?? docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/draft-glyph-calibration.json
+?? docs/canonical-v2/06-migration/evidence/phase-0/2026-08-15-baseline-recovery-report.md
+?? docs/canonical-v2/06-migration/evidence/phase-0/2026-08-15-browser-environment.txt
+?? docs/canonical-v2/06-migration/evidence/phase-0/2026-08-15-deleted-tracked-paths.txt
+?? docs/canonical-v2/06-migration/evidence/phase-0/2026-08-15-nondeleted-tracked-changes.txt
+?? docs/canonical-v2/06-migration/evidence/phase-0/2026-08-15-openspec-strict-validation.txt
+?? docs/canonical-v2/06-migration/evidence/phase-0/2026-08-15-post-restore-deleted-paths.txt
+?? docs/canonical-v2/06-migration/evidence/phase-0/2026-08-15-post-restore-status.txt
+?? docs/canonical-v2/06-migration/evidence/phase-0/2026-08-15-pre-restore-metadata.md
+?? docs/canonical-v2/06-migration/evidence/phase-0/2026-08-15-pre-restore-status.txt
+?? docs/canonical-v2/06-migration/evidence/phase-0/2026-08-15-production-standalone-diagnostic.txt
+?? docs/canonical-v2/06-migration/evidence/phase-0/2026-08-15-untracked-sha256.txt
+?? gate-b-evidence-2026-08-15.zip
+?? repo-overlay/docs/05-implementacao/22-music-system-v0.1-implementation-contract.md
+?? repo-overlay/docs/07-qa/09-music-system-v0.1-validation.md
+?? repo-overlay/docs/design-reference/visual-library/manifest.json
+?? repo-overlay/docs/design-reference/visual-library/musical/MIGRATION_NOTES.md
+?? repo-overlay/docs/design-reference/visual-library/musical/composer/COMPOSER_CONTRACT.md
+?? repo-overlay/docs/design-reference/visual-library/musical/glyphs/source/wf-music-accidental-flat-master.svg
+?? repo-overlay/docs/design-reference/visual-library/musical/glyphs/source/wf-music-accidental-natural-master.svg
+?? repo-overlay/docs/design-reference/visual-library/musical/glyphs/source/wf-music-accidental-sharp-master.svg
+?? repo-overlay/docs/design-reference/visual-library/musical/glyphs/source/wf-music-eighth-flag-master.svg
+?? repo-overlay/docs/design-reference/visual-library/musical/glyphs/source/wf-music-notehead-filled-master.svg
+?? repo-overlay/docs/design-reference/visual-library/musical/glyphs/source/wf-music-notehead-open-master.svg
+?? repo-overlay/docs/design-reference/visual-library/musical/glyphs/source/wf-music-sixteenth-double-flag-master.svg
+?? repo-overlay/docs/design-reference/visual-library/musical/glyphs/source/wf-music-treble-clef-master.svg
+?? repo-overlay/docs/design-reference/visual-library/musical/renderer/MUSIC_VISUAL_LAB.md
+?? repo-overlay/docs/design-reference/visual-library/musical/renderer/RENDERER_CONTRACT.md
+?? repo-overlay/openspec/changes/implement-music-system-v0-1/.openspec.yaml
+?? repo-overlay/openspec/changes/implement-music-system-v0-1/design.md
+?? repo-overlay/openspec/changes/implement-music-system-v0-1/proposal.md
+?? repo-overlay/openspec/changes/implement-music-system-v0-1/specs/music-renderer/spec.md
+?? repo-overlay/openspec/changes/implement-music-system-v0-1/specs/music-visual-lab/spec.md
+?? repo-overlay/openspec/changes/implement-music-system-v0-1/specs/procedural-score-composer/spec.md
+?? repo-overlay/openspec/changes/implement-music-system-v0-1/tasks.md
+?? repo-overlay/src/assets/visuals/musical/wf-music-accidental-flat.svg
+?? repo-overlay/src/assets/visuals/musical/wf-music-accidental-natural.svg
+?? repo-overlay/src/assets/visuals/musical/wf-music-accidental-sharp.svg
+?? repo-overlay/src/assets/visuals/musical/wf-music-eighth-flag.svg
+?? repo-overlay/src/assets/visuals/musical/wf-music-notehead-filled.svg
+?? repo-overlay/src/assets/visuals/musical/wf-music-notehead-open.svg
+?? repo-overlay/src/assets/visuals/musical/wf-music-sixteenth-double-flag.svg
+?? repo-overlay/src/assets/visuals/musical/wf-music-treble-clef.svg
+?? scripts/capture-music-gate-b-evidence.mjs
+?? src/app/%5F_visual-lab/music/_fixtures/ComposerFixtureControls.tsx
+?? src/app/%5F_visual-lab/music/_fixtures/approved-calibration.ts
+?? src/app/%5F_visual-lab/music/_fixtures/calibration-export.test.ts
+?? src/app/%5F_visual-lab/music/_fixtures/calibration-export.ts
+?? src/app/%5F_visual-lab/music/_fixtures/draft-calibration.ts
+?? src/app/%5F_visual-lab/music/_fixtures/lab-score-models.test.ts
+?? src/app/%5F_visual-lab/music/_fixtures/lab-score-models.ts
+?? src/app/%5F_visual-lab/music/beams/page.tsx
+?? src/app/%5F_visual-lab/music/calibration/CalibrationWorkbench.tsx
+?? src/app/%5F_visual-lab/music/calibration/GlyphCalibrationComposites.tsx
+?? src/app/%5F_visual-lab/music/calibration/page.tsx
+?? src/app/%5F_visual-lab/music/composer/page.tsx
+?? src/app/%5F_visual-lab/music/curved-score/page.tsx
+?? src/app/%5F_visual-lab/music/glyphs/page.tsx
+?? src/app/%5F_visual-lab/music/key-signatures/page.tsx
+?? src/app/%5F_visual-lab/music/layout.tsx
+?? src/app/%5F_visual-lab/music/music-lab.module.css
+?? src/app/%5F_visual-lab/music/page.tsx
+?? src/app/%5F_visual-lab/music/pitches/page.tsx
+?? src/components/score/ScoreDebugOverlay.tsx
+?? src/components/score/ScoreGlyph.tsx
+?? src/components/score/ScoreSvg.tsx
+?? src/components/score/music-session-seed-client.ts
+?? src/components/score/score.module.css
+?? src/lib/music/composer/anti-repetition.ts
+?? src/lib/music/composer/compose-motif.ts
+?? src/lib/music/composer/compose-segment.ts
+?? src/lib/music/composer/index.ts
+?? src/lib/music/composer/motifs.ts
+?? src/lib/music/composer/pitch-contours.ts
+?? src/lib/music/composer/prng.ts
+?? src/lib/music/composer/profiles.ts
+?? src/lib/music/composer/session-seed.ts
+?? src/lib/music/composer/types.ts
+?? src/lib/music/geometry/accidentals.ts
+?? src/lib/music/geometry/barlines.ts
+?? src/lib/music/geometry/beams.ts
+?? src/lib/music/geometry/cubic-bezier-score-path.ts
+?? src/lib/music/geometry/key-signatures.ts
+?? src/lib/music/geometry/ledger-lines.ts
+?? src/lib/music/geometry/pitch.ts
+?? src/lib/music/geometry/score-path.ts
+?? src/lib/music/geometry/staff.ts
+?? src/lib/music/geometry/stems.ts
+?? src/lib/music/geometry/straight-score-path.ts
+?? src/lib/music/geometry/types.ts
+?? src/lib/music/geometry/units.ts
+?? src/lib/music/geometry/vectors.ts
+?? src/lib/music/glyphs/metrics.ts
+?? src/lib/music/glyphs/registry.ts
+?? src/lib/music/glyphs/types.ts
+?? src/lib/music/renderer/build-motif-model.ts
+?? src/lib/music/renderer/build-note-model.ts
+?? src/lib/music/renderer/build-score-model.ts
+?? src/lib/music/renderer/glyph-frame.ts
+?? src/lib/music/renderer/ids.ts
+?? src/lib/music/renderer/paint-order.ts
+?? src/lib/music/renderer/types.ts
+?? tests/e2e/music-visual-lab.spec.ts
+?? tests/unit/music/composer/compose-motif.test.ts
+?? tests/unit/music/composer/compose-segment.test.ts
+?? tests/unit/music/composer/import-boundary.test.ts
+?? tests/unit/music/composer/motifs.test.ts
+?? tests/unit/music/composer/pitch-contours.test.ts
+?? tests/unit/music/composer/prng.test.ts
+?? tests/unit/music/composer/session-seed.test.ts
+?? tests/unit/music/geometry/score-path.test.ts
+?? tests/unit/music/geometry/staff-ledgers.test.ts
+?? tests/unit/music/geometry/stems-beams.test.ts
+?? tests/unit/music/geometry/structural-primitives.test.ts
+?? tests/unit/music/geometry/units-pitch.test.ts
+?? tests/unit/music/glyphs/asset-immutability.test.ts
+?? tests/unit/music/glyphs/manifest-coherence.test.ts
+?? tests/unit/music/glyphs/metrics.test.ts
+?? tests/unit/music/glyphs/registry.test.ts
+?? tests/unit/music/presentation/score-svg.test.tsx
+?? tests/unit/music/public-isolation.test.ts
+?? tests/unit/music/pure-boundary.test.ts
+?? tests/unit/music/renderer/build-motif-model.test.ts
+?? tests/unit/music/renderer/build-note-model.test.ts
+?? tests/unit/music/renderer/build-score-model.test.ts
+?? tests/unit/music/renderer/fixtures.ts
+?? tests/unit/music/renderer/paint-order.test.ts

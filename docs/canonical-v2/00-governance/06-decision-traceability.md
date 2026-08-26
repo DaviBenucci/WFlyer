@@ -31,7 +31,12 @@
 
 ## Implementation
 
-- `MUSIC-IMP-PROP-001..012`: module separation, pure TypeScript, straight/Bézier paths, draft calibration only, Visual Lab, tie-break, internal versioned PRNG, semantic slots, aria-hidden narrative score, dev-only lab, no landing integration before Gates A/B/C, isolated next implementation.
+- `MUSIC-IMP-PROP-001..012`: module separation, pure TypeScript,
+  straight/Bézier paths, human-gated calibration lifecycle, Visual Lab,
+  tie-break, internal versioned PRNG, semantic slots, aria-hidden narrative
+  score, dev-only lab, no landing integration before Gates A/B/C, and isolated
+  implementation. Gates A/B/C are now approved; landing integration remains a
+  later phase.
 - `PHASE3-OWNER-2026-08-24`: execute Phase 3 only; normalize OpenSpec so
   content/detailed-route/conversion work precedes Phase-4 readiness; retain
   canonical current-release URLs; add fail-closed project details under the

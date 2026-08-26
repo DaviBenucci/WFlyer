@@ -6,6 +6,7 @@ phases:
     gate: G0
   - id: P1
     name: Isolated Music System
+    status: approved-for-future-landing-integration
     gates: [MUSIC-A, MUSIC-B-HUMAN, MUSIC-C-HUMAN]
   - id: P2
     name: Story v2 model and static vertical skeleton
@@ -34,7 +35,7 @@ phases:
     gate: G8
   - id: P9
     name: Continuous dual-score integration
-    gate: G9
+    gates: [G9-SCORE-PATH-HUMAN, G9]
   - id: P10
     name: Persona final asset and easter eggs
     gate: G10-HUMAN

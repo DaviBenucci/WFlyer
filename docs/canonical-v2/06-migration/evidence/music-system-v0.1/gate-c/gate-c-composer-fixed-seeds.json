@@ -1,0 +1,1571 @@
+{
+  "approvalStatus": "pending-human-gate-c-review",
+  "cases": [
+    {
+      "caseId": "origin:CALM",
+      "composerTuningStatus": "draft",
+      "glyphCalibrationStatus": "runtime-approved",
+      "opticalTokenStatus": "draft",
+      "profile": "CALM",
+      "projection": {
+        "schemaVersion": 1,
+        "composerVersion": 1,
+        "pitchContourTableVersion": 1,
+        "branchId": "visual-lab-branch",
+        "chapterId": "music-gate-c-fixed-seed-review",
+        "derivedChapterSeed": "wf-chapter-seed-v1-1350c858",
+        "profile": "CALM",
+        "motifs": [
+          {
+            "slotId": "opening",
+            "motifId": "E8_E8",
+            "family": "eighth",
+            "durations": [
+              "eighth",
+              "eighth"
+            ],
+            "staffSteps": [
+              0,
+              1
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "response",
+            "motifId": "Q2",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              2,
+              4
+            ],
+            "contourId": "small-leap-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-a",
+            "motifId": "H2",
+            "family": "half",
+            "durations": [
+              "half",
+              "half"
+            ],
+            "staffSteps": [
+              6,
+              5
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-b",
+            "motifId": "W1",
+            "family": "whole",
+            "durations": [
+              "whole"
+            ],
+            "staffSteps": [
+              7
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "release",
+            "motifId": "Q2",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              4,
+              3
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "terminal",
+            "motifId": "W1",
+            "family": "whole",
+            "durations": [
+              "whole"
+            ],
+            "staffSteps": [
+              6
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          }
+        ],
+        "emptySlots": [
+          {
+            "slotId": "reserved-transition",
+            "reason": "reserved-zone",
+            "reservedReason": "transition"
+          }
+        ]
+      },
+      "seedId": "origin",
+      "seedLabel": "Origin",
+      "semanticHash": "fnv1a32-v1-a3b59d21",
+      "sessionSeed": "wflyer-music-gate-c-origin-v1"
+    },
+    {
+      "caseId": "origin:BALANCED",
+      "composerTuningStatus": "draft",
+      "glyphCalibrationStatus": "runtime-approved",
+      "opticalTokenStatus": "draft",
+      "profile": "BALANCED",
+      "projection": {
+        "schemaVersion": 1,
+        "composerVersion": 1,
+        "pitchContourTableVersion": 1,
+        "branchId": "visual-lab-branch",
+        "chapterId": "music-gate-c-fixed-seed-review",
+        "derivedChapterSeed": "wf-chapter-seed-v1-1350c858",
+        "profile": "BALANCED",
+        "motifs": [
+          {
+            "slotId": "opening",
+            "motifId": "S16_S16_E8",
+            "family": "mixed",
+            "durations": [
+              "sixteenth",
+              "sixteenth",
+              "eighth"
+            ],
+            "staffSteps": [
+              7,
+              6,
+              7
+            ],
+            "contourId": "valley",
+            "contourTranslation": 0,
+            "dense": true,
+            "tuplet": null
+          },
+          {
+            "slotId": "response",
+            "motifId": "Q2",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              2,
+              1
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-a",
+            "motifId": "Q3",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              7,
+              6,
+              7
+            ],
+            "contourId": "valley",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-b",
+            "motifId": "E8_E8",
+            "family": "eighth",
+            "durations": [
+              "eighth",
+              "eighth"
+            ],
+            "staffSteps": [
+              8,
+              6
+            ],
+            "contourId": "small-leap-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "release",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              6
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "terminal",
+            "motifId": "Q2",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              0,
+              -1
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          }
+        ],
+        "emptySlots": [
+          {
+            "slotId": "reserved-transition",
+            "reason": "reserved-zone",
+            "reservedReason": "transition"
+          }
+        ]
+      },
+      "seedId": "origin",
+      "seedLabel": "Origin",
+      "semanticHash": "fnv1a32-v1-57efa235",
+      "sessionSeed": "wflyer-music-gate-c-origin-v1"
+    },
+    {
+      "caseId": "origin:ACTIVE",
+      "composerTuningStatus": "draft",
+      "glyphCalibrationStatus": "runtime-approved",
+      "opticalTokenStatus": "draft",
+      "profile": "ACTIVE",
+      "projection": {
+        "schemaVersion": 1,
+        "composerVersion": 1,
+        "pitchContourTableVersion": 1,
+        "branchId": "visual-lab-branch",
+        "chapterId": "music-gate-c-fixed-seed-review",
+        "derivedChapterSeed": "wf-chapter-seed-v1-1350c858",
+        "profile": "ACTIVE",
+        "motifs": [
+          {
+            "slotId": "opening",
+            "motifId": "S16_S16_S16_S16",
+            "family": "sixteenth",
+            "durations": [
+              "sixteenth",
+              "sixteenth",
+              "sixteenth",
+              "sixteenth"
+            ],
+            "staffSteps": [
+              4,
+              6,
+              7,
+              8
+            ],
+            "contourId": "small-leap-up",
+            "contourTranslation": 0,
+            "dense": true,
+            "tuplet": null
+          },
+          {
+            "slotId": "response",
+            "motifId": "S16_S16_E8",
+            "family": "mixed",
+            "durations": [
+              "sixteenth",
+              "sixteenth",
+              "eighth"
+            ],
+            "staffSteps": [
+              2,
+              4,
+              5
+            ],
+            "contourId": "small-leap-up",
+            "contourTranslation": 0,
+            "dense": true,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-a",
+            "motifId": "S16_E8_S16",
+            "family": "mixed",
+            "durations": [
+              "sixteenth",
+              "eighth",
+              "sixteenth"
+            ],
+            "staffSteps": [
+              -2,
+              0,
+              1
+            ],
+            "contourId": "small-leap-up",
+            "contourTranslation": 0,
+            "dense": true,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-b",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              7
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "release",
+            "motifId": "E8_S16_S16",
+            "family": "mixed",
+            "durations": [
+              "eighth",
+              "sixteenth",
+              "sixteenth"
+            ],
+            "staffSteps": [
+              1,
+              2,
+              3
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": true,
+            "tuplet": null
+          },
+          {
+            "slotId": "terminal",
+            "motifId": "W1",
+            "family": "whole",
+            "durations": [
+              "whole"
+            ],
+            "staffSteps": [
+              2
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          }
+        ],
+        "emptySlots": [
+          {
+            "slotId": "reserved-transition",
+            "reason": "reserved-zone",
+            "reservedReason": "transition"
+          }
+        ]
+      },
+      "seedId": "origin",
+      "seedLabel": "Origin",
+      "semanticHash": "fnv1a32-v1-ba51ae4c",
+      "sessionSeed": "wflyer-music-gate-c-origin-v1"
+    },
+    {
+      "caseId": "origin:TERMINAL",
+      "composerTuningStatus": "draft",
+      "glyphCalibrationStatus": "runtime-approved",
+      "opticalTokenStatus": "draft",
+      "profile": "TERMINAL",
+      "projection": {
+        "schemaVersion": 1,
+        "composerVersion": 1,
+        "pitchContourTableVersion": 1,
+        "branchId": "visual-lab-branch",
+        "chapterId": "music-gate-c-fixed-seed-review",
+        "derivedChapterSeed": "wf-chapter-seed-v1-1350c858",
+        "profile": "TERMINAL",
+        "motifs": [
+          {
+            "slotId": "opening",
+            "motifId": "Q1",
+            "family": "quarter",
+            "durations": [
+              "quarter"
+            ],
+            "staffSteps": [
+              2
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "response",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              10
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-a",
+            "motifId": "Q2",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              2,
+              3
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-b",
+            "motifId": "W1",
+            "family": "whole",
+            "durations": [
+              "whole"
+            ],
+            "staffSteps": [
+              4
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "release",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              8
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "terminal",
+            "motifId": "Q1",
+            "family": "quarter",
+            "durations": [
+              "quarter"
+            ],
+            "staffSteps": [
+              9
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          }
+        ],
+        "emptySlots": [
+          {
+            "slotId": "reserved-transition",
+            "reason": "reserved-zone",
+            "reservedReason": "transition"
+          }
+        ]
+      },
+      "seedId": "origin",
+      "seedLabel": "Origin",
+      "semanticHash": "fnv1a32-v1-b639ebff",
+      "sessionSeed": "wflyer-music-gate-c-origin-v1"
+    },
+    {
+      "caseId": "flight:CALM",
+      "composerTuningStatus": "draft",
+      "glyphCalibrationStatus": "runtime-approved",
+      "opticalTokenStatus": "draft",
+      "profile": "CALM",
+      "projection": {
+        "schemaVersion": 1,
+        "composerVersion": 1,
+        "pitchContourTableVersion": 1,
+        "branchId": "visual-lab-branch",
+        "chapterId": "music-gate-c-fixed-seed-review",
+        "derivedChapterSeed": "wf-chapter-seed-v1-a6c46d04",
+        "profile": "CALM",
+        "motifs": [
+          {
+            "slotId": "opening",
+            "motifId": "Q1",
+            "family": "quarter",
+            "durations": [
+              "quarter"
+            ],
+            "staffSteps": [
+              2
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "response",
+            "motifId": "Q2",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              8,
+              7
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-a",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              1
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-b",
+            "motifId": "H2",
+            "family": "half",
+            "durations": [
+              "half",
+              "half"
+            ],
+            "staffSteps": [
+              7,
+              8
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "release",
+            "motifId": "Q1",
+            "family": "quarter",
+            "durations": [
+              "quarter"
+            ],
+            "staffSteps": [
+              7
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "terminal",
+            "motifId": "W1",
+            "family": "whole",
+            "durations": [
+              "whole"
+            ],
+            "staffSteps": [
+              1
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          }
+        ],
+        "emptySlots": [
+          {
+            "slotId": "reserved-transition",
+            "reason": "reserved-zone",
+            "reservedReason": "transition"
+          }
+        ]
+      },
+      "seedId": "flight",
+      "seedLabel": "Flight",
+      "semanticHash": "fnv1a32-v1-9afa76b2",
+      "sessionSeed": "wflyer-music-gate-c-flight-v1"
+    },
+    {
+      "caseId": "flight:BALANCED",
+      "composerTuningStatus": "draft",
+      "glyphCalibrationStatus": "runtime-approved",
+      "opticalTokenStatus": "draft",
+      "profile": "BALANCED",
+      "projection": {
+        "schemaVersion": 1,
+        "composerVersion": 1,
+        "pitchContourTableVersion": 1,
+        "branchId": "visual-lab-branch",
+        "chapterId": "music-gate-c-fixed-seed-review",
+        "derivedChapterSeed": "wf-chapter-seed-v1-a6c46d04",
+        "profile": "BALANCED",
+        "motifs": [
+          {
+            "slotId": "opening",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              3
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "response",
+            "motifId": "S16_S16_E8",
+            "family": "mixed",
+            "durations": [
+              "sixteenth",
+              "sixteenth",
+              "eighth"
+            ],
+            "staffSteps": [
+              6,
+              4,
+              3
+            ],
+            "contourId": "small-leap-down",
+            "contourTranslation": 0,
+            "dense": true,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-a",
+            "motifId": "S16_S16_S16_S16",
+            "family": "sixteenth",
+            "durations": [
+              "sixteenth",
+              "sixteenth",
+              "sixteenth",
+              "sixteenth"
+            ],
+            "staffSteps": [
+              7,
+              8,
+              9,
+              10
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": true,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-b",
+            "motifId": "H2",
+            "family": "half",
+            "durations": [
+              "half",
+              "half"
+            ],
+            "staffSteps": [
+              -1,
+              -2
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "release",
+            "motifId": "E8_S16_S16",
+            "family": "mixed",
+            "durations": [
+              "eighth",
+              "sixteenth",
+              "sixteenth"
+            ],
+            "staffSteps": [
+              5,
+              4,
+              3
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": true,
+            "tuplet": null
+          },
+          {
+            "slotId": "terminal",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              3
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          }
+        ],
+        "emptySlots": [
+          {
+            "slotId": "reserved-transition",
+            "reason": "reserved-zone",
+            "reservedReason": "transition"
+          }
+        ]
+      },
+      "seedId": "flight",
+      "seedLabel": "Flight",
+      "semanticHash": "fnv1a32-v1-92ebd37e",
+      "sessionSeed": "wflyer-music-gate-c-flight-v1"
+    },
+    {
+      "caseId": "flight:ACTIVE",
+      "composerTuningStatus": "draft",
+      "glyphCalibrationStatus": "runtime-approved",
+      "opticalTokenStatus": "draft",
+      "profile": "ACTIVE",
+      "projection": {
+        "schemaVersion": 1,
+        "composerVersion": 1,
+        "pitchContourTableVersion": 1,
+        "branchId": "visual-lab-branch",
+        "chapterId": "music-gate-c-fixed-seed-review",
+        "derivedChapterSeed": "wf-chapter-seed-v1-a6c46d04",
+        "profile": "ACTIVE",
+        "motifs": [
+          {
+            "slotId": "opening",
+            "motifId": "H2",
+            "family": "half",
+            "durations": [
+              "half",
+              "half"
+            ],
+            "staffSteps": [
+              2,
+              0
+            ],
+            "contourId": "small-leap-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "response",
+            "motifId": "E8_S16_S16",
+            "family": "mixed",
+            "durations": [
+              "eighth",
+              "sixteenth",
+              "sixteenth"
+            ],
+            "staffSteps": [
+              7,
+              7,
+              8
+            ],
+            "contourId": "repeat-then-step",
+            "contourTranslation": 0,
+            "dense": true,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-a",
+            "motifId": "E8_E8",
+            "family": "eighth",
+            "durations": [
+              "eighth",
+              "eighth"
+            ],
+            "staffSteps": [
+              6,
+              5
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-b",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              4
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "release",
+            "motifId": "H2",
+            "family": "half",
+            "durations": [
+              "half",
+              "half"
+            ],
+            "staffSteps": [
+              9,
+              10
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "terminal",
+            "motifId": "Q1",
+            "family": "quarter",
+            "durations": [
+              "quarter"
+            ],
+            "staffSteps": [
+              2
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          }
+        ],
+        "emptySlots": [
+          {
+            "slotId": "reserved-transition",
+            "reason": "reserved-zone",
+            "reservedReason": "transition"
+          }
+        ]
+      },
+      "seedId": "flight",
+      "seedLabel": "Flight",
+      "semanticHash": "fnv1a32-v1-46d3d40c",
+      "sessionSeed": "wflyer-music-gate-c-flight-v1"
+    },
+    {
+      "caseId": "flight:TERMINAL",
+      "composerTuningStatus": "draft",
+      "glyphCalibrationStatus": "runtime-approved",
+      "opticalTokenStatus": "draft",
+      "profile": "TERMINAL",
+      "projection": {
+        "schemaVersion": 1,
+        "composerVersion": 1,
+        "pitchContourTableVersion": 1,
+        "branchId": "visual-lab-branch",
+        "chapterId": "music-gate-c-fixed-seed-review",
+        "derivedChapterSeed": "wf-chapter-seed-v1-a6c46d04",
+        "profile": "TERMINAL",
+        "motifs": [
+          {
+            "slotId": "opening",
+            "motifId": "Q2",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              5,
+              4
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "response",
+            "motifId": "H2",
+            "family": "half",
+            "durations": [
+              "half",
+              "half"
+            ],
+            "staffSteps": [
+              6,
+              5
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-a",
+            "motifId": "W1",
+            "family": "whole",
+            "durations": [
+              "whole"
+            ],
+            "staffSteps": [
+              4
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-b",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              8
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "release",
+            "motifId": "W1",
+            "family": "whole",
+            "durations": [
+              "whole"
+            ],
+            "staffSteps": [
+              3
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "terminal",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              2
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          }
+        ],
+        "emptySlots": [
+          {
+            "slotId": "reserved-transition",
+            "reason": "reserved-zone",
+            "reservedReason": "transition"
+          }
+        ]
+      },
+      "seedId": "flight",
+      "seedLabel": "Flight",
+      "semanticHash": "fnv1a32-v1-b8706c1e",
+      "sessionSeed": "wflyer-music-gate-c-flight-v1"
+    },
+    {
+      "caseId": "return:CALM",
+      "composerTuningStatus": "draft",
+      "glyphCalibrationStatus": "runtime-approved",
+      "opticalTokenStatus": "draft",
+      "profile": "CALM",
+      "projection": {
+        "schemaVersion": 1,
+        "composerVersion": 1,
+        "pitchContourTableVersion": 1,
+        "branchId": "visual-lab-branch",
+        "chapterId": "music-gate-c-fixed-seed-review",
+        "derivedChapterSeed": "wf-chapter-seed-v1-192fe65c",
+        "profile": "CALM",
+        "motifs": [
+          {
+            "slotId": "opening",
+            "motifId": "W1",
+            "family": "whole",
+            "durations": [
+              "whole"
+            ],
+            "staffSteps": [
+              3
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "response",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              5
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-a",
+            "motifId": "Q2",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              6,
+              5
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-b",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              7
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "release",
+            "motifId": "E8_S16_S16",
+            "family": "mixed",
+            "durations": [
+              "eighth",
+              "sixteenth",
+              "sixteenth"
+            ],
+            "staffSteps": [
+              8,
+              9,
+              8
+            ],
+            "contourId": "arch",
+            "contourTranslation": 0,
+            "dense": true,
+            "tuplet": null
+          },
+          {
+            "slotId": "terminal",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              3
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          }
+        ],
+        "emptySlots": [
+          {
+            "slotId": "reserved-transition",
+            "reason": "reserved-zone",
+            "reservedReason": "transition"
+          }
+        ]
+      },
+      "seedId": "return",
+      "seedLabel": "Return",
+      "semanticHash": "fnv1a32-v1-6ea83d8b",
+      "sessionSeed": "wflyer-music-gate-c-return-v1"
+    },
+    {
+      "caseId": "return:BALANCED",
+      "composerTuningStatus": "draft",
+      "glyphCalibrationStatus": "runtime-approved",
+      "opticalTokenStatus": "draft",
+      "profile": "BALANCED",
+      "projection": {
+        "schemaVersion": 1,
+        "composerVersion": 1,
+        "pitchContourTableVersion": 1,
+        "branchId": "visual-lab-branch",
+        "chapterId": "music-gate-c-fixed-seed-review",
+        "derivedChapterSeed": "wf-chapter-seed-v1-192fe65c",
+        "profile": "BALANCED",
+        "motifs": [
+          {
+            "slotId": "opening",
+            "motifId": "Q1",
+            "family": "quarter",
+            "durations": [
+              "quarter"
+            ],
+            "staffSteps": [
+              3
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "response",
+            "motifId": "S16_S16_E8",
+            "family": "mixed",
+            "durations": [
+              "sixteenth",
+              "sixteenth",
+              "eighth"
+            ],
+            "staffSteps": [
+              6,
+              5,
+              6
+            ],
+            "contourId": "valley",
+            "contourTranslation": 0,
+            "dense": true,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-a",
+            "motifId": "Q4",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter",
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              2,
+              4,
+              5,
+              6
+            ],
+            "contourId": "small-leap-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-b",
+            "motifId": "S16_S16_S16_S16",
+            "family": "sixteenth",
+            "durations": [
+              "sixteenth",
+              "sixteenth",
+              "sixteenth",
+              "sixteenth"
+            ],
+            "staffSteps": [
+              -1,
+              -2,
+              -2,
+              -1
+            ],
+            "contourId": "valley",
+            "contourTranslation": 1,
+            "dense": true,
+            "tuplet": null
+          },
+          {
+            "slotId": "release",
+            "motifId": "Q3",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              10,
+              9,
+              8
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "terminal",
+            "motifId": "Q2",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              3,
+              4
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          }
+        ],
+        "emptySlots": [
+          {
+            "slotId": "reserved-transition",
+            "reason": "reserved-zone",
+            "reservedReason": "transition"
+          }
+        ]
+      },
+      "seedId": "return",
+      "seedLabel": "Return",
+      "semanticHash": "fnv1a32-v1-95b7e08d",
+      "sessionSeed": "wflyer-music-gate-c-return-v1"
+    },
+    {
+      "caseId": "return:ACTIVE",
+      "composerTuningStatus": "draft",
+      "glyphCalibrationStatus": "runtime-approved",
+      "opticalTokenStatus": "draft",
+      "profile": "ACTIVE",
+      "projection": {
+        "schemaVersion": 1,
+        "composerVersion": 1,
+        "pitchContourTableVersion": 1,
+        "branchId": "visual-lab-branch",
+        "chapterId": "music-gate-c-fixed-seed-review",
+        "derivedChapterSeed": "wf-chapter-seed-v1-192fe65c",
+        "profile": "ACTIVE",
+        "motifs": [
+          {
+            "slotId": "opening",
+            "motifId": "Q4",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter",
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              1,
+              0,
+              -1,
+              -2
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 1,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "response",
+            "motifId": "Q1",
+            "family": "quarter",
+            "durations": [
+              "quarter"
+            ],
+            "staffSteps": [
+              2
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-a",
+            "motifId": "E8_E8",
+            "family": "eighth",
+            "durations": [
+              "eighth",
+              "eighth"
+            ],
+            "staffSteps": [
+              1,
+              0
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-b",
+            "motifId": "Q4",
+            "family": "quarter",
+            "durations": [
+              "quarter",
+              "quarter",
+              "quarter",
+              "quarter"
+            ],
+            "staffSteps": [
+              7,
+              8,
+              9,
+              10
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "release",
+            "motifId": "E8_E8",
+            "family": "eighth",
+            "durations": [
+              "eighth",
+              "eighth"
+            ],
+            "staffSteps": [
+              3,
+              1
+            ],
+            "contourId": "small-leap-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "terminal",
+            "motifId": "W1",
+            "family": "whole",
+            "durations": [
+              "whole"
+            ],
+            "staffSteps": [
+              8
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          }
+        ],
+        "emptySlots": [
+          {
+            "slotId": "reserved-transition",
+            "reason": "reserved-zone",
+            "reservedReason": "transition"
+          }
+        ]
+      },
+      "seedId": "return",
+      "seedLabel": "Return",
+      "semanticHash": "fnv1a32-v1-0dec3074",
+      "sessionSeed": "wflyer-music-gate-c-return-v1"
+    },
+    {
+      "caseId": "return:TERMINAL",
+      "composerTuningStatus": "draft",
+      "glyphCalibrationStatus": "runtime-approved",
+      "opticalTokenStatus": "draft",
+      "profile": "TERMINAL",
+      "projection": {
+        "schemaVersion": 1,
+        "composerVersion": 1,
+        "pitchContourTableVersion": 1,
+        "branchId": "visual-lab-branch",
+        "chapterId": "music-gate-c-fixed-seed-review",
+        "derivedChapterSeed": "wf-chapter-seed-v1-192fe65c",
+        "profile": "TERMINAL",
+        "motifs": [
+          {
+            "slotId": "opening",
+            "motifId": "Q1",
+            "family": "quarter",
+            "durations": [
+              "quarter"
+            ],
+            "staffSteps": [
+              7
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "response",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              5
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-a",
+            "motifId": "H2",
+            "family": "half",
+            "durations": [
+              "half",
+              "half"
+            ],
+            "staffSteps": [
+              8,
+              9
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "development-b",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              8
+            ],
+            "contourId": "step-up",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "release",
+            "motifId": "H2",
+            "family": "half",
+            "durations": [
+              "half",
+              "half"
+            ],
+            "staffSteps": [
+              7,
+              6
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          },
+          {
+            "slotId": "terminal",
+            "motifId": "H1",
+            "family": "half",
+            "durations": [
+              "half"
+            ],
+            "staffSteps": [
+              6
+            ],
+            "contourId": "step-down",
+            "contourTranslation": 0,
+            "dense": false,
+            "tuplet": null
+          }
+        ],
+        "emptySlots": [
+          {
+            "slotId": "reserved-transition",
+            "reason": "reserved-zone",
+            "reservedReason": "transition"
+          }
+        ]
+      },
+      "seedId": "return",
+      "seedLabel": "Return",
+      "semanticHash": "fnv1a32-v1-d5b5a09a",
+      "sessionSeed": "wflyer-music-gate-c-return-v1"
+    }
+  ],
+  "chapterId": "music-gate-c-fixed-seed-review",
+  "profiles": [
+    "CALM",
+    "BALANCED",
+    "ACTIVE",
+    "TERMINAL"
+  ],
+  "schemaVersion": 1,
+  "seedIds": [
+    "origin",
+    "flight",
+    "return"
+  ],
+  "semanticProjectionVersion": 1
+}

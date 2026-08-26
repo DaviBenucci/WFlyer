@@ -63,6 +63,23 @@ Generate pitches through whitelisted contours rather than independently random p
 
 Avoid more than two consecutive notes at the same pitch unless a future explicitly approved motif requires otherwise.
 
+Version 1 uses these diatonic `staffStep` deltas from the selected anchor (`—` means unsupported for that note count):
+
+| contour | n=1 | n=2 | n=3 | n=4 |
+| --- | --- | --- | --- | --- |
+| `step-up` | `[0]` | `[0,1]` | `[0,1,2]` | `[0,1,2,3]` |
+| `step-down` | `[0]` | `[0,-1]` | `[0,-1,-2]` | `[0,-1,-2,-3]` |
+| `arch` | — | — | `[0,1,0]` | `[0,1,1,0]` |
+| `valley` | — | — | `[0,-1,0]` | `[0,-1,-1,0]` |
+| `alternating` | — | — | `[0,1,-1]` | `[0,1,-1,0]` |
+| `repeat-then-step` | — | — | `[0,0,1]` | `[0,0,1,2]` |
+| `small-leap-up` | — | `[0,2]` | `[0,2,3]` | `[0,2,3,4]` |
+| `small-leap-down` | — | `[0,-2]` | `[0,-2,-3]` | `[0,-2,-3,-4]` |
+
+Contour deltas are explicit and versioned per supported motif length. A selected contour preserves its complete interval structure. Boundary correction may apply only one uniform integer `staffStep` translation to the complete contour, choosing the smallest-magnitude translation that places every note inside `C4..A5 (-2..10)`. Individual notes are never clamped, reflected, reversed, truncated, or independently changed.
+
+If the complete contour cannot fit after a uniform translation, the candidate is rejected deterministically and the composer evaluates the next candidate using the documented seeded schedule. Preferred-range weighting may favor `E4..F5 (0..8)` but may not violate these hard rules.
+
 ## Chapter density profiles
 
 Supported profiles:
@@ -71,7 +88,10 @@ Supported profiles:
 - `active`
 - `terminal`
 
-Exact numeric motif weights are intentionally **not canonical yet**. They must be calibrated in the Composer Visual Lab across many fixed seeds.
+The exact v0.1 numeric motif weights captured in the Gate-C configuration were
+approved by final external human review on 2026-08-24. They remain
+version-controlled calibration data and cannot change implicitly with the final
+triplet renderer correction.
 
 Suggested semantic use:
 

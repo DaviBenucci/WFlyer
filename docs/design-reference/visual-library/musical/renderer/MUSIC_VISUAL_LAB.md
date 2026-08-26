@@ -1,6 +1,22 @@
 # Music Visual Lab — Required Gate
 
-The normalized runtime SVGs are **candidates**, not production-approved assets, until this lab validates their scale, anchors and renderer integration.
+The normalized runtime SVGs passed external human Gate B scale/anchor review on
+2026-08-15. Their immutable path geometry is unchanged. Renderer/composer
+integration, optical tuning, and the isolated evidence subsequently passed final
+external human Gate-C review on 2026-08-24.
+
+As historical context, the external Gate-C review on 2026-08-17 returned
+`approve-with-two-named-changes`. Automated evidence and immutable baselines
+were accepted, while triplet-numeral legibility and responsive mobile engraving
+orientation still required correction and renewed review at that checkpoint.
+
+The first 2026-08-24 follow-up review accepted the corrected responsive functional
+semantics, approved `maxNotationTangentAngleDeg=18`, classified the current
+connector geometry as validation-only/noncanonical, and requested one final
+change: `tupletNumeralSizeSp: 0.75 -> 0.85`. The four affected triplet images
+were recaptured in the isolated 2026-08-24 evidence bundle. Final external human
+optical review then approved the `0.85` result, the exact reviewed renderer and
+Composer values, and Gate C. Public landing integration has not occurred.
 
 ## Required fixtures
 
@@ -17,6 +33,12 @@ The normalized runtime SVGs are **candidates**, not production-approved assets, 
 11. Straight and curved staff equivalence.
 12. Ordinary/final barline on straight and curved ScorePath.
 13. Composer gallery across fixed seeds and density profiles.
+14. Triplet detail: split bracket, centered legible `3`, stem-up/down, and
+    straight/gentle-arc/gentle-S placement in light and dark.
+15. Responsive mobile orientation: upright clef, left-to-right notation-safe
+    zone, event-free steep connector, a later notation-safe zone, quarter/half
+    notes, a beamed motif, a triplet, conventional final barline, and all five
+    staff lines visibly continuous through the transition.
 
 ## Approval requirements
 
@@ -27,4 +49,13 @@ The normalized runtime SVGs are **candidates**, not production-approved assets, 
 - human visual review in light and dark modes
 - screenshot evidence stored outside runtime assets
 
-Only after these gates may each asset `runtimeStatus` become `approved`.
+Gate B review approved each asset's nominal metrics and required anchors, so each
+asset `runtimeStatus` is `approved`. It also approved the down-flag transform
+`mirrorX=false`, `mirrorY=true`, `rotationRadians=0`. This status does not approve or
+bypass the separate Gate C renderer/composer review.
+
+The previously proposed Gate-C values are approved except that the `0.75`
+numeral-size value is superseded by the final approved `0.85` value. Historical
+and responsive evidence remains unchanged. Final organic public Score Paths are
+a separate blocking Phase-9 human decision and were not authored or pre-approved
+in this Gate-C closure.

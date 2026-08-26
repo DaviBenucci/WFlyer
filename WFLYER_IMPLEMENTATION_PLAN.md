@@ -41,9 +41,13 @@ Rebuild `wflyer.com.br` as a personal professional portfolio and service-acquisi
 
 ## Phase 1 — Isolated W_Flyer Music System v0.1
 
-Execute the dedicated change:
+**Final status:** `APPROVED FOR FUTURE LANDING INTEGRATION` — external human
+Gate-C approval recorded on 2026-08-24. This approves the isolated foundation;
+it does not claim that public landing integration has occurred.
 
-`openspec/changes/implement-music-system-v0-1/`
+Execute the dedicated change (archived after 55/55 completion):
+
+`openspec/changes/archive/2026-08-24-implement-music-system-v0-1/`
 
 ### Required work
 
@@ -65,6 +69,11 @@ Codex presents draft glyph metrics/anchors in the Music Visual Lab. Codex stops.
 ### Gate C — visual composer, blocking
 
 Fixed-seed visual evidence, curved staff behavior, key signatures, all motifs, accessibility, 10,000-segment stress tests, production 404 for the lab, and performance evidence pass. Human approval is recorded.
+
+**Status:** approved by external human review on 2026-08-24. Responsive
+activation thresholds remain noncanonical, and the current returning connector
+remains a validation-only noncanonical fixture. Final public responsive Score
+Paths still require the separate blocking Phase-9 human subgate.
 
 ### Phase 1 completion rule
 
@@ -227,19 +236,42 @@ closure.
 ### Preconditions
 
 - Music Gates A/B/C complete.
-- Score Path layouts are human-approved.
+- Phases 2 through 8 and their gates complete.
+
+### Score Path candidate subgate — human blocking
+
+Before public dual-score integration begins, author at least `Organic Soft` and
+`Organic Flowing` candidates for both `vertical-wide` and `vertical-compact`.
+Each mode/style candidate requires light and dark evidence and must be authored
+against the real chapter layouts and reserved content zones for headings/body,
+W_Flyer Persona, Services, Process, Project cards, Contact form, application
+tablet/demo, and terminal areas. Stop for explicit human Score Path approval.
+
+The current Gate-C piecewise returning connector is a validation-only
+noncanonical fixture and cannot satisfy this subgate.
 
 ### Required work
 
 - Integrate one shared origin plus six application and six professional score segments.
 - Use long, smooth, organic master-guide curves with few inflection points.
+- Use asymmetric cubic Bézier geometry with tangent and curvature continuity
+  across joined segments.
+- Avoid repeated identical 180-degree U-turns, mirrored hairpins, identical
+  turn radii, rigid rectangular returns, and unnecessarily long straight
+  connector plateaus.
+- Vary vertical drop and lateral return from the actual chapter layout.
 - Preserve geometric entry/exit compatibility, `staffSpace`, tangent, and semantic slot IDs.
+- Preserve all five lines without cusp, crossing, collapse, or
+  self-intersection; keep events inside notation-safe zones and connectors
+  event-free.
 - Use the same semantic composition across horizontal and vertical layouts.
 - Armature/key signature occurs at most once per continuous branch, after clef and before first relevant material.
 - Final barline is deterministic and precedes each terminal.
 
 ### Gate 9
 
+- The selected `Organic Soft` or `Organic Flowing` layouts have explicit human
+  approval for both vertical modes and both themes.
 - No visible segment seam beyond the approved tolerance.
 - Notes, ledger lines, stems, beams, accidentals, barlines, and key signatures remain coherent on curved paths.
 - Same session composition remains stable across reload, theme, breakpoint, and reduced motion.

@@ -9,7 +9,7 @@ The legacy v1 website architecture and the approved v2 target differ materially.
 
 ## Decision
 
-A versioned session seed selects only whitelisted rhythmic motifs and pitch contours. Same semantic inputs yield the same score across reload/theme/responsive/reduced motion. No Math.random and no free music generation.
+A versioned session seed selects only whitelisted rhythmic motifs and versioned per-length pitch-delta contours. Same semantic inputs yield the same score across reload/theme/responsive/reduced motion. Range correction translates a complete contour uniformly by the smallest integer staffStep offset that fits C4..A5; it never clamps, reflects, reverses, truncates, or mutates individual intervals. A contour that cannot fit is rejected through the same deterministic candidate sequence or a documented deterministic fallback. No Math.random and no free music generation.
 
 ## Consequences
 

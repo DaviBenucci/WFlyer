@@ -45,14 +45,93 @@ parameters:
     finalForPhase4: true
     behaviorOnExpiry: best-effort-position-release-locks-enter-degraded
   scorePathControlPoints:
-    status: human-visual-approval-required
+    status: phase-9-human-visual-approval-required
     exactValue: null
+    currentValidationFixtureCanonical: false
+    requiredCandidateStyles: [Organic Soft, Organic Flowing]
+    requiredModes: [vertical-wide, vertical-compact]
+    requiredThemes: [light, dark]
+  maxNotationTangentAngleDeg:
+    status: approved
+    exactValue: 18
+    gate: music-gate-c-human-follow-up
+    approvedOn: "2026-08-24"
+    approvedByRole: external-human-reviewer
+    evidence: docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/approval-2026-08-24/2026-08-24-gate-c-final-human-approval.md
+  tripletNumeralSizeSp:
+    status: approved
+    exactValue: 0.85
+    supersededCandidateValue: 0.75
+    approvedOn: "2026-08-24"
+    approvedByRole: external-human-reviewer
+    captureStatus: complete
+    evidence: docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/approval-2026-08-24/2026-08-24-gate-c-final-human-approval.md
+  rendererOpticalTokens:
+    status: approved
+    gate: music-gate-c-final-human
+    approvedOn: "2026-08-24"
+    approvedByRole: external-human-reviewer
+    valuesSource: docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/gate-c-draft-configuration.json#/renderer/tokens
+    valuesSourceSha256: 2d82abf420d3972e47acb20954ff681ab3a1b107c0082661d9056c175ba73899
+    historicalEmbeddedStatusAuthoritative: false
+    inheritedGateBField: note.flagTransform
+    triplet:
+      tupletNumeralSizeSp: 0.85
+      tupletNumeralSideGapSp: 0.18
+      bracketClearanceSp: 0.65
+      bracketEndCapSp: 0.30
+      bracketThicknessSp: 0.07
+    evidenceManifest: docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/approval-2026-08-24/gate-c-approved-evidence-manifest.v1.json
   musicGlyphMetricsAnchors:
-    status: music-gate-b-human
+    status: approved
+    gate: music-gate-b-human
+    approvedOn: "2026-08-15"
+    approvedByRole: external-human-reviewer
+    evidence: docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-b/2026-08-15-gate-b-calibration-review.md
     manifest: docs/design-reference/visual-library/manifest.json
+    coordinateSpace: normalized-view-box
+    values:
+      trebleClef:
+        nominalSizeStaffSpaces: [2.614, 6.400]
+        gLine: [0.500, 0.620]
+      filledNotehead:
+        nominalSizeStaffSpaces: [1.248, 0.900]
+        opticalCenter: [0.500, 0.500]
+        stemUp: [0.925, 0.340]
+        stemDown: [0.075, 0.660]
+      openNotehead:
+        nominalSizeStaffSpaces: [1.248, 0.900]
+        opticalCenter: [0.500, 0.500]
+        stemUp: [0.925, 0.340]
+        stemDown: [0.075, 0.660]
+      sharpAccidental:
+        nominalSizeStaffSpaces: [1.164, 2.000]
+        pitchCenter: [0.500, 0.515]
+      flatAccidental:
+        nominalSizeStaffSpaces: [0.869, 2.400]
+        pitchCenter: [0.500, 0.680]
+      naturalAccidental:
+        nominalSizeStaffSpaces: [0.835, 2.200]
+        pitchCenter: [0.500, 0.500]
+      eighthFlag:
+        nominalSizeStaffSpaces: [1.431, 2.250]
+        stemAttachment: [0.105, 0.125]
+      sixteenthDoubleFlag:
+        nominalSizeStaffSpaces: [1.538, 2.500]
+        stemAttachment: [0.105, 0.125]
+    downFlagTransform:
+      mirrorX: false
+      mirrorY: true
+      rotationRadians: 0
   composerWeights:
-    status: music-visual-lab-calibration
-    exactValue: null
+    status: approved
+    gate: music-gate-c-final-human
+    approvedOn: "2026-08-24"
+    approvedByRole: external-human-reviewer
+    valuesSource: docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/gate-c-draft-configuration.json#/composer/profiles
+    valuesSourceSha256: 2d82abf420d3972e47acb20954ff681ab3a1b107c0082661d9056c175ba73899
+    historicalEmbeddedStatusAuthoritative: false
+    evidenceManifest: docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/approval-2026-08-24/gate-c-approved-evidence-manifest.v1.json
   personaAsset:
     status: pending-owner-approved-asset
   app04MediaAssets:

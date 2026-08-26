@@ -1,0 +1,104 @@
+# Gate-C changed-file inventory
+# Scope: resumed Music System v0.1 Gate-C implementation and evidence through
+# creation of the human-review draft on 2026-08-17.
+# This intentionally excludes unrelated/preexisting dirty-worktree files.
+
+## Isolated implementation and tests changed for Gate C
+scripts/capture-music-gate-c-evidence.mjs
+src/app/%5F_visual-lab/music/_fixtures/ComposerFixtureControls.tsx
+src/app/%5F_visual-lab/music/_fixtures/gate-c-review.test.ts
+src/app/%5F_visual-lab/music/_fixtures/gate-c-review.ts
+src/app/%5F_visual-lab/music/_fixtures/lab-score-models.test.ts
+src/app/%5F_visual-lab/music/_fixtures/lab-score-models.ts
+src/app/%5F_visual-lab/music/composer/page.tsx
+src/app/%5F_visual-lab/music/key-signatures/page.tsx
+src/app/%5F_visual-lab/music/music-lab.module.css
+src/app/%5F_visual-lab/music/pitches/page.tsx
+src/components/score/score.module.css
+tests/a11y/music-visual-lab.a11y.spec.ts
+tests/e2e/music-visual-lab.spec.ts
+tests/unit/music/composer/compose-segment.test.ts
+openspec/changes/implement-music-system-v0-1/tasks.md
+
+## Gate-C evidence created
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/01-motif-matrix-light.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/02-motif-matrix-dark.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/03-key-signatures-light.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/04-key-signatures-dark.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/05-composer-fixed-seeds-light.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/06-composer-fixed-seeds-dark.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/07-responsive-horizontal-desktop.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/08-responsive-vertical-mobile.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/09-reduced-motion-static.png
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/SHA256SUMS.txt
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-gate-c-changed-files.txt
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-gate-c-preflight.md
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-gate-c-review.md
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-pre-gate-c-approved-svg-files.sha256
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-pre-gate-c-committed-snapshots.sha256
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-pre-gate-c-worktree-status.txt
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-post-gate-c-approved-svg-files.sha256
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-post-gate-c-committed-snapshots.sha256
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-post-gate-c-worktree-status.txt
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/gate-c-composer-fixed-seeds.json
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/gate-c-draft-configuration.json
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/gate-c-performance.json
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/gate-c-semantic-stability.json
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-boundary-tests.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-capture-script-syntax.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-composer-stress.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-contact-harness-smoke.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-dependency-validation.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-dev-lab-browser-initial-failure.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-dev-lab-browser.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-environment.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-format-diff-check.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-gate-b-bundle-check-wrong-cwd.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-gate-b-bundle-check.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-gate-c-capture.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-glyph-manifest-coherence.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-graphify-isolation-paths.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-graphify-post-query.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-graphify-update.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-immutable-post-check.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-lint.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-openspec-strict-validation.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-prepare-standalone-without-transition-harness.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-prepare-standalone-without-turnstile-harness.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-prepare-standalone.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-production-build-without-transition-harness.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-production-build-without-turnstile-harness.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-production-build.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-production-lab-404-port-conflict.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-production-lab-404-pre-regression-build.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-production-lab-404-without-turnstile-harness.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-production-lab-404.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-public-regression-invalid-build-env.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-public-regression-invalid-contact-harness.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-public-regression.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-public-source-isolation.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-storybook-build.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-storybook-tests-initial-enospc.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-storybook-tests-second-enospc.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-storybook-tests.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-typecheck.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-unit-tests.log
+docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/validation/2026-08-17-visual-diagnostic.log
+
+## Graphify generated state refreshed by the required structural update
+graphify-out/GRAPH_REPORT.md
+graphify-out/graph.json
+graphify-out/graph.html
+graphify-out/manifest.json
+graphify-out/reflections/LESSONS.md
+graphify-out/memory/query_20260817_125038_inspect_relationships_around_the_isolated_music_sy.md
+# Graphify also refreshed its ignored internal label/learning/cache files and
+# wrote the six-file rollback snapshot under graphify-out/2026-08-17/.
+
+## Explicitly unchanged/out of scope
+# src/components/music/**
+# src/components/experience/SiteExperienceShell.tsx
+# src/app/page.tsx
+# tests/visual/**/*-snapshots/*.png (84 committed PNGs)
+# docs/design-reference/visual-library/musical/glyphs/source/*.svg (8 files)
+# src/assets/visuals/musical/*.svg (8 files)

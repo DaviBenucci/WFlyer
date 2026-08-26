@@ -1,0 +1,40 @@
+.score {
+  color: var(--score-color, currentColor);
+  display: block;
+  height: auto;
+  overflow: visible;
+  width: 100%;
+}
+
+.score image {
+  color: inherit;
+  pointer-events: none;
+}
+
+.stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: butt;
+  stroke-linejoin: round;
+}
+
+.tupletLabel {
+  fill: currentColor;
+  font-family: ui-serif, Georgia, serif;
+  font-weight: 700;
+  stroke: none;
+}
+
+.score [data-score-debug-overlay="true"] {
+  color: var(--score-debug-color, #9f1239);
+  fill: currentColor;
+  pointer-events: none;
+  stroke: currentColor;
+}
+
+.score [data-score-debug-overlay="true"] text {
+  fill: currentColor;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 7px;
+  stroke: none;
+}

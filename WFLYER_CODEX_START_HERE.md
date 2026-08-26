@@ -33,7 +33,7 @@ Before changing code, read these files in this exact order:
 11. `<repository-root>/openspec/changes/rebuild-scroll-driven-wflyer-v2/proposal.md`
 12. `<repository-root>/openspec/changes/rebuild-scroll-driven-wflyer-v2/design.md`
 13. `<repository-root>/openspec/changes/rebuild-scroll-driven-wflyer-v2/tasks.md`
-14. `<repository-root>/openspec/changes/implement-music-system-v0-1/` in full.
+14. `<repository-root>/openspec/changes/archive/2026-08-24-implement-music-system-v0-1/` in full.
 
 ## Source of truth
 

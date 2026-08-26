@@ -1,0 +1,12 @@
+e869028f378f69549977392900867b1c36f0ca1eaa192886e32ad836e4628a48  ./01-motif-matrix-light.png
+ddf553d1a2a74494650e5cfb739c293b40da947ffb24a297b7197bfda5e0f44a  ./02-motif-matrix-dark.png
+fc59e1e6d9739c772c7f557ee24357a1da3d009239571c93c1678f823d13334d  ./10-triplet-detail-light.png
+e1946a8a8641637a88c5155e7421c65886be411b08280c161b105355e7e2c913  ./11-triplet-detail-dark.png
+6b799e17d1970f6f8b4ed92ebd20786a29ddad0cc042154a52850e308cd0ef4e  ./2026-08-24-final-triplet-changed-files.txt
+3bce5ae21fa8f82008e244e9f3405af8973f6da207f4533b72d381eb690870b6  ./2026-08-24-final-triplet-validation.md
+92fec271aff11234397063d19077e2264c81cc53bbaf6f760bda9e3b1d305307  ./2026-08-24-gate-c-human-decision.md
+38ad23abbd642bac57bae9781f66124a46efde90b2921de2c0811966d93bab65  ./2026-08-24-post-final-triplet-approved-svg-files.sha256
+ba4f23c08613c1c1c9a1481fa6d8466dd7bfa0641cf3b6ae898424966ccc6b63  ./2026-08-24-post-final-triplet-committed-snapshots.sha256
+38ad23abbd642bac57bae9781f66124a46efde90b2921de2c0811966d93bab65  ./2026-08-24-pre-final-triplet-approved-svg-files.sha256
+ba4f23c08613c1c1c9a1481fa6d8466dd7bfa0641cf3b6ae898424966ccc6b63  ./2026-08-24-pre-final-triplet-committed-snapshots.sha256
+d0d387edb84cee7c30dbfe188c7cf9c5c8dd5175ace9ed6d4b7f7cf82ce32a03  ./2026-08-24-triplet-numeral-comparison.md

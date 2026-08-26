@@ -40,7 +40,10 @@ No other automatic group is allowed.
 - `ACTIVE`
 - `TERMINAL`
 
-Exact weights/counts are Visual Lab calibration values.
+The exact v0.1 weights/counts recorded in the Gate-C configuration were approved
+by final external human review on 2026-08-24. Changing them requires a new
+explicit calibration decision; this final triplet correction does not alter
+Composer semantics or weights.
 
 Suggested chapter profile:
 
@@ -70,7 +73,22 @@ Soft:
 
 Landing range `C4..A5`, preferred `E4..F5`. Ledger-line pitches are occasional.
 
-Pitch contours are chosen from a whitelist such as step-up, step-down, arch, valley, alternating, repeat-then-step, small-leap-up/down. Notes are not independently randomized.
+Pitch contours are chosen from versioned, explicit per-note-count delta tables. Notes are not independently randomized.
+
+| Contour | 1 note | 2 notes | 3 notes | 4 notes |
+|---|---|---|---|---|
+| `step-up` | `[0]` | `[0,1]` | `[0,1,2]` | `[0,1,2,3]` |
+| `step-down` | `[0]` | `[0,-1]` | `[0,-1,-2]` | `[0,-1,-2,-3]` |
+| `arch` | unsupported | unsupported | `[0,1,0]` | `[0,1,1,0]` |
+| `valley` | unsupported | unsupported | `[0,-1,0]` | `[0,-1,-1,0]` |
+| `alternating` | unsupported | unsupported | `[0,1,-1]` | `[0,1,-1,0]` |
+| `repeat-then-step` | unsupported | unsupported | `[0,0,1]` | `[0,0,1,2]` |
+| `small-leap-up` | unsupported | `[0,2]` | `[0,2,3]` | `[0,2,3,4]` |
+| `small-leap-down` | unsupported | `[0,-2]` | `[0,-2,-3]` | `[0,-2,-3,-4]` |
+
+These arrays are diatonic staffStep deltas from a selected anchor. Table version 1 belongs to Composer version 1; any delta-table behavior change requires a composer-version change.
+
+After a start pitch is selected, the complete contour may receive only one uniform integer staffStep translation. The composer chooses the minimum-absolute translation that places every note in `C4..A5` (`-2..10`), choosing zero whenever zero is valid. It never clamps individual notes, reflects/reverses a contour, truncates it, or mutates one interval independently. If the contour span cannot fit after translation, that motif/contour candidate is rejected and the next candidate is selected through the same seeded sequence or a documented deterministic fallback. The preferred optical range remains `E4..F5` (`0..8`), with extended positions controlled by the profile and ledger-frequency policy.
 
 ## Semantic slots
 

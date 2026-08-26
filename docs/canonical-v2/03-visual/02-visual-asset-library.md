@@ -40,7 +40,12 @@ Visual-reference-approved glyphs:
 - eighth flag;
 - sixteenth double flag.
 
-Runtime approval is pending human calibration.
+Runtime metrics/anchors and the down-flag transform passed external human Gate B
+review on 2026-08-15. Each glyph's `runtimeStatus` is `approved` in the canonical
+manifest. Approved SVG geometry and checksums remain unchanged. Gate C renderer and
+composer presentation passed external human review on 2026-08-24. This does not
+authorize public landing integration or the still-pending Phase-9 Score Path
+human decision.
 
 ## Renderer primitives
 

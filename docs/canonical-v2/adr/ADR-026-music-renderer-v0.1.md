@@ -9,7 +9,7 @@ The legacy v1 website architecture and the approved v2 target differ materially.
 
 ## Decision
 
-Approved SVG glyphs define appearance; deterministic pure TypeScript geometry defines staff, pitch, stems, ledger lines, beams/hooks, accidentals, key signatures, and barlines on straight or cubic-Bezier ScorePaths. React only renders precomputed models.
+Approved SVG glyphs define appearance; deterministic pure TypeScript geometry defines staff, pitch, stems, ledger lines, beams/hooks, accidentals, key signatures, and barlines on straight or cubic-Bezier ScorePaths. `pointAt(t)` is the B4/staffStep-4 middle-line master guide, and `normalAt(t)` always points toward increasing pitch independently of path traversal direction. The visible middle line remains one of five rendered coherent offsets. React only renders precomputed models.
 
 ## Consequences
 

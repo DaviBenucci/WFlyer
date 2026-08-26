@@ -25,6 +25,8 @@ Pure geometry/composer tests, deterministic rules, key signatures, ledger lines,
 
 ## Gate B — human blocking
 
+**Status:** approved by external human review on 2026-08-15.
+
 Codex proposes draft:
 
 - clef `gLine`;
@@ -33,9 +35,21 @@ Codex proposes draft:
 - flag attachment;
 - nominal sizes.
 
-Human approves. Codex cannot self-approve.
+Human approval is recorded in the canonical calibration register and Gate B evidence.
+The exact nominal sizes, anchors, and down-flag transform are now runtime approved.
+Codex did not self-approve, and the immutable SVG geometry/checksums did not change.
 
 ## Gate C — human blocking
+
+**Status:** approved by final external human review on 2026-08-24.
+
+The reviewer approved the automated evidence, immutable SVG/snapshot baselines,
+corrected responsive functional semantics, reviewed renderer and Composer
+values, `maxNotationTangentAngleDeg=18`, and the final `0.85` triplet result.
+Canonical triplet tokens are `0.85` numeral size, `0.18` side gap, `0.65`
+clearance, `0.30` end cap, and `0.07` bracket thickness. Gate A and Gate B stay
+closed and approved; no Gate-B-approved glyph geometry, metric, or anchor
+changed.
 
 - all motifs on straight/curved staff;
 - multiple fixed seeds per profile;
@@ -47,4 +61,10 @@ Human approves. Codex cannot self-approve.
 - no per-scroll composition/geometry/React work;
 - deterministic visual evidence.
 
-Landing integration follows only after all gates.
+Only the two motif matrices and two triplet-detail images were recaptured in a
+new evidence directory. Existing responsive evidence and historical Gate-C
+evidence remain byte-identical. The final approval record and authority manifest
+are under `gate-c/approval-2026-08-24/`. The responsive connector fixture remains
+validation-only and noncanonical. Landing integration has not occurred; final
+responsive organic path design remains deferred to the blocking Phase-9 human
+subgate.
