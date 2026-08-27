@@ -1,8 +1,8 @@
 # W_Flyer v2 — Canonical Documentation Manifest
 
-**Current execution checkpoint:** Phase 5 / Gate 5 complete on 2026-08-26;
-Phase 6 is next permitted and not started. Gate-5 evidence is under
-`docs/canonical-v2/06-migration/evidence/phase-5/`.
+**Current execution checkpoint:** Phase 6 / Gate 6 complete on 2026-08-27;
+Phase 7 is next permitted and not started. Gate-6 evidence is under
+`docs/canonical-v2/06-migration/evidence/phase-6/`.
 
 ## Root execution documents
 

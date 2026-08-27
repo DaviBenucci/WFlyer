@@ -176,8 +176,8 @@ is unchanged.
 
 ## Phase 6 — Header traversal, URL, and history
 
-**Execution status:** next permitted phase; not started by the Phase-5
-closure.
+**Execution status:** complete; Gate 6 passed on 2026-08-27. Evidence is under
+`docs/canonical-v2/06-migration/evidence/phase-6/`.
 
 ### Required work
 
@@ -197,6 +197,9 @@ closure.
 - Back/Forward restores a coherent canonical position.
 
 ## Phase 7 — Professional branch scenes
+
+**Execution status:** next permitted phase; not started by the Phase-6
+closure.
 
 ### Required work
 

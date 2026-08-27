@@ -3,6 +3,8 @@
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
+import { StoryNavigationProvider } from "@/components/story";
+
 import { SiteExperienceShell } from "./SiteExperienceShell";
 
 const STORY_VISUAL_LAB_PATH = "/__visual-lab/story";
@@ -44,12 +46,12 @@ export function RouteAwareExperienceBoundary({
 
   if (storyVisualLabEnabled && isStoryVisualLabPath(pathname)) {
     return (
-      <>
+      <StoryNavigationProvider>
         {skipLink}
         {storyHeader}
         {children}
         {storyFooter}
-      </>
+      </StoryNavigationProvider>
     );
   }
 

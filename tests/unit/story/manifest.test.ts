@@ -7,6 +7,7 @@ import {
   DESKTOP_TIMELINE_ORDER,
   GLOBAL_STORY_FOOTER,
   HEADER_NAVIGATION,
+  HEADER_NAVIGATION_ORDER,
   MOBILE_DOCUMENT_ORDER,
   MOBILE_STORY_CHAPTERS,
   MOBILE_STORY_DOCUMENT,
@@ -139,6 +140,7 @@ describe("v2 story manifest", () => {
       STORY_CHAPTERS.filter(({ header }) => header !== false).map(({ id }) => id),
     ).toEqual(expect.arrayContaining(targetIds));
     expect(new Set(targetIds).size).toBe(targetIds.length);
+    expect(HEADER_NAVIGATION_ORDER).toEqual(targetIds);
   });
 
   it("keeps terminals unaddressed and places them after future final barlines", () => {
@@ -191,6 +193,7 @@ describe("v2 story manifest", () => {
     expect(Object.isFrozen(MOBILE_STORY_CHAPTERS)).toBe(true);
     expect(Object.isFrozen(MOBILE_STORY_DOCUMENT)).toBe(true);
     expect(Object.isFrozen(HEADER_NAVIGATION)).toBe(true);
+    expect(Object.isFrozen(HEADER_NAVIGATION_ORDER)).toBe(true);
 
     for (const chapter of STORY_CHAPTERS) {
       expect(Object.isFrozen(chapter)).toBe(true);

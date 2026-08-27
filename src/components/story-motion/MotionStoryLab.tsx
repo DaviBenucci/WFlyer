@@ -11,6 +11,7 @@ import {
 } from "react";
 
 import { StoryBootstrapExperience } from "@/components/story-bootstrap";
+import { useStoryNavigationBridge } from "@/components/story";
 import { Container } from "@/components/ui";
 import {
   DESKTOP_TIMELINE_ORDER,
@@ -83,6 +84,8 @@ function MotionStorySurface({
   const stageRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const renderCount = useRef(0);
+  const { registerController, reportActiveChapter } =
+    useStoryNavigationBridge();
 
   useLayoutEffect(() => {
     renderCount.current += 1;
@@ -106,19 +109,27 @@ function MotionStorySurface({
           new URLSearchParams(window.location.search).get("scenario") ===
           "motion-failure",
         onRequestRemount,
+        onActiveChapterChange: reportActiveChapter,
         root,
         stage,
         track,
       });
       runtimeRegistry.set(runtime);
+      const unregisterController = registerController(runtime);
 
       return () => {
+        unregisterController();
         if (runtimeRegistry.get() === runtime) runtimeRegistry.set(null);
         runtime.destroy();
       };
     },
     {
-      dependencies: [onRequestRemount, runtimeRegistry],
+      dependencies: [
+        onRequestRemount,
+        registerController,
+        reportActiveChapter,
+        runtimeRegistry,
+      ],
       scope: rootRef,
     },
   );
@@ -127,6 +138,7 @@ function MotionStorySurface({
     <main
       className={styles.root}
       data-motion-lab="phase-5"
+      data-story-header-traversal="phase-6"
       data-projection-mode="static"
       data-story-document-order={MOBILE_DOCUMENT_ORDER.join(" ")}
       data-story-v2="phase-5-motion-lab"

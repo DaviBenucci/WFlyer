@@ -25,6 +25,14 @@ export {
 export {
   createMotionStoryRuntime,
   type CreateMotionStoryRuntimeOptions,
+  type HeaderTraversalCancelReason,
+  type HeaderTraversalResult,
+  type HeaderTraversalState,
+  type HeaderTraversalStatus,
   type MotionStoryRuntime,
   type MotionStoryRuntimeSnapshot,
 } from "./runtime";
+export {
+  HEADER_TRAVERSAL_TIMING,
+  resolveHeaderTraversalDuration,
+} from "./traversal";

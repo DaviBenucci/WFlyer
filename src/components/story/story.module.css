@@ -191,7 +191,8 @@
 }
 
 .header {
-  position: relative;
+  position: sticky;
+  inset-block-start: 0;
   z-index: var(--wf-z-header);
   border-block-end: 1px solid var(--wf-border);
   background: color-mix(in oklab, var(--wf-bg) 94%, transparent);
@@ -231,9 +232,15 @@
 }
 
 .navigationLink:hover,
-.navigationLink:focus-visible {
+.navigationLink:focus-visible,
+.navigationLink[aria-current="location"] {
   color: var(--wf-text);
   text-decoration-color: currentColor;
+}
+
+.navigationLink[aria-current="location"] {
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.32em;
 }
 
 .themeControl {

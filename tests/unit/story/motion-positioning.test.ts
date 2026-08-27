@@ -8,6 +8,15 @@ import {
 function createRuntime(): MotionStoryRuntime {
   return {
     destroy: vi.fn(),
+    navigate: vi.fn<MotionStoryRuntime["navigate"]>(
+      async (chapterId) => ({
+        cancelReason: null,
+        distance: 0,
+        durationSeconds: 0,
+        status: "no-op",
+        targetChapterId: chapterId,
+      }),
+    ),
     position: vi.fn<MotionStoryRuntime["position"]>(
       async (chapterId) => ({
         fallbackToHome: false,

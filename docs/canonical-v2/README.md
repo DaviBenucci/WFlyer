@@ -4,7 +4,8 @@
 **Current code:** retained public v1 landing baseline plus completed Phase-2
 static story foundation, Gate-3 typed content/detailed-route contracts,
 Gate-4 readiness/bootstrap/deep-link contracts, and the Gate-5 native-scroll
-desktop master story on isolated development routes
+desktop master story with Gate-6 header traversal/history on isolated
+development routes
 **Implementation plan:** [`../../WFLYER_IMPLEMENTATION_PLAN.md`](../../WFLYER_IMPLEMENTATION_PLAN.md)
 
 ## Reading order

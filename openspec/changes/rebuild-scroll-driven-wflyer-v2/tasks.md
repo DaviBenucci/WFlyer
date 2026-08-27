@@ -38,9 +38,9 @@ retained; only its phase classification and later execution position changed.
 - [x] Preserve semantic chapter on mode rebuild
 
 ## 6. Header traversal and history
-- [ ] Implement approved header targets
-- [ ] Implement proportional traversal capped at 3 s
-- [ ] Implement interruption, push/replace, Back/Forward
+- [x] Implement approved header targets
+- [x] Implement proportional traversal capped at 3 s
+- [x] Implement interruption, push/replace, Back/Forward
 
 ## 7. Professional branch scenes
 - [ ] About/Persona integration contract

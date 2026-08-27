@@ -1,0 +1,18 @@
+{
+  "capturedDate": "2026-08-27",
+  "changeName": "rebuild-scroll-driven-wflyer-v2",
+  "schemaName": "spec-driven",
+  "command": "pnpm exec openspec instructions apply --change rebuild-scroll-driven-wflyer-v2 --json",
+  "progress": {
+    "total": 45,
+    "complete": 25,
+    "remaining": 20
+  },
+  "completedPhase6TaskIds": [23, 24, 25],
+  "nextTask": {
+    "id": 26,
+    "description": "About/Persona integration contract",
+    "done": false
+  },
+  "state": "ready"
+}

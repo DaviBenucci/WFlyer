@@ -278,3 +278,10 @@ export const HEADER_NAVIGATION: StoryHeaderNavigation = Object.freeze({
     "professional-contact",
   ] as const satisfies readonly StoryChapterId[]),
 });
+
+/** Exact canonical header order, derived from the branch-owned target lists. */
+export const HEADER_NAVIGATION_ORDER = Object.freeze([
+  ...HEADER_NAVIGATION.application,
+  HEADER_NAVIGATION.center,
+  ...HEADER_NAVIGATION.professional,
+] as const satisfies readonly StoryChapterId[]);

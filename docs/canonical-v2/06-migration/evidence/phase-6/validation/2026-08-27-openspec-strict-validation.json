@@ -1,0 +1,20 @@
+{
+  "capturedDate": "2026-08-27",
+  "command": "pnpm exec openspec validate rebuild-scroll-driven-wflyer-v2 --strict --json",
+  "items": [
+    {
+      "id": "rebuild-scroll-driven-wflyer-v2",
+      "type": "change",
+      "valid": true,
+      "issues": []
+    }
+  ],
+  "summary": {
+    "totals": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    }
+  },
+  "version": "1.0"
+}

@@ -313,8 +313,17 @@ test.describe("Phase-5 native-scroll master story", () => {
       document.querySelector<HTMLAnchorElement>('header a[href="#projetos"]')?.click();
     });
     await expect
-      .poll(async () => (await motionSnapshot(page)).activeChapterId)
-      .toBe("professional-projects");
+      .poll(async () => {
+        const snapshot = await motionSnapshot(page);
+        return {
+          activeChapterId: snapshot.activeChapterId,
+          traversalStatus: snapshot.lastTraversalStatus,
+        };
+      })
+      .toEqual({
+        activeChapterId: "professional-projects",
+        traversalStatus: "completed",
+      });
     expect(new URL(page.url()).hash).toBe("#projetos");
 
     await page.goBack();
