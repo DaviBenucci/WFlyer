@@ -48,18 +48,13 @@ export default function ApplicationPage() {
           title="Problema e proposta"
         >
           <CardGrid columns={3}>
-            <InfoCard
-              description="A partitura parte de um instrumento e de um contexto tonal conhecidos."
-              title="Contexto de origem"
-            />
-            <InfoCard
-              description="A pessoa informa o instrumento e o contexto tonal para os quais deseja adaptar o material."
-              title="Contexto de destino"
-            />
-            <InfoCard
-              description="O resultado é apresentado para conferência; a decisão musical não é automatizada nem garantida."
-              title="Revisão humana"
-            />
+            {content.items?.map((item) => (
+              <InfoCard
+                description={item.description}
+                key={item.title}
+                title={item.title}
+              />
+            ))}
           </CardGrid>
         </PageSection>
 

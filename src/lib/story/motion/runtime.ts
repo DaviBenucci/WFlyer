@@ -900,7 +900,7 @@ export function createMotionStoryRuntime({
   ): Promise<StoryPositioningResult> => {
     assertNotAborted(options.signal);
     cancelActiveHeaderTraversal("projection-rebuild");
-    const preservedChapterId =
+    let preservedChapterId =
       semanticPriorityChapter ??
       preservedViewportChapter ??
       activeSemanticChapter();
@@ -913,6 +913,20 @@ export function createMotionStoryRuntime({
     // over the semantic position selected by the new projection.
     await waitForDelay(240, options.signal);
     assertNotAborted(options.signal);
+
+    const traversalStartedDuringRefresh = activeTraversal;
+    if (traversalStartedDuringRefresh !== null) {
+      // A newer explicit header action outranks a stale viewport-preservation
+      // request that was already waiting for ScrollTrigger's refresh window.
+      // A traversal that existed when the rebuild began was cancelled above.
+      while (!traversalStartedDuringRefresh.settled) {
+        await waitForFrame(options.signal);
+      }
+      preservedChapterId =
+        semanticPriorityChapter ?? activeSemanticChapter();
+      preservedViewportChapter = preservedChapterId;
+    }
+
     rebuildCount += 1;
     buildOwnedDriver();
     const result = await position(preservedChapterId, options);

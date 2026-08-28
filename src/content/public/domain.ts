@@ -488,6 +488,23 @@ export const PUBLIC_STORY_CONTENT: Readonly<
       label: "Conhecer a proposta da aplicação",
     },
     seo: PHASE3_ROUTE_SEO["/aplicacao-wflyer"],
+    items: [
+      {
+        title: "Contexto de origem",
+        description:
+          "A partitura parte de um instrumento e de um contexto tonal conhecidos.",
+      },
+      {
+        title: "Contexto de destino",
+        description:
+          "A pessoa informa o instrumento e o contexto tonal para os quais deseja adaptar o material.",
+      },
+      {
+        title: "Revisão humana",
+        description:
+          "O resultado é apresentado para conferência; a decisão musical não é automatizada nem garantida.",
+      },
+    ],
   },
   "application-how-it-works": {
     chapterId: "application-how-it-works",
@@ -570,9 +587,9 @@ export const PUBLIC_STORY_CONTENT: Readonly<
     branch: "application",
     publicationStatus: "public",
     eyebrow: "Demonstração",
-    title: "Contrato reservado para a demonstração aprovada.",
+    title: "Veja um percurso ilustrativo pela aplicação.",
     description:
-      "A Fase 3 registra somente o conteúdo e a estrutura. Não há reprodução automática, interface simulada nem processamento falso.",
+      "A tela simulada permanece inerte. A reprodução ocorre somente quando esta etapa está ativa, e o único controle disponível é o de mídia.",
     detailLink: {
       href: "/aplicacao-wflyer#demonstracao",
       label: "Ver o contrato da demonstração",

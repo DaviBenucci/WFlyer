@@ -34,10 +34,11 @@ phases:
     gate: G7
   - id: P8
     name: Application scenes
-    status: next-permitted-not-started
+    status: gate-8-complete
     gate: G8
   - id: P9
     name: Continuous dual-score integration
+    status: human-score-path-gate-pending-not-started
     gates: [G9-SCORE-PATH-HUMAN, G9]
   - id: P10
     name: Persona final asset and easter eggs

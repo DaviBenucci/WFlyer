@@ -1,1 +1,1 @@
-export { MotionStoryLab } from "./MotionStoryLab";
+export { MotionStoryLab, type MotionStoryLabProps } from "./MotionStoryLab";

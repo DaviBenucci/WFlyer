@@ -49,9 +49,9 @@ retained; only its phase classification and later execution position changed.
 - [x] Contact and professional terminal
 
 ## 8. Application branch scenes
-- [ ] Overview/How/Benefits
-- [ ] Video demo state machine
-- [ ] Access scene and application terminal
+- [x] Overview/How/Benefits
+- [x] Video demo state machine
+- [x] Access scene and application terminal
 
 ## 9. Continuous dual-score integration
 - [ ] Human-approve Score Path layouts

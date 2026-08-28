@@ -16,6 +16,15 @@ export default defineConfig({
       "@": path.resolve(rootDirectory, "src"),
     },
   },
+  server: {
+    watch: {
+      ignored: [
+        "**/.next/**",
+        "**/playwright-report/**",
+        "**/storybook-static/**",
+      ],
+    },
+  },
   test: {
     coverage: {
       provider: "v8",

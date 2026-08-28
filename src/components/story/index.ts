@@ -2,6 +2,12 @@ export { StaticStorySkeleton } from "./StaticStorySkeleton";
 export { StoryChapter, type StoryChapterProps } from "./StoryChapter";
 export { StoryGlobalFooter } from "./StoryGlobalFooter";
 export {
+  ApplicationChapterScene,
+  isPhase8ApplicationChapterId,
+  type ApplicationChapterSceneProps,
+  type Phase8ApplicationChapterId,
+} from "./ApplicationChapterScene";
+export {
   isProfessionalChapterId,
   ProfessionalChapterScene,
   type ProfessionalChapterId,

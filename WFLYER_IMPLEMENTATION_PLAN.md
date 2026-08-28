@@ -221,8 +221,10 @@ is unchanged.
 
 ## Phase 8 — Application branch scenes
 
-**Execution status:** next permitted phase; not started by the Phase-7
-closure.
+**Execution status:** complete; Gate 8 passed on 2026-08-28. Evidence is under
+`docs/canonical-v2/06-migration/evidence/phase-8/`. The implementation remains
+isolated at `/__visual-lab/story/motion`; public `/` is unchanged. Final
+APP-04 media remains the human-gated Phase-11 asset boundary.
 
 ### Required work
 
@@ -242,6 +244,10 @@ closure.
 - Simulated UI is non-interactive; replay is the sole interactive control inside the screen area.
 
 ## Phase 9 — Continuous dual-score integration
+
+**Execution status:** not started. The first task is the blocking human
+approval of Score Path layouts; no integration work is authorized before that
+approval.
 
 ### Preconditions
 

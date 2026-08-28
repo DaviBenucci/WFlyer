@@ -1,0 +1,18 @@
+{
+  "capturedDate": "2026-08-28",
+  "changeName": "rebuild-scroll-driven-wflyer-v2",
+  "schemaName": "spec-driven",
+  "command": "openspec instructions apply --change rebuild-scroll-driven-wflyer-v2 --json",
+  "progress": {
+    "total": 45,
+    "complete": 32,
+    "remaining": 13
+  },
+  "completedPhase8TaskIds": [30, 31, 32],
+  "nextTask": {
+    "id": 33,
+    "description": "Human-approve Score Path layouts",
+    "done": false
+  },
+  "state": "ready"
+}

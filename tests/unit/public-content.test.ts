@@ -104,10 +104,17 @@ describe("Phase-3 public content domain", () => {
   });
 
   it("preserves the exact public application flow and terminal-only access action", () => {
+    expect(PUBLIC_STORY_CONTENT["application-overview"].items).toHaveLength(3);
     expect(PUBLIC_STORY_CONTENT["application-how-it-works"].items).toHaveLength(
       5,
     );
     expect(PUBLIC_STORY_CONTENT["application-benefits"].items).toHaveLength(4);
+    expect(PUBLIC_STORY_CONTENT["application-demo"].description).toContain(
+      "A tela simulada permanece inerte",
+    );
+    expect(PUBLIC_STORY_CONTENT["application-demo"].description).not.toMatch(
+      /Fase 3/u,
+    );
 
     const accessActions = Object.values(PUBLIC_STORY_CONTENT).filter(
       ({ primaryAction }) =>

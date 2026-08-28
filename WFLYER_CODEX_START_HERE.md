@@ -2,10 +2,11 @@
 
 You are Codex working in the **root directory of the W_Flyer website repository**.
 
-**Current checkpoint:** Phase 7 / Gate 7 is complete as of 2026-08-28.
-Phase 8 — Application Branch Scenes — is the next permitted phase and has not
-started. Verify the sealed Phase-7 evidence before resuming; do not rerun or
-reopen completed Phases 0–7 without a demonstrated inconsistency.
+**Current checkpoint:** Phase 8 / Gate 8 is complete as of 2026-08-28.
+Phase 9 has not started. OpenSpec task 33, human approval of Score Path layouts,
+is the next incomplete task and is blocking. Verify the sealed Phase-8 evidence
+before resuming; do not rerun or reopen completed Phases 0–8 without a
+demonstrated inconsistency.
 
 The repository root is the directory that contains:
 
@@ -73,11 +74,11 @@ When a conflict exists, use this precedence:
 
 1. Confirm the repository root and the presence of every mandatory file above.
 2. Verify the current phase/gate status and the latest sealed evidence bundle.
-3. Inspect the active OpenSpec progress and confirm Phase 8 is the first
-   incomplete executable phase.
+3. Inspect the active OpenSpec progress and confirm task 33 is the first
+   incomplete task and a blocking human gate.
 4. Record failures without weakening tests or deleting evidence.
-5. Begin Phase 8 only under a new explicit execution instruction; do not skip
-   its Gate 8 requirements or modify the completed Phase-4/5/6 runtime or the
-   completed Phase-7 professional-scene contracts.
+5. Do not begin Phase 9 implementation until the owner explicitly approves the
+   Score Path layouts required by task 33; preserve the completed Phase-4–8
+   contracts.
 
 Do not restart the project from scratch. Reuse retained infrastructure and components where the migration map says `KEEP` or `REFACTOR`; replace only what the canonical target supersedes.

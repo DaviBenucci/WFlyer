@@ -11,7 +11,10 @@ import {
 } from "react";
 
 import { StoryBootstrapExperience } from "@/components/story-bootstrap";
+import type { ApplicationDemoMediaContract } from "@/components/pages";
 import {
+  ApplicationChapterScene,
+  isPhase8ApplicationChapterId,
   isProfessionalChapterId,
   ProfessionalChapterScene,
   useStoryNavigationBridge,
@@ -52,7 +55,11 @@ function createMotionStoryRuntimeRegistry(): MotionStoryRuntimeRegistry {
   });
 }
 
-export function MotionStoryLab() {
+export interface MotionStoryLabProps {
+  readonly applicationDemoMedia?: ApplicationDemoMediaContract | undefined;
+}
+
+export function MotionStoryLab({ applicationDemoMedia }: MotionStoryLabProps) {
   const [runtimeRegistry] = useState(createMotionStoryRuntimeRegistry);
   const [runtimeGeneration, setRuntimeGeneration] = useState(0);
   const [positioningAdapter] = useState(() =>
@@ -67,6 +74,7 @@ export function MotionStoryLab() {
   return (
     <StoryBootstrapExperience positioningAdapter={positioningAdapter}>
       <MotionStorySurface
+        applicationDemoMedia={applicationDemoMedia}
         key={runtimeGeneration}
         onRequestRemount={requestRuntimeRemount}
         runtimeRegistry={runtimeRegistry}
@@ -76,11 +84,13 @@ export function MotionStoryLab() {
 }
 
 interface MotionStorySurfaceProps {
+  readonly applicationDemoMedia?: ApplicationDemoMediaContract | undefined;
   readonly onRequestRemount: () => void;
   readonly runtimeRegistry: MotionStoryRuntimeRegistry;
 }
 
 function MotionStorySurface({
+  applicationDemoMedia,
   onRequestRemount,
   runtimeRegistry,
 }: MotionStorySurfaceProps) {
@@ -142,6 +152,7 @@ function MotionStorySurface({
     <main
       className={styles.root}
       data-motion-lab="phase-5"
+      data-application-scenes="phase-8"
       data-professional-scenes="phase-7"
       data-story-header-traversal="phase-6"
       data-projection-mode="static"
@@ -200,6 +211,7 @@ function MotionStorySurface({
           {MOTION_LAB_PLACEHOLDER_CHAPTERS.map(
             ({ chapter, desktopIndex, draftSpan }, documentIndex) => {
               const headingId = `${chapter.id}-motion-lab-heading`;
+              const isApplication = isPhase8ApplicationChapterId(chapter.id);
               const isProfessional = isProfessionalChapterId(chapter.id);
               const chapterStyle: MotionLabChapterStyle = {
                 "--motion-lab-chapter-span": `${draftSpan * 100}vw`,
@@ -210,7 +222,9 @@ function MotionStorySurface({
                 <section
                   aria-labelledby={headingId}
                   className={`${styles.chapter} ${
-                    isProfessional ? styles.professionalChapter : ""
+                    isProfessional || isApplication
+                      ? styles.implementedChapter
+                      : ""
                   }`}
                   data-chapter-id={chapter.id}
                   data-motion-desktop-index={desktopIndex}
@@ -225,6 +239,12 @@ function MotionStorySurface({
                   {isProfessional ? (
                     <ProfessionalChapterScene
                       chapterId={chapter.id}
+                      headingId={headingId}
+                    />
+                  ) : isApplication ? (
+                    <ApplicationChapterScene
+                      chapterId={chapter.id}
+                      demoMedia={applicationDemoMedia}
                       headingId={headingId}
                     />
                   ) : (

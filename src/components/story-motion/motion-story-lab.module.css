@@ -98,7 +98,7 @@
   scroll-margin-block-start: var(--wf-space-6);
 }
 
-.professionalChapter {
+.implementedChapter {
   place-items: stretch;
   padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 5vw, 5rem);
 }
@@ -171,7 +171,7 @@
   border-inline-end: 1px solid var(--wf-border);
 }
 
-.root[data-projection-mode="horizontal-enhanced"] .professionalChapter {
+.root[data-projection-mode="horizontal-enhanced"] .implementedChapter {
   align-items: center;
   padding-block: clamp(1rem, 2.5vh, 2rem);
 }
@@ -194,7 +194,7 @@
 }
 
 @media (height < 42rem) {
-  .root[data-projection-mode="horizontal-enhanced"] .professionalChapter {
+  .root[data-projection-mode="horizontal-enhanced"] .implementedChapter {
     padding-block: var(--wf-space-1);
   }
 }

@@ -1,0 +1,227 @@
+.device {
+  display: grid;
+  min-inline-size: 0;
+  gap: var(--wf-space-3);
+  margin: 0;
+  perspective: 90rem;
+}
+
+.perspective {
+  position: relative;
+  isolation: isolate;
+  min-inline-size: 0;
+  padding: clamp(0.5rem, 1.2vw, 1.1rem) clamp(0.25rem, 0.8vw, 0.75rem)
+    clamp(1.4rem, 3vw, 2.6rem);
+}
+
+.shell {
+  position: relative;
+  z-index: 2;
+  min-inline-size: 0;
+  padding: clamp(0.55rem, 1vw, 0.9rem);
+  border: 1px solid
+    color-mix(in oklab, var(--wf-tablet-edge) 78%, var(--wf-border));
+  border-radius: clamp(1.2rem, 2.5vw, 2.1rem);
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in oklab, var(--wf-tablet-reflection) 74%, transparent),
+      transparent 34%
+    ),
+    color-mix(in oklab, var(--wf-tablet-edge) 90%, var(--wf-surface));
+  box-shadow:
+    0 2.2rem 4rem color-mix(in oklab, var(--wf-text) 24%, transparent),
+    inset 0 0 0 1px
+      color-mix(in oklab, var(--wf-tablet-reflection) 44%, transparent);
+}
+
+.camera {
+  position: absolute;
+  z-index: 4;
+  inset: 0.34rem 43% auto;
+  block-size: 0.22rem;
+  border-radius: var(--wf-radius-pill);
+  background: color-mix(in oklab, var(--wf-text) 52%, transparent);
+}
+
+.screen {
+  position: relative;
+  display: grid;
+  aspect-ratio: 16 / 9;
+  min-inline-size: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--wf-border) 72%, transparent);
+  border-radius: clamp(0.8rem, 1.8vw, 1.45rem);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--wf-surface-elevated) 96%, transparent),
+      var(--wf-surface-muted)
+    );
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.mediaVisible {
+  visibility: visible;
+}
+
+.mediaHidden {
+  visibility: hidden;
+}
+
+.fallback {
+  display: grid;
+  max-inline-size: 34rem;
+  gap: var(--wf-space-4);
+  place-self: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  text-align: center;
+}
+
+.fallbackMark {
+  display: grid;
+  inline-size: clamp(4rem, 10vw, 7rem);
+  aspect-ratio: 1;
+  place-self: center;
+  place-items: center;
+  border: 1px solid var(--wf-accent);
+  border-radius: 50%;
+  color: var(--wf-text-accent);
+  font-size: var(--wf-font-size-label);
+  font-weight: var(--wf-font-weight-bold);
+  letter-spacing: 0.08em;
+}
+
+.fallback p {
+  color: var(--wf-text-muted);
+  font-size: clamp(0.78rem, 1.4vw, 1rem);
+  line-height: 1.55;
+}
+
+.replay {
+  position: absolute;
+  z-index: 5;
+  inset: var(--wf-space-3) auto auto 50%;
+  display: inline-flex;
+  min-block-size: var(--wf-control-min-size);
+  align-items: center;
+  justify-content: center;
+  gap: var(--wf-space-2);
+  padding: var(--wf-space-2) var(--wf-space-4);
+  border: 1px solid color-mix(in oklab, var(--wf-focus) 70%, var(--wf-border));
+  border-radius: var(--wf-radius-pill);
+  background: color-mix(in oklab, var(--wf-bg) 92%, transparent);
+  box-shadow: var(--wf-shadow-soft);
+  color: var(--wf-text);
+  font: var(--wf-font-weight-bold) var(--wf-font-size-body-sm) / 1
+    var(--wf-font-sans);
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+
+.replay:focus-visible {
+  outline: var(--wf-focus-width) solid var(--wf-focus);
+  outline-offset: var(--wf-focus-offset);
+}
+
+.reflection {
+  position: absolute;
+  z-index: 3;
+  inset: 8% 7% auto auto;
+  inline-size: 28%;
+  block-size: 48%;
+  border-radius: 50%;
+  background: color-mix(
+    in oklab,
+    var(--wf-tablet-reflection) 42%,
+    transparent
+  );
+  filter: blur(1.2rem);
+  opacity: 0.45;
+  pointer-events: none;
+  transform: rotate(-18deg);
+}
+
+.shadow {
+  position: absolute;
+  z-index: 0;
+  inset: auto 8% 0;
+  block-size: 8%;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--wf-text) 34%, transparent);
+  filter: blur(1.25rem);
+  opacity: 0.6;
+  transform: translateY(-0.45rem) scaleX(0.92);
+}
+
+.device figcaption {
+  max-inline-size: 54rem;
+  color: var(--wf-text-muted);
+  font-size: var(--wf-font-size-body-sm);
+  line-height: var(--wf-line-height-body);
+}
+
+@media (width < 48rem) {
+  .shell {
+    transform: none;
+  }
+
+  .reflection {
+    display: none;
+  }
+
+  .fallback {
+    gap: var(--wf-space-2);
+    padding: var(--wf-space-3);
+  }
+
+  .fallbackMark {
+    inline-size: 3.6rem;
+  }
+}
+
+@media (height < 42rem) and (min-width: 64rem) {
+  .perspective {
+    padding-block: var(--wf-space-1) var(--wf-space-4);
+  }
+
+  .device figcaption {
+    font-size: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell,
+  .shadow,
+  .reflection,
+  .replay {
+    transform: none;
+  }
+
+  .replay {
+    translate: -50% 0;
+  }
+}
+
+@media (forced-colors: active) {
+  .shell,
+  .screen,
+  .fallbackMark,
+  .replay {
+    border-color: CanvasText;
+  }
+
+  .shadow,
+  .reflection {
+    display: none;
+  }
+}

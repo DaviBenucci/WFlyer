@@ -25,7 +25,7 @@ describe("MotionStoryLab", () => {
     vi.unstubAllGlobals();
   });
 
-  it("renders every chapter in canonical mobile DOM order with Phase-7 professional scenes", () => {
+  it("renders every chapter in canonical mobile DOM order with Phase-7 and task-31 scenes", () => {
     const { container } = render(<MotionStoryLab />);
     const chapters = Array.from(
       container.querySelectorAll<HTMLElement>("[data-chapter-id]"),
@@ -43,7 +43,14 @@ describe("MotionStoryLab", () => {
       "data-professional-scenes",
       "phase-7",
     );
+    expect(container.querySelector("main")).toHaveAttribute(
+      "data-application-scenes",
+      "phase-8",
+    );
     expect(container.querySelectorAll("[data-professional-scene]")).toHaveLength(
+      6,
+    );
+    expect(container.querySelectorAll("[data-application-scene]")).toHaveLength(
       6,
     );
     expect(
@@ -52,21 +59,21 @@ describe("MotionStoryLab", () => {
           "[data-structural-placeholder]",
         ),
       ).map(({ dataset }) => dataset.structuralPlaceholder),
-    ).toEqual([
-      "home",
-      "application-overview",
-      "application-how-it-works",
-      "application-benefits",
-      "application-demo",
-      "application-access",
-      "application-terminal",
-    ]);
+    ).toEqual(["home"]);
     expect(container.querySelectorAll("[data-project-card]")).toHaveLength(3);
     expect(
       container.querySelector(
         '[data-final-barline-before="professional-terminal"]',
       ),
     ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        '[data-final-barline-before="application-terminal"]',
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelectorAll('[data-primary-app-access="true"]'),
+    ).toHaveLength(1);
   });
 
   it("exposes the exact desktop order and stable manifest labels", () => {
