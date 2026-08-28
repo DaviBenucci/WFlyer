@@ -11,7 +11,11 @@ import {
 } from "react";
 
 import { StoryBootstrapExperience } from "@/components/story-bootstrap";
-import { useStoryNavigationBridge } from "@/components/story";
+import {
+  isProfessionalChapterId,
+  ProfessionalChapterScene,
+  useStoryNavigationBridge,
+} from "@/components/story";
 import { Container } from "@/components/ui";
 import {
   DESKTOP_TIMELINE_ORDER,
@@ -138,6 +142,7 @@ function MotionStorySurface({
     <main
       className={styles.root}
       data-motion-lab="phase-5"
+      data-professional-scenes="phase-7"
       data-story-header-traversal="phase-6"
       data-projection-mode="static"
       data-story-document-order={MOBILE_DOCUMENT_ORDER.join(" ")}
@@ -149,7 +154,7 @@ function MotionStorySurface({
       <aside aria-label="Diagnóstico do Motion Lab" className={styles.inspector}>
         <Container className={styles.inspectorInner} size="wide">
           <div>
-            <p className={styles.eyebrow}>Phase 5 · Development only</p>
+            <p className={styles.eyebrow}>Phases 5–7 · Development only</p>
             <h1 className={styles.title}>Desktop Motion Lab</h1>
           </div>
           <dl className={styles.metrics}>
@@ -195,6 +200,7 @@ function MotionStorySurface({
           {MOTION_LAB_PLACEHOLDER_CHAPTERS.map(
             ({ chapter, desktopIndex, draftSpan }, documentIndex) => {
               const headingId = `${chapter.id}-motion-lab-heading`;
+              const isProfessional = isProfessionalChapterId(chapter.id);
               const chapterStyle: MotionLabChapterStyle = {
                 "--motion-lab-chapter-span": `${draftSpan * 100}vw`,
                 order: desktopIndex,
@@ -203,7 +209,9 @@ function MotionStorySurface({
               return (
                 <section
                   aria-labelledby={headingId}
-                  className={styles.chapter}
+                  className={`${styles.chapter} ${
+                    isProfessional ? styles.professionalChapter : ""
+                  }`}
                   data-chapter-id={chapter.id}
                   data-motion-desktop-index={desktopIndex}
                   data-motion-draft-span={draftSpan}
@@ -214,18 +222,28 @@ function MotionStorySurface({
                   key={chapter.id}
                   style={chapterStyle}
                 >
-                  <div className={styles.chapterGrid}>
-                    <p className={styles.chapterIndex}>
-                      {String(desktopIndex + 1).padStart(2, "0")} / 13
-                    </p>
-                    <p className={styles.chapterBranch}>{chapter.branch}</p>
-                    <h2 id={headingId}>{chapter.label}</h2>
-                    <code>{chapter.timelineLabel}</code>
-                    <p>
-                      Placeholder estrutural. A cena final pertence à fase de
-                      implementação do respectivo ramo.
-                    </p>
-                  </div>
+                  {isProfessional ? (
+                    <ProfessionalChapterScene
+                      chapterId={chapter.id}
+                      headingId={headingId}
+                    />
+                  ) : (
+                    <div
+                      className={styles.chapterGrid}
+                      data-structural-placeholder={chapter.id}
+                    >
+                      <p className={styles.chapterIndex}>
+                        {String(desktopIndex + 1).padStart(2, "0")} / 13
+                      </p>
+                      <p className={styles.chapterBranch}>{chapter.branch}</p>
+                      <h2 id={headingId}>{chapter.label}</h2>
+                      <code>{chapter.timelineLabel}</code>
+                      <p>
+                        Placeholder estrutural. A cena final pertence à fase de
+                        implementação do respectivo ramo.
+                      </p>
+                    </div>
+                  )}
                 </section>
               );
             },

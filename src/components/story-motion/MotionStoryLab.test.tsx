@@ -9,6 +9,11 @@ import {
 
 import { MotionStoryLab } from "./MotionStoryLab";
 
+vi.mock("@/components/pages/contact", () => ({
+  ContactForm: () => <form aria-label="Formulário de contato" />,
+  ContactFormFallback: () => <p>Carregando formulário</p>,
+}));
+
 describe("MotionStoryLab", () => {
   beforeEach(() => {
     vi.stubGlobal("scrollTo", vi.fn());
@@ -20,7 +25,7 @@ describe("MotionStoryLab", () => {
     vi.unstubAllGlobals();
   });
 
-  it("renders all placeholder chapters in canonical mobile DOM order", () => {
+  it("renders every chapter in canonical mobile DOM order with Phase-7 professional scenes", () => {
     const { container } = render(<MotionStoryLab />);
     const chapters = Array.from(
       container.querySelectorAll<HTMLElement>("[data-chapter-id]"),
@@ -34,6 +39,34 @@ describe("MotionStoryLab", () => {
       "data-projection-mode",
       "vertical-compact",
     );
+    expect(container.querySelector("main")).toHaveAttribute(
+      "data-professional-scenes",
+      "phase-7",
+    );
+    expect(container.querySelectorAll("[data-professional-scene]")).toHaveLength(
+      6,
+    );
+    expect(
+      Array.from(
+        container.querySelectorAll<HTMLElement>(
+          "[data-structural-placeholder]",
+        ),
+      ).map(({ dataset }) => dataset.structuralPlaceholder),
+    ).toEqual([
+      "home",
+      "application-overview",
+      "application-how-it-works",
+      "application-benefits",
+      "application-demo",
+      "application-access",
+      "application-terminal",
+    ]);
+    expect(container.querySelectorAll("[data-project-card]")).toHaveLength(3);
+    expect(
+      container.querySelector(
+        '[data-final-barline-before="professional-terminal"]',
+      ),
+    ).toBeInTheDocument();
   });
 
   it("exposes the exact desktop order and stable manifest labels", () => {

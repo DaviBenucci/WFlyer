@@ -1,0 +1,399 @@
+.scene {
+  display: grid;
+  inline-size: min(100%, 82rem);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  margin-inline: auto;
+}
+
+:global([data-projection-mode="horizontal-enhanced"]) .scene {
+  inline-size: min(82rem, calc(100vw - 2rem));
+}
+
+.introduction {
+  display: grid;
+  max-inline-size: 48rem;
+  gap: var(--wf-space-3);
+}
+
+.introduction h2,
+.terminalContent h2 {
+  max-inline-size: 14ch;
+  font-size: clamp(2.3rem, 4.8vw, 5rem);
+  line-height: 0.98;
+}
+
+.description {
+  max-inline-size: 44rem;
+}
+
+.detailLink {
+  display: inline-flex;
+  inline-size: fit-content;
+  min-block-size: var(--wf-control-min-size);
+  align-items: center;
+  color: var(--wf-text);
+  font-weight: var(--wf-font-weight-bold);
+  text-decoration-color: var(--wf-accent);
+  text-underline-offset: 0.24em;
+}
+
+.aboutScene {
+  grid-template-columns: minmax(20rem, 0.95fr) minmax(22rem, 0.75fr);
+  align-items: center;
+}
+
+.serviceModules,
+.processStages,
+.terminalNavigation ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.serviceModules {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(12rem, 1fr));
+  gap: var(--wf-space-4);
+}
+
+.serviceModule {
+  position: relative;
+  min-inline-size: 0;
+  border-block: 1px solid var(--wf-border);
+  border-inline-start: 0.32rem solid var(--wf-accent);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--wf-accent) 12%, transparent),
+      transparent 45%
+    ),
+    color-mix(in oklab, var(--wf-surface) 94%, transparent);
+}
+
+.serviceModule::after {
+  position: absolute;
+  inset: 0.75rem 0.75rem auto auto;
+  inline-size: 2rem;
+  block-size: 0.2rem;
+  background: var(--wf-note);
+  content: "";
+  transform: rotate(-38deg);
+  transform-origin: right center;
+}
+
+.serviceModule article {
+  display: grid;
+  min-block-size: 100%;
+  align-content: start;
+  gap: var(--wf-space-3);
+  padding: var(--wf-space-5);
+}
+
+.serviceModule h3,
+.processStages h3 {
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+  line-height: 1.12;
+}
+
+.serviceModule p,
+.processStages p {
+  color: var(--wf-text-muted);
+  font-size: var(--wf-font-size-body-sm);
+}
+
+.serviceModule a {
+  inline-size: fit-content;
+  min-block-size: var(--wf-control-min-size);
+  align-content: center;
+  margin-block-start: auto;
+  font-weight: var(--wf-font-weight-bold);
+}
+
+.moduleIndex {
+  color: var(--wf-text-accent);
+  font-size: var(--wf-font-size-label);
+  font-weight: var(--wf-font-weight-bold);
+  letter-spacing: var(--wf-tracking-label);
+}
+
+.processStages {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(12rem, 1fr));
+  gap: var(--wf-space-4);
+}
+
+.processStages::before {
+  position: absolute;
+  inset: 1.2rem 6% auto;
+  block-size: 1px;
+  background: var(--wf-staff);
+  content: "";
+}
+
+.processStages li {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--wf-space-3);
+  padding: var(--wf-space-12) var(--wf-space-5) var(--wf-space-5);
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-md);
+  background: color-mix(in oklab, var(--wf-surface) 94%, transparent);
+}
+
+.processStages li > span {
+  position: absolute;
+  inset: 0.55rem auto auto 50%;
+  display: grid;
+  inline-size: 2.2rem;
+  block-size: 2.2rem;
+  place-items: center;
+  border: 1px solid var(--wf-note);
+  border-radius: 50%;
+  background: var(--wf-bg);
+  color: var(--wf-text-accent);
+  font-size: var(--wf-font-size-label);
+  font-weight: var(--wf-font-weight-bold);
+  transform: translateX(-50%);
+}
+
+.projectsScene {
+  align-content: center;
+}
+
+:global([data-projection-mode="horizontal-enhanced"]) .projectsScene {
+  grid-template-columns: minmax(16rem, 0.48fr) minmax(43rem, 1.52fr);
+  align-items: center;
+  gap: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+:global([data-projection-mode="horizontal-enhanced"])
+  .projectsScene
+  :global([data-project-card-item]) {
+  flex-basis: clamp(16rem, 27vw, 19rem);
+}
+
+:global([data-projection-mode="horizontal-enhanced"])
+  .projectsScene
+  :global([data-project-card-fan]) {
+  padding: clamp(2rem, 5vh, 3rem) clamp(1rem, 2vw, 2rem);
+}
+
+:global([data-projection-mode="horizontal-enhanced"])
+  .projectsScene
+  :global([data-project-card-link]) {
+  min-block-size: min(29rem, 72svh);
+  gap: var(--wf-space-4);
+  padding: clamp(1rem, 2.25vh, 1.5rem);
+}
+
+.contactScene {
+  grid-template-columns: minmax(19rem, 0.72fr) minmax(30rem, 1.28fr);
+  align-items: start;
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.contactIntroduction {
+  display: grid;
+  gap: var(--wf-space-5);
+}
+
+.contactChannels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--wf-space-2) var(--wf-space-4);
+  color: var(--wf-text-muted);
+  font-style: normal;
+  font-size: var(--wf-font-size-body-sm);
+}
+
+.contactChannels a {
+  min-block-size: var(--wf-control-min-size);
+  align-content: center;
+  overflow-wrap: anywhere;
+}
+
+.terminalScene {
+  align-content: center;
+}
+
+.finalBarlineContract {
+  display: flex;
+  block-size: clamp(5rem, 13vh, 8rem);
+  align-items: stretch;
+  gap: clamp(0.55rem, 1vw, 0.9rem);
+  color: var(--wf-note);
+}
+
+.finalBarlineContract span {
+  display: block;
+  background: currentColor;
+}
+
+.finalBarlineContract span:first-child {
+  inline-size: 0.22rem;
+}
+
+.finalBarlineContract span:last-child {
+  inline-size: 0.7rem;
+}
+
+.terminalContent {
+  display: grid;
+  gap: var(--wf-space-4);
+}
+
+.terminalNavigation {
+  display: none;
+  grid-template-columns: repeat(3, minmax(10rem, 1fr));
+  gap: var(--wf-space-6);
+  padding-block-start: var(--wf-space-5);
+  border-block-start: 1px solid var(--wf-border);
+}
+
+.terminalNavigation > div {
+  display: grid;
+  align-content: start;
+  gap: var(--wf-space-3);
+}
+
+.terminalNavigation h3 {
+  font-size: var(--wf-font-size-body-sm);
+  letter-spacing: var(--wf-tracking-label);
+  text-transform: uppercase;
+}
+
+.terminalNavigation ul {
+  display: grid;
+  gap: var(--wf-space-1);
+}
+
+.terminalNavigation a {
+  display: inline-flex;
+  min-block-size: var(--wf-control-min-size);
+  align-items: center;
+  color: var(--wf-text-muted);
+}
+
+:global([data-projection-mode="horizontal-enhanced"]) .terminalNavigation {
+  display: grid;
+}
+
+@media (width < 75rem) {
+  .serviceModules,
+  .processStages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .processStages::before {
+    display: none;
+  }
+}
+
+:global([data-projection-mode="horizontal-enhanced"]) .serviceModules,
+:global([data-projection-mode="horizontal-enhanced"]) .processStages {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(var(--wf-space-2), 1.2vw, var(--wf-space-4));
+}
+
+@media (width < 64rem) {
+  .aboutScene,
+  .contactScene {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width < 48rem) {
+  .scene {
+    gap: var(--wf-space-8);
+  }
+
+  .serviceModules,
+  .processStages,
+  .terminalNavigation {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceModules {
+    gap: var(--wf-space-3);
+  }
+
+  .processStages {
+    gap: 0;
+    padding-inline-start: var(--wf-space-5);
+    border-inline-start: 1px solid var(--wf-staff);
+  }
+
+  .processStages li {
+    border: 0;
+    border-block-end: 1px solid var(--wf-border);
+    border-radius: 0;
+  }
+
+  .processStages li > span {
+    inset-inline-start: calc(var(--wf-space-5) * -1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .serviceModule,
+  .processStages li {
+    transition: none;
+  }
+}
+
+@media (height < 42rem) {
+  :global([data-projection-mode="horizontal-enhanced"]) .scene {
+    gap: var(--wf-space-3);
+  }
+
+  :global([data-projection-mode="horizontal-enhanced"]) .introduction {
+    gap: var(--wf-space-2);
+  }
+
+  :global([data-projection-mode="horizontal-enhanced"])
+    .projectsScene
+    :global([data-project-card-fan]) {
+    padding: var(--wf-space-6) var(--wf-space-4);
+  }
+
+  :global([data-projection-mode="horizontal-enhanced"])
+    .projectsScene
+    :global([data-project-card-link]) {
+    gap: var(--wf-space-3);
+    padding: var(--wf-space-4);
+  }
+
+  .finalBarlineContract {
+    block-size: 4rem;
+  }
+
+  .terminalContent {
+    gap: var(--wf-space-2);
+  }
+
+  .terminalNavigation {
+    gap: var(--wf-space-3);
+    padding-block-start: var(--wf-space-2);
+  }
+
+  .terminalNavigation > div {
+    gap: var(--wf-space-1);
+  }
+}
+
+@media (forced-colors: active) {
+  .serviceModule,
+  .processStages li,
+  .terminalNavigation,
+  .processStages {
+    border-color: CanvasText;
+  }
+
+  .serviceModule::after,
+  .finalBarlineContract span,
+  .processStages::before {
+    background: CanvasText;
+  }
+}

@@ -198,8 +198,8 @@ is unchanged.
 
 ## Phase 7 — Professional branch scenes
 
-**Execution status:** next permitted phase; not started by the Phase-6
-closure.
+**Execution status:** complete; Gate 7 passed on 2026-08-28. Evidence is under
+`docs/canonical-v2/06-migration/evidence/phase-7/`.
 
 ### Required work
 
@@ -220,6 +220,9 @@ closure.
 - Final barline precedes the professional terminal.
 
 ## Phase 8 — Application branch scenes
+
+**Execution status:** next permitted phase; not started by the Phase-7
+closure.
 
 ### Required work
 

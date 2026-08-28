@@ -43,10 +43,10 @@ retained; only its phase classification and later execution position changed.
 - [x] Implement interruption, push/replace, Back/Forward
 
 ## 7. Professional branch scenes
-- [ ] About/Persona integration contract
-- [ ] Services and Process
-- [ ] Project fan/stack
-- [ ] Contact and professional terminal
+- [x] About/Persona integration contract
+- [x] Services and Process
+- [x] Project fan/stack
+- [x] Contact and professional terminal
 
 ## 8. Application branch scenes
 - [ ] Overview/How/Benefits

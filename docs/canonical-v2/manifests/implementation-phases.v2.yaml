@@ -30,10 +30,11 @@ phases:
     gate: G6
   - id: P7
     name: Professional scenes
-    status: next-permitted-not-started
+    status: gate-7-complete
     gate: G7
   - id: P8
     name: Application scenes
+    status: next-permitted-not-started
     gate: G8
   - id: P9
     name: Continuous dual-score integration

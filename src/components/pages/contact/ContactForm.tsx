@@ -18,11 +18,18 @@ type SubmissionState =
   | "success"
   | "validation-error";
 type VerificationState =
+  | "deferred"
   | "error"
   | "loading"
   | "ready"
   | "unavailable"
   | "verified";
+
+interface ContactFormProps {
+  readonly compact?: boolean;
+  readonly deferVerificationUntilInteraction?: boolean;
+  readonly siteKey: string;
+}
 
 interface TurnstileOptions {
   readonly action: string;
@@ -66,7 +73,11 @@ export function ContactFormFallback() {
   );
 }
 
-export function ContactForm({ siteKey }: { readonly siteKey: string }) {
+export function ContactForm({
+  compact = false,
+  deferVerificationUntilInteraction = false,
+  siteKey,
+}: ContactFormProps) {
   const searchParams = useSearchParams();
   const requestedType = searchParams.get("tipo");
   const selectedType = isContactProjectType(requestedType) ? requestedType : "";
@@ -75,10 +86,22 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
   const widgetIdRef = useRef<string | null>(null);
   const submissionIdRef = useRef<string | null>(null);
   const [submission, setSubmission] = useState<SubmissionState>("idle");
+  const [editing, setEditing] = useState(false);
   const [token, setToken] = useState("");
   const [verification, setVerification] = useState<VerificationState>(
-    siteKey ? "loading" : "unavailable",
+    siteKey
+      ? deferVerificationUntilInteraction
+        ? "deferred"
+        : "loading"
+      : "unavailable",
   );
+
+  const handleInteraction = useCallback((): void => {
+    setEditing(true);
+    setVerification((current) =>
+      current === "deferred" ? "loading" : current,
+    );
+  }, []);
 
   const resetVerification = useCallback((): void => {
     setToken("");
@@ -185,6 +208,7 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
 
       form.reset();
       submissionIdRef.current = null;
+      setEditing(false);
       setSubmission("success");
       focusStatus();
       resetVerification();
@@ -196,7 +220,9 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
   };
 
   const verificationMessage =
-    verification === "unavailable"
+    verification === "deferred"
+      ? "A verificação de segurança será carregada quando você interagir com o formulário."
+      : verification === "unavailable"
       ? "A verificação de segurança está indisponível. Use o e-mail oficial ou tente mais tarde."
       : verification === "error"
         ? "A verificação de segurança falhou. Tente novamente."
@@ -212,9 +238,12 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
       aria-describedby="contact-form-status contact-verification-status"
       aria-label="Formulário de contato"
       className={styles.form}
+      data-contact-compact={compact ? "true" : "false"}
+      data-contact-editing={editing ? "true" : "false"}
       data-contact-form={submission}
       noValidate={false}
       onInput={() => {
+        handleInteraction();
         if (submission === "error") submissionIdRef.current = null;
         if (submission === "error" || submission === "validation-error") {
           setSubmission("idle");
@@ -226,7 +255,10 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
       }}
       onSubmit={handleSubmit}
     >
-      <fieldset disabled={submission === "submitting"}>
+      <fieldset
+        disabled={submission === "submitting"}
+        onFocus={handleInteraction}
+      >
         <legend>Apresente o seu projeto</legend>
         <div className={styles.fieldRow}>
           <label>
@@ -251,26 +283,28 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
             />
           </label>
         </div>
-        <label>
-          Empresa <span>(opcional)</span>
-          <input
-            autoComplete="organization"
-            maxLength={120}
-            name="company"
-            type="text"
-          />
-        </label>
-        <label>
-          Tipo de projeto
-          <select defaultValue={selectedType} name="projectType" required>
-            <option value="">Selecione uma opção</option>
-            {contactProjectTypes.map((projectType) => (
-              <option key={projectType.value} value={projectType.value}>
-                {projectType.label}
-              </option>
-            ))}
-          </select>
-        </label>
+        <div className={styles.compactFieldRow}>
+          <label>
+            Empresa (opcional)
+            <input
+              autoComplete="organization"
+              maxLength={120}
+              name="company"
+              type="text"
+            />
+          </label>
+          <label>
+            Tipo de projeto
+            <select defaultValue={selectedType} name="projectType" required>
+              <option value="">Selecione uma opção</option>
+              {contactProjectTypes.map((projectType) => (
+                <option key={projectType.value} value={projectType.value}>
+                  {projectType.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
         <label>
           Mensagem
           <textarea
@@ -278,7 +312,7 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
             minLength={20}
             name="message"
             required
-            rows={6}
+            rows={compact ? 2 : 6}
           />
         </label>
         <label className={styles.consentField}>
@@ -298,30 +332,37 @@ export function ContactForm({ siteKey }: { readonly siteKey: string }) {
           />
         </label>
 
-        {siteKey ? (
-          <>
-            <Script
-              id="cloudflare-turnstile"
-              onError={() => setVerification("unavailable")}
-              onReady={renderTurnstile}
-              src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-              strategy="afterInteractive"
-            />
-            <div
-              className={styles.turnstile}
-              data-turnstile-container=""
-              ref={turnstileContainerRef}
-            />
-          </>
-        ) : null}
-
-        <p
-          className={styles.verificationStatus}
-          data-verification-state={verification}
-          id="contact-verification-status"
+        <div
+          className={styles.verificationRow}
+          data-verification-layout={
+            siteKey && verification !== "deferred" ? "widget" : "message"
+          }
         >
-          {verificationMessage}
-        </p>
+          {siteKey && verification !== "deferred" ? (
+            <>
+              <Script
+                id="cloudflare-turnstile"
+                onError={() => setVerification("unavailable")}
+                onReady={renderTurnstile}
+                src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+                strategy="afterInteractive"
+              />
+              <div
+                className={styles.turnstile}
+                data-turnstile-container=""
+                ref={turnstileContainerRef}
+              />
+            </>
+          ) : null}
+
+          <p
+            className={styles.verificationStatus}
+            data-verification-state={verification}
+            id="contact-verification-status"
+          >
+            {verificationMessage}
+          </p>
+        </div>
         <button
           className={styles.submit}
           disabled={!token || submission === "submitting"}

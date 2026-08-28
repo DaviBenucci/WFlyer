@@ -18,7 +18,7 @@ vi.mock("next/script", () => ({
     useEffect(() => {
       onReady?.();
     }, [onReady]);
-    return null;
+    return <script data-testid="turnstile-script" />;
   },
 }));
 
@@ -147,6 +147,80 @@ describe("ContactForm", () => {
     expect(submit).toBeDisabled();
   });
 
+  it("defers verification until focus and marks the form as editing", async () => {
+    const user = userEvent.setup();
+    render(
+      <ContactForm
+        deferVerificationUntilInteraction
+        siteKey="site-key"
+      />,
+    );
+    const form = screen.getByRole("form", { name: "Formulário de contato" });
+    const submit = within(form).getByRole("button", {
+      name: "Enviar mensagem",
+    });
+
+    expect(form).toHaveAttribute("data-contact-editing", "false");
+    expect(screen.queryByTestId("turnstile-script")).not.toBeInTheDocument();
+    expect(form.querySelector("[data-turnstile-container]")).toBeNull();
+    expect(
+      within(form).getByText(/será carregada quando você interagir/u),
+    ).toBeVisible();
+    expect(submit).toBeDisabled();
+    expect(renderTurnstile).not.toHaveBeenCalled();
+
+    await user.click(within(form).getByLabelText("Nome"));
+
+    expect(form).toHaveAttribute("data-contact-editing", "true");
+    expect(screen.getByTestId("turnstile-script")).toBeInTheDocument();
+    expect(form.querySelector("[data-turnstile-container]")).not.toBeNull();
+    await waitFor(() => expect(renderTurnstile).toHaveBeenCalledOnce());
+    expect(submit).toBeDisabled();
+  });
+
+  it("clears the editing flag only after a successful reset", async () => {
+    const user = userEvent.setup();
+    vi.mocked(fetch).mockResolvedValue(Response.json({ ok: true }));
+    render(<ContactForm siteKey="site-key" />);
+    const form = screen.getByRole("form", { name: "Formulário de contato" });
+
+    await fillValidContactFields(user, form);
+    expect(form).toHaveAttribute("data-contact-editing", "true");
+    await act(() => verificationCallback("turnstile-token"));
+    await user.click(
+      within(form).getByRole("button", { name: "Enviar mensagem" }),
+    );
+
+    await waitFor(() =>
+      expect(form).toHaveAttribute("data-contact-form", "success"),
+    );
+    expect(form).toHaveAttribute("data-contact-editing", "false");
+    expect(within(form).getByLabelText("Nome")).toHaveValue("");
+  });
+
+  it("keeps the editing flag through validation errors and recovery", async () => {
+    const user = userEvent.setup();
+    render(<ContactForm siteKey="site-key" />);
+    const form = screen.getByRole("form", { name: "Formulário de contato" });
+    const submit = within(form).getByRole("button", {
+      name: "Enviar mensagem",
+    });
+
+    await act(() => verificationCallback("turnstile-token"));
+    await user.click(submit);
+
+    await waitFor(() =>
+      expect(form).toHaveAttribute("data-contact-form", "validation-error"),
+    );
+    expect(form).toHaveAttribute("data-contact-editing", "true");
+    expect(fetch).not.toHaveBeenCalled();
+
+    await user.type(within(form).getByLabelText("Nome"), "Pessoa");
+
+    expect(form).toHaveAttribute("data-contact-form", "idle");
+    expect(form).toHaveAttribute("data-contact-editing", "true");
+  });
+
   it("recovers from a generic provider error and resets verification", async () => {
     const user = userEvent.setup();
     vi.mocked(fetch).mockResolvedValue(
@@ -182,6 +256,7 @@ describe("ContactForm", () => {
     );
     expect(resetTurnstile).toHaveBeenCalledWith("widget-contact");
     expect(within(form).getByLabelText("Nome")).toHaveValue("Pessoa Visitante");
+    expect(form).toHaveAttribute("data-contact-editing", "true");
   });
 
   it("keeps, rotates, and clears its private logical-submission identity", async () => {
@@ -277,6 +352,34 @@ describe("ContactForm", () => {
       screen.getByRole("button", { name: "Enviar mensagem" }),
     ).toBeDisabled();
     expect(renderTurnstile).not.toHaveBeenCalled();
+  });
+
+  it("keeps missing-key verification unavailable after interaction", async () => {
+    const user = userEvent.setup();
+    render(
+      <ContactForm
+        compact
+        deferVerificationUntilInteraction
+        siteKey=""
+      />,
+    );
+    const form = screen.getByRole("form", { name: "Formulário de contato" });
+
+    expect(form).toHaveAttribute("data-contact-compact", "true");
+    expect(form).toHaveAttribute("data-contact-editing", "false");
+    expect(screen.queryByTestId("turnstile-script")).not.toBeInTheDocument();
+
+    await user.type(within(form).getByLabelText("Nome"), "Pessoa");
+
+    expect(form).toHaveAttribute("data-contact-editing", "true");
+    expect(
+      within(form).getByText(/verificação de segurança está indisponível/u),
+    ).toBeVisible();
+    expect(screen.queryByTestId("turnstile-script")).not.toBeInTheDocument();
+    expect(renderTurnstile).not.toHaveBeenCalled();
+    expect(
+      within(form).getByRole("button", { name: "Enviar mensagem" }),
+    ).toBeDisabled();
   });
 
   it("fails closed when the client verification script never initializes", async () => {

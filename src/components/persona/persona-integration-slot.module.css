@@ -1,0 +1,122 @@
+.slot {
+  display: grid;
+  align-content: center;
+  min-inline-size: 0;
+  min-block-size: clamp(18rem, 34vw, 28rem);
+  gap: var(--wf-space-5);
+  padding: clamp(var(--wf-space-5), 4vw, var(--wf-space-10));
+  border: 1px dashed color-mix(in oklab, var(--wf-accent) 58%, var(--wf-border));
+  border-radius: var(--wf-radius-lg);
+  background: color-mix(in oklab, var(--wf-surface-muted) 54%, transparent);
+  color: var(--wf-text);
+}
+
+.header {
+  display: grid;
+  gap: var(--wf-space-2);
+  max-inline-size: 42rem;
+}
+
+.eyebrow,
+.title,
+.status,
+.copy,
+.fallback p,
+.deferred {
+  margin: 0;
+}
+
+.eyebrow {
+  color: var(--wf-accent);
+  font-size: 0.75rem;
+  font-weight: var(--wf-font-weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  max-inline-size: 22ch;
+  font-family: var(--wf-font-display);
+  font-size: clamp(1.5rem, 3vw, 2.35rem);
+  font-weight: var(--wf-font-weight-semibold);
+  line-height: 1.1;
+}
+
+.status {
+  inline-size: fit-content;
+  max-inline-size: 42rem;
+  padding: var(--wf-space-2) var(--wf-space-3);
+  border: 1px solid color-mix(in oklab, var(--wf-accent) 44%, var(--wf-border));
+  border-radius: var(--wf-radius-sm);
+  background: var(--wf-surface-elevated);
+  font-weight: var(--wf-font-weight-semibold);
+  line-height: 1.5;
+}
+
+.copy,
+.fallback,
+.deferred {
+  max-inline-size: 48rem;
+  color: var(--wf-text-muted);
+  line-height: 1.65;
+}
+
+.fallback {
+  display: grid;
+  gap: var(--wf-space-2);
+  padding-block-start: var(--wf-space-4);
+  border-block-start: 1px solid var(--wf-border);
+}
+
+.fallbackTitle {
+  color: var(--wf-text);
+  font-weight: var(--wf-font-weight-bold);
+}
+
+.deferred {
+  padding-inline-start: var(--wf-space-4);
+  border-inline-start: 3px solid var(--wf-border);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 47.999rem) {
+  .slot {
+    min-block-size: 16rem;
+    padding: var(--wf-space-5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slot,
+  .slot * {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .slot {
+    border: 2px dashed CanvasText;
+    background: Canvas;
+    color: CanvasText;
+    forced-color-adjust: auto;
+  }
+
+  .eyebrow,
+  .copy,
+  .fallback,
+  .deferred {
+    color: CanvasText;
+  }
+
+  .status,
+  .fallback,
+  .deferred {
+    border-color: CanvasText;
+  }
+
+  .status {
+    background: Canvas;
+  }
+}

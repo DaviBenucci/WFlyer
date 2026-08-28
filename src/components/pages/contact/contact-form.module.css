@@ -14,6 +14,39 @@
   box-shadow: var(--wf-shadow-soft);
 }
 
+.form[data-contact-compact="true"] {
+  gap: var(--wf-space-2);
+  padding: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+.form[data-contact-compact="true"] fieldset {
+  gap: var(--wf-space-2);
+}
+
+.form[data-contact-compact="true"] legend {
+  margin-block-end: var(--wf-space-2);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  line-height: 1.05;
+}
+
+.form[data-contact-compact="true"] textarea {
+  block-size: 4.5rem;
+  min-block-size: 4.5rem;
+}
+
+.form[data-contact-compact="true"] .turnstile {
+  min-block-size: var(--wf-control-min-size);
+}
+
+.form[data-contact-compact="true"] .formStatus {
+  padding: var(--wf-space-2) var(--wf-space-3);
+  line-height: 1.35;
+}
+
+.form[data-contact-compact="true"] .submit {
+  padding-block: var(--wf-space-2);
+}
+
 .form fieldset {
   display: grid;
   gap: var(--wf-space-4);
@@ -84,6 +117,16 @@
   gap: var(--wf-space-4);
 }
 
+.compactFieldRow {
+  display: contents;
+}
+
+.form[data-contact-compact="true"] .compactFieldRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--wf-space-2);
+}
+
 .consentField {
   grid-template-columns: auto minmax(0, 1fr);
   align-items: start;
@@ -118,6 +161,18 @@
 
 .turnstile button {
   min-block-size: var(--wf-control-min-size);
+}
+
+.verificationRow {
+  display: grid;
+  gap: var(--wf-space-3);
+}
+
+.form[data-contact-compact="true"]
+  .verificationRow[data-verification-layout="widget"] {
+  grid-template-columns: minmax(18.75rem, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--wf-space-2);
 }
 
 .verificationStatus,
@@ -166,7 +221,10 @@
 }
 
 @media (width < 48rem) {
-  .fieldRow {
+  .fieldRow,
+  .form[data-contact-compact="true"] .compactFieldRow,
+  .form[data-contact-compact="true"]
+    .verificationRow[data-verification-layout="widget"] {
     grid-template-columns: 1fr;
   }
 

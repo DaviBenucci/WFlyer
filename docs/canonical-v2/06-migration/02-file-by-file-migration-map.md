@@ -23,15 +23,15 @@
 
 | Path | Action | Notes |
 |---|---|---|
-| `src/app/page.tsx` | REPLACE AT APPROVED CUTOVER | semantic v2 story host; keep the legacy public `/` unchanged through isolated Phase 6 |
+| `src/app/page.tsx` | REPLACE AT APPROVED CUTOVER | semantic v2 story host; keep the legacy public `/` unchanged through isolated Phase 7 |
 | `src/app/page.module.css` | REPLACE | new vertical fallback/horizontal stage |
 | `src/components/experience/SiteExperienceShell.tsx` | REPLACE/RENAME AFTER CUTOVER | route coordinator becomes story lifecycle shell |
 | `ScoreTransitionLayer.tsx` | REMOVE AFTER CUTOVER | no route overlay in v2 landing |
 | `experience.module.css` | REPLACE | story stage/track/lifecycle styles |
 | `src/app/layout.tsx` | REFACTOR | shared data + branch terminals/global footer semantics |
 | `src/lib/story/motion/**` | ADD PARALLEL | Phase-5 eligibility/geometry/master-story runtime plus Phase-6 owned native-scroll header traversal |
-| `src/components/story-motion/**` | ADD PARALLEL | development-only placeholder Motion Lab and diagnostics; no final branch scenes or score integration |
-| `/__visual-lab/story/motion` | ADD DEV-ONLY | Phase-5 native-scroll projection and Phase-6 header traversal/history validation surface; production must fail closed |
+| `src/components/story-motion/**` | ADD PARALLEL | development-only Motion Lab and diagnostics with Phase-7 professional scenes; Application remains structural and score integration remains deferred |
+| `/__visual-lab/story/motion` | ADD DEV-ONLY | Phase-5 native-scroll projection, Phase-6 header traversal/history, and Phase-7 professional-scene validation surface; production must fail closed |
 
 ## Header/footer
 
