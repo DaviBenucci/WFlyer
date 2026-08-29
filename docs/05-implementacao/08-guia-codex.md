@@ -46,10 +46,12 @@
 ## Infraestrutura
 
 - GitHub é o repositório/CI;
-- Napoleon é a origem Node.js;
-- Cloudflare é borda existente;
+- Registro.br delega ao DNS autoritativo Napoleon;
+- Napoleon fornece DNS autoritativo e hospedagem da origem Node.js;
+- Cloudflare DNS/proxy está inativo; Turnstile permanece independente;
 - preservar `app.wflyer.com.br`;
-- inventário DNS antes de alterações;
+- inventário dos controles DNS/hospedagem Napoleon antes de alterações, sem
+  inventar APIs, WAF, cache, redirect ou rate limit;
 - secrets em GitHub Actions, com injeção explícita no runtime Napoleon;
 - staging antes de produção;
 - homologação por Davi Benucci.

@@ -23,7 +23,7 @@
 - token reutilizado;
 - hostname incorreto;
 - action incorreta;
-- timeout da Cloudflare;
+- timeout do serviço Turnstile;
 - chave de teste em ambiente de teste.
 
 ## Origem
@@ -35,6 +35,9 @@
 - CORS preflight externo.
 
 ## Rate limit
+
+Executar estes casos externos somente quando uma capacidade Napoleon tiver sido
+inventariada e configurada; a aplicação não presume WAF/rate limit ativo.
 
 - abaixo do limite;
 - regra de rajada;

@@ -34,7 +34,7 @@ A política deve informar:
 - dados enviados voluntariamente no formulário;
 - finalidade exclusiva de resposta e avaliação do projeto;
 - envio por Resend para o e-mail institucional;
-- proteções de borda e Turnstile da Cloudflare;
+- controles da aplicação/hospedagem e Turnstile independente da Cloudflare;
 - ausência de banco de leads;
 - logs técnicos mínimos e sanitizados;
 - canal de direitos: `davi.benucci@wflyer.com.br`;
@@ -46,7 +46,7 @@ A política deve informar:
 - preferência de tema pode usar `localStorage`;
 - o marcador técnico da abertura pode usar `sessionStorage` somente para impedir
   repetição na mesma sessão, sem perfil de navegação;
-- Turnstile, Cloudflare e Napoleon podem processar dados técnicos de segurança/operação;
+- Turnstile, Resend e Napoleon podem processar dados técnicos de segurança/operação conforme seus papéis efetivos;
 - não mostrar banner de consentimento genérico quando não houver cookie não essencial; manter aviso/política compatível com a implementação real.
 
 ## Termos e acessibilidade

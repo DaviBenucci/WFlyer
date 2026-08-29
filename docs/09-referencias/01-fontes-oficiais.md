@@ -7,6 +7,9 @@ Consultadas para a definição inicial. A implementação deve usar documentaç�
 - Next.js 16: https://nextjs.org/blog/next-16
 - Next.js 16.2: https://nextjs.org/blog/next-16-2
 - release de segurança julho/2026: https://nextjs.org/blog/july-2026-security-release
+- Next.js 16.3.3: https://github.com/vercel/next.js/releases/tag/v16.3.3
+- advisory Windows dev/build RCE: https://github.com/vercel/next.js/security/advisories/GHSA-p293-qw3h-jr36
+- advisory AVIF image optimizer RCE: https://github.com/vercel/next.js/security/advisories/GHSA-2xp9-vwfh-vxw4
 - App Router: https://nextjs.org/docs/app
 - Route Handlers: https://nextjs.org/docs/app/api-reference/file-conventions/route
 - CSP: https://nextjs.org/docs/app/guides/content-security-policy
@@ -22,8 +25,6 @@ Consultadas para a definição inicial. A implementação deve usar documentaç�
 
 ## Segurança e contato
 
-- Cloudflare WAF Rate Limiting: https://developers.cloudflare.com/waf/rate-limiting-rules/
-- parâmetros de rate limit: https://developers.cloudflare.com/waf/rate-limiting-rules/parameters/
 - Turnstile server-side: https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
 - Resend com Next.js: https://resend.com/docs/send-with-nextjs
 - OWASP Input Validation: https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html

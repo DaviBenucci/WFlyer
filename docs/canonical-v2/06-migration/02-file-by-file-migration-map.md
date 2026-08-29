@@ -92,7 +92,7 @@
 | Area | Action |
 |---|---|
 | contact route/library/tests | KEEP; regression protect |
-| Cloudflare/Napoleon docs/workflows | KEEP |
+| infrastructure docs/workflows | KEEP/REFINE; preserve Napoleon Git/runtime and exact-SHA controls, replace Cloudflare DNS/proxy/WAF assumptions with Registro.br delegation and Napoleon authoritative DNS/hosting, and retain independent Cloudflare Turnstile |
 | staging indexing | KEEP |
 | release exact-SHA/checksums | KEEP |
 | analytics disabled | KEEP |

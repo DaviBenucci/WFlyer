@@ -1,8 +1,8 @@
 # Workflow OpenSpec
 
-**Status:** OPERACIONAL  
-**Versão validada:** `@fission-ai/openspec 1.7.0`  
-**Schema padrão:** `spec-driven`  
+**Status:** OPERACIONAL
+**Versão validada:** `@fission-ai/openspec 1.11.0`
+**Schema padrão:** `spec-driven`
 **Escopo:** changes focados do site institucional `wflyer.com.br`
 
 ## 1. Papel no projeto
@@ -18,25 +18,29 @@ um change apenas para satisfazer processo.
 
 ## 2. Baseline instalada
 
-- CLI global gerenciada por pnpm: `1.7.0`;
+- CLI global gerenciada por pnpm: `1.11.0`;
 - Node.js validado: `24.18.0`;
 - raiz saudável em `openspec/`;
 - contexto e regras em `openspec/config.yaml`;
-- seis skills Codex em `.codex/skills/openspec-*`;
+- seis skills compartilhadas geradas em `.agents/skills/openspec-*`;
+- `.agents/skills/.openspec-target` registra o destino Codex; as antigas cópias
+  geradas em `.codex/skills/openspec-*` foram removidas sem afetar a skill
+  Graphify independente;
 - perfil `core`;
 - templates artesanais anteriores em `openspec/templates/` preservados;
 - validação estrita no job `quality` do CI.
 
-O upgrade 1.6.0 → 1.7.0 foi feito com:
+O upgrade de manutenção 1.7.0 → 1.11.0 preservou o gerenciador pnpm e foi
+feito com:
 
 ```bash
-pnpm add --global @fission-ai/openspec@1.7.0
+pnpm add --global @fission-ai/openspec@1.11.0
 openspec update .
 ```
 
-A CLI adiou, de forma segura, a limpeza dos prompts globais `opsx-*` até que
-possa confirmar skills substitutas no mesmo escopo. Nenhum prompt global foi
-apagado ou forçado nesta baseline.
+O conteúdo do change ativo permaneceu preservado durante a migração. As quatro
+specs principais que antecediam a exigência de cenários do schema atual
+receberam somente cenários que reiteram seus requisitos existentes.
 
 ## 3. Changes desta subetapa
 
@@ -47,18 +51,17 @@ Change somente de tooling e documentação. Usa `skip_specs: true`; no OpenSpec
 specs sem inventar comportamento de produto. Foi arquivado em 2026-07-30, com
 17/17 tasks e todos os gates verdes, sem sincronizar specs funcionais.
 
-### `complete-phase-05-motion-navigation`
+### `rebuild-scroll-driven-wflyer-v2`
 
-Change funcional ativo da Fase 05. Contém:
+Change funcional ativo. Na manutenção de 2026-08-29:
 
-- proposta com baseline comprovada e trabalho ausente;
-- specs `score-transition-navigation` e
-  `accessible-navigation-lifecycle`;
-- design do shell/lifecycle persistente;
-- tasks funcionais ainda desmarcadas.
+- identidade e conteúdo funcional foram preservados;
+- progresso permaneceu `32/45`;
+- task 33, `Human-approve Score Path layouts`, permaneceu desmarcada;
+- nenhum trabalho de Phase 9 foi iniciado.
 
-Fases 0–4 são apenas evidência e pré-condição. O change não declara motion,
-provider, timelines, foco ou histórico como implementados.
+Os registros arquivados abaixo permanecem históricos e não substituem o estado
+do change ativo.
 
 ## 4. Fluxo operacional
 
@@ -120,7 +123,7 @@ da Fase 05 deve permanecer ativo nesta subetapa.
 O CI usa uma versão fixa e não modifica specs:
 
 ```bash
-pnpm dlx @fission-ai/openspec@1.7.0 \
+pnpm dlx @fission-ai/openspec@1.11.0 \
   validate --all --strict --no-interactive
 ```
 

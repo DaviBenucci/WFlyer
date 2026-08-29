@@ -5,8 +5,8 @@ set -euo pipefail
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 repo_root="$(cd "${script_dir}/.." && pwd -P)"
 graph_dir="${repo_root}/graphify-out"
-graphify_required="0.9.31"
-openspec_required="1.7.0"
+graphify_required="0.9.51"
+openspec_required="1.11.0"
 vis_network_url="https://unpkg.com/vis-network@9.1.6/standalone/umd/vis-network.min.js"
 vis_network_sri="sha384-Ux6phic9PEHJ38YtrijhkzyJ8yQlH8i/+buBR8s3mAZOJrP1gwyvAcIYl3GWtpX1"
 

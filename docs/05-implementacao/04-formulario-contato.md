@@ -50,7 +50,11 @@ credential, rate-limit mechanism, or visitor identifier.
 12. enviar pelo Resend;
 13. retornar resposta genérica.
 
-## Rate limit de borda — baseline
+## Rate limit de hospedagem — proposta condicional
+
+Não há WAF/rate limit ativo presumido. As regras abaixo são somente uma
+proposta de calibração caso a Napoleon exponha capacidade equivalente e o
+responsável a aprove após inventário e validação em staging.
 
 ### Regra A
 
@@ -65,7 +69,9 @@ credential, rate-limit mechanism, or visitor identifier.
 - limite inicial: 10 requisições por 10 minutos;
 - ação: bloqueio por 1 hora.
 
-Os limites devem ser calibrados com tráfego real. A Cloudflare mantém contadores por características e localização de borda; eles não são um contador global de banco.
+Os limites devem ser calibrados com tráfego real. A semântica e o escopo dos
+contadores dependem do controle Napoleon efetivamente disponível e devem ser
+registrados; eles nunca são tratados como um contador global de banco.
 
 ## CORS e origem
 

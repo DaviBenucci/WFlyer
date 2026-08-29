@@ -18,6 +18,12 @@ The repository is a technically substantial v1 implementation, but its product/m
 - public project/channel allowlist;
 - Cloudflare/Napoleon/exact-SHA operational boundaries.
 
+> **Current-topology supersession — 2026-08-29:** the preceding item records
+> the audited source snapshot. DNS was subsequently migrated by the owner:
+> Registro.br now delegates to Napoleon authoritative DNS, Napoleon hosts the
+> standalone Node application, and Cloudflare DNS/proxy are no longer in the
+> active request path. Cloudflare Turnstile remains independent and supported.
+
 ## Primary architectural conflicts
 
 1. `src/config/chapters.ts` models route coordinates, previous/next, `institutional/company`, and route terminals.

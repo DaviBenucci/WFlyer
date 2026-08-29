@@ -21,13 +21,14 @@ downloads/
 archives/
 backups/
 
-# Outputs comuns nunca entram no corpus. O Graphify 0.9.31 reinjeta
+# Outputs comuns nunca entram no corpus. O Graphify 0.9.51 reinjeta
 # graphify-out/memory por design, antes da avaliação deste arquivo.
 graphify-out/
 
 # Configuração local e instruções vendorizadas de ferramentas
 .serena/
 .codex/skills/
+.agents/skills/
 
 # Evidências e referências binárias são representadas pelos manifestos textuais
 *.png

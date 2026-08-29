@@ -23,10 +23,17 @@ The following remain authoritative unless a v2 document explicitly refines them:
 - separate application boundary;
 - contact endpoint, validation, Turnstile, Resend, origin/content-type checks, no persistence;
 - legal pages and no-analytics policy;
-- Cloudflare/DNS/Napoleon topology;
+- Registro.br delegation, Napoleon authoritative DNS and Node hosting, and
+  independent Cloudflare Turnstile topology;
 - exact-SHA deployment and owner homologation;
 - theme and approved brand identity geometry;
 - standalone Next.js runtime.
+
+ADR-040 explicitly refines the retained infrastructure domain. Any
+lower-precedence record that describes Cloudflare as authoritative DNS, proxy,
+WAF, redirect, cache-purge, or DNS-API owner is historical for that topology.
+Cloudflare Turnstile references remain retained where they describe the
+independent anti-abuse integration.
 
 ## Current tests
 

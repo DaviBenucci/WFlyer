@@ -91,7 +91,7 @@ remain pending until the owner inspects the panel.
 | Deploy behavior | actual automatic/manual behavior recorded before attachment | `<external evidence pending>` |
 | Working directory | repository root | `<external evidence pending>` |
 | Node.js version | `24.x` | `<external evidence pending>` |
-| Package manager | pnpm `11.18.0` through Corepack | `<external evidence pending>` |
+| Package manager | pnpm `11.24.0` through Corepack | `<external evidence pending>` |
 | Install/build command | command in section 4 | `<external evidence pending>` |
 | Runtime entry point | `.next/standalone/server.js` | `<external evidence pending>` |
 | Start command | `node .next/standalone/server.js` | `<external evidence pending>` |
@@ -118,7 +118,7 @@ checkout and supports `set -euo pipefail`. Then configure this build command:
 set -euo pipefail
 corepack enable
 test "$(node --version | cut -d. -f1)" = "v24"
-test "$(pnpm --version)" = "11.18.0"
+test "$(pnpm --version)" = "11.24.0"
 pnpm install --frozen-lockfile
 WFLYER_BUILD_ID="$(git rev-parse --verify 'HEAD^{commit}')"
 export WFLYER_BUILD_ID
@@ -180,19 +180,20 @@ client bundle or build artifact.
 
 Do not assume `staging.wflyer.com.br` or any other hostname. Davi Benucci must
 approve the exact staging hostname. Record the actual Napoleon target before a
-Cloudflare change.
+Napoleon DNS change.
 
-| DNS and edge field | Recorded value |
+| Napoleon DNS/hosting field | Recorded value |
 |---|---|
 | Owner-approved staging origin | `https://<approved-staging-host>` |
 | Napoleon target hostname or address | `<external evidence pending>` |
-| Cloudflare zone/account owner | `<external evidence pending>` |
+| Registro.br delegation and Napoleon authoritative nameservers | `<external evidence pending>` |
 | Record type | `<external evidence pending>` |
 | Record name | `<external evidence pending>` |
 | Record target | `<external evidence pending>` |
-| Proxy state | `<external evidence pending>` |
 | TTL | `<external evidence pending>` |
-| SSL/TLS mode and certificate result | `<external evidence pending>` |
+| Napoleon HTTPS/certificate result | `<external evidence pending>` |
+| Napoleon redirect/cache controls | `<external evidence pending or unavailable>` |
+| Napoleon WAF/rate capability | `<external evidence pending or unavailable>` |
 | Existing record inventory captured at | `<external evidence pending>` |
 | Change operator and timestamp | `<external evidence pending>` |
 | `app.wflyer.com.br` before check | `<external evidence pending>` |
@@ -201,7 +202,8 @@ Cloudflare change.
 Preserve apex, `www`, mail, verification, and `app.wflyer.com.br` records. Do
 not enable HSTS or enforce the report-only CSP during this handoff. Configure an
 owner-approved `/api/contact` rate rule only after the exact staging origin and
-proxy behavior are known.
+actual Napoleon capability are known. Do not invent a DNS, redirect,
+cache-purge, WAF, rate-limit, or deployment API.
 
 ## 7. Exact staging verification
 
@@ -397,7 +399,7 @@ Retain or link the following without copying secret values:
 - process user, restart policy, log retention, and rollback control;
 - green CI and candidate workflow URLs;
 - archive and manifest names plus SHA-256;
-- approved staging origin and Cloudflare record evidence;
+- approved staging origin and Napoleon authoritative DNS record evidence;
 - public HTTP command output and `test:staging` result;
 - `app.wflyer.com.br` independent before/after health result;
 - operator, timestamp, open defects, and rollback evidence.
@@ -417,7 +419,8 @@ without Davi Benucci's explicit approval after completed staging homologation:
 - create or publish a production release tag;
 - dispatch a production candidate;
 - attach or restart a production Napoleon application;
-- change apex, `www`, mail, or production Cloudflare records;
+- change Registro.br delegation or apex, `www`, mail, or production Napoleon
+  DNS records;
 - enforce CSP or enable HSTS;
 - alter `app.wflyer.com.br`.
 

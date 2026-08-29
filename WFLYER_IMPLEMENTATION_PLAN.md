@@ -390,7 +390,8 @@ Owner supplies/approves:
 
 ### Required work
 
-- Build Next.js standalone and preserve Napoleon/Cloudflare topology.
+- Build Next.js standalone and preserve Registro.br delegation, Napoleon
+  authoritative DNS/hosting, and independent Cloudflare Turnstile.
 - Deploy exact-SHA candidate to approved staging only.
 - Run real-device, screen-reader, contact-provider, security-header, indexing, performance, and rollback validation.
 - Record Davi Benucci’s explicit homologation.

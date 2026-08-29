@@ -47,7 +47,7 @@ Definir política operacional curta para logs técnicos. O conteúdo da mensagem
 ## Phase 08 operational gate
 
 The application emits no contact-payload log. Before staging approval, the
-owner must define and configure a short retention period for Napoleon and
-Cloudflare technical logs, document who can access them, and verify that raw
+owner must define and configure a short retention period for Napoleon,
+Turnstile, and Resend technical logs, document who can access them, and verify that raw
 request bodies, complete addresses, Turnstile tokens, and secrets are absent.
 No retention duration is invented by the repository.

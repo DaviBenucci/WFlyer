@@ -31,8 +31,11 @@ This repository is being re-architected from a route-transition institutional-si
 ## Retained architecture
 
 - Next.js App Router, React, strict TypeScript;
-- Next.js standalone Node deployment on Napoleon behind Cloudflare;
-- secure `POST /api/contact` with Zod, Turnstile, rate limiting/WAF, and Resend;
+- Next.js standalone Node deployment on Napoleon, with Registro.br delegating to
+  Napoleon authoritative DNS;
+- secure `POST /api/contact` with Zod, strict request/origin controls,
+  independent Cloudflare Turnstile, and Resend;
+- Cloudflare DNS, proxy, and WAF are not in the active request path;
 - no database, authentication, CMS, or analytics for the initial website release;
 - `app.wflyer.com.br` remains independent and untouched.
 

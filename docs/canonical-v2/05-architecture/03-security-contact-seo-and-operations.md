@@ -7,8 +7,9 @@
 - Zod schema;
 - origin/allowed-origin validation;
 - honeypot;
-- server-side Turnstile;
-- Cloudflare WAF/rate limiting;
+- server-side independent Cloudflare Turnstile;
+- provider WAF/rate limiting is not assumed and requires separate, observed
+  Napoleon hosting capability evidence;
 - Resend server-only credentials;
 - no database/persistence;
 - no sensitive message/token/secret logging;
@@ -31,8 +32,10 @@ Detailed routes retain canonical metadata/structured data. Landing hashes are na
 
 ## Operations
 
-- Next.js standalone Node runtime on Napoleon;
-- Cloudflare remains existing DNS/proxy/security boundary;
+- Registro.br delegates to Napoleon authoritative DNS;
+- Napoleon provides authoritative DNS and the Next.js standalone Node runtime;
+- Cloudflare DNS, proxy, and WAF are outside the active request path;
+  Cloudflare Turnstile remains an independent anti-abuse provider;
 - GitHub branch/exact-SHA governance retained;
 - `app.wflyer.com.br` unchanged;
 - no production merge/deploy without explicit owner authorization.

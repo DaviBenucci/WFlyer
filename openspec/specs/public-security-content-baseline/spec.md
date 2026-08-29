@@ -13,10 +13,10 @@ Every site response SHALL deny framing, disable MIME sniffing, use strict-origin
 - **THEN** each locally enforceable header matches the approved baseline and no contact response is cacheable
 
 ### Requirement: External security controls remain truthful gates
-HSTS enforcement, Cloudflare WAF/rate limiting, production Turnstile/Resend, and provider log retention MUST remain pending until the documented inventory, credentials, and staging validation exist, without weakening the local application controls.
+The active infrastructure topology MUST remain documented as Registro.br delegation to Napoleon authoritative DNS and Napoleon hosting. Cloudflare DNS, proxy, and WAF MUST NOT be represented as active controls; Cloudflare Turnstile remains an independent anti-abuse integration. HSTS enforcement, any Napoleon-hosting WAF/rate capability, production Turnstile/Resend, and provider log retention MUST remain pending until documented inventory, credentials, and staging validation exist, without weakening local application controls.
 
 #### Scenario: External access is absent
-- **WHEN** Phase 08 completes without Cloudflare or production-provider credentials
+- **WHEN** Phase 08 completes without authenticated Napoleon infrastructure or production-provider access
 - **THEN** code and mock evidence are complete, exact external configuration is documented, and no DNS, mail, application host, HSTS, WAF, or production state is changed
 
 ### Requirement: Public content matches implemented data use

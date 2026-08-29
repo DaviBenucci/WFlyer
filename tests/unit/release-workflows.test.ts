@@ -124,18 +124,18 @@ describe("release workflows", () => {
     const ciBrowser = job(ci, "browser");
     const releaseBrowser = job(release, "candidate-browser");
     const browserJobs = [ciBrowser, releaseBrowser];
-    const image = `mcr.microsoft.com/playwright:v${playwrightVersion}-noble@sha256:baed2032d533817f3dbe6425de795788430ba345e819a1201337009ba17c9d07`;
+    const image = `mcr.microsoft.com/playwright:v${playwrightVersion}-noble@sha256:dcc5531e97840b9b5e794f2814476b21571c5124a3fca2267d73041f56e7580e`;
 
-    expect(playwrightVersion).toBe("1.62.0");
+    expect(playwrightVersion).toBe("1.62.1");
     expect(manifest.devDependencies.playwright).toBe(playwrightVersion);
-    expect(pnpmVersion).toBe("11.18.0");
+    expect(pnpmVersion).toBe("11.24.0");
     expect(pnpmLock).toMatch(
-      /'@playwright\/test':\n\s+specifier: 1\.62\.0\n\s+version: 1\.62\.0/u,
+      /'@playwright\/test':\n\s+specifier: 1\.62\.1\n\s+version: 1\.62\.1/u,
     );
     expect(pnpmLock).toMatch(
-      /playwright:\n\s+specifier: 1\.62\.0\n\s+version: 1\.62\.0/u,
+      /playwright:\n\s+specifier: 1\.62\.1\n\s+version: 1\.62\.1/u,
     );
-    expect(pnpmLock).toContain("playwright-core@1.62.0:");
+    expect(pnpmLock).toContain("playwright-core@1.62.1:");
 
     for (const source of browserJobs) {
       expect(source).toContain("runs-on: ubuntu-24.04");
@@ -253,8 +253,8 @@ describe("release workflows", () => {
         'test "${ID}" = "ubuntu"',
         'test "${VERSION_ID}" = "24.04"',
         'test "${node_version%%.*}" = "v24"',
-        'test "${pnpm_version}" = "11.18.0"',
-        'test "${playwright_version}" = "Version 1.62.0"',
+        'test "${pnpm_version}" = "11.24.0"',
+        'test "${playwright_version}" = "Version 1.62.1"',
         'test "${browser_path}" = "/ms-playwright"',
         'test -d "${browser_path}"',
         'test -r "${browser_path}"',
@@ -874,12 +874,12 @@ describe("release workflows", () => {
     }).packageManager;
     const version = packageManager.match(/^pnpm@([^+]+)/u)?.[1];
 
-    expect(version).toBe("11.18.0");
+    expect(version).toBe("11.24.0");
     expect(`${ci}\n${release}`).not.toContain("version: 11.15.1");
     for (const workflowSource of [ci, release]) {
       const setupActions =
         workflowSource.match(/uses: pnpm\/action-setup@/gu) ?? [];
-      const installations = workflowSource.match(/version: 11\.18\.0/gu) ?? [];
+      const installations = workflowSource.match(/version: 11\.24\.0/gu) ?? [];
       expect(installations).toHaveLength(setupActions.length);
     }
   });

@@ -8,8 +8,8 @@
 This runbook validates the institutional `wflyer.com.br` Next.js application
 after an exact green revision is running as a Napoleon Node.js process at an
 owner-approved staging origin. It does not authorize a production deployment,
-a merge to `main`, a production tag, an apex or `www` DNS change, a whole-zone
-cache purge, or any change to `app.wflyer.com.br`.
+a merge to `main`, a production tag, a Registro.br/Napoleon DNS change, an
+invented cache purge, or any change to `app.wflyer.com.br`.
 
 The deployable runtime is `.next/standalone/server.js`. An `index.html` file in
 a standalone tree is not a deployable substitute for that Node.js process.
@@ -38,7 +38,7 @@ observed value. Use `PENDING` in the homologation report; never guess a value.
 | Napoleon application | Actual application name and observed Node.js panel inventory |
 | Napoleon revision | Selected branch and resolved SHA equal to CI and manifest |
 | Staging origin | Exact owner-approved `https://` origin with no path, query, fragment, or wildcard |
-| Cloudflare | Read-only pre-change inventory and an approved staging-only record plan |
+| Napoleon DNS/hosting | Read-only inventory and an approved staging-only record plan |
 | Provider values | Staging-specific Turnstile, verified Resend sender, exact allowed origin, and Napoleon build/runtime scopes |
 | Separate application baseline | DNS, HTTPS, and application result for `app.wflyer.com.br` before the staging change |
 
@@ -51,7 +51,7 @@ Stop without deployment or homologation if any of these conditions applies:
 - Napoleon's application type, Git source, selected SHA, build command, start
   command, variable scopes, port contract, or health behavior is unknown;
 - Napoleon exposes static hosting but no long-running Node.js process;
-- the staging origin or Cloudflare target is not owner-approved;
+- the staging origin or Napoleon DNS/hosting target is not owner-approved;
 - a required secret value is unavailable or would have to be copied into Git,
   a command transcript, a screenshot, or an evidence file;
 - the proposed operation would alter apex, `www`, mail, nameservers,
@@ -228,7 +228,7 @@ The checksummed Actions archive is provenance evidence. Napoleon independently
 pulls and builds the selected Git revision; do not claim byte identity between
 the archive and Napoleon's build.
 
-## 4. Napoleon and Cloudflare handoff record
+## 4. Napoleon DNS and hosting handoff record
 
 Before starting the application, transcribe these actual Napoleon panel fields
 without copying any secret value:
@@ -241,7 +241,7 @@ without copying any secret value:
 | Selected source | `develop/site-institucional` and observed full SHA |
 | Deploy behavior | Actual automatic/manual control and how premature deploy is prevented |
 | Node version | Actual configured `24.x` value |
-| Package manager | Actual Corepack/pnpm `11.18.0` behavior |
+| Package manager | Actual Corepack/pnpm `11.24.0` behavior |
 | Working directory | Actual repository-root setting |
 | Build command | Actual command, compared with the canonical runtime runbook |
 | Start command | Must execute `node .next/standalone/server.js` |
@@ -262,15 +262,15 @@ correct build/runtime scope. `CONTACT_ALLOWED_ORIGINS` must contain only the
 exact staging origin. GitHub Environment values do not automatically enter the
 Napoleon process.
 
-Before a Cloudflare mutation, record the actual zone, nameservers, and the
-before-state of these fields:
+Before a Napoleon DNS/hosting mutation, record the actual authoritative
+nameservers and the before-state of these fields:
 
 | Inventory group | Exact fields |
 |---|---|
-| DNS | record name, type, target/content, proxied state, TTL for apex, `www`, staging, `app`, MX, SPF, DKIM, and DMARC |
-| TLS | SSL/TLS mode, edge certificate coverage/status, origin certificate behavior, HSTS state |
-| Cache | cache rules affecting staging and explicit `/api/contact` behavior |
-| Security | WAF rules and the approved staging `/api/contact` rate rule |
+| DNS | record name, type, target/content, TTL for apex, `www`, staging, `app`, MX, SPF, DKIM, and DMARC |
+| TLS | Napoleon certificate coverage/status and HSTS state |
+| Cache | actual Napoleon cache controls affecting staging and explicit `/api/contact` behavior, or unavailable |
+| Security | actual Napoleon WAF/rate capability and approved staging rule, or unavailable |
 | Ownership | operator, approval reference, change timestamp, and rollback target |
 
 Create or change only the separately approved staging record after the exact
@@ -362,7 +362,7 @@ grep -Eiq '^x-content-type-options:[[:space:]]*nosniff[[:space:]]*$' "${home_hea
 grep -Eiq '^x-frame-options:[[:space:]]*DENY[[:space:]]*$' "${home_headers}"
 ```
 
-Record any `strict-transport-security` header as observed edge evidence. Do not
+Record any `strict-transport-security` header as observed hosting evidence. Do not
 enable or broaden HSTS until every covered hostname, including the separate
 application, has been inventoried and approved.
 
@@ -501,7 +501,7 @@ Record only timestamp, staging origin, aggregate success/failure, provider
 acceptance/delivery state, and recipient confirmation. Do not record the
 message, visitor address, token, or provider payload.
 
-## 8. Security, edge, and separate-application checks
+## 8. Security, hosting, and separate-application checks
 
 Record before and after staging setup from the same network vantage point:
 
@@ -530,11 +530,12 @@ runbook.
 
 Also verify and record:
 
-- HTTPS certificate and proxy behavior for staging;
-- no Contact response is cached at either application or edge;
-- the owner-approved `/api/contact` Cloudflare rate rule is active and tested
-  with a safe method that cannot create a message or denial of service;
-- Napoleon, Cloudflare, Actions, Turnstile, and Resend logs expose no secret,
+- HTTPS certificate and observed Napoleon redirect/routing behavior for staging;
+- no Contact response is cached at either application or any observed Napoleon
+  hosting layer;
+- any claimed owner-approved `/api/contact` Napoleon WAF/rate rule is active
+  and tested safely; otherwise record the capability as unavailable;
+- Napoleon, Actions, Turnstile, and Resend logs expose no secret,
   full visitor email, contact message, or token;
 - the Napoleon process uses an isolated non-administrative user when the
   provider supports it;

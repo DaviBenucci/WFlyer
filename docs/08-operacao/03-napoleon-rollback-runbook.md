@@ -7,8 +7,9 @@
 This procedure restores only the institutional W_Flyer Next.js application by
 selecting a previously verified immutable Git revision in the actual Napoleon
 Node.js application controls. It never authorizes a force-push, destructive Git
-reset, static `public_html` replacement, production release, Cloudflare zone
-rewrite, whole-zone purge, or any mutation of `app.wflyer.com.br`.
+reset, static `public_html` replacement, production release, Registro.br or
+Napoleon DNS rewrite, invented cache purge, or any mutation of
+`app.wflyer.com.br`.
 
 The runtime entry point remains `.next/standalone/server.js`. If Napoleon cannot
 run a long-lived Node.js process and offers only static document-root hosting,
@@ -50,7 +51,7 @@ Before any action, record:
 | Operator/approver | Named authorized people |
 | Napoleon controls | Actual deploy, restart, health, log, and rollback field labels |
 | Separate app baseline | `app.wflyer.com.br` DNS/HTTPS/application result |
-| Cloudflare baseline | Staging record, proxy, TLS, cache, WAF/rate, and unrelated records |
+| Napoleon DNS/hosting baseline | Staging record, TLS, redirect/cache controls, conditional WAF/rate, and unrelated records |
 
 Do not use `<PREVIOUS_INSTITUTIONAL_RELEASE_SHA>` as a literal value. It is an
 unresolved operational token until a real previously deployed and verified SHA
@@ -177,8 +178,9 @@ curl --silent --show-error \
 ```
 
 Inventory, without changing, the staging DNS record, apex, `www`, app, MX,
-SPF, DKIM, DMARC, nameservers, proxy state, TLS mode/certificates, cache rules,
-WAF, and rate rules. A source rollback should require no DNS mutation.
+SPF, DKIM, DMARC, Registro.br delegation, Napoleon authoritative nameservers,
+HTTPS certificates, actual redirect/cache controls, and any evidenced WAF/rate
+rules. A source rollback should require no DNS mutation.
 
 ## 5. Execute through the actual Napoleon Node.js control
 
@@ -295,13 +297,13 @@ Then verify manually:
 - expected security/indexing headers and CSP mode;
 - no Contact cache and no sensitive log content;
 - health/restart stability for the actual observation window;
-- only affected institutional URLs are invalidated if an approved scoped cache
-  purge is truly required.
+- only affected institutional URLs are invalidated if Napoleon exposes an
+  approved scoped cache control; no purge API is assumed.
 
 Repeat the `app.wflyer.com.br` DNS/HTTPS/application observations into
-`app-after-*` evidence files. Confirm that app, apex, `www`, nameservers, and
-mail records are unchanged. Never use a whole-zone purge to hide a failed
-rollback.
+`app-after-*` evidence files. Confirm that app, apex, `www`, authoritative
+nameservers, and mail records are unchanged. Never invent or use a broad cache
+purge to hide a failed rollback.
 
 ## 7. Staging rollback exercise
 
@@ -324,8 +326,8 @@ staging revision exists, leave the exercise `BLOCKED`; do not fabricate one.
 
 If the target build or health check fails:
 
-1. do not change DNS, Cloudflare proxy/TLS mode, nameservers, or the separate
-   application as an improvisation;
+1. do not change Registro.br delegation, Napoleon DNS/HTTPS controls, or the
+   separate application as an improvisation;
 2. retain or reselect the last actually healthy institutional revision using
    the verified provider control;
 3. capture sanitized build/process/health evidence;
@@ -362,7 +364,7 @@ Route and asset results:
 Header/indexing results:
 Contact fallback result:
 Security/log review:
-Cloudflare/DNS changed: no | exact approved staging-only change
+Registro.br/Napoleon DNS changed: no | exact approved staging-only change
 app.wflyer.com.br before/after:
 Mail records before/after:
 Candidate restored after exercise:

@@ -66,21 +66,23 @@ specific evidence is recorded.
 - [ ] Real GitHub Actions and Napoleon logs are inspected without exposing
   configured values.
 
-## Cloudflare and provider validation
+## Napoleon DNS/hosting and provider validation
 
 - [ ] Davi Benucci has approved the exact staging hostname, and the actual
-  Napoleon target is recorded before DNS work.
-- [ ] A read-only inventory covers zone, nameservers, apex, `www`, mail,
-  verification records, proxy, SSL/TLS, redirects, cache, WAF, and rate limits.
+  Napoleon DNS/hosting target is recorded before staging work.
+- [ ] A read-only Napoleon inventory covers authoritative nameservers, apex,
+  `www`, mail and verification records, HTTPS, redirects, cache, and any
+  provider-exposed WAF/rate controls without assuming an API or capability.
 - [ ] The independent `app.wflyer.com.br` DNS and availability baseline is
   recorded and remains unchanged.
 - [ ] HTTPS is valid for every covered host before any HSTS change.
-- [ ] `/api/contact` is not cached at the edge.
-- [ ] The Cloudflare rate limit and applicable WAF controls are active and
-  verified in staging.
+- [ ] `/api/contact` is not cached by the application or any observed Napoleon
+  hosting layer.
+- [ ] Any Napoleon WAF/rate capability claimed for release is configured and
+  verified in staging; absence remains explicit and does not weaken local controls.
 - [ ] Real Turnstile success/failure and Resend delivery/failure paths are
   verified in deployed staging.
-- [ ] Napoleon, Cloudflare, Turnstile, Resend, and Actions technical logs are
+- [ ] Napoleon, Turnstile, Resend, and Actions technical logs are
   inspected under a short owner-approved retention policy.
 - [ ] Deployed staging CSP is observed and separately approved before leaving
   report-only mode.
@@ -102,4 +104,5 @@ Repository-owned final validation is complete. The unchecked items above are
 remote, provider, deployed-runtime, physical-review, or owner-decision gates,
 so the current state is `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`.
 Production is not authorized, and no checked repository item broadens
-permission to change Napoleon, Cloudflare, DNS, or `app.wflyer.com.br`.
+permission to change Napoleon, Registro.br, Cloudflare Turnstile, DNS, or
+`app.wflyer.com.br`.

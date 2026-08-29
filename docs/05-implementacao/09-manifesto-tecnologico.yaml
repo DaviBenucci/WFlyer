@@ -1,6 +1,6 @@
 project: wflyer-site
 status: normative
-updated_at: 2026-08-10
+updated_at: 2026-08-29
 architecture:
   classification: static-first
   pure_static_export: false
@@ -12,13 +12,13 @@ architecture:
 runtime:
   node: "24 LTS"
   package_manager: pnpm
-  package_manager_version: "11.18.0"
+  package_manager_version: "11.24.0"
   corepack: required
   output: standalone
   entry_point: .next/standalone/server.js
   start_command: node .next/standalone/server.js
 framework:
-  next: {line: "16.2", minimum_security_patch: "16.2.11", output: standalone}
+  next: {line: "16.3", minimum_security_patch: "16.3.3", output: standalone}
   react: {line: "19.2"}
   typescript: {strict: true}
 styling:
@@ -54,7 +54,7 @@ contact:
   validation: zod
   email: resend
   captcha: cloudflare-turnstile
-  rate_limit: cloudflare-waf
+  rate_limit: conditional-napoleon-capability-not-yet-evidenced
   persistence: none
   public_email: davi.benucci@wflyer.com.br
   recipient_email: davi.benucci@wflyer.com.br
@@ -81,7 +81,11 @@ deployment:
   docker_required: false
   vps_required: false
   easypanel: prohibited
-  edge: cloudflare
+  registrar: registro-br
+  authoritative_dns: napoleon
+  hosting: napoleon
+  cloudflare_dns_proxy: inactive
+  cloudflare_turnstile: independent-active-integration
   github_environment_values:
     store: github-environment-secrets
     transfer_to_napoleon: false
@@ -95,9 +99,9 @@ deployment:
   staging_hostname_owner: Davi Benucci
   existing_application_hostname: app.wflyer.com.br
   existing_application_mutation: prohibited
-  nameserver_change: prohibited
+  nameserver_change: explicit-owner-approval-required
   destructive_dns_change: prohibited
-  ssl_target: full-strict-after-validation
+  ssl_target: napoleon-https-after-validation
   immutable_release_by_commit: required
   rollback_test: required
 homologation:

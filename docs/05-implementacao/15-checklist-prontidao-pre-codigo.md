@@ -8,6 +8,11 @@ Napoleon Node.js build/runtime configuration, and external evidence are defined
 in `16-github-actions-secrets-napoleon.md`,
 `22-napoleon-node-runtime-runbook.md`, and the Phase 09 QA reports.
 
+The checked Cloudflare/DNS items below describe this historical pre-code
+checkpoint. ADR-040 supersedes that topology: Registro.br now delegates to
+Napoleon authoritative DNS, Napoleon hosts the Node.js application, and only
+Cloudflare Turnstile remains as an independent integration.
+
 ## A. Design e referências
 
 - [x] identidade oficial aprovada;

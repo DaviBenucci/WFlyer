@@ -87,15 +87,17 @@ current application. Record that limitation and stop; do not upload the
 standalone directory as static files. The field-by-field provider inventory is
 maintained in `22-napoleon-node-runtime-runbook.md`.
 
-### Cloudflare and providers
+### Napoleon DNS/hosting and independent providers
 
-- a read-only inventory confirms apex, `www`, mail, application, certificates,
-  proxy, cache, WAF, and existing rate rules;
+- a read-only Napoleon inventory confirms authoritative nameservers, apex,
+  `www`, mail, application, certificates, redirects, cache, and available
+  security controls;
 - the exact `https://<approved-staging-host>` origin is owner-approved before
   any record is created;
 - staging and production use appropriate Turnstile site/secret keys;
 - the Resend sender domain is verified and staging delivery is safe;
-- an owner-approved `/api/contact` edge rate rule is defined;
+- any `/api/contact` WAF/rate control is claimed only if Napoleon exposes it
+  and an owner-approved rule is evidenced;
 - legal owner data and the four documents receive professional review.
 
 ### Separate application availability baseline
@@ -104,7 +106,7 @@ The public read-only observation on 2026-08-03 found that
 `app.wflyer.com.br` did not resolve in DNS from the observation environment.
 This is an independent baseline blocker: it is not evidence that the
 institutional repository caused the failure, and it does not authorize a DNS,
-Cloudflare, or application change. The application owner must investigate and
+Napoleon, Registro.br, or application change. The application owner must investigate and
 record DNS resolution, HTTPS, and application health independently before the
 institutional release can claim preservation of the separate application.
 
@@ -148,7 +150,7 @@ actual panel that Napoleon can:
 
 1. select a Node.js application rather than a static site;
 2. pull the GitHub repository and exact staging branch;
-3. use Node.js 24 and pnpm 11.18.0 through Corepack;
+3. use Node.js 24 and pnpm 11.24.0 through Corepack;
 4. run the governed build from the repository root;
 5. start `node .next/standalone/server.js` as a persistent process;
 6. inject or configure the actual `PORT` contract and, only when required,
@@ -204,7 +206,8 @@ Then verify manually:
 - keyboard-only and physical screen-reader journeys with no focus trap or
   unannounced status;
 - HTTPS certificate, no development stack, no sensitive logs, no contact cache,
-  CSP reports, WAF/rate behavior, and aggregate provider failure visibility;
+  CSP reports, evidenced Napoleon WAF/rate behavior (if available), and
+  aggregate provider failure visibility;
 - `X-Robots-Tag` contains `noindex`, Home HTML contains robots noindex/nofollow,
   and `robots.txt` disallows `/` without advertising a sitemap;
 - `app.wflyer.com.br` DNS, HTTPS, and application health are checked
@@ -215,16 +218,18 @@ Then verify manually:
 Do not update visual baselines from staging unless a reviewed product change,
 not environment variance, justifies it.
 
-## 5. CSP, HSTS, cache, and edge gates
+## 5. CSP, HSTS, cache, and hosting gates
 
 - Observe report-only CSP violations through a privacy-safe staging channel;
   remove unnecessary sources and separately approve enforcement.
 - Validate HTTPS for every hostname covered by any proposed HSTS policy,
   including the separate application, before enabling HSTS. Do not infer
   `includeSubDomains` safety.
-- Keep `/api/contact` uncached at the application and edge.
-- Prefer URL-scoped cache invalidation for changed institutional HTML/static
-  assets. Never purge or mutate `app.wflyer.com.br` as part of this release.
+- Keep `/api/contact` uncached at the application and every observed Napoleon
+  hosting layer.
+- Use URL-scoped cache invalidation only if Napoleon exposes an evidenced
+  control. No purge API is assumed; never mutate `app.wflyer.com.br` as part of
+  this release.
 - Choose rate thresholds/actions from observed traffic and owner policy; no
   number is fabricated in the repository.
 
@@ -302,8 +307,8 @@ not mark the checklist item complete before that evidence exists.
 | GitHub Environments and values | Repository Settings → Environments | Dispatch `Prepare Napoleon release` for staging |
 | Napoleon build/start/runtime controls | Napoleon application settings | Record source, branch, SHA, commands, variable scopes, port, health, process user, restart, and rollback controls; then run section 4 |
 | Staging URL-to-source identity | Napoleon branch selection plus the release manifest/SHA | Record operator confirmation that `develop/site-institucional`, CI, manifest, selected application, and host identify the same SHA; do not infer identity from an undocumented public header |
-| Cloudflare inventory/staging host/rate rule | Cloudflare read-only inventory, then approved change | Repeat header, HTTPS, cache, WAF/rate, app/mail checks |
-| Independent `app.wflyer.com.br` DNS/availability baseline | Separate application/DNS owner and read-only Cloudflare inventory | Resolve the 2026-08-03 DNS failure cause, then record DNS, HTTPS, and application health before and after staging without mutating the application as part of this release |
+| Napoleon authoritative DNS/hosting inventory and staging host | Napoleon read-only inventory, then an independently approved change | Repeat DNS, header, HTTPS, cache, conditional WAF/rate, app, and mail checks |
+| Independent `app.wflyer.com.br` DNS/availability baseline | Separate application/DNS owner and read-only Napoleon DNS observation | Resolve the 2026-08-03 DNS failure cause, then record DNS, HTTPS, and application health before and after staging without mutating the application as part of this release |
 | Turnstile and Resend staging configuration | Provider dashboards and Napoleon runtime | Repeat Contact success/failure/delivery checks |
 | CSP and HSTS decisions | Staging reports plus owner/security approval | Rebuild and repeat security/Lighthouse matrix |
 | Legal and physical accessibility review | Davi Benucci and qualified reviewers | Update reports, then repeat homologation |

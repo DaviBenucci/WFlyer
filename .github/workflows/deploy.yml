@@ -119,7 +119,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
         with:
-          version: 11.18.0
+          version: 11.24.0
           run_install: false
 
       - name: Configure Node.js
@@ -138,7 +138,7 @@ jobs:
       - name: Validate dependencies, OpenSpec, source, types, unit, Storybook and build
         run: |
           pnpm validate:dependencies
-          pnpm dlx @fission-ai/openspec@1.7.0 validate --all --strict --no-interactive
+          pnpm dlx @fission-ai/openspec@1.11.0 validate --all --strict --no-interactive
           pnpm lint
           pnpm typecheck
           pnpm test
@@ -176,7 +176,7 @@ jobs:
     needs: validate-request
     runs-on: ubuntu-24.04
     container:
-      image: mcr.microsoft.com/playwright:v1.62.0-noble@sha256:baed2032d533817f3dbe6425de795788430ba345e819a1201337009ba17c9d07
+      image: mcr.microsoft.com/playwright:v1.62.1-noble@sha256:dcc5531e97840b9b5e794f2814476b21571c5124a3fca2267d73041f56e7580e
       options: --ipc=host
     timeout-minutes: 60
     env:
@@ -196,7 +196,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
         with:
-          version: 11.18.0
+          version: 11.24.0
           run_install: false
 
       - name: Configure Node.js
@@ -242,8 +242,8 @@ jobs:
           test "${ID}" = "ubuntu"
           test "${VERSION_ID}" = "24.04"
           test "${node_version%%.*}" = "v24"
-          test "${pnpm_version}" = "11.18.0"
-          test "${playwright_version}" = "Version 1.62.0"
+          test "${pnpm_version}" = "11.24.0"
+          test "${playwright_version}" = "Version 1.62.1"
           test "${browser_path}" = "/ms-playwright"
           test -d "${browser_path}"
           test -r "${browser_path}"
@@ -334,7 +334,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
         with:
-          version: 11.18.0
+          version: 11.24.0
           run_install: false
 
       - name: Configure Node.js

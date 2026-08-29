@@ -14,12 +14,16 @@
 
 ## Hospedagem
 
-- provedor de origem: Napoleon;
+- Registro.br delega o domínio ao DNS autoritativo Napoleon;
+- Napoleon fornece DNS autoritativo e hospedagem da origem Node.js;
 - modelo: aplicação Node.js vinculada ao repositório GitHub;
 - confirmed source integration: Napoleon pulls/builds the selected GitHub
   branch; staging uses `develop/site-institucional` and production remains
   gated on `main` plus explicit homologation;
-- Cloudflare continua responsável por DNS, proxy, HTTPS, WAF, rate limit e Turnstile;
+- Cloudflare DNS/proxy/WAF não integra o caminho ativo; Turnstile permanece um
+  serviço independente de antiabuso;
+- HTTPS, redirects, cache e eventuais controles WAF/rate limit dependem do que
+  for observado e aprovado na hospedagem Napoleon, sem presumir recursos ou API;
 - não utilizar VPS ou EasyPanel;
 - Docker pode existir apenas como ferramenta local opcional, nunca como dependência normativa de produção.
 
@@ -50,7 +54,7 @@ Não publicar métricas ou resultados não comprovados. O estado de cada projeto
 
 ## Analytics
 
-Não instalar analytics, pixels, session replay ou cookies de marketing na versão inicial. Logs técnicos mínimos da Cloudflare, Napoleon e aplicação não devem ser tratados como analytics de produto.
+Não instalar analytics, pixels, session replay ou cookies de marketing na versão inicial. Logs técnicos mínimos da Napoleon, da aplicação e dos provedores independentes Turnstile/Resend não devem ser tratados como analytics de produto.
 
 ## Homologação
 

@@ -23,6 +23,15 @@ Use this order when sources conflict:
 
 Current code is the migration baseline, not the target specification.
 
+For a continuation session, use this minimal operational bootstrap after
+applying the precedence above:
+
+1. `AGENTS.md`;
+2. `docs/canonical-v2/06-migration/CURRENT_HANDOFF.md`;
+3. the current Phase OpenSpec task range/spec.
+
+`CURRENT_HANDOFF.md` is derived operational context, not a new normative tier.
+
 ## 3. Phase discipline
 
 - Execute `WFLYER_IMPLEMENTATION_PLAN.md` strictly in order.
@@ -81,8 +90,9 @@ Preserve:
 - contact validation and anti-abuse controls;
 - server-only provider secrets;
 - no database/CMS/authentication for this website release;
-- Cloudflare as existing DNS/proxy/security boundary;
-- Napoleon as the standalone Next.js Node runtime;
+- Registro.br delegation to Napoleon authoritative DNS;
+- Napoleon as both the authoritative DNS provider and the standalone Next.js Node hosting boundary;
+- Cloudflare Turnstile as an independent anti-abuse integration; Cloudflare DNS, proxy, and WAF are not in the active request path;
 - GitHub as source repository;
 - exact-SHA staging/production evidence;
 - production and DNS changes only after explicit owner approval.
@@ -92,3 +102,26 @@ Preserve:
 A feature is not complete because the main flow works. Test invalid input, denied/unsupported interaction, integration failure, duplicate action, interruption, recovery, empty state, resize, touch, keyboard, reduced motion, hidden tab, and cleanup where applicable.
 
 Never claim staging, provider delivery, physical-device review, asset approval, homologation, or production validation without evidence.
+
+## graphify
+
+This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+
+When the user types `/graphify`, use the installed graphify skill or instructions before doing anything else.
+
+Rules:
+- For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
+- Dirty graphify-out/ files are expected after hooks or incremental updates; dirty graph files are not a reason to skip graphify. Only skip graphify if the task is about stale or incorrect graph output, or the user explicitly says not to use it.
+- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
+- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
+- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

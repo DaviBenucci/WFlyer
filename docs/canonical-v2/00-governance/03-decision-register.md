@@ -21,7 +21,7 @@
 | ADR-015 route chapter terminals | SUPERSEDED by ADR-025/037 |
 | ADR-016 interactive DOM tablet | SUPERSEDED by ADR-036 |
 | ADR-017 archetype inheritance | REFINED by ADR-039 |
-| ADR-018 Cloudflare/DNS already provisioned | RETAINED |
+| ADR-018 Cloudflare/DNS already provisioned | HISTORICAL; superseded by ADR-040 after the owner-completed DNS migration |
 | ADR-019 prior implementation freeze | SUPERSEDED by the v2 linear plan |
 | ADR-020 Napoleon/GitHub runtime | RETAINED |
 | ADR-021 secret ownership | RETAINED |
@@ -151,3 +151,19 @@ Motion failure degrades to a functional vertical document. Reduced motion uses v
 **Status:** APPROVED
 
 Visual assets are separated into source master, approved asset, and runtime representation. Manifest/status/checksum/semantic IDs are mandatory. Codex may compose but not redraw approved geometry. Score segments have entry/exit contracts and shared semantic IDs across layouts.
+
+## ADR-040 — Napoleon authoritative DNS and hosting topology
+
+**Status:** APPROVED — 2026-08-29
+
+Registro.br controls domain delegation. Napoleon is the authoritative DNS
+provider and the Next.js standalone Node hosting provider for `wflyer.com.br`.
+Cloudflare DNS, proxy, WAF, redirect rules, cache purge, and DNS API operations
+are not part of the active request path. Cloudflare Turnstile remains an
+independent anti-abuse integration and retains its browser, CSP, and server-side
+verification contracts.
+
+Operational documentation must inventory actual Napoleon DNS and hosting
+controls without inventing provider APIs or capabilities. DNS, hosting, and
+production mutations still require explicit owner approval, exact-SHA evidence
+remains mandatory, and `app.wflyer.com.br` remains a separate application.

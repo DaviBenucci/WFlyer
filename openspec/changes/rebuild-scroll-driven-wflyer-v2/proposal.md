@@ -34,4 +34,4 @@ The current website is a completed implementation of a superseded route-per-chap
 
 ## Impact
 
-Major impact to Home, header/navigation, story lifecycle, music presentation, tablet/demo, content terminology, detailed-route contracts, tests, and motion. Contact security, deployment, legal routes, theme, Cloudflare/Napoleon, and the separate application remain protected.
+Major impact to Home, header/navigation, story lifecycle, music presentation, tablet/demo, content terminology, detailed-route contracts, tests, and motion. Contact security, deployment, legal routes, theme, the Registro.br-to-Napoleon authoritative DNS/hosting topology, independent Cloudflare Turnstile, and the separate application remain protected.

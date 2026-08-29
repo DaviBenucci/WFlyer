@@ -6,7 +6,7 @@
 |---|---|
 | Runtime | Node.js 24 LTS |
 | Gerenciador | pnpm fixado em `packageManager` |
-| Framework | Next.js 16.2 App Router |
+| Framework | Next.js 16.3 App Router |
 | UI | React 19.2 |
 | Linguagem | TypeScript estrito |
 | Estilização | Tailwind CSS 4 + CSS Custom Properties |
@@ -17,11 +17,11 @@
 | Validação | Zod |
 | E-mail | Resend |
 | Antispam | Cloudflare Turnstile |
-| Rate limit | Cloudflare WAF Rate Limiting |
+| Rate limit | Controle de aplicação/provedor somente quando suportado, configurado e evidenciado |
 | Testes | Vitest, Testing Library, Storybook, Playwright, axe-core e Lighthouse CI |
 | Repositório/CI | GitHub + GitHub Actions |
-| Hospedagem | Napoleon, aplicação Node.js conectada ao GitHub |
-| Borda | Cloudflare DNS/proxy/HTTPS/WAF |
+| Hospedagem | Napoleon, DNS autoritativo e aplicação Node.js conectada ao GitHub |
+| Entrega | Registro.br delega ao DNS autoritativo Napoleon; HTTPS/redirect/cache/WAF dependem de controles Napoleon observados |
 | Build | Next.js `output: standalone`, sem Docker obrigatório |
 
 ## Tecnologias e serviços proibidos na primeira versão

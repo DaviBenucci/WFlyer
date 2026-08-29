@@ -58,7 +58,8 @@ WFLYER_DEPLOYMENT_ENVIRONMENT=preview pnpm smoke:indexing
 ```
 
 Local automation does not replace physical device/screen-reader review,
-provider delivery, Cloudflare/Napoleon validation, rollback rehearsal, or Davi
+provider delivery, Napoleon DNS/hosting validation, independent Turnstile
+validation, rollback rehearsal, or Davi
 Benucci's homologation.
 
 Once an external candidate exists, its production-safe automated gate is

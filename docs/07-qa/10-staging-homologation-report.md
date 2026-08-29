@@ -32,7 +32,7 @@ contract is `../05-implementacao/22-napoleon-node-runtime-runbook.md`.
 | Candidate checksum | `PENDING — verified 64-character SHA-256 not recorded in this report` |
 | Napoleon application name | `PENDING — Napoleon panel access required` |
 | Napoleon runtime/build/start contract | `PENDING — actual panel fields not inspected; expected architecture is a Node.js process running .next/standalone/server.js, never static hosting` |
-| Cloudflare record changed | `No change performed or evidenced by this repository-owned preparation; staging-only inventory/change remains pending` |
+| Napoleon DNS record changed | `No change performed or evidenced by this repository-owned preparation; staging-only inventory/change remains pending` |
 | `app.wflyer.com.br` before/after result | `PENDING — independent DNS, HTTPS, and application checks not recorded` |
 | Automated test results | `PENDING — PLAYWRIGHT_BASE_URL=<approved-staging-origin> pnpm test:staging cannot run before deployment` |
 | Manual device/browser results | `NOT PERFORMED` |
@@ -90,7 +90,7 @@ presence only.
 | Resolved selected SHA | `PENDING` |
 | Automatic/manual deployment behavior | `PENDING` |
 | Node version | `PENDING — expected 24.x` |
-| Package manager/Corepack behavior | `PENDING — expected pnpm 11.18.0 through Corepack` |
+| Package manager/Corepack behavior | `PENDING — expected pnpm 11.24.0 through Corepack` |
 | Working directory | `PENDING — expected repository root` |
 | Build command | `PENDING` |
 | Runtime entry/start command | `PENDING — must execute node .next/standalone/server.js` |
@@ -121,24 +121,24 @@ Required names whose values must remain outside this report:
 | `HOSTNAME` | runtime only if required by Napoleon | `PENDING` |
 | `PORT` | actual Napoleon port contract | `PENDING` |
 
-## Cloudflare, DNS, and separate application evidence
+## Napoleon DNS/hosting and separate application evidence
 
-No Cloudflare mutation is authorized until the exact Napoleon target and an
+No Napoleon DNS/hosting mutation is authorized until the exact target and an
 owner-approved staging hostname are known.
 
 | Evidence | Before | Approved change | After |
 |---|---|---|---|
-| Zone and nameservers | `PENDING` | Staging-only; no nameserver change | `PENDING` |
+| Registro.br delegation and Napoleon authoritative nameservers | `PENDING` | Staging-only; no delegation change | `PENDING` |
 | Apex record | `PENDING` | No change | `PENDING` |
 | `www` record | `PENDING` | No change | `PENDING` |
-| Staging record name/type/target/proxy/TTL | `PENDING` | `PENDING — owner approval required` | `PENDING` |
+| Staging record name/type/target/TTL | `PENDING` | `PENDING — owner approval required` | `PENDING` |
 | `app.wflyer.com.br` record | `PENDING` | No change | `PENDING` |
 | MX/SPF/DKIM/DMARC | `PENDING` | No change | `PENDING` |
-| SSL/TLS mode and certificate coverage | `PENDING` | No unrelated change | `PENDING` |
+| Napoleon HTTPS/certificate coverage | `PENDING` | No unrelated change | `PENDING` |
 | HSTS | `PENDING` | No enablement/broadening in this task | `PENDING` |
 | CSP | Repository policy is report-only | Remain report-only pending deployed review | `PENDING` |
 | `/api/contact` cache behavior | `PENDING` | Must remain uncached | `PENDING` |
-| `/api/contact` WAF/rate rule | `PENDING` | Owner-approved staging rule; no fabricated threshold | `PENDING` |
+| Napoleon `/api/contact` WAF/rate capability | `PENDING` | Owner-approved staging rule if available; no fabricated threshold | `PENDING` |
 | `app.wflyer.com.br` DNS result | `PENDING` | Observe only | `PENDING` |
 | `app.wflyer.com.br` HTTPS/application result | `PENDING` | Observe only | `PENDING` |
 
@@ -187,9 +187,9 @@ PLAYWRIGHT_BASE_URL="https://<owner-approved-staging-host>" pnpm test:staging
 | Check | Result | Evidence |
 |---|---|---|
 | No secret, token, complete visitor email, or message in logs | `NOT PERFORMED` | `PENDING` |
-| Contact endpoint not cached at application or edge | `NOT PERFORMED` | `PENDING` |
-| Cloudflare staging rate rule active and safely tested | `NOT PERFORMED` | `PENDING` |
-| HTTPS/proxy behavior correct | `NOT PERFORMED` | `PENDING` |
+| Contact endpoint not cached at application or Napoleon hosting layer | `NOT PERFORMED` | `PENDING` |
+| Napoleon staging WAF/rate capability recorded and safely tested if available | `NOT PERFORMED` | `PENDING` |
+| HTTPS/redirect behavior correct | `NOT PERFORMED` | `PENDING` |
 | Napoleon process isolated/non-administrative where supported | `NOT PERFORMED` | `PENDING` |
 | CSP report-only observations reviewed | `NOT PERFORMED` | `PENDING` |
 | HSTS unchanged pending complete host validation | `NOT PERFORMED` | `PENDING` |
@@ -232,8 +232,8 @@ PLAYWRIGHT_BASE_URL="https://<owner-approved-staging-host>" pnpm test:staging
    correct Napoleon scopes without entering this report.
 7. The owner must approve a separate staging hostname after the exact Napoleon
    target is known.
-8. Cloudflare read-only inventory and the staging-only DNS/rate-rule change
-   require zone ownership and approval.
+8. Napoleon authoritative DNS/hosting inventory and any staging-only
+   DNS/rate-rule change require provider access and approval.
 9. Independent `app.wflyer.com.br` DNS, HTTPS, and application baselines must be
    recorded before and after the staging-only change.
 10. Deployed automated, manual browser/device, physical screen-reader, Contact,

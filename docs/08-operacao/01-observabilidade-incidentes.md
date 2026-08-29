@@ -16,21 +16,23 @@ profiling script is authorized.
 - aggregate latency/status classes for `/api/contact`;
 - aggregate Turnstile verification failures;
 - aggregate Resend acceptance/failure counts;
-- Cloudflare WAF/rate-limit events without payloads;
+- Napoleon WAF/rate-limit events without payloads, only if those controls are
+  actually available and enabled;
 - certificate, domain, and provider credential expiry;
 - Core Web Vitals or synthetic Lighthouse results without visitor identity;
 - report-only CSP violations after removing URLs or fields that contain
   personal data.
 
-The exact Napoleon and Cloudflare signal sources remain an external inventory
-gate. Do not add a client error/analytics SDK merely to obtain these signals.
+The exact Napoleon, Turnstile, and Resend signal sources remain an external
+inventory gate. Do not add a client error/analytics SDK merely to obtain these
+signals.
 
 ## Alert conditions to configure externally
 
 - sustained institutional-site unavailability or restart loop;
 - sustained 5xx increase for `/api/contact`;
 - continuous Turnstile or Resend failure;
-- abnormal WAF/rate blocks after a baseline exists;
+- abnormal Napoleon WAF/rate blocks after an evidenced control and baseline exist;
 - certificate, domain, or provider credential approaching expiry;
 - material LCP, INP, CLS, or accessibility regression in synthetic checks.
 
@@ -51,7 +53,7 @@ are not fabricated in repository code.
 6. Run route, asset, HTTPS, header, indexing, cache, contact-fallback, app, and
    mail smoke checks.
 7. Record sanitized evidence, cause, recovery revision, duration, and follow-up.
-8. Revisit WAF/rate, CSP, HSTS, retention, or provider controls when relevant.
+8. Revisit evidenced Napoleon WAF/rate, CSP, HSTS, retention, or provider controls when relevant.
 
 ## Contact-specific fallback
 
@@ -62,10 +64,10 @@ automatically retry delivery in a way that can duplicate a message.
 
 ## Cache guidance
 
-`/api/contact` is never cached. For static content incidents, prefer scoped URL
-invalidation after the restored institutional revision is live. A whole-zone
-purge requires explicit operational approval and must not be used to hide a
-failed deployment or disturb the separate application.
+`/api/contact` is never cached. For static content incidents, use only an
+observed Napoleon cache control and scoped invalidation when the provider
+supports it. No cache-purge API or whole-zone control is presumed, and cache
+changes must not hide a failed deployment or disturb the separate application.
 
 The complete staging, rollback, and homologation runbook is
 `docs/05-implementacao/21-staging-release-operations.md`.

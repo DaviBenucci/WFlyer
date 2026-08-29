@@ -1,13 +1,14 @@
 # Controles de segurança
 
-## Borda
+## DNS e hospedagem ativos
 
-- Cloudflare proxy;
-- HTTPS;
-- WAF;
-- rate limiting específico;
-- proteção de bots disponível no plano;
-- cache somente onde seguro.
+- Registro.br delega ao DNS autoritativo Napoleon;
+- Napoleon hospeda o processo Node.js standalone;
+- HTTPS, redirects, cache e controles de rede são aceitos somente após
+  inventário e evidência dos recursos Napoleon;
+- WAF, rate limit e proteção de bots não são presumidos como ativos;
+- Cloudflare DNS/proxy/WAF não faz parte do caminho ativo;
+- Cloudflare Turnstile permanece independente.
 
 ## Aplicação
 

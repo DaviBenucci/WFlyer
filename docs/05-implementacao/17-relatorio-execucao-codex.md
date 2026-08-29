@@ -1,5 +1,11 @@
 # Accumulated Codex execution report
 
+> **Current continuation note — 2026-08-29:** this accumulated report preserves
+> dated historical checkpoints and superseded phase terminology. Fresh
+> sessions use `AGENTS.md` followed by
+> `docs/canonical-v2/06-migration/CURRENT_HANDOFF.md`; the latter records the
+> accepted canonical Phase-8 checkpoint and current maintenance state.
+
 - **Project:** `wflyer.com.br` institutional site
 - **Execution started:** 2026-07-29
 - **Current implementation status:** `CODE_COMPLETE_EXTERNAL_CONFIGURATION_PENDING`

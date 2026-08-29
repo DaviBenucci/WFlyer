@@ -6,7 +6,8 @@
 **Phase 08 refresh:** 2026-07-31
 **Phase 09 closure refresh:** 2026-08-03
 **Phase 09 Node-only closure refresh:** 2026-08-10
-**Graphify:** `0.9.31`
+**Post-Phase-8 maintenance refresh:** 2026-08-29
+**Graphify:** `0.9.51`
 **Mode:** normal, undirected graph
 **Analyzed root:** W_Flyer institutional-site repository
 
@@ -41,7 +42,7 @@ The corpus excludes:
 - non-canonical rasters, audio, video, and fonts.
 
 Files detected as sensitive are omitted by Graphify and require separate
-review; secrets must never be forced into the graph. Graphify 0.9.31
+review; secrets must never be forced into the graph. Graphify 0.9.51
 deliberately reinjects only `graphify-out/memory/*.md` into its feedback loop
 despite the broader exclusion. This local exception is validated separately
 and does not admit cache, JSON, HTML, raw queries, or other outputs as sources.
@@ -328,9 +329,9 @@ Version-controlled outputs are:
 memory, and raw query output remain local and ignored. The manifest is portable
 and root-relative, so the graph can be rebuilt through the documented workflow.
 
-Graphify 0.9.31 still exports an HTML reference to `vis-network` on a CDN. The
-repository script downloads only pinned version `9.1.6`, verifies its declared
-SRI, and embeds it into the HTML. The validated output has no remote script or
+The repository script normalizes any Graphify HTML reference to `vis-network`
+by downloading only pinned version `9.1.6`, verifying its declared SRI, and
+embedding it into the HTML. The validated output has no remote script or
 stylesheet dependency.
 
 ## 8. Limitations
@@ -345,10 +346,11 @@ stylesheet dependency.
   normative evidence.
 - Semantic subagent extraction does not expose token counts to the current
   orchestrator, so recorded cost remains zero/unknown rather than estimated.
-- The active installation is Graphify `0.9.31` through `uv`; an inactive
-  alternative `pipx` installation was not removed.
-- The global and repository-local Graphify skills are both aligned with
-  `0.9.31`; the active CLI is also `0.9.31`.
+- The active installation is Graphify `0.9.51` through `uv`; that owner was
+  preserved during the patch upgrade.
+- The repository Graphify skill and supported user skill locations are aligned
+  with `0.9.51`; the repository post-commit/post-checkout hooks and merge driver
+  are installed.
 - This map represents the local snapshot above. Later structural changes still
   require `scripts/graphify-repository.sh update`, validation, and checksums.
 - Phase 05–09 repository relationships now exist in current code and

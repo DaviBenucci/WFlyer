@@ -9,9 +9,13 @@
 ```text
 GitHub environment branch at a validated full commit SHA
   → Napoleon Node.js application
-  → Cloudflare DNS / proxy / HTTPS / WAF
+  → Napoleon hosting
+Registro.br → Napoleon authoritative DNS
   → wflyer.com.br
 ```
+
+Cloudflare DNS/proxy/WAF is not in this path. Cloudflare Turnstile remains an
+independent Contact anti-abuse provider.
 
 The release does not require a VPS, EasyPanel, Docker, a database, or any
 change to the separate `app.wflyer.com.br` application.
@@ -136,19 +140,21 @@ only static document-root hosting, FTP-style uploads, or a mandatory
 the handoff and record the provider limitation instead of changing the site to
 a static export.
 
-## Cloudflare precondition
+## Napoleon DNS and hosting precondition
 
 Before any change, inventory read-only:
 
-- zone and nameservers;
+- Registro.br delegation and Napoleon authoritative nameservers;
 - apex, `www`, planned staging, and `app.wflyer.com.br` records;
 - mail-related MX, TXT, SPF, DKIM, and DMARC records;
-- proxy, SSL/TLS mode, certificates, cache, WAF, and existing rate rules.
+- actual Napoleon HTTPS/certificate, redirect, cache, log, and security controls;
+- WAF/rate capability only if the Napoleon panel actually exposes it.
 
 Preserve every unrelated record. Do not enable HSTS until all covered hosts
 pass HTTPS validation. Do not enforce the current report-only CSP until staging
 reports have been observed and reviewed. `/api/contact` must remain uncached and
-requires an owner-approved edge rate rule.
+any hosting rate rule remains optional, owner-approved, and evidence-gated.
+Do not invent a Napoleon DNS, redirect, cache-purge, WAF, or deployment API.
 
 ## Napoleon handoff
 

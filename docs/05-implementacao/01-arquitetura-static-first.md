@@ -5,19 +5,17 @@
 O conteúdo é estático, mas o projeto não usa `output: "export"` na primeira versão porque o formulário depende de um Route Handler.
 
 ```text
-Cloudflare
-├── cache de páginas e assets
-├── WAF
-├── rate limit
-└── Turnstile
+Registro.br
+        ↓ delegação
+Napoleon authoritative DNS + hosting
         ↓
 Next.js standalone
 ├── páginas estáticas geradas no build
 ├── layout persistente da experiência
 ├── ilhas cliente de tema, menu, motion e tablet
 └── POST /api/contact (dinâmico)
-        ↓
-Resend
+        ├── Cloudflare Turnstile (antiabuso independente)
+        └── Resend
 ```
 
 ## Renderização
@@ -50,6 +48,8 @@ Sem JavaScript:
 - assets com hash e cache longo;
 - `/api/contact` com `Cache-Control: no-store`;
 - respostas de erro do contato não devem ser cacheadas;
+- nenhum proxy/cache externo é presumido; qualquer controle Napoleon deve ser
+  inventariado e preservar o contrato `no-store` do contato;
 - golden references nunca são copiadas para `public/` nem entregues pelo site.
 
 ## Tema
