@@ -11,6 +11,8 @@ import trebleClef from "@/assets/visuals/musical/wf-music-treble-clef.svg";
 import type { MusicGlyphKey } from "@/lib/music/glyphs/types";
 import type { GlyphRenderPrimitive } from "@/lib/music/renderer/types";
 
+import { serializeSvgNumber } from "./svg-number";
+
 type StaticAsset = string | { readonly src: string };
 
 const GLYPH_ASSETS = {
@@ -29,6 +31,7 @@ function assetSource(asset: StaticAsset): string {
 }
 
 export interface ScoreGlyphProps {
+  readonly numericPrecision?: number;
   readonly primitive: GlyphRenderPrimitive;
 }
 
@@ -36,7 +39,7 @@ export interface ScoreGlyphProps {
  * Places an immutable approved SVG asset. Only the containing transform changes;
  * the source path data is never copied, redrawn, or mutated here.
  */
-export function ScoreGlyph({ primitive }: ScoreGlyphProps) {
+export function ScoreGlyph({ numericPrecision, primitive }: ScoreGlyphProps) {
   const maskId = `score-glyph-${useId().replaceAll(":", "")}`;
   const {
     anchorInGlyph,
@@ -51,11 +54,13 @@ export function ScoreGlyph({ primitive }: ScoreGlyphProps) {
     width,
   } = primitive;
   const rotationDegrees = (rotationRadians * 180) / Math.PI;
+  const serializedHeight = serializeSvgNumber(height, numericPrecision);
+  const serializedWidth = serializeSvgNumber(width, numericPrecision);
   const transform = [
-    `translate(${anchorTarget.x} ${anchorTarget.y})`,
-    `rotate(${rotationDegrees})`,
+    `translate(${serializeSvgNumber(anchorTarget.x, numericPrecision)} ${serializeSvgNumber(anchorTarget.y, numericPrecision)})`,
+    `rotate(${serializeSvgNumber(rotationDegrees, numericPrecision)})`,
     `scale(${mirrorX ? -1 : 1} ${mirrorY ? -1 : 1})`,
-    `translate(${-anchorInGlyph.x * width} ${-anchorInGlyph.y * height})`,
+    `translate(${serializeSvgNumber(-anchorInGlyph.x * width, numericPrecision)} ${serializeSvgNumber(-anchorInGlyph.y * height, numericPrecision)})`,
   ].join(" ");
 
   return (
@@ -67,19 +72,19 @@ export function ScoreGlyph({ primitive }: ScoreGlyphProps) {
     >
       <defs>
         <mask
-          height={height}
+          height={serializedHeight}
           id={maskId}
           maskUnits="userSpaceOnUse"
           style={{ maskType: "alpha" }}
-          width={width}
+          width={serializedWidth}
           x={0}
           y={0}
         >
           <image
-            height={height}
+            height={serializedHeight}
             href={assetSource(GLYPH_ASSETS[assetKey])}
             preserveAspectRatio="none"
-            width={width}
+            width={serializedWidth}
             x={0}
             y={0}
           />
@@ -87,9 +92,9 @@ export function ScoreGlyph({ primitive }: ScoreGlyphProps) {
       </defs>
       <rect
         fill="currentColor"
-        height={height}
+        height={serializedHeight}
         mask={`url(#${maskId})`}
-        width={width}
+        width={serializedWidth}
         x={0}
         y={0}
       />

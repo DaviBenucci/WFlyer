@@ -2,7 +2,14 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { ScoreSvg } from "@/components/score/ScoreSvg";
+import {
+  serializeSvgNumber,
+  serializeSvgPoints,
+} from "@/components/score/svg-number";
 import type {
+  BeamRenderPrimitive,
+  LineRenderPrimitive,
+  PolylineRenderPrimitive,
   ScoreRenderModel,
   TupletRenderPrimitive,
 } from "@/lib/music/renderer/types";
@@ -177,6 +184,10 @@ describe("ScoreSvg presentation", () => {
     expect(svg).toHaveAttribute("focusable", "false");
     expect(svg).toHaveAttribute("role", "presentation");
     expect(svg?.querySelector('[data-score-layer="staff"]')).not.toBeNull();
+    expect(svg?.querySelector('[data-score-role="staff-line"]')).toHaveAttribute(
+      "points",
+      "0,20 100,20",
+    );
     expect(svg?.querySelector('[data-score-glyph="wf-music-notehead-filled"]')).not.toBeNull();
     expect(svg?.querySelector("path")).toBeNull();
   });
@@ -191,6 +202,177 @@ describe("ScoreSvg presentation", () => {
     );
 
     expect(screen.getByRole("img", { name: "Calibration score" })).toBeVisible();
+  });
+
+  it("optionally serializes glyph transforms at a deterministic precision", () => {
+    const roundedModel: ScoreRenderModel = {
+      ...model,
+      layers: model.layers.map((layer) => ({
+        ...layer,
+        primitives: layer.primitives.map((primitive) =>
+          primitive.kind === "glyph"
+            ? {
+                ...primitive,
+                anchorTarget: { x: 1 / 3, y: 2 / 3 },
+                height: 9.0004,
+                rotationRadians: 1 / 7,
+                width: 12.4849,
+              }
+            : primitive,
+        ),
+      })),
+    };
+    const { container } = render(
+      <ScoreSvg
+        model={roundedModel}
+        numericPrecision={3}
+        viewBox="0 0 100 40"
+      />,
+    );
+
+    expect(
+      container.querySelector('[data-score-role="notehead"]'),
+    ).toHaveAttribute(
+      "transform",
+      "translate(0.333 0.667) rotate(8.185) scale(1 1) translate(-6.242 -4.5)",
+    );
+    expect(
+      container.querySelector('[data-score-role="notehead"] mask'),
+    ).toHaveAttribute("width", "12.485");
+    expect(
+      container.querySelector('[data-score-role="notehead"] rect'),
+    ).toHaveAttribute("height", "9");
+  });
+
+  it("normalizes every computed Score SVG geometry primitive at the presentation boundary", () => {
+    const staffLine = {
+      ...model.staff.lines[0]!,
+      points: [
+        { x: 1 / 3, y: 22.344874609817275 },
+        { x: 100 - 1 / 3, y: -0.0000000001 },
+      ],
+      thickness: 2 / 3,
+    } satisfies PolylineRenderPrimitive;
+    const ledgerLine = {
+      end: { x: 4 / 3, y: 5 / 3 },
+      id: "ledger-fractional",
+      kind: "line",
+      layer: "structural",
+      role: "ledger",
+      start: { x: 1 / 3, y: -0.0000000001 },
+      thickness: 2 / 3,
+    } satisfies LineRenderPrimitive;
+    const beam = {
+      end: { x: 13 / 3, y: 14 / 3 },
+      id: "beam-fractional",
+      kind: "beam",
+      layer: "notes",
+      role: "beam-primary",
+      start: { x: 10 / 3, y: 11 / 3 },
+      thickness: 2 / 3,
+    } satisfies BeamRenderPrimitive;
+    const normalizedModel: ScoreRenderModel = {
+      ...model,
+      staff: { ...model.staff, lines: [staffLine] },
+      layers: [
+        { id: "staff", primitives: [staffLine] },
+        { id: "structural", primitives: [ledgerLine] },
+        {
+          id: "notes",
+          primitives: [model.layers[1]!.primitives[0]!, beam],
+        },
+      ],
+      primitives: [
+        staffLine,
+        ledgerLine,
+        model.layers[1]!.primitives[0]!,
+        beam,
+      ],
+    };
+    const { container } = render(
+      <ScoreSvg
+        model={normalizedModel}
+        numericPrecision={9}
+        viewBox="0 0 100 40"
+      />,
+    );
+
+    expect(serializeSvgNumber(-0.0000000001, 9)).toBe("0");
+    expect(
+      serializeSvgPoints([{ x: 1 / 3, y: 22.344874609817275 }], 9),
+    ).toBe("0.333333333,22.34487461");
+    expect(
+      container.querySelector('[data-score-role="staff-line"]'),
+    ).toHaveAttribute(
+      "points",
+      "0.333333333,22.34487461 99.666666667,0",
+    );
+    expect(
+      container.querySelector('[data-score-role="staff-line"]'),
+    ).toHaveAttribute("stroke-width", "0.666666667");
+    expect(container.querySelector('[data-score-role="ledger"]')).toHaveAttribute(
+      "x1",
+      "0.333333333",
+    );
+    expect(container.querySelector('[data-score-role="ledger"]')).toHaveAttribute(
+      "y1",
+      "0",
+    );
+    expect(
+      container.querySelector('[data-score-role="beam-primary"]'),
+    ).toHaveAttribute("x2", "4.333333333");
+  });
+
+  it("normalizes tuplet geometry and evidence attributes with the same serializer", () => {
+    const normalizedTuplet: TupletRenderPrimitive = {
+      ...tupletPrimitive,
+      bracket: [
+        {
+          ...tupletPrimitive.bracket[0]!,
+          start: { x: 1 / 3, y: -0.0001 },
+        },
+      ],
+      centralGap: 1 / 3,
+      labelPosition: { x: 1 / 3, y: 2 / 3 },
+      numeralRotationRadians: 1 / 7,
+      numeralSideGap: 2 / 3,
+      numeralSize: 7 / 3,
+      numeralWidth: 8 / 3,
+      thickness: 2 / 3,
+    };
+    const normalizedTupletModel: ScoreRenderModel = {
+      ...model,
+      layers: [
+        ...model.layers,
+        { id: "annotations", primitives: [normalizedTuplet] },
+      ],
+      primitives: [...model.primitives, normalizedTuplet],
+    };
+    const { container } = render(
+      <ScoreSvg
+        model={normalizedTupletModel}
+        numericPrecision={3}
+        viewBox="0 0 100 40"
+      />,
+    );
+    const group = container.querySelector('[data-score-role="tuplet"]');
+    const bracket = group?.querySelector("[data-tuplet-bracket-segment]");
+    const numeral = group?.querySelector('[data-tuplet-numeral="3"]');
+
+    expect(group).toHaveAttribute("data-tuplet-central-gap", "0.333");
+    expect(group).toHaveAttribute(
+      "data-tuplet-numeral-rotation-radians",
+      "0.143",
+    );
+    expect(bracket).toHaveAttribute("stroke-width", "0.667");
+    expect(bracket).toHaveAttribute("x1", "0.333");
+    expect(bracket).toHaveAttribute("y1", "0");
+    expect(numeral).toHaveAttribute("font-size", "2.333");
+    expect(numeral).toHaveAttribute("textLength", "2.667");
+    expect(numeral).toHaveAttribute(
+      "transform",
+      "rotate(8.185 0.333 0.667)",
+    );
   });
 
   it("exposes semantic motif, slot, group, pitch, and stem debug labels", () => {

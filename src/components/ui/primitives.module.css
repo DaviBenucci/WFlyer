@@ -63,7 +63,7 @@
 }
 
 .secondary {
-  border-color: var(--wf-border, #ddc9b5);
+  border-color: var(--wf-border-strong, var(--wf-border, #ddc9b5));
   background: var(--wf-surface, #fffaf3);
   color: var(--wf-text, #24180f);
 }
@@ -216,7 +216,7 @@
 }
 
 .eyebrow {
-  color: var(--wf-accent, #9a6237);
+  color: var(--wf-accent-text, var(--wf-accent, #9a6237));
   font-family: var(
     --wf-font-sans,
     ui-sans-serif,

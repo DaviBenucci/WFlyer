@@ -27,7 +27,10 @@
   align-items: center;
   padding-block: clamp(4.5rem, 10vw, 8.5rem);
   border-block-end: 1px solid var(--wf-border);
-  scroll-margin-block-start: var(--wf-space-6);
+  scroll-margin-block-start: calc(
+    var(--wf-story-header-block-size, var(--wf-header-height-desktop)) +
+      var(--wf-space-6)
+  );
 }
 
 .chapter[data-story-branch="professional"] {
@@ -118,7 +121,7 @@
 
 .itemLabel,
 .itemMeta {
-  color: var(--wf-accent);
+  color: var(--wf-accent-text);
   font-size: var(--wf-font-size-label);
   font-weight: var(--wf-font-weight-bold);
   letter-spacing: var(--wf-tracking-label);
@@ -311,6 +314,42 @@
 
   .footerNavigation {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 47.999rem) {
+  .headerInner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: var(--wf-space-2);
+    padding-block: var(--wf-space-2);
+  }
+
+  .navigationList {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 var(--wf-space-1);
+  }
+
+  .navigationLink {
+    inline-size: 100%;
+    justify-content: center;
+    padding-inline: 0.125rem;
+    font-size: var(--wf-font-size-label);
+    line-height: 1.15;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .brand {
+    font-size: 1.35rem;
+  }
+
+  .chapter {
+    scroll-margin-block-start: calc(
+      var(--wf-story-header-block-size, var(--wf-header-height-mobile)) +
+        var(--wf-space-4)
+    );
   }
 }
 

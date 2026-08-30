@@ -105,7 +105,7 @@
 
 .positionDivider {
   margin-inline: 0.35em;
-  color: var(--wf-accent, #9a6237);
+  color: var(--wf-accent-text, var(--wf-accent, #9a6237));
 }
 
 .status {
@@ -202,7 +202,7 @@
   gap: var(--wf-space-3, 0.75rem);
   padding-block-start: var(--wf-space-4, 1rem);
   border-block-start: 1px solid var(--wf-border, #ddc9b5);
-  color: var(--wf-primary, #4d280d);
+  color: var(--wf-primary-text, var(--wf-primary, #4d280d));
   font-size: var(--wf-font-size-body-sm, 0.875rem);
   font-weight: var(--wf-font-weight-bold, 700);
 }
@@ -269,6 +269,75 @@
   .title {
     max-inline-size: none;
     font-size: clamp(2rem, 9vw, 3.25rem);
+  }
+}
+
+@media (max-width: 47.999rem) {
+  .viewport {
+    padding: var(--wf-space-4, 1rem) var(--wf-space-1, 0.25rem)
+      var(--wf-space-6, 1.5rem);
+  }
+
+  .fanItem {
+    inline-size: calc(100% - clamp(0.375rem, 2vw, 0.75rem));
+  }
+
+  .fanItem + .fanItem {
+    margin-block-start: var(--wf-space-3, 0.75rem);
+  }
+
+  .fanItem:focus-within {
+    transform: none;
+  }
+
+  .cardLink {
+    gap: var(--wf-space-3, 0.75rem);
+    padding: clamp(0.875rem, 4vw, 1.1rem);
+  }
+
+  .cardHeader {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--wf-space-2, 0.5rem);
+  }
+
+  .status {
+    max-inline-size: 8ch;
+    font-size: var(--wf-font-size-label, 0.75rem);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .status > span {
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+  }
+
+  .cardBody {
+    gap: var(--wf-space-3, 0.75rem);
+  }
+
+  .title {
+    font-size: clamp(1.75rem, 7.5vw, 2.35rem);
+    line-height: 1;
+  }
+
+  .summary {
+    line-height: 1.5;
+  }
+
+  .details {
+    gap: var(--wf-space-3, 0.75rem);
+    padding-block-start: 0;
+  }
+
+  .details dd {
+    line-height: 1.45;
+  }
+
+  .callToAction {
+    gap: var(--wf-space-2, 0.5rem);
+    padding-block-start: var(--wf-space-3, 0.75rem);
   }
 }
 

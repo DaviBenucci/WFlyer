@@ -1,0 +1,373 @@
+.root {
+  --origin-bg: #f4efe5;
+  --origin-panel: rgb(255 252 246 / 88%);
+  --origin-border: rgb(35 31 27 / 18%);
+  --origin-border-strong: var(--origin-border);
+  --origin-muted: #625d55;
+  --origin-score: #171513;
+  --origin-accent: #9f4b36;
+  --origin-connector: #295f73;
+  background:
+    radial-gradient(circle at 50% 0%, rgb(201 154 107 / 22%), transparent 34rem),
+    var(--origin-bg);
+  color: var(--origin-score);
+  min-height: 100svh;
+  overflow-x: clip;
+  padding: clamp(1rem, 2.8vw, 2.5rem);
+}
+
+:global([data-theme="dark"]) .root {
+  --origin-bg: var(--wf-bg);
+  --origin-panel: var(--wf-surface);
+  --origin-border: var(--wf-border);
+  --origin-border-strong: var(--wf-border-strong);
+  --origin-muted: var(--wf-text-muted);
+  --origin-score: var(--wf-text);
+  --origin-accent: #e79271;
+  --origin-connector: #7fc5d7;
+  background:
+    radial-gradient(circle at 50% 0%, rgb(159 75 54 / 20%), transparent 34rem),
+    var(--origin-bg);
+}
+
+.header,
+.variantNav,
+.stageSection,
+.diagnostics,
+.footer {
+  margin-inline: auto;
+  max-width: 90rem;
+}
+
+.header {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.header h1,
+.header p,
+.stageHeading h2,
+.diagnosticIntro h2,
+.footer p {
+  margin: 0;
+}
+
+.header h1 {
+  font-size: clamp(1.8rem, 4.5vw, 4.75rem);
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  max-width: 18ch;
+}
+
+.header > p:last-child {
+  color: var(--origin-muted);
+  line-height: 1.65;
+  max-width: 76ch;
+}
+
+.eyebrow {
+  color: var(--origin-muted);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.status {
+  color: var(--origin-accent);
+  font-size: clamp(0.82rem, 1.5vw, 1rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.variantNav {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  margin-top: 1.5rem;
+}
+
+.variantNav a {
+  align-items: center;
+  border: 1px solid var(--origin-border-strong);
+  border-radius: 0.75rem;
+  color: inherit;
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 720;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 0.55rem 0.7rem;
+  text-decoration: none;
+}
+
+.variantNav a[aria-current="page"] {
+  background: var(--origin-score);
+  color: var(--origin-bg);
+}
+
+.variantNav span {
+  color: var(--origin-muted);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.variantNav a[aria-current="page"] span {
+  color: inherit;
+}
+
+.variantNav a:focus-visible {
+  outline: 3px solid var(--origin-accent);
+  outline-offset: 3px;
+}
+
+.stageSection,
+.diagnostics {
+  background: var(--origin-panel);
+  border: 1px solid var(--origin-border);
+  border-radius: clamp(0.9rem, 2vw, 1.5rem);
+  margin-top: 1.25rem;
+  padding: clamp(0.75rem, 2.4vw, 1.5rem);
+}
+
+.stageHeading,
+.diagnosticIntro {
+  align-items: end;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.stageHeading h2,
+.diagnosticIntro h2 {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+.stageMetrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  margin: 0;
+}
+
+.stageMetrics div {
+  display: grid;
+  gap: 0.12rem;
+}
+
+.stageMetrics dt,
+.provenance dt {
+  color: var(--origin-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stageMetrics dd,
+.provenance dd {
+  margin: 0;
+}
+
+.stage {
+  aspect-ratio: var(--origin-review-aspect);
+  border: 1px solid var(--origin-border);
+  border-radius: 0.8rem;
+  isolation: isolate;
+  margin: 1rem auto 0;
+  max-width: var(--origin-review-max-width);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.originScore {
+  inset: 0;
+  position: absolute;
+}
+
+.zoneOverlay {
+  height: 100%;
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.frameBoundary {
+  fill: none;
+  stroke: var(--origin-border);
+  stroke-width: 0.35;
+}
+
+.zone {
+  fill: none;
+  opacity: 0.82;
+  stroke-linecap: round;
+  stroke-width: 0.55;
+  vector-effect: non-scaling-stroke;
+}
+
+.notationZone {
+  stroke: var(--origin-accent);
+  stroke-dasharray: 3 2;
+}
+
+.connectorZone {
+  stroke: var(--origin-connector);
+  stroke-dasharray: 1 3;
+}
+
+.originMarker {
+  fill: var(--origin-accent);
+  stroke: var(--origin-panel);
+  stroke-width: 0.35;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.74rem;
+  gap: 0.55rem 1rem;
+  margin-top: 0.75rem;
+}
+
+.legend span {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.4rem;
+}
+
+.legend i {
+  border-radius: 999px;
+  display: inline-block;
+  height: 0.25rem;
+  width: 1.5rem;
+}
+
+.notationKey,
+.originKey {
+  background: var(--origin-accent);
+}
+
+.connectorKey {
+  background: var(--origin-connector);
+}
+
+.originKey {
+  width: 0.45rem !important;
+}
+
+.diagnostics {
+  display: grid;
+  gap: 1rem;
+}
+
+.diagnosticIntro > p {
+  color: var(--origin-muted);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 52ch;
+}
+
+.provenance {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+}
+
+.provenance div {
+  border-top: 1px solid var(--origin-border);
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+  padding-top: 0.65rem;
+}
+
+.provenance dd {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.tableScroller {
+  overflow-x: auto;
+}
+
+.tableScroller:focus-visible {
+  border-radius: 0.35rem;
+  outline: 3px solid var(--origin-accent);
+  outline-offset: 3px;
+}
+
+.tableScroller table {
+  border-collapse: collapse;
+  min-width: 48rem;
+  width: 100%;
+}
+
+.tableScroller caption {
+  font-weight: 750;
+  padding-block: 0.5rem;
+  text-align: left;
+}
+
+.tableScroller th,
+.tableScroller td {
+  border-top: 1px solid var(--origin-border);
+  font-size: 0.75rem;
+  padding: 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.tableScroller thead th {
+  color: var(--origin-muted);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer {
+  color: var(--origin-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.74rem;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+  padding-block: 1rem;
+}
+
+@media (max-width: 47.999rem) {
+  .root {
+    padding-inline: 0.75rem;
+  }
+
+  .stageHeading,
+  .diagnosticIntro {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .provenance {
+    grid-template-columns: 1fr;
+  }
+
+  .tableScroller th,
+  .tableScroller td {
+    padding-inline: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root *,
+  .root *::before,
+  .root *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

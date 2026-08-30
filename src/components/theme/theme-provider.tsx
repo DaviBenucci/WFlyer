@@ -12,6 +12,7 @@ import {
 
 import {
   isThemeName,
+  resolveReviewRouteTheme,
   THEME_CHANGE_EVENT,
   THEME_STORAGE_KEY,
   type ThemeName,
@@ -44,7 +45,11 @@ function resolveSystemTheme(): ThemeName {
 }
 
 function resolveTheme(): ThemeName {
-  return readStoredTheme() ?? resolveSystemTheme();
+  return (
+    resolveReviewRouteTheme(window.location.pathname, window.location.search) ??
+    readStoredTheme() ??
+    resolveSystemTheme()
+  );
 }
 
 function applyTheme(theme: ThemeName): void {
@@ -72,7 +77,7 @@ function subscribeToTheme(onStoreChange: () => void): () => void {
 
   const handleSystemChange = (): void => {
     if (readStoredTheme() === null) {
-      applyTheme(resolveSystemTheme());
+      applyTheme(resolveTheme());
     }
   };
 
@@ -81,8 +86,7 @@ function subscribeToTheme(onStoreChange: () => void): () => void {
       return;
     }
 
-    const storedTheme = isThemeName(event.newValue) ? event.newValue : readStoredTheme();
-    applyTheme(storedTheme ?? resolveSystemTheme());
+    applyTheme(resolveTheme());
   };
 
   window.addEventListener(THEME_CHANGE_EVENT, handleThemeChange);

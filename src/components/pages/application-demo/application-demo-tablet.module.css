@@ -95,7 +95,7 @@
   border: 1px solid color-mix(in oklab, var(--wf-accent) 32%, var(--wf-border));
   border-radius: var(--wf-radius-pill);
   background: color-mix(in oklab, var(--wf-accent) 7%, transparent);
-  color: var(--wf-accent);
+  color: var(--wf-accent-text);
 }
 
 .workspace {
@@ -237,7 +237,7 @@
   inline-size: 100%;
   min-block-size: 2.25rem;
   padding-inline: 0.7rem 1.8rem;
-  border: 1px solid var(--wf-border);
+  border: 1px solid var(--wf-border-strong);
   border-radius: var(--wf-radius-sm);
   background: var(--wf-surface);
   color: var(--wf-text);
@@ -262,7 +262,7 @@
   margin: -0.12rem auto;
   border: 1px solid var(--wf-border);
   border-radius: 50%;
-  color: var(--wf-accent);
+  color: var(--wf-accent-text);
   font-size: 0.9rem;
 }
 
@@ -289,7 +289,7 @@
 
 .secondaryAction {
   background: var(--wf-surface);
-  color: var(--wf-primary);
+  color: var(--wf-primary-text);
 }
 
 .primaryAction:disabled {

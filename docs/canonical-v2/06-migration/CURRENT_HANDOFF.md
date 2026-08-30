@@ -7,10 +7,12 @@ branch: develop/site-institucional
 implementation_checkpoint: 5764808399befd6a04e9a12b3e804fa9aaf9493f
 maintenance_checkpoint: this file belongs to the current maintenance HEAD; resolve with git rev-parse HEAD
 active_change: rebuild-scroll-driven-wflyer-v2
-openspec_progress: 32/45
-next_unchecked_task: '33 — Human-approve Score Path layouts'
-next_phase: 'Phase 9 — Continuous dual-score integration'
-phase_9_started: false
+openspec_progress: 33/45
+next_unchecked_task: '34 — Integrate origin + 12 segments using Music System'
+current_phase: 'Phase 9 — Continuous dual-score integration'
+phase_9_started: true
+task_33_status: human_approved
+task_34_started: false
 production_authorized: false
 ```
 
@@ -100,10 +102,35 @@ Canonical precedence remains in `AGENTS.md`.
 - The Phase-9 score is a pending seam only; no ScorePath/Music integration is
   present.
 
+### Phase 9 Task-33 human-approved state
+
+- Organic Flowing alternating-S geometry, the mobile Project-card responsive
+  direction, ADR-041's warm dark-neutral palette, canonical copper dark UI
+  emphasis, and warm dark Home atmosphere directions are approved.
+- `#e79271` now owns selective dark UI/text/ornamental emphasis through semantic
+  tokens. Purple/cobalt remain valid where intrinsic to approved brand assets;
+  the Task-33 score fixtures still precede Task-34's final theme-aware notation
+  tokens. Connector cyan and fixture-local diagnostic/status semantics remain
+  review-only. The light theme remains unchanged.
+- Task-33 review routes project their explicit theme query through the document
+  theme owner. Score SVG presentation uses deterministic six-decimal
+  serialization across SSR and browser hydration. Review-only descending-arc
+  evidence treats sub-`1e-7` shelf deltas as level so runtime floating-point
+  noise cannot flip a whole sampled segment. Neither boundary changes renderer
+  math, authored geometry, or semantic fingerprints.
+- The real treble-clef-to-staff origin, branch-departure topology,
+  notation-safe descending regions, event-free connectors, and physical final
+  barline termination are human-approved. The isolated fixture's current clef
+  pixel size is not a frozen production-size requirement; Task 34 may calibrate
+  its optical prominence without changing its musical anchor or topology.
+- Task 33 is complete at 33/45. Task 34 has not started.
+
 ## Deferred work and hard stops
 
-- Tasks 33–35 / Phase 9: human approval first, then continuous dual score and
-  stability validation.
+- Task 34 / Phase 9: integrate the approved shared origin and all 12 real Music
+  segments without changing semantic composition.
+- Task 35 / Phase 9: validate session, responsive, and reduced-motion stability
+  only after Task 34 is complete and human-reviewed as required.
 - Task 36 / Phase 10: owner-approved final Persona asset, rig, easter eggs.
 - Task 37 / Phase 11: owner-approved final APP-04 media.
 - Tasks 38–39: accessibility/responsive/reduced-motion and lifecycle/recovery
@@ -181,10 +208,13 @@ The noncanonical `(1)` plan is discoverable but never authoritative. The live
 
 ## Exact next safe action
 
-Stop at task 33. When Davi Benucci explicitly authorizes Phase 9, bootstrap from
-this file, load tasks 33–35 and the Phase-9 canonical contracts, and obtain the
-required human Score Path layout approval before implementation. Do not infer
-approval from prior Music gates or this maintenance checkpoint.
+Begin Task 34 only after the selective Task-33 checkpoint passes clean-worktree
+verification. Integrate the approved shared origin plus six Professional and
+six Application segments using the real Music System, preserving semantic
+fingerprints and Organic Flowing geometry. Treat notation ink as theme-aware
+Music presentation, keep copper selective, and do not treat the review
+fixture's clef pixel size as a frozen production-size requirement. Do not begin
+Task 35 before Task 34 implementation, validation, and review are complete.
 
 `Phase 9 — use CURRENT_HANDOFF.md as the primary operational bootstrap`
 

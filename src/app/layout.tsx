@@ -7,7 +7,12 @@ import { RouteAwareExperienceBoundary } from "@/components/experience";
 import { SiteHeader } from "@/components/header";
 import { SiteStructuredData } from "@/components/seo";
 import { StoryGlobalFooter, StoryV2Header } from "@/components/story";
-import { ThemeProvider, ThemeScript, ThemeToggle } from "@/components/theme";
+import {
+  THEME_BROWSER_COLORS,
+  ThemeProvider,
+  ThemeScript,
+  ThemeToggle,
+} from "@/components/theme";
 import { createDeploymentRobotsMetadata } from "@/config/deployment";
 import { pageSeo } from "@/config/seo";
 import { siteConfig } from "@/config/site";
@@ -32,8 +37,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   colorScheme: "light dark",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f7f1e8" },
-    { media: "(prefers-color-scheme: dark)", color: "#020b22" },
+    { media: "(prefers-color-scheme: light)", color: THEME_BROWSER_COLORS.light },
+    { media: "(prefers-color-scheme: dark)", color: THEME_BROWSER_COLORS.dark },
   ],
 };
 

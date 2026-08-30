@@ -87,7 +87,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--wf-space-3);
-  color: var(--wf-note);
+  color: var(--wf-text-accent);
 }
 
 .stepMarker svg {
@@ -396,6 +396,7 @@
 .projectArtwork > span {
   position: absolute;
   inset: var(--wf-space-4) var(--wf-space-4) auto auto;
+  color: var(--wf-text-accent);
   font-size: var(--wf-font-size-label);
   font-weight: var(--wf-font-weight-bold);
   letter-spacing: var(--wf-tracking-label);

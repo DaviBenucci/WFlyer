@@ -54,7 +54,7 @@ retained; only its phase classification and later execution position changed.
 - [x] Access scene and application terminal
 
 ## 9. Continuous dual-score integration
-- [ ] Human-approve Score Path layouts
+- [x] Human-approve Score Path layouts
 - [ ] Integrate origin + 12 segments using Music System
 - [ ] Validate session/responsive/reduced-motion stability
 

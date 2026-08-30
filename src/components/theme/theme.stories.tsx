@@ -92,7 +92,7 @@ export const Escuro: Story = {
           .getPropertyValue("--wf-bg")
           .trim(),
       )
-        .toBe("#020b22"),
+        .toBe("#12100f"),
     );
   },
 };

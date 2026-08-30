@@ -348,6 +348,23 @@ test.describe("Phase 2 static vertical story", () => {
         page.locator(`${STORY_HEADER} a[href="#contato"]`),
         "#contato",
       );
+      const noScriptClearance = await page.evaluate(() => {
+        const header = document.querySelector<HTMLElement>(
+          "header[data-story-v2-header]",
+        );
+        const target = document.querySelector<HTMLElement>("#contato");
+
+        if (!header || !target) throw new Error("Story header/target missing");
+
+        return {
+          headerBottom: header.getBoundingClientRect().bottom,
+          targetTop: target.getBoundingClientRect().top,
+        };
+      });
+
+      expect(noScriptClearance.targetTop).toBeGreaterThanOrEqual(
+        noScriptClearance.headerBottom + 15,
+      );
     } finally {
       await context.close();
     }

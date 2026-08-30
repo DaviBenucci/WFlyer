@@ -73,7 +73,9 @@ Fixed-seed visual evidence, curved staff behavior, key signatures, all motifs, a
 **Status:** approved by external human review on 2026-08-24. Responsive
 activation thresholds remain noncanonical, and the current returning connector
 remains a validation-only noncanonical fixture. Final public responsive Score
-Paths still require the separate blocking Phase-9 human subgate.
+Paths remained subject to the separate blocking Phase-9 human subgate until its
+Task-33 approval on 2026-08-30; that later approval does not retroactively turn
+the Gate-C connector fixture into production geometry.
 
 ### Phase 1 completion rule
 
@@ -245,9 +247,10 @@ APP-04 media remains the human-gated Phase-11 asset boundary.
 
 ## Phase 9 — Continuous dual-score integration
 
-**Execution status:** not started. The first task is the blocking human
-approval of Score Path layouts; no integration work is authorized before that
-approval.
+**Execution status:** in progress. Task 33 passed explicit external human review
+on 2026-08-30. `Organic Flowing`, including the shared-origin departure and all
+three production geometry modes, is approved for integration. Task 34 is the
+next authorized task; Task 35 and Gate 9 remain open.
 
 ### Preconditions
 
@@ -265,6 +268,16 @@ tablet/demo, and terminal areas. Stop for explicit human Score Path approval.
 
 The current Gate-C piecewise returning connector is a validation-only
 noncanonical fixture and cannot satisfy this subgate.
+
+**Subgate result:** `APPROVED` — external human Task-33 review, 2026-08-30.
+`Organic Flowing` is the selected production grammar for
+`horizontal-enhanced`, `vertical-wide`, and `vertical-compact`, in light and
+dark. Approval includes the real shared origin, clef-to-staff departure,
+descending notation-safe zones, event-free connectors, and physical final
+barline. Production clef optical scale may be calibrated during integration if
+needed, without changing the approved SVG, `gLine`, `staffSpace`, topology,
+orientation, or semantic role. This result authorizes Task 34 only; it does not
+complete Task 34, Task 35, or Gate 9.
 
 ### Required work
 

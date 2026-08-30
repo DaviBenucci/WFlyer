@@ -1,4 +1,7 @@
-import { THEME_STORAGE_KEY } from "./theme-constants";
+import {
+  THEME_REVIEW_ROUTE_PREFIX,
+  THEME_STORAGE_KEY,
+} from "./theme-constants";
 
 interface ThemeScriptProps {
   nonce?: string;
@@ -9,9 +12,25 @@ const themeBootstrapScript = `(() => {
   let theme;
 
   try {
-    const savedTheme = localStorage.getItem(${JSON.stringify(THEME_STORAGE_KEY)});
-    if (savedTheme === "light" || savedTheme === "dark") {
-      theme = savedTheme;
+    const pathname = window.location.pathname;
+    const isReviewRoute =
+      pathname === ${JSON.stringify(THEME_REVIEW_ROUTE_PREFIX)} ||
+      pathname.startsWith(${JSON.stringify(`${THEME_REVIEW_ROUTE_PREFIX}/`)});
+    const queryTheme = isReviewRoute
+      ? new URLSearchParams(window.location.search).get("theme")
+      : null;
+
+    if (queryTheme === "light" || queryTheme === "dark") {
+      theme = queryTheme;
+    }
+  } catch {}
+
+  try {
+    if (!theme) {
+      const savedTheme = localStorage.getItem(${JSON.stringify(THEME_STORAGE_KEY)});
+      if (savedTheme === "light" || savedTheme === "dark") {
+        theme = savedTheme;
+      }
     }
   } catch {}
 

@@ -8,18 +8,29 @@ import type {
 import { ScoreDebugOverlay } from "./ScoreDebugOverlay";
 import { ScoreGlyph } from "./ScoreGlyph";
 import styles from "./score.module.css";
+import { serializeSvgNumber, serializeSvgPoints } from "./svg-number";
 
 function svgRotationTransform(
   radians: number,
   center: { readonly x: number; readonly y: number },
+  numericPrecision?: number,
 ): string {
-  return `rotate(${radians * (180 / Math.PI)} ${center.x} ${center.y})`;
+  return `rotate(${serializeSvgNumber(radians * (180 / Math.PI), numericPrecision)} ${serializeSvgNumber(center.x, numericPrecision)} ${serializeSvgNumber(center.y, numericPrecision)})`;
 }
 
-function renderPrimitive(primitive: ScoreRenderPrimitive) {
+function renderPrimitive(
+  primitive: ScoreRenderPrimitive,
+  numericPrecision: number | undefined,
+) {
   switch (primitive.kind) {
     case "glyph":
-      return <ScoreGlyph key={primitive.id} primitive={primitive} />;
+      return (
+        <ScoreGlyph
+          key={primitive.id}
+          {...(numericPrecision === undefined ? {} : { numericPrecision })}
+          primitive={primitive}
+        />
+      );
     case "line":
     case "beam":
       return (
@@ -28,11 +39,11 @@ function renderPrimitive(primitive: ScoreRenderPrimitive) {
           data-score-primitive-id={primitive.id}
           data-score-role={primitive.role}
           key={primitive.id}
-          strokeWidth={primitive.thickness}
-          x1={primitive.start.x}
-          x2={primitive.end.x}
-          y1={primitive.start.y}
-          y2={primitive.end.y}
+          strokeWidth={serializeSvgNumber(primitive.thickness, numericPrecision)}
+          x1={serializeSvgNumber(primitive.start.x, numericPrecision)}
+          x2={serializeSvgNumber(primitive.end.x, numericPrecision)}
+          y1={serializeSvgNumber(primitive.start.y, numericPrecision)}
+          y2={serializeSvgNumber(primitive.end.y, numericPrecision)}
         />
       );
     case "polyline":
@@ -42,8 +53,8 @@ function renderPrimitive(primitive: ScoreRenderPrimitive) {
           data-score-primitive-id={primitive.id}
           data-score-role={primitive.role}
           key={primitive.id}
-          points={primitive.points.map(({ x, y }) => `${x},${y}`).join(" ")}
-          strokeWidth={primitive.thickness}
+          points={serializeSvgPoints(primitive.points, numericPrecision)}
+          strokeWidth={serializeSvgNumber(primitive.thickness, numericPrecision)}
         />
       );
     case "tuplet":
@@ -51,13 +62,28 @@ function renderPrimitive(primitive: ScoreRenderPrimitive) {
         <g
           data-score-primitive-id={primitive.id}
           data-score-role={primitive.role}
-          data-tuplet-central-gap={primitive.centralGap}
+          data-tuplet-central-gap={serializeSvgNumber(
+            primitive.centralGap,
+            numericPrecision,
+          )}
           data-tuplet-numeral-rotation-radians={
-            primitive.numeralRotationRadians
+            serializeSvgNumber(
+              primitive.numeralRotationRadians,
+              numericPrecision,
+            )
           }
-          data-tuplet-numeral-side-gap={primitive.numeralSideGap}
-          data-tuplet-numeral-size={primitive.numeralSize}
-          data-tuplet-numeral-width={primitive.numeralWidth}
+          data-tuplet-numeral-side-gap={serializeSvgNumber(
+            primitive.numeralSideGap,
+            numericPrecision,
+          )}
+          data-tuplet-numeral-size={serializeSvgNumber(
+            primitive.numeralSize,
+            numericPrecision,
+          )}
+          data-tuplet-numeral-width={serializeSvgNumber(
+            primitive.numeralWidth,
+            numericPrecision,
+          )}
           key={primitive.id}
         >
           {primitive.bracket.map((segment, index) => (
@@ -65,11 +91,14 @@ function renderPrimitive(primitive: ScoreRenderPrimitive) {
               className={styles.stroke}
               data-tuplet-bracket-segment={segment.role}
               key={`${primitive.id}-bracket-${index}`}
-              strokeWidth={primitive.thickness}
-              x1={segment.start.x}
-              x2={segment.end.x}
-              y1={segment.start.y}
-              y2={segment.end.y}
+              strokeWidth={serializeSvgNumber(
+                primitive.thickness,
+                numericPrecision,
+              )}
+              x1={serializeSvgNumber(segment.start.x, numericPrecision)}
+              x2={serializeSvgNumber(segment.end.x, numericPrecision)}
+              y1={serializeSvgNumber(segment.start.y, numericPrecision)}
+              y2={serializeSvgNumber(segment.end.y, numericPrecision)}
             />
           ))}
           <text
@@ -77,16 +106,29 @@ function renderPrimitive(primitive: ScoreRenderPrimitive) {
             data-tuplet-numeral="3"
             dominantBaseline="central"
             fill="currentColor"
-            fontSize={primitive.numeralSize}
+            fontSize={serializeSvgNumber(
+              primitive.numeralSize,
+              numericPrecision,
+            )}
             lengthAdjust="spacingAndGlyphs"
             textAnchor="middle"
-            textLength={primitive.numeralWidth}
+            textLength={serializeSvgNumber(
+              primitive.numeralWidth,
+              numericPrecision,
+            )}
             transform={svgRotationTransform(
               primitive.numeralRotationRadians,
               primitive.labelPosition,
+              numericPrecision,
             )}
-            x={primitive.labelPosition.x}
-            y={primitive.labelPosition.y}
+            x={serializeSvgNumber(
+              primitive.labelPosition.x,
+              numericPrecision,
+            )}
+            y={serializeSvgNumber(
+              primitive.labelPosition.y,
+              numericPrecision,
+            )}
           >
             {primitive.label}
           </text>
@@ -100,6 +142,8 @@ export interface ScoreSvgProps
   readonly ariaLabel?: string;
   readonly debug?: boolean;
   readonly model: ScoreRenderModel;
+  /** Optional review-only serialization precision for cross-runtime hydration. */
+  readonly numericPrecision?: number;
   readonly viewBox: string;
 }
 
@@ -108,6 +152,7 @@ export function ScoreSvg({
   className,
   debug = false,
   model,
+  numericPrecision,
   style,
   viewBox,
   ...svgProps
@@ -133,7 +178,9 @@ export function ScoreSvg({
     >
       {model.layers.map((layer) => (
         <g data-score-layer={layer.id} key={layer.id}>
-          {layer.primitives.map(renderPrimitive)}
+          {layer.primitives.map((primitive) =>
+            renderPrimitive(primitive, numericPrecision),
+          )}
         </g>
       ))}
       {debug ? <ScoreDebugOverlay model={model} /> : null}

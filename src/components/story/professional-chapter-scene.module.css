@@ -75,7 +75,7 @@
   inset: 0.75rem 0.75rem auto auto;
   inline-size: 2rem;
   block-size: 0.2rem;
-  background: var(--wf-note);
+  background: var(--wf-text-accent);
   content: "";
   transform: rotate(-38deg);
   transform-origin: right center;
@@ -127,7 +127,7 @@
   position: absolute;
   inset: 1.2rem 6% auto;
   block-size: 1px;
-  background: var(--wf-staff);
+  background: var(--wf-ui-ornament);
   content: "";
 }
 
@@ -149,7 +149,7 @@
   inline-size: 2.2rem;
   block-size: 2.2rem;
   place-items: center;
-  border: 1px solid var(--wf-note);
+  border: 1px solid var(--wf-text-accent);
   border-radius: 50%;
   background: var(--wf-bg);
   color: var(--wf-text-accent);
@@ -322,7 +322,7 @@
   .processStages {
     gap: 0;
     padding-inline-start: var(--wf-space-5);
-    border-inline-start: 1px solid var(--wf-staff);
+    border-inline-start: 1px solid var(--wf-ui-ornament);
   }
 
   .processStages li {

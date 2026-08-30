@@ -167,3 +167,57 @@ Operational documentation must inventory actual Napoleon DNS and hosting
 controls without inventing provider APIs or capabilities. DNS, hosting, and
 production mutations still require explicit owner approval, exact-SHA evidence
 remains mandatory, and `app.wflyer.com.br` remains a separate application.
+
+## ADR-041 — Warm dark-neutral and copper-emphasis theme language
+
+**Status:** APPROVED — external human Task-33 review, 2026-08-30
+
+The warm dark neutral palette derived from the approved Phase-9 Task-33
+origin-review surface supersedes the previous W_Flyer dark neutral palette. The
+real-origin review fixture establishes that canonical W_Flyer v2 language: a
+warm near-black canvas, subtly lighter warm-charcoal surfaces, an
+ivory/off-white primary foreground, a restrained warm muted foreground,
+low-contrast warm borders and dividers, and subtle tonal separation instead of
+blue-heavy neutral surfaces.
+
+The same human review promotes fixture copper `#e79271` through the canonical
+semantic emphasis family for selective dark-theme text, interaction, focus, and
+ornament. Systematic hover, active, and subtle states derive from that owner.
+General dark UI no longer uses purple/cobalt as its dominant textual or
+ornamental language and no longer uses the purple neon glow. Purple/cobalt
+remain valid where intrinsic to approved W_Flyer brand assets. Task-33 review
+fixtures may retain their pre-integration score presentation, but final Music
+notation ink is a separate theme-aware semantic owner in Task 34. Review
+connector cyan and fixture-local diagnostic/status semantics remain review-only
+even when a diagnostic happens to share the copper literal.
+
+The dark Home atmosphere projects the approved origin visual family: warm
+near-black and brown/charcoal depth with a subtle warm falloff instead of a
+large purple haze. It uses gradients rather than filter/blur layers and does not
+alter Home geometry or scroll behavior. The light theme, approved Music glyph
+geometry and calibration, approved Organic Flowing alternating-S grammar, and
+component geometry remain unchanged.
+
+The complete Task-33 approval also accepts the real shared-origin topology and
+Organic Flowing path grammar recorded by ADR-042. It does not freeze the
+fixture clef's exact pixel size as the final production optical prominence.
+
+## ADR-042 — Organic Flowing production Score Path layouts
+
+**Status:** APPROVED — external human Task-33 review, 2026-08-30
+
+`Organic Flowing` is the canonical Score Path direction. Its production
+projection uses the approved alternating side-to-side S-transition grammar in
+`horizontal-enhanced`, `vertical-wide`, and `vertical-compact`, including the
+compact mobile spacing and Project-card treatment. The shared origin uses the
+real treble clef, initial five-line staff, and approved branch-departure
+topology. Descending regions remain notation-safe, true connectors remain
+event-free, and each branch ends physically at its thin/thick final barline.
+
+The responsive projections preserve the same semantic Music composition; they
+may regroup physical zones but may not recompose motifs, slots, or chapters.
+The final production optical prominence of the treble clef may be calibrated
+during Task-34 integration against the real Home composition while preserving
+the approved glyph bytes, musical anchor, staff spacing, orientation, and
+origin topology. This approval closes Task 33 and authorizes Task 34 only; it
+does not complete Task 34, Task 35, or Gate 9.

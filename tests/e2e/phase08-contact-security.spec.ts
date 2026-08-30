@@ -142,9 +142,8 @@ test("mobile dark reduced-motion contact keeps controls and viewport intact", as
   await mockTurnstile(page);
   await page.setViewportSize({ height: 844, width: 320 });
   await page.emulateMedia({ colorScheme: "dark", reducedMotion: "reduce" });
-  await page.goto("/contato");
-  await page.evaluate(() => localStorage.setItem("wf-theme", "dark"));
-  await page.reload();
+  await page.addInitScript(() => localStorage.setItem("wf-theme", "dark"));
+  await page.goto("/contato", { waitUntil: "networkidle" });
 
   const form = page.getByRole("form", { name: "Formulário de contato" });
   await expect(form).toBeVisible();

@@ -20,7 +20,7 @@
 .eyebrow,
 .chapterBranch,
 .chapterIndex {
-  color: var(--wf-accent);
+  color: var(--wf-accent-text);
   font-size: var(--wf-font-size-label);
   font-weight: var(--wf-font-weight-bold);
   letter-spacing: var(--wf-tracking-label);
@@ -114,7 +114,7 @@
 .chapter[data-story-branch="professional"] {
   background: linear-gradient(
     135deg,
-    color-mix(in oklab, var(--wf-note) 8%, var(--wf-surface)),
+    color-mix(in oklab, var(--wf-text-accent) 8%, var(--wf-surface)),
     var(--wf-bg) 72%
   );
 }
@@ -125,6 +125,16 @@
     color-mix(in oklab, var(--wf-accent) 14%, var(--wf-surface)),
     var(--wf-bg) 70%
   );
+}
+
+:global([data-theme="dark"]) .chapter[data-story-branch="origin"] {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      var(--wf-home-atmosphere),
+      transparent 34rem
+    ),
+    var(--wf-bg);
 }
 
 .chapterGrid {

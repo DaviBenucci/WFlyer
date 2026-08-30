@@ -25,7 +25,7 @@
   inline-size: fit-content;
   min-block-size: var(--wf-control-min-size);
   align-content: center;
-  color: var(--wf-accent);
+  color: var(--wf-accent-text);
   font-weight: var(--wf-font-weight-semibold);
   text-underline-offset: 0.25em;
 }
@@ -163,7 +163,7 @@
   inset-block: var(--wf-space-6);
   inset-inline-start: calc(var(--wf-space-4) - 1px);
   inline-size: 2px;
-  background: linear-gradient(var(--wf-accent), var(--wf-note));
+  background: linear-gradient(var(--wf-accent), var(--wf-text-accent));
   content: "";
 }
 
@@ -186,7 +186,7 @@
   border-radius: 50%;
   place-items: center;
   background: var(--wf-bg);
-  color: var(--wf-accent);
+  color: var(--wf-accent-text);
   font: var(--wf-font-weight-bold) var(--wf-font-size-label) / 1 monospace;
 }
 
@@ -239,7 +239,7 @@
 }
 
 .howSteps span {
-  color: var(--wf-accent);
+  color: var(--wf-accent-text);
   font: var(--wf-font-weight-bold) var(--wf-font-size-label) / 1 monospace;
   letter-spacing: var(--wf-tracking-label);
 }
@@ -274,7 +274,7 @@
   inset-inline-end: var(--wf-space-3);
   inline-size: clamp(2.5rem, 5vw, 4.25rem);
   block-size: clamp(0.8rem, 1.5vw, 1.25rem);
-  border-block: 1px solid var(--wf-note);
+  border-block: 1px solid var(--wf-text-accent);
   opacity: 0.55;
   transform: skewX(-18deg);
 }
