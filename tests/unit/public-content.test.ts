@@ -103,7 +103,7 @@ describe("Phase-3 public content domain", () => {
     ).toBe(true);
   });
 
-  it("preserves the exact public application flow and terminal-only access action", () => {
+  it("preserves the exact public application flow without a prelaunch access action", () => {
     expect(PUBLIC_STORY_CONTENT["application-overview"].items).toHaveLength(3);
     expect(PUBLIC_STORY_CONTENT["application-how-it-works"].items).toHaveLength(
       5,
@@ -120,9 +120,14 @@ describe("Phase-3 public content domain", () => {
       ({ primaryAction }) =>
         primaryAction?.href === "https://app.wflyer.com.br",
     );
-    expect(accessActions.map(({ chapterId }) => chapterId)).toEqual([
-      "application-access",
-    ]);
+    expect(accessActions).toEqual([]);
+    expect(PUBLIC_STORY_CONTENT["application-access"]).toMatchObject({
+      eyebrow: "Lançamento",
+      title: "A aplicação está em desenvolvimento.",
+    });
+    expect(PUBLIC_STORY_CONTENT["application-access"]).not.toHaveProperty(
+      "primaryAction",
+    );
   });
 
   it("provides unique metadata for every Phase-3 static chapter route", () => {

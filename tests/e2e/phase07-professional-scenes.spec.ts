@@ -588,9 +588,22 @@ test.describe("Phase-7 professional branch scenes", () => {
     await positionImmediately(page, "professional-terminal");
     const terminalScene = page.locator('[data-professional-scene="terminal"]');
     await terminalScene.scrollIntoViewIfNeeded();
+    const structuralBarline = terminalScene.locator(
+      '[data-final-barline-before="professional-terminal"]',
+    );
+    await expect(structuralBarline).toHaveAttribute(
+      "data-score-render-owner",
+      "story-score-layer",
+    );
+    await expect(structuralBarline).toBeHidden();
     await expect(
-      terminalScene.locator(
-        '[data-final-barline-before="professional-terminal"]',
+      page.locator(
+        '[data-score-branch="professional"] [data-score-role="final-barline-thin"]',
+      ),
+    ).toBeVisible();
+    await expect(
+      page.locator(
+        '[data-score-branch="professional"] [data-score-role="final-barline-thick"]',
       ),
     ).toBeVisible();
     await expect(
@@ -656,23 +669,24 @@ test.describe("Phase-7 professional branch scenes", () => {
 
     await expect(barline).toHaveAttribute(
       "data-score-integration-status",
-      "phase-9-pending",
+      "phase-9-integrated",
+    );
+    await expect(barline).toHaveAttribute(
+      "data-score-render-owner",
+      "story-score-layer",
     );
     await expect(barline).toHaveAttribute("aria-hidden", "true");
-    const barlineGeometry = await barline.evaluate((element) => {
-      const strokes = Array.from(element.children, (child) =>
-        child.getBoundingClientRect().width,
-      );
-      return {
-        gap: Number.parseFloat(getComputedStyle(element).gap),
-        strokes,
-      };
-    });
-    expect(barlineGeometry.strokes).toHaveLength(2);
-    expect(barlineGeometry.strokes[0]).toBeLessThan(
-      barlineGeometry.strokes[1] ?? 0,
-    );
-    expect(barlineGeometry.gap).toBeGreaterThan(0);
+    await expect(barline.locator("span")).toHaveCount(0);
+    await expect(
+      page.locator(
+        '[data-score-branch="professional"] [data-score-role="final-barline-thin"]',
+      ),
+    ).toHaveCount(1);
+    await expect(
+      page.locator(
+        '[data-score-branch="professional"] [data-score-role="final-barline-thick"]',
+      ),
+    ).toHaveCount(1);
     expect(
       await terminalScene.evaluate((scene) => {
         const structuralBarline = scene.querySelector(

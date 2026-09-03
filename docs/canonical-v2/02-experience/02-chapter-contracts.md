@@ -7,7 +7,9 @@ Each chapter contract defines: objective, content, CTA, visual elements, drawing
 1. **Objective:** explain two expressions of one origin: W_Flyer application and professional portfolio/services.
 2. **Content:** brief application proposition, W_Flyer origin statement, brief professional proposition; pt-BR copy remains editorially reviewable.
 3. **CTA:** no primary CTA; scroll is the exploration cue; header is optional fast navigation.
-4. **Visuals:** official logo/symbol, approved treble clef, two score origins, restrained scroll cue.
+4. **Visuals:** official logo/symbol, one substantially enlarged approved
+   treble clef as the shared scenographic origin, two branch departures below
+   its lower region, restrained scroll cue, and no score through primary copy.
 5. **Motion:** readiness intro hands off to score/clef/branches; first user scroll begins the selected branch.
 6. **Timeline:** semantic origin between both branch lengths.
 7. **Desktop:** full-stage balanced composition; no internal scroll.
@@ -21,7 +23,10 @@ Each chapter contract defines: objective, content, CTA, visual elements, drawing
 1. **Objective:** identify the person/professional behind the work without exposing physical appearance.
 2. **Content:** concise professional positioning, relation among software/product/design/problem solving, personal responsibility.
 3. **CTA:** no primary CTA; optional secondary `/sobre` link.
-4. **Visuals:** required W_Flyer Persona, professional score, abstract brand structures.
+4. **Visuals:** required future W_Flyer Persona region, professional score in a
+   low safe corridor, and abstract brand structures. Until Phase 10, the
+   explicit `PERSONA_RESERVED_ZONE` is an exclusion only and contains no
+   invented Persona asset.
 5. **Motion:** Persona forms from/around score geometry; hands off visual structures to Services.
 6. **Timeline:** first professional chapter.
 7. **Desktop:** Persona approximately 35–40% of composition after final asset calibration.
@@ -35,8 +40,11 @@ Each chapter contract defines: objective, content, CTA, visual elements, drawing
 1. **Objective:** explain what can be commissioned.
 2. **Content:** Sites, Applications, Integrations, Custom Solutions; one outcome-oriented sentence each.
 3. **CTA:** secondary links to `/servicos` or service detail routes.
-4. **Visuals:** four brand-derived modules, not project cards.
-5. **Motion:** modules emerge from score/Persona geometry and later align into Process.
+4. **Visuals:** four brand-derived modules in the foreground, not project cards;
+   the score uses the shared card-interaction envelope behind them with
+   restrained opacity and no events in unsafe expanded geometry.
+5. **Motion:** one eased normal → expanded → normal score interaction; modules
+   remain readable and later align into Process.
 6. **Timeline:** after About.
 7. **Desktop:** four modules visible at stable state.
 8. **Mobile:** vertical cards/modules.
@@ -49,7 +57,8 @@ Each chapter contract defines: objective, content, CTA, visual elements, drawing
 1. **Objective:** establish method and trust.
 2. **Content:** Discovery and Context; Scope and Direction; Incremental Implementation; Validation and Evolution.
 3. **CTA:** none required.
-4. **Visuals:** one ordered progression integrated with the score.
+4. **Visuals:** one ordered progression above a restrained lower/middle score
+   corridor with long gentle curvature.
 5. **Motion:** line/progress activates stages sequentially; no global-progress ambiguity.
 6. **Timeline:** after Services; not a primary header item.
 7. **Desktop:** horizontal ordered sequence within the story stage.
@@ -64,7 +73,10 @@ Each chapter contract defines: objective, content, CTA, visual elements, drawing
 2. **Content:** project name, type/category, concise purpose, owner role/competencies, status; no invented metrics.
 3. **CTA:** each card is a semantic link to an authorized destination/detail.
 4. **Visuals:** 3–5 highlighted cards; initial set is three authorized projects; hand/fan composition.
-5. **Motion:** stack enters, opens into fan, becomes interactive; hover/focus raises, reduces rotation, foregrounds.
+5. **Motion:** stack enters, opens into fan, becomes interactive; hover/focus
+   raises, reduces rotation, and foregrounds. The score visits all three cards
+   through a behind-card alternating serpentine; steep spans are event-free
+   connectors and notation remains within the 18-degree tangent limit.
 6. **Timeline:** largest professional scene weight.
 7. **Desktop:** partially overlapped fan with every project identifiable.
 8. **Mobile:** staggered vertical stack, no hover dependency or horizontal carousel requirement.
@@ -79,7 +91,9 @@ Each chapter contract defines: objective, content, CTA, visual elements, drawing
 1. **Objective:** convert professional interest into a real enquiry.
 2. **Content:** concise invitation, name, email, project type/subject, message; alternate approved channels.
 3. **CTA:** `Enviar mensagem` is the sole primary CTA.
-4. **Visuals:** calmer composition; score continues toward ending.
+4. **Visuals:** calmer composition; a low long gentle score wave continues
+   below all copy, channels, form controls, consent, Turnstile, submission, and
+   feedback regions toward the ending.
 5. **Motion:** cards recede; form stabilizes; submission states are local and never auto-advance story.
 6. **Timeline:** final professional content chapter.
 7. **Desktop:** message/channels + form.
@@ -107,7 +121,8 @@ Each chapter contract defines: objective, content, CTA, visual elements, drawing
 1. **Objective:** explain the approved public flow.
 2. **Content:** choose/insert score; origin instrument/key; destination instrument/key; view/review; export/continue.
 3. **CTA:** optional secondary detail link, no app-access CTA.
-4. **Visuals:** five ordered markers along score.
+4. **Visuals:** five ordered foreground markers with the same shared
+   event-free card-score interaction used by Services behind them.
 5. **Motion:** markers activate in order through the master timeline; no nested pinned story.
 6. **Timeline:** after Application; relatively long scene.
 7. **Desktop:** one/two steps visually dominant at a time.
@@ -121,7 +136,8 @@ Each chapter contract defines: objective, content, CTA, visual elements, drawing
 1. **Objective:** translate function into visitor value.
 2. **Content:** less repetitive work; different contexts; review before continuing; continuous workflow.
 3. **CTA:** no app-access CTA.
-4. **Visuals:** four music-derived motifs/elements, not generic SaaS cards.
+4. **Visuals:** four music-derived motifs/elements above a restrained lower
+   score corridor, not generic SaaS cards and not an expanded-card interaction.
 5. **Motion:** benefits emerge from the score and converge toward the demo device.
 6. **Timeline:** after How.
 7. **Desktop:** asymmetrical four-item composition.
@@ -141,23 +157,31 @@ Each chapter contract defines: objective, content, CTA, visual elements, drawing
 7. **Desktop:** prominent device; no internal UI controls.
 8. **Mobile:** frontal device; no hover/tilt dependency; reduced motion is static until explicit replay.
 9. **Detail route:** optional anchor within `/aplicacao-wflyer`, no dedicated route required.
-10. **Entry/exit:** Benefits → device → score returns and prepares Access.
+10. **Entry/exit:** Benefits → protected device → score routes quietly around
+    or below the device and prepares Launch.
 11. **Acceptance:** full state-machine criteria in the demo specification.
 
-## ACCESS W_FLYER
+## LAUNCH / APPLICATION FINAL CONTENT
 
-1. **Objective:** convert a fully informed visitor.
-2. **Content:** concise final invitation.
-3. **CTA:** one primary external link to `app.wflyer.com.br`.
-4. **Visuals:** reduced density and musical cadence.
-5. **Motion:** deceleration; no pulsing/bouncing CTA.
+1. **Objective:** convert a fully informed visitor according to actual product availability.
+2. **Content:** in `PRELAUNCH`, truthful development status and an invitation to request one availability notification.
+3. **CTA:** in `PRELAUNCH`, one email field, explicit purpose-limited consent, Privacy Policy link, Turnstile, and `Avisar quando estiver disponível`; no unavailable app link. A later approved `LIVE` state replaces the form with one primary external link to `app.wflyer.com.br`.
+4. **Visuals:** reduced density, a protected accessible form, and musical cadence in a low safe region.
+5. **Motion:** deceleration; form states never advance the story and no pulsing/bouncing CTA.
 6. **Timeline:** final application content chapter.
 7. **Desktop:** focused, spacious composition.
 8. **Mobile:** obligatorily last application content before final ending/footer.
-9. **Detail route:** external application URL.
-10. **Entry/exit:** Demo → Access → final barline → terminal/footer.
-11. **Acceptance:** no automatic redirect; link works without JavaScript; no earlier primary app CTA.
+9. **Detail route:** no separate PRELAUNCH route; future LIVE action uses the external application URL.
+10. **Entry/exit:** Demo → Launch → final barline → terminal/footer.
+11. **Acceptance:** all ten explicit form states, fixed-purpose consent,
+    secure dedicated endpoint, honest acknowledgment outcome, no automatic
+    redirect, and no earlier primary app CTA.
 
 ## TERMINALS
 
-Application and professional terminal visuals begin only after their final barlines. They use shared data/configuration. Desktop presents a terminal at each branch extreme; mobile presents one real global footer after the application ending.
+Application and professional terminal visuals begin only after their physical
+final barlines. They use shared data/configuration. The immersive landing does
+not append a second visual footer after a terminal already fulfills that role.
+Vertical/mobile integrates one semantic footer/navigation close into the final
+Application terminal; unrelated standalone/internal routes retain their shared
+footer behavior.

@@ -1,0 +1,25 @@
+Command scope: 153 public E2E cases across Chromium, Firefox, and WebKit
+Server: previously built `.next/standalone` production output
+Exit code: 1
+Result: 71 passed, 16 failed, 66 did not run
+
+Root-cause classification:
+
+- The production bundle used for this diagnostic had been built before the test-only
+  `WFLYER_TRANSITION_TEST_MODE` and `NEXT_PUBLIC_TURNSTILE_SITE_KEY` values were supplied.
+- Home/transition failures report the absent build-time transition controller or the
+  still-active intro.
+- Contact failures report the absent mocked Turnstile test button because the public
+  site-key value was not embedded in that build.
+- The tests were not edited, disabled, loosened, or snapshot-updated.
+
+This diagnostic does not supersede the passing restored development baseline recorded
+in `2026-08-15-baseline-recovery-report.md`. A fresh production build with the governed
+test-build environment is required for the later production public-regression gate.
+
+Follow-up on 2026-08-15:
+
+- Rebuilt with the governed test-only build variables.
+- Re-ran the same 153-case production-standalone scope.
+- Result: PASS, exit 0, 153/153 across Chromium, Firefox, and WebKit in 4.4 minutes.
+- The original failure above remains retained as the truthful initial diagnostic.

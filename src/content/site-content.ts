@@ -679,15 +679,15 @@ export const legalDocuments = {
     title: "Política de privacidade",
     description:
       "Esta política explica quais dados podem ser enviados voluntariamente à W_Flyer, como são usados e quais canais estão disponíveis para solicitações.",
-    updatedAt: "31 de julho de 2026",
-    updatedAtIso: "2026-07-31",
+    updatedAt: "31 de agosto de 2026",
+    updatedAtIso: "2026-08-31",
     sections: [
       {
         id: "escopo",
         title: "Escopo desta política",
         paragraphs: [
           "Esta política se aplica ao site institucional wflyer.com.br e ao contato iniciado por seus canais. A aplicação disponível em app.wflyer.com.br é um ambiente separado e pode possuir termos próprios.",
-          "O site institucional não cria conta, área de cliente, banco de leads ou perfil de marketing.",
+          "O site institucional não cria conta, área de cliente, banco de leads ou perfil de marketing. O cadastro opcional de interesse no lançamento da aplicação tem finalidade única e separada.",
         ],
       },
       {
@@ -695,6 +695,7 @@ export const legalDocuments = {
         title: "Dados recebidos",
         paragraphs: [
           "Ao usar o formulário de contato, você pode informar nome, e-mail, empresa opcional, tipo de projeto, mensagem e consentimento. Esses dados são fornecidos voluntariamente.",
+          "Ao solicitar o aviso de lançamento, você informa somente e-mail e consentimento. O campo de segurança Turnstile e o campo-armadilha contra automação não ampliam essa finalidade.",
           "Cloudflare, Turnstile e a hospedagem podem processar dados técnicos necessários à segurança e à operação, como endereço IP, data, hora e características básicas da requisição.",
         ],
       },
@@ -703,6 +704,7 @@ export const legalDocuments = {
         title: "Finalidade",
         paragraphs: [
           "Os dados do contato são usados exclusivamente para responder à mensagem, compreender o contexto apresentado e avaliar a possibilidade de conduzir o projeto.",
+          "O e-mail do cadastro de lançamento é usado exclusivamente para registrar o interesse e enviar o aviso quando a aplicação estiver disponível. Ele não autoriza newsletter, publicidade ou outras comunicações.",
           "A W_Flyer não vende dados pessoais e não usa o contato para criar audiência de publicidade comportamental.",
         ],
       },
@@ -711,6 +713,7 @@ export const legalDocuments = {
         title: "Envio e operação",
         paragraphs: [
           "A mensagem validada é enviada pelo serviço Resend ao e-mail institucional davi.benucci@wflyer.com.br. O site não grava uma cópia em banco de dados.",
+          "O cadastro de lançamento validado é encaminhado primeiro para welcome.app@wflyer.com.br. Depois desse registro operacional, o serviço tenta enviar uma confirmação ao endereço informado. Uma falha nessa confirmação não desfaz o registro já concluído.",
           "Cloudflare fornece proteções de borda e o Turnstile ajuda a reduzir envios automatizados. A Napoleon executa a aplicação do site. Esses fornecedores podem manter registros técnicos conforme suas próprias obrigações e políticas.",
         ],
       },
@@ -719,7 +722,7 @@ export const legalDocuments = {
         title: "Registros técnicos",
         paragraphs: [
           "Os registros da aplicação devem ser mínimos e sanitizados. O corpo integral da mensagem, o e-mail completo, tokens e segredos não são registrados pelos logs do site.",
-          "O site não executa retenção em banco de leads. A mensagem segue para os sistemas de e-mail e do provedor, sujeitos às respectivas políticas e aos controles operacionais aplicáveis.",
+          "O site não executa retenção em banco de leads. Mensagens e cadastros seguem para os sistemas de e-mail e do provedor, sujeitos às respectivas políticas e aos controles operacionais aplicáveis.",
         ],
       },
       {

@@ -62,6 +62,16 @@
     box-shadow var(--wf-duration-fast, 180ms) var(--wf-ease-out, ease-out);
 }
 
+:global([data-projection-mode="horizontal-enhanced"]) .fan {
+  gap: clamp(0.75rem, 1.2vw, 1.25rem);
+}
+
+:global([data-projection-mode="horizontal-enhanced"])
+  .fanItem
+  + .fanItem {
+  margin-inline-start: 0;
+}
+
 .fanItem:hover .card,
 .fanItem:focus-within .card {
   border-color: var(--wf-accent, #9a6237);

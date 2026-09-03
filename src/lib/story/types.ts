@@ -38,7 +38,7 @@ export type StoryHash =
   | "#como-funciona"
   | "#beneficios"
   | "#demonstracao"
-  | "#acessar-wflyer"
+  | "#lancamento"
   | "#sobre"
   | "#servicos"
   | "#processo"
@@ -59,6 +59,8 @@ export type StoryDetailRoute =
 
 export type StoryExternalAction = "https://app.wflyer.com.br";
 
+export type ApplicationAvailabilityState = "PRELAUNCH" | "LIVE";
+
 export type StoryHeaderMembership = boolean | "center-brand";
 
 export type StorySemanticSlotId = string;
@@ -68,8 +70,8 @@ export interface StoryScoreHook<
 > {
   readonly segmentId: TChapterId;
   /**
-   * Phase 2 reserves the semantic seam without defining score content. Slot IDs
-   * stay empty until the approved Phase 9 score integration.
+   * Phase 9 maps each real branch segment to the approved deterministic Music
+   * slots. Home remains the shared origin rather than a thirteenth segment.
    */
   readonly semanticSlotIds: readonly StorySemanticSlotId[];
 }
@@ -86,6 +88,7 @@ export interface StoryChapter<
   readonly hash?: StoryHash;
   readonly detailRoute?: StoryDetailRoute;
   readonly externalAction?: StoryExternalAction;
+  readonly availabilityState?: ApplicationAvailabilityState;
   readonly finalBarlineBefore?: true;
   /** Stable, geometry-free hook for later scene integration. */
   readonly sceneId: TChapterId;

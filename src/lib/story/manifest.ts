@@ -30,7 +30,13 @@ function scoreHook<const TChapterId extends StoryChapterId>(
 ): StoryScoreHook<TChapterId> {
   return {
     segmentId,
-    semanticSlotIds: EMPTY_SEMANTIC_SLOT_IDS,
+    semanticSlotIds:
+      segmentId === "home"
+        ? EMPTY_SEMANTIC_SLOT_IDS
+        : Object.freeze([
+            `${segmentId}:primary`,
+            `${segmentId}:reserved`,
+          ]),
   };
 }
 
@@ -114,12 +120,12 @@ export const STORY_CHAPTERS = Object.freeze([
   defineChapter({
     kind: "chapter",
     id: "application-access",
-    label: "Acessar W_Flyer",
-    hash: "#acessar-wflyer",
+    label: "Lançamento",
+    hash: "#lancamento",
     branch: "application",
     timelineLabel: "app-access",
-    header: false,
-    externalAction: "https://app.wflyer.com.br",
+    header: true,
+    availabilityState: "PRELAUNCH",
     sceneId: "application-access",
     scoreHook: scoreHook("application-access"),
   }),
@@ -165,7 +171,7 @@ export const STORY_CHAPTERS = Object.freeze([
     hash: "#processo",
     branch: "professional",
     timelineLabel: "pro-process",
-    header: false,
+    header: true,
     detailRoute: "/processo",
     sceneId: "professional-process",
     scoreHook: scoreHook("professional-process"),
@@ -269,11 +275,13 @@ export const HEADER_NAVIGATION: StoryHeaderNavigation = Object.freeze({
     "application-overview",
     "application-how-it-works",
     "application-benefits",
+    "application-access",
   ] as const satisfies readonly StoryChapterId[]),
   center: "home",
   professional: Object.freeze([
     "professional-about",
     "professional-services",
+    "professional-process",
     "professional-projects",
     "professional-contact",
   ] as const satisfies readonly StoryChapterId[]),

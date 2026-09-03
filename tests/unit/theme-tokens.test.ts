@@ -41,8 +41,11 @@ const canonicalLightDeclarations = {
   "--wf-primary-hover": "#633612",
   "--wf-primary-active": "var(--wf-primary-hover)",
   "--wf-accent": "#9a6237",
-  "--wf-staff": "#c9a17c",
-  "--wf-note": "#70401f",
+  "--wf-score-primary": "var(--wf-text)",
+  "--wf-score-muted": "var(--wf-text-muted)",
+  "--wf-score-accent": "var(--wf-accent)",
+  "--wf-staff": "var(--wf-score-muted)",
+  "--wf-note": "var(--wf-score-primary)",
   "--wf-border": "#ddc9b5",
   "--wf-border-strong": "var(--wf-border)",
   "--wf-focus": "#75421f",
@@ -81,8 +84,11 @@ const canonicalDarkDeclarations = {
   "--wf-primary-hover": "var(--wf-emphasis-hover)",
   "--wf-primary-active": "var(--wf-emphasis-active)",
   "--wf-accent": "var(--wf-emphasis)",
-  "--wf-staff": "#7b5dda",
-  "--wf-note": "#933fff",
+  "--wf-score-primary": "var(--wf-text)",
+  "--wf-score-muted": "var(--wf-text-muted)",
+  "--wf-score-accent": "var(--wf-emphasis)",
+  "--wf-staff": "var(--wf-score-muted)",
+  "--wf-note": "var(--wf-score-primary)",
   "--wf-border": "rgb(245 235 218 / 20%)",
   "--wf-border-strong": "rgb(245 235 218 / 38%)",
   "--wf-focus": "var(--wf-emphasis-hover)",
@@ -282,7 +288,7 @@ function expectMinimumContrast(
 }
 
 describe("canonical W_Flyer theme tokens", () => {
-  it("keeps light colors unchanged and mirrors the complete dark palette in the no-JS fallback", () => {
+  it("keeps the approved light palette and mirrors the complete dark palette in the no-JS fallback", () => {
     const rootBlock = extractCssBlock(tokensSource, ":root");
     const lightBlock = extractCssBlock(tokensSource, '[data-theme="light"]');
     const darkBlock = extractCssBlock(tokensSource, '[data-theme="dark"]');
@@ -331,6 +337,9 @@ describe("canonical W_Flyer theme tokens", () => {
       "--color-emphasis-subtle": "var(--wf-emphasis-subtle)",
       "--color-ui-ornament": "var(--wf-ui-ornament)",
       "--color-primary-active": "var(--wf-primary-active)",
+      "--color-score-primary": "var(--wf-score-primary)",
+      "--color-score-muted": "var(--wf-score-muted)",
+      "--color-score-accent": "var(--wf-score-accent)",
       "--color-border-strong": "var(--wf-border-strong)",
       "--color-text-accent": "var(--wf-text-accent)",
       "--color-accent-text": "var(--wf-accent-text)",

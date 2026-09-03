@@ -191,6 +191,7 @@ test.describe("Phase-5 native-scroll master story", () => {
     await page.evaluate(async () => {
       await window.__WFLYER_PHASE5_MOTION__?.position("home");
     });
+    await page.locator(MOTION_ROOT).focus();
     const homeProgress = (await motionSnapshot(page)).progress;
     await page.keyboard.press("PageDown");
     await expect
@@ -205,6 +206,7 @@ test.describe("Phase-5 native-scroll master story", () => {
     await page.evaluate(async () => {
       await window.__WFLYER_PHASE5_MOTION__?.position("home");
     });
+    await page.locator(MOTION_ROOT).focus();
     const beforeSpace = (await motionSnapshot(page)).progress;
     await page.keyboard.press("Space");
     await expect
@@ -219,6 +221,7 @@ test.describe("Phase-5 native-scroll master story", () => {
     await page.evaluate(async () => {
       await window.__WFLYER_PHASE5_MOTION__?.position("home");
     });
+    await page.locator(MOTION_ROOT).focus();
     await page.waitForTimeout(150);
     const wheelStart = (await motionSnapshot(page)).progress;
     await page.mouse.move(1_000, 700);

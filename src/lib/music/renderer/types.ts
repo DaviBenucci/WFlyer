@@ -81,6 +81,8 @@ export interface PolylineRenderPrimitive {
   readonly layer: RenderLayerId;
   readonly role: "staff-line";
   readonly points: readonly Vec2[];
+  /** Optional presentational opacity for deterministic staff transitions. */
+  readonly opacity?: number;
   readonly thickness: number;
 }
 

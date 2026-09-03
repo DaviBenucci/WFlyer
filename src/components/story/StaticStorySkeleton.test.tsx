@@ -35,7 +35,7 @@ describe("StaticStorySkeleton", () => {
       "como-funciona",
       "beneficios",
       "demonstracao",
-      "acessar-wflyer",
+      "lancamento",
     ];
     const allIds = [...container.querySelectorAll<HTMLElement>("[id]")].map(
       (element) => element.id,
@@ -51,14 +51,16 @@ describe("StaticStorySkeleton", () => {
     ).not.toHaveAttribute("id");
   });
 
-  it("reserves empty future integration seams without rendering Music output", () => {
+  it("publishes Task-34 semantic score hooks without rendering Music in the static fallback", () => {
     const { container } = render(<StaticStorySkeleton />);
     const chapters = container.querySelectorAll<HTMLElement>("[data-chapter-id]");
 
     for (const chapter of chapters) {
       expect(chapter.dataset.storyScene).toBe(chapter.dataset.chapterId);
       expect(chapter.dataset.futureScoreSegment).toBe(chapter.dataset.chapterId);
-      expect(chapter.dataset.futureScoreSlotCount).toBe("0");
+      expect(chapter.dataset.futureScoreSlotCount).toBe(
+        chapter.dataset.chapterId === "home" ? "0" : "2",
+      );
     }
 
     expect(
@@ -76,22 +78,17 @@ describe("StaticStorySkeleton", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("places the sole application access action only in its final content chapter", () => {
+  it("places the purpose-limited launch registration only in its final content chapter", () => {
     const { container } = render(<StaticStorySkeleton />);
-    const applicationLinks = container.querySelectorAll(
-      'a[href="https://app.wflyer.com.br"]',
-    );
     const accessChapter = container.querySelector(
       '[data-chapter-id="application-access"]',
     );
 
-    expect(applicationLinks).toHaveLength(1);
     expect(accessChapter).not.toBeNull();
-    expect(
-      within(accessChapter as HTMLElement).getByRole("link", {
-        name: "Acessar W_Flyer",
-      }),
-    ).toBe(applicationLinks[0]);
+    expect(within(accessChapter as HTMLElement).getByRole("heading", {
+      name: "A aplicação está em desenvolvimento.",
+    })).toBeVisible();
+    expect(container.querySelector('a[href="https://app.wflyer.com.br"]')).not.toBeInTheDocument();
     expect(container.textContent).not.toMatch(
       /\b(?:agência|companhia|empresa|empresas|nossa equipe|nosso time|sociedade)\b/iu,
     );

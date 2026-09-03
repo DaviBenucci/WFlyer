@@ -221,3 +221,45 @@ during Task-34 integration against the real Home composition while preserving
 the approved glyph bytes, musical anchor, staff spacing, orientation, and
 origin topology. This approval closes Task 33 and authorizes Task 34 only; it
 does not complete Task 34, Task 35, or Gate 9.
+
+## ADR-043 — Phase-9 human choreography and Application PRELAUNCH
+
+**Status:** APPROVED FOR IMPLEMENTATION / EXTERNAL VISUAL ACCEPTANCE PENDING —
+2026-08-31
+
+The 2026-08-31 Task-34 automated integration bundle remains immutable,
+truthful historical review evidence. Subsequent external human review approved
+a bounded Phase-9 refinement rather than reopening that task: one large
+approved Home treble clef becomes the scenographic shared origin; branch paths
+depart below it; scene-owned exclusion and interaction zones prioritize
+content; Services and How It Works share an event-free expanded staff/card
+grammar; Projects uses a three-card event-safe serpentine; Contact, APP-04, and
+the final form are protected; and each branch physically ends at its canonical
+final barline. Music composition, fingerprints, assets, calibration, and
+semantic slots do not change.
+
+Header navigation uses the explicit semantic order Aplicação, Como funciona,
+Benefícios, Lançamento; W_Flyer; Sobre, Serviços, Processo, Projetos, Contato.
+Demonstration remains a non-header story chapter. Existing native-scroll
+traversal, 3.0-second maximum, interruption, and history semantics remain.
+
+The stable final Application content chapter is currently `PRELAUNCH` and
+contains a purpose-limited launch-interest form rather than an unavailable
+application link. `POST /api/app-launch-interest` accepts only email, explicit
+consent, a Turnstile token, and a honeypot; reuses bounded Contact security
+primitives; adds host validation, request IDs, a 4 KiB boundary, and honest
+process-local rate/deduplication limits; and stores no database record. Fixed
+operational delivery to `welcome.app@wflyer.com.br` is the registration event;
+a fixed transactional acknowledgment follows and may fail without undoing the
+registration. Both HTML/text templates use the warm near-black/ivory/muted
+warm/copper visual family, escaped server-owned content, no custom tracking
+pixel, and no marketing expansion.
+
+The future `LIVE` state is a small local scene configuration that replaces the
+form with `app.wflyer.com.br` only after separate approval. The immersive route
+uses its terminal as the single visual close while retaining one semantic
+mobile/footer close and unrelated route footers. The focused OpenSpec change
+`refine-phase-9-score-choreography-and-prelaunch` owns implementation and new
+evidence. Task 35 and Gate 9 remain blocked until implementation, affected
+validation, deterministic recapture, and explicit external human visual
+acceptance.

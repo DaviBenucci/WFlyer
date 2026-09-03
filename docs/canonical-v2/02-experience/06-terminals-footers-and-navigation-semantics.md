@@ -14,7 +14,11 @@ Branch terminals visually provide footer-like content. They use one shared confi
 
 - Professional branch ends with a visual musical conclusion and transition.
 - It is not a duplicate global `<footer>`.
-- The real global footer appears once, after the application final barline.
+- The final Application terminal integrates the one semantic footer/navigation
+  close after its final barline.
+- The immersive route does not append a second visual global-footer block.
+- Standalone/internal pages and nonimmersive review surfaces retain their
+  existing shared footer behavior.
 
 ## Footer content
 

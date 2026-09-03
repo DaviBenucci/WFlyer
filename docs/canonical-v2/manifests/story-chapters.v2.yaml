@@ -46,12 +46,12 @@ chapters:
     header: false
     detailRoute: "/aplicacao-wflyer#demonstracao"
   - id: application-access
-    label: Acessar W_Flyer
-    hash: "#acessar-wflyer"
+    label: Lançamento
+    hash: "#lancamento"
     branch: application
     timelineLabel: app-access
-    header: false
-    externalAction: "https://app.wflyer.com.br"
+    header: true
+    availabilityState: PRELAUNCH
   - id: application-terminal
     label: Application terminal
     branch: application
@@ -77,7 +77,7 @@ chapters:
     hash: "#processo"
     branch: professional
     timelineLabel: pro-process
-    header: false
+    header: true
     detailRoute: "/processo"
   - id: professional-projects
     label: Projetos

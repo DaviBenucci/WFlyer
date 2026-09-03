@@ -47,9 +47,22 @@
   align-content: center;
 }
 
+.demoProtected,
+.launchProtected {
+  min-inline-size: 0;
+}
+
+.demoProtected {
+  display: grid;
+}
+
+.launchProtected {
+  inline-size: 100%;
+}
+
 .accessScene {
   align-content: center;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .primaryAccess {
@@ -83,24 +96,7 @@
 }
 
 .finalBarlineContract {
-  display: flex;
-  block-size: clamp(5rem, 13vh, 8rem);
-  align-items: stretch;
-  gap: clamp(0.55rem, 1vw, 0.9rem);
-  color: var(--wf-note);
-}
-
-.finalBarlineContract span {
-  display: block;
-  background: currentcolor;
-}
-
-.finalBarlineContract span:first-child {
-  inline-size: 0.22rem;
-}
-
-.finalBarlineContract span:last-child {
-  inline-size: 0.7rem;
+  display: none;
 }
 
 .terminalContent {
@@ -151,6 +147,11 @@
   display: grid;
 }
 
+:global([data-story-mode="static-vertical"]) .terminalNavigation,
+:global([data-projection-mode="vertical-static"]) .terminalNavigation {
+  display: grid;
+}
+
 .overviewFlow {
   position: relative;
   display: grid;
@@ -174,7 +175,7 @@
   padding: var(--wf-space-3);
   border: 1px solid var(--wf-border);
   border-radius: var(--wf-radius-md);
-  background: color-mix(in oklab, var(--wf-surface) 92%, transparent);
+  background: color-mix(in oklab, var(--wf-surface) 94%, var(--wf-bg));
 }
 
 .overviewFlow span {
@@ -220,11 +221,13 @@
   align-content: start;
   padding: var(--wf-space-3);
   border-block-start: 2px solid var(--wf-accent);
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklab, var(--wf-accent) 9%, transparent),
-    transparent 58%
-  );
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--wf-accent) 9%, transparent),
+      transparent 58%
+    ),
+    var(--wf-surface);
 }
 
 .howSteps li::after {
@@ -260,7 +263,7 @@
   overflow: hidden;
   border: 1px solid var(--wf-border);
   border-radius: 50% 50% var(--wf-radius-lg) var(--wf-radius-lg) / 18% 18% var(--wf-radius-lg) var(--wf-radius-lg);
-  background: color-mix(in oklab, var(--wf-surface) 88%, transparent);
+  background: color-mix(in oklab, var(--wf-surface) 92%, var(--wf-bg));
 }
 
 .benefitGroups li:nth-child(2),
@@ -294,8 +297,20 @@
   }
 
   .accessScene {
-    grid-template-columns: minmax(24rem, 1fr) auto;
+    grid-template-columns: minmax(22rem, 0.88fr) minmax(25rem, 1.12fr);
   }
+}
+
+:global([data-projection-mode="horizontal-enhanced"]) .howScene {
+  inline-size: min(82rem, calc(100vw - 2rem));
+  justify-self: center;
+  grid-template-columns: minmax(15rem, 0.34fr) minmax(0, 1.66fr);
+  grid-template-rows: auto;
+  gap: clamp(1.25rem, 2.4vw, 2.5rem);
+}
+
+:global([data-projection-mode="horizontal-enhanced"]) .howSteps {
+  translate: 0 clamp(2.5rem, 7vh, 4rem);
 }
 
 @media (max-width: 47.999rem) {

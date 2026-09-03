@@ -6,4 +6,9 @@ export {
   readLimitedBody,
   type ContactPayload,
 } from "./schema";
-export { verifyTurnstile, type TurnstileResult } from "./turnstile";
+export {
+  verifyTurnstile,
+  verifyTurnstileAction,
+  type TurnstileAction,
+  type TurnstileResult,
+} from "./turnstile";

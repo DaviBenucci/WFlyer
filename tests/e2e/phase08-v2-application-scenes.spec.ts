@@ -190,6 +190,41 @@ async function setHidden(page: Page, hidden: boolean) {
   }, hidden);
 }
 
+async function installLaunchInterestContract(
+  page: Page,
+  acknowledgment: "pending" | "sent" = "sent",
+) {
+  const requests: unknown[] = [];
+  await page.route("**/turnstile/v0/api.js*", async (route) => {
+    await route.fulfill({
+      body: "",
+      contentType: "application/javascript",
+      status: 200,
+    });
+  });
+  await page.route("**/api/app-launch-interest", async (route) => {
+    requests.push(route.request().postDataJSON());
+    await route.fulfill({
+      body: JSON.stringify({ acknowledgment, ok: true, registered: true }),
+      contentType: "application/json",
+      status: 200,
+    });
+  });
+  await page.addInitScript(() => {
+    window.turnstile = {
+      remove() {},
+      render(container, options) {
+        void container;
+        queueMicrotask(() => options.callback("phase-9-browser-token"));
+        return "phase-9-launch-interest";
+      },
+      reset() {},
+    };
+  });
+
+  return requests;
+}
+
 test("the Phase-8 Application review surface remains development-only", async ({
   page,
   request,
@@ -252,8 +287,11 @@ test.describe("Phase-8 Application branch scenes", () => {
     await expect(page.locator("[data-application-how-step]")).toHaveCount(5);
     await expect(page.locator("[data-application-benefit]")).toHaveCount(4);
     await expect(page.locator('[data-primary-app-access="true"]')).toHaveCount(
-      1,
+      0,
     );
+    await expect(
+      page.getByRole("form", { name: "Aviso de lançamento da aplicação" }),
+    ).toHaveCount(1);
     await expect(
       page.locator(
         '[data-chapter-id]:not([data-chapter-id="application-access"]) [data-primary-app-access="true"]',
@@ -263,6 +301,50 @@ test.describe("Phase-8 Application branch scenes", () => {
       page.locator('header[data-story-v2-header] a[href^="https://app.wflyer.com.br"]'),
     ).toHaveCount(0);
   });
+
+  for (const [acknowledgment, expectedStatus] of [
+    ["sent", /Enviaremos apenas o aviso de lançamento/u],
+    ["pending", /seu registro foi preservado/u],
+  ] as const) {
+    test(`keeps PRELAUNCH operable when acknowledgment is ${acknowledgment}`, async ({
+      page,
+    }) => {
+      const requests = await installLaunchInterestContract(
+        page,
+        acknowledgment,
+      );
+      await openMotionLab(page, "#lancamento");
+      await positionImmediately(page, "application-access");
+
+      const form = page.getByRole("form", {
+        name: "Aviso de lançamento da aplicação",
+      });
+      await expect(form).toHaveAttribute(
+        "data-app-launch-interest-state",
+        "IDLE",
+      );
+      await expect(
+        form.getByRole("link", { name: "Política de Privacidade" }),
+      ).toHaveAttribute("href", "/politica-de-privacidade");
+      await form.locator('input[name="email"]').fill("visitante@example.com");
+      await form.getByRole("checkbox").check();
+      await form.getByRole("button", { name: "Quero receber o aviso" }).click();
+
+      await expect(form).toHaveAttribute(
+        "data-app-launch-interest-state",
+        "SUCCESS",
+      );
+      await expect(form.getByRole("status")).toHaveText(expectedStatus);
+      expect(requests).toEqual([
+        {
+          consent: true,
+          email: "visitante@example.com",
+          honeypot: "",
+          turnstileToken: "phase-9-browser-token",
+        },
+      ]);
+    });
+  }
 
   test("uses the deterministic missing-media state without inventing final assets", async ({
     page,
@@ -462,7 +544,10 @@ test.describe("Phase-8 Application branch scenes", () => {
     await expect(device).toHaveAttribute("data-app04-state", "ERROR_STATIC");
     await expect(device.locator("[data-app04-deterministic-fallback]")).toBeVisible();
     await positionImmediately(page, "application-access");
-    await expect(page.locator('[data-primary-app-access="true"]')).toBeVisible();
+    await expect(
+      page.getByRole("form", { name: "Aviso de lançamento da aplicação" }),
+    ).toBeVisible();
+    await expect(page.locator('[data-primary-app-access="true"]')).toHaveCount(0);
   });
 
   test("keeps reduced motion static until explicit replay and supports touch", async ({
@@ -512,29 +597,20 @@ test.describe("Phase-8 Application branch scenes", () => {
     }
   });
 
-  test("keeps Access last, uses one global footer, and places the barline before terminal", async ({
+  test("keeps Launch last, removes the duplicate immersive footer, and places the barline before terminal", async ({
     page,
   }) => {
-    await openMotionLab(page, "#acessar-wflyer");
+    await installLaunchInterestContract(page);
+    await openMotionLab(page, "#lancamento");
     await positionImmediately(page, "application-access");
     const access = page.locator('[data-application-scene="access"]');
-    const action = access.getByRole("link", { name: /Acessar W_Flyer/u });
-    await expect(action).toHaveAttribute("href", "https://app.wflyer.com.br");
-    await page.evaluate(() => {
-      const link = document.querySelector<HTMLAnchorElement>(
-        '[data-primary-app-access="true"]',
-      );
-      link?.addEventListener("click", (event) => {
-        event.preventDefault();
-        document.body.dataset.phase8AccessActivated = "true";
-      });
-    });
-    await action.focus();
-    await action.press("Enter");
-    await expect(page.locator("body")).toHaveAttribute(
-      "data-phase8-access-activated",
-      "true",
+    await expect(
+      access.getByRole("form", { name: "Aviso de lançamento da aplicação" }),
+    ).toHaveAttribute(
+      "data-app-launch-interest-state",
+      "IDLE",
     );
+    await expect(access.locator('[data-primary-app-access="true"]')).toHaveCount(0);
 
     await positionImmediately(page, "application-terminal");
     const terminalScene = page.locator('[data-application-scene="terminal"]');
@@ -544,8 +620,22 @@ test.describe("Phase-8 Application branch scenes", () => {
     const terminal = terminalScene.locator('[data-branch-terminal="application"]');
     await expect(barline).toHaveAttribute(
       "data-score-integration-status",
-      "phase-9-pending",
+      "phase-9-integrated",
     );
+    await expect(barline).toHaveAttribute(
+      "data-score-render-owner",
+      "story-score-layer",
+    );
+    await expect(
+      page.locator(
+        '[data-score-branch="application"] [data-score-role="final-barline-thin"]',
+      ),
+    ).toHaveCount(1);
+    await expect(
+      page.locator(
+        '[data-score-branch="application"] [data-score-role="final-barline-thick"]',
+      ),
+    ).toHaveCount(1);
     expect(
       await terminalScene.evaluate((scene) => {
         const line = scene.querySelector(
@@ -567,7 +657,7 @@ test.describe("Phase-8 Application branch scenes", () => {
       }),
     ).toBeVisible();
     await expect(terminalScene.locator("footer")).toHaveCount(0);
-    await expect(page.locator("[data-story-global-footer]")).toHaveCount(1);
+    await expect(page.locator("[data-story-global-footer]")).toHaveCount(0);
 
     expect(
       await page.evaluate(() => {
@@ -577,14 +667,10 @@ test.describe("Phase-8 Application branch scenes", () => {
         const terminalChapter = document.querySelector(
           '[data-chapter-id="application-terminal"]',
         );
-        const footer = document.querySelector("[data-story-global-footer]");
         return Boolean(
           accessChapter &&
             terminalChapter &&
-            footer &&
             accessChapter.compareDocumentPosition(terminalChapter) &
-              Node.DOCUMENT_POSITION_FOLLOWING &&
-            terminalChapter.compareDocumentPosition(footer) &
               Node.DOCUMENT_POSITION_FOLLOWING,
         );
       }),
@@ -621,12 +707,12 @@ test.describe("Phase-8 Application branch scenes", () => {
       "vertical-wide",
     );
     await expect(page.locator("[data-application-scene]")).toHaveCount(6);
-    await expect(
-      page.locator("[data-music-renderer], [data-score-role], [data-score-path]"),
-    ).toHaveCount(0);
+    await expect(page.locator("[data-story-score-layer]")).toHaveCount(1);
+    await expect(page.locator("[data-score-role]"))
+      .not.toHaveCount(0);
     await expect(
       page.locator(
-        '[data-chapter-id^="application-"] [data-score-integration-status="phase-9-pending"]',
+        '[data-chapter-id^="application-"] [data-score-integration-status="phase-9-integrated"]',
       ),
     ).toHaveCount(6);
   });
@@ -634,6 +720,7 @@ test.describe("Phase-8 Application branch scenes", () => {
   test("passes axe with the fallback, replay, Access, and terminal controls", async ({
     page,
   }) => {
+    await installLaunchInterestContract(page);
     await page.addInitScript({ content: axe.source });
     await openMotionLab(page, "#demonstracao");
 

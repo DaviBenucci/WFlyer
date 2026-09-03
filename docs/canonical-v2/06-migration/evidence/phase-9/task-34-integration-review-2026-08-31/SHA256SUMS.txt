@@ -1,0 +1,11 @@
+02fdf13a9d04b5f5622f5c8dc30d099d917b8f72a7215c82bc131c7a5abd89fa  ./README.md
+25681c10eebc2152a4b2788a352b054bdae65cc3a576932ff53d401fb5104c65  ./application-final-barline-1440x900.png
+7a7d9a3d83ac45a0e7dc67f79fdedddc92e734a54d3c3f7aefb8b7ccb1181e09  ./application-integrated-score-1440x900.png
+e18a162d68bef406795c21e15b9a17e0b7b00ec3d151923cb4a8bd3d4074a140  ./home-origin-dark-horizontal-1440x900.png
+24f6f81b9809afdace3de50851b70561b3ad77266fadc929b2bc01fcfa329c83  ./home-origin-light-horizontal-1440x900.png
+9ee235565c2e6bda40ed2e7d926396e96363d7316ab6267e8357985959080146  ./horizontal-enhanced-professional-projects-1536x900.png
+fa1c4bba8b8e47e8579112b95093122762d966f6e8d6a8f288644444b7a70932  ./professional-final-barline-1440x900.png
+27b5adfa148ca09d832ef78bf8b23b66eeff889eac8c9e050ec3e06889b23803  ./professional-integrated-score-1440x900.png
+e0a80e6ea62409bbd9db647e326bf1cd2fc9f5639782fbc34414a8a8f9ac1777  ./reduced-static-home-1200x900.png
+28be3381bca05c8726ab1b04df696bf132c9dce5224df9c1ce51bead75e25837  ./vertical-compact-application-390x844.png
+2e9c2222b0b3287f8aecdc7b4e707d5518eda08a7d375113a9ef2b199baf6e33  ./vertical-wide-professional-1024x900.png

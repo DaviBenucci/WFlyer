@@ -1,0 +1,43 @@
+.layer {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: 0;
+  inset-inline-start: 50%;
+  inline-size: var(--story-score-width);
+  block-size: var(--story-score-height);
+  color: var(--wf-score-primary);
+  pointer-events: none;
+  transform: translateX(-50%);
+  user-select: none;
+}
+
+.branch,
+.score {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+:global([data-projection-mode="horizontal-enhanced"]) .layer {
+  inset-inline-start: 0;
+  transform: none;
+}
+
+.score {
+  color: var(--wf-score-primary);
+  opacity: 0.86;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .score {
+    opacity: 0.78;
+  }
+}
+
+@media (forced-colors: active) {
+  .score {
+    color: CanvasText;
+    opacity: 1;
+  }
+}

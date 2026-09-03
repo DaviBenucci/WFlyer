@@ -142,9 +142,9 @@ test.describe("Phase 05 adjacent score navigation", () => {
     test(`${edge.source} to ${edge.destination} connects adjacent score anchors`, async ({
       page,
     }) => {
+      await warmRoute(page, edge.destination);
       await page.setViewportSize({ height: 1024, width: 1536 });
       await page.goto(edge.source);
-      await warmRoute(page, edge.destination);
       await holdAt(page, "start");
 
       await outgoingLink(page, edge).click();
@@ -208,8 +208,8 @@ test.describe("Phase 05 compressed and cross-branch navigation", () => {
     test(`${jump.source} to ${jump.destination} is one compressed traversal`, async ({
       page,
     }) => {
-      await page.goto(jump.source);
       await warmRoute(page, jump.destination);
+      await page.goto(jump.source);
       await observeMountedChapters(page);
       const initialHistoryLength = await page.evaluate(
         () => window.history.length,
@@ -261,8 +261,8 @@ test.describe("Phase 05 compressed and cross-branch navigation", () => {
     test(`${crossing.source} to ${crossing.destination} pivots through Home without adding it to history`, async ({
       page,
     }) => {
-      await page.goto(crossing.source);
       await warmRoute(page, crossing.destination);
+      await page.goto(crossing.source);
       await holdAt(page, "midpoint");
 
       await visibleHeaderLink(page, crossing.destination).click();
@@ -307,8 +307,8 @@ test.describe("Phase 05 compressed and cross-branch navigation", () => {
 test("Back and Forward restore one route without focus theft or route loops", async ({
   page,
 }) => {
-  await page.goto("/sobre");
   await warmRoute(page, "/servicos");
+  await page.goto("/sobre");
   await chapterControl(page, "next").click();
   await waitForSettledTransition(page, "/servicos");
   const historyLength = await page.evaluate(() => window.history.length);
@@ -376,9 +376,9 @@ test("every main chapter remains a clean direct deep link", async ({ page }) => 
 test("the latest rapid activation supersedes one pending destination", async ({
   page,
 }) => {
-  await page.goto("/");
   await warmRoute(page, "/aplicacao-wflyer");
   await warmRoute(page, "/sobre");
+  await page.goto("/");
   const initialHistoryLength = await page.evaluate(
     () => window.history.length,
   );
@@ -412,9 +412,9 @@ test("the latest rapid activation supersedes one pending destination", async ({
 test("a destination committed before continued navigation remains in history", async ({
   page,
 }) => {
-  await page.goto("/sobre");
   await warmRoute(page, "/servicos");
   await warmRoute(page, "/processo");
+  await page.goto("/sobre");
   const initialHistoryLength = await page.evaluate(
     () => window.history.length,
   );
@@ -453,12 +453,22 @@ test("a destination committed before continued navigation remains in history", a
 test("Enter activates chapter navigation and transfers focus once to main", async ({
   page,
 }) => {
-  await page.goto("/aplicacao-wflyer");
   await warmRoute(page, "/aplicacao-wflyer/como-funciona");
+  await page.goto("/aplicacao-wflyer");
   const nextChapter = chapterControl(page, "next");
-  await nextChapter.scrollIntoViewIfNeeded();
-  await nextChapter.focus();
-  await expect(nextChapter).toBeFocused();
+  await expect(nextChapter).toBeVisible();
+  await expect
+    .poll(async () => {
+      try {
+        await nextChapter.focus();
+        return await nextChapter.evaluate(
+          (element) => document.activeElement === element,
+        );
+      } catch {
+        return false;
+      }
+    })
+    .toBe(true);
 
   await page.keyboard.press("Enter");
   await waitForSettledTransition(
@@ -477,8 +487,8 @@ test("Enter activates chapter navigation and transfers focus once to main", asyn
 test("Process remains the Services subchapter after client navigation", async ({
   page,
 }) => {
-  await page.goto("/servicos");
   await warmRoute(page, "/processo");
+  await page.goto("/servicos");
   await chapterControl(page, "next").click();
   await waitForSettledTransition(page, "/processo");
 
@@ -538,8 +548,8 @@ for (const terminal of [
   test(`${terminal.destination} retains its final barline and previous navigation`, async ({
     page,
   }) => {
-    await page.goto(terminal.source);
     await warmRoute(page, terminal.destination);
+    await page.goto(terminal.source);
     await chapterControl(page, "next").click();
     // The adjacent-edge matrix already verifies this route's transition
     // metadata and score geometry. Under a saturated development server, the

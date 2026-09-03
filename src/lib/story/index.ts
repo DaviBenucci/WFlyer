@@ -12,6 +12,7 @@ export {
 } from "./manifest";
 
 export type {
+  ApplicationAvailabilityState,
   StoryBranch,
   StoryBranchDefinition,
   StoryChapter,

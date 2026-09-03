@@ -67,8 +67,10 @@ their existing owners and must not be falsely promoted from review diagnostics.
 | `--wf-home-atmosphere` | `CANONICAL_DARK_ATMOSPHERE` | Purple Home glow/haze | Origin warm falloff | `rgb(159 75 54 / 20%)` | Establishes warm brown/near-black depth without filters, blur layers, or geometry. |
 | `--wf-glow-soft` | `CANONICAL_DARK_UI_ACCENT` | `0 0 28px rgb(126 55 255 / 0.28)` | No glow required | `none` | Removes the general purple/neon glow language. Copper subtle emphasis remains available through its dedicated token. |
 | `--wf-on-primary` | `CANONICAL_DARK_UI_ACCENT` | `var(--wf-text)` | Contrast-derived | `var(--wf-bg)` | Dark foreground on copper passes AA; ivory on copper does not. |
-| `--wf-note` | `INTRINSIC_MUSIC_BRAND_ACCENT` | `#933fff` | Not a general UI role | `#933fff` | Preserves the approved Music/Score accent and is no longer reused for general dark text. |
-| `--wf-staff` | `INTRINSIC_MUSIC_BRAND_ACCENT` | `#5834bd` | Not a general UI role | `#7b5dda` | Preserves the approved Music staff direction with the prior accessibility correction; glyph geometry and calibration are unchanged. |
+| `--wf-score-primary` | `MUSIC_PRESENTATION` | Purple `--wf-note` | Warm ivory foreground | `var(--wf-text)` | Task 34 makes clefs, notes, stems, beams, accidentals, tuplets, ledgers, and principal barlines theme-aware instead of purple by default. |
+| `--wf-score-muted` | `MUSIC_PRESENTATION` | Purple/cobalt `--wf-staff` | Warm muted foreground | `var(--wf-text-muted)` | Owns five-line staff, ordinary bars, and the thin final-bar stroke. |
+| `--wf-score-accent` | `MUSIC_PRESENTATION` | No selective owner | Canonical copper | `var(--wf-emphasis)` | Copper is limited to key-signature and thick final-bar emphasis; it is not whole-score ink. |
+| `--wf-note` / `--wf-staff` | `MUSIC_COMPATIBILITY_ALIAS` | `#933fff` / `#7b5dda` | Task-34 score roles | `var(--wf-score-primary)` / `var(--wf-score-muted)` | Keeps legacy consumers on the semantic Music presentation without retaining purple default notation. Purple/cobalt survives only inside immutable approved brand assets. |
 | `--wf-danger` | `SEMANTIC_STATUS` | Component fallback `#a12b2b` | Not a fixture neutral | `#d45c5c` | Provides a dark-theme error role independent of pending/review orange. |
 | `--wf-success` | `SEMANTIC_STATUS` | Component fallback `#23623b` | Not a fixture neutral | `#3f9e63` | Provides a dark-theme success role independent of review diagnostics. |
 
@@ -83,6 +85,7 @@ their existing owners and must not be falsely promoted from review diagnostics.
 | Site and story footer surface formulas | `src/components/footer/site-footer.module.css`; `src/components/story/story.module.css` |
 | Contact input background, required boundary, and status consumers | `src/components/pages/contact/contact-form.module.css` |
 | Public and Motion Lab dark Home atmospheric projection | `src/app/page.module.css`; `src/components/story-motion/motion-story-lab.module.css` |
+| Task-34 score primary/muted/accent presentation | `src/styles/tokens.css`; `src/components/score/score.module.css` |
 | Task-33 origin review-only diagnostic colors | `src/app/%5F_visual-lab/story/score-paths/score-path-origin-review.module.css` |
 
 ### Explicit non-promotion boundary
@@ -101,8 +104,8 @@ review color remains `REVIEW_ONLY`; its presence never promotes that literal.
 
 ## Light theme
 
-The light-theme direction is unchanged. New semantic aliases preserve the
-existing appearance.
+The light palette remains unchanged. Task 34 routes notation through explicit
+primary, muted, and selective accent roles.
 
 ```css
 :root,
@@ -123,8 +126,11 @@ existing appearance.
   --wf-primary-hover: #633612;
   --wf-primary-active: var(--wf-primary-hover);
   --wf-accent: #9a6237;
-  --wf-staff: #c9a17c;
-  --wf-note: #70401f;
+  --wf-score-primary: var(--wf-text);
+  --wf-score-muted: var(--wf-text-muted);
+  --wf-score-accent: var(--wf-accent);
+  --wf-staff: var(--wf-score-muted);
+  --wf-note: var(--wf-score-primary);
   --wf-border: #ddc9b5;
   --wf-border-strong: var(--wf-border);
   --wf-focus: #75421f;
@@ -182,8 +188,11 @@ existing appearance.
   --wf-primary-hover: var(--wf-emphasis-hover);
   --wf-primary-active: var(--wf-emphasis-active);
   --wf-accent: var(--wf-emphasis);
-  --wf-staff: #7b5dda;
-  --wf-note: #933fff;
+  --wf-score-primary: var(--wf-text);
+  --wf-score-muted: var(--wf-text-muted);
+  --wf-score-accent: var(--wf-emphasis);
+  --wf-staff: var(--wf-score-muted);
+  --wf-note: var(--wf-score-primary);
   --wf-border: rgb(245 235 218 / 20%);
   --wf-border-strong: rgb(245 235 218 / 38%);
   --wf-focus: var(--wf-emphasis-hover);
@@ -254,8 +263,8 @@ semantics; they do not duplicate this literal palette.
 - Copper is selective emphasis, never the normal body foreground.
 - Copper-filled controls use the validated warm near-black foreground; ivory on
   copper is not an AA text pairing.
-- Purple/cobalt `--wf-note` and `--wf-staff` remain confined to intrinsic
-  Music/Score and approved brand-asset roles, not general dark UI emphasis.
+- Purple/cobalt remains only in immutable approved brand-asset bytes. Default
+  notation consumes the warm semantic score roles in both themes.
 - Required form/control boundaries use `--wf-border-strong`; decorative dividers
   continue to use `--wf-border`.
 - Disabled states remain identifiable without relying on opacity alone.

@@ -138,16 +138,14 @@ describe("conteúdo público tipado", () => {
     ]);
 
     for (const document of Object.values(legalDocuments)) {
-      const wasUpdatedForContactAndStorage =
-        document.route === "/politica-de-privacidade" ||
-        document.route === "/politica-de-cookies";
-      expect(document.updatedAt).toBe(
-        wasUpdatedForContactAndStorage
-          ? "31 de julho de 2026"
-          : "29 de julho de 2026",
-      );
-      expect(document.updatedAtIso).toBe(
-        wasUpdatedForContactAndStorage ? "2026-07-31" : "2026-07-29",
+      const expectedRevision =
+        document.route === "/politica-de-privacidade"
+          ? ["31 de agosto de 2026", "2026-08-31"]
+          : document.route === "/politica-de-cookies"
+            ? ["31 de julho de 2026", "2026-07-31"]
+            : ["29 de julho de 2026", "2026-07-29"];
+      expect([document.updatedAt, document.updatedAtIso]).toEqual(
+        expectedRevision,
       );
       expect(document.sections.length).toBeGreaterThanOrEqual(4);
       expect(new Set(document.sections.map(({ id }) => id)).size).toBe(

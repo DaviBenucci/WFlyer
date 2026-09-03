@@ -125,7 +125,7 @@ describe("ProfessionalChapterScene", () => {
 
     expect(barline).toHaveAttribute(
       "data-score-integration-status",
-      "phase-9-pending",
+      "phase-9-integrated",
     );
     expect(terminal).toBeInTheDocument();
     expect(

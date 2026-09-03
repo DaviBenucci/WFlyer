@@ -23,7 +23,7 @@ function sourceFiles(
 }
 
 describe("isolated music-system public boundary", () => {
-  it("keeps public app and legacy components disconnected from the new renderer", () => {
+  it("keeps renderer ownership inside the canonical Task-34 story-score seam", () => {
     const roots = [
       ...sourceFiles(
         join(process.cwd(), "src/app"),
@@ -31,7 +31,7 @@ describe("isolated music-system public boundary", () => {
       ),
       ...sourceFiles(
         join(process.cwd(), "src/components"),
-        new Set(["score"]),
+        new Set(["score", "story-score"]),
       ),
     ];
     const violations: string[] = [];
@@ -49,6 +49,20 @@ describe("isolated music-system public boundary", () => {
     }
 
     expect(violations).toEqual([]);
+
+    const storyScoreOwner = readFileSync(
+      join(
+        process.cwd(),
+        "src/components/story-score/StoryScoreLayer.tsx",
+      ),
+      "utf8",
+    );
+    expect(storyScoreOwner).toContain(
+      'from "@/components/score/ScoreSvg"',
+    );
+    expect(storyScoreOwner).toContain(
+      'from "@/lib/story/score/projection"',
+    );
   });
 
   it("does not expose the Visual Lab through sitemap configuration", () => {

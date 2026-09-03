@@ -78,13 +78,26 @@ export async function warmRoute(page: Page, pathname: string): Promise<void> {
 export async function waitForTransitionController(page: Page): Promise<void> {
   await expect
     .poll(
-      () =>
-        page.evaluate(
-          () =>
-            Boolean(
-              (window as TestWindow).__WFLYER_TRANSITION_TEST__,
-            ),
-        ),
+      async () => {
+        try {
+          return await page.evaluate(
+            () =>
+              Boolean(
+                (window as TestWindow).__WFLYER_TRANSITION_TEST__,
+              ),
+          );
+        } catch (error) {
+          if (
+            error instanceof Error &&
+            /Execution context was destroyed|Cannot find context/iu.test(
+              error.message,
+            )
+          ) {
+            return false;
+          }
+          throw error;
+        }
+      },
       {
         message:
           "the explicitly enabled transition test controller should be available",
@@ -221,17 +234,16 @@ export async function waitForSettledTransition(
 }
 
 export async function expectSafeSettledDocument(page: Page): Promise<void> {
+  await page.waitForLoadState("domcontentloaded");
   await expect(experience(page)).toHaveAttribute("data-scroll-locked", "false");
   await expect(overlay(page)).toHaveCSS("pointer-events", "none");
+  await expect(page.locator("body")).not.toHaveCSS("overflow", "hidden");
+  await expect(page.locator("html")).not.toHaveCSS("overflow", "hidden");
 
-  const state = await page.evaluate(() => ({
-    bodyOverflow: window.getComputedStyle(document.body).overflow,
-    clientWidth: document.documentElement.clientWidth,
-    htmlOverflow: window.getComputedStyle(document.documentElement).overflow,
-    scrollWidth: document.documentElement.scrollWidth,
+  const state = await page.locator("html").evaluate((element) => ({
+    clientWidth: element.clientWidth,
+    scrollWidth: element.scrollWidth,
   }));
 
-  expect(state.bodyOverflow).not.toBe("hidden");
-  expect(state.htmlOverflow).not.toBe("hidden");
   expect(state.scrollWidth).toBeLessThanOrEqual(state.clientWidth);
 }

@@ -1,0 +1,164 @@
+.form {
+  display: grid;
+  inline-size: min(100%, 32rem);
+  gap: var(--wf-space-3);
+  padding: clamp(1.15rem, 2.5vw, 2rem);
+  border: 1px solid var(--wf-border-strong);
+  border-radius: var(--wf-radius-lg);
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in oklab, var(--wf-accent) 9%, transparent),
+      transparent 52%
+    ),
+    color-mix(in oklab, var(--wf-surface) 94%, transparent);
+  box-shadow: var(--wf-shadow-soft);
+}
+
+.form fieldset {
+  display: grid;
+  min-inline-size: 0;
+  gap: var(--wf-space-3);
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.form legend {
+  margin-block-end: var(--wf-space-3);
+  color: var(--wf-text);
+  font-family: var(--wf-font-display);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-weight: var(--wf-font-weight-semibold);
+}
+
+.form label {
+  display: grid;
+  min-inline-size: 0;
+  gap: var(--wf-space-2);
+  color: var(--wf-text);
+  font-size: var(--wf-font-size-body-sm);
+  font-weight: var(--wf-font-weight-semibold);
+}
+
+.form input[type="email"] {
+  inline-size: 100%;
+  min-block-size: var(--wf-control-min-size);
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--wf-border-strong);
+  border-radius: var(--wf-radius-sm);
+  background: var(--wf-bg);
+  color: var(--wf-text);
+  font: inherit;
+}
+
+.form input:focus-visible,
+.form a:focus-visible,
+.submit:focus-visible {
+  outline: var(--wf-focus-width) solid var(--wf-focus);
+  outline-offset: var(--wf-focus-offset);
+}
+
+.consent {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  min-block-size: var(--wf-control-min-size);
+}
+
+.consent input {
+  inline-size: 1.2rem;
+  block-size: 1.2rem;
+  margin-block-start: 0.15rem;
+}
+
+.consent span {
+  color: var(--wf-text-muted);
+  font-weight: var(--wf-font-weight-regular);
+  line-height: 1.5;
+}
+
+.consent a {
+  color: var(--wf-link);
+  text-underline-offset: 0.18em;
+}
+
+.honeypot {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.verification,
+.turnstile {
+  min-block-size: var(--wf-control-min-size);
+}
+
+.submit {
+  min-block-size: var(--wf-control-min-size);
+  padding: 0.8rem 1.25rem;
+  border: 1px solid var(--wf-primary);
+  border-radius: var(--wf-radius-pill);
+  background: var(--wf-primary);
+  color: var(--wf-on-primary);
+  cursor: pointer;
+  font: inherit;
+  font-weight: var(--wf-font-weight-bold);
+}
+
+.submit:disabled {
+  cursor: wait;
+  opacity: 0.64;
+}
+
+.status {
+  min-block-size: 3rem;
+  padding: var(--wf-space-2) var(--wf-space-3);
+  border-inline-start: 3px solid var(--wf-accent);
+  margin: 0;
+  background: color-mix(in oklab, var(--wf-accent) 8%, transparent);
+  color: var(--wf-text-muted);
+  font-size: var(--wf-font-size-body-sm);
+  line-height: 1.45;
+}
+
+.status[data-app-launch-interest-status="SUCCESS"] {
+  border-inline-start-color: var(--wf-success, #23623b);
+}
+
+.status[data-app-launch-interest-status="CONSENT_REQUIRED"],
+.status[data-app-launch-interest-status="DELIVERY_FAILED"],
+.status[data-app-launch-interest-status="INVALID_EMAIL"],
+.status[data-app-launch-interest-status="RATE_LIMITED"],
+.status[data-app-launch-interest-status="TURNSTILE_FAILED"] {
+  border-inline-start-color: var(--wf-danger, #a12b2b);
+}
+
+@media (height < 42rem) and (min-width: 64rem) {
+  .form {
+    gap: var(--wf-space-2);
+    padding: var(--wf-space-3);
+  }
+
+  .form fieldset {
+    gap: var(--wf-space-2);
+  }
+
+  .form legend {
+    margin-block-end: var(--wf-space-1);
+  }
+
+  .status {
+    min-block-size: 0;
+  }
+}
+
+@media (forced-colors: active) {
+  .form,
+  .form input[type="email"],
+  .status {
+    border-color: CanvasText;
+  }
+}

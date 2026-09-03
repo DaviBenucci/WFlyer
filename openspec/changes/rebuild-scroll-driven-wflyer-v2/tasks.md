@@ -55,7 +55,17 @@ retained; only its phase classification and later execution position changed.
 
 ## 9. Continuous dual-score integration
 - [x] Human-approve Score Path layouts
-- [ ] Integrate origin + 12 segments using Music System
+- [x] Integrate origin + 12 segments using Music System
+
+> **Blocking Phase-9 human refinement (2026-08-31):** the checked Task-34
+> integration and its sealed automated evidence remain truthful historical
+> checkpoints. External human review approved a bounded choreography and
+> Application PRELAUNCH refinement tracked by
+> `refine-phase-9-score-choreography-and-prelaunch`. The next task remains
+> blocked until that focused change is implemented, validated, recaptured, and
+> explicitly visually accepted. This note does not reopen Task 34 or alter its
+> evidence.
+
 - [ ] Validate session/responsive/reduced-motion stability
 
 ## 10. Persona final asset and easter eggs

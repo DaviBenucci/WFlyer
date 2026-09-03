@@ -52,7 +52,10 @@ function SceneIntroduction({
   const content = PUBLIC_STORY_CONTENT[chapterId];
 
   return (
-    <header className={styles.introduction}>
+    <header
+      className={styles.introduction}
+      data-score-content-exclusion="heading-and-body"
+    >
       <Eyebrow>{content.eyebrow}</Eyebrow>
       <Heading as="h2" id={headingId} size="xl">
         {content.title}
@@ -85,7 +88,12 @@ function AboutScene({ headingId }: { readonly headingId: string }) {
         chapterId="professional-about"
         headingId={headingId}
       />
-      <PersonaIntegrationSlot />
+      <div
+        className={styles.personaReservation}
+        data-score-content-exclusion="persona-slot"
+      >
+        <PersonaIntegrationSlot />
+      </div>
     </div>
   );
 }
@@ -93,7 +101,8 @@ function AboutScene({ headingId }: { readonly headingId: string }) {
 function ServicesScene({ headingId }: { readonly headingId: string }) {
   return (
     <div
-      className={styles.scene}
+      className={`${styles.scene} ${styles.servicesScene}`}
+      data-card-score-interaction="CARD_SCORE_INTERACTION"
       data-professional-scene="services"
       data-story-scene-contract="phase-7"
     >
@@ -104,11 +113,13 @@ function ServicesScene({ headingId }: { readonly headingId: string }) {
       <ul
         aria-label="Quatro frentes de serviço"
         className={styles.serviceModules}
+        data-score-interaction-foreground="true"
         data-service-module-count={PUBLIC_SERVICES.length}
       >
         {PUBLIC_SERVICES.map((service, index) => (
           <li
             className={styles.serviceModule}
+            data-score-interaction-card=""
             data-service-module={service.slug}
             key={service.slug}
           >
@@ -143,6 +154,7 @@ function ProcessScene({ headingId }: { readonly headingId: string }) {
       <ol
         aria-label="Quatro etapas do processo"
         className={styles.processStages}
+        data-score-content-exclusion="process-stages"
         data-process-stage-count={PROCESS_STEPS.length}
       >
         {PROCESS_STEPS.map((step) => (
@@ -206,13 +218,18 @@ function ContactScene({ headingId }: { readonly headingId: string }) {
           </a>
         </address>
       </div>
-      <Suspense fallback={<ContactFormFallback />}>
-        <ContactForm
-          compact
-          deferVerificationUntilInteraction
-          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ""}
-        />
-      </Suspense>
+      <div
+        className={styles.contactFormReservation}
+        data-score-content-exclusion="contact-form"
+      >
+        <Suspense fallback={<ContactFormFallback />}>
+          <ContactForm
+            compact
+            deferVerificationUntilInteraction
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ""}
+          />
+        </Suspense>
+      </div>
     </div>
   );
 }
@@ -234,14 +251,13 @@ function ProfessionalTerminalScene({
         aria-hidden="true"
         className={styles.finalBarlineContract}
         data-final-barline-before="professional-terminal"
-        data-score-integration-status="phase-9-pending"
-      >
-        <span />
-        <span />
-      </div>
+        data-score-integration-status="phase-9-integrated"
+        data-score-render-owner="story-score-layer"
+      />
       <div
         aria-labelledby={headingId}
         className={styles.terminalContent}
+        data-score-content-exclusion="terminal-content"
         data-branch-terminal="professional"
       >
         <Eyebrow>{content.eyebrow}</Eyebrow>

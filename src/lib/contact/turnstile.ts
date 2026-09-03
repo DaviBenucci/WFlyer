@@ -14,8 +14,11 @@ interface TurnstileResponse {
 
 export type TurnstileResult = "invalid" | "unavailable" | "valid";
 
-export async function verifyTurnstile(
+export type TurnstileAction = "app-launch-interest" | "contact";
+
+export async function verifyTurnstileAction(
   token: string,
+  action: TurnstileAction,
   config: ContactServerConfig,
   fetchImplementation: typeof fetch = fetch,
 ): Promise<TurnstileResult> {
@@ -39,7 +42,7 @@ export async function verifyTurnstile(
     const result = (await response.json()) as TurnstileResponse;
     if (
       result.success !== true ||
-      result.action !== "contact" ||
+      result.action !== action ||
       typeof result.hostname !== "string" ||
       !config.allowedHostnames.has(result.hostname)
     ) {
@@ -52,4 +55,17 @@ export async function verifyTurnstile(
   } finally {
     clearTimeout(timeoutId);
   }
+}
+
+export function verifyTurnstile(
+  token: string,
+  config: ContactServerConfig,
+  fetchImplementation: typeof fetch = fetch,
+): Promise<TurnstileResult> {
+  return verifyTurnstileAction(
+    token,
+    "contact",
+    config,
+    fetchImplementation,
+  );
 }

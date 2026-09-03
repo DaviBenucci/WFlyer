@@ -8,6 +8,12 @@ The score is not a horizontal stripe repeated per section. Each branch is a wide
 Application score ← Home origin → Professional score
 ```
 
+The Home origin uses exactly one approved treble-clef asset as a substantially
+enlarged scenographic element. It remains upright, unmirrored, and aligned to
+the one shared semantic point. Both five-line branches depart below/around its
+lower region and outside the primary Home reading exclusion; ordinary notation
+resumes only in downstream notation-safe geometry.
+
 ## Geometry
 
 - one master guide per score segment;
@@ -51,6 +57,26 @@ Adjacent exit/entry contracts must match. Seams are not accepted as intentional 
 - Scene elements may emerge from motifs or score geometry.
 - No scene may replace or reset the branch score.
 - Final barline precedes terminal/footer.
+
+### Human-approved scene choreography
+
+- About uses a low safe corridor and an explicit future-Persona exclusion.
+- Services and Application How It Works share `CARD_SCORE_INTERACTION`: an
+  eased visual five-line spread behind foreground cards, restrained opacity,
+  contraction to canonical spacing, and zero events in unsafe expanded spans.
+- Process, Application Overview, and Benefits use restrained lower/middle
+  curves without the card interaction.
+- Projects uses an alternating three-card visitation serpentine. Steep rises
+  and descents are true event-free connectors; only local shelves/arcs with
+  `abs(tangentAngle) <= 18deg` carry notation.
+- Contact uses a low long gentle wave below the complete form/security/status
+  envelope. APP-04 and the PRELAUNCH form are protected exclusions.
+- Every branch ends physically at its thin-gap-thick final barline, with no
+  staff, connector, guide, or musical primitive afterward.
+
+Projection declares exclusions, interactions, and visit regions as
+deterministic evidence. Scene content remains foreground and the complete score
+layer remains pointer-inert and absent from the accessibility tree.
 
 ## Mobile
 

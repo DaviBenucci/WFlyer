@@ -121,24 +121,19 @@ describe("ApplicationChapterScene Phase-8 content scenes", () => {
     ).toBeNull();
   });
 
-  it("renders the one primary app action only in Access", () => {
+  it("renders only the purpose-limited PRELAUNCH form in the launch scene", () => {
     const { container } = renderScene("application-access");
-    const primaryActions = container.querySelectorAll<HTMLAnchorElement>(
-      '[data-primary-app-access="true"]',
-    );
-    const primaryAction = primaryActions.item(0);
 
-    expect(primaryActions).toHaveLength(1);
-    expect(primaryAction).toHaveAttribute(
-      "href",
-      "https://app.wflyer.com.br",
+    expect(
+      screen.getByRole("form", {
+        name: "Aviso de lançamento da aplicação",
+      }),
+    ).toHaveAttribute(
+      "data-app-launch-interest-state",
+      "TURNSTILE_FAILED",
     );
-    expect(primaryAction).toHaveAttribute("target", "_blank");
-    expect(primaryAction).toHaveAttribute(
-      "rel",
-      expect.stringContaining("noopener"),
-    );
-    expect(container.querySelector("form")).toBeNull();
+    expect(container.querySelector('[data-primary-app-access="true"]')).toBeNull();
+    expect(container.querySelector('a[href="https://app.wflyer.com.br"]')).toBeNull();
   });
 
   it("places the structural application barline before a shared-data terminal", () => {
@@ -155,7 +150,7 @@ describe("ApplicationChapterScene Phase-8 content scenes", () => {
 
     expect(barline).toHaveAttribute(
       "data-score-integration-status",
-      "phase-9-pending",
+      "phase-9-integrated",
     );
     const terminalPosition =
       barline?.compareDocumentPosition(terminal!) ?? 0;

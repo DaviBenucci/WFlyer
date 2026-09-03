@@ -5,10 +5,12 @@ import {
   type ApplicationDemoMediaContract,
 } from "@/components/pages";
 import { Eyebrow, Heading, Text } from "@/components/ui";
+import { APPLICATION_RELEASE } from "@/config/application-release";
 import { PUBLIC_STORY_CONTENT } from "@/content/public";
 import type { StoryChapterId } from "@/lib/story";
 
 import styles from "./application-chapter-scene.module.css";
+import { ApplicationLaunchInterestForm } from "./ApplicationLaunchInterestForm";
 import { STORY_FOOTER_GROUPS } from "./story-footer-data";
 
 export type Phase8ApplicationChapterId = Extract<
@@ -50,7 +52,10 @@ function SceneIntroduction({
   const content = PUBLIC_STORY_CONTENT[chapterId];
 
   return (
-    <header className={styles.introduction}>
+    <header
+      className={styles.introduction}
+      data-score-content-exclusion="heading-and-body"
+    >
       <Eyebrow>{content.eyebrow}</Eyebrow>
       <Heading as="h2" id={headingId} size="xl">
         {content.title}
@@ -79,7 +84,7 @@ function OverviewScene({ headingId }: { readonly headingId: string }) {
     <div
       className={`${styles.scene} ${styles.overviewScene}`}
       data-application-scene="overview"
-      data-score-integration-status="phase-9-pending"
+      data-score-integration-status="phase-9-integrated"
       data-story-scene-contract="phase-8"
     >
       <SceneIntroduction
@@ -89,6 +94,7 @@ function OverviewScene({ headingId }: { readonly headingId: string }) {
       <ol
         aria-label="Problema, proposta e revisão da aplicação"
         className={styles.overviewFlow}
+        data-score-content-exclusion="application-overview"
         data-application-overview-concept-count={content.items?.length ?? 0}
       >
         {content.items?.map((item, index) => (
@@ -109,8 +115,9 @@ function HowItWorksScene({ headingId }: { readonly headingId: string }) {
   return (
     <div
       className={`${styles.scene} ${styles.howScene}`}
+      data-card-score-interaction="CARD_SCORE_INTERACTION"
       data-application-scene="how-it-works"
-      data-score-integration-status="phase-9-pending"
+      data-score-integration-status="phase-9-integrated"
       data-story-scene-contract="phase-8"
     >
       <SceneIntroduction
@@ -120,10 +127,15 @@ function HowItWorksScene({ headingId }: { readonly headingId: string }) {
       <ol
         aria-label="Cinco etapas de como a aplicação funciona"
         className={styles.howSteps}
+        data-score-interaction-foreground="true"
         data-application-how-step-count={content.items?.length ?? 0}
       >
         {content.items?.map((item) => (
-          <li data-application-how-step={item.label} key={item.title}>
+          <li
+            data-application-how-step={item.label}
+            data-score-interaction-card=""
+            key={item.title}
+          >
             <span aria-hidden="true">{item.label}</span>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
@@ -141,7 +153,7 @@ function BenefitsScene({ headingId }: { readonly headingId: string }) {
     <div
       className={`${styles.scene} ${styles.benefitsScene}`}
       data-application-scene="benefits"
-      data-score-integration-status="phase-9-pending"
+      data-score-integration-status="phase-9-integrated"
       data-story-scene-contract="phase-8"
     >
       <SceneIntroduction
@@ -151,6 +163,7 @@ function BenefitsScene({ headingId }: { readonly headingId: string }) {
       <ul
         aria-label="Quatro grupos de benefícios da aplicação"
         className={styles.benefitGroups}
+        data-score-content-exclusion="application-benefits"
         data-application-benefit-count={content.items?.length ?? 0}
       >
         {content.items?.map((item, index) => (
@@ -178,51 +191,60 @@ function DemoScene({
     <div
       className={`${styles.scene} ${styles.demoScene}`}
       data-application-scene="demo"
-      data-score-integration-status="phase-9-pending"
+      data-score-integration-status="phase-9-integrated"
       data-story-scene-contract="phase-8"
     >
       <SceneIntroduction
         chapterId="application-demo"
         headingId={headingId}
       />
-      <ApplicationDemoDevice isActive={active} media={media} />
+      <div
+        className={styles.demoProtected}
+        data-score-content-exclusion="application-tablet-demo"
+      >
+        <ApplicationDemoDevice isActive={active} media={media} />
+      </div>
     </div>
   );
 }
 
 function AccessScene({ headingId }: { readonly headingId: string }) {
-  const content = PUBLIC_STORY_CONTENT["application-access"];
-  const primaryAction = content.primaryAction;
-
-  if (primaryAction === undefined) {
-    throw new Error("The canonical Application Access action is missing.");
-  }
-
   return (
     <div
       className={`${styles.scene} ${styles.accessScene}`}
       data-application-scene="access"
       data-persona-optional-appearance="forbidden"
-      data-score-integration-status="phase-9-pending"
+      data-score-integration-status="phase-9-integrated"
       data-story-scene-contract="phase-8"
     >
       <SceneIntroduction
         chapterId="application-access"
         headingId={headingId}
       />
-      <a
-        className={styles.primaryAccess}
-        data-primary-app-access="true"
-        href={primaryAction.href}
-        rel="noopener noreferrer"
-        target="_blank"
+      <div
+        className={styles.launchProtected}
+        data-score-content-exclusion="access-action"
       >
-        <span>{primaryAction.label}</span>
-        <span aria-hidden="true" className={styles.accessArrow}>
-          ↗
-        </span>
-        <span className="wf-sr-only"> — abre em nova aba</span>
-      </a>
+        {APPLICATION_RELEASE.state === "LIVE" ? (
+          <a
+            className={styles.primaryAccess}
+            data-primary-app-access="true"
+            href={APPLICATION_RELEASE.liveUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>{APPLICATION_RELEASE.liveLabel}</span>
+            <span aria-hidden="true" className={styles.accessArrow}>
+              ↗
+            </span>
+            <span className="wf-sr-only"> — abre em nova aba</span>
+          </a>
+        ) : (
+          <ApplicationLaunchInterestForm
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ""}
+          />
+        )}
+      </div>
     </div>
   );
 }
@@ -244,14 +266,13 @@ function ApplicationTerminalScene({
         aria-hidden="true"
         className={styles.finalBarlineContract}
         data-final-barline-before="application-terminal"
-        data-score-integration-status="phase-9-pending"
-      >
-        <span />
-        <span />
-      </div>
+        data-score-integration-status="phase-9-integrated"
+        data-score-render-owner="story-score-layer"
+      />
       <div
         aria-labelledby={headingId}
         className={styles.terminalContent}
+        data-score-content-exclusion="terminal-content"
         data-branch-terminal="application"
       >
         <Eyebrow>{content.eyebrow}</Eyebrow>

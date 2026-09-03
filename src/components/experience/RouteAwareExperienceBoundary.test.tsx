@@ -77,6 +77,15 @@ describe("RouteAwareExperienceBoundary", () => {
     expect(screen.queryByTestId("legacy-shell")).not.toBeInTheDocument();
   });
 
+  it("lets the immersive story terminal own the only footer conclusion", () => {
+    navigationState.pathname = "/__visual-lab/story/motion";
+    renderBoundary();
+
+    expect(screen.getByTestId("story-header")).toBeInTheDocument();
+    expect(screen.queryByTestId("story-footer")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("legacy-footer")).not.toBeInTheDocument();
+  });
+
   it("fails closed to the ordinary shell when the story lab is disabled", () => {
     navigationState.pathname = "/__visual-lab/story";
     render(

@@ -6,13 +6,18 @@ project: wflyer.com.br institutional website
 branch: develop/site-institucional
 implementation_checkpoint: 5764808399befd6a04e9a12b3e804fa9aaf9493f
 maintenance_checkpoint: this file belongs to the current maintenance HEAD; resolve with git rev-parse HEAD
-active_change: rebuild-scroll-driven-wflyer-v2
-openspec_progress: 33/45
-next_unchecked_task: '34 — Integrate origin + 12 segments using Music System'
+active_change: refine-phase-9-score-choreography-and-prelaunch
+parent_change: rebuild-scroll-driven-wflyer-v2
+openspec_progress: 0/20
+parent_openspec_progress: 34/45
+next_unchecked_task: 'Focused refinement 1.1 — canonical governance and immutable baseline verification'
 current_phase: 'Phase 9 — Continuous dual-score integration'
 phase_9_started: true
 task_33_status: human_approved
-task_34_started: false
+task_33_checkpoint: 74677a762a9d9a53cb7fd375eecb0462b10e18e9
+task_34_status: historical_complete_refinement_blocking
+task_34_refinement_status: implementation_in_progress
+task_35_status: blocked_unchecked
 production_authorized: false
 ```
 
@@ -99,19 +104,19 @@ Canonical precedence remains in `AGENTS.md`.
   explicit intercepted development-test scenario.
 - No final APP-04 asset or invented product footage exists.
 - Access W_Flyer is the sole primary Application CTA and opens the separate app.
-- The Phase-9 score is a pending seam only; no ScorePath/Music integration is
-  present.
+- Task 34 integrates the real score only in the Phase-5 development review
+  story. Public `/` remains on the retained page and is not cut over.
 
-### Phase 9 Task-33 human-approved state
+### Phase 9 Task-33 approval and Task-34 review-ready state
 
 - Organic Flowing alternating-S geometry, the mobile Project-card responsive
   direction, ADR-041's warm dark-neutral palette, canonical copper dark UI
   emphasis, and warm dark Home atmosphere directions are approved.
-- `#e79271` now owns selective dark UI/text/ornamental emphasis through semantic
-  tokens. Purple/cobalt remain valid where intrinsic to approved brand assets;
-  the Task-33 score fixtures still precede Task-34's final theme-aware notation
-  tokens. Connector cyan and fixture-local diagnostic/status semantics remain
-  review-only. The light theme remains unchanged.
+- `#e79271` owns selective dark UI/text/ornamental emphasis through semantic
+  tokens. Task 34 adds final theme-aware warm score-primary and score-muted
+  roles, with copper limited to key-signature and thick-final-bar emphasis.
+  Purple/cobalt remain valid only where intrinsic to approved brand assets or
+  isolated diagnostics. The light theme remains warm and unchanged in intent.
 - Task-33 review routes project their explicit theme query through the document
   theme owner. Score SVG presentation uses deterministic six-decimal
   serialization across SSR and browser hydration. Review-only descending-arc
@@ -120,17 +125,53 @@ Canonical precedence remains in `AGENTS.md`.
   math, authored geometry, or semantic fingerprints.
 - The real treble-clef-to-staff origin, branch-departure topology,
   notation-safe descending regions, event-free connectors, and physical final
-  barline termination are human-approved. The isolated fixture's current clef
-  pixel size is not a frozen production-size requirement; Task 34 may calibrate
-  its optical prominence without changing its musical anchor or topology.
-- Task 33 is complete at 33/45. Task 34 has not started.
+  barline termination are human-approved. Task 34 promotes that approved
+  geometry and the immutable clef calibration without changing SVG bytes,
+  musical anchor, `gLine`, `staffSpace`, topology, orientation, or semantic
+  role.
+- Task 34 owns exactly two module/session compositions, one production
+  projection owner, and one presentational score layer. It integrates one
+  shared origin, six Professional segments, and six Application segments with
+  fingerprints `fnv1a32:039bce10` and `fnv1a32:1fe3356b`.
+- Final geometry is crossing-free in horizontal-enhanced, vertical-wide,
+  vertical-compact, static, and transient stale-mode handoffs. Composer work,
+  React renders, and new ScrollTriggers do not occur per scroll frame.
+- Final validation is green: 90 unit files / 707 tests, 13 Storybook files / 63
+  interactions, 12/12 three-engine integration/hydration cases, and 294/294
+  applicable affected-regression cases with zero retries or skips. Production
+  build and Visual Lab isolation also pass.
+- Task-34 review evidence is sealed at
+  `docs/canonical-v2/06-migration/evidence/phase-9/task-34-integration-review-2026-08-31/`;
+  its manifest SHA-256 is
+  `c4bec2d7f6b546c44d9b7bd053ad0b4ff0c42d1d143cc079dd0714068c3fef8a`.
+- Task 34 is complete at 34/45 and remains intentionally uncommitted for human
+  review. Task 35 has not started; Gate 9 remains open.
+
+### Phase 9 human choreography/PRELAUNCH refinement
+
+- External human review after the automated Task-34 checkpoint approved the
+  bounded contract normalized in ADR-043. It does not reopen Task 34.
+- The focused OpenSpec change is
+  `refine-phase-9-score-choreography-and-prelaunch`; its planning artifacts
+  strict-validate and its implementation/evidence tasks remain open.
+- The parent Task-34 evidence directory and manifest SHA-256 remain immutable
+  historical evidence. New work uses sibling evidence under
+  `task-34-refinement-2026-08-31/`.
+- The refinement owns projection/presentation choreography, the explicit
+  semantic header, immersive-only footer de-duplication, current PRELAUNCH
+  scene, dedicated launch-interest endpoint, and fixed transactional emails.
+- Music fingerprints `fnv1a32:039bce10` and `fnv1a32:1fe3356b`, composition,
+  assets, calibration, semantic slots, native-scroll runtime, and Task-34
+  hydration fixes remain baseline invariants.
+- Task 35 stays unchecked until the focused implementation is validated,
+  recaptured, and explicitly accepted by external human visual review.
 
 ## Deferred work and hard stops
 
-- Task 34 / Phase 9: integrate the approved shared origin and all 12 real Music
-  segments without changing semantic composition.
-- Task 35 / Phase 9: validate session, responsive, and reduced-motion stability
-  only after Task 34 is complete and human-reviewed as required.
+- Task 34 / Phase 9: historically complete; its later bounded human refinement
+  is in progress under the focused change and must not rewrite the checkpoint.
+- Task 35 / Phase 9: unchecked, not started, and blocked by external acceptance
+  of the focused refinement; Gate 9 remains open.
 - Task 36 / Phase 10: owner-approved final Persona asset, rig, easter eggs.
 - Task 37 / Phase 11: owner-approved final APP-04 media.
 - Tasks 38–39: accessibility/responsive/reduced-motion and lifecycle/recovery
@@ -208,13 +249,13 @@ The noncanonical `(1)` plan is discoverable but never authoritative. The live
 
 ## Exact next safe action
 
-Begin Task 34 only after the selective Task-33 checkpoint passes clean-worktree
-verification. Integrate the approved shared origin plus six Professional and
-six Application segments using the real Music System, preserving semantic
-fingerprints and Organic Flowing geometry. Treat notation ink as theme-aware
-Music presentation, keep copper selective, and do not treat the review
-fixture's clef pixel size as a frozen production-size requirement. Do not begin
-Task 35 before Task 34 implementation, validation, and review are complete.
+Implement and validate
+`refine-phase-9-score-choreography-and-prelaunch`, create a new deterministic
+review bundle, then stop for external human visual acceptance while preserving
+the stable rollback boundary
+`74677a762a9d9a53cb7fd375eecb0462b10e18e9`. Do not rewrite the Task-34 bundle,
+begin Task 35, begin Phase 10, cut over public `/`, commit, push, deploy, or
+mutate production.
 
 `Phase 9 — use CURRENT_HANDOFF.md as the primary operational bootstrap`
 

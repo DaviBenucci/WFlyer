@@ -25,6 +25,7 @@ interface CanonicalChapter {
   readonly branch: string;
   readonly timelineLabel: string;
   readonly header: boolean | string;
+  readonly availabilityState?: string;
   readonly detailRoute?: string;
   readonly externalAction?: string;
   readonly finalBarlineBefore?: boolean;
@@ -60,6 +61,9 @@ function toCanonicalChapter(chapter: StoryChapter): CanonicalChapter {
     branch: chapter.branch,
     timelineLabel: chapter.timelineLabel,
     header: chapter.header,
+    ...(chapter.availabilityState === undefined
+      ? {}
+      : { availabilityState: chapter.availabilityState }),
     ...(chapter.detailRoute === undefined
       ? {}
       : { detailRoute: chapter.detailRoute }),
@@ -120,11 +124,13 @@ describe("v2 story manifest", () => {
         "application-overview",
         "application-how-it-works",
         "application-benefits",
+        "application-access",
       ],
       center: "home",
       professional: [
         "professional-about",
         "professional-services",
+        "professional-process",
         "professional-projects",
         "professional-contact",
       ],
@@ -162,7 +168,7 @@ describe("v2 story manifest", () => {
     }
   });
 
-  it("reserves geometry-free scene and score seams without composing slots", () => {
+  it("maps geometry-free scene seams to the approved Phase-9 semantic slots", () => {
     const forbiddenGeometryFields = [
       "coordinate",
       "x",
@@ -177,7 +183,11 @@ describe("v2 story manifest", () => {
     for (const chapter of STORY_CHAPTERS) {
       expect(chapter.sceneId).toBe(chapter.id);
       expect(chapter.scoreHook.segmentId).toBe(chapter.id);
-      expect(chapter.scoreHook.semanticSlotIds).toEqual([]);
+      expect(chapter.scoreHook.semanticSlotIds).toEqual(
+        chapter.id === "home"
+          ? []
+          : [`${chapter.id}:primary`, `${chapter.id}:reserved`],
+      );
 
       for (const field of forbiddenGeometryFields) {
         expect(chapter).not.toHaveProperty(field);

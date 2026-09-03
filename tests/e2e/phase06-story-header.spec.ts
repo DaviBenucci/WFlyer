@@ -8,14 +8,16 @@ const MOTION_ROOT = "main[data-motion-lab]";
 const STORY_HEADER = "header[data-story-v2-header]";
 
 const HEADER_TARGETS = [
-  ["application-overview", "#aplicacao"],
-  ["application-how-it-works", "#como-funciona"],
-  ["application-benefits", "#beneficios"],
-  ["home", "#home"],
-  ["professional-about", "#sobre"],
-  ["professional-services", "#servicos"],
-  ["professional-projects", "#projetos"],
-  ["professional-contact", "#contato"],
+  ["application-overview", "#aplicacao", "Aplicação", '[data-application-scene="overview"]'],
+  ["application-how-it-works", "#como-funciona", "Como funciona", '[data-application-scene="how-it-works"]'],
+  ["application-benefits", "#beneficios", "Benefícios", '[data-application-scene="benefits"]'],
+  ["application-access", "#lancamento", "Lançamento", '[data-application-scene="access"]'],
+  ["home", "#home", "W_Flyer", '[data-structural-placeholder="home"]'],
+  ["professional-about", "#sobre", "Sobre", '[data-professional-scene="about"]'],
+  ["professional-services", "#servicos", "Serviços", '[data-professional-scene="services"]'],
+  ["professional-process", "#processo", "Processo", '[data-professional-scene="process"]'],
+  ["professional-projects", "#projetos", "Projetos", '[data-professional-scene="projects"]'],
+  ["professional-contact", "#contato", "Contato", '[data-professional-scene="contact"]'],
 ] as const;
 
 async function openMotionLab(page: Page) {
@@ -96,7 +98,7 @@ test.describe("Phase-6 story header traversal", () => {
           element.getAttribute("href"),
         ]),
       ),
-    ).toEqual(HEADER_TARGETS);
+    ).toEqual(HEADER_TARGETS.map(([chapterId, hash]) => [chapterId, hash]));
     await expect(
       header.locator('[data-story-navigation-target="home"]'),
     ).toHaveAttribute("aria-current", "location");
@@ -111,7 +113,7 @@ test.describe("Phase-6 story header traversal", () => {
       await page.evaluate(async () => {
         try {
           await window.__WFLYER_PHASE5_MOTION__?.navigate(
-            "professional-process",
+            "application-demo",
           );
           return "resolved";
         } catch (error) {
@@ -154,6 +156,62 @@ test.describe("Phase-6 story header traversal", () => {
       chapterId: "application-overview",
       historyLength: initialHistoryLength + 3,
     });
+  });
+
+  test("proves the exact ten-item order, tab sequence, click target, active scene, aria-current, and hash", async ({
+    page,
+  }) => {
+    test.setTimeout(55_000);
+    await openMotionLab(page);
+    const header = page.locator(STORY_HEADER);
+    const links = header.locator("[data-story-navigation-target]");
+
+    await expect(links).toHaveCount(HEADER_TARGETS.length);
+    expect(
+      await links.evaluateAll((elements) =>
+        elements.map((element) => ({
+          chapterId: element.getAttribute("data-story-navigation-target"),
+          hash: element.getAttribute("href"),
+          label: element.textContent?.trim(),
+        })),
+      ),
+    ).toEqual(
+      HEADER_TARGETS.map(([chapterId, hash, label]) => ({
+        chapterId,
+        hash,
+        label,
+      })),
+    );
+
+    await links.first().focus();
+    for (let index = 0; index < HEADER_TARGETS.length; index += 1) {
+      await expect(links.nth(index)).toBeFocused();
+      if (index < HEADER_TARGETS.length - 1) await page.keyboard.press("Tab");
+    }
+
+    for (const [chapterId, hash, , sceneSelector] of HEADER_TARGETS) {
+      const sourceChapterId =
+        chapterId === "application-overview"
+          ? "home"
+          : "application-overview";
+      await positionImmediately(page, sourceChapterId);
+
+      const link = header.locator(
+        `[data-story-navigation-target="${chapterId}"]`,
+      );
+      await link.click();
+      await waitForTraversalCompletion(page, chapterId);
+
+      await expect(page.locator(MOTION_ROOT)).toHaveAttribute(
+        "data-motion-active-chapter",
+        chapterId,
+      );
+      await expect(link).toHaveAttribute("aria-current", "location");
+      await expect(
+        page.locator(`[data-chapter-id="${chapterId}"]`).locator(sceneSelector),
+      ).toBeVisible();
+      expect(await page.evaluate(() => location.hash)).toBe(hash);
+    }
   });
 
   test("uses the minimum-bound formula for a nearby canonical target", async ({
@@ -227,11 +285,16 @@ test.describe("Phase-6 story header traversal", () => {
     expect(running.lastTraversalDurationSeconds).toBeLessThanOrEqual(3);
     await waitForTraversalCompletion(page, "professional-contact");
     const completed = await motionSnapshot(page);
+    const overviewProgress = completed.labelProgress["app-overview"];
     const processProgress = completed.labelProgress["pro-process"];
     const homeProgress = completed.homeProgress;
 
+    expect(overviewProgress).toBeDefined();
     expect(processProgress).toBeDefined();
     expect(homeProgress).not.toBeNull();
+    expect(sourceProgress).toBeLessThan(overviewProgress ?? 0);
+    expect(overviewProgress ?? 1).toBeLessThan(homeProgress ?? 0);
+    expect(completed.progress).toBeGreaterThan(overviewProgress ?? 1);
     expect(sourceProgress).toBeLessThan(homeProgress ?? 0);
     expect(completed.progress).toBeGreaterThan(homeProgress ?? 1);
     expect(sourceProgress).toBeLessThan(processProgress ?? 0);
@@ -247,7 +310,6 @@ test.describe("Phase-6 story header traversal", () => {
     });
     expect(visited).toEqual(
       expect.arrayContaining([
-        "application-overview",
         "professional-process",
         "professional-projects",
         "professional-contact",

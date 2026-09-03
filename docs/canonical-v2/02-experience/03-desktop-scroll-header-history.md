@@ -17,6 +17,22 @@ duration = clamp(minDuration, minDuration + range * distance, 3.0s)
 
 Exact minimum/ease is calibrated in Motion Lab. Maximum is normative: 3.0 seconds.
 
+## Semantic header manifest
+
+Header order is explicit and independent of physical X position, active
+progress, timeline order, or branch direction:
+
+```text
+Aplicação → Como funciona → Benefícios → Lançamento
+W_Flyer / Home
+Sobre → Serviços → Processo → Projetos → Contato
+```
+
+Demonstration remains in the master story but is intentionally absent from the
+header. `Lançamento` resolves the stable final Application content chapter and
+its current `PRELAUNCH` scene. Adding these semantic targets changes neither
+native-scroll traversal ownership nor timing/history/cancellation policy.
+
 ## Cancellation/supersession
 
 Automated traversal ends immediately on explicit wheel, touch, navigation key, Escape, or a new header target. No corrective snap follows cancellation. A new target recalculates from the current canonical progress.

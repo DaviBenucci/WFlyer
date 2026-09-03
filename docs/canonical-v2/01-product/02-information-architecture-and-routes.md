@@ -8,7 +8,7 @@
 /#como-funciona
 /#beneficios
 /#demonstracao
-/#acessar-wflyer
+/#lancamento
 /#sobre
 /#servicos
 /#processo
@@ -54,12 +54,18 @@ Application group:
 - Aplicação
 - Como funciona
 - Benefícios
+- Lançamento
 
 Professional group:
 
 - Sobre
 - Serviços
+- Processo
 - Projetos
 - Contato
 
-The central W_Flyer symbol targets Home. Process, Demonstration, and Access W_Flyer are story chapters but not required primary header items.
+The central W_Flyer symbol targets Home. Header order is this explicit semantic
+manifest and is never inferred from physical X position, story progress, or the
+Application branch's reversed desktop travel. Demonstration remains a story
+chapter without a dedicated header item. `Lançamento` targets the stable final
+Application content chapter in its current PRELAUNCH state.

@@ -604,15 +604,10 @@ export const PUBLIC_STORY_CONTENT: Readonly<
     chapterId: "application-access",
     branch: "application",
     publicationStatus: "public",
-    eyebrow: "Acessar W_Flyer",
-    title: "Continue quando estiver pronto para conhecer a aplicação.",
+    eyebrow: "Lançamento",
+    title: "A aplicação está em desenvolvimento.",
     description:
-      "Este é o único ponto de acesso principal ao aplicativo dentro da narrativa.",
-    primaryAction: {
-      external: true,
-      href: "https://app.wflyer.com.br",
-      label: "Acessar W_Flyer",
-    },
+      "Quer saber quando ela estiver disponível? Cadastre seu e-mail para receber apenas este aviso.",
   },
   "application-terminal": {
     chapterId: "application-terminal",
@@ -621,6 +616,6 @@ export const PUBLIC_STORY_CONTENT: Readonly<
     eyebrow: "Conclusão da aplicação",
     title: "Fim da narrativa vertical.",
     description:
-      "A barra final encerra o ramo da aplicação. O rodapé global aparece uma única vez depois desta conclusão.",
+      "A barra final encerra o ramo da aplicação e a navegação institucional conclui a experiência sem duplicar um segundo rodapé.",
   },
 };

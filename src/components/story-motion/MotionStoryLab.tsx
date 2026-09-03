@@ -11,6 +11,7 @@ import {
 } from "react";
 
 import { StoryBootstrapExperience } from "@/components/story-bootstrap";
+import { StoryScoreLayer } from "@/components/story-score";
 import type { ApplicationDemoMediaContract } from "@/components/pages";
 import {
   ApplicationChapterScene,
@@ -32,11 +33,14 @@ import {
   createMotionStoryRuntime,
   type MotionStoryRuntime,
 } from "@/lib/story/motion";
+import { STORY_SCORE_APPROVED_SECTION_BLOCK_SIZES } from "@/lib/story/score/projection";
 
 import styles from "./motion-story-lab.module.css";
 
 type MotionLabChapterStyle = CSSProperties & {
   readonly "--motion-lab-chapter-span": string;
+  readonly "--story-score-compact-block-size": string;
+  readonly "--story-score-wide-block-size": string;
 };
 
 interface MotionStoryRuntimeRegistry {
@@ -154,6 +158,7 @@ function MotionStorySurface({
       data-motion-lab="phase-5"
       data-application-scenes="phase-8"
       data-professional-scenes="phase-7"
+      data-score-integration="phase-9-task-34"
       data-story-header-traversal="phase-6"
       data-projection-mode="static"
       data-story-document-order={MOBILE_DOCUMENT_ORDER.join(" ")}
@@ -208,6 +213,7 @@ function MotionStorySurface({
 
       <div className={styles.stage} data-motion-stage="" ref={stageRef}>
         <div className={styles.track} data-motion-track="" ref={trackRef}>
+          <StoryScoreLayer />
           {MOTION_LAB_PLACEHOLDER_CHAPTERS.map(
             ({ chapter, desktopIndex, draftSpan }, documentIndex) => {
               const headingId = `${chapter.id}-motion-lab-heading`;
@@ -215,6 +221,8 @@ function MotionStorySurface({
               const isProfessional = isProfessionalChapterId(chapter.id);
               const chapterStyle: MotionLabChapterStyle = {
                 "--motion-lab-chapter-span": `${draftSpan * 100}vw`,
+                "--story-score-compact-block-size": `${STORY_SCORE_APPROVED_SECTION_BLOCK_SIZES["vertical-compact"][chapter.id]}px`,
+                "--story-score-wide-block-size": `${STORY_SCORE_APPROVED_SECTION_BLOCK_SIZES["vertical-wide"][chapter.id]}px`,
                 order: desktopIndex,
               };
 
@@ -229,6 +237,13 @@ function MotionStorySurface({
                   data-chapter-id={chapter.id}
                   data-motion-desktop-index={desktopIndex}
                   data-motion-draft-span={draftSpan}
+                  data-score-integration-status="phase-9-integrated"
+                  data-score-semantic-slot-ids={
+                    chapter.scoreHook.semanticSlotIds.join(" ")
+                  }
+                  data-story-score-segment={
+                    chapter.id === "home" ? "shared-origin" : chapter.id
+                  }
                   data-story-branch={chapter.branch}
                   data-story-document-index={documentIndex + 1}
                   data-story-timeline-label={chapter.timelineLabel}
@@ -250,6 +265,11 @@ function MotionStorySurface({
                   ) : (
                     <div
                       className={styles.chapterGrid}
+                      data-score-content-exclusion={
+                        chapter.id === "home"
+                          ? "home-reading-envelope"
+                          : undefined
+                      }
                       data-structural-placeholder={chapter.id}
                     >
                       <p className={styles.chapterIndex}>

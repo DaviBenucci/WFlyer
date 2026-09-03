@@ -53,6 +53,11 @@ function renderPrimitive(
           data-score-primitive-id={primitive.id}
           data-score-role={primitive.role}
           key={primitive.id}
+          opacity={
+            primitive.opacity === undefined
+              ? undefined
+              : serializeSvgNumber(primitive.opacity, numericPrecision)
+          }
           points={serializeSvgPoints(primitive.points, numericPrecision)}
           strokeWidth={serializeSvgNumber(primitive.thickness, numericPrecision)}
         />

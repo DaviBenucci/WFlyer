@@ -1,9 +1,20 @@
 .score {
-  color: var(--score-color, currentColor);
+  color: var(--score-color, var(--wf-score-primary, currentColor));
   display: block;
   height: auto;
   overflow: visible;
   width: 100%;
+}
+
+.score [data-score-role="staff-line"],
+.score [data-score-role="barline"],
+.score [data-score-role="final-barline-thin"] {
+  color: var(--wf-score-muted, currentColor);
+}
+
+.score [data-score-role="key-signature"],
+.score [data-score-role="final-barline-thick"] {
+  color: var(--wf-score-accent, currentColor);
 }
 
 .score image {

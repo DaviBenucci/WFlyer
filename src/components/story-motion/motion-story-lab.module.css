@@ -90,12 +90,42 @@
 }
 
 .chapter {
+  position: relative;
   display: grid;
   min-block-size: min(48rem, 82svh);
   place-items: center;
   padding: clamp(4rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem);
   border-block-end: 1px solid var(--wf-border);
   scroll-margin-block-start: var(--wf-space-6);
+}
+
+.chapter > * {
+  position: relative;
+  z-index: 2;
+}
+
+.root[data-projection-mode="vertical-wide"] .chapter {
+  min-block-size: var(--story-score-wide-block-size);
+  block-size: var(--story-score-wide-block-size);
+}
+
+.root[data-projection-mode="vertical-compact"] .chapter {
+  min-block-size: var(--story-score-compact-block-size);
+  block-size: var(--story-score-compact-block-size);
+}
+
+@media (width >= 48rem) {
+  .root[data-projection-mode="static"] .chapter {
+    min-block-size: var(--story-score-wide-block-size);
+    block-size: var(--story-score-wide-block-size);
+  }
+}
+
+@media (width < 48rem) {
+  .root[data-projection-mode="static"] .chapter {
+    min-block-size: var(--story-score-compact-block-size);
+    block-size: var(--story-score-compact-block-size);
+  }
 }
 
 .implementedChapter {

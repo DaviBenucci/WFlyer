@@ -249,8 +249,12 @@ APP-04 media remains the human-gated Phase-11 asset boundary.
 
 **Execution status:** in progress. Task 33 passed explicit external human review
 on 2026-08-30. `Organic Flowing`, including the shared-origin departure and all
-three production geometry modes, is approved for integration. Task 34 is the
-next authorized task; Task 35 and Gate 9 remain open.
+three production geometry modes, is approved for integration. Task 34 completed
+its automated integration checkpoint on 2026-08-31. A later external human
+review approved a bounded choreography and Application PRELAUNCH refinement,
+tracked by `refine-phase-9-score-choreography-and-prelaunch`; that focused
+acceptance pass blocks Task 35. Task 34 remains historically complete, while
+Task 35 and Gate 9 remain open.
 
 ### Preconditions
 
@@ -297,6 +301,32 @@ complete Task 34, Task 35, or Gate 9.
 - Armature/key signature occurs at most once per continuous branch, after clef and before first relevant material.
 - Final barline is deterministic and precedes each terminal.
 
+### Human choreography and PRELAUNCH refinement — blocking
+
+- Keep the Task-34 composition, fingerprints, Music assets, renderer
+  calibration, and sealed evidence unchanged; refine projection/presentation
+  rather than musical semantics.
+- Present one substantially enlarged approved Home treble clef as the shared
+  scenographic origin, with both branch scores departing below its lower region
+  and outside the Home reading exclusion.
+- Route Professional through a low About corridor with a reserved Persona
+  exclusion, a shared event-free card interaction behind Services, restrained
+  Process, a three-card Projects serpentine, a low Contact wave, and a physical
+  final-barline end.
+- Route Application below Overview/Benefits, use the same event-free card
+  interaction behind How It Works, protect APP-04, and end at the PRELAUNCH
+  scene and physical final barline.
+- Use the explicit semantic header order Aplicação, Como funciona, Benefícios,
+  Lançamento; W_Flyer; Sobre, Serviços, Processo, Projetos, Contato.
+  Demonstration remains a non-header story chapter.
+- Replace the unavailable Application access action with a purpose-limited,
+  consented launch-interest form backed by a dedicated secure endpoint and
+  sequential operational/acknowledgment email delivery. No database is added.
+- Remove only the redundant second visual footer from the immersive landing;
+  retain one semantic terminal/footer close and unrelated route footers.
+- Stop for new deterministic human visual review. Do not start Task 35 or
+  claim Gate 9 PASS before explicit acceptance.
+
 ### Gate 9
 
 - The selected `Organic Soft` or `Organic Flowing` layouts have explicit human
@@ -305,6 +335,9 @@ complete Task 34, Task 35, or Gate 9.
 - Notes, ledger lines, stems, beams, accidentals, barlines, and key signatures remain coherent on curved paths.
 - Same session composition remains stable across reload, theme, breakpoint, and reduced motion.
 - No score/composer work occurs per scroll frame.
+- The focused choreography/PRELAUNCH refinement has new dark-desktop, light,
+  compact, accessibility, security, email-preview, and geometry evidence and
+  explicit external human visual acceptance.
 
 ## Phase 10 — W_Flyer Persona asset, rig, and easter eggs
 

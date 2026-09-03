@@ -108,16 +108,25 @@ test.describe("Phase-4 readiness and semantic bootstrap", () => {
       "explicit-hash",
     );
 
-    const coveredPosition = await page.evaluate(() => ({
-      targetTop:
-        document.querySelector<HTMLElement>("#projetos")?.getBoundingClientRect()
-          .top ?? Number.NaN,
-      scrollY: window.scrollY,
-    }));
+    const coveredPosition = await page.evaluate(() => {
+      const target = document.querySelector<HTMLElement>("#projetos");
+
+      return {
+        scrollMarginBlockStart: target
+          ? Number.parseFloat(getComputedStyle(target).scrollMarginBlockStart)
+          : Number.NaN,
+        targetTop: target?.getBoundingClientRect().top ?? Number.NaN,
+        scrollY: window.scrollY,
+      };
+    });
     // Canonical chapter CSS owns a small scroll margin beneath the viewport
     // edge; stability, not a literal zero coordinate, is the contract.
     expect(coveredPosition.targetTop).toBeGreaterThanOrEqual(0);
-    expect(coveredPosition.targetTop).toBeLessThan(64);
+    expect(
+      Math.abs(
+        coveredPosition.targetTop - coveredPosition.scrollMarginBlockStart,
+      ),
+    ).toBeLessThan(2);
 
     await expectTerminalBootstrap(page);
     const revealedScrollY = await page.evaluate(() => window.scrollY);
@@ -396,6 +405,7 @@ test.describe("Phase-4 readiness and semantic bootstrap", () => {
   });
 
   test("keeps SSR content usable when JavaScript hydration is delayed past fail-open", async ({
+    browserName,
     page,
   }) => {
     test.setTimeout(30_000);
@@ -412,11 +422,21 @@ test.describe("Phase-4 readiness and semantic bootstrap", () => {
     expect(response?.ok()).toBe(true);
     await expect(page.locator(STORY_MAIN)).toBeVisible({ timeout: 4_000 });
     await expect(page.locator(COVER)).toBeVisible();
-    await expect(page.locator(COVER)).toBeHidden({ timeout: 7_000 });
+    // WebKit's Next dev client performs one full-document HMR refresh after
+    // these intentionally delayed scripts; allow the second document its own
+    // unchanged five-second CSS fail-open deadline.
+    const delayedHydrationTimeout = browserName === "webkit" ? 15_000 : 7_000;
+    await expect(page.locator(COVER)).toBeHidden({
+      timeout: delayedHydrationTimeout,
+    });
     await expect(page.locator(STORY_MAIN)).not.toHaveAttribute("inert");
 
     await page.waitForLoadState("domcontentloaded", { timeout: 20_000 });
-    await expectTerminalBootstrap(page, "DEGRADED", 4_000);
+    await expectTerminalBootstrap(
+      page,
+      "DEGRADED",
+      browserName === "webkit" ? 12_000 : 4_000,
+    );
     await expect(page.locator(ROOT)).toHaveAttribute(
       "data-bootstrap-degraded-reason",
       "hard-timeout",
@@ -425,6 +445,7 @@ test.describe("Phase-4 readiness and semantic bootstrap", () => {
       "data-bootstrap-release-cause",
       "css-fail-open",
     );
+    await expect(page.locator(COVER)).toHaveCount(0);
     await expect(page.locator(STORY_MAIN)).not.toHaveAttribute("inert");
     await expect(page.locator("#projetos")).toBeInViewport();
   });

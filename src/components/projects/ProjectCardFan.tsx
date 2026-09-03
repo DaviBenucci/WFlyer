@@ -70,6 +70,7 @@ export function ProjectCardFan({
             className={styles.fanItem}
             data-project-card-item=""
             data-project-position={index + 1}
+            data-score-project-visit-card={index + 1}
             key={project.slug}
             style={getFanItemStyle(index, visibleProjects.length)}
           >

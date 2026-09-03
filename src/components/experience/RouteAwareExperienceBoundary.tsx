@@ -8,6 +8,7 @@ import { StoryNavigationProvider } from "@/components/story";
 import { SiteExperienceShell } from "./SiteExperienceShell";
 
 const STORY_VISUAL_LAB_PATH = "/__visual-lab/story";
+const IMMERSIVE_STORY_PATH = `${STORY_VISUAL_LAB_PATH}/motion`;
 
 export interface RouteAwareExperienceBoundaryProps {
   readonly children: ReactNode;
@@ -50,7 +51,7 @@ export function RouteAwareExperienceBoundary({
         {skipLink}
         {storyHeader}
         {children}
-        {storyFooter}
+        {pathname === IMMERSIVE_STORY_PATH ? null : storyFooter}
       </StoryNavigationProvider>
     );
   }
