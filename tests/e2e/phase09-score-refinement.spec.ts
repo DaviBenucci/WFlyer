@@ -18,11 +18,17 @@ const SCENE_ORDER = [
   "professional-terminal",
 ] as const;
 
-async function openMeasuredStory(page: Page): Promise<void> {
+async function openMeasuredStory(
+  page: Page,
+  viewport: { readonly height: number; readonly width: number } = {
+    height: 900,
+    width: 1_536,
+  },
+): Promise<void> {
   await page.addInitScript(() => {
     window.localStorage.setItem("wf-theme", "dark");
   });
-  await page.setViewportSize({ height: 900, width: 1_536 });
+  await page.setViewportSize(viewport);
   await page.emulateMedia({
     colorScheme: "dark",
     reducedMotion: "no-preference",
@@ -128,6 +134,34 @@ test.describe("Phase-9 human choreography refinement", () => {
     process.env.WFLYER_PLAYWRIGHT_TEST_SERVER === "production",
     "Development-only rendered measurement surface",
   );
+
+  for (const viewport of [
+    { height: 864, label: "origin departure", width: 1_536 },
+    { height: 917, label: "terminal return", width: 1_920 },
+    { height: 1_200, label: "Overview exit", width: 1_920 },
+  ] as const) {
+    test(`keeps the measured ${viewport.width}x${viewport.height} ${viewport.label} crossing-free`, async ({
+      page,
+    }) => {
+      const pageErrors: string[] = [];
+      page.on("pageerror", (error) => {
+        pageErrors.push(error.message);
+      });
+
+      await openMeasuredStory(page, viewport);
+
+      await expect(
+        page.locator('[data-integrated-score="application"]'),
+      ).toHaveAttribute(
+        "viewBox",
+        `0 0 ${viewport.width * 13.78} ${viewport.height}`,
+      );
+      await expect(
+        page.locator("[data-story-score-layer]"),
+      ).toHaveAttribute("data-score-staff-line-self-intersections", "0");
+      expect(pageErrors).toEqual([]);
+    });
+  }
 
   test("proves the live 13-scene rendered-clearance audit", async ({
     page,
@@ -1030,10 +1064,14 @@ test.describe("Phase-9 human choreography refinement", () => {
       });
       const measure = (
         sceneId: "application-access" | "application-demo",
-        reason: "access-action" | "application-tablet-demo",
+        reason:
+          | "access-action"
+          | "application-tablet-demo"
+          | "demo-call-to-action",
+        selector = `[data-score-content-exclusion="${reason}"]`,
       ) => {
         const target = document.querySelector<HTMLElement>(
-          `[data-chapter-id="${sceneId}"] [data-score-content-exclusion="${reason}"]`,
+          `[data-chapter-id="${sceneId}"] ${selector}`,
         );
         if (!target) throw new Error(`Missing Family-A target: ${reason}`);
         const rect = normalizeRect(target.getBoundingClientRect());
@@ -1074,6 +1112,11 @@ test.describe("Phase-9 human choreography refinement", () => {
       };
 
       return Object.freeze({
+        demoCallToAction: measure(
+          "application-demo",
+          "demo-call-to-action",
+          '[data-score-content-exclusion="heading-and-body"] a',
+        ),
         demonstration: measure(
           "application-demo",
           "application-tablet-demo",
@@ -1093,6 +1136,12 @@ test.describe("Phase-9 human choreography refinement", () => {
     expect(audit.demonstration.minimumClearanceRounded).toBeGreaterThanOrEqual(
       12.64,
     );
+    expect(audit.demoCallToAction).toMatchObject({
+      classification: "CLEAR",
+    });
+    expect(
+      audit.demoCallToAction.minimumClearanceRounded,
+    ).toBeGreaterThanOrEqual(12);
     expect(audit.launch).toMatchObject({
       classification: "CLEAR",
     });

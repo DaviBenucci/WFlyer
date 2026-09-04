@@ -1,0 +1,424 @@
+{
+  "activeChange": "refine-phase-9-score-choreography-and-prelaunch",
+  "captureCount": 11,
+  "capturedAt": "2026-09-04",
+  "correctionSourceSha256": {
+    "src/lib/story/score/projection.ts": "885b7dd562564f939f300faa404856cd2c4904f70b498e5abd3127430ec0bcd2",
+    "tests/e2e/phase09-score-refinement.spec.ts": "d2d8cf734c1e2e2ed2809341468f37d8731157f8f5e48e8895288f22d3ccf8a4",
+    "tests/unit/story/story-score-projection.test.ts": "9336dfefb6250d0bd28b0c26bef678b59a3eb87ec2992f562aa84375005f0f0f",
+    "scripts/capture-phase9-firefox-demo-correction-evidence.mjs": "e5ff511fd5caf058b6a1e1ceebcfabb4c1fa79783063ffe00d4204deeb173e88"
+  },
+  "files": [
+    {
+      "activeChapter": "home",
+      "browser": {
+        "engine": "chromium",
+        "version": "151.0.7922.34"
+      },
+      "demoCtaClearance": null,
+      "deviceScaleFactor": 1,
+      "fileName": "01-current-home-dark-chromium-1536x900.png",
+      "height": 900,
+      "pageErrorCount": 0,
+      "prior": {
+        "fileName": "01-scene-home-dark-1536x900.png",
+        "sha256": "049f87f0504cd01926c675c50fe025558f41634cac8c9c24d9e5f2d7bee15dd8"
+      },
+      "projection": "horizontal-enhanced",
+      "relationship": "revalidates-current-review",
+      "reviewTarget": "home-origin",
+      "route": "/__visual-lab/story/motion",
+      "scoreProof": {
+        "bootstrapState": "REVEALED",
+        "composerInvocations": 2,
+        "connectorEvents": 0,
+        "howMeasurement": "dom-measured",
+        "maximumNotationTangent": 14.300797,
+        "pathIntersections": 0,
+        "projection": "horizontal-enhanced",
+        "servicesMeasurement": "dom-measured",
+        "staffIntersections": 0
+      },
+      "selectionMethod": "window.__WFLYER_PHASE5_MOTION__.position(chapterId)",
+      "sha256": "049f87f0504cd01926c675c50fe025558f41634cac8c9c24d9e5f2d7bee15dd8",
+      "theme": "dark",
+      "width": 1536
+    },
+    {
+      "activeChapter": "application-overview",
+      "browser": {
+        "engine": "chromium",
+        "version": "151.0.7922.34"
+      },
+      "demoCtaClearance": null,
+      "deviceScaleFactor": 1,
+      "fileName": "02-current-application-overview-dark-chromium-1536x900.png",
+      "height": 900,
+      "pageErrorCount": 0,
+      "prior": {
+        "fileName": "02-scene-application-overview-dark-1536x900.png",
+        "sha256": "5a687fa759f02f85d37db23d3b5ee1723b1c2634d1c84a6bb48c09cec6ebc322"
+      },
+      "projection": "horizontal-enhanced",
+      "relationship": "revalidates-current-review",
+      "reviewTarget": "application-overview",
+      "route": "/__visual-lab/story/motion",
+      "scoreProof": {
+        "bootstrapState": "REVEALED",
+        "composerInvocations": 2,
+        "connectorEvents": 0,
+        "howMeasurement": "dom-measured",
+        "maximumNotationTangent": 14.300797,
+        "pathIntersections": 0,
+        "projection": "horizontal-enhanced",
+        "servicesMeasurement": "dom-measured",
+        "staffIntersections": 0
+      },
+      "selectionMethod": "window.__WFLYER_PHASE5_MOTION__.position(chapterId)",
+      "sha256": "5a687fa759f02f85d37db23d3b5ee1723b1c2634d1c84a6bb48c09cec6ebc322",
+      "theme": "dark",
+      "width": 1536
+    },
+    {
+      "activeChapter": "application-how-it-works",
+      "browser": {
+        "engine": "chromium",
+        "version": "151.0.7922.34"
+      },
+      "demoCtaClearance": null,
+      "deviceScaleFactor": 1,
+      "fileName": "03-current-application-how-dark-chromium-1536x900.png",
+      "height": 900,
+      "pageErrorCount": 0,
+      "prior": {
+        "fileName": "03-scene-application-how-it-works-dark-1536x900.png",
+        "sha256": "a2c9e61ee765b2d18dd793dc4f5d83c5684ee97bc2b46f564c515d6374b0c650"
+      },
+      "projection": "horizontal-enhanced",
+      "relationship": "revalidates-current-review",
+      "reviewTarget": "application-how-it-works",
+      "route": "/__visual-lab/story/motion",
+      "scoreProof": {
+        "bootstrapState": "REVEALED",
+        "composerInvocations": 2,
+        "connectorEvents": 0,
+        "howMeasurement": "dom-measured",
+        "maximumNotationTangent": 14.300797,
+        "pathIntersections": 0,
+        "projection": "horizontal-enhanced",
+        "servicesMeasurement": "dom-measured",
+        "staffIntersections": 0
+      },
+      "selectionMethod": "window.__WFLYER_PHASE5_MOTION__.position(chapterId)",
+      "sha256": "a2c9e61ee765b2d18dd793dc4f5d83c5684ee97bc2b46f564c515d6374b0c650",
+      "theme": "dark",
+      "width": 1536
+    },
+    {
+      "activeChapter": "application-benefits",
+      "browser": {
+        "engine": "chromium",
+        "version": "151.0.7922.34"
+      },
+      "demoCtaClearance": null,
+      "deviceScaleFactor": 1,
+      "fileName": "04-current-application-benefits-dark-chromium-1536x900.png",
+      "height": 900,
+      "pageErrorCount": 0,
+      "prior": {
+        "fileName": "04-scene-application-benefits-dark-1536x900.png",
+        "sha256": "03a5e868bbfbbe86917a3928dfdcb39ad5cc6985f15dacc97df474448295694d"
+      },
+      "projection": "horizontal-enhanced",
+      "relationship": "supersedes-for-current-review",
+      "reviewTarget": "application-benefits",
+      "route": "/__visual-lab/story/motion",
+      "scoreProof": {
+        "bootstrapState": "REVEALED",
+        "composerInvocations": 2,
+        "connectorEvents": 0,
+        "howMeasurement": "dom-measured",
+        "maximumNotationTangent": 14.300797,
+        "pathIntersections": 0,
+        "projection": "horizontal-enhanced",
+        "servicesMeasurement": "dom-measured",
+        "staffIntersections": 0
+      },
+      "selectionMethod": "window.__WFLYER_PHASE5_MOTION__.position(chapterId)",
+      "sha256": "9be66f5ca9abf1b89f7c8cc85a9ecd528ec8c3f0bb7ecb03342813378b5c7a28",
+      "theme": "dark",
+      "width": 1536
+    },
+    {
+      "activeChapter": "application-demo",
+      "browser": {
+        "engine": "chromium",
+        "version": "151.0.7922.34"
+      },
+      "demoCtaClearance": {
+        "classification": "CLEAR",
+        "minimumClearance": 30.76,
+        "threshold": 12
+      },
+      "deviceScaleFactor": 1,
+      "fileName": "05-current-application-demo-dark-chromium-1536x900.png",
+      "height": 900,
+      "pageErrorCount": 0,
+      "prior": {
+        "fileName": "05-scene-application-demo-dark-1536x900.png",
+        "sha256": "d3e1d69712fef7a95d5aa36e77cd0d46ef77111132dd5b15da0b96dddcc2b60c"
+      },
+      "projection": "horizontal-enhanced",
+      "relationship": "supersedes-for-current-review",
+      "reviewTarget": "application-demo-cta-and-tablet",
+      "route": "/__visual-lab/story/motion",
+      "scoreProof": {
+        "bootstrapState": "REVEALED",
+        "composerInvocations": 2,
+        "connectorEvents": 0,
+        "howMeasurement": "dom-measured",
+        "maximumNotationTangent": 14.300797,
+        "pathIntersections": 0,
+        "projection": "horizontal-enhanced",
+        "servicesMeasurement": "dom-measured",
+        "staffIntersections": 0
+      },
+      "selectionMethod": "window.__WFLYER_PHASE5_MOTION__.position(chapterId)",
+      "sha256": "bdd00dab126c8971e2a6956acffeb5357cbdb74b58382d1c2a9b06e183c8e07f",
+      "theme": "dark",
+      "width": 1536
+    },
+    {
+      "activeChapter": "application-access",
+      "browser": {
+        "engine": "chromium",
+        "version": "151.0.7922.34"
+      },
+      "demoCtaClearance": null,
+      "deviceScaleFactor": 1,
+      "fileName": "06-current-application-launch-dark-chromium-1536x900.png",
+      "height": 900,
+      "pageErrorCount": 0,
+      "prior": {
+        "fileName": "06-scene-application-access-dark-1536x900.png",
+        "sha256": "5b33e50dc3bf1ce1cff60e682328de798b10b3d083e361eb6d495b4a0b081dc7"
+      },
+      "projection": "horizontal-enhanced",
+      "relationship": "supersedes-for-current-review",
+      "reviewTarget": "application-launch",
+      "route": "/__visual-lab/story/motion",
+      "scoreProof": {
+        "bootstrapState": "REVEALED",
+        "composerInvocations": 2,
+        "connectorEvents": 0,
+        "howMeasurement": "dom-measured",
+        "maximumNotationTangent": 14.300797,
+        "pathIntersections": 0,
+        "projection": "horizontal-enhanced",
+        "servicesMeasurement": "dom-measured",
+        "staffIntersections": 0
+      },
+      "selectionMethod": "window.__WFLYER_PHASE5_MOTION__.position(chapterId)",
+      "sha256": "92bb03233eafdf226099c460544f5e73672e9871fa6ecbb9c53b07f781f0392d",
+      "theme": "dark",
+      "width": 1536
+    },
+    {
+      "activeChapter": "application-terminal",
+      "browser": {
+        "engine": "chromium",
+        "version": "151.0.7922.34"
+      },
+      "demoCtaClearance": null,
+      "deviceScaleFactor": 1,
+      "fileName": "07-current-application-terminal-dark-chromium-1536x900.png",
+      "height": 900,
+      "pageErrorCount": 0,
+      "prior": {
+        "fileName": "07-scene-application-terminal-dark-1536x900.png",
+        "sha256": "9fcebe487730070a87ded531a190e51d14258e9aca40da7dfc8facf689aac98e"
+      },
+      "projection": "horizontal-enhanced",
+      "relationship": "supersedes-for-current-review",
+      "reviewTarget": "application-terminal",
+      "route": "/__visual-lab/story/motion",
+      "scoreProof": {
+        "bootstrapState": "REVEALED",
+        "composerInvocations": 2,
+        "connectorEvents": 0,
+        "howMeasurement": "dom-measured",
+        "maximumNotationTangent": 14.300797,
+        "pathIntersections": 0,
+        "projection": "horizontal-enhanced",
+        "servicesMeasurement": "dom-measured",
+        "staffIntersections": 0
+      },
+      "selectionMethod": "window.__WFLYER_PHASE5_MOTION__.position(chapterId)",
+      "sha256": "5a0b41208c1990d797dd446fbac6e1067efab6edbe0435c7073784f5e6177a18",
+      "theme": "dark",
+      "width": 1536
+    },
+    {
+      "activeChapter": "home",
+      "browser": {
+        "engine": "firefox",
+        "version": "153.0"
+      },
+      "demoCtaClearance": null,
+      "deviceScaleFactor": 1,
+      "fileName": "08-firefox-origin-home-dark-1536x864.png",
+      "height": 864,
+      "pageErrorCount": 0,
+      "prior": null,
+      "projection": "horizontal-enhanced",
+      "relationship": "supplements-prior-review",
+      "reviewTarget": "firefox-origin-departure",
+      "route": "/__visual-lab/story/motion",
+      "scoreProof": {
+        "bootstrapState": "REVEALED",
+        "composerInvocations": 2,
+        "connectorEvents": 0,
+        "howMeasurement": "dom-measured",
+        "maximumNotationTangent": 13.291467,
+        "pathIntersections": 0,
+        "projection": "horizontal-enhanced",
+        "servicesMeasurement": "dom-measured",
+        "staffIntersections": 0
+      },
+      "selectionMethod": "window.__WFLYER_PHASE5_MOTION__.position(chapterId)",
+      "sha256": "23a2e0745b7b359a3cf7b1f067d795c8cc7be69a11eedb54515d693b0ff5fb74",
+      "theme": "dark",
+      "width": 1536
+    },
+    {
+      "activeChapter": "application-terminal",
+      "browser": {
+        "engine": "firefox",
+        "version": "153.0"
+      },
+      "demoCtaClearance": null,
+      "deviceScaleFactor": 1,
+      "fileName": "09-firefox-reported-terminal-dark-1920x917.png",
+      "height": 917,
+      "pageErrorCount": 0,
+      "prior": null,
+      "projection": "horizontal-enhanced",
+      "relationship": "supplements-prior-review",
+      "reviewTarget": "firefox-reported-terminal-return",
+      "route": "/__visual-lab/story/motion",
+      "scoreProof": {
+        "bootstrapState": "REVEALED",
+        "composerInvocations": 2,
+        "connectorEvents": 0,
+        "howMeasurement": "dom-measured",
+        "maximumNotationTangent": 14.300797,
+        "pathIntersections": 0,
+        "projection": "horizontal-enhanced",
+        "servicesMeasurement": "dom-measured",
+        "staffIntersections": 0
+      },
+      "selectionMethod": "window.__WFLYER_PHASE5_MOTION__.position(chapterId)",
+      "sha256": "d00a50a54edeebc6bab019e58f832ab106e284f841d148a67d3de170e47e9481",
+      "theme": "dark",
+      "width": 1920
+    },
+    {
+      "activeChapter": "application-overview",
+      "browser": {
+        "engine": "firefox",
+        "version": "153.0"
+      },
+      "demoCtaClearance": null,
+      "deviceScaleFactor": 1,
+      "fileName": "10-firefox-high-overview-dark-1920x1200.png",
+      "height": 1200,
+      "pageErrorCount": 0,
+      "prior": null,
+      "projection": "horizontal-enhanced",
+      "relationship": "supplements-prior-review",
+      "reviewTarget": "firefox-high-viewport-overview-exit",
+      "route": "/__visual-lab/story/motion",
+      "scoreProof": {
+        "bootstrapState": "REVEALED",
+        "composerInvocations": 2,
+        "connectorEvents": 0,
+        "howMeasurement": "dom-measured",
+        "maximumNotationTangent": 14.300797,
+        "pathIntersections": 0,
+        "projection": "horizontal-enhanced",
+        "servicesMeasurement": "dom-measured",
+        "staffIntersections": 0
+      },
+      "selectionMethod": "window.__WFLYER_PHASE5_MOTION__.position(chapterId)",
+      "sha256": "1eebacc57e0d0a8f543a6067e0f0cb8e48fff5184f3afc4987a0c78ae529e8f6",
+      "theme": "dark",
+      "width": 1920
+    },
+    {
+      "activeChapter": "application-how-it-works",
+      "browser": {
+        "engine": "firefox",
+        "version": "153.0"
+      },
+      "demoCtaClearance": null,
+      "deviceScaleFactor": 1,
+      "fileName": "11-firefox-high-how-dark-1920x1200.png",
+      "height": 1200,
+      "pageErrorCount": 0,
+      "prior": null,
+      "projection": "horizontal-enhanced",
+      "relationship": "supplements-prior-review",
+      "reviewTarget": "firefox-high-viewport-how-arrival",
+      "route": "/__visual-lab/story/motion",
+      "scoreProof": {
+        "bootstrapState": "REVEALED",
+        "composerInvocations": 2,
+        "connectorEvents": 0,
+        "howMeasurement": "dom-measured",
+        "maximumNotationTangent": 14.300797,
+        "pathIntersections": 0,
+        "projection": "horizontal-enhanced",
+        "servicesMeasurement": "dom-measured",
+        "staffIntersections": 0
+      },
+      "selectionMethod": "window.__WFLYER_PHASE5_MOTION__.position(chapterId)",
+      "sha256": "c4c090d5ce07e147cdc1ff6c3662001687ac73e20b8644edce3c641994e3876a",
+      "theme": "dark",
+      "width": 1920
+    }
+  ],
+  "implementationTreeState": "uncommitted-working-tree",
+  "relationship": {
+    "historicalTask34": {
+      "manifestSha256": "c4bec2d7f6b546c44d9b7bd053ad0b4ff0c42d1d143cc079dd0714068c3fef8a",
+      "path": "../task-34-integration-review-2026-08-31/",
+      "payloadCount": 11,
+      "role": "immutable-checkpoint"
+    },
+    "kind": "corrective-addendum",
+    "priorRefinementCandidate": {
+      "disposition": "retained-byte-identical; insufficient-alone-after-runtime-report",
+      "manifestSha256": "1ce1043412c6ad77b34c0d77bad565cb9aef3af6808c8b54d48b0d7e13fdc442",
+      "path": "../task-34-refinement-2026-08-31/",
+      "payloadCount": 28
+    }
+  },
+  "repositoryBaseSha": "2ffef25b3ba621b535a00c001d68fc3a6977085c",
+  "route": "/__visual-lab/story/motion",
+  "runtime": {
+    "node": "24.18.0",
+    "playwright": "1.62.1"
+  },
+  "schema": "wflyer-phase9-refinement-firefox-correction-capture/v1",
+  "trigger": {
+    "browser": "Firefox",
+    "invariant": "staffLineSelfIntersections.application",
+    "measurementSource": "dom-measured",
+    "observed": 1,
+    "reportedViewport": {
+      "height": 917,
+      "width": 1920
+    },
+    "staffLineIndex": 4
+  }
+}

@@ -254,7 +254,14 @@ its automated integration checkpoint on 2026-08-31. A later external human
 review approved a bounded choreography and Application PRELAUNCH refinement,
 tracked by `refine-phase-9-score-choreography-and-prelaunch`; that focused
 acceptance pass blocks Task 35. Task 34 remains historically complete, while
-Task 35 and Gate 9 remain open.
+Task 35 and Gate 9 remain open. The initial focused implementation, affected
+automated validation, and deterministic recapture completed on 2026-09-03. A
+subsequent exact Firefox runtime report exposed three horizontal projection
+boundary regimes, and the required broad rerun exposed a separate latent Demo
+CTA clearance defect. Both were corrected geometrically without weakening the
+approved thresholds. The 2026-09-04 corrective addendum is sealed after one
+clean 21/21 three-engine refinement run; only explicit external human visual
+acceptance remains before the refinement can close.
 
 ### Preconditions
 
@@ -326,6 +333,11 @@ complete Task 34, Task 35, or Gate 9.
   retain one semantic terminal/footer close and unrelated route footers.
 - Stop for new deterministic human visual review. Do not start Task 35 or
   claim Gate 9 PASS before explicit acceptance.
+- Treat
+  `task-34-refinement-firefox-correction-2026-09-04/` as the authoritative
+  current-geometry addendum. Its 14-payload manifest digest is
+  `807a15b57e1a5bbc88011d546e69d4a4b281c552344876cddfc3a17042392923`;
+  the historical Task-34 and first refinement bundles remain byte-identical.
 
 ### Gate 9
 

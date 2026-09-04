@@ -1,0 +1,226 @@
+{
+  "schema": "wflyer-phase9-refinement-validation/v1",
+  "recordedAt": "2026-09-03",
+  "repositoryBaseSha": "2ffef25b3ba621b535a00c001d68fc3a6977085c",
+  "status": "automated-evidence-complete-external-visual-acceptance-pending",
+  "runtime": {
+    "node": "24.18.0",
+    "pnpm": "11.24.0",
+    "next": "16.4.0-canary.13",
+    "playwright": "1.62.1",
+    "vitest": "4.1.11",
+    "storybook": "10.5.10",
+    "openspec": "1.11.0"
+  },
+  "results": [
+    {
+      "id": "dependency-policy",
+      "command": "pnpm validate:dependencies",
+      "status": "passed"
+    },
+    {
+      "id": "lint",
+      "command": "pnpm lint",
+      "status": "passed",
+      "warnings": 0
+    },
+    {
+      "id": "typecheck",
+      "command": "pnpm typecheck",
+      "status": "passed"
+    },
+    {
+      "id": "focused-unit-component",
+      "command": "pnpm exec vitest run --project=unit tests/unit/chapters.test.ts tests/unit/content.test.ts tests/unit/public-content.test.ts tests/unit/navigation.test.ts tests/unit/story/manifest.test.ts tests/unit/story/header-traversal.test.ts tests/unit/app-launch-interest-domain.test.ts tests/unit/app-launch-interest-route.test.ts src/components/story/ApplicationLaunchInterestForm.test.tsx src/components/story/ApplicationChapterScene.test.tsx src/components/story/ProfessionalChapterScene.test.tsx src/components/story/StaticStorySkeleton.test.tsx src/components/story/StoryV2Header.test.tsx src/components/story-motion/MotionStoryLab.test.tsx src/components/experience/RouteAwareExperienceBoundary.test.tsx tests/unit/story/story-score-composition.test.ts tests/unit/story/story-score-measurement.test.ts tests/unit/story/story-score-projection.test.ts tests/unit/music/public-isolation.test.ts tests/unit/music/glyphs/asset-immutability.test.ts tests/unit/music/glyphs/manifest-coherence.test.ts tests/unit/music/score-presentation-tokens.test.ts src/components/story-score/StoryScoreLayer.test.tsx",
+      "status": "passed",
+      "filesPassed": 23,
+      "testsPassed": 126,
+      "testsFailed": 0
+    },
+    {
+      "id": "focused-projection",
+      "command": "pnpm exec vitest run --project=unit tests/unit/story/story-score-projection.test.ts",
+      "status": "passed",
+      "testsPassed": 18,
+      "testsFailed": 0
+    },
+    {
+      "id": "phase08-prelaunch-chromium",
+      "command": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 pnpm exec playwright test tests/e2e/phase08-v2-application-scenes.spec.ts --project=chromium --workers=1 --retries=0",
+      "status": "passed",
+      "testsPassed": 14,
+      "testsFailed": 0,
+      "retries": 0
+    },
+    {
+      "id": "semantic-header-chromium",
+      "command": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 pnpm exec playwright test tests/e2e/phase06-story-header.spec.ts --project=chromium --workers=1 --retries=0",
+      "status": "passed",
+      "testsPassed": 9,
+      "testsFailed": 0,
+      "retries": 0
+    },
+    {
+      "id": "score-integration-chromium",
+      "command": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 pnpm exec playwright test tests/e2e/phase09-score-integration.spec.ts --project=chromium --workers=1 --retries=0",
+      "status": "passed",
+      "testsPassed": 4,
+      "testsFailed": 0,
+      "retries": 0
+    },
+    {
+      "id": "score-integration-cross-engine",
+      "command": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 pnpm exec playwright test tests/e2e/phase09-score-integration.spec.ts --workers=1 --retries=0",
+      "status": "passed",
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "testsPassed": 12,
+      "testsFailed": 0,
+      "retries": 0,
+      "skips": 0
+    },
+    {
+      "id": "accepted-family-regression",
+      "command": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 pnpm exec playwright test tests/e2e/phase09-score-refinement.spec.ts --project=chromium --workers=1 --retries=0 --grep \"shared Services and How It Works|accepted Family-A|rendered three-card Projects\"",
+      "status": "passed",
+      "testsPassed": 3,
+      "testsFailed": 0,
+      "retries": 0,
+      "execution": "serial-recovered-first"
+    },
+    {
+      "id": "score-refinement-cross-engine",
+      "command": "WFLYER_PLAYWRIGHT_OUTPUT_DIR=test-results/phase09-refinement-cross-browser PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 pnpm exec playwright test tests/e2e/phase09-score-refinement.spec.ts --workers=1 --retries=0",
+      "focusedCommand": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 pnpm exec playwright test tests/e2e/phase09-score-refinement.spec.ts --project=firefox --workers=1 --retries=0 --grep 'preserves the accepted Family-A'",
+      "status": "passed-as-aggregate",
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "initialTestsPassed": 11,
+      "initialTestsFailed": 1,
+      "focusedConfirmationPassed": 1,
+      "aggregatePassed": 12,
+      "aggregateFailed": 0,
+      "retries": 0,
+      "failureClassification": "Firefox rendered 23.65px against an approved 23.64px minimum; the stale exact-equality assertion was corrected to the minimum-floor contract and the unchanged focused case passed."
+    },
+    {
+      "id": "prelaunch-targeted-cross-engine",
+      "command": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 pnpm exec playwright test tests/e2e/phase08-v2-application-scenes.spec.ts --workers=1 --retries=0 --grep 'renders the exact Application sequence|keeps PRELAUNCH operable|fits every Application scene|keeps Launch last|passes axe'",
+      "focusedCommand": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 pnpm exec playwright test tests/e2e/phase08-v2-application-scenes.spec.ts --project=webkit --workers=1 --retries=0 --grep 'fits every Application scene'",
+      "status": "passed-as-aggregate",
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "initialTestsPassed": 17,
+      "initialTestsFailed": 1,
+      "focusedUnchangedWebkitConfirmationPassed": 1,
+      "aggregatePassed": 18,
+      "aggregateFailed": 0,
+      "retries": 0,
+      "claimBoundary": "This is not represented as one clean 18/18 invocation."
+    },
+    {
+      "id": "accessibility",
+      "command": "WFLYER_PLAYWRIGHT_OUTPUT_DIR=test-results/phase09-refinement-a11y WFLYER_PLAYWRIGHT_REPORT_DIR=playwright-report/phase09-refinement-a11y pnpm exec playwright test tests/a11y --workers=1 --retries=0",
+      "focusedCommand": "WFLYER_PLAYWRIGHT_OUTPUT_DIR=test-results/phase09-refinement-a11y-focused WFLYER_PLAYWRIGHT_REPORT_DIR=playwright-report/phase09-refinement-a11y-focused pnpm exec playwright test tests/a11y/phase02-static-story.a11y.spec.ts tests/a11y/phase05-navigation.a11y.spec.ts --workers=1 --retries=0",
+      "status": "passed-as-aggregate",
+      "initialPassed": 169,
+      "initialFailed": 6,
+      "initialSkipped": 2,
+      "initialNotRun": 18,
+      "focusedPassed": 33,
+      "applicablePassed": 193,
+      "applicableFailed": 0,
+      "intentionalSkips": 2,
+      "failureClassification": "Six three-engine failures were stale header-target and Next route-announcer expectations; only assertions were corrected. The two skips are the pre-existing Firefox/WebKit exclusions for Chromium-only forced-colors evidence."
+    },
+    {
+      "id": "storybook-interactions",
+      "command": "CHOKIDAR_USEPOLLING=1 pnpm test:storybook",
+      "initialCommand": "pnpm test:storybook",
+      "status": "passed",
+      "filesPassed": 13,
+      "testsPassed": 63,
+      "testsFailed": 0,
+      "environmentNote": "The first invocation without polling hit the host ENOSPC watcher limit before test execution."
+    },
+    {
+      "id": "storybook-build",
+      "command": "CHOKIDAR_USEPOLLING=1 pnpm build:storybook",
+      "status": "passed",
+      "warning": "Non-fatal large-chunk warning."
+    },
+    {
+      "id": "next-production-build",
+      "command": "pnpm build",
+      "status": "passed",
+      "staticPagesGenerated": 40
+    },
+    {
+      "id": "committed-visual-snapshot-diff",
+      "command": "git diff --exit-code -- tests/visual",
+      "status": "passed"
+    },
+    {
+      "id": "committed-visual-snapshot-pinned-manifest",
+      "command": "sha256sum --check --strict docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-post-gate-c-committed-snapshots.sha256",
+      "status": "passed",
+      "filesPassed": 84,
+      "aggregateSha256": "ba4f23c08613c1c1c9a1481fa6d8466dd7bfa0641cf3b6ae898424966ccc6b63"
+    },
+    {
+      "id": "approved-music-svg-diff",
+      "command": "git diff --exit-code -- src/assets/visuals/musical docs/design-reference/visual-library/musical/glyphs/source",
+      "status": "passed"
+    },
+    {
+      "id": "approved-music-svg-pinned-manifest",
+      "command": "sha256sum --check --strict docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/2026-08-17-post-gate-c-approved-svg-files.sha256",
+      "status": "passed",
+      "filesPassed": 16,
+      "aggregateSha256": "38ad23abbd642bac57bae9781f66124a46efde90b2921de2c0811966d93bab65"
+    },
+    {
+      "id": "openspec-strict",
+      "command": "openspec validate refine-phase-9-score-choreography-and-prelaunch --strict --json",
+      "status": "passed",
+      "itemsValid": 1,
+      "issues": []
+    },
+    {
+      "id": "historical-task34-integrity",
+      "command": "(cd docs/canonical-v2/06-migration/evidence/phase-9/task-34-integration-review-2026-08-31 && sha256sum --check --strict SHA256SUMS.txt && sha256sum --check --strict SHA256SUMS.txt.sha256)",
+      "status": "passed",
+      "payloadFilesPassed": 11,
+      "manifestSha256": "c4bec2d7f6b546c44d9b7bd053ad0b4ff0c42d1d143cc079dd0714068c3fef8a"
+    },
+    {
+      "id": "deterministic-capture",
+      "command": "node scripts/capture-phase9-refinement-evidence.mjs",
+      "status": "passed",
+      "captures": 25,
+      "browser": "Chromium 151.0.7922.34"
+    }
+  ],
+  "pendingExternalEvidence": [
+    "external-human-visual-acceptance",
+    "physical-device-review",
+    "real-mailbox-and-email-delivery",
+    "verified-sender-state",
+    "resend-domain-tracking-configuration",
+    "production-turnstile-hostname-and-action",
+    "staging-validation",
+    "owner-homologation",
+    "production-validation"
+  ],
+  "gate9": "open",
+  "parentTask35": "unchecked"
+}

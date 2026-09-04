@@ -1,0 +1,252 @@
+{
+  "schema": "wflyer-phase9-refinement-firefox-correction-validation/v1",
+  "recordedAt": "2026-09-04",
+  "repositoryBaseSha": "2ffef25b3ba621b535a00c001d68fc3a6977085c",
+  "implementationTreeState": "uncommitted-working-tree",
+  "status": "automated-correction-evidence-complete-external-human-visual-acceptance-pending",
+  "runtime": {
+    "node": "24.18.0",
+    "pnpm": "11.24.0",
+    "next": "16.4.0-canary.13",
+    "playwright": "1.62.1",
+    "vitest": "4.1.11",
+    "openspec": "1.11.0"
+  },
+  "diagnosis": {
+    "firefoxTrigger": {
+      "viewport": "1920x917",
+      "invariant": "staffLineSelfIntersections.application",
+      "observedBefore": 1,
+      "observedAfter": 0,
+      "staffLineIndex": 4
+    },
+    "additionalFirefoxRegimes": [
+      "1536x864 Home-origin departure",
+      "1920x1200 Overview exit / How arrival",
+      "2304x1200 tall horizontal projection"
+    ],
+    "demoTrigger": {
+      "engine": "chromium",
+      "viewport": "1536x900",
+      "before": {
+        "cta": {
+          "classification": "COLLISION",
+          "minimumClearancePx": -0.9
+        },
+        "paragraph": {
+          "classification": "TOO_CLOSE",
+          "minimumClearancePx": 3.5
+        }
+      },
+      "introducedByFirefoxCorrections": false,
+      "isolationMethod": "Each Firefox correction and then all three were reverted diagnostically; the clean base projection retained the Demo failure. No diagnostic revert was kept."
+    },
+    "demoCorrection": {
+      "owner": "resolveHorizontalApplicationFamilyA",
+      "cause": "The Demo-to-Launch tangent reversal let the outer staff extend beyond a centerline shelf that reserved only 5.75 staff spaces from Demo content.",
+      "geometry": "Reserve 7.25 staff spaces before Demo content and guarantee a 6.25-space shelf before the return.",
+      "approvedThresholdPx": 12,
+      "thresholdChanged": false,
+      "deterministicCaptureAfter": {
+        "classification": "CLEAR",
+        "minimumClearancePx": 30.76
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "dependency-policy",
+      "command": "pnpm validate:dependencies",
+      "status": "passed"
+    },
+    {
+      "id": "lint",
+      "command": "pnpm lint",
+      "status": "passed",
+      "warnings": 0
+    },
+    {
+      "id": "capture-harness-lint-after-benefits-addition",
+      "command": "pnpm exec eslint scripts/capture-phase9-firefox-demo-correction-evidence.mjs",
+      "status": "passed",
+      "warnings": 0
+    },
+    {
+      "id": "typecheck",
+      "command": "pnpm typecheck",
+      "status": "passed"
+    },
+    {
+      "id": "focused-projection",
+      "command": "pnpm exec vitest run tests/unit/story/story-score-projection.test.ts",
+      "status": "passed",
+      "filesPassed": 1,
+      "testsPassed": 20,
+      "testsFailed": 0
+    },
+    {
+      "id": "focused-unit-component",
+      "command": "pnpm exec vitest run --project=unit tests/unit/chapters.test.ts tests/unit/content.test.ts tests/unit/public-content.test.ts tests/unit/navigation.test.ts tests/unit/story/manifest.test.ts tests/unit/story/header-traversal.test.ts tests/unit/app-launch-interest-domain.test.ts tests/unit/app-launch-interest-route.test.ts src/components/story/ApplicationLaunchInterestForm.test.tsx src/components/story/ApplicationChapterScene.test.tsx src/components/story/ProfessionalChapterScene.test.tsx src/components/story/StaticStorySkeleton.test.tsx src/components/story/StoryV2Header.test.tsx src/components/story-motion/MotionStoryLab.test.tsx src/components/experience/RouteAwareExperienceBoundary.test.tsx tests/unit/story/story-score-composition.test.ts tests/unit/story/story-score-measurement.test.ts tests/unit/story/story-score-projection.test.ts tests/unit/music/public-isolation.test.ts tests/unit/music/glyphs/asset-immutability.test.ts tests/unit/music/glyphs/manifest-coherence.test.ts tests/unit/music/score-presentation-tokens.test.ts src/components/story-score/StoryScoreLayer.test.tsx",
+      "status": "passed",
+      "filesPassed": 23,
+      "testsPassed": 128,
+      "testsFailed": 0
+    },
+    {
+      "id": "demo-clearance-chromium-focused",
+      "command": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:43129 pnpm exec playwright test tests/e2e/phase09-score-refinement.spec.ts --project=chromium --workers=1 --retries=0 --grep 'proves the live 13-scene|preserves the accepted Family-A'",
+      "status": "passed",
+      "testsPassed": 2,
+      "testsFailed": 0,
+      "retries": 0
+    },
+    {
+      "id": "firefox-boundaries-and-demo-focused",
+      "command": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:43129 pnpm exec playwright test tests/e2e/phase09-score-refinement.spec.ts --project=firefox --workers=1 --retries=0 --grep 'keeps the measured|proves the live 13-scene|preserves the accepted Family-A'",
+      "status": "passed",
+      "testsPassed": 5,
+      "testsFailed": 0,
+      "retries": 0
+    },
+    {
+      "id": "score-refinement-cross-engine-final",
+      "command": "WFLYER_PLAYWRIGHT_OUTPUT_DIR=test-results/phase09-firefox-demo-correction-final WFLYER_PLAYWRIGHT_REPORT_DIR=playwright-report/phase09-firefox-demo-correction-final PLAYWRIGHT_BASE_URL=http://127.0.0.1:43129 pnpm exec playwright test tests/e2e/phase09-score-refinement.spec.ts --workers=1 --retries=0 --reporter=line",
+      "status": "passed",
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "testsPassed": 21,
+      "testsFailed": 0,
+      "retries": 0,
+      "skips": 0,
+      "execution": "one clean serial invocation"
+    },
+    {
+      "id": "score-integration-cross-engine",
+      "command": "WFLYER_PLAYWRIGHT_OUTPUT_DIR=test-results/phase09-firefox-demo-correction-integration WFLYER_PLAYWRIGHT_REPORT_DIR=playwright-report/phase09-firefox-demo-correction-integration PLAYWRIGHT_BASE_URL=http://127.0.0.1:43129 pnpm exec playwright test tests/e2e/phase09-score-integration.spec.ts --workers=1 --retries=0 --reporter=line",
+      "status": "passed",
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "testsPassed": 12,
+      "testsFailed": 0,
+      "retries": 0,
+      "skips": 0
+    },
+    {
+      "id": "openspec-strict",
+      "command": "openspec validate refine-phase-9-score-choreography-and-prelaunch --strict --json",
+      "status": "passed",
+      "itemsValid": 1,
+      "issues": []
+    },
+    {
+      "id": "historical-task34-integrity",
+      "command": "(cd docs/canonical-v2/06-migration/evidence/phase-9/task-34-integration-review-2026-08-31 && sha256sum --check --strict SHA256SUMS.txt && sha256sum --check --strict SHA256SUMS.txt.sha256)",
+      "status": "passed",
+      "payloadFilesPassed": 11,
+      "manifestSha256": "c4bec2d7f6b546c44d9b7bd053ad0b4ff0c42d1d143cc079dd0714068c3fef8a"
+    },
+    {
+      "id": "prior-refinement-candidate-integrity",
+      "command": "(cd docs/canonical-v2/06-migration/evidence/phase-9/task-34-refinement-2026-08-31 && sha256sum --check --strict SHA256SUMS.txt && sha256sum --check --strict SHA256SUMS.txt.sha256)",
+      "status": "passed",
+      "payloadFilesPassed": 28,
+      "manifestSha256": "1ce1043412c6ad77b34c0d77bad565cb9aef3af6808c8b54d48b0d7e13fdc442"
+    },
+    {
+      "id": "deterministic-correction-capture",
+      "command": "WFLYER_EVIDENCE_BASE_URL=http://127.0.0.1:43129 node scripts/capture-phase9-firefox-demo-correction-evidence.mjs",
+      "status": "passed",
+      "captures": 11,
+      "browserVersions": {
+        "chromium": "151.0.7922.34",
+        "firefox": "153.0"
+      },
+      "pageErrors": 0,
+      "pathIntersections": 0,
+      "staffLineIntersections": 0
+    }
+  ],
+  "intermediateOutcomes": [
+    {
+      "id": "pre-demo-correction-full-refinement",
+      "command": "WFLYER_PLAYWRIGHT_OUTPUT_DIR=test-results/phase09-firefox-correction PLAYWRIGHT_BASE_URL=http://127.0.0.1:43129 pnpm exec playwright test tests/e2e/phase09-score-refinement.spec.ts --workers=1 --retries=0 --reporter=line",
+      "status": "failed",
+      "testsPassed": 12,
+      "testsFailed": 9,
+      "productGeometryFailures": 2,
+      "productGeometryClassification": "Chromium and Firefox exercised the score and exposed the same Demo CTA collision.",
+      "preGeometryBootstrapFailures": 7,
+      "preGeometryBootstrapClassification": "Every WebKit case reached DEGRADED hard-timeout before the geometry under test was exercised. The later clean 21/21 final run supersedes this environment outcome."
+    },
+    {
+      "id": "discarded-lower-return-lane-experiment",
+      "status": "rejected",
+      "pathIntersections": 2,
+      "staffLineIntersections": 11,
+      "disposition": "Not present in final source."
+    },
+    {
+      "id": "non-authoritative-capture-attempts",
+      "status": "excluded",
+      "outcomes": [
+        "An existing server without deterministic public Turnstile configuration produced a TURNSTILE_FAILED Launch state.",
+        "A second owned-server attempt encountered the existing Next development lock before any capture."
+      ],
+      "disposition": "Neither attempt is included in or sealed by this bundle."
+    }
+  ],
+  "visualStaleness": {
+    "comparison": "exact pixel comparison against task-34-refinement-2026-08-31 at Chromium 1536x900",
+    "byteIdenticalPriorFiles": [
+      "01-scene-home-dark-1536x900.png",
+      "02-scene-application-overview-dark-1536x900.png",
+      "03-scene-application-how-it-works-dark-1536x900.png",
+      "23-regression-home-light-horizontal-1536x900.png"
+    ],
+    "supersededPriorFiles": [
+      {
+        "fileName": "04-scene-application-benefits-dark-1536x900.png",
+        "changedPixels": 104,
+        "replacement": "04-current-application-benefits-dark-chromium-1536x900.png"
+      },
+      {
+        "fileName": "05-scene-application-demo-dark-1536x900.png",
+        "changedPixels": 3269,
+        "replacement": "05-current-application-demo-dark-chromium-1536x900.png"
+      },
+      {
+        "fileName": "06-scene-application-access-dark-1536x900.png",
+        "changedPixels": 367960,
+        "replacement": "06-current-application-launch-dark-chromium-1536x900.png"
+      },
+      {
+        "fileName": "07-scene-application-terminal-dark-1536x900.png",
+        "changedPixels": 375558,
+        "replacement": "07-current-application-terminal-dark-chromium-1536x900.png"
+      }
+    ],
+    "unaffectedSupportingRange": "Prior Professional, diagnostic, and vertical-compact captures 08-25 remain supporting evidence; capture 23 was also byte-revalidated explicitly."
+  },
+  "pendingExternalEvidence": [
+    "external-human-visual-acceptance",
+    "physical-device-review",
+    "real-mailbox-and-email-delivery",
+    "verified-sender-state",
+    "resend-domain-tracking-configuration",
+    "production-turnstile-hostname-and-action",
+    "staging-validation",
+    "owner-homologation",
+    "production-validation"
+  ],
+  "openspecProgress": "20/21",
+  "openspecItem7_3": "open",
+  "gate9": "open",
+  "parentTask35": "unchecked",
+  "phase9": "open"
+}

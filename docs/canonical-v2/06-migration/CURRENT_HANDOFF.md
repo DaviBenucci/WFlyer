@@ -6,17 +6,20 @@ project: wflyer.com.br institutional website
 branch: develop/site-institucional
 implementation_checkpoint: 5764808399befd6a04e9a12b3e804fa9aaf9493f
 maintenance_checkpoint: this file belongs to the current maintenance HEAD; resolve with git rev-parse HEAD
+refinement_base_checkpoint: 2ffef25b3ba621b535a00c001d68fc3a6977085c
 active_change: refine-phase-9-score-choreography-and-prelaunch
 parent_change: rebuild-scroll-driven-wflyer-v2
-openspec_progress: 0/20
+openspec_progress: 20/21
 parent_openspec_progress: 34/45
-next_unchecked_task: 'Focused refinement 1.1 — canonical governance and immutable baseline verification'
+next_unchecked_task: 'Focused refinement 7.3 — explicit external human visual acceptance'
 current_phase: 'Phase 9 — Continuous dual-score integration'
 phase_9_started: true
 task_33_status: human_approved
 task_33_checkpoint: 74677a762a9d9a53cb7fd375eecb0462b10e18e9
 task_34_status: historical_complete_refinement_blocking
-task_34_refinement_status: implementation_in_progress
+task_34_refinement_status: automated_correction_evidence_complete_external_visual_acceptance_pending
+refinement_correction_evidence: task-34-refinement-firefox-correction-2026-09-04
+refinement_correction_manifest_sha256: 807a15b57e1a5bbc88011d546e69d4a4b281c552344876cddfc3a17042392923
 task_35_status: blocked_unchecked
 production_authorized: false
 ```
@@ -153,7 +156,8 @@ Canonical precedence remains in `AGENTS.md`.
   bounded contract normalized in ADR-043. It does not reopen Task 34.
 - The focused OpenSpec change is
   `refine-phase-9-score-choreography-and-prelaunch`; its planning artifacts
-  strict-validate and its implementation/evidence tasks remain open.
+  strict-validate and automated items 1.1 through 7.2 are complete. Item 7.3
+  remains open for explicit external human visual acceptance.
 - The parent Task-34 evidence directory and manifest SHA-256 remain immutable
   historical evidence. New work uses sibling evidence under
   `task-34-refinement-2026-08-31/`.
@@ -165,11 +169,41 @@ Canonical precedence remains in `AGENTS.md`.
   hydration fixes remain baseline invariants.
 - Task 35 stays unchecked until the focused implementation is validated,
   recaptured, and explicitly accepted by external human visual review.
+- The new 2026-09-03 refinement bundle contains 25 inspected deterministic
+  captures, a capture manifest, the exact validation/failure ledger, and a
+  28-payload checksum manifest at
+  `docs/canonical-v2/06-migration/evidence/phase-9/task-34-refinement-2026-08-31/`.
+  Its detached manifest SHA-256 is
+  `1ce1043412c6ad77b34c0d77bad565cb9aef3af6808c8b54d48b0d7e13fdc442`.
+- A later exact Firefox 1920x917 runtime report reproduced one Application
+  staff-line self-intersection. Measured 1536x864 and tall 1920x1200/2304x1200
+  boundary failures were also corrected generically. The projection suite now
+  has permanent exact-fixture and browser coverage for those regimes.
+- The required broad rerun then exposed a separate latent Chromium Demo CTA
+  collision. Reverting the Firefox changes diagnostically did not remove it.
+  The Demo-to-Launch tangent-reversal shelf now reserves the complete outer
+  staff plus the approved 12 px content gap; the threshold itself is unchanged.
+- The final correction state passes 20/20 projection tests, 23 files and
+  128/128 focused unit/component tests, 12/12 three-engine score integration,
+  and one clean serial 21/21 three-engine refinement run with retries=0. The
+  exact reported Firefox and high-viewport regimes report zero path/staff-line
+  intersections, and the deterministic Demo capture measures 30.76 px CTA
+  clearance.
+- The authoritative 2026-09-04 current-geometry addendum contains 11 inspected
+  captures and a 14-payload checksum manifest at
+  `docs/canonical-v2/06-migration/evidence/phase-9/task-34-refinement-firefox-correction-2026-09-04/`.
+  Its detached manifest SHA-256 is
+  `807a15b57e1a5bbc88011d546e69d4a4b281c552344876cddfc3a17042392923`.
+  It supersedes the first refinement bundle only for the changed horizontal
+  Benefits, Demo, Launch, and Application-terminal frames and supplements it
+  with Firefox boundary evidence; both earlier bundles remain byte-identical.
 
 ## Deferred work and hard stops
 
 - Task 34 / Phase 9: historically complete; its later bounded human refinement
-  is in progress under the focused change and must not rewrite the checkpoint.
+  has completed automated implementation/evidence and is stopped at external
+  visual acceptance under the focused change. It must not rewrite the
+  checkpoint.
 - Task 35 / Phase 9: unchecked, not started, and blocked by external acceptance
   of the focused refinement; Gate 9 remains open.
 - Task 36 / Phase 10: owner-approved final Persona asset, rig, easter eggs.
@@ -206,7 +240,7 @@ Registro.br delegation
 |---|---:|
 | Node.js | 24.18.0 |
 | pnpm/Corepack pin | 11.24.0 |
-| Next.js / `eslint-config-next` | 16.3.3 / 16.3.3 |
+| Next.js / `eslint-config-next` | 16.4.0-canary.13 / 16.3.3 |
 | React / React DOM | 19.2.8 / 19.2.8 |
 | TypeScript | 5.9.3 |
 | GSAP / `@gsap/react` | 3.15.0 / 2.1.2 |
@@ -249,13 +283,16 @@ The noncanonical `(1)` plan is discoverable but never authoritative. The live
 
 ## Exact next safe action
 
-Implement and validate
-`refine-phase-9-score-choreography-and-prelaunch`, create a new deterministic
-review bundle, then stop for external human visual acceptance while preserving
-the stable rollback boundary
-`74677a762a9d9a53cb7fd375eecb0462b10e18e9`. Do not rewrite the Task-34 bundle,
-begin Task 35, begin Phase 10, cut over public `/`, commit, push, deploy, or
-mutate production.
+Review the authoritative corrective addendum at
+`docs/canonical-v2/06-migration/evidence/phase-9/task-34-refinement-firefox-correction-2026-09-04/`
+together with the unaffected Professional, diagnostic, light, and compact
+frames retained in `task-34-refinement-2026-08-31/`, then record explicit
+external human acceptance, rejection, or refinement notes while preserving the
+stable rollback boundary
+`74677a762a9d9a53cb7fd375eecb0462b10e18e9`. Do not check focused item 7.3,
+complete or archive the focused change, rewrite the Task-34 bundle, begin Task
+35, begin Phase 10, cut over public `/`, commit, push, deploy, or mutate
+production without that decision.
 
 `Phase 9 — use CURRENT_HANDOFF.md as the primary operational bootstrap`
 

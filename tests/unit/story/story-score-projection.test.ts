@@ -575,6 +575,121 @@ describe("Task 34 Organic Flowing production projections", () => {
     });
   });
 
+  it("keeps the measured Firefox 1920x917 terminal return crossing-free", () => {
+    const projection = buildStoryScoreProjection("horizontal-enhanced", {
+      sceneMeasurements: {
+        chapterContentExclusions: {
+          "application-access": [
+            {
+              height: 356.95,
+              reason: "heading-and-body",
+              width: 600.783_325_195_312_5,
+              x: 1_462.400_024_414_062_5,
+              y: 280.016_677_856_445_3,
+            },
+            {
+              height: 392.966_674_804_687_5,
+              reason: "access-action",
+              width: 764.616_699_218_75,
+              x: 2_111.183_349_609_375,
+              y: 262.016_677_856_445_3,
+            },
+          ],
+          "application-benefits": [
+            {
+              height: 412.95,
+              reason: "heading-and-body",
+              width: 527.566_650_390_625,
+              x: 5_052.799_804_687_5,
+              y: 252.016_677_856_445_3,
+            },
+          ],
+          "application-demo": [
+            {
+              height: 646.383_300_781_25,
+              reason: "heading-and-body",
+              width: 386.883_331_298_828_1,
+              x: 3_036.800_048_828_125,
+              y: 135.300_003_051_757_8,
+            },
+            {
+              height: 714.349_975_585_937_5,
+              reason: "application-tablet-demo",
+              width: 1_101.116_699_218_75,
+              x: 3_471.683_349_609_375,
+              y: 101.316_665_649_414_06,
+            },
+          ],
+          "application-terminal": [
+            {
+              height: 591.033_325_195_312_5,
+              reason: "terminal-content",
+              width: 1_221.400_024_414_062_5,
+              x: 80,
+              y: 162.983_352_661_132_8,
+            },
+          ],
+        },
+      },
+      viewportHeight: 917,
+      viewportWidth: 1_920,
+    });
+
+    expect(projection.evidence.pathSelfIntersections).toEqual({
+      application: 0,
+      professional: 0,
+    });
+    expect(projection.evidence.staffLineSelfIntersections).toEqual({
+      application: 0,
+      professional: 0,
+    });
+  });
+
+  it("keeps the measured Firefox 1536x864 origin departure crossing-free", () => {
+    const projection = buildStoryScoreProjection("horizontal-enhanced", {
+      sceneMeasurements: {
+        chapterContentExclusions: {
+          "application-overview": [
+            {
+              height: 729.1,
+              reason: "heading-and-body",
+              width: 429.866_668_701_171_9,
+              x: 7_618.549_804_687_5,
+              y: 67.449_996_948_242_19,
+            },
+            {
+              height: 256.7,
+              reason: "application-overview",
+              width: 782.583_312_988_281_2,
+              x: 8_094.483_398_437_5,
+              y: 303.650_009_155_273_44,
+            },
+          ],
+          home: [
+            {
+              height: 277.599_975_585_937_5,
+              reason: "home-reading-envelope",
+              width: 574,
+              x: 9_550.566_406_25,
+              y: 293.199_996_948_242_2,
+            },
+          ],
+        },
+      },
+      viewportHeight: 864,
+      viewportWidth: 1_536,
+    });
+
+    expect(projection.evidence.pathSelfIntersections).toEqual({
+      application: 0,
+      professional: 0,
+    });
+    expect(projection.evidence.staffLineSelfIntersections).toEqual({
+      application: 0,
+      professional: 0,
+    });
+  });
+
   it.each([
     [1_100, 640],
     [1_100, 800],

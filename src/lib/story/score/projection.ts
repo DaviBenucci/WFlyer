@@ -568,7 +568,14 @@ function applicationOriginBridge(
 ): readonly Vec2[] {
   if (mode === "horizontal-enhanced") {
     const deltaX = start.x - target.x;
-    const turnStartY = start.y + (target.y - start.y) * 0.08;
+    const authoredTurnStartY = start.y + (target.y - start.y) * 0.08;
+    // Preserve one staff-space of clearance beyond the complete five-line
+    // envelope so a shallow measured Home arrival cannot fold an outer line
+    // through itself around the half turn.
+    const turnStartY = Math.min(
+      authoredTurnStartY,
+      target.y - HORIZONTAL_STAFF_SPACE * 5,
+    );
     const turnRadius = Math.abs(target.y - turnStartY) / 2;
     const turnCenterY = (turnStartY + target.y) / 2;
     const approachEnd = Object.freeze({ x: target.x, y: turnStartY });
@@ -1277,8 +1284,14 @@ function resolveHorizontalApplicationFamilyA(
   const terminalRight = Math.max(
     ...terminal.map((rect) => rect.x + rect.width),
   );
-  const demoShelfStartX = accessRight + HORIZONTAL_STAFF_SPACE;
-  const demoShelfEndX = demoLeft - HORIZONTAL_STAFF_SPACE * 5.75;
+  // Reserve the complete outer staff plus the approved content gap before the
+  // Demo copy. The return toward Launch must reverse its tangent here, so its
+  // outer line reaches farther right than the centerline shelf itself.
+  const demoShelfEndX = demoLeft - HORIZONTAL_STAFF_SPACE * 7.25;
+  const demoShelfStartX = Math.min(
+    accessRight + HORIZONTAL_STAFF_SPACE,
+    demoShelfEndX - HORIZONTAL_STAFF_SPACE * 6.25,
+  );
   const accessShelfStartX = terminalRight + HORIZONTAL_STAFF_SPACE * 10;
   const accessShelfEndX = Math.max(
     accessLeft - HORIZONTAL_STAFF_SPACE * 2,
@@ -1307,7 +1320,14 @@ function resolveHorizontalApplicationFamilyA(
         : benefitsSafeY - HORIZONTAL_STAFF_SPACE * 3,
   });
   const accessReturnLaneY = accessBottom + HORIZONTAL_STAFF_SPACE * 4;
-  const terminalReturnLaneY = viewportHeight - HORIZONTAL_STAFF_SPACE * 2;
+  // Bound the final hairpin to one complete staff envelope. On taller Firefox
+  // viewports the viewport-bottom lane can otherwise drift far enough below
+  // the measured terminal shelf for the opposing normals of the fifth staff
+  // line to swap order and cross on the return.
+  const terminalReturnLaneY = Math.min(
+    viewportHeight - HORIZONTAL_STAFF_SPACE * 2,
+    terminalShelfY + HORIZONTAL_STAFF_SPACE * 4,
+  );
 
   if (
     demoBridge.lowerLaneY - demoBottom < HORIZONTAL_STAFF_SPACE * 4 ||
@@ -2046,7 +2066,11 @@ function horizontalApplicationHowInteractionRoute(
   const overviewLowerLaneY =
     overviewExitCorridor === undefined
       ? undefined
-      : Math.max(overviewExitCorridor.lowerLaneY, coreStart.y);
+      : Math.max(
+          overviewExitCorridor.lowerLaneY,
+          coreStart.y,
+          departureEnd.y,
+        );
 
   if (
     overviewExitCorridor !== undefined &&

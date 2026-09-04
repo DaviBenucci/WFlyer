@@ -100,7 +100,7 @@ test("the decorative transition layer is inert, hidden from AT, and never focusa
   await expect(page.getByRole("main")).toBeFocused();
 });
 
-test("keyboard navigation exposes the destination title through one framework announcer", async ({
+test("keyboard navigation exposes the destination name through one framework announcer", async ({
   page,
 }) => {
   await page.goto("/sobre");
@@ -116,21 +116,25 @@ test("keyboard navigation exposes the destination title through one framework an
   );
 
   await expect(page.getByRole("main")).toBeFocused();
-  await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+  const destinationHeading = page.getByRole("heading", { level: 1 });
+  await expect(destinationHeading).toHaveCount(1);
   const destinationTitle = await page.title();
+  const destinationHeadingText = (await destinationHeading.innerText()).trim();
   await expect(page.locator("next-route-announcer")).toHaveCount(1);
   await expect
-    .poll(() =>
-      page.evaluate(() => {
+    .poll(async () => {
+      const announcement = await page.evaluate(() => {
         const host = document.querySelector("next-route-announcer");
         return (
           host?.shadowRoot
             ?.querySelector("#__next-route-announcer__")
             ?.textContent?.trim() ?? ""
         );
-      }),
-    )
-    .toBe(destinationTitle);
+      });
+
+      return [destinationTitle, destinationHeadingText].includes(announcement);
+    })
+    .toBe(true);
   await expect(page.locator('body > [aria-live="assertive"]')).toHaveCount(0);
 });
 

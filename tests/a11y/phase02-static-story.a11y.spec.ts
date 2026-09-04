@@ -28,9 +28,11 @@ const HEADER_HASHES = [
   "#aplicacao",
   "#como-funciona",
   "#beneficios",
+  "#lancamento",
   "#home",
   "#sobre",
   "#servicos",
+  "#processo",
   "#projetos",
   "#contato",
 ] as const;

@@ -1,16 +1,16 @@
-# Graph Report - WFlyer  (2026-08-29)
+# Graph Report - WFlyer  (2026-09-04)
 
 ## Corpus Check
-- 835 files · ~554,361 words
+- 896 files · ~616,647 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5624 nodes · 9108 edges · 573 communities (431 shown, 142 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 284 edges (avg confidence: 0.91)
+- 6244 nodes · 10367 edges · 605 communities (459 shown, 146 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 290 edges (avg confidence: 0.91)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `57648083`
+- Built from commit: `2ffef25b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -18,20 +18,20 @@
 - ui/index.ts
 - ChapterScore.tsx
 - lib/contact/index.ts
-- theme-provider.tsx
+- theme-tokens.test.ts
 - transition.ts
 - BrandIntroController.tsx
 - scripts
 - Grupo wf-logo
 - SiteHeader.tsx
-- seo.ts
+- ProfessionalChapterScene.tsx
 - glyphs/types.ts
 - Fonte da verdade
 - Bootstrap repository-intelligence design
 - capture-music-gate-b-evidence.mjs
 - compilerOptions
 - lib/motion/geometry.ts
-- chapters.ts
+- app/page.tsx
 - Relatório do bootstrap Graphify e OpenSpec
 - Brief opcional para referências adicionais
 - manifest.json
@@ -48,7 +48,7 @@
 - Interactive Application Demo Design
 - Custom angular italic W_Flyer wordmark
 - Normative Documentation Index
-- build-motif-model.ts
+- Vec2
 - Official production W_Flyer intro master
 - Catálogo de animações
 - Controles do endpoint de contato
@@ -81,7 +81,7 @@
 - viewport
 - prepare-standalone.mjs
 - smoke-indexing.mjs
-- cleanup.ts
+- ScorePathReview.tsx
 - W_Flyer Institutional Site Documentation
 - Architecture Decision Register
 - Animação de entrada da marca W_Flyer
@@ -175,27 +175,27 @@
 - phase07-brand-intro.a11y.spec.ts
 - Q: Why did the GitHub Actions quality and browser checks fail, and how were they resolved?
 - home.visual.spec.ts
-- renderer/types.ts
+- seo.ts
 - runtime.ts
 - Navigation focus transfer with Back/Forward focus preservation
 - gate-c-review.ts
 - Content, Contact, and Security Completion Tasks
 - Interactive Application Demo Specification
-- playwright
+- organic-flowing.ts
 - ADDED Requirements
 - lab-score-models.ts
 - Requirements
 - @storybook/addon-vitest
-- composer/types.ts
+- compose-motif.ts
 - tailwindcss
 - pitch-contours.ts
-- compose-segment.ts
+- ComposerConfigurationError
 - @testing-library/react
 - Gate-C final triplet correction validation — 2026-08-24
 - @types/node
 - compose-segment.test.ts
 - triplet-numeral.test.ts
-- ProfessionalChapterScene.tsx
+- StoryNavigationContext.tsx
 - session-seed.ts
 - StoryBootstrapExperience.tsx
 - bootstrap/index.ts
@@ -205,7 +205,7 @@
 - score-continuity.spec.ts
 - static-routes.spec.ts
 - fonts.test.ts
-- pitches/page.tsx
+- ScorePath
 - Napoleon Node.js runtime runbook
 - vitest.config.ts
 - Programmatic SVG and GSAP brand intro
@@ -280,8 +280,8 @@
 - ADDED Requirements
 - W_Flyer Music Renderer v0.1 — Canonical Contract
 - Chapter Contracts
-- preview.ts
-- deployment.ts
+- projection.ts
+- app/layout.tsx
 - rebuild-scroll-driven-wflyer-v2/tasks.md
 - ADDED Requirements
 - W_Flyer Music Renderer v0.1
@@ -294,7 +294,7 @@
 - File-by-File Migration Map
 - APP-04 Application Demo Device
 - Chapter Acceptance Criteria
-- ScoreSystem.stories.tsx
+- composer/types.ts
 - package.json
 - repo-overlay/openspec/changes/implement-music-system-v0-1/tasks.md
 - Q: Inspect relationships around the isolated Music System, Visual Lab, tests, legacy landing, and motion after structural changes
@@ -326,7 +326,7 @@
 - Cutover and Rollback
 - Music System v0.1 Gate A report
 - Music System v0.1 Gate C corrective delta — automated review bundle
-- motifs.ts
+- renderer/types.ts
 - rebuild-scroll-driven-wflyer-v2/proposal.md
 - ADDED Requirements
 - W_Flyer Canonical Package Validation Report
@@ -410,7 +410,7 @@
 - Phase 2 — Story v2 domain model and static vertical skeleton
 - Phase 3 — Content, detailed routes, and conversion contracts
 - Phase 4 — Readiness-driven intro, bootstrap, deep links, and recovery
-- OriginScore.tsx
+- StoryScoreLayer.tsx
 - Phase 6 — Header traversal, URL, and history
 - Phase 7 — Professional branch scenes
 - Phase 8 — Application branch scenes
@@ -425,7 +425,7 @@
 - RootLayout mounts theme controls while ThemeProvider resolves, applies and exposes theme state
 - Q: Does the final Gate-B composite remain isolated in the development Music Visual Lab and reuse immutable glyph rendering?
 - Q: Diagnose and minimally fix the Firefox and WebKit Music Visual Lab accessibility failures without weakening axe assertions.
-- config/navigation.ts
+- capture-phase9-refinement-evidence.mjs
 - Music System v0.1 Gate C — final external-human approval
 - Staff.stories.tsx
 - Q: How should the Gate-B calibration composite evidence reuse the existing Music Visual Lab architecture?
@@ -442,18 +442,18 @@
 - capture-phase-4-bootstrap-evidence.mjs
 - Home bifurcada
 - @lhci/cli
-- Vec2
+- SiteFooter.tsx
 - Q: Audit stale nonhistorical Gate-C draft and pending statuses after final human approval
 - capture-phase-2-static-evidence.mjs
 - capture-phase-3-content-evidence.mjs
-- MotionStoryLab.tsx
+- pitches/page.tsx
 - bootstrap/positioning.ts
-- W_Flyer current operational handoff
-- ScoreTransitionLayer.tsx
+- Contracts that must survive future phases
+- theme.stories.tsx
 - getPublicServiceBySlug
 - phase08-v2-application-scenes.spec.ts
 - Post-Phase-8 toolchain maintenance
-- ProjectCardFan.tsx
+- capture-phase9-firefox-demo-correction-evidence.mjs
 - Phase-4 Changed-File Inventory
 - capture-phase7-evidence.mjs
 - Phase 2 Gate 2 report — static vertical v2 skeleton
@@ -568,18 +568,50 @@
 - @tailwindcss/postcss
 - @types/react-dom
 - vitest
+- ADDED Requirements
+- ScoreTransitionLayer.tsx
+- Decisions
+- ContactForm.tsx
+- ADDED Requirements
+- Impact
+- composition.ts
+- Phase 9 Task-34 Integration Review Evidence
+- ApplicationLaunchInterestForm.test.tsx
+- acessibilidade/page.tsx
+- Requirement: Professional choreography follows scene purpose
+- ADDED Requirements
+- config/navigation.ts
+- phase09-score-refinement.spec.ts
+- ADDED Requirements
+- refine-phase-9-score-choreography-and-prelaunch/tasks.md
+- theme-provider.tsx
+- phase09-score-integration.spec.ts
+- score-presentation-tokens.test.ts
+- OriginScore.tsx
+- Phase 9 Task-34 Choreography/PRELAUNCH Refinement Evidence
+- cleanup.ts
+- Phase 9 Firefox and Demo Geometry Correction Evidence
+- LocalRevealController.tsx
+- Phase 9 Task-33 Refinement Evidence
+- archetypes.ts
+- preview.ts
+- Q: How do StoryV2Header and ProjectCardFan own responsive header measurement, compact card capacity, and their focused regressions?
+- phase09-score-path-review.spec.ts
+- phase09-score-path-review.a11y.spec.ts
+- playwright
+- manifest-coherence.test.ts
 
 ## God Nodes (most connected - your core abstractions)
-1. `Vec2` - 52 edges
-2. `scaleVector()` - 40 edges
-3. `Angular winged WF symbol` - 39 edges
-4. `StoryChapterId` - 35 edges
-5. `ScorePath` - 34 edges
-6. `addVectors()` - 32 edges
-7. `frameAt()` - 30 edges
-8. `placeAtStaffStep()` - 27 edges
-9. `requirePositiveNumber()` - 27 edges
-10. `requireStaffSpace()` - 27 edges
+1. `Vec2` - 74 edges
+2. `StoryChapterId` - 45 edges
+3. `ScorePath` - 41 edges
+4. `scaleVector()` - 40 edges
+5. `Angular winged WF symbol` - 39 edges
+6. `frameAt()` - 32 edges
+7. `addVectors()` - 32 edges
+8. `placeAtStaffStep()` - 29 edges
+9. `requireNormalizedPosition()` - 29 edges
+10. `requirePositiveNumber()` - 27 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Official W_Flyer header symbol production asset` --semantically_similar_to--> `Official compact W_Flyer symbol lockup`  [INFERRED] [semantically similar]
@@ -588,8 +620,8 @@
   docs/00-governanca/05-registro-decisoes.md → .github/workflows/deploy.yml
 - `Actions Evidence Versus Napoleon Source Build` --semantically_similar_to--> `Immutable Read-Only Napoleon Handoff`  [INFERRED] [semantically similar]
   docs/05-implementacao/21-staging-release-operations.md → .github/workflows/deploy.yml
-- `Official reusable brand geometry` --semantically_similar_to--> `Official W_Flyer vector animation master`  [INFERRED] [semantically similar]
-  svg/wflyer-intro-master.svg → docs/design-reference/LOGO/svg/master/wflyer-animation-base.svg
+- `ContactForm → strict POST /api/contact → Turnstile → plain-text Resend flow` --semantically_similar_to--> `Strict 16 KiB verified and private delivery boundary`  [INFERRED] [semantically similar]
+  graphify-out/memory/query_20260731_183045_how_does_the_contact_form_flow_through_post__api_c.md → openspec/changes/archive/2026-07-31-complete-content-contact-security/specs/secure-contact-workflow/spec.md
 - `Contact fail-closed email fallback` --semantically_similar_to--> `Strict 16 KiB verified and private delivery boundary`  [INFERRED] [semantically similar]
   docs/08-operacao/01-observabilidade-incidentes.md → openspec/changes/archive/2026-07-31-complete-content-contact-security/specs/secure-contact-workflow/spec.md
 
@@ -597,81 +629,81 @@
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Immutable SHA Release Handoff Chain** — _github_workflows_deploy_validate_request_job, _github_workflows_deploy_release_manifest, _github_workflows_deploy_branch_sha_freeze_gate, docs_05_implementacao_05_deploy_configuracao_traceable_artifact_integrity, docs_05_implementacao_16_github_actions_secrets_napoleon_sha_aligned_branch_handoff, docs_05_implementacao_21_staging_release_operations_candidate_identity, docs_05_implementacao_21_staging_release_operations_branch_sha_freeze_handoff [INFERRED 0.95]
-- **GitHub and Napoleon Ownership Boundary** — docs_00_governanca_05_registro_decisoes_adr_021_github_environment_secrets, _github_workflows_deploy_immutable_read_only_handoff, docs_05_implementacao_16_github_actions_secrets_napoleon_environment_runtime_value_boundary, docs_05_implementacao_21_staging_release_operations_actions_evidence_vs_napoleon_source_build [INFERRED 0.95]
-- **Human-Authorized Production Release Chain** — docs_00_governanca_05_registro_decisoes_adr_023_owner_homologation, _github_workflows_deploy_validate_request_job, docs_05_implementacao_16_github_actions_secrets_napoleon_github_environment_gates, docs_05_implementacao_21_staging_release_operations_human_production_gate [INFERRED 0.95]
-- **Phase 09 Release Governance Change** — openspec_changes_complete_site_qa_release_preparation_design_release_preparation_design, openspec_changes_complete_site_qa_release_preparation_proposal_complete_site_qa_release_preparation, openspec_changes_complete_site_qa_release_preparation_specs_complete_quality_gate_spec_complete_quality_gate_delta, openspec_changes_complete_site_qa_release_preparation_specs_governed_release_candidate_spec_governed_release_candidate_delta, openspec_changes_complete_site_qa_release_preparation_specs_staging_index_isolation_spec_staging_index_isolation_delta, openspec_changes_complete_site_qa_release_preparation_tasks_release_preparation_tasks [EXTRACTED 1.00]
-- **Release Candidate Safety Stack** — openspec_specs_complete_quality_gate_spec_complete_quality_gate, openspec_specs_governed_release_candidate_spec_governed_release_candidate, openspec_specs_staging_index_isolation_spec_staging_index_isolation, openspec_specs_public_security_content_baseline_spec_public_security_content_baseline, openspec_changes_complete_site_qa_release_preparation_design_local_external_evidence_boundary [INFERRED 0.95]
-- **Phase 09 Graph Refresh and Repository Closure** — docs_05_implementacao_18_graphify_repository_map_phase_09_structural_refresh, docs_05_implementacao_18_graphify_repository_map_semantic_reextraction_compaction, docs_05_implementacao_18_graphify_repository_map_validated_architecture_relationships, openspec_changes_complete_site_qa_release_preparation_tasks_repository_owned_release_closure, openspec_changes_complete_site_qa_release_preparation_tasks_confirmed_napoleon_branch_handoff [INFERRED 0.95]
-- **Secure Persistence-Free Contact Defense in Depth** — docs_05_implementacao_04_formulario_contato_endpoint_defense_pipeline, docs_05_implementacao_04_formulario_contato_logical_submission_idempotency, docs_05_implementacao_04_formulario_contato_persistence_free_delivery, docs_06_seguranca_01_modelo_ameacas_contact_defense_in_depth, docs_06_seguranca_04_privacidade_logs_minimal_sanitized_logging, docs_06_seguranca_06_phase_08_validation_report_secure_contact_boundary [INFERRED 0.95]
-- **External Production Release Gate** — docs_00_governanca_05_registro_decisoes_adr_023_owner_homologation, docs_00_governanca_08_decisoes_operacionais_publicacao_external_homologation_gate, docs_05_implementacao_21_staging_release_operations_human_production_gate, docs_06_seguranca_05_checklist_release_external_security_gates, docs_07_qa_08_phase_09_release_readiness_report_external_release_blockers, docs_05_implementacao_17_relatorio_execucao_codex_external_integration_blocked [INFERRED 0.95]
-- **Phase 05 navigation lifecycle** — graphify_out_memory_query_20260731_131227_which_files_control_gsap_timelines_and_cleanup_siteexperienceshell_gsap_contexts_with_idempotent_cleanup_and_recovery_timing, graphify_out_memory_query_20260731_131227_which_files_control_route_to_route_animated_naviga_persistent_route_to_route_animated_navigation_coordinator_and_topology_contracts, graphify_out_memory_query_20260731_131227_which_files_handle_browser_history_and_deep_links_truthful_browser_history_with_normalized_server_rendered_deep_links, graphify_out_memory_query_20260731_131227_which_files_handle_focus_restoration_after_navigat_navigation_focus_transfer_with_back_forward_focus_preservation, graphify_out_memory_query_20260731_131227_which_files_map_routes_to_chapter_coordinates_chapter_manifest_as_the_single_route_coordinate_source_for_transition_topology, graphify_out_memory_query_20260731_131227_which_hooks_providers_stores_or_services_manage_siteexperienceshell_runtimerequest_and_navigationlifecyclereducer_transition_ownership, graphify_out_memory_query_20260731_131228_which_files_implement_prefers_reduced_motion_behav_live_reduced_motion_cancellation_drawing_suppression_and_test_coverage, graphify_out_memory_query_20260731_131228_which_highly_connected_nodes_may_be_affected_by_ph_rootlayout_siteexperienceshell_chapter_motion_phase_05_impact_boundary, graphify_out_memory_query_20260731_131228_which_tests_currently_cover_phase_05_phase_05_unit_component_storybook_playwright_visual_motion_and_axe_coverage [INFERRED 0.85]
-- **Brand opening motion change artifacts** — openspec_changes_archive_2026_07_31_complete_brand_opening_motion_openspec_spec_driven_brand_opening_motion_change_metadata, openspec_changes_archive_2026_07_31_complete_brand_opening_motion_design_brand_opening_motion_design, openspec_changes_archive_2026_07_31_complete_brand_opening_motion_proposal_complete_brand_opening_motion_proposal, openspec_changes_archive_2026_07_31_complete_brand_opening_motion_specs_brand_opening_motion_spec_brand_opening_motion_specification, openspec_changes_archive_2026_07_31_complete_brand_opening_motion_tasks_completed_brand_opening_motion_tasks [INFERRED 0.95]
-- **Secure contact change and operations** — openspec_changes_archive_2026_07_31_complete_content_contact_security_openspec_spec_driven_content_contact_security_change_metadata, openspec_changes_archive_2026_07_31_complete_content_contact_security_design_content_and_contact_security_design, openspec_changes_archive_2026_07_31_complete_content_contact_security_proposal_complete_content_and_contact_security_proposal, openspec_changes_archive_2026_07_31_complete_content_contact_security_specs_public_security_content_baseline_spec_public_security_and_content_baseline_specification, openspec_changes_archive_2026_07_31_complete_content_contact_security_specs_secure_contact_workflow_spec_secure_contact_workflow_specification, docs_08_operacao_01_observabilidade_incidentes_observability_and_incident_response, graphify_out_memory_query_20260731_183045_how_does_the_contact_form_flow_through_post_api_c_contactform_strict_post_api_contact_turnstile_plain_text_resend_flow [INFERRED 0.85]
-- **Interactive Application Demo Change** — openspec_changes_archive_2026_07_31_complete_interactive_application_demo_design_interactive_demo_design, openspec_changes_archive_2026_07_31_complete_interactive_application_demo_proposal_interactive_application_demo_proposal, openspec_changes_archive_2026_07_31_complete_interactive_application_demo_specs_interactive_application_demo_spec_interactive_application_demo_delta, openspec_changes_archive_2026_07_31_complete_interactive_application_demo_tasks_interactive_demo_tasks [EXTRACTED 1.00]
-- **Phase 05 Motion Navigation Change** — openspec_changes_archive_2026_07_31_complete_phase_05_motion_navigation_readme_phase_05_motion_navigation, openspec_changes_archive_2026_07_31_complete_phase_05_motion_navigation_design_motion_navigation_design, openspec_changes_archive_2026_07_31_complete_phase_05_motion_navigation_proposal_phase_05_motion_navigation_proposal, openspec_changes_archive_2026_07_31_complete_phase_05_motion_navigation_specs_accessible_navigation_lifecycle_spec_accessible_navigation_lifecycle_delta, openspec_changes_archive_2026_07_31_complete_phase_05_motion_navigation_specs_score_transition_navigation_spec_score_transition_navigation_delta [EXTRACTED 1.00]
-- **Phase 05 navigation contract lineage** — openspec_changes_archive_2026_07_31_complete_phase_05_motion_navigation_tasks_completed_phase_05_motion_navigation_tasks, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_openspec_spec_driven_correct_score_navigation_contracts_change_metadata, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_design_correct_score_navigation_contracts_design, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_proposal_correct_score_navigation_contracts_proposal, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_specs_score_transition_navigation_spec_corrected_score_transition_navigation_specification, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_tasks_completed_score_navigation_corrective_tasks [INFERRED 0.85]
-- **Brand Home opening correction artifacts** — openspec_changes_archive_2026_08_03_complete_brand_home_opening_openspec_spec_driven_complete_brand_home_opening_change_metadata, openspec_changes_archive_2026_08_03_complete_brand_home_opening_design_complete_brand_home_opening_design, openspec_changes_archive_2026_08_03_complete_brand_home_opening_proposal_complete_brand_home_opening_proposal, openspec_changes_archive_2026_08_03_complete_brand_home_opening_specs_brand_opening_motion_spec_corrected_brand_opening_motion_specification, openspec_changes_archive_2026_08_03_complete_brand_home_opening_tasks_completed_brand_home_opening_corrective_tasks [INFERRED 0.95]
-- **Score navigation correction artifacts** — openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_openspec_spec_driven_correct_score_navigation_contracts_change_metadata, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_design_correct_score_navigation_contracts_design, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_proposal_correct_score_navigation_contracts_proposal, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_specs_score_transition_navigation_spec_corrected_score_transition_navigation_specification, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_tasks_completed_score_navigation_corrective_tasks [INFERRED 0.95]
-- **Contact Retry Correction Flow** — openspec_changes_archive_2026_08_03_stabilize_contact_delivery_retries_design_contact_retry_design, openspec_changes_archive_2026_08_03_stabilize_contact_delivery_retries_proposal_stabilize_contact_delivery_retries, openspec_changes_archive_2026_08_03_stabilize_contact_delivery_retries_specs_secure_contact_workflow_spec_secure_contact_workflow_delta, openspec_changes_archive_2026_08_03_stabilize_contact_delivery_retries_tasks_contact_retry_tasks, openspec_specs_secure_contact_workflow_spec_secure_contact_workflow, openspec_specs_secure_contact_workflow_spec_stable_logical_submission_retry [EXTRACTED 1.00]
-- **W_Flyer staged brand identity** — public_brand_wflyer_intro_master_winged_wf_symbol_geometry, public_brand_wflyer_intro_master_w_flyer_wordmark_geometry, public_brand_wflyer_intro_master_origin_underscore_echoes_and_color_sweep, public_brand_wflyer_intro_master_initial_symbol_final_state_choreography [EXTRACTED 1.00]
-- **Acessibilidade em motion, transições e tablet** — docs_02_design_07_acessibilidade_experiencia_acessivel, docs_03_motion_04_reduced_motion_modo_de_movimento_reduzido, docs_03_motion_06_animacao_entrada_marca_controles_acessiveis_da_introducao, docs_03_motion_08_tablet_interativo_interacao_acessivel_do_tablet [INFERRED 0.85]
-- **Sistema de dupla partitura entre visual, motion e navegação** — docs_02_design_09_sistema_dupla_partitura_modelo_espacial_de_dupla_partitura, docs_02_design_04_homepage_home_como_origem_e_bifurcacao, docs_03_motion_02_narrativa_dupla_partitura_movimento_de_dupla_partitura [INFERRED 0.95]
-- **Fluxo da abertura da marca até a Home** — docs_02_design_03_header_partitura_handoff_do_simbolo_para_o_header, docs_02_design_04_homepage_home_como_origem_e_bifurcacao, docs_03_motion_03_catalogo_animacoes_m_010_abertura_oficial_da_marca, docs_03_motion_06_animacao_entrada_marca_brand_intro, docs_03_motion_06_animacao_entrada_marca_handoff_flip_para_o_header [INFERRED 0.95]
-- **Conteúdo público aprovado** — docs_04_conteudo_01_mapa_conteudo_mapa_de_conteudo, docs_04_conteudo_02_copy_provisoria_home_copy_de_referencia_visual, docs_04_conteudo_05_portfolio_portfolio, docs_04_conteudo_07_seo_metadados_seo_e_metadados, docs_04_conteudo_08_perfil_publicacao_perfil_de_publicacao [INFERRED 0.85]
-- **Sistema de rotas em dupla partitura** — docs_04_conteudo_01_mapa_conteudo_continuidade_editorial_da_dupla_partitura, docs_05_implementacao_01_arquitetura_static_first_continuidade_progressiva_da_partitura, docs_05_implementacao_03_componentes_componentes_de_partitura_e_experiencia, docs_05_implementacao_07_fases_implementacao_rotas_e_dupla_partitura, docs_05_implementacao_11_manifesto_capitulos_partitura_manifesto_de_capitulos_da_partitura [INFERRED 0.95]
-- **Secure Contact Submission Lifecycle** — docs_06_seguranca_02_controles_seguranca_controles_do_endpoint_de_contato, docs_06_seguranca_03_csp_headers_cabecalhos_no_store_da_api_de_contato, docs_07_qa_04_testes_seguranca_formulario_testes_de_seguranca_do_formulario [INFERRED 0.95]
-- **Contrato de assets da abertura da marca** — docs_id_map_mapa_de_ids_assets_de_motion_w_flyer, docs_readme_assets_vetoriais_de_motion_w_flyer, docs_design_reference_logo_docs_id_map_animacao_contrato_de_ids_svg_estaveis, docs_design_reference_logo_docs_instrucoes_ink_transfer_sequencia_ink_transfer, docs_design_reference_brand_intro_readme_copias_controladas_dos_assets_oficiais [INFERRED 0.85]
-- **Sistema de autorização das referências visuais** — docs_design_reference_readme_sistema_de_referencias_aprovadas, docs_design_reference_golden_pages_implementation_authorization_authorized_for_full_implementation, docs_design_reference_golden_pages_readme_modelo_de_status_visuais, docs_design_reference_golden_pages_status_matriz_de_autorizacao_por_pagina_e_viewport, docs_design_reference_golden_pages_generation_brief_aprovacao_humana_preserva_estados_derivados [INFERRED 0.95]
-- **Continuidade visual do ramo Aplicação** — docs_design_reference_golden_pages_generation_brief_checklist_de_continuidade_da_partitura, docs_design_reference_golden_pages_application_application_desktop_light_spec_manifesto_de_rota_e_ramo_da_aplicacao, docs_design_reference_golden_pages_application_application_desktop_light_spec_continuidade_de_entrada_e_saida_da_partitura, docs_design_reference_golden_pages_briefs_01_application_desktop_dark_direcao_narrativa_da_aplicacao, docs_design_reference_golden_pages_briefs_02_how_it_works_desktop_coordenada_e_navegacao_do_ramo_aplicacao [INFERRED 0.85]
-- **Authorized-derived visual implementation system** — docs_design_reference_golden_pages_master_wflyer_approved_master_board_spec_master_board_visual_controls, docs_design_reference_golden_pages_page_matrix_implementation_authorized, docs_design_reference_golden_pages_visual_archetypes_visual_archetypes, docs_design_reference_golden_pages_briefs_readme_optional_qa_reference_policy [INFERRED 0.95]
-- **Terminal double-bar visual contract** — docs_design_reference_golden_pages_briefs_03_benefits_desktop_terminal_benefits_composition, docs_design_reference_golden_pages_briefs_09_contact_individual_terminal_contact_composition, docs_design_reference_storyboards_readme_benefits_terminal, docs_design_reference_storyboards_readme_contact_terminal, docs_design_reference_golden_pages_visual_archetypes_editorial_benefits_terminal, docs_design_reference_golden_pages_visual_archetypes_contact_terminal [INFERRED 0.95]
-- **Self-Hosted Font Licensing Chain** — src_assets_fonts_readme_self_hosted_font_inventory, src_assets_fonts_readme_font_sha_256_integrity, src_assets_fonts_licenses_cormorant_garamond_ofl_cormorant_garamond_sil_open_font_license, src_assets_fonts_licenses_manrope_ofl_manrope_sil_open_font_license, src_assets_fonts_readme_no_runtime_google_fonts_request [INFERRED 0.85]
-- **Three-path W_Flyer favicon vector construction** — docs_design_reference_logo_favicon_favicon_angular_winged_wf_monogram [EXTRACTED 1.00]
-- **Three-path currentColor W_Flyer symbol construction** — docs_design_reference_logo_svg_master_wflyer_symbol_tall_left_anchor, docs_design_reference_logo_svg_master_wflyer_symbol_inherited_currentcolor_fill, docs_design_reference_logo_svg_master_wflyer_symbol_evenodd_fill_rule [EXTRACTED 1.00]
-- **Paleta do gradiente W_Flyer** — docs_design_reference_logo_svg_variants_wflyer_brand_gradient_stop_violeta_7c3aed, docs_design_reference_logo_svg_variants_wflyer_brand_gradient_stop_indigo_4f46e5, docs_design_reference_logo_svg_variants_wflyer_brand_gradient_stop_ciano_22d3ee [EXTRACTED 1.00]
-- **Seven-path W_Flyer wordmark sequence** — docs_design_reference_logo_svg_variants_wflyer_monochrome_w_flyer_vector_wordmark [EXTRACTED 1.00]
-- **Símbolo modular da variante escura** — docs_design_reference_logo_svg_variants_wflyer_on_dark_symbol_anchor, docs_design_reference_logo_svg_variants_wflyer_on_dark_symbol_upper_wing, docs_design_reference_logo_svg_variants_wflyer_on_dark_symbol_lower_wing [EXTRACTED 1.00]
-- **Sequência vetorial do wordmark para fundo escuro** — docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_w, docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_underscore, docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_f, docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_l, docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_y, docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_e, docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_r [EXTRACTED 1.00]
-- **Sistema visual da Aplicação em modo claro** — docs_design_reference_golden_pages_application_application_desktop_light_hero_editorial_da_aplicacao, docs_design_reference_golden_pages_application_application_desktop_light_tablet_tridimensional, docs_design_reference_golden_pages_application_application_desktop_light_partitura_ondulada_com_notas, docs_design_reference_golden_pages_application_application_desktop_light_faixa_de_cinco_beneficios [EXTRACTED 1.00]
-- **Painéis canônicos em modo claro** — docs_design_reference_golden_pages_master_wflyer_approved_master_board_home_modo_claro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_servicos_modo_claro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_portfolio_modo_claro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_contato_modo_claro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_footer_modo_claro [EXTRACTED 1.00]
-- **Painéis canônicos em modo escuro** — docs_design_reference_golden_pages_master_wflyer_approved_master_board_home_modo_escuro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_servicos_modo_escuro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_portfolio_modo_escuro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_contato_modo_escuro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_footer_modo_escuro [EXTRACTED 1.00]
-- **Linguagem visual compartilhada** — docs_design_reference_golden_pages_master_wflyer_approved_master_board_header_em_partitura, docs_design_reference_golden_pages_master_wflyer_approved_master_board_partitura_ondulada_continua, docs_design_reference_golden_pages_master_wflyer_approved_master_board_botoes_em_capsula, docs_design_reference_golden_pages_master_wflyer_approved_master_board_tipografia_serif_e_sans, docs_design_reference_golden_pages_master_wflyer_approved_master_board_icones_lineares [INFERRED 0.85]
-- **Three-path adaptive W_Flyer app icon construction** — src_app_icon_tall_left_anchor, src_app_icon_wide_upper_wing, src_app_icon_short_lower_wing, src_app_icon_angular_winged_wf_symbol, src_app_icon_preferred_color_scheme_adaptation [EXTRACTED 1.00]
-- **Three-path production header symbol construction** — svg_wflyer_header_symbol_currentcolor_theme_adaptation [EXTRACTED 1.00]
+- **Completed repository-intelligence bootstrap workstreams** — openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_audit_and_configuration_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_architectural_graph_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_reproducible_workflow_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_openspec_baseline_and_documentation_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_validation_gates_complete [EXTRACTED 1.00]
+- **Archived repository-intelligence bootstrap decisions** — openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_external_cli_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_filtered_root_corpus_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_normal_semantic_extraction_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_lightweight_graph_versioning_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_manual_graphify_strict_openspec_ci, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_bootstrap_without_functional_specs [EXTRACTED 1.00]
+- **Origin, echo, symbol, and wordmark reveal sequence** — svg_wflyer_intro_master_isolated_origin_underscore, svg_wflyer_intro_master_soft_origin_underscore_glow, svg_wflyer_intro_master_outlined_symbol_echoes, svg_wflyer_intro_master_wordmark_reveal_clip, svg_wflyer_intro_master_soft_horizontal_ink_sweep, svg_wflyer_intro_master_initial_symbol_and_final_visual_states [EXTRACTED 1.00]
 - **Three-path intro master symbol construction** — svg_wflyer_intro_master_tall_left_symbol_anchor, svg_wflyer_intro_master_wide_upper_symbol_wing, svg_wflyer_intro_master_short_lower_symbol_wing [EXTRACTED 1.00]
 - **Seven-path intro master wordmark construction** — svg_wflyer_intro_master_wordmark_w_glyph, svg_wflyer_intro_master_wordmark_underscore_glyph, svg_wflyer_intro_master_wordmark_f_glyph, svg_wflyer_intro_master_wordmark_l_glyph, svg_wflyer_intro_master_wordmark_y_glyph, svg_wflyer_intro_master_wordmark_e_glyph, svg_wflyer_intro_master_wordmark_r_glyph, svg_wflyer_intro_master_custom_angular_italic_w_flyer_wordmark [EXTRACTED 1.00]
-- **Origin, echo, symbol, and wordmark reveal sequence** — svg_wflyer_intro_master_isolated_origin_underscore, svg_wflyer_intro_master_soft_origin_underscore_glow, svg_wflyer_intro_master_outlined_symbol_echoes, svg_wflyer_intro_master_wordmark_reveal_clip, svg_wflyer_intro_master_soft_horizontal_ink_sweep, svg_wflyer_intro_master_initial_symbol_and_final_visual_states [EXTRACTED 1.00]
 - **Operational OpenSpec change and evidence governance** — docs_05_implementacao_19_openspec_workflow_spec_driven_baseline, docs_05_implementacao_19_openspec_workflow_phase_05_motion_navigation_change, docs_05_implementacao_19_openspec_workflow_task_completion_evidence_rule, docs_05_implementacao_19_openspec_workflow_strict_ci_validation [EXTRACTED 1.00]
+- **Three-path production header symbol construction** — svg_wflyer_header_symbol_currentcolor_theme_adaptation [EXTRACTED 1.00]
 - **Validated repository-intelligence bootstrap outcome** — docs_05_implementacao_20_bootstrap_graphify_openspec_report_graphify_0_9_31_upgrade, docs_05_implementacao_20_bootstrap_graphify_openspec_report_openspec_1_7_0_upgrade, docs_05_implementacao_20_bootstrap_graphify_openspec_report_final_graph_snapshot, docs_05_implementacao_20_bootstrap_graphify_openspec_report_bootstrap_change, docs_05_implementacao_20_bootstrap_graphify_openspec_report_full_validation_suite, docs_05_implementacao_20_bootstrap_graphify_openspec_report_product_runtime_deploy_unchanged [EXTRACTED 1.00]
-- **Archived repository-intelligence bootstrap decisions** — openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_external_cli_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_filtered_root_corpus_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_normal_semantic_extraction_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_lightweight_graph_versioning_decision, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_manual_graphify_strict_openspec_ci, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_design_bootstrap_without_functional_specs [EXTRACTED 1.00]
-- **Completed repository-intelligence bootstrap workstreams** — openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_audit_and_configuration_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_architectural_graph_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_reproducible_workflow_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_openspec_baseline_and_documentation_complete, openspec_changes_archive_2026_07_30_bootstrap_repository_intelligence_tasks_validation_gates_complete [EXTRACTED 1.00]
+- **Three-path adaptive W_Flyer app icon construction** — src_app_icon_tall_left_anchor, src_app_icon_wide_upper_wing, src_app_icon_short_lower_wing, src_app_icon_angular_winged_wf_symbol, src_app_icon_preferred_color_scheme_adaptation [EXTRACTED 1.00]
+- **Sistema visual da Aplicação em modo claro** — docs_design_reference_golden_pages_application_application_desktop_light_hero_editorial_da_aplicacao, docs_design_reference_golden_pages_application_application_desktop_light_tablet_tridimensional, docs_design_reference_golden_pages_application_application_desktop_light_partitura_ondulada_com_notas, docs_design_reference_golden_pages_application_application_desktop_light_faixa_de_cinco_beneficios [EXTRACTED 1.00]
+- **Painéis canônicos em modo escuro** — docs_design_reference_golden_pages_master_wflyer_approved_master_board_home_modo_escuro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_servicos_modo_escuro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_portfolio_modo_escuro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_contato_modo_escuro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_footer_modo_escuro [EXTRACTED 1.00]
+- **Painéis canônicos em modo claro** — docs_design_reference_golden_pages_master_wflyer_approved_master_board_home_modo_claro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_servicos_modo_claro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_portfolio_modo_claro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_contato_modo_claro, docs_design_reference_golden_pages_master_wflyer_approved_master_board_footer_modo_claro [EXTRACTED 1.00]
+- **Contact Retry Correction Flow** — openspec_changes_archive_2026_08_03_stabilize_contact_delivery_retries_design_contact_retry_design, openspec_changes_archive_2026_08_03_stabilize_contact_delivery_retries_proposal_stabilize_contact_delivery_retries, openspec_changes_archive_2026_08_03_stabilize_contact_delivery_retries_specs_secure_contact_workflow_spec_secure_contact_workflow_delta, openspec_changes_archive_2026_08_03_stabilize_contact_delivery_retries_tasks_contact_retry_tasks, openspec_specs_secure_contact_workflow_spec_secure_contact_workflow, openspec_specs_secure_contact_workflow_spec_stable_logical_submission_retry [EXTRACTED 1.00]
+- **Three-path currentColor W_Flyer symbol construction** — docs_design_reference_logo_svg_master_wflyer_symbol_tall_left_anchor, docs_design_reference_logo_svg_master_wflyer_symbol_inherited_currentcolor_fill, docs_design_reference_logo_svg_master_wflyer_symbol_evenodd_fill_rule [EXTRACTED 1.00]
+- **Seven-path W_Flyer wordmark sequence** — docs_design_reference_logo_svg_variants_wflyer_monochrome_w_flyer_vector_wordmark [EXTRACTED 1.00]
+- **Interactive Application Demo Change** — openspec_changes_archive_2026_07_31_complete_interactive_application_demo_design_interactive_demo_design, openspec_changes_archive_2026_07_31_complete_interactive_application_demo_proposal_interactive_application_demo_proposal, openspec_changes_archive_2026_07_31_complete_interactive_application_demo_specs_interactive_application_demo_spec_interactive_application_demo_delta, openspec_changes_archive_2026_07_31_complete_interactive_application_demo_tasks_interactive_demo_tasks [EXTRACTED 1.00]
+- **Phase 05 Motion Navigation Change** — openspec_changes_archive_2026_07_31_complete_phase_05_motion_navigation_readme_phase_05_motion_navigation, openspec_changes_archive_2026_07_31_complete_phase_05_motion_navigation_design_motion_navigation_design, openspec_changes_archive_2026_07_31_complete_phase_05_motion_navigation_proposal_phase_05_motion_navigation_proposal, openspec_changes_archive_2026_07_31_complete_phase_05_motion_navigation_specs_accessible_navigation_lifecycle_spec_accessible_navigation_lifecycle_delta, openspec_changes_archive_2026_07_31_complete_phase_05_motion_navigation_specs_score_transition_navigation_spec_score_transition_navigation_delta [EXTRACTED 1.00]
+- **Phase 09 Release Governance Change** — openspec_changes_complete_site_qa_release_preparation_design_release_preparation_design, openspec_changes_complete_site_qa_release_preparation_proposal_complete_site_qa_release_preparation, openspec_changes_complete_site_qa_release_preparation_specs_complete_quality_gate_spec_complete_quality_gate_delta, openspec_changes_complete_site_qa_release_preparation_specs_governed_release_candidate_spec_governed_release_candidate_delta, openspec_changes_complete_site_qa_release_preparation_specs_staging_index_isolation_spec_staging_index_isolation_delta, openspec_changes_complete_site_qa_release_preparation_tasks_release_preparation_tasks [EXTRACTED 1.00]
+- **Paleta do gradiente W_Flyer** — docs_design_reference_logo_svg_variants_wflyer_brand_gradient_stop_violeta_7c3aed, docs_design_reference_logo_svg_variants_wflyer_brand_gradient_stop_indigo_4f46e5, docs_design_reference_logo_svg_variants_wflyer_brand_gradient_stop_ciano_22d3ee [EXTRACTED 1.00]
+- **Three-path W_Flyer favicon vector construction** — docs_design_reference_logo_favicon_favicon_angular_winged_wf_monogram [EXTRACTED 1.00]
+- **Símbolo modular da variante escura** — docs_design_reference_logo_svg_variants_wflyer_on_dark_symbol_anchor, docs_design_reference_logo_svg_variants_wflyer_on_dark_symbol_upper_wing, docs_design_reference_logo_svg_variants_wflyer_on_dark_symbol_lower_wing [EXTRACTED 1.00]
+- **Sequência vetorial do wordmark para fundo escuro** — docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_w, docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_underscore, docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_f, docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_l, docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_y, docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_e, docs_design_reference_logo_svg_variants_wflyer_on_dark_wordmark_r [EXTRACTED 1.00]
+- **W_Flyer staged brand identity** — public_brand_wflyer_intro_master_winged_wf_symbol_geometry, public_brand_wflyer_intro_master_w_flyer_wordmark_geometry, public_brand_wflyer_intro_master_origin_underscore_echoes_and_color_sweep, public_brand_wflyer_intro_master_initial_symbol_final_state_choreography [EXTRACTED 1.00]
+- **Acessibilidade em motion, transições e tablet** — docs_02_design_07_acessibilidade_experiencia_acessivel, docs_03_motion_04_reduced_motion_modo_de_movimento_reduzido, docs_03_motion_06_animacao_entrada_marca_controles_acessiveis_da_introducao, docs_03_motion_08_tablet_interativo_interacao_acessivel_do_tablet [INFERRED 0.85]
+- **Continuidade visual do ramo Aplicação** — docs_design_reference_golden_pages_generation_brief_checklist_de_continuidade_da_partitura, docs_design_reference_golden_pages_application_application_desktop_light_spec_manifesto_de_rota_e_ramo_da_aplicacao, docs_design_reference_golden_pages_application_application_desktop_light_spec_continuidade_de_entrada_e_saida_da_partitura, docs_design_reference_golden_pages_briefs_01_application_desktop_dark_direcao_narrativa_da_aplicacao, docs_design_reference_golden_pages_briefs_02_how_it_works_desktop_coordenada_e_navegacao_do_ramo_aplicacao [INFERRED 0.85]
+- **Contrato de assets da abertura da marca** — docs_id_map_mapa_de_ids_assets_de_motion_w_flyer, docs_readme_assets_vetoriais_de_motion_w_flyer, docs_design_reference_logo_docs_id_map_animacao_contrato_de_ids_svg_estaveis, docs_design_reference_logo_docs_instrucoes_ink_transfer_sequencia_ink_transfer, docs_design_reference_brand_intro_readme_copias_controladas_dos_assets_oficiais [INFERRED 0.85]
+- **Conteúdo público aprovado** — docs_04_conteudo_01_mapa_conteudo_mapa_de_conteudo, docs_04_conteudo_02_copy_provisoria_home_copy_de_referencia_visual, docs_04_conteudo_05_portfolio_portfolio, docs_04_conteudo_07_seo_metadados_seo_e_metadados, docs_04_conteudo_08_perfil_publicacao_perfil_de_publicacao [INFERRED 0.85]
+- **Phase 05 navigation contract lineage** — openspec_changes_archive_2026_07_31_complete_phase_05_motion_navigation_tasks_completed_phase_05_motion_navigation_tasks, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_openspec_spec_driven_correct_score_navigation_contracts_change_metadata, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_design_correct_score_navigation_contracts_design, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_proposal_correct_score_navigation_contracts_proposal, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_specs_score_transition_navigation_spec_corrected_score_transition_navigation_specification, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_tasks_completed_score_navigation_corrective_tasks [INFERRED 0.85]
+- **Phase 05 navigation lifecycle** — graphify_out_memory_query_20260731_131227_which_files_control_gsap_timelines_and_cleanup_siteexperienceshell_gsap_contexts_with_idempotent_cleanup_and_recovery_timing, graphify_out_memory_query_20260731_131227_which_files_control_route_to_route_animated_naviga_persistent_route_to_route_animated_navigation_coordinator_and_topology_contracts, graphify_out_memory_query_20260731_131227_which_files_handle_browser_history_and_deep_links_truthful_browser_history_with_normalized_server_rendered_deep_links, graphify_out_memory_query_20260731_131227_which_files_handle_focus_restoration_after_navigat_navigation_focus_transfer_with_back_forward_focus_preservation, graphify_out_memory_query_20260731_131227_which_files_map_routes_to_chapter_coordinates_chapter_manifest_as_the_single_route_coordinate_source_for_transition_topology, graphify_out_memory_query_20260731_131227_which_hooks_providers_stores_or_services_manage_siteexperienceshell_runtimerequest_and_navigationlifecyclereducer_transition_ownership, graphify_out_memory_query_20260731_131228_which_files_implement_prefers_reduced_motion_behav_live_reduced_motion_cancellation_drawing_suppression_and_test_coverage, graphify_out_memory_query_20260731_131228_which_highly_connected_nodes_may_be_affected_by_ph_rootlayout_siteexperienceshell_chapter_motion_phase_05_impact_boundary, graphify_out_memory_query_20260731_131228_which_tests_currently_cover_phase_05_phase_05_unit_component_storybook_playwright_visual_motion_and_axe_coverage [INFERRED 0.85]
+- **Secure contact change and operations** — openspec_changes_archive_2026_07_31_complete_content_contact_security_openspec_spec_driven_content_contact_security_change_metadata, openspec_changes_archive_2026_07_31_complete_content_contact_security_design_content_and_contact_security_design, openspec_changes_archive_2026_07_31_complete_content_contact_security_proposal_complete_content_and_contact_security_proposal, openspec_changes_archive_2026_07_31_complete_content_contact_security_specs_public_security_content_baseline_spec_public_security_and_content_baseline_specification, openspec_changes_archive_2026_07_31_complete_content_contact_security_specs_secure_contact_workflow_spec_secure_contact_workflow_specification, docs_08_operacao_01_observabilidade_incidentes_observability_and_incident_response, graphify_out_memory_query_20260731_183045_how_does_the_contact_form_flow_through_post_api_c_contactform_strict_post_api_contact_turnstile_plain_text_resend_flow [INFERRED 0.85]
+- **Self-Hosted Font Licensing Chain** — src_assets_fonts_readme_self_hosted_font_inventory, src_assets_fonts_readme_font_sha_256_integrity, src_assets_fonts_licenses_cormorant_garamond_ofl_cormorant_garamond_sil_open_font_license, src_assets_fonts_licenses_manrope_ofl_manrope_sil_open_font_license, src_assets_fonts_readme_no_runtime_google_fonts_request [INFERRED 0.85]
+- **Linguagem visual compartilhada** — docs_design_reference_golden_pages_master_wflyer_approved_master_board_header_em_partitura, docs_design_reference_golden_pages_master_wflyer_approved_master_board_partitura_ondulada_continua, docs_design_reference_golden_pages_master_wflyer_approved_master_board_botoes_em_capsula, docs_design_reference_golden_pages_master_wflyer_approved_master_board_tipografia_serif_e_sans, docs_design_reference_golden_pages_master_wflyer_approved_master_board_icones_lineares [INFERRED 0.85]
+- **Authorized-derived visual implementation system** — docs_design_reference_golden_pages_master_wflyer_approved_master_board_spec_master_board_visual_controls, docs_design_reference_golden_pages_page_matrix_implementation_authorized, docs_design_reference_golden_pages_visual_archetypes_visual_archetypes, docs_design_reference_golden_pages_briefs_readme_optional_qa_reference_policy [INFERRED 0.95]
+- **Brand Home opening correction artifacts** — openspec_changes_archive_2026_08_03_complete_brand_home_opening_openspec_spec_driven_complete_brand_home_opening_change_metadata, openspec_changes_archive_2026_08_03_complete_brand_home_opening_design_complete_brand_home_opening_design, openspec_changes_archive_2026_08_03_complete_brand_home_opening_proposal_complete_brand_home_opening_proposal, openspec_changes_archive_2026_08_03_complete_brand_home_opening_specs_brand_opening_motion_spec_corrected_brand_opening_motion_specification, openspec_changes_archive_2026_08_03_complete_brand_home_opening_tasks_completed_brand_home_opening_corrective_tasks [INFERRED 0.95]
+- **Fluxo da abertura da marca até a Home** — docs_02_design_03_header_partitura_handoff_do_simbolo_para_o_header, docs_02_design_04_homepage_home_como_origem_e_bifurcacao, docs_03_motion_03_catalogo_animacoes_m_010_abertura_oficial_da_marca, docs_03_motion_06_animacao_entrada_marca_brand_intro, docs_03_motion_06_animacao_entrada_marca_handoff_flip_para_o_header [INFERRED 0.95]
+- **Brand opening motion change artifacts** — openspec_changes_archive_2026_07_31_complete_brand_opening_motion_openspec_spec_driven_brand_opening_motion_change_metadata, openspec_changes_archive_2026_07_31_complete_brand_opening_motion_design_brand_opening_motion_design, openspec_changes_archive_2026_07_31_complete_brand_opening_motion_proposal_complete_brand_opening_motion_proposal, openspec_changes_archive_2026_07_31_complete_brand_opening_motion_specs_brand_opening_motion_spec_brand_opening_motion_specification, openspec_changes_archive_2026_07_31_complete_brand_opening_motion_tasks_completed_brand_opening_motion_tasks [INFERRED 0.95]
+- **Sistema de dupla partitura entre visual, motion e navegação** — docs_02_design_09_sistema_dupla_partitura_modelo_espacial_de_dupla_partitura, docs_02_design_04_homepage_home_como_origem_e_bifurcacao, docs_03_motion_02_narrativa_dupla_partitura_movimento_de_dupla_partitura [INFERRED 0.95]
+- **External Production Release Gate** — docs_00_governanca_05_registro_decisoes_adr_023_owner_homologation, docs_00_governanca_08_decisoes_operacionais_publicacao_external_homologation_gate, docs_05_implementacao_21_staging_release_operations_human_production_gate, docs_06_seguranca_05_checklist_release_external_security_gates, docs_07_qa_08_phase_09_release_readiness_report_external_release_blockers, docs_05_implementacao_17_relatorio_execucao_codex_external_integration_blocked [INFERRED 0.95]
+- **GitHub and Napoleon Ownership Boundary** — docs_00_governanca_05_registro_decisoes_adr_021_github_environment_secrets, _github_workflows_deploy_immutable_read_only_handoff, docs_05_implementacao_16_github_actions_secrets_napoleon_environment_runtime_value_boundary, docs_05_implementacao_21_staging_release_operations_actions_evidence_vs_napoleon_source_build [INFERRED 0.95]
+- **Sistema de autorização das referências visuais** — docs_design_reference_readme_sistema_de_referencias_aprovadas, docs_design_reference_golden_pages_implementation_authorization_authorized_for_full_implementation, docs_design_reference_golden_pages_readme_modelo_de_status_visuais, docs_design_reference_golden_pages_status_matriz_de_autorizacao_por_pagina_e_viewport, docs_design_reference_golden_pages_generation_brief_aprovacao_humana_preserva_estados_derivados [INFERRED 0.95]
+- **Human-Authorized Production Release Chain** — docs_00_governanca_05_registro_decisoes_adr_023_owner_homologation, _github_workflows_deploy_validate_request_job, docs_05_implementacao_16_github_actions_secrets_napoleon_github_environment_gates, docs_05_implementacao_21_staging_release_operations_human_production_gate [INFERRED 0.95]
+- **Immutable SHA Release Handoff Chain** — _github_workflows_deploy_validate_request_job, _github_workflows_deploy_release_manifest, _github_workflows_deploy_branch_sha_freeze_gate, docs_05_implementacao_05_deploy_configuracao_traceable_artifact_integrity, docs_05_implementacao_16_github_actions_secrets_napoleon_sha_aligned_branch_handoff, docs_05_implementacao_21_staging_release_operations_candidate_identity, docs_05_implementacao_21_staging_release_operations_branch_sha_freeze_handoff [INFERRED 0.95]
+- **Phase 09 Graph Refresh and Repository Closure** — docs_05_implementacao_18_graphify_repository_map_phase_09_structural_refresh, docs_05_implementacao_18_graphify_repository_map_semantic_reextraction_compaction, docs_05_implementacao_18_graphify_repository_map_validated_architecture_relationships, openspec_changes_complete_site_qa_release_preparation_tasks_repository_owned_release_closure, openspec_changes_complete_site_qa_release_preparation_tasks_confirmed_napoleon_branch_handoff [INFERRED 0.95]
+- **Release Candidate Safety Stack** — openspec_specs_complete_quality_gate_spec_complete_quality_gate, openspec_specs_governed_release_candidate_spec_governed_release_candidate, openspec_specs_staging_index_isolation_spec_staging_index_isolation, openspec_specs_public_security_content_baseline_spec_public_security_content_baseline, openspec_changes_complete_site_qa_release_preparation_design_local_external_evidence_boundary [INFERRED 0.95]
+- **Score navigation correction artifacts** — openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_openspec_spec_driven_correct_score_navigation_contracts_change_metadata, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_design_correct_score_navigation_contracts_design, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_proposal_correct_score_navigation_contracts_proposal, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_specs_score_transition_navigation_spec_corrected_score_transition_navigation_specification, openspec_changes_archive_2026_08_03_correct_score_navigation_contracts_tasks_completed_score_navigation_corrective_tasks [INFERRED 0.95]
+- **Secure Persistence-Free Contact Defense in Depth** — docs_05_implementacao_04_formulario_contato_endpoint_defense_pipeline, docs_05_implementacao_04_formulario_contato_logical_submission_idempotency, docs_05_implementacao_04_formulario_contato_persistence_free_delivery, docs_06_seguranca_01_modelo_ameacas_contact_defense_in_depth, docs_06_seguranca_04_privacidade_logs_minimal_sanitized_logging, docs_06_seguranca_06_phase_08_validation_report_secure_contact_boundary [INFERRED 0.95]
+- **Secure Contact Submission Lifecycle** — docs_06_seguranca_02_controles_seguranca_controles_do_endpoint_de_contato, docs_06_seguranca_03_csp_headers_cabecalhos_no_store_da_api_de_contato, docs_07_qa_04_testes_seguranca_formulario_testes_de_seguranca_do_formulario [INFERRED 0.95]
+- **Sistema de rotas em dupla partitura** — docs_04_conteudo_01_mapa_conteudo_continuidade_editorial_da_dupla_partitura, docs_05_implementacao_01_arquitetura_static_first_continuidade_progressiva_da_partitura, docs_05_implementacao_03_componentes_componentes_de_partitura_e_experiencia, docs_05_implementacao_07_fases_implementacao_rotas_e_dupla_partitura, docs_05_implementacao_11_manifesto_capitulos_partitura_manifesto_de_capitulos_da_partitura [INFERRED 0.95]
+- **Terminal double-bar visual contract** — docs_design_reference_golden_pages_briefs_03_benefits_desktop_terminal_benefits_composition, docs_design_reference_golden_pages_briefs_09_contact_individual_terminal_contact_composition, docs_design_reference_storyboards_readme_benefits_terminal, docs_design_reference_storyboards_readme_contact_terminal, docs_design_reference_golden_pages_visual_archetypes_editorial_benefits_terminal, docs_design_reference_golden_pages_visual_archetypes_contact_terminal [INFERRED 0.95]
 
-## Communities (573 total, 142 thin omitted)
+## Communities (605 total, 146 thin omitted)
 
 ### Community 0 - "ui/index.ts"
 Cohesion: 0.05
-Nodes (76): metadata, HomePage(), metadata, StatePage(), nativeLinkAttributes(), StoryChapter(), Button(), ButtonProps (+68 more)
+Nodes (69): staticPageStyles, nativeLinkAttributes(), StoryChapter(), Button(), ButtonProps, controlClassName(), ControlSize, ControlVariant (+61 more)
 
 ### Community 1 - "ChapterScore.tsx"
-Cohesion: 0.25
-Nodes (13): anchorToY(), ChapterScore(), ChapterScoreProps, cubicAngle(), cubicPoint(), edgeToX(), getChapterScorePath(), getControlPoints() (+5 more)
+Cohesion: 0.13
+Nodes (22): anchorToY(), ChapterScore(), ChapterScoreProps, cubicAngle(), cubicPoint(), edgeToX(), getChapterScorePath(), getControlPoints() (+14 more)
 
 ### Community 2 - "lib/contact/index.ts"
-Cohesion: 0.07
-Nodes (40): dynamic, errorResponse(), POST(), PublicCode, responseHeaders, runtime, ContactForm(), ContactFormFallback() (+32 more)
+Cohesion: 0.05
+Nodes (73): AppLaunchInterestEmailPreviewPage(), previewConfig, previewRegistration, dynamic, errorResponse(), POST(), PublicCode, requestHostname() (+65 more)
 
-### Community 3 - "theme-provider.tsx"
-Cohesion: 0.09
-Nodes (35): ApplicationChapter, Dark, Home, meta, MobileMenuOpen, ProcessSubmeasure, Story, isThemeName() (+27 more)
+### Community 3 - "theme-tokens.test.ts"
+Cohesion: 0.13
+Nodes (17): canonicalDarkDeclarations, canonicalLightDeclarations, ColorTriplet, contrastRatio(), customProperties(), expectMinimumContrast(), iconSource, layoutSource (+9 more)
 
 ### Community 4 - "transition.ts"
 Cohesion: 0.09
 Nodes (34): normativeStates, operableCompletion, RelevantViolation, AdjacentEdge, adjacentEdges, outgoingLink(), chapterControl(), expectSafeSettledDocument() (+26 more)
 
 ### Community 5 - "BrandIntroController.tsx"
-Cohesion: 0.07
-Nodes (34): ADR-0008, AttributeSnapshot, BRAND_INTRO_LABELS, BRAND_INTRO_SESSION_KEY, BrandIntroController(), HomeOpeningTargets, IntroState, IntroTarget (+26 more)
+Cohesion: 0.14
+Nodes (21): AttributeSnapshot, BRAND_INTRO_LABELS, BRAND_INTRO_SESSION_KEY, BrandIntroController(), HomeOpeningTargets, IntroState, IntroTarget, isolateExperienceSiblings() (+13 more)
 
 ### Community 6 - "scripts"
 Cohesion: 0.08
@@ -685,9 +717,9 @@ Nodes (47): Símbolo modular à esquerda, W_Flyer horizontal lockup, Wordmark à
 Cohesion: 0.16
 Nodes (15): APPLICATION_NAVIGATION, getHeaderRouteState(), HeaderNavigationId, HeaderNavigationItem, HeaderRouteState, INSTITUTIONAL_NAVIGATION, normalizePathname(), NavigationMeasure() (+7 more)
 
-### Community 9 - "seo.ts"
-Cohesion: 0.08
-Nodes (26): metadata, metadata, viewport, sitemap(), applicationLinks, institutionalLinks, legalLinks, SiteFooter() (+18 more)
+### Community 9 - "ProfessionalChapterScene.tsx"
+Cohesion: 0.06
+Nodes (27): APP04_DEVELOPMENT_CONTRACT_FIXTURE, StoryMotionLabPageProps, ApplicationDemoMediaContract, PersonaIntegrationSlot(), PersonaIntegrationSlotProps, ApplicationChapterScene(), ApplicationChapterSceneProps, isPhase8ApplicationChapterId() (+19 more)
 
 ### Community 10 - "glyphs/types.ts"
 Cohesion: 0.10
@@ -710,12 +742,12 @@ Cohesion: 0.07
 Nodes (30): dom, dom.iterable, esnext, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, storybook-static (+22 more)
 
 ### Community 15 - "lib/motion/geometry.ts"
-Cohesion: 0.21
-Nodes (17): ScoreTransitionLayer(), AnchorPoint, createScoreTransitionPath(), DEFAULT_TRANSITION_VIEWPORT, destinationAnchorKind(), edgeFallbackPoint(), fallbackChapterPoint(), isFinitePoint() (+9 more)
+Cohesion: 0.23
+Nodes (16): ScoreTransitionLayer(), createScoreTransitionPath(), DEFAULT_TRANSITION_VIEWPORT, destinationAnchorKind(), edgeFallbackPoint(), fallbackChapterPoint(), isFinitePoint(), MeasuredTransitionAnchors (+8 more)
 
-### Community 16 - "chapters.ts"
-Cohesion: 0.27
-Nodes (12): auxiliaryRouteByPath, AuxiliaryRouteEntry, auxiliaryRoutes, scoreChapterById, scoreChapterByPath, scoreChapters, ScoreManifest, findSectionLines() (+4 more)
+### Community 16 - "app/page.tsx"
+Cohesion: 0.14
+Nodes (18): HomePage(), metadata, auxiliaryRouteByPath, AuxiliaryRouteEntry, auxiliaryRoutes, scoreChapterById, scoreChapterByPath, scoreChapters (+10 more)
 
 ### Community 17 - "Relatório do bootstrap Graphify e OpenSpec"
 Cohesion: 0.08
@@ -734,8 +766,8 @@ Cohesion: 0.10
 Nodes (27): Contact Retry Stabilization Design, Ephemeral Logical Submission Identity, Stable Resend Idempotency Across Unchanged Retries, Stabilize Contact Delivery Retries Proposal, Duplicate-Safe Retry Requirement, Secure Contact Workflow Retry Delta, Contact Retry Stabilization Tasks, Separate Build and Runtime Value Ownership (+19 more)
 
 ### Community 21 - "SiteExperienceShell.tsx"
-Cohesion: 0.14
-Nodes (22): currentViewport(), incomingOffset(), INITIAL_PRESENTATION, measureHomePivot(), measureScoreAnchor(), NavigationMethod, outgoingOffset(), pointFromSvgMarker() (+14 more)
+Cohesion: 0.13
+Nodes (23): currentViewport(), incomingOffset(), INITIAL_PRESENTATION, measureHomePivot(), measureScoreAnchor(), NavigationMethod, outgoingOffset(), pointFromSvgMarker() (+15 more)
 
 ### Community 22 - "Corrected brand opening motion specification"
 Cohesion: 0.08
@@ -746,12 +778,12 @@ Cohesion: 0.08
 Nodes (24): Capturas determinísticas com movimento reduzido, Comparação com arquétipos autorizados, Evidências visuais — Fase 4, Limites do tablet e formulário na Fase 4, Matriz visual de dezesseis rotas, Continuidade visual da pauta, Direção das transições de capítulo, Governança do baseline visual (+16 more)
 
 ### Community 24 - "site-content.ts"
-Cohesion: 0.05
-Nodes (44): metadata, metadata, metadata, metadata, ApplicationSequence, BenefitsDark, ContactShell, FeatureStrip (+36 more)
+Cohesion: 0.06
+Nodes (51): ApplicationFeatureStrip(), AudienceList(), BenefitsGrid(), CompanyMark(), ContactWorkspace(), EditorialPillars(), ProjectGrid(), ServiceDetailMark() (+43 more)
 
 ### Community 25 - "pages/index.ts"
 Cohesion: 0.10
-Nodes (34): ApplicationFeatureStrip(), AudienceList(), BenefitsGrid(), CompanyMark(), ContactWorkspace(), EditorialPillars(), ProjectGrid(), ServiceDetailMark() (+26 more)
+Nodes (35): metadata, metadata, metadata, metadata, metadata, metadata, generateMetadata(), metadata (+27 more)
 
 ### Community 26 - "capture-phase5-evidence.mjs"
 Cohesion: 0.23
@@ -781,9 +813,9 @@ Nodes (19): currentColor monochrome treatment, Official vertical W_Flyer logo lo
 Cohesion: 0.12
 Nodes (18): Normative Documentation Index, Transition Accessibility, Recovery, and Testability, Chapter Transition Specification, Cancelable Chapter Transition Lifecycle, Topology-Based Transition Modes, Contact and Policy Content, Data Minimization and No Analytics, Official Contact and Privacy Policy (+10 more)
 
-### Community 33 - "build-motif-model.ts"
-Cohesion: 0.10
-Nodes (51): averagePoints(), layoutBeamedMotif(), noteheadStemAttachment(), resolvePrimaryBeamAttachments(), getMotifDefinition(), BEAM_TOPOLOGIES, BeamMotifId, BeamTopology (+43 more)
+### Community 33 - "Vec2"
+Cohesion: 0.12
+Nodes (33): LabResponsiveConnectorPath, BarlineStroke, BEAM_TOPOLOGIES, BeamMotifId, BeamPrimitive, BeamTopology, BeamTopologyElement, ContinuousBeamTopologyElement (+25 more)
 
 ### Community 34 - "Official production W_Flyer intro master"
 Cohesion: 0.15
@@ -866,8 +898,8 @@ Cohesion: 0.36
 Nodes (7): parseBlock(), ParsedLine, parseKeyValue(), parseScalar(), parseYamlSubset(), YamlSubsetValue, readCanonicalManifest()
 
 ### Community 54 - "topology.ts"
-Cohesion: 0.14
-Nodes (24): EligibleNavigationLink, evaluateLinkEligibility(), ineligible(), IneligibleNavigationLink, isHttpProtocol(), isUnmodifiedPrimaryActivation(), LinkActivation, LinkCandidate (+16 more)
+Cohesion: 0.12
+Nodes (26): AuxiliaryRoute, ChapterBranch, EligibleNavigationLink, evaluateLinkEligibility(), ineligible(), IneligibleNavigationLink, isHttpProtocol(), isUnmodifiedPrimaryActivation() (+18 more)
 
 ### Community 55 - "ADDED Requirements"
 Cohesion: 0.14
@@ -913,9 +945,9 @@ Nodes (12): assertInside(), assertRegularTree(), copySource(), legacyMirrorNames
 Cohesion: 0.18
 Nodes (7): child, failClosedRobots, productionRobots, repositoryRoot, scriptDirectory, serverPath, standaloneDirectory
 
-### Community 66 - "cleanup.ts"
-Cohesion: 0.42
-Nodes (6): CleanupCallback, createCleanupRegistry(), onceCleanup(), scheduleRecoveryTimeout(), getTransitionDurationMs(), NAVIGATION_TIMING_MS
+### Community 66 - "ScorePathReview.tsx"
+Cohesion: 0.07
+Nodes (33): ScorePathReviewPage(), ScorePathReviewPageProps, ScorePathReviewPreviewPage(), ScorePathReviewPreviewPageProps, BranchReview(), renderChapter(), ReviewChapterStyle, ReviewTrackStyle (+25 more)
 
 ### Community 67 - "W_Flyer Institutional Site Documentation"
 Cohesion: 0.20
@@ -1063,7 +1095,7 @@ Nodes (6): Direção visual aprovada, Partitura editorial contemporânea, Direç
 
 ### Community 103 - "responsive-score-projection.ts"
 Cohesion: 0.07
-Nodes (48): APPROVED_MAX_NOTATION_TANGENT_ANGLE_DEG, buildResponsiveScoreProjection(), BuildResponsiveScoreProjectionInput, projectSemanticSlotNoteTs(), requireIdentifier(), requireLocalRange(), requireMode(), requireNotationSafeTangent() (+40 more)
+Nodes (49): APPROVED_MAX_NOTATION_TANGENT_ANGLE_DEG, buildResponsiveScoreProjection(), BuildResponsiveScoreProjectionInput, projectSemanticSlotNoteTs(), requireIdentifier(), requireLocalRange(), requireMode(), requireNotationSafeTangent() (+41 more)
 
 ### Community 104 - "capture-music-gate-c-evidence.mjs"
 Cohesion: 0.07
@@ -1102,8 +1134,8 @@ Cohesion: 0.90
 Nodes (5): Candidate Browser Gate Job, Candidate Quality Gate Job, Package Candidate Job, Prepare Napoleon Release Workflow, Validate Release Request Job
 
 ### Community 113 - "public/index.ts"
-Cohesion: 0.07
-Nodes (50): metadata, metadata, metadata, metadata, PortfolioPage(), generateMetadata(), ProjectDetailPage(), metadata (+42 more)
+Cohesion: 0.08
+Nodes (41): PortfolioPage(), ProjectDetailPage(), formatPosition(), ProjectCard(), ProjectCardProps, compactNumber(), FanItemStyle, getFanItemStyle() (+33 more)
 
 ### Community 114 - "Brief Como funciona desktop"
 Cohesion: 0.80
@@ -1210,8 +1242,8 @@ Cohesion: 0.67
 Nodes (4): proposal, design, tasks and acceptance change artifact set, Minimum OpenSpec change fields, OpenSpec do site institucional, Stack changes require explicit ADR
 
 ### Community 142 - "phase07-professional-scenes.spec.ts"
-Cohesion: 0.12
-Nodes (9): legalRoutes, mainPageContracts, serviceDetailRoutes, Bounds, PROFESSIONAL_CHAPTER_IDS, PROFESSIONAL_SCENES, PROJECT_DESTINATIONS, RelevantFinding (+1 more)
+Cohesion: 0.07
+Nodes (14): legalRoutes, mainPageContracts, serviceDetailRoutes, Bounds, PROFESSIONAL_CHAPTER_IDS, PROFESSIONAL_SCENES, PROJECT_DESTINATIONS, RelevantFinding (+6 more)
 
 ### Community 144 - "Evidências locais — Fase 1"
 Cohesion: 0.67
@@ -1261,17 +1293,21 @@ Nodes (3): Sequential task dependency, Task evidence completion, Tasks template
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Why did the GitHub Actions quality and browser checks fail, and how were they resolved?, Source Nodes
 
-### Community 161 - "renderer/types.ts"
-Cohesion: 0.06
-Nodes (43): StandaloneNoteFixture, primitiveReferencePoint(), ScoreDebugOverlay(), ScoreDebugOverlayProps, renderPrimitive(), ScoreSvg(), ScoreSvgProps, svgRotationTransform() (+35 more)
+### Community 161 - "seo.ts"
+Cohesion: 0.11
+Nodes (19): sitemap(), BreadcrumbItem, JsonLdPrimitive, JsonLdValue, ServiceStructuredData(), ServiceStructuredDataProps, SiteStructuredData(), StructuredData() (+11 more)
 
 ### Community 162 - "runtime.ts"
-Cohesion: 0.08
-Nodes (49): MotionStoryRuntimeRegistry, createStaticNativeStoryPositioningAdapter(), StoryPositioningOptions, StoryPositioningResult, StoryProjectionMode, MOTION_LAB_DRAFT_ELIGIBILITY, resolveStoryProjectionMode(), StoryProjectionDecision (+41 more)
+Cohesion: 0.06
+Nodes (58): MotionStoryRuntimeRegistry, createStaticNativeStoryPositioningAdapter(), StoryPositioningOptions, StoryPositioningResult, StoryProjectionMode, MOTION_LAB_DRAFT_ELIGIBILITY, resolveStoryProjectionMode(), StoryProjectionDecision (+50 more)
 
 ### Community 164 - "gate-c-review.ts"
-Cohesion: 0.10
-Nodes (31): FIXED_SEED_MATRIX, RESPONSIVE_PROJECTION_REVIEW, ComposerFixtureControls(), ComposerPerformanceCounters, ComposerPerformanceStage, isLabTheme(), isLabViewport(), isProfileFilter() (+23 more)
+Cohesion: 0.09
+Nodes (34): FIXED_SEED_MATRIX, RESPONSIVE_PROJECTION_REVIEW, ComposerFixtureControls(), ComposerPerformanceCounters, ComposerPerformanceStage, isLabTheme(), isLabViewport(), isProfileFilter() (+26 more)
+
+### Community 167 - "organic-flowing.ts"
+Cohesion: 0.07
+Nodes (60): add(), BRANCH_CHAPTERS, buildAuthoredGeometry(), buildChapterLayouts(), buildCubicSplineSegments(), buildEvidence(), BuildOrganicFlowingModelOptions, buildPrimitiveSpanEvidence() (+52 more)
 
 ### Community 168 - "ADDED Requirements"
 Cohesion: 0.07
@@ -1279,23 +1315,23 @@ Nodes (28): ADDED Requirements, Purpose, Requirement: Approved glyph geometry is
 
 ### Community 169 - "lab-score-models.ts"
 Cohesion: 0.05
-Nodes (63): BEAM_FIXTURES, BUILT_FIXTURES, MOTIF_PATH_MATRIX, PATH_FIXTURES, TRIPLET_DETAIL_FIXTURES, ALL_RHYTHM_FAMILIES, baseScoreModel(), buildBeamFixture() (+55 more)
+Nodes (66): BEAM_FIXTURES, BUILT_FIXTURES, MOTIF_PATH_MATRIX, PATH_FIXTURES, TRIPLET_DETAIL_FIXTURES, APPROVED_RENDERER_TOKENS, ALL_RHYTHM_FAMILIES, baseScoreModel() (+58 more)
 
 ### Community 170 - "Requirements"
 Cohesion: 0.10
 Nodes (20): Procedural Score Composer Specification, Purpose, Requirement: Composer prevents structural and visual repetition, Requirement: Composer uses an explicit rhythmic whitelist, Requirement: Composer uses controlled pitch contours and bounds, Requirement: Key signatures are outside procedural variation, Requirement: Responsive layouts preserve semantic composition, Requirement: Score variation is deterministic within a session (+12 more)
 
-### Community 172 - "composer/types.ts"
-Cohesion: 0.14
-Nodes (26): currentTrailingPitchRun(), motifSatisfiesHardConstraints(), motifSoftPenalty(), trailingPitchRun(), wouldCreateThreeIdenticalPitches(), anchorSchedule(), composeMotif(), ComposeMotifInput (+18 more)
+### Community 172 - "compose-motif.ts"
+Cohesion: 0.13
+Nodes (23): motifSatisfiesHardConstraints(), motifSoftPenalty(), wouldCreateThreeIdenticalPitches(), anchorSchedule(), composeMotifWithResolver(), composeMotifWithResolverForTesting(), contourSchedule(), createComposedMotif() (+15 more)
 
 ### Community 174 - "pitch-contours.ts"
-Cohesion: 0.16
-Nodes (20): resolveFixturePitchContour(), EMPTY_COMPOSITION_HISTORY, composeMotifWithResolverForTesting(), assertIntegerSequence(), ContourTranslationExhaustedError, getPitchContourDeltas(), instantiatePitchContour(), LANDING_PITCH_RANGE (+12 more)
+Cohesion: 0.19
+Nodes (16): assertIntegerSequence(), ContourTranslationExhaustedError, getPitchContourDeltas(), instantiatePitchContour(), LANDING_PITCH_RANGE, PITCH_CONTOUR_TABLE, PitchContourTableEntry, PitchRange (+8 more)
 
-### Community 175 - "compose-segment.ts"
-Cohesion: 0.15
-Nodes (24): appendCompositionHistory(), assertFiniteUnitInterval(), composeSegment(), overlappingReservedZone(), slotSeed(), stableMotifInstanceId(), validateReservedZones(), validateSlots() (+16 more)
+### Community 175 - "ComposerConfigurationError"
+Cohesion: 0.22
+Nodes (12): assertWeight(), deriveChapterSeed(), encodeLength(), formatVersionedChapterSeed(), hashSeedParts(), Mulberry32, SeedPart, seedPartToString() (+4 more)
 
 ### Community 177 - "Gate-C final triplet correction validation — 2026-08-24"
 Cohesion: 0.29
@@ -1303,31 +1339,31 @@ Nodes (6): Deferred human work, Executed validation, Final capture hashes, Gate-
 
 ### Community 179 - "compose-segment.test.ts"
 Cohesion: 0.12
-Nodes (18): LANDING_STAFF_STEPS, PITCH_CONTOUR_IDS, PREFERRED_PITCH_RANGE, APPROVED_COMPOSER_CALIBRATION_V1, COMMON_ANCHOR_WEIGHTS, COMMON_CONTOUR_WEIGHTS, DENSITY_WEIGHTS, profile() (+10 more)
+Nodes (17): LANDING_STAFF_STEPS, PITCH_CONTOUR_IDS, PREFERRED_PITCH_RANGE, COMMON_ANCHOR_WEIGHTS, COMMON_CONTOUR_WEIGHTS, DENSITY_WEIGHTS, profile(), weights() (+9 more)
 
 ### Community 180 - "triplet-numeral.test.ts"
-Cohesion: 0.19
-Nodes (20): beamCases, accidentalAnchors, composedMotif(), downStemBeamLayout(), flagAnchors, noteheadAnchors, noteTs(), TEST_CALIBRATION (+12 more)
+Cohesion: 0.11
+Nodes (36): getMotifDefinition(), resolveBeamGroupStemDirection(), arraysEqual(), BEAM_SECONDARY_PERPENDICULAR_EPSILON, beamRole(), buildMotifModel(), TUPLET_BRACKET_PARALLEL_EPSILON, TUPLET_END_CAP_PERPENDICULAR_EPSILON (+28 more)
 
-### Community 181 - "ProfessionalChapterScene.tsx"
-Cohesion: 0.05
-Nodes (33): PersonaIntegrationSlot(), PersonaIntegrationSlotProps, ApplicationChapterScene(), isPhase8ApplicationChapterId(), PHASE8_APPLICATION_CHAPTER_IDS, Phase8ApplicationChapterId, SceneIntroductionProps, MotionStorySurface() (+25 more)
+### Community 181 - "StoryNavigationContext.tsx"
+Cohesion: 0.15
+Nodes (14): DEFAULT_STORY_NAVIGATION_BRIDGE_CONTEXT, DEFAULT_STORY_NAVIGATION_STATE_CONTEXT, StoryNavigationBridgeContext, StoryNavigationBridgeContextValue, StoryNavigationController, StoryNavigationProvider(), StoryNavigationStateContext, StoryNavigationStateContextValue (+6 more)
 
 ### Community 182 - "session-seed.ts"
-Cohesion: 0.17
-Nodes (10): getBrowserMusicSessionSeed(), assertNonEmptySeed(), createSecureSessionSeed(), resolveSessionSeed(), ResolveSessionSeedOptions, SecureRandomSource, SessionSeedStorage, SessionSeedUnavailableError (+2 more)
+Cohesion: 0.18
+Nodes (9): getBrowserMusicSessionSeed(), assertNonEmptySeed(), createSecureSessionSeed(), resolveSessionSeed(), ResolveSessionSeedOptions, SecureRandomSource, SessionSeedStorage, SessionSeedUnavailableError (+1 more)
 
 ### Community 183 - "StoryBootstrapExperience.tsx"
 Cohesion: 0.08
-Nodes (32): STORY_BOOTSTRAP_SCENARIOS, StoryBootstrapPageProps, abortError(), acquireBootstrapLocks(), ActivePositionRequest, AttributeSnapshot, BootstrapProbeContext, completeSession() (+24 more)
+Nodes (34): STORY_BOOTSTRAP_SCENARIOS, StoryBootstrapPageProps, abortError(), acquireBootstrapLocks(), ActivePositionRequest, AttributeSnapshot, BootstrapDebugPositionCall, BootstrapDebugState (+26 more)
 
 ### Community 184 - "bootstrap/index.ts"
-Cohesion: 0.11
-Nodes (33): BootstrapDebugPositionCall, BootstrapDebugState, destination(), ResolveStoryBootstrapDestinationInput, STORY_CHAPTER_ID_BY_HASH, StoryBootstrapDestination, StoryBootstrapDestinationSource, storyHashForChapter() (+25 more)
+Cohesion: 0.12
+Nodes (30): destination(), resolveStoryBootstrapDestination(), ResolveStoryBootstrapDestinationInput, STORY_CHAPTER_ID_BY_HASH, StoryBootstrapDestinationSource, storyHashForChapter(), createStoryHistoryEntry(), isRecord() (+22 more)
 
-### Community 193 - "pitches/page.tsx"
-Cohesion: 0.18
-Nodes (16): EXTENDED_LEDGER_PITCHES, ledgerCases, MusicPitchFixturesPage(), PITCH_LADDER_STEPS, pitchLadder, STEM_FLAG_LABELS, stemAndFlagCases, modulo() (+8 more)
+### Community 193 - "ScorePath"
+Cohesion: 0.11
+Nodes (35): LabResponsiveStructuralConfiguration, WeightedConnectorSegment, AccidentalPlacement, BuildAccidentalPlacementInput, FinalBarlineInput, OrdinaryBarlineInput, BuildTrebleKeySignatureInput, getTrebleKeySignatureEntries() (+27 more)
 
 ### Community 194 - "Napoleon Node.js runtime runbook"
 Cohesion: 0.12
@@ -1342,12 +1378,12 @@ Cohesion: 0.17
 Nodes (11): Automated staging evidence, Candidate and workflow evidence, Manual homologation evidence, Napoleon DNS/hosting and separate application evidence, Napoleon panel inventory, Open external blockers, Owner decision, Required homologation record (+3 more)
 
 ### Community 255 - "build-note-model.ts"
-Cohesion: 0.09
-Nodes (69): AccidentalPlacement, buildAccidentalPlacement(), BuildAccidentalPlacementInput, BarlineRole, buildBarlineStroke(), buildFinalBarline(), buildOrdinaryBarline(), FinalBarlineInput (+61 more)
+Cohesion: 0.13
+Nodes (49): averagePoints(), layoutBeamedMotif(), noteheadStemAttachment(), resolvePrimaryBeamAttachments(), buildAccidentalPlacement(), BarlineRole, buildBarlineStroke(), buildFinalBarline() (+41 more)
 
 ### Community 256 - "Canonical Decision Register"
-Cohesion: 0.11
-Nodes (18): ADR-025 — Continuous organic dual-score narrative, ADR-026 — W_Flyer Music Renderer v0.1, ADR-027 — Seeded procedural score composition, ADR-028 — Music calibration and Visual Lab gates, ADR-029 — W_Flyer brand and personal professional positioning, ADR-030 — Alternative A: immersive landing plus detailed routes, ADR-031 — Native-scroll master story and header traversal, ADR-032 — Responsive vertical story and mobile order (+10 more)
+Cohesion: 0.09
+Nodes (21): ADR-025 — Continuous organic dual-score narrative, ADR-026 — W_Flyer Music Renderer v0.1, ADR-027 — Seeded procedural score composition, ADR-028 — Music calibration and Visual Lab gates, ADR-029 — W_Flyer brand and personal professional positioning, ADR-030 — Alternative A: immersive landing plus detailed routes, ADR-031 — Native-scroll master story and header traversal, ADR-032 — Responsive vertical story and mobile order (+13 more)
 
 ### Community 257 - "Staging homologation runbook"
 Cohesion: 0.18
@@ -1371,7 +1407,7 @@ Nodes (19): 10. Landing integration is a separate future change, 11. Triplet typ
 
 ### Community 262 - "GlyphCalibrationComposites.tsx"
 Cohesion: 0.14
-Nodes (19): AccidentalExample(), AccidentalKey, CalibratedGlyph(), CalibrationTheme, ClefCalibration(), FlagExample(), FlagKey, glyphCorners() (+11 more)
+Nodes (20): AccidentalExample(), AccidentalKey, CalibratedGlyph(), CalibrationTheme, ClefCalibration(), FlagExample(), FlagKey, glyphCorners() (+12 more)
 
 ### Community 263 - "ADDED Requirements"
 Cohesion: 0.10
@@ -1427,15 +1463,15 @@ Nodes (14): Accidentals, Barlines, Beamed-group stem direction — approved Opti
 
 ### Community 276 - "Chapter Contracts"
 Cohesion: 0.14
-Nodes (13): ABOUT — Professional introduction, ACCESS W_FLYER, APPLICATION OVERVIEW, BENEFITS, Chapter Contracts, CONTACT, DEMONSTRATION — APP-04, HOME — Origin (+5 more)
+Nodes (13): ABOUT — Professional introduction, APPLICATION OVERVIEW, BENEFITS, Chapter Contracts, CONTACT, DEMONSTRATION — APP-04, HOME — Origin, HOW IT WORKS (+5 more)
 
-### Community 277 - "preview.ts"
-Cohesion: 0.25
-Nodes (6): cormorantGaramond, manrope, fontVariableClasses, preview, StorybookFrameProps, StoryRenderer
+### Community 277 - "projection.ts"
+Cohesion: 0.05
+Nodes (75): StoryScoreBranch, SCORE_PATH_REVIEW_MAX_NOTATION_TANGENT_ANGLE_DEG, ScorePathReviewInteractionProfile, ScorePathReviewMode, ScorePathReviewProjectVisit, ApplicationOrganicFlowingPath, applicationOriginBridge(), applyChapterBarlineClassification() (+67 more)
 
-### Community 278 - "deployment.ts"
-Cohesion: 0.23
-Nodes (11): contentSecurityPolicy, nextConfig, robots(), createDeploymentRobotsHeader(), createDeploymentRobotsMetadata(), createDeploymentRobotsPolicy(), DeploymentEnvironment, deploymentEnvironmentVariable (+3 more)
+### Community 278 - "app/layout.tsx"
+Cohesion: 0.17
+Nodes (13): contentSecurityPolicy, nextConfig, metadata, viewport, robots(), createDeploymentRobotsHeader(), createDeploymentRobotsMetadata(), createDeploymentRobotsPolicy() (+5 more)
 
 ### Community 279 - "rebuild-scroll-driven-wflyer-v2/tasks.md"
 Cohesion: 0.12
@@ -1485,9 +1521,9 @@ Nodes (9): Activation, APP-04 Application Demo Device, Pending assets, Playback,
 Cohesion: 0.20
 Nodes (9): About/Persona, Access/Terminals, APP-04, Application/How/Benefits, Chapter Acceptance Criteria, Contact, Home, Projects (+1 more)
 
-### Community 291 - "ScoreSystem.stories.tsx"
-Cohesion: 0.19
-Nodes (10): NarrativeClef(), NarrativeClefProps, OriginScore(), ApplicationTerminal, Clef, HomeOrigin, HomeOriginDark, InstitutionalChapter (+2 more)
+### Community 291 - "composer/types.ts"
+Cohesion: 0.12
+Nodes (27): appendCompositionHistory(), currentTrailingPitchRun(), EMPTY_COMPOSITION_HISTORY, trailingPitchRun(), composeMotif(), ComposeMotifInput, assertFiniteUnitInterval(), composeSegment() (+19 more)
 
 ### Community 292 - "package.json"
 Cohesion: 0.20
@@ -1542,12 +1578,12 @@ Cohesion: 0.25
 Nodes (7): Application and Persona, Decision Traceability by Conversation Block, Global experience, Implementation, Music renderer/composer, Site and positioning, Visual library
 
 ### Community 305 - "Desktop Scroll, Header Traversal, URL, and History"
-Cohesion: 0.25
-Nodes (7): Active chapter, Cancellation/supersession, Desktop Scroll, Header Traversal, URL, and History, Hashes, Header traversal duration, History, Native scroll
+Cohesion: 0.22
+Nodes (8): Active chapter, Cancellation/supersession, Desktop Scroll, Header Traversal, URL, and History, Hashes, Header traversal duration, History, Native scroll, Semantic header manifest
 
 ### Community 306 - "Continuous Dual-Score Visual System"
-Cohesion: 0.22
-Nodes (8): Continuous Dual-Score Visual System, Geometry, Key signature, Mobile, Phase-9 final organic Score Path subgate, Scene relationship, Segment structure, Visual principle
+Cohesion: 0.20
+Nodes (9): Continuous Dual-Score Visual System, Geometry, Human-approved scene choreography, Key signature, Mobile, Phase-9 final organic Score Path subgate, Scene relationship, Segment structure (+1 more)
 
 ### Community 307 - "Low-Fidelity Scene Wireframes"
 Cohesion: 0.25
@@ -1578,8 +1614,8 @@ Cohesion: 0.29
 Nodes (6): Brand Positioning and Product Goals, Business goals, Conversion model, Positioning, Prohibitions, Service offer
 
 ### Community 314 - "User Journeys, Conversion, and Content Boundaries"
-Cohesion: 0.29
-Nodes (6): Application visitor, Header visitor, Professional visitor, Project publication, Public application boundaries, User Journeys, Conversion, and Content Boundaries
+Cohesion: 0.25
+Nodes (7): Application launch conversion, Application visitor, Header visitor, Professional visitor, Project publication, Public application boundaries, User Journeys, Conversion, and Content Boundaries
 
 ### Community 315 - "Mobile, Responsive Rebuild, and Reduced Motion"
 Cohesion: 0.14
@@ -1613,9 +1649,9 @@ Nodes (6): Canonical semantics proved, Implemented boundaries, Music System v0.1
 Cohesion: 0.13
 Nodes (14): 10. Evidence limits, 1. Resume audit, 2. Decision boundary, 3. Named corrective work, 4. Candidate evidence index, 5. Validation ledger, 6. Immutable baseline, 7. Graphify and isolation (+6 more)
 
-### Community 323 - "motifs.ts"
-Cohesion: 0.27
-Nodes (8): AUTOMATIC_MOTIF_IDS, definitions, isMotifId(), MOTIF_DEFINITIONS, motifIds, TERMINAL_MOTIF_IDS, terminalIds, TRIPLET_METADATA
+### Community 323 - "renderer/types.ts"
+Cohesion: 0.04
+Nodes (79): ScorePathOriginReviewPage(), ScorePathOriginReviewPageProps, branchLabel(), pointsAttribute(), ScorePathOriginReview(), primitiveReferencePoint(), ScoreDebugOverlay(), ScoreDebugOverlayProps (+71 more)
 
 ### Community 324 - "rebuild-scroll-driven-wflyer-v2/proposal.md"
 Cohesion: 0.29
@@ -1634,12 +1670,12 @@ Cohesion: 0.29
 Nodes (6): Capabilities, Impact, Modified Capabilities, New Capabilities, What Changes, Why
 
 ### Community 328 - "glyphs/page.tsx"
-Cohesion: 0.23
-Nodes (10): galleryPrimitive(), MusicGlyphGalleryPage(), roleFor(), SCALES, THEMES, assetSource(), GLYPH_ASSETS, ScoreGlyph() (+2 more)
+Cohesion: 0.47
+Nodes (5): galleryPrimitive(), MusicGlyphGalleryPage(), roleFor(), SCALES, THEMES
 
 ### Community 329 - "CalibrationWorkbench.tsx"
-Cohesion: 0.16
-Nodes (16): ACCIDENTAL_KEYS, CalibrationPreview(), CalibrationWorkbench(), roleFor(), GlyphCalibrationComposites(), GlyphPlacement, cloneAnchors(), createDraftCalibrationExport() (+8 more)
+Cohesion: 0.17
+Nodes (13): ACCIDENTAL_KEYS, CalibrationPreview(), CalibrationWorkbench(), roleFor(), GlyphCalibrationComposites(), cloneAnchors(), createDraftCalibrationExport(), createEditableGlyphCalibrations() (+5 more)
 
 ### Community 330 - "W_Flyer v2 — Linear Implementation Plan"
 Cohesion: 0.29
@@ -1666,8 +1702,8 @@ Cohesion: 0.29
 Nodes (6): Bootstrap and projection boundary, Detailed routes, Major modules, Migration pattern, State ownership, Target Frontend Architecture
 
 ### Community 336 - "Security, Contact, SEO, and Operations"
-Cohesion: 0.33
-Nodes (5): Operations, Retained contact controls, Security, Contact, SEO, and Operations, SEO, SVG/media security
+Cohesion: 0.29
+Nodes (6): Application launch-interest workflow, Operations, Retained contact controls, Security, Contact, SEO, and Operations, SEO, SVG/media security
 
 ### Community 337 - "Phase 0 baseline recovery and validation"
 Cohesion: 0.33
@@ -1798,8 +1834,8 @@ Cohesion: 0.40
 Nodes (4): Canonical filename mapping, Important correction, Legacy primitive files intentionally removed, Migration Notes
 
 ### Community 369 - "lib/story/index.ts"
-Cohesion: 0.13
-Nodes (26): StaticStorySkeleton(), STORY_V2_CONTENT_STATUS, DESKTOP_TIMELINE_ORDER, EMPTY_SEMANTIC_SLOT_IDS, GLOBAL_STORY_FOOTER, HEADER_NAVIGATION, HEADER_NAVIGATION_ORDER, MOBILE_DOCUMENT_ORDER (+18 more)
+Cohesion: 0.11
+Nodes (31): StaticStorySkeleton(), APPLICATION_RELEASE, ApplicationReleaseConfiguration, STORY_V2_CONTENT_STATUS, DESKTOP_TIMELINE_ORDER, EMPTY_SEMANTIC_SLOT_IDS, GLOBAL_STORY_FOOTER, HEADER_NAVIGATION (+23 more)
 
 ### Community 370 - "music-visual-lab.spec.ts"
 Cohesion: 0.22
@@ -1850,8 +1886,8 @@ Cohesion: 0.50
 Nodes (4): Blocking asset gate, Gate 11, Phase 11 — Final APP-04 media assets, Required work
 
 ### Community 383 - "Phase 9 — Continuous dual-score integration"
-Cohesion: 0.40
-Nodes (5): Gate 9, Phase 9 — Continuous dual-score integration, Preconditions, Required work, Score Path candidate subgate — human blocking
+Cohesion: 0.33
+Nodes (6): Gate 9, Human choreography and PRELAUNCH refinement — blocking, Phase 9 — Continuous dual-score integration, Preconditions, Required work, Score Path candidate subgate — human blocking
 
 ### Community 384 - "Music Visual Lab — Required Gate"
 Cohesion: 0.50
@@ -1929,9 +1965,9 @@ Nodes (3): Gate 3, Phase 3 — Content, detailed routes, and conversion contract
 Cohesion: 0.67
 Nodes (3): Gate 4, Phase 4 — Readiness-driven intro, bootstrap, deep links, and recovery, Required work
 
-### Community 407 - "OriginScore.tsx"
-Cohesion: 0.22
-Nodes (12): cubicAngle(), cubicPoint(), getOriginControlPoints(), getOriginStaffPath(), NOTE_BLUEPRINTS, ORIGIN_GEOMETRIES, OriginBranch, OriginGeometry (+4 more)
+### Community 407 - "StoryScoreLayer.tsx"
+Cohesion: 0.14
+Nodes (19): normalizeStoryScoreMeasuredRect(), roundMeasurement(), ViewportRect, ATOMIC_EXCLUSION_REASONS, exclusionMeasurementOwners(), HYDRATION_BASELINE, isProjectionMode(), measureElements() (+11 more)
 
 ### Community 408 - "Phase 6 — Header traversal, URL, and history"
 Cohesion: 0.67
@@ -1946,12 +1982,12 @@ Cohesion: 0.67
 Nodes (3): Gate 8, Phase 8 — Application branch scenes, Required work
 
 ### Community 417 - "draft-calibration.ts"
-Cohesion: 0.17
-Nodes (8): APPROVED_RENDERER_GLYPH_CALIBRATIONS, APPROVED_RENDERER_TOKENS, DRAFT_GLYPH_CALIBRATIONS, GATE_C_FIXED_SEEDS, GATE_C_PROFILES, RuntimeApprovedGlyphCalibration, RendererEngravingTokens, RendererGlyphCalibrations
+Cohesion: 0.18
+Nodes (10): GlyphPlacement, APPROVED_RENDERER_GLYPH_CALIBRATIONS, EditableGlyphCalibration, GlyphCalibrationStatus, MusicGlyphKey, RuntimeApprovedGlyphCalibration, APPROVED_RENDERER_GLYPH_CALIBRATIONS, APPROVED_RENDERER_TOKENS (+2 more)
 
 ### Community 418 - "metrics.ts"
-Cohesion: 0.21
-Nodes (17): APPROVED_DOWN_FLAG_TRANSFORM, APPROVED_FLAG_TRANSFORM, APPROVED_GLYPH_CALIBRATIONS, approvedCalibrationFromRegistry(), createDraftGlyphCalibration(), GlyphCalibrationIssue, isCompleteDraftGlyphCalibration(), isFinitePositiveNumber() (+9 more)
+Cohesion: 0.29
+Nodes (15): APPROVED_FLAG_TRANSFORM, APPROVED_GLYPH_CALIBRATIONS, approvedCalibrationFromRegistry(), createDraftGlyphCalibration(), GlyphCalibrationIssue, isCompleteDraftGlyphCalibration(), isFinitePositiveNumber(), isMusicGlyphKey() (+7 more)
 
 ### Community 420 - "RootLayout mounts theme controls while ThemeProvider resolves, applies and exposes theme state"
 Cohesion: 0.40
@@ -1965,9 +2001,9 @@ Nodes (4): Answer, Outcome, Q: Does the final Gate-B composite remain isolated i
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Diagnose and minimally fix the Firefox and WebKit Music Visual Lab accessibility failures without weakening axe assertions., Source Nodes
 
-### Community 423 - "config/navigation.ts"
-Cohesion: 0.33
-Nodes (8): ChapterRoute, HeaderItem, applicationHeaderLinks, getActiveHeaderItem(), HeaderLink, institutionalHeaderLinks, InternalHeaderLink, mobileHeaderLinks
+### Community 423 - "capture-phase9-refinement-evidence.mjs"
+Cohesion: 0.20
+Nodes (17): applyInteractionDiagnostic(), applyProjectDiagnostic(), assertScoreContract(), captureDarkDesktop(), captureResponsiveRegressions(), captureViewport(), clearDiagnostics(), delay() (+9 more)
 
 ### Community 424 - "Music System v0.1 Gate C — final external-human approval"
 Cohesion: 0.25
@@ -2029,9 +2065,9 @@ Nodes (25): assertBootstrapContract(), assertNotInterrupted(), assertOutputTarge
 Cohesion: 0.40
 Nodes (6): Home bifurcada, Clave de sol central, Dupla chamada Aplicação e Serviços, Home — modo claro, Home — modo escuro, Indicador “Role para explorar”
 
-### Community 440 - "Vec2"
-Cohesion: 0.22
-Nodes (7): LabResponsiveConnectorPath, CubicBezierScorePath, orientedPitchNormal(), PitchNormalOrientation, PitchNormalReference, StraightScorePath, Vec2
+### Community 440 - "SiteFooter.tsx"
+Cohesion: 0.12
+Nodes (13): ADR-0008, OfficialBrandSymbol(), OfficialBrandSymbolProps, Dark, Decorative, Informative, meta, Story (+5 more)
 
 ### Community 441 - "Q: Audit stale nonhistorical Gate-C draft and pending statuses after final human approval"
 Cohesion: 0.40
@@ -2045,37 +2081,37 @@ Nodes (23): assertNotInterrupted(), assertOutputTargetsAbsent(), assertValidPng(
 Cohesion: 0.14
 Nodes (22): assertNotInterrupted(), assertOutputTargetsAbsent(), assertValidPng(), baseUrl, capturePage(), captures, captureUrl(), closeBrowser() (+14 more)
 
-### Community 444 - "MotionStoryLab.tsx"
-Cohesion: 0.15
-Nodes (15): APP04_DEVELOPMENT_CONTRACT_FIXTURE, StoryMotionLabPageProps, ApplicationDemoMediaContract, ApplicationChapterSceneProps, createMotionStoryRuntimeRegistry(), MotionLabChapterStyle, MotionStoryLab(), MotionStoryLabProps (+7 more)
+### Community 444 - "pitches/page.tsx"
+Cohesion: 0.17
+Nodes (17): EXTENDED_LEDGER_PITCHES, ledgerCases, MusicPitchFixturesPage(), PITCH_LADDER_STEPS, pitchLadder, STEM_FLAG_LABELS, stemAndFlagCases, modulo() (+9 more)
 
 ### Community 445 - "bootstrap/positioning.ts"
 Cohesion: 0.14
 Nodes (11): assertNotAborted(), createAbortError(), ownerDocumentFor(), resolveFrameScheduler(), resolveRoot(), SCROLL_BEHAVIOR_LOCKS, ScrollBehaviorLock, StaticNativeStoryPositioningAdapterOptions (+3 more)
 
-### Community 446 - "W_Flyer current operational handoff"
-Cohesion: 0.12
-Nodes (16): Accepted phase state, Contracts that must survive future phases, Current operational topology, Deferred work and hard stops, Exact next safe action, Foundation and isolated Music system, Known primary-worktree residue, Maintenance state (+8 more)
+### Community 446 - "Contracts that must survive future phases"
+Cohesion: 0.11
+Nodes (18): Accepted phase state, Contracts that must survive future phases, Current operational topology, Deferred work and hard stops, Exact next safe action, Foundation and isolated Music system, Known primary-worktree residue, Maintenance state (+10 more)
 
-### Community 447 - "ScoreTransitionLayer.tsx"
-Cohesion: 0.21
-Nodes (10): NOTE_POSITIONS, ScoreTransitionLayerProps, STAFF_LINE_OFFSETS, defaultProps, geometry, TransitionPresentation, TransitionTestSnapshot, ScoreTransitionGeometry (+2 more)
+### Community 447 - "theme.stories.tsx"
+Cohesion: 0.11
+Nodes (16): ApplicationChapter, Dark, Home, meta, MobileMenuOpen, ProcessSubmeasure, Story, useTheme() (+8 more)
 
 ### Community 448 - "getPublicServiceBySlug"
-Cohesion: 0.21
-Nodes (9): ApplicationCreationPage(), metadata, metadata, SiteCreationPage(), IntegrationsPage(), metadata, CustomSolutionsPage(), metadata (+1 more)
+Cohesion: 0.22
+Nodes (10): ApplicationCreationPage(), metadata, metadata, SiteCreationPage(), IntegrationsPage(), metadata, CustomSolutionsPage(), metadata (+2 more)
 
 ### Community 449 - "phase08-v2-application-scenes.spec.ts"
-Cohesion: 0.18
+Cohesion: 0.17
 Nodes (6): APPLICATION_CHAPTER_IDS, APPLICATION_SCENES, installMediaContract(), MediaDebugSnapshot, ONE_PIXEL_PNG, openContractLab()
 
 ### Community 450 - "Post-Phase-8 toolchain maintenance"
 Cohesion: 0.18
 Nodes (10): Boundary, Graphify acceptance, Infrastructure documentation, Next.js advisory verification, OpenSpec migration, Post-Phase-8 toolchain maintenance, Residual development-only audit debt, Scope and decision rules (+2 more)
 
-### Community 451 - "ProjectCardFan.tsx"
-Cohesion: 0.35
-Nodes (8): formatPosition(), ProjectCard(), ProjectCardProps, compactNumber(), FanItemStyle, getFanItemStyle(), ProjectCardFan(), ProjectCardFanProps
+### Community 451 - "capture-phase9-firefox-demo-correction-evidence.mjs"
+Cohesion: 0.13
+Nodes (11): definitions, delay(), files, launchedBrowsers, outputDirectory, port, priorDirectory, repositoryRoot (+3 more)
 
 ### Community 452 - "Phase-4 Changed-File Inventory"
 Cohesion: 0.20
@@ -2293,51 +2329,159 @@ Nodes (3): APP-04 State and Media Contract, Intentionally absent final media, St
 Cohesion: 0.67
 Nodes (3): expectNoRelevantFindings(), RelevantFinding, relevantFindings()
 
+### Community 571 - "ADDED Requirements"
+Cohesion: 0.10
+Nodes (20): ADDED Requirements, Purpose, Requirement: Acknowledgment is transactional and non-destructive, Requirement: Anti-abuse checks fail closed, Requirement: Form exposes explicit accessible states, Requirement: Launch-interest request boundary is strict, Requirement: Operational delivery is the registration event, Requirement: Transactional templates are fixed, compatible, and private (+12 more)
+
+### Community 573 - "ScoreTransitionLayer.tsx"
+Cohesion: 0.21
+Nodes (10): NOTE_POSITIONS, ScoreTransitionLayerProps, STAFF_LINE_OFFSETS, defaultProps, geometry, TransitionPresentation, TransitionTestSnapshot, ScoreTransitionGeometry (+2 more)
+
+### Community 574 - "Decisions"
+Cohesion: 0.11
+Nodes (17): Build a dedicated launch-interest domain on shared primitives, Context, Decisions, Derive Projects visits from rendered card geometry, Goals / Non-Goals, Implement card expansion as event-free variable staff presentation, Integrate the semantic footer into the immersive terminal, Keep composition immutable and enrich projection evidence (+9 more)
+
+### Community 575 - "ContactForm.tsx"
+Cohesion: 0.16
+Nodes (11): ContactForm(), ContactFormFallback(), ContactFormProps, messages, SubmissionState, search, TurnstileApi, TurnstileOptions (+3 more)
+
+### Community 576 - "ADDED Requirements"
+Cohesion: 0.12
+Nodes (16): ADDED Requirements, Requirement: Chapter barlines require metric proof, Requirement: Content-aware score zones, Requirement: Physical branch termination, Requirement: Project visitation and event-safe connectors, Requirement: Scenographic shared origin, Scenario: Branch reaches its final barline, Scenario: Chapter exit is a valid measure boundary (+8 more)
+
+### Community 577 - "Impact"
+Cohesion: 0.14
+Nodes (13): Affected normative documents, Capabilities, Impact, Inferences and implementation choices, Modified Capabilities, New Capabilities, Non-goals, Pending external evidence (+5 more)
+
+### Community 578 - "composition.ts"
+Cohesion: 0.23
+Nodes (12): buildCompositionSlots(), composeApprovedBranch(), fnv1a(), RESERVED_COMPOSER_REASON, STORY_SCORE_BRANCH_CHAPTERS, STORY_SCORE_BRANCHES, STORY_SCORE_COMPOSITIONS, STORY_SCORE_EXPECTED_FINGERPRINTS (+4 more)
+
+### Community 579 - "Phase 9 Task-34 Integration Review Evidence"
+Cohesion: 0.15
+Nodes (12): Architecture ownership, Deterministic composition, Deterministic human-review captures, Final authoritative validation, Integrity and safety, Phase 9 Task-34 Integration Review Evidence, Preserved diagnostic history and exclusions, Projection geometry and responsive fail-safe (+4 more)
+
+### Community 580 - "ApplicationLaunchInterestForm.test.tsx"
+Cohesion: 0.18
+Nodes (8): ApplicationLaunchInterestForm(), ApplicationLaunchInterestFormProps, ApplicationLaunchInterestUiState, isFailureState(), stateMessages, removeTurnstile, renderTurnstile, resetTurnstile
+
+### Community 581 - "acessibilidade/page.tsx"
+Cohesion: 0.18
+Nodes (6): metadata, metadata, metadata, metadata, LegalPage(), legalDocuments
+
+### Community 582 - "Requirement: Professional choreography follows scene purpose"
+Cohesion: 0.17
+Nodes (11): ADDED Requirements, Requirement: Immersive terminal owns the visual close, Requirement: Professional choreography follows scene purpose, Requirement: Project visits follow rendered cards, Scenario: About reserves future Persona space, Scenario: Contact calms the branch, Scenario: Process remains restrained, Scenario: Professional desktop terminal (+3 more)
+
+### Community 583 - "ADDED Requirements"
+Cohesion: 0.17
+Nodes (11): ADDED Requirements, Requirement: Application final scene reflects current availability, Requirement: Header navigation order is semantic and explicit, Requirement: Header traversal lifecycle remains unchanged, Requirement: Story closing avoids duplicate visual footers, Scenario: Current public state is pre-launch, Scenario: Every semantic header item resolves independently of branch direction, Scenario: Header renders from either branch position (+3 more)
+
+### Community 584 - "config/navigation.ts"
+Cohesion: 0.33
+Nodes (8): ChapterRoute, HeaderItem, applicationHeaderLinks, getActiveHeaderItem(), HeaderLink, institutionalHeaderLinks, InternalHeaderLink, mobileHeaderLinks
+
+### Community 585 - "phase09-score-refinement.spec.ts"
+Cohesion: 0.22
+Nodes (6): Branch, NumericRect, RenderedPoint, SCENE_ORDER, ScorePoint, ScoreRectangle
+
+### Community 586 - "ADDED Requirements"
+Cohesion: 0.25
+Nodes (7): ADDED Requirements, Requirement: Refined choreography has four functional projections, Requirement: Score refinement is non-blocking and bounded, Scenario: Compact story avoids theatrical empty travel, Scenario: Native scrolling advances the story, Scenario: Reduced motion remains complete, Scenario: Visitor operates foreground controls
+
+### Community 587 - "refine-phase-9-score-choreography-and-prelaunch/tasks.md"
+Cohesion: 0.25
+Nodes (7): 1. Governance and canonical contracts, 2. Launch-interest server boundary, 3. PRELAUNCH experience, 4. Header, footer, and scene semantics, 5. Projection choreography, 6. Focused integration and regression, 7. Human-review evidence
+
+### Community 588 - "theme-provider.tsx"
+Cohesion: 0.19
+Nodes (22): isThemeName(), resolveReviewRouteTheme(), THEME_BROWSER_COLORS, THEME_CHANGE_EVENT, THEME_REVIEW_ROUTE_PREFIX, THEME_STORAGE_KEY, ThemeName, themes (+14 more)
+
+### Community 591 - "OriginScore.tsx"
+Cohesion: 0.22
+Nodes (12): cubicAngle(), cubicPoint(), getOriginControlPoints(), getOriginStaffPath(), NOTE_BLUEPRINTS, ORIGIN_GEOMETRIES, OriginBranch, OriginGeometry (+4 more)
+
+### Community 592 - "Phase 9 Task-34 Choreography/PRELAUNCH Refinement Evidence"
+Cohesion: 0.20
+Nodes (9): Accessibility and framework-announcer repair, Automated acceptance result, Deterministic capture contract, External human visual acceptance checklist, Failure and environment ledger, Integrity and exclusions, Manual inspection of the generated images, Phase 9 Task-34 Choreography/PRELAUNCH Refinement Evidence (+1 more)
+
+### Community 593 - "cleanup.ts"
+Cohesion: 0.42
+Nodes (6): CleanupCallback, createCleanupRegistry(), onceCleanup(), scheduleRecoveryTimeout(), getTransitionDurationMs(), NAVIGATION_TIMING_MS
+
+### Community 594 - "Phase 9 Firefox and Demo Geometry Correction Evidence"
+Cohesion: 0.22
+Nodes (8): Automated validation result, Deterministic capture contract, Diagnosis and geometric correction, Integrity and remaining gate, Permanent regression coverage, Phase 9 Firefox and Demo Geometry Correction Evidence, Scope and authority, Visual-evidence staleness audit
+
+### Community 595 - "LocalRevealController.tsx"
+Cohesion: 0.33
+Nodes (4): LocalRevealController(), REVEAL_SELECTOR, gsapMocks, ObserverStub
+
+### Community 596 - "Phase 9 Task-33 Refinement Evidence"
+Cohesion: 0.25
+Nodes (7): Captures, Final authoritative validation, Integrity, Phase 9 Task-33 Refinement Evidence, Preserved diagnostic history, Runtime assertions, Scope
+
+### Community 597 - "archetypes.ts"
+Cohesion: 0.38
+Nodes (5): archetypeEntries, ArchetypePageId, VisualArchetype, visualArchetypeByPage, VisualArchetypeManifest
+
+### Community 598 - "preview.ts"
+Cohesion: 0.25
+Nodes (6): cormorantGaramond, manrope, fontVariableClasses, preview, StorybookFrameProps, StoryRenderer
+
+### Community 599 - "Q: How do StoryV2Header and ProjectCardFan own responsive header measurement, compact card capacity, and their focused regressions?"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: How do StoryV2Header and ProjectCardFan own responsive header measurement, compact card capacity, and their focused regressions?, Source Nodes
+
+### Community 600 - "phase09-score-path-review.spec.ts"
+Cohesion: 0.50
+Nodes (4): COMPACT_VIEWPORT_MATRIX, openPreview(), previewUrl(), REVIEW_MATRIX
+
 ## Ambiguous Edges - Review These
-- `Gate de aprovação de assets` → `Autorização e paradas permitidas`  [AMBIGUOUS]
-  docs/05-implementacao/14-contrato-execucao-integral-codex.md · relation: conceptually_related_to
-- `Preenchimento branco no grupo raiz` → `Herança de cor do lockup`  [AMBIGUOUS]
-  docs/design-reference/LOGO/svg/variants/wflyer-on-dark.svg · relation: conceptually_related_to
 - `currentColor nos grupos filhos` → `Herança de cor do lockup`  [AMBIGUOUS]
   docs/design-reference/LOGO/svg/variants/wflyer-on-light.svg · relation: conceptually_related_to
+- `Herança de cor do lockup` → `Preenchimento branco no grupo raiz`  [AMBIGUOUS]
+  docs/design-reference/LOGO/svg/variants/wflyer-on-dark.svg · relation: conceptually_related_to
 - `Herança de cor do lockup` → `Preenchimento grafite no grupo raiz`  [AMBIGUOUS]
   docs/design-reference/LOGO/svg/variants/wflyer-on-light.svg · relation: conceptually_related_to
+- `Gate de aprovação de assets` → `Autorização e paradas permitidas`  [AMBIGUOUS]
+  docs/05-implementacao/14-contrato-execucao-integral-codex.md · relation: conceptually_related_to
 - `Wide angular symbol-and-wordmark composition` → `Intended white-on-dark logo palette`  [AMBIGUOUS]
   docs/design-reference/brand-intro/source-assets/wflyer-on-dark.svg · relation: implements
 
 ## Knowledge Gaps
-- **2367 isolated node(s):** `config`, `StoryRenderer`, `StorybookFrameProps`, `fontVariableClasses`, `preview` (+2362 more)
+- **2586 isolated node(s):** `config`, `StoryRenderer`, `StorybookFrameProps`, `fontVariableClasses`, `preview` (+2581 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **142 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **146 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Work-memory lessons
 
 **Preferred sources** — corroborated by past sessions; start here.
-- `playwright` (6× useful, score=4.053823671) _(code changed — re-verify)_
-- `responsive-score-projection.ts` (4× useful, score=3.898257287)
-- `ScoreSvg()` (4× useful, score=3.235249806)
-- `TupletRenderPrimitive` (3× useful, score=2.775364969)
-- `lab-score-models.ts` (3× useful, score=2.626368921)
-- `composeSegment()` (3× useful, score=2.41007108)
-- `File-by-File Migration Map` (2× useful, score=1.969851552) _(code changed — re-verify)_
-- `gate-c-review.ts` (2× useful, score=1.949796226)
-- `draft-calibration.ts` (2× useful, score=1.801681986)
-- `CalibrationWorkbench.tsx` (2× useful, score=1.585785489)
+- `playwright` (6× useful, score=3.309698044)
+- `responsive-score-projection.ts` (4× useful, score=3.182687646)
+- `ScoreSvg()` (4× useful, score=2.641382759)
+- `TupletRenderPrimitive` (3× useful, score=2.265915036)
+- `lab-score-models.ts` (3× useful, score=2.144268914)
+- `composeSegment()` (3× useful, score=1.967675012)
+- `File-by-File Migration Map` (2× useful, score=1.608262805)
+- `gate-c-review.ts` (2× useful, score=1.591888864)
+- `draft-calibration.ts` (2× useful, score=1.470962683)
+- `CalibrationWorkbench.tsx` (2× useful, score=1.294696454)
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What is the exact relationship between `Gate de aprovação de assets` and `Autorização e paradas permitidas`?**
-  _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
-- **What is the exact relationship between `Preenchimento branco no grupo raiz` and `Herança de cor do lockup`?**
-  _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
 - **What is the exact relationship between `currentColor nos grupos filhos` and `Herança de cor do lockup`?**
+  _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
+- **What is the exact relationship between `Herança de cor do lockup` and `Preenchimento branco no grupo raiz`?**
   _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
 - **What is the exact relationship between `Herança de cor do lockup` and `Preenchimento grafite no grupo raiz`?**
   _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
+- **What is the exact relationship between `Gate de aprovação de assets` and `Autorização e paradas permitidas`?**
+  _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
 - **What is the exact relationship between `Wide angular symbol-and-wordmark composition` and `Intended white-on-dark logo palette`?**
   _Edge tagged AMBIGUOUS (relation: implements) - confidence is low._
-- **Why does `StoryChapterId` connect `runtime.ts` to `public/index.ts`, `lib/story/index.ts`, `ProfessionalChapterScene.tsx`, `StoryBootstrapExperience.tsx`, `bootstrap/index.ts`, `MotionStoryLab.tsx`, `bootstrap/positioning.ts`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
-- **Why does `StoryBootstrapExperience()` connect `StoryBootstrapExperience.tsx` to `bootstrap/index.ts`, `runtime.ts`, `MotionStoryLab.tsx`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
+- **Why does `StoryChapterId` connect `runtime.ts` to `StoryScoreLayer.tsx`, `composition.ts`, `organic-flowing.ts`, `ProfessionalChapterScene.tsx`, `public/index.ts`, `lib/story/index.ts`, `StoryNavigationContext.tsx`, `projection.ts`, `StoryBootstrapExperience.tsx`, `bootstrap/index.ts`, `bootstrap/positioning.ts`?**
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **Why does `CONTACT_PROJECT_TYPES` connect `public/index.ts` to `site-content.ts`, `lib/contact/index.ts`, `ContactForm.tsx`?**
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
