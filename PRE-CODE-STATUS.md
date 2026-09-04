@@ -1,6 +1,6 @@
 # W_Flyer v2 — Pre-code status
 
-**Status:** `V2_PHASE_8_GATE_8_COMPLETE_PHASE_9_SCORE_PATH_HUMAN_GATE_PENDING`
+**Status:** `V2_PHASE_9_GATE_9_COMPLETE_ASSEMBLY_MOTION_SUCCESSOR_NOT_STARTED`
 
 ## Approved
 
@@ -30,7 +30,7 @@ interactive DOM tablet demo.
 Those behaviors are not the approved target. They remain only to provide a
 functioning rollback baseline during migration.
 
-Phases 2 through 8 are complete. A typed, geometry-free v2 story model and the
+Phases 2 through 9 are complete. A typed, geometry-free v2 story model and the
 accessible static vertical skeleton exist in parallel at the development-only
 `/__visual-lab/story` surface. The readiness-driven intro/bootstrap lifecycle,
 semantic destination/history contracts, static positioning adapter, and
@@ -50,17 +50,24 @@ The same isolated surface now contains the complete Application Overview, How
 It Works, Benefits, APP-04 structural demonstration, Access W_Flyer,
 final-barline, and terminal composition. APP-04 uses a deterministic
 missing-media fallback until the owner-supplied Phase-11 media exists; no final
-media or score integration is claimed.
+media is claimed. Phase 9 integrates one deterministic continuous dual score,
+the approved shared origin and twelve real segments, responsive/static
+projections, content-aware choreography, semantic header refinement, and the
+secure Application PRELAUNCH flow. The owner accepted that geometry as the
+technical baseline, not the final visual composition.
+
 Typed public content, publication allowlists,
 retained detailed routes, three fail-closed project details, route metadata,
 and the preserved Contact contract passed Gate 3 on 2026-08-24. Gate 4 passed
 on 2026-08-25, Gate 5 passed on 2026-08-26, Gate 6 passed on 2026-08-27, and
-Gates 7 and 8 passed on 2026-08-28. The public landing has not been cut over,
-and Phase 9 has not started.
+Gates 7 and 8 passed on 2026-08-28. Gate 9 passed on 2026-09-04 at
+`PHASE_9_FINAL_GIT_SHA = 306ccb74da6c7bbf8f187e360c0776c571b5fc3d`.
+The public landing has not been cut over, and the isolated successor
+Assembly/Motion OpenSpec has not been created.
 
 ## Human-gated pending assets/calibrations
 
-- final Score Path control points/layout approval;
+- successor `ASM-LAYOUT-DELTA-001..005` geometry and refreeze approval;
 - final W_Flyer Persona SVG/rig approval;
 - final APP-04 WebM/MP4/poster/final-frame assets;
 - final project media where applicable;
@@ -70,7 +77,9 @@ and Phase 9 has not started.
 
 ## Authorization
 
-Phase 9 is next in sequence under `WFLYER_IMPLEMENTATION_PLAN.md`, but its
-first task is the blocking human approval of Score Path layouts. No Phase-9
-implementation may begin before that approval, and Codex may not skip later
-human gates or deploy production.
+Phase 9 is formally closed. The next canonical action is to create the isolated
+`implement-scroll-driven-score-assembly-and-motion` OpenSpec at Stage 0 from
+`docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md`.
+No Assembly/Motion implementation or `ASM-LAYOUT-DELTA-*` work is authorized
+without that change, and Codex may not skip its geometry-refreeze/final human
+gates or deploy production.

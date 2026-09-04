@@ -2,11 +2,12 @@
 
 You are Codex working in the **root directory of the W_Flyer website repository**.
 
-**Current checkpoint:** Phase 8 / Gate 8 is complete as of 2026-08-28.
-Phase 9 has not started. OpenSpec task 33, human approval of Score Path layouts,
-is the next incomplete task and is blocking. Verify the sealed Phase-8 evidence
-before resuming; do not rerun or reopen completed Phases 0–8 without a
-demonstrated inconsistency.
+**Current checkpoint:** Phase 9 / Gate 9 is complete as of 2026-09-04 at
+`PHASE_9_FINAL_GIT_SHA = 306ccb74da6c7bbf8f187e360c0776c571b5fc3d`.
+The accepted score geometry is a technical baseline, not the final visual
+composition. The isolated `implement-scroll-driven-score-assembly-and-motion`
+OpenSpec has not been created. Do not rerun or reopen completed Phases 0–9
+without a demonstrated inconsistency.
 
 The repository root is the directory that contains:
 
@@ -22,19 +23,21 @@ The repository root is the directory that contains:
 Before changing code, read these files in this exact order:
 
 1. `<repository-root>/AGENTS.md`
-2. `<repository-root>/PRE-CODE-STATUS.md`
-3. `<repository-root>/WFLYER_IMPLEMENTATION_PLAN.md`
-4. `<repository-root>/WFLYER_CANONICAL_DOCUMENTATION_MANIFEST.md`
-5. `<repository-root>/docs/canonical-v2/README.md`
-6. `<repository-root>/docs/canonical-v2/00-governance/01-source-of-truth.md`
-7. `<repository-root>/docs/canonical-v2/00-governance/03-decision-register.md`
-8. `<repository-root>/docs/canonical-v2/00-governance/04-supersession-map.md`
-9. `<repository-root>/docs/canonical-v2/06-migration/01-current-state-audit.md`
-10. `<repository-root>/docs/canonical-v2/06-migration/02-file-by-file-migration-map.md`
-11. `<repository-root>/openspec/changes/rebuild-scroll-driven-wflyer-v2/proposal.md`
-12. `<repository-root>/openspec/changes/rebuild-scroll-driven-wflyer-v2/design.md`
-13. `<repository-root>/openspec/changes/rebuild-scroll-driven-wflyer-v2/tasks.md`
-14. `<repository-root>/openspec/changes/archive/2026-08-24-implement-music-system-v0-1/` in full.
+2. `<repository-root>/docs/canonical-v2/06-migration/CURRENT_HANDOFF.md`
+3. `<repository-root>/PRE-CODE-STATUS.md`
+4. `<repository-root>/WFLYER_IMPLEMENTATION_PLAN.md`
+5. `<repository-root>/WFLYER_CANONICAL_DOCUMENTATION_MANIFEST.md`
+6. `<repository-root>/docs/canonical-v2/README.md`
+7. `<repository-root>/docs/canonical-v2/00-governance/01-source-of-truth.md`
+8. `<repository-root>/docs/canonical-v2/00-governance/03-decision-register.md`
+9. `<repository-root>/docs/canonical-v2/00-governance/04-supersession-map.md`
+10. `<repository-root>/docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md`
+11. `<repository-root>/docs/canonical-v2/06-migration/01-current-state-audit.md`
+12. `<repository-root>/docs/canonical-v2/06-migration/02-file-by-file-migration-map.md`
+13. `<repository-root>/openspec/changes/rebuild-scroll-driven-wflyer-v2/proposal.md`
+14. `<repository-root>/openspec/changes/rebuild-scroll-driven-wflyer-v2/design.md`
+15. `<repository-root>/openspec/changes/rebuild-scroll-driven-wflyer-v2/tasks.md`
+16. `<repository-root>/openspec/changes/refine-phase-9-score-choreography-and-prelaunch/`.
 
 ## Source of truth
 
@@ -73,12 +76,14 @@ When a conflict exists, use this precedence:
 ## First actions
 
 1. Confirm the repository root and the presence of every mandatory file above.
-2. Verify the current phase/gate status and the latest sealed evidence bundle.
-3. Inspect the active OpenSpec progress and confirm task 33 is the first
-   incomplete task and a blocking human gate.
+2. Verify Phase-9 closure, `PHASE_9_FINAL_GIT_SHA`, and all four Phase-9
+   evidence seals.
+3. Confirm the focused refinement is 21/21 complete but unarchived, parent Task
+   35 is complete, and the successor OpenSpec does not yet exist.
 4. Record failures without weakening tests or deleting evidence.
-5. Do not begin Phase 9 implementation until the owner explicitly approves the
-   Score Path layouts required by task 33; preserve the completed Phase-4–8
-   contracts.
+5. Create only the isolated successor OpenSpec at Stage 0 when explicitly
+   authorized. Do not implement Assembly/Motion or `ASM-LAYOUT-DELTA-*` before
+   that change exists and its entry gate passes; preserve Phases 4–9 and all
+   sealed evidence.
 
 Do not restart the project from scratch. Reuse retained infrastructure and components where the migration map says `KEEP` or `REFACTOR`; replace only what the canonical target supersedes.

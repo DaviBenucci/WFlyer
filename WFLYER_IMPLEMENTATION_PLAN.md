@@ -247,21 +247,24 @@ APP-04 media remains the human-gated Phase-11 asset boundary.
 
 ## Phase 9 — Continuous dual-score integration
 
-**Execution status:** in progress. Task 33 passed explicit external human review
-on 2026-08-30. `Organic Flowing`, including the shared-origin departure and all
-three production geometry modes, is approved for integration. Task 34 completed
-its automated integration checkpoint on 2026-08-31. A later external human
-review approved a bounded choreography and Application PRELAUNCH refinement,
-tracked by `refine-phase-9-score-choreography-and-prelaunch`; that focused
-acceptance pass blocks Task 35. Task 34 remains historically complete, while
-Task 35 and Gate 9 remain open. The initial focused implementation, affected
-automated validation, and deterministic recapture completed on 2026-09-03. A
-subsequent exact Firefox runtime report exposed three horizontal projection
-boundary regimes, and the required broad rerun exposed a separate latent Demo
-CTA clearance defect. Both were corrected geometrically without weakening the
-approved thresholds. The 2026-09-04 corrective addendum is sealed after one
-clean 21/21 three-engine refinement run; only explicit external human visual
-acceptance remains before the refinement can close.
+**Execution status:** complete; Gate 9 `PASS` on 2026-09-04. Task 33 passed
+explicit external human review on 2026-08-30. `Organic Flowing`, including the
+shared-origin departure and all three production geometry modes, was approved
+for integration. Task 34 completed its automated integration checkpoint on
+2026-08-31. A later external human review approved a bounded choreography and
+Application PRELAUNCH refinement tracked by
+`refine-phase-9-score-choreography-and-prelaunch`. Its initial implementation,
+affected automated validation, and deterministic recapture completed on
+2026-09-03. A subsequent exact Firefox runtime report exposed three horizontal
+projection boundary regimes, and the required broad rerun exposed a separate
+latent Demo CTA clearance defect. Both were corrected geometrically without
+weakening the approved thresholds. The 2026-09-04 corrective addendum is sealed
+after one clean 21/21 three-engine refinement run. The owner then explicitly
+accepted the current geometry as the Phase-9 technical baseline, not as the
+site's final visual composition. Task 35 is complete, Gate 9 passes, and the
+immutable implementation/evidence baseline is:
+
+`PHASE_9_FINAL_GIT_SHA = 306ccb74da6c7bbf8f187e360c0776c571b5fc3d`.
 
 ### Preconditions
 
@@ -308,7 +311,7 @@ complete Task 34, Task 35, or Gate 9.
 - Armature/key signature occurs at most once per continuous branch, after clef and before first relevant material.
 - Final barline is deterministic and precedes each terminal.
 
-### Human choreography and PRELAUNCH refinement — blocking
+### Human choreography and PRELAUNCH refinement — accepted technical baseline
 
 - Keep the Task-34 composition, fingerprints, Music assets, renderer
   calibration, and sealed evidence unchanged; refine projection/presentation
@@ -339,6 +342,12 @@ complete Task 34, Task 35, or Gate 9.
   `807a15b57e1a5bbc88011d546e69d4a4b281c552344876cddfc3a17042392923`;
   the historical Task-34 and first refinement bundles remain byte-identical.
 
+**Refinement result:** `APPROVED` — explicit external human review on
+2026-09-04 accepts this geometry as the technical baseline and completes
+focused item 7.3. This acceptance does not designate the presentation as the
+final site composition and does not authorize any successor Assembly/Motion
+implementation.
+
 ### Gate 9
 
 - The selected `Organic Soft` or `Organic Flowing` layouts have explicit human
@@ -350,6 +359,52 @@ complete Task 34, Task 35, or Gate 9.
 - The focused choreography/PRELAUNCH refinement has new dark-desktop, light,
   compact, accessibility, security, email-preview, and geometry evidence and
   explicit external human visual acceptance.
+
+**Gate 9 result:** `PASS` — 2026-09-04. Task 35's
+session/responsive/reduced-motion validation is satisfied by the final
+cross-engine state, including 20/20 projection tests, 23 files and 128/128
+focused unit/component tests, 12/12 score-integration cases across Chromium,
+Firefox, and WebKit, and one clean serial 21/21 three-engine refinement run
+with workers=1 and retries=0. Lint, typecheck, strict OpenSpec validation, and
+all required visual/accessibility/security/email-preview evidence pass.
+
+The authoritative Phase-9 evidence references are:
+
+- Task-33 human approval: `task-33-refinement-2026-08-30/`, manifest digest
+  `10ce142087e3e249842f04c2d47a47d988ac499c71f13f7da7a6fd267659cba0`;
+- historical Task-34 integration: `task-34-integration-review-2026-08-31/`,
+  manifest digest
+  `c4bec2d7f6b546c44d9b7bd053ad0b4ff0c42d1d143cc079dd0714068c3fef8a`;
+- first choreography/PRELAUNCH refinement:
+  `task-34-refinement-2026-08-31/`, manifest digest
+  `1ce1043412c6ad77b34c0d77bad565cb9aef3af6808c8b54d48b0d7e13fdc442`;
+- authoritative current-geometry corrective addendum:
+  `task-34-refinement-firefox-correction-2026-09-04/`, manifest digest
+  `807a15b57e1a5bbc88011d546e69d4a4b281c552344876cddfc3a17042392923`.
+
+All sealed evidence remains immutable.
+
+### Post-Phase-9 Assembly/Motion successor boundary — not started
+
+The exact next canonical action is to create the isolated OpenSpec change
+`implement-scroll-driven-score-assembly-and-motion` at Stage 0. Its sole
+technical authority is:
+
+`docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md`.
+
+The successor exclusively owns these five geometry refinements transferred
+from the Phase-9 human review:
+
+- `ASM-LAYOUT-DELTA-001` — Application terminal spatial continuation;
+- `ASM-LAYOUT-DELTA-002` — event-safe straight-shelf projection;
+- `ASM-LAYOUT-DELTA-003` — Benefits↔Demo low-curvature corridor;
+- `ASM-LAYOUT-DELTA-004` — Professional straight-shelf event utilization from
+  the existing semantic composition first;
+- `ASM-LAYOUT-DELTA-005` — approved final Home Scenic Assembly.
+
+No `ASM-LAYOUT-DELTA-*`, Composer semantic change, Assembly, or Motion work was
+implemented in Phase 9. Do not begin Phase 10 or later parent work before this
+isolated successor boundary is created and its Stage-0 preconditions pass.
 
 ## Phase 10 — W_Flyer Persona asset, rig, and easter eggs
 

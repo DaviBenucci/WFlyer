@@ -224,8 +224,7 @@ does not complete Task 34, Task 35, or Gate 9.
 
 ## ADR-043 — Phase-9 human choreography and Application PRELAUNCH
 
-**Status:** APPROVED FOR IMPLEMENTATION / EXTERNAL VISUAL ACCEPTANCE PENDING —
-2026-08-31
+**Status:** APPROVED / TECHNICAL BASELINE ACCEPTED — 2026-09-04
 
 The 2026-08-31 Task-34 automated integration bundle remains immutable,
 truthful historical review evidence. Subsequent external human review approved
@@ -260,6 +259,35 @@ form with `app.wflyer.com.br` only after separate approval. The immersive route
 uses its terminal as the single visual close while retaining one semantic
 mobile/footer close and unrelated route footers. The focused OpenSpec change
 `refine-phase-9-score-choreography-and-prelaunch` owns implementation and new
-evidence. Task 35 and Gate 9 remain blocked until implementation, affected
-validation, deterministic recapture, and explicit external human visual
-acceptance.
+evidence.
+
+On 2026-09-04, the owner explicitly accepted the resulting score geometry as
+the Phase-9 technical baseline. This approval satisfies focused OpenSpec item
+7.3; it does not designate the current presentation as the final visual
+composition. The accepted implementation/evidence baseline is immutable at:
+
+`PHASE_9_FINAL_GIT_SHA = 306ccb74da6c7bbf8f187e360c0776c571b5fc3d`.
+
+The final validation satisfies parent Task 35 and every Gate-9 acceptance
+condition. Task 35 is complete, Gate 9 is `PASS`, and Phase 9 is formally
+closed on 2026-09-04. Historical and corrective evidence retains its original
+capture-time wording and sealed bytes.
+
+Human review transferred exactly these requirements to isolated successor
+scope:
+
+- `ASM-LAYOUT-DELTA-001` — Application terminal spatial continuation;
+- `ASM-LAYOUT-DELTA-002` — Composer-backed events only on visually straight,
+  event-safe staff shelves;
+- `ASM-LAYOUT-DELTA-003` — a direct or broad low-curvature Benefits↔Demo
+  corridor;
+- `ASM-LAYOUT-DELTA-004` — improved Professional straight-shelf event
+  utilization using the existing semantic composition first;
+- `ASM-LAYOUT-DELTA-005` — the already-approved final Home Scenic Assembly.
+
+No `ASM-LAYOUT-DELTA-*`, Composer semantic change, Assembly, or Motion work was
+implemented as part of Phase 9. The canonical authority for the future
+`implement-scroll-driven-score-assembly-and-motion` change is
+`docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md`.
+That isolated OpenSpec has not been created, and its implementation remains
+blocked until its Stage-0 entry gate passes.

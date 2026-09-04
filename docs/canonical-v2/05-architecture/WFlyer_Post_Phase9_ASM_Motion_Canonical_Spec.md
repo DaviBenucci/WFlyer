@@ -1,7 +1,8 @@
 # W_Flyer — Post-Phase-9 Assembly, Motion, Score Refinement, and Mobile Navigation Specification
 
 **Document ID:** `WF-ASM-MOTION-CANONICAL-001`  
-**Status:** Canonical design specification — implementation blocked until formal Phase 9 closure  
+**Status:** Canonical technical authority — Phase 9 closed; successor OpenSpec not yet created
+
 **Normative language:** English  
 **Project:** W_Flyer institutional immersive story  
 **Successor OpenSpec change:** `implement-scroll-driven-score-assembly-and-motion`  
@@ -52,7 +53,7 @@ Before opening the successor change, the executor SHALL confirm:
 PHASE_9_CLOSED = true
 TASK_35_COMPLETE = true
 GATE_9_PASS = true
-PHASE_9_FINAL_GIT_SHA = <exact SHA>
+PHASE_9_FINAL_GIT_SHA = 306ccb74da6c7bbf8f187e360c0776c571b5fc3d
 PHASE_9_FINAL_HANDOFF_UPDATED = true
 ```
 
@@ -2834,4 +2835,7 @@ ASM-IMP-DEC-001..007            APPROVED
 FINAL HUMAN GATE                REQUIRED
 ```
 
-Implementation remains blocked until Phase 9 is formally closed and the isolated successor OpenSpec is created.
+Phase 9 is formally closed at
+`306ccb74da6c7bbf8f187e360c0776c571b5fc3d`. Implementation remains blocked
+until the isolated successor OpenSpec is created and its Stage-0 entry gate
+passes.

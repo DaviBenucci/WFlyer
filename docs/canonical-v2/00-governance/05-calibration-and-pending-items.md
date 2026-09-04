@@ -45,13 +45,17 @@ Codex may propose values in a Visual/Motion Lab. Human approval is required befo
 - The final decision record and approved-evidence manifest are under
   `docs/canonical-v2/06-migration/evidence/music-system-v0.1/gate-c/approval-2026-08-24/`.
 
-## Phase-9 Score Path pending approval
+## Phase-9 Score Path approval and successor refinements
 
-Final public responsive Score Paths are a blocking Phase-9 human visual item.
-Phase 9 must produce `Organic Soft` and `Organic Flowing` candidates for both
-`vertical-wide` and `vertical-compact`, in light and dark, against the real
-chapter and reserved-content layouts. Responsive activation thresholds and exact
-final control points remain noncanonical until their respective approvals.
+Phase 9 passed Gate 9 on 2026-09-04. The current responsive Score Paths are the
+accepted technical baseline at commit
+`306ccb74da6c7bbf8f187e360c0776c571b5fc3d`, not the final visual
+composition. The Score Path/layout refinements transferred by Phase-9 human
+review are exactly `ASM-LAYOUT-DELTA-001..005` under
+`docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md`.
+Those deltas and their successor geometry-refreeze review remain pending; no
+delta was implemented during Phase 9. Responsive activation thresholds remain
+calibration values unless separately approved by their governing contract.
 
 ## Pending assets
 

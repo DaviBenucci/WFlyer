@@ -31,7 +31,7 @@ The stable detailed URL `/portfolio` is retained for the current release unless 
 ## Status
 
 - Product/architecture decisions: approved.
-- Migration implementation: Phases 2–8 complete behind development-only
+- Migration implementation: Phases 2–9 complete behind development-only
   surfaces; the public `/` landing remains the retained legacy rollback
   baseline until cutover.
 - Music glyph metrics/anchors and down-flag transform: Gate B approved on 2026-08-15.
@@ -42,8 +42,10 @@ The stable detailed URL `/portfolio` is retained for the current release unless 
 - Phase 4 Gate 4: passed on 2026-08-25.
 - Phase 5 Gate 5: passed on 2026-08-26.
 - Phase 6 Gate 6 passed on 2026-08-27; Phase 7 Gate 7 and Phase 8 Gate 8 passed
-  on 2026-08-28. Phase 9 has not started, and its Score Path layout approval
-  is the next blocking human gate.
+  on 2026-08-28. Phase 9 Gate 9 passed on 2026-09-04 at baseline commit
+  `306ccb74da6c7bbf8f187e360c0776c571b5fc3d`. Its score geometry is the
+  accepted technical baseline, not the final visual composition. The isolated
+  successor Assembly/Motion OpenSpec has not been created.
 - Persona final asset: pending asset.
 - APP-04 final media: pending asset.
 - Production: unauthorized.

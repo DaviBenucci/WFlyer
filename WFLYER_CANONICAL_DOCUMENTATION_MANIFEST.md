@@ -1,9 +1,10 @@
 # W_Flyer v2 — Canonical Documentation Manifest
 
-**Current execution checkpoint:** Phase 8 / Gate 8 complete on 2026-08-28;
-Phase 9 has not started and its Score Path layout approval is the next blocking
-human gate. Gate-8 evidence is under
-`docs/canonical-v2/06-migration/evidence/phase-8/`.
+**Current execution checkpoint:** Phase 9 / Gate 9 complete on 2026-09-04 at
+technical-baseline commit
+`306ccb74da6c7bbf8f187e360c0776c571b5fc3d`. The isolated successor
+Assembly/Motion OpenSpec has not been created. Phase-9 evidence is under
+`docs/canonical-v2/06-migration/evidence/phase-9/`.
 
 ## Root execution documents
 
@@ -14,6 +15,7 @@ human gate. Gate-8 evidence is under
 | `WFLYER_CODEX_START_HERE.md` | Ready-to-paste Codex prompt |
 | `WFLYER_IMPLEMENTATION_PLAN.md` | Linear phases and gates |
 | `docs/canonical-v2/README.md` | Canonical documentation index |
+| `docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md` | Canonical authority for the not-yet-created successor Assembly/Motion change |
 
 ## Canonical documentation directory
 
@@ -37,7 +39,12 @@ The directory is grouped into governance, product, experience, visual systems, m
 | Path | Purpose |
 |---|---|
 | `openspec/changes/rebuild-scroll-driven-wflyer-v2/` | Umbrella v2 re-architecture change |
+| `openspec/changes/refine-phase-9-score-choreography-and-prelaunch/` | Completed 21/21 Phase-9 refinement; intentionally unarchived |
 | `openspec/changes/archive/2026-08-24-implement-music-system-v0-1/` | Archived, completed isolated music renderer/composer/lab change |
+
+The future `implement-scroll-driven-score-assembly-and-motion` OpenSpec does
+not exist yet. Its creation at Stage 0 is the next canonical action; this
+manifest does not authorize implementation.
 
 ## Visual library
 

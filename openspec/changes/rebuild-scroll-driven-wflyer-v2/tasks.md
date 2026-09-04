@@ -66,7 +66,19 @@ retained; only its phase classification and later execution position changed.
 > explicitly visually accepted. This note does not reopen Task 34 or alter its
 > evidence.
 
-- [ ] Validate session/responsive/reduced-motion stability
+> **Resolution (2026-09-04):** the owner explicitly accepted the current
+> Phase-9 score geometry as the technical baseline, not as the final visual
+> composition. The focused change is complete at 21/21, and the validated
+> implementation/evidence baseline is frozen by commit
+> `306ccb74da6c7bbf8f187e360c0776c571b5fc3d`. The five registered
+> `ASM-LAYOUT-DELTA-001..005` refinements remain exclusive successor scope.
+
+- [x] Validate session/responsive/reduced-motion stability
+
+> **Post-Phase-9 hold:** before Task 36 or any later parent-phase work begins,
+> create the isolated `implement-scroll-driven-score-assembly-and-motion`
+> OpenSpec at Stage 0 from the canonical successor specification. This records
+> the next boundary only; no successor implementation is started here.
 
 ## 10. Persona final asset and easter eggs
 - [ ] Stop for final Persona asset approval and integrate rig/easter eggs

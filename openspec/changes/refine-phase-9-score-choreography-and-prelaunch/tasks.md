@@ -38,4 +38,4 @@
 
 - [x] 7.1 Capture and inspect the 13 required dark desktop scene frames, 9 Services/How/Projects diagnostic frames, plus representative light and compact regressions from deterministic URLs; verify every image is readable and matches its scene contract
 - [x] 7.2 Create the new Phase-9 refinement evidence bundle with manifests, commands, results, URLs, screenshots, and checksums while preserving the Task-34 bundle byte-for-byte
-- [ ] 7.3 Stop for explicit external human visual acceptance before completing this refinement, starting parent Task 35, or claiming Gate 9 PASS
+- [x] 7.3 Stop for explicit external human visual acceptance before completing this refinement, starting parent Task 35, or claiming Gate 9 PASS

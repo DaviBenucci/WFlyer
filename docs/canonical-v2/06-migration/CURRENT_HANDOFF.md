@@ -4,23 +4,31 @@
 schema: wflyer-current-handoff/v1
 project: wflyer.com.br institutional website
 branch: develop/site-institucional
-implementation_checkpoint: 5764808399befd6a04e9a12b3e804fa9aaf9493f
-maintenance_checkpoint: this file belongs to the current maintenance HEAD; resolve with git rev-parse HEAD
+implementation_checkpoint: 306ccb74da6c7bbf8f187e360c0776c571b5fc3d
+phase_9_final_git_sha: 306ccb74da6c7bbf8f187e360c0776c571b5fc3d
 refinement_base_checkpoint: 2ffef25b3ba621b535a00c001d68fc3a6977085c
 active_change: refine-phase-9-score-choreography-and-prelaunch
+active_change_status: complete_unarchived
 parent_change: rebuild-scroll-driven-wflyer-v2
-openspec_progress: 20/21
-parent_openspec_progress: 34/45
-next_unchecked_task: 'Focused refinement 7.3 — explicit external human visual acceptance'
-current_phase: 'Phase 9 — Continuous dual-score integration'
+successor_change: implement-scroll-driven-score-assembly-and-motion
+successor_change_status: not_created
+successor_spec: docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md
+openspec_progress: 21/21
+parent_openspec_progress: 35/45
+next_canonical_action: 'Create the isolated successor OpenSpec at Stage 0; do not implement it yet'
+parent_next_unchecked_task: 'Task 36 — final Persona asset approval and integration'
+current_phase: 'Phase 9 formally closed; successor Assembly/Motion bootstrap pending'
 phase_9_started: true
+phase_9_closed: true
+phase_9_closed_on: 2026-09-04
+gate_9_status: pass
 task_33_status: human_approved
 task_33_checkpoint: 74677a762a9d9a53cb7fd375eecb0462b10e18e9
-task_34_status: historical_complete_refinement_blocking
-task_34_refinement_status: automated_correction_evidence_complete_external_visual_acceptance_pending
+task_34_status: historical_complete
+task_34_refinement_status: human_approved_technical_baseline
 refinement_correction_evidence: task-34-refinement-firefox-correction-2026-09-04
 refinement_correction_manifest_sha256: 807a15b57e1a5bbc88011d546e69d4a4b281c552344876cddfc3a17042392923
-task_35_status: blocked_unchecked
+task_35_status: complete
 production_authorized: false
 ```
 
@@ -29,7 +37,7 @@ Canonical precedence remains in `AGENTS.md`.
 
 ## Accepted phase state
 
-- Phases 0–8 are complete at their recorded gates.
+- Phases 0–9 are complete at their recorded gates.
 - Music System Gate A, external-human Gate B, and Gate C are accepted in the
   isolated Music system scope.
 - Gate 8 is PASS for canonical Phase 8, **Application branch scenes**.
@@ -41,6 +49,9 @@ Canonical precedence remains in `AGENTS.md`.
   `docs/canonical-v2/06-migration/evidence/phase-8/SHA256SUMS.txt`.
 - Manifest SHA-256:
   `06b0e5d1c655cd77677987789809de0aa3d9cf675b120bca7439b8c9cd369734`.
+- Gate 9 is `PASS`; Phase 9 closed on 2026-09-04.
+- Immutable Phase-9 implementation/evidence baseline:
+  `306ccb74da6c7bbf8f187e360c0776c571b5fc3d`.
 
 ## Contracts that must survive future phases
 
@@ -49,9 +60,10 @@ Canonical precedence remains in `AGENTS.md`.
 - Canonical precedence and linear phase/gate discipline are mandatory.
 - Graphify is discovery only; it may index noncanonical files but never grants
   them authority.
-- The approved Music System remains structurally isolated until Phase 9.
-- Changes to approved Music metrics/anchors and later Score Path layouts remain
-  human-gated.
+- The approved Music System composition/renderer boundaries remain isolated
+  from projection and motion ownership after their Phase-9 integration.
+- Changes to approved Music metrics/anchors, Composer semantics, and successor
+  Score Path geometry remain human-gated.
 
 ### Phase 2–3 product/content baseline
 
@@ -96,7 +108,7 @@ Canonical precedence remains in `AGENTS.md`.
   the accepted sequence.
 - Contact/security remains an independent regression boundary.
 
-### Phase 8 Application branch
+### Phase 8 Application branch — historical entry contract
 
 - Exact sequence: Overview, How It Works, Benefits, APP-04 demonstration,
   Access W_Flyer, structural final barline, Application terminal.
@@ -106,11 +118,12 @@ Canonical precedence remains in `AGENTS.md`.
 - Missing media is the truthful default. Sentinel media exists only in an
   explicit intercepted development-test scenario.
 - No final APP-04 asset or invented product footage exists.
-- Access W_Flyer is the sole primary Application CTA and opens the separate app.
+- Access W_Flyer was the Phase-8 primary CTA; the bounded Phase-9 PRELAUNCH
+  refinement replaced that unavailable action with launch-interest registration.
 - Task 34 integrates the real score only in the Phase-5 development review
   story. Public `/` remains on the retained page and is not cut over.
 
-### Phase 9 Task-33 approval and Task-34 review-ready state
+### Phase 9 Task-33 approval and Task-34 integration baseline
 
 - Organic Flowing alternating-S geometry, the mobile Project-card responsive
   direction, ADR-041's warm dark-neutral palette, canonical copper dark UI
@@ -147,8 +160,9 @@ Canonical precedence remains in `AGENTS.md`.
   `docs/canonical-v2/06-migration/evidence/phase-9/task-34-integration-review-2026-08-31/`;
   its manifest SHA-256 is
   `c4bec2d7f6b546c44d9b7bd053ad0b4ff0c42d1d143cc079dd0714068c3fef8a`.
-- Task 34 is complete at 34/45 and remains intentionally uncommitted for human
-  review. Task 35 has not started; Gate 9 remains open.
+- Task 34 remains a truthful historical checkpoint. Its later accepted
+  correction and evidence are frozen with the complete Phase-9 technical
+  baseline at `306ccb74da6c7bbf8f187e360c0776c571b5fc3d`.
 
 ### Phase 9 human choreography/PRELAUNCH refinement
 
@@ -156,19 +170,21 @@ Canonical precedence remains in `AGENTS.md`.
   bounded contract normalized in ADR-043. It does not reopen Task 34.
 - The focused OpenSpec change is
   `refine-phase-9-score-choreography-and-prelaunch`; its planning artifacts
-  strict-validate and automated items 1.1 through 7.2 are complete. Item 7.3
-  remains open for explicit external human visual acceptance.
+  strict-validate and all items 1.1 through 7.3 are complete. It remains active
+  and intentionally unarchived.
 - The parent Task-34 evidence directory and manifest SHA-256 remain immutable
-  historical evidence. New work uses sibling evidence under
-  `task-34-refinement-2026-08-31/`.
+  historical evidence. The first refinement used the sibling
+  `task-34-refinement-2026-08-31/` bundle, which is now also sealed and
+  immutable.
 - The refinement owns projection/presentation choreography, the explicit
   semantic header, immersive-only footer de-duplication, current PRELAUNCH
   scene, dedicated launch-interest endpoint, and fixed transactional emails.
 - Music fingerprints `fnv1a32:039bce10` and `fnv1a32:1fe3356b`, composition,
   assets, calibration, semantic slots, native-scroll runtime, and Task-34
   hydration fixes remain baseline invariants.
-- Task 35 stays unchecked until the focused implementation is validated,
-  recaptured, and explicitly accepted by external human visual review.
+- On 2026-09-04, the owner explicitly accepted the current score geometry as
+  the Phase-9 technical baseline, not as the final visual composition. This
+  satisfies focused item 7.3. No successor layout delta was implemented.
 - The new 2026-09-03 refinement bundle contains 25 inspected deterministic
   captures, a capture manifest, the exact validation/failure ledger, and a
   28-payload checksum manifest at
@@ -198,14 +214,44 @@ Canonical precedence remains in `AGENTS.md`.
   Benefits, Demo, Launch, and Application-terminal frames and supplements it
   with Firefox boundary evidence; both earlier bundles remain byte-identical.
 
+### Phase 9 formal closure
+
+- `PHASE_9_FINAL_GIT_SHA` is
+  `306ccb74da6c7bbf8f187e360c0776c571b5fc3d`.
+- Parent Task 35 is complete at parent progress 35/45. The final 12/12
+  three-engine score-integration lane covers horizontal enhanced,
+  static/reduced vertical-wide, vertical compact, and fail-open vertical-wide
+  behavior while preserving fingerprints and two Composer invocations. The
+  clean 21/21 refinement lane supplies the final geometry/browser result.
+- Gate 9 is `PASS` and Phase 9 is formally closed on 2026-09-04.
+- Phase-9 evidence remains distributed across four immutable seals:
+  - Task-33 approval:
+    `task-33-refinement-2026-08-30/` —
+    `10ce142087e3e249842f04c2d47a47d988ac499c71f13f7da7a6fd267659cba0`;
+  - historical Task-34 integration:
+    `task-34-integration-review-2026-08-31/` —
+    `c4bec2d7f6b546c44d9b7bd053ad0b4ff0c42d1d143cc079dd0714068c3fef8a`;
+  - first refinement candidate:
+    `task-34-refinement-2026-08-31/` —
+    `1ce1043412c6ad77b34c0d77bad565cb9aef3af6808c8b54d48b0d7e13fdc442`;
+  - authoritative corrective addendum:
+    `task-34-refinement-firefox-correction-2026-09-04/` —
+    `807a15b57e1a5bbc88011d546e69d4a4b281c552344876cddfc3a17042392923`.
+- The exact deferred successor requirements are
+  `ASM-LAYOUT-DELTA-001..005`. They remain bounded to the future isolated
+  `implement-scroll-driven-score-assembly-and-motion` change. Their canonical
+  authority is
+  `docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md`.
+- No Assembly/Motion runtime, Composer change, or successor OpenSpec was
+  created or implemented during Phase 9.
+
 ## Deferred work and hard stops
 
-- Task 34 / Phase 9: historically complete; its later bounded human refinement
-  has completed automated implementation/evidence and is stopped at external
-  visual acceptance under the focused change. It must not rewrite the
-  checkpoint.
-- Task 35 / Phase 9: unchecked, not started, and blocked by external acceptance
-  of the focused refinement; Gate 9 remains open.
+- Tasks 33–35 / Phase 9: complete. Gate 9 is `PASS`; the focused change is
+  21/21 complete but unarchived. Do not rewrite its historical evidence.
+- Successor Assembly/Motion: OpenSpec not created. Stage 0 must record the
+  Phase-9 SHA, the canonical successor specification, and exactly
+  `ASM-LAYOUT-DELTA-001..005` before any implementation.
 - Task 36 / Phase 10: owner-approved final Persona asset, rig, easter eggs.
 - Task 37 / Phase 11: owner-approved final APP-04 media.
 - Tasks 38–39: accessibility/responsive/reduced-motion and lifecycle/recovery
@@ -216,7 +262,7 @@ Canonical precedence remains in `AGENTS.md`.
 - `src/content/site-content.ts` retains one public copy claim about Cloudflare
   edge protection from the earlier topology. This docs-only checkpoint flags
   it for a separately authorized content reconciliation; do not silently edit
-  product copy while starting Phase 9.
+  product copy during the successor bootstrap.
 
 ## Current operational topology
 
@@ -257,44 +303,34 @@ Registro.br delegation
   maintenance evidence.
 - OpenSpec generated integration lives in `.agents/skills`; the unrelated
   Graphify project skill remains in `.codex/skills/graphify`.
-- OpenSpec strict validation is 15/15 workspace and 1/1 active change.
+- OpenSpec strict validation is 16/16 workspace; the focused Phase-9 and parent
+  changes each validate independently at 1/1.
 - Graphify's project skill is current; post-commit/post-checkout hooks and the
   merge driver are installed. The maintenance checkpoint is accepted only with
   the single final incremental refresh and health/checksum validation passing.
 - Detailed decisions and validation:
   `docs/canonical-v2/06-migration/evidence/maintenance/2026-08-29-post-phase-8-toolchain-maintenance.md`.
 
-## Known primary-worktree residue
+## Known noncanonical repository material
 
-Do not stage, delete, or treat these as maintenance dependencies:
-
-- unrelated `.gitignore` edit adding the line `g`;
-- root/import artifacts: `CANONICAL_DECISION_DELTA.md`, `CODEX_PROMPT.md`,
-  `PACKAGE_MANIFEST.txt`, `REPOSITORY_CONFLICT_MAP.md`, and the noncanonical
-  `WFLYER_IMPLEMENTATION_PLAN(1).md`;
-- historical Phase-0 residue under
-  `docs/canonical-v2/06-migration/evidence/phase-0/`;
-- `gate-b-evidence-2026-08-15.zip`;
-- `repo-overlay/`;
-- prunable metadata for older missing temporary worktrees.
-
-The noncanonical `(1)` plan is discoverable but never authoritative. The live
+Older root/import artifacts, Phase-0 recovery material,
+`gate-b-evidence-2026-08-15.zip`, and `repo-overlay/` remain outside Phase-9
+authority even where earlier history tracks them. The noncanonical `(1)` plan
+is discoverable but never authoritative. The live
 `WFLYER_IMPLEMENTATION_PLAN.md` is authoritative below `AGENTS.md`.
 
 ## Exact next safe action
 
-Review the authoritative corrective addendum at
-`docs/canonical-v2/06-migration/evidence/phase-9/task-34-refinement-firefox-correction-2026-09-04/`
-together with the unaffected Professional, diagnostic, light, and compact
-frames retained in `task-34-refinement-2026-08-31/`, then record explicit
-external human acceptance, rejection, or refinement notes while preserving the
-stable rollback boundary
-`74677a762a9d9a53cb7fd375eecb0462b10e18e9`. Do not check focused item 7.3,
-complete or archive the focused change, rewrite the Task-34 bundle, begin Task
-35, begin Phase 10, cut over public `/`, commit, push, deploy, or mutate
-production without that decision.
+Create the isolated OpenSpec change
+`implement-scroll-driven-score-assembly-and-motion` at Stage 0, reference
+`docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md`,
+and record Phase-9 baseline
+`306ccb74da6c7bbf8f187e360c0776c571b5fc3d`. Do not edit runtime, implement an
+`ASM-LAYOUT-DELTA-*`, change Composer semantics, begin Task 36, archive the
+completed focused change, cut over public `/`, push, deploy, or mutate
+production as part of that bootstrap without separate authorization.
 
-`Phase 9 — use CURRENT_HANDOFF.md as the primary operational bootstrap`
+`Phase 9 closed — successor Assembly/Motion OpenSpec creation is next`
 
 ## Minimal required reading for a fresh session
 
