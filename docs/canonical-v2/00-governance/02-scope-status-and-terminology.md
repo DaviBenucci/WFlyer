@@ -45,7 +45,9 @@ The stable detailed URL `/portfolio` is retained for the current release unless 
   on 2026-08-28. Phase 9 Gate 9 passed on 2026-09-04 at baseline commit
   `306ccb74da6c7bbf8f187e360c0776c571b5fc3d`. Its score geometry is the
   accepted technical baseline, not the final visual composition. The isolated
-  successor Assembly/Motion OpenSpec has not been created.
+  successor Assembly/Motion OpenSpec completed documentation-only Stage 0 on
+  2026-09-05 with Gate 0 PASS and subsequent owner Stage-0 approval. Stage 1
+  is not started and awaits explicit bounded implementation authorization.
 - Persona final asset: pending asset.
 - APP-04 final media: pending asset.
 - Production: unauthorized.

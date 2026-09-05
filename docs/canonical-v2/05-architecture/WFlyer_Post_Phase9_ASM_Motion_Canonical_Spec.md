@@ -1,7 +1,7 @@
 # W_Flyer — Post-Phase-9 Assembly, Motion, Score Refinement, and Mobile Navigation Specification
 
 **Document ID:** `WF-ASM-MOTION-CANONICAL-001`  
-**Status:** Canonical technical authority — Phase 9 closed; successor OpenSpec not yet created
+**Status:** Canonical technical authority — Phase 9 closed; successor Stage 0 complete; Stage-1 authorization pending
 
 **Normative language:** English  
 **Project:** W_Flyer institutional immersive story  
@@ -2836,6 +2836,11 @@ FINAL HUMAN GATE                REQUIRED
 ```
 
 Phase 9 is formally closed at
-`306ccb74da6c7bbf8f187e360c0776c571b5fc3d`. Implementation remains blocked
-until the isolated successor OpenSpec is created and its Stage-0 entry gate
-passes.
+`306ccb74da6c7bbf8f187e360c0776c571b5fc3d`. The isolated successor OpenSpec
+completed documentation-only Stage 0 on 2026-09-05; Gate 0 is PASS. Its
+`stage-0-review.md` records planning verification and subsequent owner Stage-0
+approval. Stage 1 has not started and requires separate explicit bounded owner
+authorization. The canonical
+Stage-1 Human Geometry Gate and Stage-2 refreeze remain mandatory before
+Stage 3+; no technical decision in this specification is changed by this
+administrative status update.

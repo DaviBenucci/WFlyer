@@ -289,5 +289,9 @@ No `ASM-LAYOUT-DELTA-*`, Composer semantic change, Assembly, or Motion work was
 implemented as part of Phase 9. The canonical authority for the future
 `implement-scroll-driven-score-assembly-and-motion` change is
 `docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md`.
-That isolated OpenSpec has not been created, and its implementation remains
-blocked until its Stage-0 entry gate passes.
+The isolated OpenSpec completed documentation-only Stage 0 on 2026-09-05;
+Gate 0 is PASS. The owner has approved Stage 0 and its scoped documentation
+checkpoint commit; bounded Stage-1 authorization remains pending.
+No successor geometry or runtime implementation has started. This operational
+status update does not change ADR-043's approved technical decisions or the
+mandatory human geometry approval/refreeze boundary before motion.

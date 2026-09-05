@@ -7,17 +7,26 @@ branch: develop/site-institucional
 implementation_checkpoint: 306ccb74da6c7bbf8f187e360c0776c571b5fc3d
 phase_9_final_git_sha: 306ccb74da6c7bbf8f187e360c0776c571b5fc3d
 refinement_base_checkpoint: 2ffef25b3ba621b535a00c001d68fc3a6977085c
-active_change: refine-phase-9-score-choreography-and-prelaunch
-active_change_status: complete_unarchived
+active_change: implement-scroll-driven-score-assembly-and-motion
+active_change_status: stage_0_approved_awaiting_stage_1_authorization
+predecessor_change: refine-phase-9-score-choreography-and-prelaunch
+predecessor_change_status: complete_unarchived
+predecessor_openspec_progress: 21/21
+phase_9_closure_commit: a20d52ac9f214d385ea7c210b2ab45aa84095fc8
 parent_change: rebuild-scroll-driven-wflyer-v2
 successor_change: implement-scroll-driven-score-assembly-and-motion
-successor_change_status: not_created
+successor_change_status: stage_0_complete
+successor_gate_0_status: pass
+successor_stage_0_owner_approval: approved
+successor_stage_1_status: not_started_not_authorized
+successor_geometry_approval: pending
+successor_geometry_refreeze: pending
 successor_spec: docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md
-openspec_progress: 21/21
+openspec_progress: 6/92
 parent_openspec_progress: 35/45
-next_canonical_action: 'Create the isolated successor OpenSpec at Stage 0; do not implement it yet'
+next_canonical_action: 'Complete the authorized Stage-0 documentation checkpoint commit, then stop; Stage-1 authorization remains pending'
 parent_next_unchecked_task: 'Task 36 — final Persona asset approval and integration'
-current_phase: 'Phase 9 formally closed; successor Assembly/Motion bootstrap pending'
+current_phase: 'Phase 9 formally closed; successor Stage 0 complete; Stage-1 authorization pending'
 phase_9_started: true
 phase_9_closed: true
 phase_9_closed_on: 2026-09-04
@@ -249,9 +258,16 @@ Canonical precedence remains in `AGENTS.md`.
 
 - Tasks 33–35 / Phase 9: complete. Gate 9 is `PASS`; the focused change is
   21/21 complete but unarchived. Do not rewrite its historical evidence.
-- Successor Assembly/Motion: OpenSpec not created. Stage 0 must record the
-  Phase-9 SHA, the canonical successor specification, and exactly
-  `ASM-LAYOUT-DELTA-001..005` before any implementation.
+- Successor Assembly/Motion: documentation-only Stage 0 complete on
+  2026-09-05; Gate 0 PASS; 6/92 tasks complete. Proposal, design, seven delta
+  specs, and the Stage 0–18 checklist have owner Stage-0 approval. See
+  `openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-0-review.md`
+  and its `stage-1-authorization.md` draft. Stage 1 is not started or authorized.
+  Stage 1 must stop after automated geometry checks and deterministic visual
+  evidence for explicit Human Geometry Approval; Stage 2 refreeze follows
+  approval, and Stage 3+ requires completed refreeze.
+  Strict validation passes for the successor (1/1) and current workspace
+  (17/17); all four historical Phase-9 seals and 64 payloads verify unchanged.
 - Task 36 / Phase 10: owner-approved final Persona asset, rig, easter eggs.
 - Task 37 / Phase 11: owner-approved final APP-04 media.
 - Tasks 38–39: accessibility/responsive/reduced-motion and lifecycle/recovery
@@ -321,16 +337,21 @@ is discoverable but never authoritative. The live
 
 ## Exact next safe action
 
-Create the isolated OpenSpec change
-`implement-scroll-driven-score-assembly-and-motion` at Stage 0, reference
-`docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md`,
-and record Phase-9 baseline
-`306ccb74da6c7bbf8f187e360c0776c571b5fc3d`. Do not edit runtime, implement an
-`ASM-LAYOUT-DELTA-*`, change Composer semantics, begin Task 36, archive the
-completed focused change, cut over public `/`, push, deploy, or mutate
-production as part of that bootstrap without separate authorization.
+The owner has approved the completed Stage-0 package for
+`implement-scroll-driven-score-assembly-and-motion` and authorized exactly one
+scoped documentation/OpenSpec checkpoint commit with subject
+`docs(assembly-motion): checkpoint successor Stage 0`. Complete that checkpoint
+and stop; if it is already present in Git history, do not repeat it.
+`stage-1-authorization.md` remains an unapproved execution draft. Phase-9 baseline
+`306ccb74da6c7bbf8f187e360c0776c571b5fc3d` and closure record
+`a20d52ac9f214d385ea7c210b2ab45aa84095fc8` remain distinct and immutable.
+Do not implement Stage 1 until explicitly authorized. That authorization must
+end at the Human Geometry Gate; it is not geometry approval or permission for
+Stage 2+. Do not change Composer semantics, begin Task 36, archive the completed
+focused change, cut over public `/`, create additional commits, amend Phase-9
+commits, push, deploy, or mutate production as part of this planning checkpoint.
 
-`Phase 9 closed — successor Assembly/Motion OpenSpec creation is next`
+`Phase 9 closed — successor Stage 0 complete and owner-approved; Stage-1 authorization pending`
 
 ## Minimal required reading for a fresh session
 

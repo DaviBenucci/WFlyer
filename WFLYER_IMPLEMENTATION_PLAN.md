@@ -384,11 +384,13 @@ The authoritative Phase-9 evidence references are:
 
 All sealed evidence remains immutable.
 
-### Post-Phase-9 Assembly/Motion successor boundary — not started
+### Post-Phase-9 Assembly/Motion successor boundary — Stage 0 complete
 
-The exact next canonical action is to create the isolated OpenSpec change
-`implement-scroll-driven-score-assembly-and-motion` at Stage 0. Its sole
-technical authority is:
+The isolated OpenSpec change `implement-scroll-driven-score-assembly-and-motion`
+has completed its documentation-only Stage-0 bootstrap on 2026-09-05. Gate 0
+is PASS; the owner has approved Stage 0 and its scoped documentation checkpoint
+commit. Bounded Stage-1 implementation authorization remains pending. Its sole
+successor technical authority is:
 
 `docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md`.
 
@@ -403,8 +405,12 @@ from the Phase-9 human review:
 - `ASM-LAYOUT-DELTA-005` — approved final Home Scenic Assembly.
 
 No `ASM-LAYOUT-DELTA-*`, Composer semantic change, Assembly, or Motion work was
-implemented in Phase 9. Do not begin Phase 10 or later parent work before this
-isolated successor boundary is created and its Stage-0 preconditions pass.
+implemented in Phase 9 or Stage 0. The isolated successor boundary and its
+Stage-0 preconditions are recorded in its `stage-0-review.md`; this checkpoint
+does not authorize Stage 1, Phase 10, or later parent work. Stage 1 must stop
+after automated validation and deterministic visual evidence for explicit
+Human Geometry Approval. Stage 2 refreeze follows that approval; Stage 3+
+requires the refreeze. See the successor `stage-1-authorization.md` draft.
 
 ## Phase 10 — W_Flyer Persona asset, rig, and easter eggs
 

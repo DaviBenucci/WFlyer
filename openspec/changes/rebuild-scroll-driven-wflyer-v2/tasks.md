@@ -80,6 +80,12 @@ retained; only its phase classification and later execution position changed.
 > OpenSpec at Stage 0 from the canonical successor specification. This records
 > the next boundary only; no successor implementation is started here.
 
+> **Stage-0 resolution (2026-09-05):** the isolated successor planning package
+> is complete and Gate 0 is PASS; see its `stage-0-review.md`. The owner has
+> approved Stage 0; bounded Stage-1 authorization remains pending. Task 36 and
+> later parent tasks remain unchecked; this bootstrap does not authorize their
+> implementation.
+
 ## 10. Persona final asset and easter eggs
 - [ ] Stop for final Persona asset approval and integrate rig/easter eggs
 

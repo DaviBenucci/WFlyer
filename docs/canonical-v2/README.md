@@ -7,7 +7,10 @@ the native-scroll master story, semantic header/history, Professional and
 Application scenes, one continuous dual score, and the secure Application
 PRELAUNCH refinement. Gate 9 passed on 2026-09-04 at technical-baseline commit
 `306ccb74da6c7bbf8f187e360c0776c571b5fc3d`; the successor Assembly/Motion
-OpenSpec has not started and the public `/` route has not been cut over.
+OpenSpec completed documentation-only Stage 0 on 2026-09-05 with Gate 0 PASS.
+The owner has approved Stage 0 and its scoped documentation checkpoint commit.
+Bounded Stage-1 authorization remains pending; no successor runtime
+implementation or public `/` cutover has started.
 
 **Implementation plan:** [`../../WFLYER_IMPLEMENTATION_PLAN.md`](../../WFLYER_IMPLEMENTATION_PLAN.md)
 
