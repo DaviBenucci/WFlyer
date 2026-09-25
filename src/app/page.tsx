@@ -12,7 +12,6 @@ import {
 } from "@/components/ui";
 import { scoreChapterById } from "@/config/chapters";
 import { createPageMetadata } from "@/config/seo";
-import { siteConfig } from "@/config/site";
 import { homeContent } from "@/content/site-content";
 
 import styles from "./page.module.css";
@@ -45,11 +44,10 @@ export default function HomePage() {
         <section
           aria-labelledby="home-title"
           className={styles.hero}
-          data-home-bifurcation=""
+          data-home-origin="portfolio"
         >
           <h1 className="wf-sr-only" id="home-title">
-            Música e tecnologia organizadas em duas experiências
-            complementares
+            Trabalho profissional em tecnologia, produto e design
           </h1>
 
           <OriginScore
@@ -66,67 +64,13 @@ export default function HomePage() {
               className={styles.clef}
               data-brand-intro-home-clef=""
             />
-            <p className={styles.originLabel}>Dois caminhos, uma origem</p>
+            <p className={styles.originLabel}>Uma origem, um percurso</p>
           </div>
 
           <section
-            aria-labelledby="application-branch-title"
-            className={`${styles.branch} ${styles.applicationBranch}`}
-            data-home-branch="application"
-          >
-            <Eyebrow
-              className={styles.eyebrow}
-              data-brand-intro-home-copy="application"
-            >
-              {homeContent.application.eyebrow}
-            </Eyebrow>
-            <p
-              className={styles.mobileDirection}
-              data-brand-intro-home-copy="application"
-            >
-              Ramo da aplicação · avance para a esquerda
-            </p>
-            <Heading
-              as="h2"
-              className={styles.branchTitle}
-              data-brand-intro-home-copy="application"
-              id="application-branch-title"
-              size="lg"
-            >
-              {homeContent.application.title}
-            </Heading>
-            <Text
-              className={styles.description}
-              data-brand-intro-home-copy="application"
-              tone="muted"
-            >
-              {homeContent.application.description}
-            </Text>
-            <div
-              className={styles.actions}
-              data-brand-intro-home-actions="application"
-            >
-              <LinkButton
-                external
-                href={siteConfig.applicationUrl}
-                target="_blank"
-              >
-                Acessar aplicação
-              </LinkButton>
-              <LinkButton
-                href={homeContent.application.route}
-                leadingIcon={<ArrowIcon direction="left" />}
-                variant="ghost"
-              >
-                Saiba mais
-              </LinkButton>
-            </div>
-          </section>
-
-          <section
-            aria-labelledby="institutional-branch-title"
+            aria-labelledby="professional-path-title"
             className={`${styles.branch} ${styles.institutionalBranch}`}
-            data-home-branch="institutional"
+            data-home-branch="professional"
           >
             <Eyebrow
               className={styles.eyebrow}
@@ -134,17 +78,11 @@ export default function HomePage() {
             >
               {homeContent.institutional.eyebrow}
             </Eyebrow>
-            <p
-              className={styles.mobileDirection}
-              data-brand-intro-home-copy="institutional"
-            >
-              Ramo institucional · avance para a direita
-            </p>
             <Heading
               as="h2"
               className={styles.branchTitle}
               data-brand-intro-home-copy="institutional"
-              id="institutional-branch-title"
+              id="professional-path-title"
               size="lg"
             >
               {homeContent.institutional.title}
@@ -164,13 +102,13 @@ export default function HomePage() {
                 href="/servicos"
                 trailingIcon={<ArrowIcon />}
               >
-                Conheça nossos serviços
+                Conheça meus serviços
               </LinkButton>
               <LinkButton
                 href={homeContent.institutional.route}
                 variant="ghost"
               >
-                Conhecer a empresa
+                Conhecer meu trabalho
               </LinkButton>
             </div>
           </section>
@@ -189,7 +127,7 @@ export default function HomePage() {
               <path d="M12 8v5" />
               <path d="m9 25 3 3 3-3" />
             </svg>
-            <span>Escolha um caminho para explorar</span>
+            <span>Explore o trabalho profissional</span>
           </div>
         </section>
         </Container>

@@ -11,7 +11,6 @@ export interface VisualArchetypeManifest {
   readonly updated_at: "2026-07-29";
   readonly source_files: {
     readonly master_board: string;
-    readonly application_reference: string;
   };
   readonly archetypes: Readonly<Record<string, VisualArchetype>>;
   readonly theme_derivation: {
@@ -35,41 +34,26 @@ export const visualArchetypeManifest = {
   updated_at: "2026-07-29",
   source_files: {
     master_board: "master/wflyer-approved-master-board.png",
-    application_reference: "application/application-desktop-light.png",
   },
   archetypes: {
-    "origin-bifurcation": {
+    "portfolio-origin": {
       source_panels: ["home-light", "home-dark"],
       pages: ["home"],
       rules: [
         "central-clef-origin",
-        "dual-branch-layout",
+        "single-portfolio-layout",
         "balanced-editorial-hero",
       ],
     },
-    "product-demo": {
-      source_files: ["application/application-desktop-light.png"],
-      pages: ["application"],
-      rules: [
-        "editorial-hero",
-        "interactive-tablet",
-        "five-benefit-strip",
-      ],
-    },
     "editorial-sequence": {
-      source_panels: ["home-light", "application-light"],
-      pages: ["application-how-it-works", "company"],
+      source_panels: ["home-light"],
+      pages: ["company"],
       rules: [
         "large-serif-heading",
         "restrained-copy",
         "score-continuity",
         "modular-sections",
       ],
-    },
-    "editorial-benefits-terminal": {
-      source_panels: ["application-light", "services-light"],
-      pages: ["application-benefits"],
-      rules: ["benefit-cards", "terminal-cta", "final-double-barline"],
     },
     "service-grid": {
       source_panels: ["services-light", "services-dark"],
@@ -85,15 +69,6 @@ export const visualArchetypeManifest = {
         "no-horizontal-scroll-dependency",
       ],
     },
-    "portfolio-grid": {
-      source_panels: ["portfolio-light", "portfolio-dark"],
-      pages: ["portfolio"],
-      rules: [
-        "project-cards",
-        "verified-projects-only",
-        "external-link-affordance",
-      ],
-    },
     "contact-terminal": {
       source_panels: ["contact-light", "contact-dark"],
       pages: ["contact"],
@@ -105,7 +80,7 @@ export const visualArchetypeManifest = {
       ],
     },
     "service-detail": {
-      source_panels: ["services-light", "application-light", "contact-light"],
+      source_panels: ["services-light", "contact-light"],
       pages: [
         "service-sites",
         "service-applications",

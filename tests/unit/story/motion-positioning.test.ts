@@ -47,7 +47,7 @@ describe("Phase-4 to Phase-5 positioning handoff", () => {
       getRuntime: () => runtime,
     });
 
-    await adapter.position("application-benefits", {
+    await adapter.position("professional-services", {
       intent: "position-destination",
     });
     const preserved = await adapter.position("home", {
@@ -55,7 +55,7 @@ describe("Phase-4 to Phase-5 positioning handoff", () => {
     });
 
     expect(runtime.position).toHaveBeenCalledWith(
-      "application-benefits",
+      "professional-services",
       expect.objectContaining({ intent: "position-destination" }),
     );
     expect(runtime.rebuildPreservingActiveChapter).toHaveBeenCalledWith(

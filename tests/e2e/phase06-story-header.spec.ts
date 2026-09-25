@@ -8,11 +8,7 @@ const MOTION_ROOT = "main[data-motion-lab]";
 const STORY_HEADER = "header[data-story-v2-header]";
 
 const HEADER_TARGETS = [
-  ["application-overview", "#aplicacao", "Aplicação", '[data-application-scene="overview"]'],
-  ["application-how-it-works", "#como-funciona", "Como funciona", '[data-application-scene="how-it-works"]'],
-  ["application-benefits", "#beneficios", "Benefícios", '[data-application-scene="benefits"]'],
-  ["application-access", "#lancamento", "Lançamento", '[data-application-scene="access"]'],
-  ["home", "#home", "W_Flyer", '[data-structural-placeholder="home"]'],
+  ["home", "#home", "W_Flyer", "[data-home-geometry]"],
   ["professional-about", "#sobre", "Sobre", '[data-professional-scene="about"]'],
   ["professional-services", "#servicos", "Serviços", '[data-professional-scene="services"]'],
   ["professional-process", "#processo", "Processo", '[data-professional-scene="process"]'],
@@ -83,7 +79,7 @@ test.describe("Phase-6 story header traversal", () => {
     await page.setViewportSize({ height: 900, width: 1536 });
   });
 
-  test("uses only canonical targets and traverses from Home in both directions", async ({
+  test("uses only canonical portfolio targets and traverses from Home", async ({
     page,
   }) => {
     await openMotionLab(page);
@@ -113,7 +109,7 @@ test.describe("Phase-6 story header traversal", () => {
       await page.evaluate(async () => {
         try {
           await window.__WFLYER_PHASE5_MOTION__?.navigate(
-            "application-demo",
+            "removed-chapter" as never,
           );
           return "resolved";
         } catch (error) {
@@ -141,24 +137,17 @@ test.describe("Phase-6 story header traversal", () => {
     expect(home.progress).toBeCloseTo(home.homeProgress, 6);
     expect(home.homeProgress).not.toBeCloseTo(0.5, 3);
 
-    const applicationLink = header.locator(
-      '[data-story-navigation-target="application-overview"]',
-    );
-    await applicationLink.click();
-    await waitForTraversalCompletion(page, "application-overview");
-    await expect(page).toHaveURL(/#aplicacao$/u);
-
     const result = await page.evaluate(() => ({
       chapterId: window.history.state?.__wflyerStoryV2?.chapterId,
       historyLength: window.history.length,
     }));
     expect(result).toEqual({
-      chapterId: "application-overview",
-      historyLength: initialHistoryLength + 3,
+      chapterId: "home",
+      historyLength: initialHistoryLength + 2,
     });
   });
 
-  test("proves the exact ten-item order, tab sequence, click target, active scene, aria-current, and hash", async ({
+  test("proves the exact portfolio order, tab sequence, click target, active scene, aria-current, and hash", async ({
     page,
   }) => {
     test.setTimeout(55_000);
@@ -190,10 +179,7 @@ test.describe("Phase-6 story header traversal", () => {
     }
 
     for (const [chapterId, hash, , sceneSelector] of HEADER_TARGETS) {
-      const sourceChapterId =
-        chapterId === "application-overview"
-          ? "home"
-          : "application-overview";
+      const sourceChapterId = chapterId === "home" ? "professional-about" : "home";
       await positionImmediately(page, sourceChapterId);
 
       const link = header.locator(
@@ -218,10 +204,10 @@ test.describe("Phase-6 story header traversal", () => {
     page,
   }) => {
     await openMotionLab(page);
-    await positionImmediately(page, "application-overview");
+    await positionImmediately(page, "professional-about");
     await page
       .locator(
-        `${STORY_HEADER} [data-story-navigation-target="application-how-it-works"]`,
+        `${STORY_HEADER} [data-story-navigation-target="professional-services"]`,
       )
       .click();
     await expect
@@ -236,14 +222,14 @@ test.describe("Phase-6 story header traversal", () => {
     );
     expect(adjacent.lastTraversalDurationSeconds).toBeGreaterThanOrEqual(0.65);
     expect(adjacent.lastTraversalDurationSeconds).toBeLessThan(3);
-    await waitForTraversalCompletion(page, "application-how-it-works");
+    await waitForTraversalCompletion(page, "professional-services");
   });
 
   test("uses proportional bounded duration and crosses non-header intermediate chapters", async ({
     page,
   }) => {
     await openMotionLab(page);
-    await positionImmediately(page, "application-benefits");
+    await positionImmediately(page, "professional-services");
     const sourceProgress = (await motionSnapshot(page)).progress;
     await page.evaluate(() => {
       const root = document.querySelector<HTMLElement>("main[data-motion-lab]");
@@ -285,17 +271,12 @@ test.describe("Phase-6 story header traversal", () => {
     expect(running.lastTraversalDurationSeconds).toBeLessThanOrEqual(3);
     await waitForTraversalCompletion(page, "professional-contact");
     const completed = await motionSnapshot(page);
-    const overviewProgress = completed.labelProgress["app-overview"];
     const processProgress = completed.labelProgress["pro-process"];
     const homeProgress = completed.homeProgress;
 
-    expect(overviewProgress).toBeDefined();
     expect(processProgress).toBeDefined();
     expect(homeProgress).not.toBeNull();
-    expect(sourceProgress).toBeLessThan(overviewProgress ?? 0);
-    expect(overviewProgress ?? 1).toBeLessThan(homeProgress ?? 0);
-    expect(completed.progress).toBeGreaterThan(overviewProgress ?? 1);
-    expect(sourceProgress).toBeLessThan(homeProgress ?? 0);
+    expect(sourceProgress).toBeGreaterThanOrEqual(homeProgress ?? 0);
     expect(completed.progress).toBeGreaterThan(homeProgress ?? 1);
     expect(sourceProgress).toBeLessThan(processProgress ?? 0);
     expect(completed.progress).toBeGreaterThan(processProgress ?? 1);
@@ -315,7 +296,7 @@ test.describe("Phase-6 story header traversal", () => {
         "professional-contact",
       ]),
     );
-    expect(visited.length).toBeGreaterThanOrEqual(6);
+    expect(visited.length).toBeGreaterThanOrEqual(3);
   });
 
   test("replaces passive semantic history without appending entries", async ({
@@ -402,10 +383,10 @@ test.describe("Phase-6 story header traversal", () => {
       .poll(async () => (await motionSnapshot(page)).ownedTraversalCount)
       .toBe(1);
     const supersedingTarget = page.locator(
-      `${STORY_HEADER} [data-story-navigation-target="application-how-it-works"]`,
+      `${STORY_HEADER} [data-story-navigation-target="professional-services"]`,
     );
     await supersedingTarget.click();
-    await waitForTraversalCompletion(page, "application-how-it-works");
+    await waitForTraversalCompletion(page, "professional-services");
     const superseded = await motionSnapshot(page);
 
     expect(superseded.lastCancelledTraversalReason).toBe("superseded");
@@ -504,7 +485,7 @@ test.describe("Phase-6 story header traversal", () => {
     const destroyed = await page.evaluate(async () => {
       const controller = window.__WFLYER_PHASE5_MOTION__;
       if (controller === undefined) throw new Error("Missing motion controller.");
-      void controller.navigate("application-benefits");
+      void controller.navigate("professional-contact");
       await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
       const snapshot = controller.destroyForReplacement();
       return {
@@ -560,11 +541,11 @@ test.describe("Phase-6 story header traversal", () => {
       "static",
     );
     await header
-      .locator('[data-story-navigation-target="application-benefits"]')
+      .locator('[data-story-navigation-target="professional-projects"]')
       .click();
     await expect
       .poll(async () => (await motionSnapshot(page)).activeChapterId)
-      .toBe("application-benefits");
+      .toBe("professional-projects");
     const reduced = await motionSnapshot(page);
     expect(reduced.lastTraversalDurationSeconds).toBe(0);
     expect(reduced.ownedTraversalCount).toBe(0);

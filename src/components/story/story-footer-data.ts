@@ -12,8 +12,7 @@ export interface StoryFooterGroup {
 }
 
 /**
- * One shared source for the global story footer and branch-terminal variants.
- * Branch terminals may present a subset, but they must not maintain copies.
+ * One shared source for the global story footer and Professional terminal.
  */
 export const STORY_FOOTER_GROUPS: readonly StoryFooterGroup[] = Object.freeze([
   Object.freeze({
@@ -21,14 +20,12 @@ export const STORY_FOOTER_GROUPS: readonly StoryFooterGroup[] = Object.freeze([
     links: Object.freeze([
       { href: "/sobre", label: "Sobre" },
       { href: "/servicos", label: "Serviços" },
-      { href: "/portfolio", label: "Projetos" },
       { href: "/contato", label: "Contato" },
     ]),
   }),
   Object.freeze({
     label: "Informações",
     links: Object.freeze([
-      { href: "/aplicacao-wflyer", label: "Aplicação W_Flyer" },
       { href: "/politica-de-privacidade", label: "Privacidade" },
       { href: "/politica-de-cookies", label: "Cookies" },
       { href: "/termos-de-uso", label: "Termos de uso" },

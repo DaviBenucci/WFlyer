@@ -42,14 +42,12 @@ function edgeToX(edge: ScoreEdge): number {
 }
 
 function getControlPoints({
-  branch,
   entryAnchorY,
   entryEdge,
   exitAnchorY,
   exitEdge,
   line,
 }: {
-  readonly branch: ScoreBranch;
   readonly entryAnchorY: number;
   readonly entryEdge: ScoreEdge;
   readonly exitAnchorY: number;
@@ -66,17 +64,16 @@ function getControlPoints({
     y: anchorToY(exitAnchorY) + lineOffset,
   };
   const horizontalDistance = end.x - start.x;
-  const waveSign = branch === "institutional" ? 1 : -1;
 
   return [
     start,
     {
       x: start.x + horizontalDistance * 0.32,
-      y: start.y + CURVE_AMPLITUDE * waveSign,
+      y: start.y + CURVE_AMPLITUDE,
     },
     {
       x: start.x + horizontalDistance * 0.68,
-      y: end.y - CURVE_AMPLITUDE * waveSign,
+      y: end.y - CURVE_AMPLITUDE,
     },
     end,
   ];
@@ -126,7 +123,6 @@ function cubicAngle(
 }
 
 export function getChapterScorePath({
-  branch,
   entryAnchorY,
   entryEdge,
   exitAnchorY,
@@ -134,12 +130,11 @@ export function getChapterScorePath({
   line = 0,
 }: Pick<
   ChapterScoreProps,
-  "branch" | "entryAnchorY" | "entryEdge" | "exitAnchorY" | "exitEdge"
+  "entryAnchorY" | "entryEdge" | "exitAnchorY" | "exitEdge"
 > & {
   readonly line?: number;
 }): string {
   const [start, firstControl, secondControl, end] = getControlPoints({
-    branch,
     entryAnchorY,
     entryEdge,
     exitAnchorY,
@@ -209,7 +204,6 @@ export function ChapterScore({
         <path
           className={styles.chapterStaffLine}
           d={getChapterScorePath({
-            branch,
             entryAnchorY,
             entryEdge,
             exitAnchorY,
@@ -224,7 +218,6 @@ export function ChapterScore({
       ))}
       {NOTES.map((note, index) => {
         const points = getControlPoints({
-          branch,
           entryAnchorY,
           entryEdge,
           exitAnchorY,
@@ -233,15 +226,13 @@ export function ChapterScore({
         });
         const point = cubicPoint(points, note.t);
         const pathAngle = cubicAngle(points, note.t);
-        const readableAngle =
-          branch === "application" ? pathAngle - 180 : pathAngle;
 
         return (
           <MusicalNote
             data-chapter-note={index + 1}
             filled={note.filled}
             key={note.t}
-            rotation={readableAngle}
+            rotation={pathAngle}
             scale={note.scale}
             stem={note.stem}
             x={point.x}

@@ -1,3 +1,5 @@
+// Historical Phase-3 capture recipe. ADR-056 withdrew its Projects routes;
+// do not use this script as current-route validation.
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
 import { once } from "node:events";

@@ -64,10 +64,10 @@ test("the decorative transition layer is inert, hidden from AT, and never focusa
   page,
 }) => {
   await page.setViewportSize({ height: 1024, width: 1536 });
-  await page.goto("/aplicacao-wflyer");
-  await warmRoute(page, "/sobre");
+  await page.goto("/sobre");
+  await warmRoute(page, "/servicos");
   await holdAt(page, "midpoint");
-  await visibleHeaderLink(page, "/sobre").click();
+  await visibleHeaderLink(page, "/servicos").click();
   await waitForCheckpoint(page, "midpoint");
 
   const transitionLayer = overlay(page);
@@ -85,10 +85,10 @@ test("the decorative transition layer is inert, hidden from AT, and never focusa
   ).toHaveCount(0);
   await expect(
     transitionLayer.locator("[data-transition-segment]"),
-  ).toHaveCount(2);
+  ).toHaveCount(1);
   await expect(
     transitionLayer.locator("[data-transition-note]"),
-  ).toHaveCount(6);
+  ).toHaveCount(3);
 
   await page.keyboard.press("Tab");
   expect(
@@ -96,7 +96,7 @@ test("the decorative transition layer is inert, hidden from AT, and never focusa
   ).toBe(false);
 
   await releaseTransition(page);
-  await waitForSettledTransition(page, "/sobre", operableCompletion);
+  await waitForSettledTransition(page, "/servicos", operableCompletion);
   await expect(page.getByRole("main")).toBeFocused();
 });
 
@@ -197,13 +197,7 @@ for (const state of normativeStates) {
   });
 }
 
-for (const terminal of [
-  {
-    name: "Benefits",
-    route: "/aplicacao-wflyer/beneficios",
-  },
-  { name: "Contact", route: "/contato" },
-] as const) {
+for (const terminal of [{ name: "Contact", route: "/contato" }] as const) {
   test(`${terminal.name} keeps previous, Home, and theme controls keyboard reachable`, async ({
     page,
   }) => {
@@ -211,7 +205,7 @@ for (const terminal of [
 
     await expect(chapterControl(page, "previous")).toBeVisible();
     await expect(
-      page.locator('[data-home-pivot="desktop"]:visible'),
+      page.locator('a[href="/"]:visible').first(),
     ).toBeVisible();
     await expect(
       page.locator('button[aria-label="Tema escuro"]:visible'),

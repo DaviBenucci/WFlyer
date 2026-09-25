@@ -5,35 +5,25 @@ import { describe, expect, it } from "vitest";
 
 import { pageSeo, publicRoutes } from "@/config/seo";
 import { siteConfig } from "@/config/site";
+import { PUBLIC_PROJECTS } from "@/content/public/domain";
 import {
-  applicationContent,
-  benefitsContent,
   contactProjectTypes,
-  howItWorksContent,
   legalDocuments,
   processContent,
-  portfolioContent,
   serviceDetails,
   servicesContent,
 } from "@/content/site-content";
 
 const expectedRoutes = [
   "/",
-  "/aplicacao-wflyer",
-  "/aplicacao-wflyer/como-funciona",
-  "/aplicacao-wflyer/beneficios",
   "/sobre",
   "/servicos",
   "/processo",
-  "/portfolio",
   "/contato",
   "/servicos/criacao-de-sites",
   "/servicos/criacao-de-aplicacoes",
   "/servicos/integracoes",
   "/servicos/solucoes-sob-medida",
-  "/portfolio/w-flyer",
-  "/portfolio/msn-distribuidora",
-  "/portfolio/msn-suprimentos",
   "/politica-de-privacidade",
   "/politica-de-cookies",
   "/termos-de-uso",
@@ -41,7 +31,7 @@ const expectedRoutes = [
 ] as const;
 
 describe("conteúdo público tipado", () => {
-  it("mantém exatamente as 20 rotas públicas aprovadas", () => {
+  it("mantém exatamente as 13 rotas públicas aprovadas", () => {
     expect(publicRoutes).toEqual(expectedRoutes);
     expect(Object.keys(pageSeo)).toEqual(expectedRoutes);
   });
@@ -61,13 +51,13 @@ describe("conteúdo público tipado", () => {
   });
 
   it("limita o portfólio aos três projetos autorizados", () => {
-    expect(portfolioContent.projects.map(({ name }) => name)).toEqual([
+    expect(PUBLIC_PROJECTS.map(({ title }) => title)).toEqual([
       "W_Flyer",
       "MSN Distribuidora",
       "MSN Suprimentos",
     ]);
     expect(
-      portfolioContent.projects.every(
+      PUBLIC_PROJECTS.every(
         (project) => !("metrics" in project || "testimonial" in project),
       ),
     ).toBe(true);
@@ -90,7 +80,6 @@ describe("conteúdo público tipado", () => {
     ] as const;
 
     expect(siteConfig).toMatchObject({
-      applicationUrl: "https://app.wflyer.com.br",
       email: "davi.benucci@wflyer.com.br",
       name: "W_Flyer",
       social: {
@@ -100,13 +89,12 @@ describe("conteúdo público tipado", () => {
       url: "https://wflyer.com.br",
     });
     expect(
-      portfolioContent.projects.map(({ name, url }) => [name, url]),
+      PUBLIC_PROJECTS.map(({ title, publicUrl }) => [title, publicUrl]),
     ).toEqual(approvedProjects);
 
     for (const approvedLine of [
       `public_name: ${siteConfig.name}`,
       `site_url: ${siteConfig.url}`,
-      `app_url: ${siteConfig.applicationUrl}`,
       `public_email: ${siteConfig.email}`,
       `recipient_email: ${siteConfig.email}`,
       `url: ${siteConfig.social.instagram}`,
@@ -161,9 +149,6 @@ describe("conteúdo público tipado", () => {
 
   it("associa ícones e tipos de contato por metadados estáveis", () => {
     const iconBearingCollections = [
-      applicationContent.highlights,
-      howItWorksContent.steps,
-      benefitsContent.benefits,
       servicesContent.services,
       processContent.steps,
     ];

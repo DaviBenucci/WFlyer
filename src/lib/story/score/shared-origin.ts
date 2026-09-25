@@ -40,7 +40,6 @@ export type ScorePathOriginReviewTheme =
   (typeof SCORE_PATH_ORIGIN_REVIEW_THEMES)[number];
 
 export const SCORE_PATH_ORIGIN_REVIEW_BRANCHES = Object.freeze([
-  "application",
   "professional",
 ] as const);
 export type ScorePathOriginReviewBranch =
@@ -103,7 +102,7 @@ export interface ScorePathOriginReviewFixture {
       readonly rotationDegrees: 0;
       readonly width: number;
     };
-    readonly commonOriginGap: number;
+    readonly originPointGap: 0;
     readonly connectorEventCount: 0;
     readonly downstreamGrammar: "ORGANIC_FLOWING_ALTERNATING_S_APPROVED_UNCHANGED";
     readonly fiveLineContinuity: true;
@@ -174,21 +173,19 @@ const ORIGIN_GEOMETRY_BY_MODE = Object.freeze({
 } as const satisfies Record<ScorePathOriginReviewMode, OriginGeometry>);
 
 function buildControls(
-  branch: ScorePathOriginReviewBranch,
   geometry: OriginGeometry,
 ): CubicControls {
-  const direction = branch === "application" ? -1 : 1;
-  const endX = branch === "application" ? 0 : geometry.pathWidth;
+  const endX = geometry.pathWidth;
   const distance = Math.abs(endX - geometry.origin.x);
 
   return Object.freeze({
     start: geometry.origin,
     first: Object.freeze({
-      x: geometry.origin.x + direction * distance * 0.28,
+      x: geometry.origin.x + distance * 0.28,
       y: geometry.origin.y,
     }),
     second: Object.freeze({
-      x: geometry.origin.x + direction * distance * 0.64,
+      x: geometry.origin.x + distance * 0.64,
       y: geometry.origin.y + geometry.amplitude,
     }),
     end: Object.freeze({
@@ -199,10 +196,7 @@ function buildControls(
 }
 
 class OriginCubicScorePath implements ScorePath {
-  constructor(
-    private readonly branch: ScorePathOriginReviewBranch,
-    private readonly controls: CubicControls,
-  ) {}
+  constructor(private readonly controls: CubicControls) {}
 
   pointAt(t: number): Vec2 {
     requireNormalizedPosition(t);
@@ -243,9 +237,7 @@ class OriginCubicScorePath implements ScorePath {
   normalAt(t: number): Vec2 {
     const tangent = this.tangentAt(t);
 
-    return this.branch === "professional"
-      ? { x: tangent.y, y: -tangent.x }
-      : { x: -tangent.y, y: tangent.x };
+    return { x: tangent.y, y: -tangent.x };
   }
 }
 
@@ -325,8 +317,8 @@ function buildBranchReview(
   branch: ScorePathOriginReviewBranch,
   geometry: OriginGeometry,
 ): ScorePathOriginBranchReview {
-  const controls = buildControls(branch, geometry);
-  const path = Object.freeze(new OriginCubicScorePath(branch, controls));
+  const controls = buildControls(geometry);
+  const path = Object.freeze(new OriginCubicScorePath(controls));
   const notationSafeEndT = firstNotationSafeEnd(path);
   const model = buildScoreModel({
     id: `phase-9-task-33:origin:${branch}`,
@@ -403,13 +395,6 @@ function buildEvidence(
   const branchList = SCORE_PATH_ORIGIN_REVIEW_BRANCHES.map(
     (branch) => branches[branch],
   );
-  const applicationLines = branches.application.model.staff.lines;
-  const professionalLines = branches.professional.model.staff.lines;
-  const commonOriginGap = Math.max(
-    ...applicationLines.map((line, index) =>
-      distanceBetween(line.points[0]!, professionalLines[index]!.points[0]!),
-    ),
-  );
   const clefs = branchList
     .flatMap(({ model }) => model.primitives)
     .filter(
@@ -454,7 +439,7 @@ function buildEvidence(
       rotationDegrees: 0 as const,
       width: clef.width,
     }),
-    commonOriginGap,
+    originPointGap: 0 as const,
     connectorEventCount: 0 as const,
     downstreamGrammar:
       "ORGANIC_FLOWING_ALTERNATING_S_APPROVED_UNCHANGED" as const,
@@ -472,6 +457,17 @@ const FIXTURE_CACHE = new Map<
   ScorePathOriginReviewFixture
 >();
 
+/** Active portfolio projection uses only the approved Professional origin. */
+export function buildProfessionalOriginPath(mode: ScorePathOriginReviewMode) {
+  const geometry = ORIGIN_GEOMETRY_BY_MODE[mode];
+  const path = new OriginCubicScorePath(buildControls(geometry));
+  return {
+    origin: geometry.origin,
+    path,
+    notationSafeEndT: firstNotationSafeEnd(path),
+  };
+}
+
 export function buildScorePathOriginReviewFixture(
   mode: ScorePathOriginReviewMode,
 ): ScorePathOriginReviewFixture {
@@ -481,7 +477,6 @@ export function buildScorePathOriginReviewFixture(
 
   const geometry = ORIGIN_GEOMETRY_BY_MODE[mode];
   const branches = Object.freeze({
-    application: buildBranchReview("application", geometry),
     professional: buildBranchReview("professional", geometry),
   });
   const fixture = Object.freeze({

@@ -23,10 +23,7 @@ describe("runtime transition geometry", () => {
   it("selects exit-to-entry while moving away and entry-to-exit while returning", () => {
     const away = classifyScoreTransition("/servicos", "/processo");
     const returning = classifyScoreTransition("/processo", "/servicos");
-    const crossing = classifyScoreTransition(
-      "/aplicacao-wflyer/beneficios",
-      "/contato",
-    );
+
 
     expect([sourceAnchorKind(away), destinationAnchorKind(away)]).toEqual([
       "exit",
@@ -36,20 +33,15 @@ describe("runtime transition geometry", () => {
       sourceAnchorKind(returning),
       destinationAnchorKind(returning),
     ]).toEqual(["entry", "exit"]);
-    expect([
-      sourceAnchorKind(crossing),
-      destinationAnchorKind(crossing),
-    ]).toEqual(["entry", "entry"]);
   });
 
-  it("uses the runtime manifest anchors and Home pivot fallback", () => {
+  it("uses the runtime manifest anchors", () => {
     const transition = classifyScoreTransition("/servicos", "/processo");
 
     expect(
       resolveTransitionGeometry(transition, { width: 1_000, height: 800 }),
     ).toStrictEqual({
       height: 800,
-      pivot: { x: 500, y: 112.00000000000001 },
       source: { x: 1_000, y: 592 },
       target: { x: 0, y: 592 },
       width: 1_000,
@@ -65,13 +57,11 @@ describe("runtime transition geometry", () => {
         { width: 1_000, height: 800 },
         {
           destination: { x: 1_040, y: 900 },
-          pivot: { x: 510, y: 90 },
           source: { x: -20, y: 320 },
         },
       ),
     ).toStrictEqual({
       height: 800,
-      pivot: { x: 510, y: 90 },
       source: { x: -20, y: 320 },
       target: { x: 1_040, y: 900 },
       width: 1_000,
@@ -85,13 +75,11 @@ describe("runtime transition geometry", () => {
       { width: 1_000, height: 800 },
       {
         destination: { x: 10, y: Number.NaN },
-        pivot: { x: Number.NaN, y: 20 },
         source: { x: Number.NaN, y: 20 },
       },
     );
 
     expect(geometry).toMatchObject({
-      pivot: { x: 500, y: 112.00000000000001 },
       source: { x: 1_000, y: 544 },
       target: { x: 0, y: 544 },
     });
@@ -101,8 +89,7 @@ describe("runtime transition geometry", () => {
 describe("runtime transition drawing", () => {
   const geometry = {
     height: 600,
-    pivot: { x: 500, y: 100 },
-    source: { x: 100, y: 200 },
+      source: { x: 100, y: 200 },
     target: { x: 900, y: 400 },
     width: 1_000,
   } satisfies ScoreTransitionGeometry;
@@ -130,13 +117,6 @@ describe("runtime transition drawing", () => {
       x: 324,
       y: 256,
     });
-  });
-
-  it("creates exactly two ordered Home-pivot segments", () => {
-    expect(resolveTransitionSegments(geometry, "home-pivot")).toEqual([
-      { end: geometry.pivot, id: "to-home", start: geometry.source },
-      { end: geometry.target, id: "from-home", start: geometry.pivot },
-    ]);
   });
 
   it("creates no decorative segment for neutral replacement", () => {

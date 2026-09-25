@@ -9,7 +9,6 @@ import {
 
 const geometry = {
   height: 600,
-  pivot: { x: 500, y: 100 },
   source: { x: 100, y: 200 },
   target: { x: 900, y: 400 },
   width: 1_000,
@@ -89,19 +88,6 @@ describe("ScoreTransitionLayer", () => {
     expect(
       container.querySelector("[data-score-transition-layer]"),
     ).toHaveAttribute("data-direction", "left");
-  });
-
-  it("represents cross-branch travel with at most two segments and six notes", () => {
-    const { container } = renderLayer({ mode: "home-pivot" });
-    const segments = container.querySelectorAll("[data-transition-segment]");
-
-    expect(segments).toHaveLength(2);
-    expect(segments[0]).toHaveAttribute("data-segment-id", "to-home");
-    expect(segments[1]).toHaveAttribute("data-segment-id", "from-home");
-    expect(container.querySelectorAll("[data-transition-staff-line]")).toHaveLength(
-      10,
-    );
-    expect(container.querySelectorAll("[data-transition-note]")).toHaveLength(6);
   });
 
   it.each([

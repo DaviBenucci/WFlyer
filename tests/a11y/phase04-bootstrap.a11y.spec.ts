@@ -156,7 +156,7 @@ test.describe("Phase-4 bootstrap accessibility", () => {
   }) => {
     await page.setViewportSize({ height: 800, width: 320 });
     await page.emulateMedia({ colorScheme: "dark", reducedMotion: "reduce" });
-    await page.goto(`${BOOTSTRAP_PATH}#beneficios`, {
+    await page.goto(`${BOOTSTRAP_PATH}#projetos`, {
       waitUntil: "domcontentloaded",
     });
     await expect(page.locator(ROOT)).toHaveAttribute(
@@ -166,14 +166,14 @@ test.describe("Phase-4 bootstrap accessibility", () => {
     );
     await expect(page.locator(ROOT)).toHaveAttribute(
       "data-bootstrap-destination",
-      "application-benefits",
+      "professional-projects",
     );
     await expect(page.locator(ROOT)).toHaveAttribute(
       "data-bootstrap-reduced-motion",
       "true",
     );
     await expect(page.locator("main#main-content [data-chapter-id]")).toHaveCount(
-      13,
+      7,
     );
     await expectNoRelevantFindings(page, "reduced motion");
   });

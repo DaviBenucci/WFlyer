@@ -40,24 +40,13 @@ export interface ContentStep extends ContentCard {
 
 export const chapterLabels = {
   home: "Home",
-  application: "Aplicação",
-  "application-how-it-works": "Como funciona",
-  "application-benefits": "Benefícios",
   company: "Sobre",
   services: "Serviços",
   process: "Processo",
-  portfolio: "Projetos",
   contact: "Contato",
 } as const satisfies Record<ChapterId, string>;
 
 export const homeContent = {
-  application: {
-    eyebrow: "Aplicação musical",
-    title: "A aplicação musical que transforma partituras em experiência.",
-    description:
-      "A W_Flyer está sendo criada para ajudar músicos a estudar, adaptar materiais e se conectar com a música de uma forma mais prática.",
-    route: "/aplicacao-wflyer",
-  },
   institutional: {
     eyebrow: "Soluções digitais",
     title: "Soluções digitais sob medida para impulsionar o seu negócio.",
@@ -66,7 +55,7 @@ export const homeContent = {
     route: "/sobre",
   },
 } as const satisfies Record<
-  "application" | "institutional",
+  "institutional",
   {
     readonly description: string;
     readonly eyebrow: string;
@@ -75,151 +64,11 @@ export const homeContent = {
   }
 >;
 
-export const applicationContent = {
-  eyebrow: "Aplicação W_Flyer",
-  title: "Sua música, em qualquer tom.",
-  description:
-    "Transponha partituras de forma inteligente e prática. Do estudo à performance, leve sua música para o contexto instrumental de que precisa. A aplicação é uma ferramenta de apoio: a revisão humana e a decisão musical permanecem com você.",
-  status:
-    "Produto em desenvolvimento. A apresentação deste site descreve a proposta pública da aplicação e não substitui a avaliação musical do usuário.",
-  highlights: [
-    {
-      icon: "score",
-      title: "Leitura inteligente",
-      description:
-        "Um fluxo organizado para compreender a partitura e preparar a adaptação.",
-    },
-    {
-      icon: "sliders",
-      title: "Transposição orientada",
-      description:
-        "Escolhas de instrumento e tonalidade apresentadas de forma clara e revisável.",
-    },
-    {
-      icon: "note",
-      title: "Essência musical preservada",
-      description:
-        "O resultado permanece sujeito à conferência e à interpretação de quem toca.",
-    },
-    {
-      icon: "download",
-      title: "Exportação versátil",
-      description:
-        "Continuidade do trabalho nos formatos que forem aprovados pelo produto.",
-    },
-    {
-      icon: "cloud",
-      title: "Acesso de qualquer lugar",
-      description:
-        "Uma experiência web pensada para acompanhar estudo e preparação musical.",
-    },
-  ],
-} as const;
-
-export const howItWorksContent = {
-  eyebrow: "Aplicação · Como funciona",
-  title: "Da partitura ao resultado, em um fluxo orientado.",
-  description:
-    "Cada etapa torna as escolhas visíveis e mantém um momento explícito de revisão antes de continuar.",
-  steps: [
-    {
-      icon: "score",
-      number: "01",
-      title: "Escolha a partitura",
-      description:
-        "Insira ou selecione o material que será usado no fluxo da aplicação.",
-    },
-    {
-      icon: "source",
-      number: "02",
-      title: "Informe o contexto de origem",
-      description:
-        "Indique o instrumento e a tonalidade de origem para contextualizar o material.",
-    },
-    {
-      icon: "target",
-      number: "03",
-      title: "Defina o contexto de destino",
-      description:
-        "Escolha o instrumento e a tonalidade para os quais deseja adaptar a partitura.",
-    },
-    {
-      icon: "review",
-      number: "04",
-      title: "Visualize e revise",
-      description:
-        "Confira o resultado apresentado e faça a avaliação musical necessária.",
-    },
-    {
-      icon: "continue",
-      number: "05",
-      title: "Exporte ou continue",
-      description:
-        "Siga com o resultado nos formatos aprovados ou continue trabalhando no aplicativo.",
-    },
-  ],
-} as const satisfies {
-  readonly description: string;
-  readonly eyebrow: string;
-  readonly steps: readonly ContentStep[];
-  readonly title: string;
-};
-
-export const benefitsContent = {
-  eyebrow: "Aplicação · Benefícios",
-  title: "Mais tempo para interpretar, estudar e tocar.",
-  description:
-    "A proposta da W_Flyer é reduzir etapas repetitivas e tornar adaptações mais compreensíveis, sem retirar do músico a responsabilidade pela revisão.",
-  benefits: [
-    {
-      icon: "workflow",
-      title: "Menos etapas repetitivas",
-      description:
-        "Organize tarefas recorrentes em um fluxo único e orientado.",
-    },
-    {
-      icon: "instruments",
-      title: "Adaptação entre instrumentos",
-      description:
-        "Prepare materiais para diferentes contextos instrumentais com escolhas explícitas.",
-    },
-    {
-      icon: "clarity",
-      title: "Mudanças mais claras",
-      description:
-        "Visualize o contexto de origem, o destino e o resultado antes de seguir.",
-    },
-    {
-      icon: "human",
-      title: "Revisão humana",
-      description:
-        "Mantenha a interpretação, a conferência e a decisão musical com você.",
-    },
-    {
-      icon: "devices",
-      title: "Acesso flexível",
-      description:
-        "Use a experiência web em diferentes dispositivos, conforme a disponibilidade do produto.",
-    },
-    {
-      icon: "download",
-      title: "Continuidade do trabalho",
-      description:
-        "Exporte o resultado nos formatos que forem aprovados para a aplicação.",
-    },
-  ],
-} as const satisfies {
-  readonly benefits: readonly ContentCard[];
-  readonly description: string;
-  readonly eyebrow: string;
-  readonly title: string;
-};
-
 export const aboutContent = {
-  eyebrow: "Empresa",
+  eyebrow: "Perfil profissional",
   title: "Sobre a W_Flyer",
   description:
-    "A W_Flyer une tecnologia, design e música para construir experiências digitais claras, úteis e cuidadosamente executadas.",
+    "W_Flyer é a marca profissional de Davi Benucci para construir experiências digitais claras, úteis e cuidadosamente executadas com tecnologia, design e música.",
   pillars: [
     {
       icon: "mission",
@@ -339,65 +188,6 @@ export const processContent = {
   readonly description: string;
   readonly eyebrow: string;
   readonly steps: readonly ContentStep[];
-  readonly title: string;
-};
-
-export interface PortfolioProject {
-  readonly description: string;
-  readonly name: string;
-  readonly scope: readonly string[];
-  readonly status: "Em desenvolvimento" | "Publicado";
-  readonly type: string;
-  readonly url: string;
-}
-
-export const portfolioContent = {
-  eyebrow: "Portfólio",
-  title: "Projetos selecionados",
-  description:
-    "Uma seleção inicial apresentada com escopo e status verificáveis, sem métricas ou resultados não documentados.",
-  projects: [
-    {
-      name: "W_Flyer",
-      type: "Produto próprio",
-      description:
-        "Site institucional e experiência narrativa que organiza os dois ramos públicos da W_Flyer em uma dupla partitura.",
-      scope: [
-        "Identidade",
-        "Documentação",
-        "Arquitetura",
-        "Desenvolvimento",
-      ],
-      status: "Em desenvolvimento",
-      url: "https://wflyer.com.br",
-    },
-    {
-      name: "MSN Distribuidora",
-      type: "E-commerce",
-      description:
-        "Projeto real de comércio eletrônico da MSN Distribuidora, apresentado sem atribuir métricas ou resultados comerciais.",
-      scope: ["E-commerce"],
-      status: "Publicado",
-      url: "https://msndistribuidora.com.br",
-    },
-    {
-      name: "MSN Suprimentos",
-      type: "Site comercial e institucional",
-      description:
-        "Site que organiza conteúdo, apresenta linhas de produtos e direciona o visitante para atendimento ou compra.",
-      scope: [
-        "Organização de conteúdo",
-        "Apresentação de produtos",
-        "Direcionamento de atendimento",
-      ],
-      status: "Publicado",
-      url: "https://msnsuprimentos.com.br",
-    },
-  ],
-} as const satisfies {
-  readonly description: string;
-  readonly eyebrow: string;
-  readonly projects: readonly PortfolioProject[];
   readonly title: string;
 };
 
@@ -687,7 +477,7 @@ export const legalDocuments = {
         title: "Escopo desta política",
         paragraphs: [
           "Esta política se aplica ao site institucional wflyer.com.br e ao contato iniciado por seus canais. A aplicação disponível em app.wflyer.com.br é um ambiente separado e pode possuir termos próprios.",
-          "O site institucional não cria conta, área de cliente, banco de leads ou perfil de marketing. O cadastro opcional de interesse no lançamento da aplicação tem finalidade única e separada.",
+          "O site institucional não cria conta, área de cliente, banco de leads ou perfil de marketing.",
         ],
       },
       {
@@ -695,7 +485,6 @@ export const legalDocuments = {
         title: "Dados recebidos",
         paragraphs: [
           "Ao usar o formulário de contato, você pode informar nome, e-mail, empresa opcional, tipo de projeto, mensagem e consentimento. Esses dados são fornecidos voluntariamente.",
-          "Ao solicitar o aviso de lançamento, você informa somente e-mail e consentimento. O campo de segurança Turnstile e o campo-armadilha contra automação não ampliam essa finalidade.",
           "Cloudflare, Turnstile e a hospedagem podem processar dados técnicos necessários à segurança e à operação, como endereço IP, data, hora e características básicas da requisição.",
         ],
       },
@@ -704,7 +493,6 @@ export const legalDocuments = {
         title: "Finalidade",
         paragraphs: [
           "Os dados do contato são usados exclusivamente para responder à mensagem, compreender o contexto apresentado e avaliar a possibilidade de conduzir o projeto.",
-          "O e-mail do cadastro de lançamento é usado exclusivamente para registrar o interesse e enviar o aviso quando a aplicação estiver disponível. Ele não autoriza newsletter, publicidade ou outras comunicações.",
           "A W_Flyer não vende dados pessoais e não usa o contato para criar audiência de publicidade comportamental.",
         ],
       },
@@ -713,7 +501,6 @@ export const legalDocuments = {
         title: "Envio e operação",
         paragraphs: [
           "A mensagem validada é enviada pelo serviço Resend ao e-mail institucional davi.benucci@wflyer.com.br. O site não grava uma cópia em banco de dados.",
-          "O cadastro de lançamento validado é encaminhado primeiro para welcome.app@wflyer.com.br. Depois desse registro operacional, o serviço tenta enviar uma confirmação ao endereço informado. Uma falha nessa confirmação não desfaz o registro já concluído.",
           "Cloudflare fornece proteções de borda e o Turnstile ajuda a reduzir envios automatizados. A Napoleon executa a aplicação do site. Esses fornecedores podem manter registros técnicos conforme suas próprias obrigações e políticas.",
         ],
       },
@@ -722,7 +509,7 @@ export const legalDocuments = {
         title: "Registros técnicos",
         paragraphs: [
           "Os registros da aplicação devem ser mínimos e sanitizados. O corpo integral da mensagem, o e-mail completo, tokens e segredos não são registrados pelos logs do site.",
-          "O site não executa retenção em banco de leads. Mensagens e cadastros seguem para os sistemas de e-mail e do provedor, sujeitos às respectivas políticas e aos controles operacionais aplicáveis.",
+          "O site não executa retenção em banco de leads. Mensagens seguem para os sistemas de e-mail e do provedor, sujeitos às respectivas políticas e aos controles operacionais aplicáveis.",
         ],
       },
       {

@@ -41,15 +41,11 @@ function scoreHook<const TChapterId extends StoryChapterId>(
 }
 
 export const STORY_BRANCHES = Object.freeze({
-  application: Object.freeze({
-    desktopDirection: "left",
-    mobileOrder: 2,
-  }),
   professional: Object.freeze({
     desktopDirection: "right",
     mobileOrder: 1,
   }),
-}) satisfies Readonly<Record<"application" | "professional", StoryBranchDefinition>>;
+}) satisfies Readonly<Record<"professional", StoryBranchDefinition>>;
 
 /**
  * Chapter records follow the source order in story-chapters.v2.yaml. Rendering
@@ -68,77 +64,6 @@ export const STORY_CHAPTERS = Object.freeze([
     detailRoute: "/",
     sceneId: "home",
     scoreHook: scoreHook("home"),
-  }),
-  defineChapter({
-    kind: "chapter",
-    id: "application-overview",
-    label: "Aplicação",
-    hash: "#aplicacao",
-    branch: "application",
-    timelineLabel: "app-overview",
-    header: true,
-    detailRoute: "/aplicacao-wflyer",
-    sceneId: "application-overview",
-    scoreHook: scoreHook("application-overview"),
-  }),
-  defineChapter({
-    kind: "chapter",
-    id: "application-how-it-works",
-    label: "Como funciona",
-    hash: "#como-funciona",
-    branch: "application",
-    timelineLabel: "app-how",
-    header: true,
-    detailRoute: "/aplicacao-wflyer/como-funciona",
-    sceneId: "application-how-it-works",
-    scoreHook: scoreHook("application-how-it-works"),
-  }),
-  defineChapter({
-    kind: "chapter",
-    id: "application-benefits",
-    label: "Benefícios",
-    hash: "#beneficios",
-    branch: "application",
-    timelineLabel: "app-benefits",
-    header: true,
-    detailRoute: "/aplicacao-wflyer/beneficios",
-    sceneId: "application-benefits",
-    scoreHook: scoreHook("application-benefits"),
-  }),
-  defineChapter({
-    kind: "chapter",
-    id: "application-demo",
-    label: "Demonstração",
-    hash: "#demonstracao",
-    branch: "application",
-    timelineLabel: "app-demo",
-    header: false,
-    detailRoute: "/aplicacao-wflyer#demonstracao",
-    sceneId: "application-demo",
-    scoreHook: scoreHook("application-demo"),
-  }),
-  defineChapter({
-    kind: "chapter",
-    id: "application-access",
-    label: "Lançamento",
-    hash: "#lancamento",
-    branch: "application",
-    timelineLabel: "app-access",
-    header: true,
-    availabilityState: "PRELAUNCH",
-    sceneId: "application-access",
-    scoreHook: scoreHook("application-access"),
-  }),
-  defineChapter({
-    kind: "chapter",
-    id: "application-terminal",
-    label: "Application terminal",
-    branch: "application",
-    timelineLabel: "app-terminal",
-    header: false,
-    finalBarlineBefore: true,
-    sceneId: "application-terminal",
-    scoreHook: scoreHook("application-terminal"),
   }),
   defineChapter({
     kind: "chapter",
@@ -184,7 +109,6 @@ export const STORY_CHAPTERS = Object.freeze([
     branch: "professional",
     timelineLabel: "pro-projects",
     header: true,
-    detailRoute: "/portfolio",
     sceneId: "professional-projects",
     scoreHook: scoreHook("professional-projects"),
   }),
@@ -218,12 +142,6 @@ export const STORY_CHAPTER_BY_ID = Object.freeze(
 ) as Readonly<Record<StoryChapterId, StoryChapter>>;
 
 export const DESKTOP_TIMELINE_ORDER = Object.freeze([
-  "application-terminal",
-  "application-access",
-  "application-demo",
-  "application-benefits",
-  "application-how-it-works",
-  "application-overview",
   "home",
   "professional-about",
   "professional-services",
@@ -241,12 +159,6 @@ export const MOBILE_DOCUMENT_ORDER = Object.freeze([
   "professional-projects",
   "professional-contact",
   "professional-terminal",
-  "application-overview",
-  "application-how-it-works",
-  "application-benefits",
-  "application-demo",
-  "application-access",
-  "application-terminal",
   "global-footer",
 ] as const satisfies readonly StoryDocumentNodeId[]);
 
@@ -271,12 +183,6 @@ export const MOBILE_STORY_DOCUMENT: readonly StoryDocumentNode[] = Object.freeze
 
 /** Header targets only; consumers resolve labels/hashes through the chapter map. */
 export const HEADER_NAVIGATION: StoryHeaderNavigation = Object.freeze({
-  application: Object.freeze([
-    "application-overview",
-    "application-how-it-works",
-    "application-benefits",
-    "application-access",
-  ] as const satisfies readonly StoryChapterId[]),
   center: "home",
   professional: Object.freeze([
     "professional-about",
@@ -289,7 +195,6 @@ export const HEADER_NAVIGATION: StoryHeaderNavigation = Object.freeze({
 
 /** Exact canonical header order, derived from the branch-owned target lists. */
 export const HEADER_NAVIGATION_ORDER = Object.freeze([
-  ...HEADER_NAVIGATION.application,
   HEADER_NAVIGATION.center,
   ...HEADER_NAVIGATION.professional,
 ] as const satisfies readonly StoryChapterId[]);

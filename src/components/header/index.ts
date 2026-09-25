@@ -3,7 +3,6 @@ export {
   type NavigationMeasureProps,
 } from "./NavigationMeasure";
 export {
-  APPLICATION_NAVIGATION,
   getHeaderRouteState,
   INSTITUTIONAL_NAVIGATION,
   type HeaderNavigationId,

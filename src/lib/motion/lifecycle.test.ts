@@ -106,7 +106,7 @@ describe("navigationLifecycleReducer", () => {
 
   it("retains only the latest request during rapid navigation", () => {
     const first = createRequest(1);
-    const second = createRequest(2, "/sobre", "/portfolio");
+    const second = createRequest(2, "/sobre", "/contato");
     const third = createRequest(3, "/sobre", "/contato");
     const active = reduce(
       createInitialNavigationLifecycleState(),

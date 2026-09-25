@@ -1,4 +1,6 @@
-import type { CSSProperties } from "react";
+"use client";
+
+import { useState, type CSSProperties } from "react";
 
 import type { ProjectRecord } from "@/content/public";
 
@@ -41,6 +43,7 @@ export function ProjectCardFan({
   className,
   projects,
 }: ProjectCardFanProps) {
+  const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const visibleProjects = projects.filter(
     (project) => project.publicationStatus === "public" && project.featured,
   );
@@ -70,13 +73,16 @@ export function ProjectCardFan({
             className={styles.fanItem}
             data-project-card-item=""
             data-project-position={index + 1}
+            data-project-selected={selectedSlug === project.slug ? "true" : "false"}
             data-score-project-visit-card={index + 1}
             key={project.slug}
             style={getFanItemStyle(index, visibleProjects.length)}
           >
             <ProjectCard
+              onSelect={() => setSelectedSlug(project.slug)}
               position={index + 1}
               project={project}
+              selected={selectedSlug === project.slug}
               total={visibleProjects.length}
             />
           </li>

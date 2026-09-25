@@ -1,6 +1,7 @@
 export {
   CONTACT_PROJECT_TYPES,
   getFeaturedPublicProjects,
+  getPrimaryPublicProject,
   getPublicProjectBySlug,
   getPublicServiceBySlug,
   PHASE3_EDITORIAL_STATUS,
@@ -18,7 +19,6 @@ export type {
   Phase3StaticRoute,
   ProcessStep,
   ProjectRecord,
-  ProjectRoute,
   ProjectSlug,
   PublicChapterContent,
   PublicContentItem,

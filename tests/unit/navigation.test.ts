@@ -1,26 +1,20 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  applicationHeaderLinks,
   getActiveHeaderItem,
   institutionalHeaderLinks,
   mobileHeaderLinks,
 } from "@/config/navigation";
 
 describe("navegação principal", () => {
-  it("preserva os alvos canônicos sem antecipar o acesso ao app", () => {
-    expect(applicationHeaderLinks.map(({ label }) => label)).toEqual([
-      "Aplicação",
-      "Como funciona",
-      "Benefícios",
-    ]);
+  it("preserva apenas os alvos profissionais", () => {
     expect(institutionalHeaderLinks.map(({ label }) => label)).toEqual([
       "Sobre",
       "Serviços",
       "Projetos",
       "Contato",
     ]);
-    expect(mobileHeaderLinks).toHaveLength(7);
+    expect(mobileHeaderLinks).toHaveLength(4);
   });
 
   it("mantém Processo como subcapítulo de Serviços", () => {

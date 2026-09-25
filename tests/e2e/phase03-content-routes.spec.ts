@@ -6,29 +6,12 @@ const projectRoutes = [
   "/portfolio/msn-suprimentos",
 ] as const;
 
-const applicationRoutes = [
-  "/aplicacao-wflyer",
-  "/aplicacao-wflyer/como-funciona",
-  "/aplicacao-wflyer/beneficios",
-] as const;
-
-test("the project allowlist exposes exactly three detailed public records", async ({
-  page,
+test("the project allowlist does not expose browsing pages before approval", async ({
   request,
 }) => {
-  await page.goto("/portfolio");
-
-  const projectLinks = page.locator(
-    'main [data-project-list] a[href^="/portfolio/"]',
-  );
-  await expect(projectLinks).toHaveCount(projectRoutes.length);
-  for (const [index, route] of projectRoutes.entries()) {
-    await expect(projectLinks.nth(index)).toHaveAttribute("href", route);
-  }
-
-  for (const route of projectRoutes) {
+  for (const route of ["/portfolio", ...projectRoutes]) {
     const response = await request.get(route);
-    expect(response.status(), route).toBe(200);
+    expect(response.status(), route).toBe(404);
   }
 });
 
@@ -49,21 +32,6 @@ test("invalid project and service slugs fail closed as non-indexable 404s", asyn
   }
 });
 
-test("application detail routes keep access terminal-only and omit the retired tablet", async ({
-  page,
-}) => {
-  for (const route of applicationRoutes) {
-    await page.goto(route);
-    const main = page.getByRole("main");
-
-    await expect(main.locator('a[href="https://app.wflyer.com.br"]')).toHaveCount(
-      0,
-    );
-    await expect(main.locator("[data-application-demo-tablet]")).toHaveCount(0);
-    await expect(main.getByRole("heading", { level: 1 })).toHaveCount(1);
-  }
-});
-
 test("services expose four categories and the four approved process stages", async ({
   page,
 }) => {
@@ -75,7 +43,7 @@ test("services expose four categories and the four approved process stages", asy
   await expect(page.locator("main #processo article")).toHaveCount(4);
 });
 
-test("sitemap publishes allowlisted projects and excludes private or lab paths", async ({
+test("sitemap excludes deferred project browsing and private or lab paths", async ({
   request,
 }) => {
   const response = await request.get("/sitemap.xml");
@@ -83,8 +51,9 @@ test("sitemap publishes allowlisted projects and excludes private or lab paths",
 
   expect(response.ok()).toBe(true);
   for (const route of projectRoutes) {
-    expect(sitemap).toContain(new URL(route, "https://wflyer.com.br").toString());
+    expect(sitemap).not.toContain(new URL(route, "https://wflyer.com.br").toString());
   }
+  expect(sitemap).not.toContain("https://wflyer.com.br/portfolio");
   expect(sitemap).not.toContain("projeto-interno");
   expect(sitemap).not.toContain("servico-nao-publicado");
   expect(sitemap).not.toContain("__visual-lab");
@@ -96,7 +65,7 @@ test("Phase-3 pages remain usable on narrow reduced-motion viewports", async ({
   await page.setViewportSize({ height: 844, width: 320 });
   await page.emulateMedia({ colorScheme: "dark", reducedMotion: "reduce" });
 
-  for (const route of ["/servicos", "/portfolio/w-flyer", "/contato"]) {
+  for (const route of ["/servicos", "/processo", "/contato"]) {
     await page.goto(route);
     await page.evaluate(() => localStorage.setItem("wf-theme", "dark"));
     await page.reload();

@@ -6,18 +6,12 @@ import {
 import type { StoryChapterId } from "../types";
 
 /**
- * Provisional Motion-Lab-only spans. They intentionally keep the two branches
+ * Provisional Motion-Lab-only spans for the portfolio narrative. They keep
  * asymmetric so Home is measured from real rendered geometry. These are not
  * canonical scene weights and remain subject to the documented calibration
  * gate before public integration.
  */
 export const MOTION_LAB_DRAFT_CHAPTER_SPANS = Object.freeze({
-  "application-terminal": 0.72,
-  "application-access": 0.82,
-  "application-demo": 1.05,
-  "application-benefits": 0.92,
-  "application-how-it-works": 1.4,
-  "application-overview": 0.92,
   home: 1.15,
   "professional-about": 1.1,
   "professional-services": 1.25,

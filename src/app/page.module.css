@@ -66,10 +66,9 @@
   display: grid;
   min-block-size: calc(100svh - var(--wf-header-height-desktop));
   grid-template-areas:
-    "application origin institutional"
-    "cue cue cue";
+    "origin institutional"
+    "cue cue";
   grid-template-columns:
-    minmax(0, 1fr)
     minmax(12rem, 0.62fr)
     minmax(0, 1fr);
   grid-template-rows: minmax(0, 1fr) auto;
@@ -120,10 +119,6 @@
   align-content: center;
   gap: var(--wf-space-5);
   padding-block: var(--wf-space-8);
-}
-
-.applicationBranch {
-  grid-area: application;
 }
 
 .institutionalBranch {
@@ -179,9 +174,6 @@
   stroke-width: 1.4;
 }
 
-.hero:has(.applicationBranch:is(:hover, :focus-within))
-  .score
-  :global([data-score-branch="application"]),
 .hero:has(.institutionalBranch:is(:hover, :focus-within))
   .score
   :global([data-score-branch="institutional"]) {
@@ -189,18 +181,6 @@
   opacity: 1;
 }
 
-.hero:has(.applicationBranch:is(:hover, :focus-within))
-  .score
-  :global([data-score-branch="institutional"]),
-.hero:has(.institutionalBranch:is(:hover, :focus-within))
-  .score
-  :global([data-score-branch="application"]) {
-  opacity: 0.28;
-}
-
-.hero:has(.applicationBranch:is(:hover, :focus-within))
-  .score
-  :global([data-score-branch="application"] [data-musical-note]),
 .hero:has(.institutionalBranch:is(:hover, :focus-within))
   .score
   :global([data-score-branch="institutional"] [data-musical-note]) {
@@ -210,7 +190,6 @@
 @media (width < 75rem) {
   .hero {
     grid-template-columns:
-      minmax(0, 1fr)
       minmax(9rem, 0.48fr)
       minmax(0, 1fr);
     column-gap: clamp(1.25rem, 2.5vw, 2.5rem);
@@ -239,7 +218,7 @@
   .hero {
     grid-template-areas:
       "origin origin"
-      "application institutional"
+      "institutional institutional"
       "cue cue";
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: auto 1fr auto;
@@ -262,19 +241,12 @@
     padding-block: var(--wf-space-5);
   }
 
-  .mobileDirection {
-    display: block;
-    color: var(--wf-text-muted);
-    font-size: var(--wf-font-size-body-sm);
-    font-weight: var(--wf-font-weight-semibold);
-  }
 }
 
 @media (width < 48rem) {
   .hero {
     grid-template-areas:
       "origin"
-      "application"
       "institutional"
       "cue";
     grid-template-columns: minmax(0, 1fr);

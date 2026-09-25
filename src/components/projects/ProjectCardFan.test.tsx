@@ -27,7 +27,7 @@ function projectAt(index: number): ProjectRecord {
 }
 
 describe("ProjectCardFan", () => {
-  it("renders the authorized projects as a semantic ordered list with internal routes", () => {
+  it("renders authorized projects with selection controls and no unapproved route", () => {
     render(<ProjectCardFan projects={PUBLIC_PROJECTS} />);
 
     const list = screen.getByRole("list", { name: "Projetos em destaque" });
@@ -41,10 +41,10 @@ describe("ProjectCardFan", () => {
       const item = itemAt(items, index);
 
       expect(
-        within(item).getByRole("link", {
-          name: `Conhecer o projeto ${project.title}`,
+        within(item).getByRole("button", {
+          name: `Selecionar projeto ${project.title}`,
         }),
-      ).toHaveAttribute("href", project.route);
+      ).toHaveAttribute("aria-pressed", "false");
       expect(within(item).getByText(project.role)).toBeVisible();
     }
   });
@@ -71,16 +71,18 @@ describe("ProjectCardFan", () => {
     render(<ProjectCardFan projects={PUBLIC_PROJECTS} />);
 
     const firstProject = projectAt(0);
-    const firstLink = screen.getByRole("link", {
-      name: `Conhecer o projeto ${firstProject.title}`,
+    const firstControl = screen.getByRole("button", {
+      name: `Selecionar projeto ${firstProject.title}`,
     });
 
     await user.tab();
 
-    expect(firstLink).toHaveFocus();
+    expect(firstControl).toHaveFocus();
     expect(
-      firstLink.closest<HTMLElement>("[data-project-card-item]"),
-    ).toContainElement(firstLink);
+      firstControl.closest<HTMLElement>("[data-project-card-item]"),
+    ).toContainElement(firstControl);
+    await user.keyboard("{Enter}");
+    expect(firstControl).toHaveAttribute("aria-pressed", "true");
   });
 
   it("fails closed to the empty state when no featured public record remains", () => {
@@ -101,6 +103,6 @@ describe("ProjectCardFan", () => {
       "Nenhum projeto público",
     );
     expect(screen.queryByRole("list")).not.toBeInTheDocument();
-    expect(screen.queryByRole("link")).not.toBeInTheDocument();
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
   });
 });

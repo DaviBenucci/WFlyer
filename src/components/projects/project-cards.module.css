@@ -37,10 +37,18 @@
 }
 
 .fanItem:hover,
-.fanItem:focus-within {
+.fanItem:focus-within,
+.fanItem[data-project-selected="true"],
+.fanItem[data-score-interaction-measurement="active"] {
   z-index: var(--project-card-selected-z);
   transform: translateY(calc(var(--project-card-rest-y) - 1.5rem))
     rotate(0deg) scale(1.025);
+}
+
+.fanItem[data-score-rest-measurement="active"] {
+  z-index: var(--project-card-z);
+  transform: translateY(var(--project-card-rest-y))
+    rotate(var(--project-card-rotation));
 }
 
 .card {
@@ -92,7 +100,8 @@
   text-decoration: none;
 }
 
-.cardLink:focus-visible {
+.cardLink:focus-visible,
+.cardLink[data-score-focus-measurement="active"] {
   outline: 4px solid var(--wf-focus, #75421f);
   outline-offset: 0.4rem;
 }

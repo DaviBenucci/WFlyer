@@ -96,11 +96,11 @@ test.describe("Phase-6 story header accessibility", () => {
     await page.setViewportSize({ height: 900, width: 1536 });
     await page.emulateMedia({ reducedMotion: "reduce" });
     await openMotionLab(page);
-    const benefits = page.locator(
-      '[data-story-navigation-target="application-benefits"]',
+    const projects = page.locator(
+      '[data-story-navigation-target="professional-projects"]',
     );
 
-    await benefits.focus();
+    await projects.focus();
     await page.keyboard.press("Enter");
     await expect(page.locator(MOTION_ROOT)).toHaveAttribute(
       "data-projection-mode",
@@ -108,9 +108,9 @@ test.describe("Phase-6 story header accessibility", () => {
     );
     await expect(page.locator(MOTION_ROOT)).toHaveAttribute(
       "data-motion-active-chapter",
-      "application-benefits",
+      "professional-projects",
     );
-    await expect(benefits).toBeFocused();
+    await expect(projects).toBeFocused();
     expect(
       await page.locator(MOTION_ROOT).getAttribute(
         "data-motion-traversal-duration",

@@ -12,7 +12,6 @@ export {
 } from "./manifest";
 
 export type {
-  ApplicationAvailabilityState,
   StoryBranch,
   StoryBranchDefinition,
   StoryChapter,
@@ -20,7 +19,6 @@ export type {
   StoryDetailRoute,
   StoryDocumentNode,
   StoryDocumentNodeId,
-  StoryExternalAction,
   StoryGlobalFooter,
   StoryHash,
   StoryHeaderMembership,

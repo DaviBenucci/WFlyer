@@ -37,9 +37,6 @@ interface AttributeSnapshot {
 
 interface HomeOpeningTargets {
   readonly all: readonly IntroTarget[];
-  readonly applicationCopy: readonly HTMLElement[];
-  readonly applicationScoreLines: readonly SVGElement[];
-  readonly applicationActions: readonly HTMLElement[];
   readonly cue: HTMLElement;
   readonly headerDetails: readonly SVGElement[];
   readonly headerLabels: readonly HTMLElement[];
@@ -148,24 +145,14 @@ function resolveHomeOpeningTargets(): HomeOpeningTargets | null {
   const cue = queryVisible<HTMLElement>(
     "[data-brand-intro-home-cue]",
   ).at(0);
-  const applicationCopy = queryVisible<HTMLElement>(
-    '[data-brand-intro-home-copy="application"]',
-  );
   const institutionalCopy = queryVisible<HTMLElement>(
     '[data-brand-intro-home-copy="institutional"]',
-  );
-  const applicationActions = queryVisible<HTMLElement>(
-    '[data-brand-intro-home-actions="application"]',
   );
   const institutionalActions = queryVisible<HTMLElement>(
     '[data-brand-intro-home-actions="institutional"]',
   );
   const homeScoreLines = queryVisible<SVGElement>(
     "[data-brand-intro-home-score] [data-origin-staff-line]",
-  );
-  const applicationScoreLines = homeScoreLines.filter(
-    (line) =>
-      line.closest('[data-score-branch="application"]') !== null,
   );
   const institutionalScoreLines = homeScoreLines.filter(
     (line) =>
@@ -176,11 +163,8 @@ function resolveHomeOpeningTargets(): HomeOpeningTargets | null {
     !headerPivot ||
     !homeOrigin ||
     !cue ||
-    applicationCopy.length === 0 ||
     institutionalCopy.length === 0 ||
-    applicationActions.length === 0 ||
     institutionalActions.length === 0 ||
-    applicationScoreLines.length === 0 ||
     institutionalScoreLines.length === 0
   ) {
     return null;
@@ -203,11 +187,8 @@ function resolveHomeOpeningTargets(): HomeOpeningTargets | null {
       headerPivot,
       homeOrigin,
       cue,
-      ...applicationCopy,
       ...institutionalCopy,
-      ...applicationActions,
       ...institutionalActions,
-      ...applicationScoreLines,
       ...institutionalScoreLines,
       ...headerDetails,
       ...headerLabels,
@@ -218,9 +199,6 @@ function resolveHomeOpeningTargets(): HomeOpeningTargets | null {
 
   return {
     all,
-    applicationActions,
-    applicationCopy,
-    applicationScoreLines,
     cue,
     headerDetails,
     headerLabels,
@@ -541,11 +519,6 @@ export function BrandIntroController({
       }
       timeline
         .set(
-          homeTargets.applicationScoreLines,
-          { opacity: 0, scaleX: 0.04, transformOrigin: "100% 50%" },
-          0,
-        )
-        .set(
           homeTargets.institutionalScoreLines,
           { opacity: 0, scaleX: 0.04, transformOrigin: "0% 50%" },
           0,
@@ -556,13 +529,9 @@ export function BrandIntroController({
           { opacity: 0, rotation: -1, scale: 0.94 },
           0,
         )
-        .set(homeTargets.applicationCopy, { opacity: 0, x: -20 }, 0)
         .set(homeTargets.institutionalCopy, { opacity: 0, x: 20 }, 0)
         .set(
-          [
-            ...homeTargets.applicationActions,
-            ...homeTargets.institutionalActions,
-          ],
+          homeTargets.institutionalActions,
           { opacity: 0, y: 10 },
           0,
         )
@@ -637,17 +606,6 @@ export function BrandIntroController({
       }
       timeline
         .to(
-          homeTargets.applicationScoreLines,
-          {
-            duration: 0.38,
-            ease: "power2.out",
-            opacity: 1,
-            scaleX: 1,
-            stagger: 0.004,
-          },
-          "hero:start+=0.05",
-        )
-        .to(
           homeTargets.institutionalScoreLines,
           {
             duration: 0.38,
@@ -707,17 +665,6 @@ export function BrandIntroController({
         )
         .set(homeTargets.headerPivot, { opacity: 1 }, "intro:overlay-off-=0.01")
         .to(
-          homeTargets.applicationCopy,
-          {
-            duration: 0.22,
-            ease: "power3.out",
-            opacity: 1,
-            stagger: 0.018,
-            x: 0,
-          },
-          "hero:start+=0.77",
-        )
-        .to(
           homeTargets.institutionalCopy,
           {
             duration: 0.22,
@@ -729,10 +676,7 @@ export function BrandIntroController({
           "hero:start+=0.77",
         )
         .to(
-          [
-            ...homeTargets.applicationActions,
-            ...homeTargets.institutionalActions,
-          ],
+          homeTargets.institutionalActions,
           {
             duration: 0.14,
             ease: "power2.out",

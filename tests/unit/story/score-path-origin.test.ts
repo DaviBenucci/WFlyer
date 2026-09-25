@@ -54,7 +54,7 @@ describe("Phase-9 task-33 real origin review fixture", () => {
     });
   });
 
-  it("renders exactly one immutable approved upright treble clef over ten continuous staff lines", () => {
+  it("renders exactly one immutable approved upright treble clef over five continuous staff lines", () => {
     expect(SCORE_PATH_ORIGIN_REVIEW_ASSET).toEqual({
       assetId: "MUS-GLYPH-001",
       assetKey: "wf-music-treble-clef",
@@ -76,7 +76,7 @@ describe("Phase-9 task-33 real origin review fixture", () => {
             count + fixture.branches[branch].model.staff.lines.length,
           0,
         ),
-      ).toBe(10);
+      ).toBe(5);
       expect(clefs).toHaveLength(1);
       expect(fixture.evidence.clef).toMatchObject({
         anchorInGlyph: { x: 0.5, y: 0.62 },
@@ -104,11 +104,11 @@ describe("Phase-9 task-33 real origin review fixture", () => {
     }
   });
 
-  it("shares one origin, departs left/right on horizontal tangents, and exposes event-free first zones", () => {
+  it("uses one portfolio origin and a rightward horizontal tangent, and exposes event-free first zones", () => {
     for (const mode of SCORE_PATH_ORIGIN_REVIEW_MODES) {
       const fixture = buildScorePathOriginReviewFixture(mode);
 
-      expect(fixture.evidence.commonOriginGap).toBe(0);
+      expect(fixture.evidence.originPointGap).toBe(0);
       expect(fixture.evidence.fiveLineContinuity).toBe(true);
       expect(fixture.evidence.maximumStaffSpaceDelta).toBeLessThan(1e-9);
       expect(fixture.evidence.minimumFrameContentClearance).toBeGreaterThan(0);
@@ -116,10 +116,6 @@ describe("Phase-9 task-33 real origin review fixture", () => {
       expect(fixture.evidence.downstreamGrammar).toBe(
         "ORGANIC_FLOWING_ALTERNATING_S_APPROVED_UNCHANGED",
       );
-      expect(fixture.branches.application.initialTangent).toEqual({
-        x: -1,
-        y: 0,
-      });
       expect(fixture.branches.professional.initialTangent).toEqual({
         x: 1,
         y: 0,

@@ -2,9 +2,11 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { flushSync } from "react-dom";
 import type { CSSProperties } from "react";
 import {
   useCallback,
+  useEffect,
   useLayoutEffect,
   useRef,
   useState,
@@ -12,15 +14,17 @@ import {
 
 import { StoryBootstrapExperience } from "@/components/story-bootstrap";
 import { StoryScoreLayer } from "@/components/story-score";
-import type { ApplicationDemoMediaContract } from "@/components/pages";
 import {
-  ApplicationChapterScene,
-  isPhase8ApplicationChapterId,
+  measureProjectsHorizontalCandidate,
+  type ProjectsHorizontalCandidateSnapshot,
+} from "@/components/story-score/projects-capacity-candidate";
+import {
   isProfessionalChapterId,
   ProfessionalChapterScene,
   useStoryNavigationBridge,
 } from "@/components/story";
 import { Container } from "@/components/ui";
+import { PUBLIC_STORY_CONTENT } from "@/content/public";
 import {
   DESKTOP_TIMELINE_ORDER,
   MOBILE_DOCUMENT_ORDER,
@@ -34,6 +38,7 @@ import {
   type MotionStoryRuntime,
 } from "@/lib/story/motion";
 import { STORY_SCORE_APPROVED_SECTION_BLOCK_SIZES } from "@/lib/story/score/projection";
+import type { StoryProjectionMode } from "@/lib/story/bootstrap";
 
 import styles from "./motion-story-lab.module.css";
 
@@ -48,6 +53,15 @@ interface MotionStoryRuntimeRegistry {
   readonly set: (runtime: MotionStoryRuntime | null) => void;
 }
 
+interface ProjectsCandidateSnapshotRegistry {
+  readonly publish: (snapshot: ProjectsHorizontalCandidateSnapshot) => void;
+  readonly read: (
+    width: number,
+    height: number,
+    revision: string,
+  ) => ProjectsHorizontalCandidateSnapshot | null;
+}
+
 function createMotionStoryRuntimeRegistry(): MotionStoryRuntimeRegistry {
   let current: MotionStoryRuntime | null = null;
 
@@ -59,12 +73,31 @@ function createMotionStoryRuntimeRegistry(): MotionStoryRuntimeRegistry {
   });
 }
 
-export interface MotionStoryLabProps {
-  readonly applicationDemoMedia?: ApplicationDemoMediaContract | undefined;
+function createProjectsCandidateSnapshotRegistry(): ProjectsCandidateSnapshotRegistry {
+  let current: ProjectsHorizontalCandidateSnapshot | null = null;
+
+  return Object.freeze({
+    publish: (snapshot: ProjectsHorizontalCandidateSnapshot) => {
+      current = snapshot;
+    },
+    read: (width: number, height: number, revision: string) => {
+      const snapshot = current;
+
+      return snapshot !== null &&
+        snapshot.width === width &&
+        snapshot.height === height &&
+        snapshot.revision === revision
+        ? snapshot
+        : null;
+    },
+  });
 }
 
-export function MotionStoryLab({ applicationDemoMedia }: MotionStoryLabProps) {
+export function MotionStoryLab() {
   const [runtimeRegistry] = useState(createMotionStoryRuntimeRegistry);
+  const [candidateSnapshotRegistry] = useState(
+    createProjectsCandidateSnapshotRegistry,
+  );
   const [runtimeGeneration, setRuntimeGeneration] = useState(0);
   const [positioningAdapter] = useState(() =>
       createMotionStoryPositioningAdapter({
@@ -78,7 +111,7 @@ export function MotionStoryLab({ applicationDemoMedia }: MotionStoryLabProps) {
   return (
     <StoryBootstrapExperience positioningAdapter={positioningAdapter}>
       <MotionStorySurface
-        applicationDemoMedia={applicationDemoMedia}
+        candidateSnapshotRegistry={candidateSnapshotRegistry}
         key={runtimeGeneration}
         onRequestRemount={requestRuntimeRemount}
         runtimeRegistry={runtimeRegistry}
@@ -88,13 +121,13 @@ export function MotionStoryLab({ applicationDemoMedia }: MotionStoryLabProps) {
 }
 
 interface MotionStorySurfaceProps {
-  readonly applicationDemoMedia?: ApplicationDemoMediaContract | undefined;
+  readonly candidateSnapshotRegistry: ProjectsCandidateSnapshotRegistry;
   readonly onRequestRemount: () => void;
   readonly runtimeRegistry: MotionStoryRuntimeRegistry;
 }
 
 function MotionStorySurface({
-  applicationDemoMedia,
+  candidateSnapshotRegistry,
   onRequestRemount,
   runtimeRegistry,
 }: MotionStorySurfaceProps) {
@@ -102,8 +135,28 @@ function MotionStorySurface({
   const stageRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const renderCount = useRef(0);
+  const [projectsMode, setProjectsMode] = useState<StoryProjectionMode>("static");
+  const projectsModeRef = useRef<StoryProjectionMode>("static");
+  const modeReadyRef = useRef(false);
   const { registerController, reportActiveChapter } =
     useStoryNavigationBridge();
+
+  useEffect(() => {
+    modeReadyRef.current = true;
+    return () => {
+      modeReadyRef.current = false;
+    };
+  }, []);
+
+  const handleProjectionModeChange = useCallback((mode: StoryProjectionMode) => {
+    if (projectsModeRef.current === mode) return;
+    projectsModeRef.current = mode;
+    if (modeReadyRef.current) {
+      flushSync(() => setProjectsMode(mode));
+    } else {
+      setProjectsMode(mode);
+    }
+  }, []);
 
   useLayoutEffect(() => {
     renderCount.current += 1;
@@ -128,6 +181,37 @@ function MotionStorySurface({
           "motion-failure",
         onRequestRemount,
         onActiveChapterChange: reportActiveChapter,
+        onProjectionModeChange: handleProjectionModeChange,
+        measureProjectsCapacity: () => {
+          const visualViewport = window.visualViewport;
+          const viewportWidth = Math.max(
+            320,
+            Math.round(
+              Math.min(
+                root.getBoundingClientRect().width || window.innerWidth,
+                document.documentElement.clientWidth,
+                visualViewport?.width ?? window.innerWidth,
+              ),
+            ),
+          );
+          const viewportHeight = Math.max(
+            320,
+            Math.round(
+              Math.min(
+                window.innerHeight,
+                visualViewport?.height ?? window.innerHeight,
+              ),
+            ),
+          );
+
+          return measureProjectsHorizontalCandidate(
+            root,
+            viewportWidth,
+            viewportHeight,
+            `fonts:${document.fonts?.status ?? "loaded"}`,
+            candidateSnapshotRegistry.publish,
+          );
+        },
         root,
         stage,
         track,
@@ -147,6 +231,8 @@ function MotionStorySurface({
         registerController,
         reportActiveChapter,
         runtimeRegistry,
+        candidateSnapshotRegistry,
+        handleProjectionModeChange,
       ],
       scope: rootRef,
     },
@@ -156,7 +242,6 @@ function MotionStorySurface({
     <main
       className={styles.root}
       data-motion-lab="phase-5"
-      data-application-scenes="phase-8"
       data-professional-scenes="phase-7"
       data-score-integration="phase-9-task-34"
       data-story-header-traversal="phase-6"
@@ -213,11 +298,12 @@ function MotionStorySurface({
 
       <div className={styles.stage} data-motion-stage="" ref={stageRef}>
         <div className={styles.track} data-motion-track="" ref={trackRef}>
-          <StoryScoreLayer />
+          <StoryScoreLayer
+            readHorizontalCandidateSnapshot={candidateSnapshotRegistry.read}
+          />
           {MOTION_LAB_PLACEHOLDER_CHAPTERS.map(
             ({ chapter, desktopIndex, draftSpan }, documentIndex) => {
               const headingId = `${chapter.id}-motion-lab-heading`;
-              const isApplication = isPhase8ApplicationChapterId(chapter.id);
               const isProfessional = isProfessionalChapterId(chapter.id);
               const chapterStyle: MotionLabChapterStyle = {
                 "--motion-lab-chapter-span": `${draftSpan * 100}vw`,
@@ -230,9 +316,9 @@ function MotionStorySurface({
                 <section
                   aria-labelledby={headingId}
                   className={`${styles.chapter} ${
-                    isProfessional || isApplication
+                    isProfessional
                       ? styles.implementedChapter
-                      : ""
+                      : styles.homeChapter
                   }`}
                   data-chapter-id={chapter.id}
                   data-motion-desktop-index={desktopIndex}
@@ -255,33 +341,17 @@ function MotionStorySurface({
                     <ProfessionalChapterScene
                       chapterId={chapter.id}
                       headingId={headingId}
-                    />
-                  ) : isApplication ? (
-                    <ApplicationChapterScene
-                      chapterId={chapter.id}
-                      demoMedia={applicationDemoMedia}
-                      headingId={headingId}
+                      projectsMode={projectsMode}
                     />
                   ) : (
                     <div
-                      className={styles.chapterGrid}
-                      data-score-content-exclusion={
-                        chapter.id === "home"
-                          ? "home-reading-envelope"
-                          : undefined
-                      }
-                      data-structural-placeholder={chapter.id}
+                      className={styles.homeContent}
+                      data-home-geometry="static-origin-composition"
+                      data-score-content-exclusion="home-reading-envelope"
                     >
-                      <p className={styles.chapterIndex}>
-                        {String(desktopIndex + 1).padStart(2, "0")} / 13
-                      </p>
-                      <p className={styles.chapterBranch}>{chapter.branch}</p>
-                      <h2 id={headingId}>{chapter.label}</h2>
-                      <code>{chapter.timelineLabel}</code>
-                      <p>
-                        Placeholder estrutural. A cena final pertence à fase de
-                        implementação do respectivo ramo.
-                      </p>
+                      <p className={styles.eyebrow}>{PUBLIC_STORY_CONTENT.home.eyebrow}</p>
+                      <h2 id={headingId}>{PUBLIC_STORY_CONTENT.home.title}</h2>
+                      <p>{PUBLIC_STORY_CONTENT.home.description}</p>
                     </div>
                   )}
                 </section>

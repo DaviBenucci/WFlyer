@@ -22,7 +22,10 @@ import {
   type StoryTimelineGeometry,
 } from "./geometry";
 import {
+  resolveCoarseStoryProjectionMode,
+  resolveStoryPresentationClass,
   resolveStoryProjectionMode,
+  type StoryProjectsCapacityStatus,
   type StoryProjectionDecision,
 } from "./eligibility";
 import {
@@ -105,6 +108,9 @@ export interface MotionStoryRuntimeSnapshot {
   readonly progress: number;
   readonly projectionMode: StoryProjectionMode;
   readonly projectionReason: StoryProjectionDecision["reason"];
+  readonly projectsCapacityGeneration: number;
+  readonly projectsCapacitySignature: string | null;
+  readonly projectsCapacityStatus: StoryProjectsCapacityStatus;
   readonly rebuildCount: number;
   readonly visibility: DocumentVisibilityState;
 }
@@ -126,8 +132,43 @@ export interface MotionStoryRuntime {
 
 export interface CreateMotionStoryRuntimeOptions extends MotionStoryElements {
   readonly forceBuildFailure?: boolean;
+  readonly measureProjectsCapacity?: () =>
+    | Promise<StoryProjectsCapacityMeasurement>
+    | StoryProjectsCapacityMeasurement;
   readonly onActiveChapterChange?: (chapterId: StoryChapterId) => void;
+  readonly onProjectionModeChange?: (mode: StoryProjectionMode) => void;
   readonly onRequestRemount?: () => void;
+}
+
+export interface StoryProjectsCapacityMeasurement {
+  readonly reasons: readonly string[];
+  readonly signature: string;
+  readonly status: StoryProjectsCapacityStatus;
+  readonly visits?: readonly {
+    readonly limitingConstraint?: {
+      readonly end: { readonly x: number; readonly y: number };
+      readonly endT?: number;
+      readonly kind: "event-ink" | "staff-ink";
+      readonly ownerId: string;
+      readonly radius: number;
+      readonly start: { readonly x: number; readonly y: number };
+      readonly startT?: number;
+      readonly visitZoneEndT: number;
+      readonly visitZoneRelation: "incoming" | "outgoing" | "own-shelf";
+      readonly visitZoneStartT: number;
+    };
+    readonly internalShelfMinimumClearance: number;
+    readonly minimumClearance: number;
+    readonly ownShelfMinimumClearance: number;
+    readonly projectIndex: number;
+    readonly protectedRect: {
+      readonly height: number;
+      readonly width: number;
+      readonly x: number;
+      readonly y: number;
+    };
+    readonly visible: boolean;
+  }[];
 }
 
 interface DebugController {
@@ -307,7 +348,9 @@ function currentVerticalChapter(
 
 export function createMotionStoryRuntime({
   forceBuildFailure = false,
+  measureProjectsCapacity,
   onActiveChapterChange = () => undefined,
+  onProjectionModeChange = () => undefined,
   onRequestRemount = () => undefined,
   root,
   stage,
@@ -342,7 +385,16 @@ export function createMotionStoryRuntime({
     window.matchMedia("(hover: hover)"),
     window.matchMedia("(prefers-reduced-motion: reduce)"),
   ] as const;
-  let decision = resolveStoryProjectionMode(currentProjectionSignals());
+  let projectsCapacityStatus: StoryProjectsCapacityStatus =
+    measureProjectsCapacity ? "NOT_READY" : "PASS";
+  let projectsCapacitySignature: string | null = null;
+  let projectsCapacityGeneration = 0;
+  let projectsCapacityInputKey: string | null = null;
+  let projectsCapacityPendingKey: string | null = null;
+  let decision = resolveStoryProjectionMode(
+    currentProjectionSignals(),
+    projectsCapacityStatus,
+  );
   let geometry: StoryTimelineGeometry | null = null;
   let timeline: gsap.core.Timeline | null = null;
   let scrollTrigger: ScrollTrigger | null = null;
@@ -463,6 +515,11 @@ export function createMotionStoryRuntime({
     decision = nextDecision;
     root.dataset.projectionMode = decision.mode;
     root.dataset.projectionReason = decision.reason;
+    root.dataset.storyPresentation = resolveStoryPresentationClass(
+      currentProjectionSignals(),
+      decision.mode,
+    );
+    onProjectionModeChange(decision.mode);
     diagnostics.projection?.replaceChildren(decision.mode);
   };
 
@@ -513,7 +570,12 @@ export function createMotionStoryRuntime({
   const buildOwnedDriver = () => {
     teardownOwnedDriver();
     delete root.dataset.motionFailure;
-    applyDecision(resolveStoryProjectionMode(currentProjectionSignals()));
+    applyDecision(
+      resolveStoryProjectionMode(
+        currentProjectionSignals(),
+        projectsCapacityStatus,
+      ),
+    );
     projectionDirty = false;
 
     if (decision.mode !== "horizontal-enhanced") {
@@ -586,6 +648,104 @@ export function createMotionStoryRuntime({
       diagnostics.homeProgress?.replaceChildren("fallback-vertical");
       updateVerticalDiagnostics();
     }
+  };
+
+  const projectsCapacityKey = () => {
+    const signals = currentProjectionSignals();
+
+    return JSON.stringify({
+      ...signals,
+      fontStatus: document.fonts?.status ?? "loaded",
+    });
+  };
+
+  const invalidateProjectsCapacity = () => {
+    if (!measureProjectsCapacity) return;
+    projectsCapacityGeneration += 1;
+    projectsCapacityInputKey = null;
+    projectsCapacityPendingKey = null;
+    projectsCapacitySignature = null;
+    projectsCapacityStatus = "NOT_READY";
+    root.dataset.motionProjectsCapacity = "NOT_READY";
+    delete root.dataset.motionProjectsCapacitySignature;
+  };
+
+  const scheduleProjectsCapacityEvaluation = () => {
+    if (!measureProjectsCapacity || destroyed) return;
+
+    const signals = currentProjectionSignals();
+    if (
+      resolveCoarseStoryProjectionMode(signals).mode !== "horizontal-enhanced"
+    ) {
+      return;
+    }
+
+    const inputKey = projectsCapacityKey();
+    if (
+      projectsCapacityPendingKey === inputKey ||
+      (projectsCapacityInputKey === inputKey &&
+        projectsCapacityStatus !== "NOT_READY")
+    ) {
+      return;
+    }
+
+    const generation = ++projectsCapacityGeneration;
+    projectsCapacityPendingKey = inputKey;
+    projectsCapacityStatus = "NOT_READY";
+    root.dataset.motionProjectsCapacity = "NOT_READY";
+
+    void Promise.resolve(document.fonts?.ready)
+      .then(() => waitForFrame(undefined))
+      .then(() => {
+        if (destroyed || generation !== projectsCapacityGeneration) {
+          return null;
+        }
+
+        return measureProjectsCapacity();
+      })
+      .then((measurement) => {
+        if (
+          measurement === null ||
+          destroyed ||
+          generation !== projectsCapacityGeneration
+        ) {
+          return;
+        }
+
+        projectsCapacityPendingKey = null;
+        projectsCapacityInputKey = inputKey;
+        projectsCapacitySignature = measurement.signature;
+        projectsCapacityStatus = measurement.status;
+        root.dataset.motionProjectsCapacity = measurement.status;
+        root.dataset.motionProjectsCapacitySignature = measurement.signature;
+        root.dataset.motionProjectsCapacityReasons =
+          measurement.reasons.join(" ") || "none";
+        root.dataset.motionProjectsCapacityVisits = JSON.stringify(
+          measurement.visits ?? [],
+        );
+        projectionDirty = true;
+
+        if (measurement.status !== "NOT_READY") {
+          void rebuildPreservingActiveChapter(activeSemanticChapter(), {
+            intent: "preserve-active-chapter",
+          }).catch(() => undefined);
+        }
+      })
+      .catch((error) => {
+        if (destroyed || generation !== projectsCapacityGeneration) return;
+
+        projectsCapacityPendingKey = null;
+        projectsCapacityInputKey = inputKey;
+        projectsCapacitySignature = "projects-capacity:measurement-error";
+        projectsCapacityStatus = "INVALID";
+        root.dataset.motionProjectsCapacity = "INVALID";
+        root.dataset.motionProjectsCapacityReasons =
+          error instanceof Error ? error.name : "measurement-error";
+        projectionDirty = true;
+        void rebuildPreservingActiveChapter(activeSemanticChapter(), {
+          intent: "preserve-active-chapter",
+        }).catch(() => undefined);
+      });
   };
 
   const activeSemanticChapter = () => {
@@ -853,7 +1013,7 @@ export function createMotionStoryRuntime({
         // but must first rebuild stale physical geometry for the new viewport.
         await waitForDelay(240, options.signal);
         assertNotAborted(options.signal);
-        buildOwnedDriver();
+        if (projectionDirty) buildOwnedDriver();
       }
       const target = chapterElements.get(requestedChapterId);
       const positionedChapterId =
@@ -899,6 +1059,7 @@ export function createMotionStoryRuntime({
     options: StoryPositioningOptions = {},
   ): Promise<StoryPositioningResult> => {
     assertNotAborted(options.signal);
+    projectionDirty = true;
     cancelActiveHeaderTraversal("projection-rebuild");
     let preservedChapterId =
       semanticPriorityChapter ??
@@ -927,8 +1088,11 @@ export function createMotionStoryRuntime({
       preservedViewportChapter = preservedChapterId;
     }
 
-    rebuildCount += 1;
-    buildOwnedDriver();
+    if (projectionDirty) {
+      rebuildCount += 1;
+      buildOwnedDriver();
+    }
+    scheduleProjectsCapacityEvaluation();
     const result = await position(preservedChapterId, options);
     preservationReleaseTimer = window.setTimeout(() => {
       preservationReleaseTimer = 0;
@@ -945,6 +1109,7 @@ export function createMotionStoryRuntime({
   };
 
   const handleMediaChange = () => {
+    invalidateProjectsCapacity();
     projectionDirty = true;
     void rebuildPreservingActiveChapter(activeSemanticChapter()).catch(
       () => undefined,
@@ -952,9 +1117,17 @@ export function createMotionStoryRuntime({
   };
   const handleViewportCapture = () => {
     cancelActiveHeaderTraversal("projection-rebuild");
+    invalidateProjectsCapacity();
     projectionDirty = true;
     preservedViewportChapter ??= activeChapterId;
     root.dataset.motionPreservedChapter = preservedViewportChapter;
+  };
+  const handleFontLayoutChange = () => {
+    invalidateProjectsCapacity();
+    projectionDirty = true;
+    void rebuildPreservingActiveChapter(activeSemanticChapter()).catch(
+      () => undefined,
+    );
   };
   const handleVisibilityChange = () => {
     visibility = document.visibilityState;
@@ -1033,6 +1206,9 @@ export function createMotionStoryRuntime({
       progress,
       projectionMode: decision.mode,
       projectionReason: decision.reason,
+      projectsCapacityGeneration,
+      projectsCapacitySignature,
+      projectsCapacityStatus,
       rebuildCount,
       scrollTriggerDestroyCount:
         lifecycleLedger.scrollTriggerDestroyCount,
@@ -1051,6 +1227,8 @@ export function createMotionStoryRuntime({
     destroy() {
       if (destroyed) return;
       destroyed = true;
+      projectsCapacityGeneration += 1;
+      projectsCapacityPendingKey = null;
       cancelActiveHeaderTraversal("teardown");
       lifecycleLedger.destroyCount += 1;
       if (scrollFrame !== 0) window.cancelAnimationFrame(scrollFrame);
@@ -1073,6 +1251,10 @@ export function createMotionStoryRuntime({
         true,
       );
       document.removeEventListener("visibilitychange", handleVisibilityChange);
+      document.fonts?.removeEventListener(
+        "loadingdone",
+        handleFontLayoutChange,
+      );
       for (const query of mediaQueries) {
         query.removeEventListener("change", handleMediaChange);
       }
@@ -1126,11 +1308,13 @@ export function createMotionStoryRuntime({
     true,
   );
   document.addEventListener("visibilitychange", handleVisibilityChange);
+  document.fonts?.addEventListener("loadingdone", handleFontLayoutChange);
   for (const query of mediaQueries) {
     query.addEventListener("change", handleMediaChange);
   }
   updateTraversalDiagnostics("idle", null, null);
   buildOwnedDriver();
+  scheduleProjectsCapacityEvaluation();
   diagnostics.lifecycle?.replaceChildren("mounted");
   root.dataset.motionLifecycle = "mounted";
   root.dataset.motionVisibility = visibility;

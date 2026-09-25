@@ -20,10 +20,26 @@ export interface StoryProjectionSignals {
   readonly width: number;
 }
 
+export function resolveStoryPresentationClass(
+  signals: StoryProjectionSignals,
+  mode: StoryProjectionMode,
+): "EXPANDED_LANDSCAPE" | "COMPACT_LANDSCAPE" | "PORTRAIT_TRAVERSE" {
+  if (mode === "horizontal-enhanced") return "EXPANDED_LANDSCAPE";
+  if (signals.width <= MOTION_LAB_DRAFT_ELIGIBILITY.compactMaximumWidth ||
+      (signals.width < MOTION_LAB_DRAFT_ELIGIBILITY.horizontalMinimumWidth &&
+        signals.height >= signals.width * 0.9)) {
+    return "PORTRAIT_TRAVERSE";
+  }
+  return "COMPACT_LANDSCAPE";
+}
+
 export type StoryProjectionReason =
   | "driver-failure"
   | "eligible-full-motion"
   | "insufficient-layout-capacity"
+  | "invalid-projects-capacity"
+  | "projects-capacity-pending"
+  | "projects-capacity-insufficient"
   | "reduced-motion"
   | "touch-or-coarse-input"
   | "compact-viewport";
@@ -33,7 +49,13 @@ export interface StoryProjectionDecision {
   readonly reason: StoryProjectionReason;
 }
 
-export function resolveStoryProjectionMode(
+export type StoryProjectsCapacityStatus =
+  | "PASS"
+  | "INSUFFICIENT_CAPACITY"
+  | "NOT_READY"
+  | "INVALID";
+
+export function resolveCoarseStoryProjectionMode(
   signals: StoryProjectionSignals,
 ): StoryProjectionDecision {
   const width = Math.max(0, signals.width);
@@ -65,4 +87,25 @@ export function resolveStoryProjectionMode(
   }
 
   return { mode: "horizontal-enhanced", reason: "eligible-full-motion" };
+}
+
+export function resolveStoryProjectionMode(
+  signals: StoryProjectionSignals,
+  projectsCapacity: StoryProjectsCapacityStatus = "PASS",
+): StoryProjectionDecision {
+  const coarseDecision = resolveCoarseStoryProjectionMode(signals);
+
+  if (coarseDecision.mode !== "horizontal-enhanced") return coarseDecision;
+
+  if (projectsCapacity === "PASS") return coarseDecision;
+
+  return {
+    mode: "vertical-wide",
+    reason:
+      projectsCapacity === "INSUFFICIENT_CAPACITY"
+        ? "projects-capacity-insufficient"
+        : projectsCapacity === "INVALID"
+          ? "invalid-projects-capacity"
+          : "projects-capacity-pending",
+  };
 }

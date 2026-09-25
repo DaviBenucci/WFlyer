@@ -2,21 +2,14 @@ import { expect, test, type Page } from "@playwright/test";
 
 const routes = [
   "/",
-  "/aplicacao-wflyer",
-  "/aplicacao-wflyer/como-funciona",
-  "/aplicacao-wflyer/beneficios",
   "/sobre",
   "/servicos",
   "/processo",
-  "/portfolio",
   "/contato",
   "/servicos/criacao-de-sites",
   "/servicos/criacao-de-aplicacoes",
   "/servicos/integracoes",
   "/servicos/solucoes-sob-medida",
-  "/portfolio/w-flyer",
-  "/portfolio/msn-distribuidora",
-  "/portfolio/msn-suprimentos",
   "/politica-de-privacidade",
   "/politica-de-cookies",
   "/termos-de-uso",
@@ -125,4 +118,40 @@ test("uma rota inexistente apresenta 404 acessível e não indexável", async ({
       exact: true,
     }),
   ).toHaveAttribute("href", "/");
+});
+
+test("as rotas institucionais removidas da Aplicação apresentam 404", async ({
+  page,
+}) => {
+  for (const route of [
+    "/aplicacao-wflyer",
+    "/aplicacao-wflyer/como-funciona",
+    "/aplicacao-wflyer/beneficios",
+  ]) {
+    const response = await page.goto(route, { waitUntil: "domcontentloaded" });
+
+    expect(response?.status(), route).toBe(404);
+    await expect(page.locator("[data-application-demo]")).toHaveCount(0);
+  }
+});
+
+test("as rotas de navegação e detalhe de Projetos retiradas apresentam 404", async ({
+  page,
+  request,
+}) => {
+  for (const route of [
+    "/portfolio",
+    "/portfolio/w-flyer",
+    "/portfolio/msn-distribuidora",
+    "/portfolio/msn-suprimentos",
+  ]) {
+    const response = await page.goto(route, { waitUntil: "domcontentloaded" });
+    expect(response?.status(), route).toBe(404);
+    await expect(page.locator('meta[name="robots"]').first()).toHaveAttribute(
+      "content",
+      /noindex/u,
+    );
+    const sitemap = await (await request.get("/sitemap.xml")).text();
+    expect(sitemap).not.toContain(`wflyer.com.br${route}`);
+  }
 });

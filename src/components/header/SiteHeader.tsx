@@ -16,7 +16,6 @@ import { OfficialBrandSymbol } from "@/components/brand";
 
 import { NavigationMeasure } from "./NavigationMeasure";
 import {
-  APPLICATION_NAVIGATION,
   getHeaderRouteState,
   INSTITUTIONAL_NAVIGATION,
   type HeaderNavigationItem,
@@ -295,19 +294,11 @@ export function SiteHeader({
         className={styles.desktopHeader}
         data-has-theme-control={themeControl ? "true" : "false"}
       >
-        <DesktopMeasureGroup
-          activeId={activeId}
-          items={APPLICATION_NAVIGATION}
-          label="Navegação da aplicação"
-          processSubchapter={false}
-        />
-
         <Link
           aria-current={currentPathname === "/" ? "page" : undefined}
           aria-label="W_Flyer — voltar à página inicial"
           className={styles.brandHomeLink}
           data-brand-intro-header-pivot="desktop"
-          data-home-pivot="desktop"
           href="/"
           ref={desktopBrandLinkRef}
         >
@@ -336,7 +327,6 @@ export function SiteHeader({
           aria-label="W_Flyer — voltar à página inicial"
           className={styles.mobileBrandHomeLink}
           data-brand-intro-header-pivot="mobile"
-          data-home-pivot="mobile"
           href="/"
           onClick={() => {
             closeMenu();
@@ -405,15 +395,6 @@ export function SiteHeader({
             </div>
 
             <nav aria-label="Navegação principal">
-              <MobileMenuGroup
-                activeId={activeId}
-                items={APPLICATION_NAVIGATION}
-                label="Aplicação"
-                onNavigate={() => {
-                  closeMenu();
-                }}
-                processSubchapter={false}
-              />
               <MobileMenuGroup
                 activeId={activeId}
                 items={INSTITUTIONAL_NAVIGATION}

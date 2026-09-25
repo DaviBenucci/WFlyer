@@ -12,12 +12,6 @@ const SEGMENT_IDS = [
   "professional-projects",
   "professional-contact",
   "professional-terminal",
-  "application-overview",
-  "application-how-it-works",
-  "application-benefits",
-  "application-demo",
-  "application-access",
-  "application-terminal",
 ] as const;
 
 const MODES = [
@@ -105,8 +99,8 @@ test.describe("Phase-9 Task-34 real score integration", () => {
         "data-score-resolved-geometry",
         state.resolved,
       );
-      await expect(layer).toHaveAttribute("data-score-segment-count", "12");
-      await expect(layer).toHaveAttribute("data-score-composer-invocations", "2");
+      await expect(layer).toHaveAttribute("data-score-segment-count", "6");
+      await expect(layer).toHaveAttribute("data-score-composer-invocations", "1");
       await expect(layer).toHaveAttribute("data-score-connector-events", "0");
       await expect(layer).toHaveAttribute(
         "data-score-path-self-intersections",
@@ -119,11 +113,6 @@ test.describe("Phase-9 Task-34 real score integration", () => {
       await expect(layer).toHaveAttribute(
         "data-score-runtime-owner",
         "precomputed-projection-no-scroll-state",
-      );
-      await expect(layer).toHaveAttribute("data-score-origin-point-gap", "0.000000");
-      await expect(layer).toHaveAttribute(
-        "data-score-origin-staff-line-gap",
-        "0.000000",
       );
       await expect(layer).toHaveAttribute("data-score-clef-rotation", "0.000000");
       await expect(layer).toHaveAttribute("data-score-clef-mirror-x", "false");
@@ -138,22 +127,18 @@ test.describe("Phase-9 Task-34 real score integration", () => {
         "data-score-professional-fingerprint",
         "fnv1a32:039bce10",
       );
-      await expect(layer).toHaveAttribute(
-        "data-score-application-fingerprint",
-        "fnv1a32:1fe3356b",
-      );
       await expect(layer.locator('[data-score-role="clef"]')).toHaveCount(1);
       await expect(
         layer.locator('[data-score-role="final-barline-thin"]'),
-      ).toHaveCount(2);
+      ).toHaveCount(1);
       await expect(
         layer.locator('[data-score-role="final-barline-thick"]'),
-      ).toHaveCount(2);
+      ).toHaveCount(1);
       await expect(
         page.locator(
           '[data-story-score-segment]:not([data-story-score-segment="shared-origin"])',
         ),
-      ).toHaveCount(12);
+      ).toHaveCount(6);
       const semanticSlots = await page
         .locator(
           '[data-story-score-segment]:not([data-story-score-segment="shared-origin"])',
@@ -164,8 +149,8 @@ test.describe("Phase-9 Task-34 real score integration", () => {
             slots: segment.getAttribute("data-score-semantic-slot-ids"),
           })),
         );
-      expect(semanticSlots).toHaveLength(12);
-      expect(new Set(semanticSlots.map(({ id }) => id)).size).toBe(12);
+      expect(semanticSlots).toHaveLength(6);
+      expect(new Set(semanticSlots.map(({ id }) => id)).size).toBe(6);
       expect(semanticSlots).toEqual(
         expect.arrayContaining(
           SEGMENT_IDS.map((id) => ({

@@ -31,9 +31,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Home: Story = {};
 
-export const ApplicationChapter: Story = {
+export const ServicesChapter: Story = {
   args: {
-    pathname: "/aplicacao-wflyer/como-funciona",
+    pathname: "/servicos",
   },
 };
 
@@ -83,8 +83,8 @@ export const MobileMenuOpen: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const applicationLink = canvas.getByRole("link", {
-      name: "Aplicação",
+    const portfolioLink = canvas.getByRole("link", {
+      name: "Sobre",
     });
 
     await expect(
@@ -102,7 +102,7 @@ export const MobileMenuOpen: Story = {
         .trim();
 
       expect(manropeFamily).toMatch(/^font-/u);
-      expect(getComputedStyle(applicationLink).fontFamily).toContain(
+      expect(getComputedStyle(portfolioLink).fontFamily).toContain(
         manropeFamily,
       );
     });

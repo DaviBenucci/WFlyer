@@ -31,11 +31,6 @@ describe("StaticStorySkeleton", () => {
       "processo",
       "projetos",
       "contato",
-      "aplicacao",
-      "como-funciona",
-      "beneficios",
-      "demonstracao",
-      "lancamento",
     ];
     const allIds = [...container.querySelectorAll<HTMLElement>("[id]")].map(
       (element) => element.id,
@@ -78,20 +73,10 @@ describe("StaticStorySkeleton", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("places the purpose-limited launch registration only in its final content chapter", () => {
+  it("does not expose the removed institutional Application branch", () => {
     const { container } = render(<StaticStorySkeleton />);
-    const accessChapter = container.querySelector(
-      '[data-chapter-id="application-access"]',
-    );
-
-    expect(accessChapter).not.toBeNull();
-    expect(within(accessChapter as HTMLElement).getByRole("heading", {
-      name: "A aplicação está em desenvolvimento.",
-    })).toBeVisible();
+    expect(container.querySelector('[data-story-branch="application"]')).not.toBeInTheDocument();
     expect(container.querySelector('a[href="https://app.wflyer.com.br"]')).not.toBeInTheDocument();
-    expect(container.textContent).not.toMatch(
-      /\b(?:agência|companhia|empresa|empresas|nossa equipe|nosso time|sociedade)\b/iu,
-    );
   });
 
   it("keeps final assets and advanced behavior visibly pending", () => {
@@ -104,15 +89,6 @@ describe("StaticStorySkeleton", () => {
         ) as HTMLElement,
       ).getByText(/Ativo final pendente/u),
     ).toBeVisible();
-    expect(
-      within(
-        container.querySelector(
-          '[data-chapter-id="application-demo"]',
-        ) as HTMLElement,
-      ).getByText(/WebM, MP4, poster e quadro final/u),
-    ).toBeVisible();
-    expect(container.querySelectorAll("[data-structural-placeholder]")).toHaveLength(
-      2,
-    );
+    expect(container.querySelectorAll("[data-structural-placeholder]")).toHaveLength(1);
   });
 });

@@ -329,14 +329,7 @@ export function ChapterNavigation({
     <LinkButton
       data-navigation-role="previous"
       href={previous.route}
-      leadingIcon={
-        chapter.branch === "institutional" ? (
-          <ArrowIcon direction="left" />
-        ) : undefined
-      }
-      trailingIcon={
-        chapter.branch === "application" ? <ArrowIcon /> : undefined
-      }
+      leadingIcon={<ArrowIcon direction="left" />}
       variant="secondary"
     >
       Anterior: {chapterLabels[previous.id]}
@@ -346,14 +339,7 @@ export function ChapterNavigation({
     <LinkButton
       data-navigation-role="next"
       href={next.route}
-      leadingIcon={
-        chapter.branch === "application" ? (
-          <ArrowIcon direction="left" />
-        ) : undefined
-      }
-      trailingIcon={
-        chapter.branch === "institutional" ? <ArrowIcon /> : undefined
-      }
+      trailingIcon={<ArrowIcon />}
     >
       Próximo: {chapterLabels[next.id]}
     </LinkButton>
@@ -365,8 +351,8 @@ export function ChapterNavigation({
       className={styles.chapterNavigation}
       data-branch={chapter.branch}
     >
-      {chapter.branch === "application" ? nextLink : previousLink}
-      {chapter.branch === "application" ? previousLink : nextLink}
+      {previousLink}
+      {nextLink}
     </nav>
   );
 }

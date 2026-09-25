@@ -1,11 +1,8 @@
 export {
-  ApplicationFeatureStrip,
   AudienceList,
-  BenefitsGrid,
   CompanyMark,
   ContactWorkspace,
   EditorialPillars,
-  ProjectGrid,
   ServiceDetailMark,
   ServiceSolutionGrid,
   StepSequence,

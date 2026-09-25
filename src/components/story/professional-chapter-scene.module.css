@@ -171,6 +171,33 @@
   align-content: center;
 }
 
+.projectTeaser {
+  display: grid;
+  inline-size: min(100%, 42rem);
+  gap: var(--wf-space-3);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-lg);
+  background: var(--wf-surface);
+  box-shadow: var(--wf-shadow-soft);
+}
+
+.projectTeaserType {
+  color: var(--wf-text-accent);
+  font-size: var(--wf-font-size-label);
+  font-weight: var(--wf-font-weight-bold);
+  letter-spacing: var(--wf-tracking-label);
+  text-transform: uppercase;
+}
+
+.projectTeaser h3 {
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+}
+
+.projectTeaserRole {
+  color: var(--wf-text-muted);
+}
+
 :global([data-projection-mode="horizontal-enhanced"]) .projectsScene {
   grid-template-columns: minmax(16rem, 0.48fr) minmax(43rem, 1.52fr);
   align-items: center;
@@ -201,6 +228,15 @@
   grid-template-columns: minmax(19rem, 0.72fr) minmax(30rem, 1.28fr);
   align-items: start;
   gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+@media (width >= 75rem) {
+  :global([data-projection-mode="vertical-wide"][data-story-presentation="COMPACT_LANDSCAPE"])
+    :is(.aboutScene, .processScene, .contactScene) {
+    inline-size: min(82rem, calc(100% - 12rem));
+    margin-inline-start: auto;
+    margin-inline-end: 0;
+  }
 }
 
 .contactIntroduction {

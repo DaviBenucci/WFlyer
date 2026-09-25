@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   getPublicProjectBySlug,
+  getPrimaryPublicProject,
   getPublicServiceBySlug,
   PHASE3_ROUTE_SEO,
   PROCESS_STEPS,
@@ -33,11 +34,11 @@ describe("Phase-3 public content domain", () => {
   });
 
   it("defines every story chapter with stable identity, branch, and publication state", () => {
-    expect(Object.keys(PUBLIC_STORY_CONTENT)).toHaveLength(13);
+    expect(Object.keys(PUBLIC_STORY_CONTENT)).toHaveLength(7);
 
     for (const [chapterId, content] of Object.entries(PUBLIC_STORY_CONTENT)) {
       expect(content.chapterId).toBe(chapterId);
-      expect(["origin", "professional", "application"]).toContain(
+      expect(["origin", "professional"]).toContain(
         content.branch,
       );
       expect(content.publicationStatus).toBe("public");
@@ -88,6 +89,19 @@ describe("Phase-3 public content domain", () => {
     ).toBe(true);
   });
 
+  it("selects the first featured public project in canonical order", () => {
+    const [first, second] = PUBLIC_PROJECTS;
+    expect(getPrimaryPublicProject()).toBe(first);
+    expect(getPrimaryPublicProject([
+      { ...first!, featured: false },
+      second!,
+    ])).toBe(second);
+    expect(getPrimaryPublicProject([
+      { ...first!, publicationStatus: "unpublished" },
+      { ...second!, featured: false },
+    ])).toMatchObject({ slug: second!.slug });
+  });
+
   it("fails closed for unpublished service records", () => {
     const unpublishedFixture = {
       ...PUBLIC_SERVICES[0]!,
@@ -103,43 +117,20 @@ describe("Phase-3 public content domain", () => {
     ).toBe(true);
   });
 
-  it("preserves the exact public application flow without a prelaunch access action", () => {
-    expect(PUBLIC_STORY_CONTENT["application-overview"].items).toHaveLength(3);
-    expect(PUBLIC_STORY_CONTENT["application-how-it-works"].items).toHaveLength(
-      5,
-    );
-    expect(PUBLIC_STORY_CONTENT["application-benefits"].items).toHaveLength(4);
-    expect(PUBLIC_STORY_CONTENT["application-demo"].description).toContain(
-      "A tela simulada permanece inerte",
-    );
-    expect(PUBLIC_STORY_CONTENT["application-demo"].description).not.toMatch(
-      /Fase 3/u,
-    );
-
-    const accessActions = Object.values(PUBLIC_STORY_CONTENT).filter(
-      ({ primaryAction }) =>
-        primaryAction?.href === "https://app.wflyer.com.br",
-    );
-    expect(accessActions).toEqual([]);
-    expect(PUBLIC_STORY_CONTENT["application-access"]).toMatchObject({
-      eyebrow: "Lançamento",
-      title: "A aplicação está em desenvolvimento.",
-    });
-    expect(PUBLIC_STORY_CONTENT["application-access"]).not.toHaveProperty(
-      "primaryAction",
-    );
+  it("contains only the portfolio narrative", () => {
+    expect(Object.keys(PUBLIC_STORY_CONTENT)).toEqual([
+      "home", "professional-about", "professional-services",
+      "professional-process", "professional-projects",
+      "professional-contact", "professional-terminal",
+    ]);
   });
 
   it("provides unique metadata for every Phase-3 static chapter route", () => {
     const entries = Object.entries(PHASE3_ROUTE_SEO);
     expect(entries.map(([route]) => route)).toEqual([
-      "/aplicacao-wflyer",
-      "/aplicacao-wflyer/como-funciona",
-      "/aplicacao-wflyer/beneficios",
       "/sobre",
       "/servicos",
       "/processo",
-      "/portfolio",
       "/contato",
     ]);
     expect(new Set(entries.map(([, seo]) => seo.title)).size).toBe(

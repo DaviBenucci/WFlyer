@@ -4,24 +4,6 @@ import { mockTurnstile } from "../helpers/turnstile";
 
 const mainPageContracts = [
   {
-    archetype: "product-demo",
-    route: "/aplicacao-wflyer",
-    selector: "main #demonstracao",
-    count: 1,
-  },
-  {
-    archetype: "editorial-sequence",
-    route: "/aplicacao-wflyer/como-funciona",
-    selector: "main #etapas article",
-    count: 5,
-  },
-  {
-    archetype: "editorial-benefits-terminal",
-    route: "/aplicacao-wflyer/beneficios",
-    selector: "main #beneficios article",
-    count: 4,
-  },
-  {
     archetype: "editorial-sequence",
     route: "/sobre",
     selector: "main #perspectiva article",
@@ -38,12 +20,6 @@ const mainPageContracts = [
     route: "/processo",
     selector: "main #etapas article",
     count: 4,
-  },
-  {
-    archetype: "portfolio-grid",
-    route: "/portfolio",
-    selector: "main [data-project-list] article",
-    count: 3,
   },
   {
     archetype: "contact-terminal",
@@ -69,20 +45,6 @@ for (const contract of mainPageContracts) {
   });
 }
 
-test("a Aplicação preserva o contrato público sem restaurar o tablet interativo", async ({
-  page,
-}) => {
-  await page.goto("/aplicacao-wflyer");
-
-  const main = page.getByRole("main");
-  const demoContract = main.locator("#demonstracao");
-  await expect(demoContract).toBeVisible();
-  await expect(main.locator("select, canvas, video")).toHaveCount(0);
-  await expect(main.getByRole("button", { name: "Transpor" })).toHaveCount(0);
-  await expect(main.locator("#proposta article")).toHaveCount(3);
-  await expect(demoContract).toContainText(/WebM, MP4, poster e quadro final/u);
-  await expect(main).toContainText(/revisão humana/u);
-});
 
 test("Serviços oferece quatro destinos reais com foco equivalente ao hover", async ({
   page,
@@ -102,21 +64,6 @@ test("Serviços oferece quatro destinos reais com foco equivalente ao hover", as
   await expect(
     page.locator('[data-score-chapter="services"]'),
   ).toHaveCount(1);
-});
-
-test("Projetos permanece limitado aos três registros públicos autorizados", async ({
-  page,
-}) => {
-  await page.goto("/portfolio");
-
-  const projects = page.locator("main [data-project-list] article");
-  await expect(projects).toHaveCount(3);
-  await expect(projects.nth(0)).toContainText("W_Flyer");
-  await expect(projects.nth(1)).toContainText("MSN Distribuidora");
-  await expect(projects.nth(2)).toContainText("MSN Suprimentos");
-  await expect(
-    page.locator("main [data-project-list] img"),
-  ).toHaveCount(0);
 });
 
 test("Contato apresenta o formulário seguro sem simular envio", async ({
@@ -153,10 +100,7 @@ test("Contato apresenta o formulário seguro sem simular envio", async ({
   ).toBeVisible();
 });
 
-for (const route of [
-  "/aplicacao-wflyer/beneficios",
-  "/contato",
-] as const) {
+for (const route of ["/contato"] as const) {
   test(`${route} termina depois da navegação e não reinicia pauta no footer`, async ({
     page,
   }) => {
@@ -265,9 +209,6 @@ for (const { route, updatedAt } of legalRoutes) {
       "data-variant",
       "simplified",
     );
-    await expect(
-      page.getByRole("navigation", { name: "Navegação da aplicação" }),
-    ).toBeVisible();
     await expect(
       page.getByRole("navigation", { name: "Navegação profissional" }),
     ).toBeVisible();

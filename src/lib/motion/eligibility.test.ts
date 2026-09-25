@@ -70,7 +70,7 @@ describe("evaluateLinkEligibility", () => {
     expect(
       evaluateLinkEligibility(
         { ...primaryActivation, button: 0 },
-        { href: "/portfolio" },
+        { href: "/contato" },
         new URL("https://wflyer.com.br/processo"),
       ).eligible,
     ).toBe(true);
@@ -79,37 +79,37 @@ describe("evaluateLinkEligibility", () => {
   it.each([
     [
       { ...primaryActivation, defaultPrevented: true },
-      { href: "/portfolio" },
+      { href: "/contato" },
       "default-prevented",
     ],
     [
       { ...primaryActivation, button: 1 },
-      { href: "/portfolio" },
+      { href: "/contato" },
       "non-primary-button",
     ],
     [
       { ...primaryActivation, button: 2 },
-      { href: "/portfolio" },
+      { href: "/contato" },
       "non-primary-button",
     ],
     [
       { ...primaryActivation, metaKey: true },
-      { href: "/portfolio" },
+      { href: "/contato" },
       "modified-activation",
     ],
     [
       { ...primaryActivation, ctrlKey: true },
-      { href: "/portfolio" },
+      { href: "/contato" },
       "modified-activation",
     ],
     [
       { ...primaryActivation, shiftKey: true },
-      { href: "/portfolio" },
+      { href: "/contato" },
       "modified-activation",
     ],
     [
       { ...primaryActivation, altKey: true },
-      { href: "/portfolio" },
+      { href: "/contato" },
       "modified-activation",
     ],
   ] as const)("keeps special activation native", (activation, link, reason) => {
@@ -119,13 +119,13 @@ describe("evaluateLinkEligibility", () => {
   it.each([
     [{ href: null }, "missing-href"],
     [{ href: "  " }, "missing-href"],
-    [{ href: "/portfolio", download: true }, "download"],
-    [{ href: "/portfolio", enhancementOptOut: true }, "explicit-native"],
-    [{ href: "/portfolio", target: "_blank" }, "new-context"],
+    [{ href: "/contato", download: true }, "download"],
+    [{ href: "/contato", enhancementOptOut: true }, "explicit-native"],
+    [{ href: "/contato", target: "_blank" }, "new-context"],
     [{ href: "https://app.wflyer.com.br" }, "external-origin"],
     [{ href: "mailto:davi.benucci@wflyer.com.br" }, "unsupported-protocol"],
     [{ href: "#main-content" }, "hash-destination"],
-    [{ href: "/portfolio#project" }, "hash-destination"],
+    [{ href: "/contato#formulario" }, "hash-destination"],
     [{ href: "/sobre?variant=two" }, "same-pathname"],
     [{ href: "/servicos/criacao-de-sites" }, "destination-not-main-chapter"],
     [{ href: "/politica-de-privacidade" }, "destination-not-main-chapter"],
@@ -138,13 +138,13 @@ describe("evaluateLinkEligibility", () => {
   it("enhances an explicit _self target in the current browsing context", () => {
     const result = evaluateLinkEligibility(
       primaryActivation,
-      { href: "/portfolio", target: "_self" },
+      { href: "/contato", target: "_self" },
       "https://wflyer.com.br/sobre",
     );
 
     expect(result).toMatchObject({
       eligible: true,
-      destinationPathname: "/portfolio",
+      destinationPathname: "/contato",
     });
   });
 
@@ -170,7 +170,7 @@ describe("evaluateLinkEligibility", () => {
     const result = evaluateLinkEligibility(
       primaryActivation,
       { href: "/contato?origin=portfolio" },
-      "https://wflyer.com.br/portfolio",
+      "https://wflyer.com.br/processo",
     );
 
     expect(result).toMatchObject({

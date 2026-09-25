@@ -9,11 +9,13 @@ import { Eyebrow, Heading, Text } from "@/components/ui";
 import { siteConfig } from "@/config/site";
 import {
   getFeaturedPublicProjects,
+  getPrimaryPublicProject,
   PROCESS_STEPS,
   PUBLIC_SERVICES,
   PUBLIC_STORY_CONTENT,
 } from "@/content/public";
 import type { StoryChapterId } from "@/lib/story";
+import type { StoryProjectionMode } from "@/lib/story/bootstrap";
 
 import styles from "./professional-chapter-scene.module.css";
 import { STORY_FOOTER_GROUPS } from "./story-footer-data";
@@ -143,7 +145,7 @@ function ServicesScene({ headingId }: { readonly headingId: string }) {
 function ProcessScene({ headingId }: { readonly headingId: string }) {
   return (
     <div
-      className={styles.scene}
+      className={`${styles.scene} ${styles.processScene}`}
       data-professional-scene="process"
       data-story-scene-contract="phase-7"
     >
@@ -169,8 +171,15 @@ function ProcessScene({ headingId }: { readonly headingId: string }) {
   );
 }
 
-function ProjectsScene({ headingId }: { readonly headingId: string }) {
+function ProjectsScene({
+  headingId,
+  mode,
+}: {
+  readonly headingId: string;
+  readonly mode: StoryProjectionMode;
+}) {
   const projects = getFeaturedPublicProjects();
+  const teaser = getPrimaryPublicProject();
 
   return (
     <div
@@ -182,7 +191,24 @@ function ProjectsScene({ headingId }: { readonly headingId: string }) {
         chapterId="professional-projects"
         headingId={headingId}
       />
-      <ProjectCardFan projects={projects} />
+      {mode === "horizontal-enhanced" ? (
+        <ProjectCardFan projects={projects} />
+      ) : teaser ? (
+        <article
+          className={styles.projectTeaser}
+          data-project-teaser=""
+          data-score-content-exclusion="project-teaser"
+        >
+          <p className={styles.projectTeaserType}>{teaser.type}</p>
+          <h3>{teaser.title}</h3>
+          <p>{teaser.shortLandingSummary}</p>
+          <p className={styles.projectTeaserRole}>{teaser.role}</p>
+        </article>
+      ) : (
+        <p data-project-teaser-empty="" role="status">
+          Nenhum projeto público está disponível no momento.
+        </p>
+      )}
     </div>
   );
 }
@@ -302,11 +328,13 @@ function ProfessionalTerminalScene({
 export interface ProfessionalChapterSceneProps {
   readonly chapterId: ProfessionalChapterId;
   readonly headingId: string;
+  readonly projectsMode?: StoryProjectionMode;
 }
 
 export function ProfessionalChapterScene({
   chapterId,
   headingId,
+  projectsMode = "static",
 }: ProfessionalChapterSceneProps) {
   switch (chapterId) {
     case "professional-about":
@@ -316,7 +344,7 @@ export function ProfessionalChapterScene({
     case "professional-process":
       return <ProcessScene headingId={headingId} />;
     case "professional-projects":
-      return <ProjectsScene headingId={headingId} />;
+      return <ProjectsScene headingId={headingId} mode={projectsMode} />;
     case "professional-contact":
       return <ContactScene headingId={headingId} />;
     case "professional-terminal":

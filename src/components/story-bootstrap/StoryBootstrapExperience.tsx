@@ -180,7 +180,7 @@ function verifyMountedCriticalSurface(root: HTMLElement): void {
     throw new Error("The semantic story document is not mounted.");
   }
 
-  if (STORY_CHAPTERS.length !== 13) {
+  if (STORY_CHAPTERS.length !== 7) {
     throw new Error("The canonical story manifest is incomplete.");
   }
 

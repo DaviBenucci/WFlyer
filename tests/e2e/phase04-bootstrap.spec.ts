@@ -211,7 +211,7 @@ test.describe("Phase-4 readiness and semantic bootstrap", () => {
     page,
   }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });
-    await openBootstrap(page, "?scenario=slow-critical#beneficios");
+    await openBootstrap(page, "?scenario=slow-critical#projetos");
     await expect(page.locator(COVER)).toBeVisible();
     await expect(page.locator(ROOT)).toHaveAttribute(
       "data-bootstrap-state",
@@ -226,7 +226,7 @@ test.describe("Phase-4 readiness and semantic bootstrap", () => {
     await expectTerminalBootstrap(page, "REVEALED", 6_000);
     await expect(page.locator(ROOT)).toHaveAttribute(
       "data-bootstrap-destination",
-      "application-benefits",
+      "professional-projects",
     );
     const stateTrace = await page.evaluate(
       () => window.__WFLYER_PHASE4_BOOTSTRAP__?.states ?? [],
@@ -242,12 +242,12 @@ test.describe("Phase-4 readiness and semantic bootstrap", () => {
     await page.goto("about:blank");
     await page.emulateMedia({ reducedMotion: "no-preference" });
     const startedAt = Date.now();
-    await openBootstrap(page, "?scenario=noncritical-failure#beneficios");
+    await openBootstrap(page, "?scenario=noncritical-failure#projetos");
     await expectTerminalBootstrap(page, "REVEALED", 4_000);
     expect(Date.now() - startedAt).toBeLessThan(3_500);
     await expect(page.locator(ROOT)).toHaveAttribute(
       "data-bootstrap-destination",
-      "application-benefits",
+      "professional-projects",
     );
   });
 
@@ -280,11 +280,11 @@ test.describe("Phase-4 readiness and semantic bootstrap", () => {
     page,
   }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });
-    await openBootstrap(page, "#como-funciona");
+    await openBootstrap(page, "#processo");
     await expectTerminalBootstrap(page, "REVEALED", 3_000);
     await expect(page.locator(ROOT)).toHaveAttribute(
       "data-bootstrap-destination",
-      "application-how-it-works",
+      "professional-process",
     );
     await expect(page.locator(ROOT)).toHaveAttribute(
       "data-bootstrap-reduced-motion",
@@ -296,7 +296,7 @@ test.describe("Phase-4 readiness and semantic bootstrap", () => {
     await expectTerminalBootstrap(page, "REVEALED", 3_000);
     await expect(page.locator(ROOT)).toHaveAttribute(
       "data-bootstrap-destination",
-      "application-how-it-works",
+      "professional-process",
     );
     await expect(page.locator(ROOT)).toHaveAttribute(
       "data-bootstrap-session-repeated",

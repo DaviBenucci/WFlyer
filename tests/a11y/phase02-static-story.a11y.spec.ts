@@ -16,19 +16,9 @@ const CHAPTER_IDS = [
   "professional-projects",
   "professional-contact",
   "professional-terminal",
-  "application-overview",
-  "application-how-it-works",
-  "application-benefits",
-  "application-demo",
-  "application-access",
-  "application-terminal",
 ] as const;
 
 const HEADER_HASHES = [
-  "#aplicacao",
-  "#como-funciona",
-  "#beneficios",
-  "#lancamento",
   "#home",
   "#sobre",
   "#servicos",

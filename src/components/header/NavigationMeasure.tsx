@@ -25,8 +25,6 @@ function MeasureGraphic({
   readonly active: boolean;
   readonly branch: HeaderNavigationItem["branch"];
 }) {
-  const isApplication = branch === "application";
-
   return (
     <svg
       aria-hidden="true"
@@ -40,7 +38,7 @@ function MeasureGraphic({
         amplitude={3}
         baseY={12}
         data-brand-intro-header-score-lines=""
-        direction={isApplication ? "left" : "right"}
+        direction="right"
         endX={160}
         lineGap={6}
       />
@@ -60,8 +58,8 @@ function MeasureGraphic({
         data-brand-intro-header-score-detail=""
         filled={active}
         scale={0.45}
-        stem={isApplication ? "down" : "up"}
-        x={isApplication ? 34 : 126}
+        stem="up"
+        x={126}
         y={24}
       />
     </svg>

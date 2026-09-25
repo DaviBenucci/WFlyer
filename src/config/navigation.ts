@@ -10,24 +10,6 @@ export interface InternalHeaderLink {
 
 export type HeaderLink = InternalHeaderLink;
 
-export const applicationHeaderLinks = [
-  {
-    id: "application",
-    label: "Aplicação",
-    href: scoreChapterById.application.route,
-  },
-  {
-    id: "how-it-works",
-    label: "Como funciona",
-    href: scoreChapterById["application-how-it-works"].route,
-  },
-  {
-    id: "benefits",
-    label: "Benefícios",
-    href: scoreChapterById["application-benefits"].route,
-  },
-] as const satisfies readonly HeaderLink[];
-
 export const institutionalHeaderLinks = [
   {
     id: "company",
@@ -40,11 +22,6 @@ export const institutionalHeaderLinks = [
     href: scoreChapterById.services.route,
   },
   {
-    id: "portfolio",
-    label: "Projetos",
-    href: scoreChapterById.portfolio.route,
-  },
-  {
     id: "contact",
     label: "Contato",
     href: scoreChapterById.contact.route,
@@ -52,7 +29,6 @@ export const institutionalHeaderLinks = [
 ] as const satisfies readonly HeaderLink[];
 
 export const mobileHeaderLinks = [
-  ...applicationHeaderLinks,
   ...institutionalHeaderLinks,
 ] as const;
 

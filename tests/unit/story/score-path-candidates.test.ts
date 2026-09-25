@@ -149,11 +149,6 @@ describe("Phase-9 task-33 ScorePath candidates", () => {
         contentOwnedHeight: 8260,
         totalTrackHeight: 9898,
       },
-      application: {
-        chapterHeights: [380, 1140, 1140, 980, 780, 500, 470],
-        contentOwnedHeight: 5390,
-        totalTrackHeight: 7028,
-      },
     } as const;
 
     for (const branch of SCORE_PATH_REVIEW_BRANCHES) {
@@ -293,10 +288,6 @@ describe("Phase-9 task-33 ScorePath candidates", () => {
       "process-stages",
       "project-card-fan",
       "contact-form",
-      "application-overview",
-      "application-benefits",
-      "application-tablet-demo",
-      "access-action",
       "terminal-content",
     ]);
     const observedReasons = new Set<string>();
@@ -334,7 +325,7 @@ describe("Phase-9 task-33 ScorePath candidates", () => {
     }
   });
 
-  it("keeps the two directions geometrically distinct without theme-dependent geometry", () => {
+  it("keeps the two candidates geometrically distinct without theme-dependent geometry", () => {
     for (const mode of SCORE_PATH_REVIEW_MODES) {
       for (const branch of SCORE_PATH_REVIEW_BRANCHES) {
         const soft = buildScorePathReviewTrack("organic-soft", mode, branch);
@@ -470,13 +461,6 @@ describe("Phase-9 task-33 ScorePath candidates", () => {
         "professional",
       ).evidence.semanticFingerprint,
     ).toBe("fnv1a32:039bce10");
-    expect(
-      buildScorePathReviewTrack(
-        "organic-flowing",
-        "vertical-wide",
-        "application",
-      ).evidence.semanticFingerprint,
-    ).toBe("fnv1a32:1fe3356b");
   });
 
   it("resolves deterministic review URLs and fails unknown query values to safe defaults", () => {

@@ -9,6 +9,7 @@ import {
 } from "react";
 
 import { ScoreSvg } from "@/components/score/ScoreSvg";
+import { SCORE_REVIEW_SVG_PRECISION } from "@/components/score/svg-number";
 import {
   storyScoreCompositionDiagnostics,
   STORY_SCORE_EXPECTED_FINGERPRINTS,
@@ -16,17 +17,18 @@ import {
 import {
   buildStoryScoreProjection,
   STORY_SCORE_PROJECTION_MODES,
-  type StoryScoreMeasuredRect,
   type StoryScoreProjectionMode,
   type StoryScoreSceneMeasurements,
 } from "@/lib/story/score/projection";
-import { DESKTOP_TIMELINE_ORDER } from "@/lib/story/manifest";
 import { MOTION_LAB_DRAFT_ELIGIBILITY } from "@/lib/story/motion";
 
-import { normalizeStoryScoreMeasuredRect } from "./measurement";
+import { measureStoryScoreScenes, storyScoreMeasurementOwners } from "./measurement";
+import { serializeStoryScoreEventSafety, serializeStoryScoreGeometry } from "./projection-metadata";
+import type { ProjectsHorizontalCandidateSnapshot } from "./projects-capacity-candidate";
 import styles from "./story-score-layer.module.css";
 
 interface ScoreLayerState {
+  readonly clientReady: boolean;
   readonly height: number;
   readonly measurementSignature: string;
   readonly mode: StoryScoreProjectionMode;
@@ -35,6 +37,7 @@ interface ScoreLayerState {
 }
 
 const HYDRATION_BASELINE: ScoreLayerState = Object.freeze({
+  clientReady: false,
   height: 900,
   measurementSignature: "fallback",
   mode: "static",
@@ -47,120 +50,17 @@ function isProjectionMode(value: string | undefined): value is StoryScoreProject
   );
 }
 
-const ATOMIC_EXCLUSION_REASONS = new Set([
-  "application-benefits",
-  "application-overview",
-  "heading-and-body",
-  "home-reading-envelope",
-  "process-stages",
-  "terminal-content",
-]);
-
-function exclusionMeasurementOwners(exclusion: HTMLElement): HTMLElement[] {
-  const reason = exclusion.dataset.scoreContentExclusion ?? "";
-
-  return ATOMIC_EXCLUSION_REASONS.has(reason)
-    ? Array.from(exclusion.children).filter(
-        (element): element is HTMLElement => element instanceof HTMLElement,
-      )
-    : [exclusion];
+export interface StoryScoreLayerProps {
+  readonly readHorizontalCandidateSnapshot?: (
+    width: number,
+    height: number,
+    revision: string,
+  ) => ProjectsHorizontalCandidateSnapshot | null;
 }
 
-function scoreMeasurementOwners(track: HTMLElement): readonly HTMLElement[] {
-  const owners = new Set<HTMLElement>(
-    track.querySelectorAll<HTMLElement>(
-      "[data-service-module], [data-application-how-step], [data-project-card-item]",
-    ),
-  );
-
-  track
-    .querySelectorAll<HTMLElement>("[data-score-content-exclusion]")
-    .forEach((exclusion) => {
-      exclusionMeasurementOwners(exclusion).forEach((owner) => owners.add(owner));
-    });
-
-  return Object.freeze([...owners]);
-}
-
-function measureElements(
-  elements: readonly HTMLElement[],
-  trackRect: DOMRect,
-): readonly StoryScoreMeasuredRect[] {
-  return Object.freeze(
-    elements.flatMap((element) => {
-      const rect = element.getBoundingClientRect();
-
-      return rect.width > 0 && rect.height > 0
-        ? [normalizeStoryScoreMeasuredRect(rect, trackRect)]
-        : [];
-    }),
-  );
-}
-
-function measureScoreScenes(track: HTMLElement): {
-  readonly measurements: StoryScoreSceneMeasurements;
-  readonly signature: string;
-} {
-  const trackRect = track.getBoundingClientRect();
-  const chapterContentExclusions = Object.freeze(
-    Object.fromEntries(
-      DESKTOP_TIMELINE_ORDER.map((chapterId) => {
-        const chapter = track.querySelector<HTMLElement>(
-          `[data-chapter-id="${chapterId}"]`,
-        );
-        if (!chapter) return [chapterId, Object.freeze([])] as const;
-
-        const rectangles = Array.from(
-          chapter.querySelectorAll<HTMLElement>(
-            "[data-score-content-exclusion]",
-          ),
-        ).flatMap((exclusion) => {
-          const reason = exclusion.dataset.scoreContentExclusion ?? "";
-
-          return measureElements(
-            exclusionMeasurementOwners(exclusion),
-            trackRect,
-          ).map((rect) => Object.freeze({ ...rect, reason }));
-        });
-
-        return [chapterId, Object.freeze(rectangles)] as const;
-      }),
-    ),
-  );
-  const measurements = Object.freeze({
-    applicationHowItWorksCards: measureElements(
-      Array.from(
-        track.querySelectorAll<HTMLElement>(
-          '[data-application-scene="how-it-works"] [data-application-how-step]',
-        ),
-      ),
-      trackRect,
-    ),
-    chapterContentExclusions,
-    professionalProjectCards: measureElements(
-      Array.from(
-        track.querySelectorAll<HTMLElement>(
-          '[data-professional-scene="projects"] [data-project-card-item]',
-        ),
-      ),
-      trackRect,
-    ),
-    professionalServicesCards: measureElements(
-      Array.from(
-        track.querySelectorAll<HTMLElement>(
-          '[data-professional-scene="services"] [data-service-module]',
-        ),
-      ),
-      trackRect,
-    ),
-  });
-  return Object.freeze({
-    measurements,
-    signature: JSON.stringify(measurements),
-  });
-}
-
-export function StoryScoreLayer() {
+export function StoryScoreLayer({
+  readHorizontalCandidateSnapshot,
+}: StoryScoreLayerProps = {}) {
   const layerRef = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<ScoreLayerState>(HYDRATION_BASELINE);
   const projection = useMemo(
@@ -207,20 +107,36 @@ export function StoryScoreLayer() {
         return;
       }
 
+      const revision = `fonts:${document.fonts?.status ?? "loaded"}`;
+      const candidateSnapshot =
+        nextMode === "horizontal-enhanced"
+          ? readHorizontalCandidateSnapshot?.(
+              nextWidth,
+              nextHeight,
+              revision,
+            ) ?? null
+          : null;
       const sceneMeasurement =
         nextMode === "horizontal-enhanced"
-          ? measureScoreScenes(track)
+          ? candidateSnapshot === null
+            ? measureStoryScoreScenes(track)
+            : {
+                measurements: candidateSnapshot.measurements,
+                signature: candidateSnapshot.signature,
+              }
           : undefined;
       const nextMeasurementSignature =
         sceneMeasurement?.signature ?? "fallback";
 
       setState((current) =>
+        current.clientReady &&
         current.mode === nextMode &&
         current.width === nextWidth &&
         current.height === nextHeight &&
         current.measurementSignature === nextMeasurementSignature
           ? current
           : Object.freeze({
+              clientReady: true,
               height: nextHeight,
               measurementSignature: nextMeasurementSignature,
               mode: nextMode,
@@ -249,7 +165,7 @@ export function StoryScoreLayer() {
       passive: true,
     });
     sizeObserver?.observe(root);
-    scoreMeasurementOwners(track).forEach((element) =>
+    storyScoreMeasurementOwners(track).forEach((element) =>
       sizeObserver?.observe(element),
     );
     synchronize();
@@ -260,7 +176,7 @@ export function StoryScoreLayer() {
       sizeObserver?.disconnect();
       window.removeEventListener("resize", scheduleSynchronization);
     };
-  }, []);
+  }, [readHorizontalCandidateSnapshot]);
 
   const layerStyle = {
     "--story-score-height": `${projection.height}px`,
@@ -268,47 +184,26 @@ export function StoryScoreLayer() {
   } as CSSProperties;
   const servicesInteraction =
     projection.evidence.cardScoreInteractions["professional-services"];
-  const howInteraction =
-    projection.evidence.cardScoreInteractions["application-how-it-works"];
 
   return (
     <div
       aria-hidden="true"
       className={styles.layer}
-      data-score-application-fingerprint={
-        STORY_SCORE_EXPECTED_FINGERPRINTS.application
-      }
       data-score-composer-invocations={diagnostics.composerInvocationCount}
       data-score-connector-events={projection.evidence.connectorEventCount}
-      data-score-how-expanded-span={howInteraction.expandedSpan.toFixed(3)}
-      data-score-how-lead-in={howInteraction.leadInLength.toFixed(3)}
-      data-score-how-lead-out={howInteraction.leadOutLength.toFixed(3)}
-      data-score-how-measurement-source={howInteraction.measurementSource}
-      data-score-how-minimum-opacity={howInteraction.minimumOpacity.toFixed(3)}
-      data-score-how-unsafe-events={howInteraction.eventCount}
       data-score-clef-mirror-x={String(projection.evidence.clef.mirrorX)}
       data-score-clef-mirror-y={String(projection.evidence.clef.mirrorY)}
       data-score-clef-rotation={
         projection.evidence.clef.rotationDegrees.toFixed(6)
       }
-      data-score-hydration-precision="6"
+      data-score-hydration-precision={SCORE_REVIEW_SVG_PRECISION}
       data-score-maximum-notation-tangent={
         projection.evidence.maximumNotationTangentAngleDeg.toFixed(6)
       }
       data-score-professional-fingerprint={
         STORY_SCORE_EXPECTED_FINGERPRINTS.professional
       }
-      data-score-origin-point-gap={
-        projection.evidence.commonOrigin.pointGap.toFixed(6)
-      }
-      data-score-origin-staff-line-gap={
-        projection.evidence.commonOrigin.staffLineGap.toFixed(6)
-      }
-      data-score-origin-tangent-alignment={
-        projection.evidence.commonOrigin.tangentAlignment.toFixed(6)
-      }
       data-score-path-self-intersections={
-        projection.evidence.pathSelfIntersections.application +
         projection.evidence.pathSelfIntersections.professional
       }
       data-score-projection={projection.mode}
@@ -325,6 +220,19 @@ export function StoryScoreLayer() {
       data-score-runtime-owner="precomputed-projection-no-scroll-state"
       data-score-segment-count={projection.evidence.segmentCount}
       data-score-session-seed={projection.sessionSeed}
+      data-story-spatial-projection="continuous-story"
+      data-story-spatial-landmarks={JSON.stringify(projection.spatialGeometry.chapters.map(
+        ({ chapterId, contentSpan, entryAnchor, exitTransition, interactionSpans, stations, structuralStart }) => ({
+          chapterId,
+          contentSpan,
+          entryAnchor,
+          exitTransition,
+          interactionSpans,
+          stations,
+          structuralStart,
+        }),
+      ))}
+      data-story-spatial-camera={JSON.stringify(projection.spatialGeometry.cameraSegments)}
       data-score-services-expanded-span={servicesInteraction.expandedSpan.toFixed(
         3,
       )}
@@ -340,23 +248,23 @@ export function StoryScoreLayer() {
       )}
       data-score-services-unsafe-events={servicesInteraction.eventCount}
       data-score-staff-line-self-intersections={
-        projection.evidence.staffLineSelfIntersections.application +
         projection.evidence.staffLineSelfIntersections.professional
       }
       data-story-score-layer="phase-9-task-34"
       ref={layerRef}
       style={layerStyle}
     >
-      {(["application", "professional"] as const).map((branch) => {
+      {(["professional"] as const).map((branch) => {
         const branchProjection = projection.branches[branch];
         return (
           <div
             className={styles.branch}
             data-score-branch={branch}
-            data-score-clef-owner={
-              branch === "professional" ? "shared-origin" : "none"
-            }
+            data-score-clef-owner="origin"
             data-score-final-barline="thin-gap-thick-and-physical-end"
+            data-score-event-safety={serializeStoryScoreEventSafety(branchProjection.eventSafety)}
+            data-score-candidate-count={state.clientReady ? branchProjection.eventSafety.candidateCount : undefined}
+            data-score-home-entry={serializeStoryScoreGeometry(branchProjection.homeEntry)}
             data-score-segment-ids={branchProjection.semanticSegmentIds.join(
               " ",
             )}
@@ -366,7 +274,7 @@ export function StoryScoreLayer() {
               className={styles.score}
               data-integrated-score={branch}
               model={branchProjection.model}
-              numericPrecision={6}
+              numericPrecision={SCORE_REVIEW_SVG_PRECISION}
               viewBox={branchProjection.viewBox}
             />
           </div>

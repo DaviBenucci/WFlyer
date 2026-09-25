@@ -9,9 +9,6 @@ describe("navigation timing", () => {
       standardMinimum: 620,
       standardTarget: 720,
       standardMaximum: 820,
-      pivotMinimum: 760,
-      pivotTarget: 840,
-      pivotMaximum: 900,
       hardMaximum: 900,
       neutral: 220,
       reduced: 180,
@@ -22,7 +19,6 @@ describe("navigation timing", () => {
   it.each([
     ["adjacent-score", 720],
     ["compressed-score-jump", 720],
-    ["home-pivot", 840],
     ["neutral", 220],
   ] as const)("resolves %s to %d ms", (mode, duration) => {
     expect(getTransitionDurationMs(mode, false)).toBe(duration);
@@ -37,7 +33,6 @@ describe("navigation timing", () => {
   it.each([
     "adjacent-score",
     "compressed-score-jump",
-    "home-pivot",
     "neutral",
   ] as const)("reduces %s to one 180 ms replacement", (mode) => {
     expect(getTransitionDurationMs(mode, true)).toBe(180);

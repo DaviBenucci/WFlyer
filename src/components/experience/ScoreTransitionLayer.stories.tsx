@@ -8,7 +8,6 @@ import {
 
 const geometry = {
   height: 844,
-  pivot: { x: 720, y: 108 },
   source: { x: 96, y: 380 },
   target: { x: 1_344, y: 516 },
   width: 1_440,
@@ -72,20 +71,6 @@ export const Compressed: Story = {
   },
 };
 
-export const HomePivot: Story = {
-  args: {
-    mode: "home-pivot",
-  },
-  play: async ({ canvasElement }) => {
-    await expect(
-      canvasElement.querySelectorAll("[data-transition-segment]"),
-    ).toHaveLength(2);
-    await expect(
-      canvasElement.querySelectorAll("[data-transition-note]"),
-    ).toHaveLength(6);
-  },
-};
-
 export const ReducedMotion: Story = {
   args: {
     reducedMotion: true,
@@ -99,7 +84,7 @@ export const ReducedMotion: Story = {
 
 export const Dark: Story = {
   args: {
-    mode: "home-pivot",
+    mode: "compressed-score-jump",
   },
   globals: {
     theme: "dark",
@@ -134,7 +119,7 @@ export const StartCheckpoint: Story = {
 export const MidpointCheckpoint: Story = {
   args: {
     checkpoint: "midpoint",
-    mode: "home-pivot",
+    mode: "compressed-score-jump",
   },
 };
 

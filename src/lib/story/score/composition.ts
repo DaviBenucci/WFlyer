@@ -12,7 +12,6 @@ export const STORY_SCORE_SESSION_SEED = "phase-9-task-33-review-v1";
 
 export const STORY_SCORE_BRANCHES = Object.freeze([
   "professional",
-  "application",
 ] as const);
 export type StoryScoreBranch = (typeof STORY_SCORE_BRANCHES)[number];
 
@@ -26,15 +25,6 @@ export const STORY_SCORE_BRANCH_CHAPTERS = Object.freeze({
     "professional-contact",
     "professional-terminal",
   ] as const satisfies readonly StoryChapterId[]),
-  application: Object.freeze([
-    "home",
-    "application-overview",
-    "application-how-it-works",
-    "application-benefits",
-    "application-demo",
-    "application-access",
-    "application-terminal",
-  ] as const satisfies readonly StoryChapterId[]),
 } satisfies Readonly<Record<StoryScoreBranch, readonly StoryChapterId[]>>);
 
 const RESERVED_COMPOSER_REASON = Object.freeze({
@@ -42,7 +32,6 @@ const RESERVED_COMPOSER_REASON = Object.freeze({
   "professional-about": "persona",
   "professional-projects": "project-cards",
   "professional-contact": "form",
-  "application-demo": "tablet",
 } as const satisfies Partial<Record<StoryChapterId, ReservedZoneReason>>);
 
 function buildCompositionSlots(branch: StoryScoreBranch): {
@@ -106,7 +95,6 @@ function composeApprovedBranch(branch: StoryScoreBranch): ComposedSegment {
 
 export const STORY_SCORE_COMPOSITIONS = Object.freeze({
   professional: composeApprovedBranch("professional"),
-  application: composeApprovedBranch("application"),
 } satisfies Readonly<Record<StoryScoreBranch, ComposedSegment>>);
 
 function fnv1a(value: string): string {
@@ -146,7 +134,6 @@ export function storyScoreSemanticFingerprint(
 
 export const STORY_SCORE_EXPECTED_FINGERPRINTS = Object.freeze({
   professional: "fnv1a32:039bce10",
-  application: "fnv1a32:1fe3356b",
 } as const satisfies Readonly<Record<StoryScoreBranch, string>>);
 
 for (const branch of STORY_SCORE_BRANCHES) {

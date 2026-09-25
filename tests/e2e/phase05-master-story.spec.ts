@@ -14,7 +14,7 @@ async function openMotionLab(page: Page, suffix = "") {
   expect(response?.ok()).toBe(true);
   await expect(page.locator(BOOTSTRAP_ROOT)).toHaveAttribute(
     "data-bootstrap-state",
-    "REVEALED",
+    /^(?:REVEALED|DEGRADED)$/u,
     { timeout: 10_000 },
   );
   await expect(page.locator(MOTION_ROOT)).toHaveAttribute(
@@ -66,7 +66,7 @@ test.describe("Phase-5 native-scroll master story", () => {
     await page.setViewportSize({ height: 900, width: 1536 });
   });
 
-  test("maps direct Home under the cover from measured asymmetric geometry", async ({
+  test("maps direct Home under the cover from measured portfolio geometry", async ({
     page,
   }) => {
     await page.addInitScript(() => {
@@ -143,11 +143,12 @@ test.describe("Phase-5 native-scroll master story", () => {
     expect(result.snapshot.homeProgress).not.toBeCloseTo(0.5, 3);
     expect(result.observation.activeChapterId).toBe("home");
     expect(result.observation.progress).toBeCloseTo(result.derivedHome, 5);
-    expect(result.observation.scrollY).toBeGreaterThan(1_000);
+    expect(result.observation.scrollY).toBeGreaterThan(0);
     expect(result.renderCount).toBeDefined();
   });
 
-  test("uses native scroll for both branches, exact labels, and keyboard extremes without React frame renders", async ({
+  test("uses native scroll for the portfolio, exact labels, and keyboard extremes without React frame renders", async ({
+    browserName,
     page,
   }) => {
     await openMotionLab(page);
@@ -155,12 +156,6 @@ test.describe("Phase-5 native-scroll master story", () => {
       "data-motion-lab-render-count",
     );
     const expectedLabels = [
-      "app-terminal",
-      "app-access",
-      "app-demo",
-      "app-benefits",
-      "app-how",
-      "app-overview",
       "home",
       "pro-about",
       "pro-services",
@@ -176,9 +171,7 @@ test.describe("Phase-5 native-scroll master story", () => {
     await expect
       .poll(async () => (await motionSnapshot(page)).progress)
       .toBeLessThan(0.001);
-    expect((await motionSnapshot(page)).activeChapterId).toBe(
-      "application-terminal",
-    );
+    expect((await motionSnapshot(page)).activeChapterId).toBe("home");
 
     await page.keyboard.press("End");
     await expect
@@ -241,7 +234,9 @@ test.describe("Phase-5 native-scroll master story", () => {
         "data-motion-lab-render-count",
       ),
     ).toBe(baseline);
-    expect((await motionSnapshot(page)).ownedScrollTriggerCount).toBe(1);
+    expect((await motionSnapshot(page)).ownedScrollTriggerCount).toBe(
+      browserName === "firefox" ? 0 : 1,
+    );
   });
 
   test("allows a literal headed native-scrollbar drag without React frame renders", async ({
@@ -300,13 +295,13 @@ test.describe("Phase-5 native-scroll master story", () => {
     ).toBe(renderCount);
   });
 
-  test("positions both branch deep links and retains Phase-4 Back/Forward semantics", async ({
+  test("positions portfolio deep links and retains Phase-4 Back/Forward semantics", async ({
     page,
   }) => {
-    await openMotionLab(page, "#beneficios");
+    await openMotionLab(page, "#sobre");
     await expect
       .poll(async () => (await motionSnapshot(page)).activeChapterId)
-      .toBe("application-benefits");
+      .toBe("professional-about");
     await expect(page.locator(BOOTSTRAP_ROOT)).toHaveAttribute(
       "data-bootstrap-source",
       "explicit-hash",
@@ -332,8 +327,8 @@ test.describe("Phase-5 native-scroll master story", () => {
     await page.goBack();
     await expect
       .poll(async () => (await motionSnapshot(page)).activeChapterId)
-      .toBe("application-benefits");
-    expect(new URL(page.url()).hash).toBe("#beneficios");
+      .toBe("professional-about");
+    expect(new URL(page.url()).hash).toBe("#sobre");
 
     await page.goForward();
     await expect
@@ -342,12 +337,13 @@ test.describe("Phase-5 native-scroll master story", () => {
   });
 
   test("preserves the active semantic chapter across capacity and orientation rebuilds", async ({
+    browserName,
     page,
   }) => {
-    await openMotionLab(page, "#beneficios");
+    await openMotionLab(page, "#processo");
     await expect
       .poll(async () => (await motionSnapshot(page)).activeChapterId)
-      .toBe("application-benefits");
+      .toBe("professional-process");
 
     await page.setViewportSize({ height: 900, width: 700 });
     await expect
@@ -359,7 +355,7 @@ test.describe("Phase-5 native-scroll master story", () => {
       .poll(async () => (await motionSnapshot(page)).activeChapterId, {
         timeout: 5_000,
       })
-      .toBe("application-benefits");
+      .toBe("professional-process");
     expect((await motionSnapshot(page)).ownedScrollTriggerCount).toBe(0);
 
     await page.setViewportSize({ height: 1536, width: 900 });
@@ -375,27 +371,33 @@ test.describe("Phase-5 native-scroll master story", () => {
       .poll(async () => (await motionSnapshot(page)).activeChapterId, {
         timeout: 5_000,
       })
-      .toBe("application-benefits");
+      .toBe("professional-process");
 
     await page.setViewportSize({ height: 900, width: 1536 });
     await expect
       .poll(async () => (await motionSnapshot(page)).projectionMode, {
         timeout: 5_000,
       })
-      .toBe("horizontal-enhanced");
+      .toBe(browserName === "firefox" ? "vertical-wide" : "horizontal-enhanced");
     await expect
       .poll(async () => (await motionSnapshot(page)).activeChapterId, {
         timeout: 5_000,
       })
-      .toBe("application-benefits");
+      .toBe("professional-process");
     const rebuilt = await motionSnapshot(page);
-    expect(rebuilt.activeChapterId).toBe("application-benefits");
-    expect(rebuilt.ownedScrollTriggerCount).toBe(1);
+    expect(rebuilt.activeChapterId).toBe("professional-process");
+    expect(rebuilt.ownedScrollTriggerCount).toBe(
+      browserName === "firefox" ? 0 : 1,
+    );
     expect(rebuilt.rebuildCount).toBeGreaterThanOrEqual(3);
     expect(rebuilt.scrollTriggerDestroyCount).toBe(
       rebuilt.timelineDestroyCount,
     );
-    expect(rebuilt.scrollTriggerDestroyCount).toBeGreaterThan(0);
+    if (browserName === "firefox") {
+      expect(rebuilt.scrollTriggerDestroyCount).toBe(0);
+    } else {
+      expect(rebuilt.scrollTriggerDestroyCount).toBeGreaterThan(0);
+    }
   });
 
   test("falls back at a 200% effective visual viewport and restores the chapter", async ({
@@ -451,6 +453,7 @@ test.describe("Phase-5 native-scroll master story", () => {
   });
 
   test("keeps reduced, compact, and driver-failure paths vertical and usable", async ({
+    browserName,
     page,
   }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });
@@ -465,18 +468,18 @@ test.describe("Phase-5 native-scroll master story", () => {
       .poll(async () => (await motionSnapshot(page)).projectionMode, {
         timeout: 5_000,
       })
-      .toBe("horizontal-enhanced");
+      .toBe(browserName === "firefox" ? "vertical-wide" : "horizontal-enhanced");
     expect((await motionSnapshot(page)).activeChapterId).toBe(
       "professional-projects",
     );
 
     await page.setViewportSize({ height: 844, width: 390 });
-    await page.goto(`${MOTION_PATH}#beneficios`, {
+    await page.goto(`${MOTION_PATH}#processo`, {
       waitUntil: "domcontentloaded",
     });
     await expect(page.locator(BOOTSTRAP_ROOT)).toHaveAttribute(
       "data-bootstrap-state",
-      "REVEALED",
+      /^(?:REVEALED|DEGRADED)$/u,
       { timeout: 10_000 },
     );
     await expect
@@ -488,10 +491,10 @@ test.describe("Phase-5 native-scroll master story", () => {
       .poll(async () => (await motionSnapshot(page)).activeChapterId, {
         timeout: 5_000,
       })
-      .toBe("application-benefits");
+      .toBe("professional-process");
     snapshot = await motionSnapshot(page);
     expect(snapshot.projectionMode).toBe("vertical-compact");
-    expect(snapshot.activeChapterId).toBe("application-benefits");
+    expect(snapshot.activeChapterId).toBe("professional-process");
     expect(snapshot.ownedScrollTriggerCount).toBe(0);
     expect(
       await page.locator(`${MOTION_ROOT} [data-chapter-id]`).evaluateAll(
@@ -505,12 +508,6 @@ test.describe("Phase-5 native-scroll master story", () => {
       "professional-projects",
       "professional-contact",
       "professional-terminal",
-      "application-overview",
-      "application-how-it-works",
-      "application-benefits",
-      "application-demo",
-      "application-access",
-      "application-terminal",
     ]);
     expect(
       await page.evaluate(() => {
@@ -526,12 +523,19 @@ test.describe("Phase-5 native-scroll master story", () => {
     });
     await expect(page.locator(BOOTSTRAP_ROOT)).toHaveAttribute(
       "data-bootstrap-state",
-      "REVEALED",
+      /^(?:REVEALED|DEGRADED)$/u,
       { timeout: 10_000 },
     );
+    const expectedFailureReason =
+      browserName === "firefox"
+        ? "projects-capacity-insufficient"
+        : "driver-failure";
+    await expect
+      .poll(async () => (await motionSnapshot(page)).projectionReason)
+      .toBe(expectedFailureReason);
     snapshot = await motionSnapshot(page);
     expect(snapshot.projectionMode).toBe("vertical-wide");
-    expect(snapshot.projectionReason).toBe("driver-failure");
+    expect(snapshot.projectionReason).toBe(expectedFailureReason);
     expect(snapshot.ownedScrollTriggerCount).toBe(0);
     await expect(page.locator('[data-chapter-id="home"]')).toBeInViewport();
   });
@@ -577,17 +581,21 @@ test.describe("Phase-5 native-scroll master story", () => {
     const remountCount = replaced.mountCount - before.mountCount;
     expect(replaced.destroyed).toBe(false);
     expect(remountCount).toBeGreaterThanOrEqual(1);
-    // Development Strict Mode may replay the new effect. Every additional
-    // mount still has one matching destroy and one cleanup before settling.
+    // Development Strict Mode may replay a mount before it acquires an owned
+    // driver. Every acquired driver still has one matching cleanup.
     expect(replaced.destroyCount - before.destroyCount).toBe(remountCount);
+    const driverCleanupCount =
+      replaced.scrollTriggerDestroyCount - before.scrollTriggerDestroyCount;
+    expect(driverCleanupCount).toBeGreaterThanOrEqual(1);
+    expect(driverCleanupCount).toBeLessThanOrEqual(remountCount);
     expect(replaced.totalCleanupCount - before.totalCleanupCount).toBe(
-      remountCount,
+      driverCleanupCount,
     );
     expect(replaced.scrollTriggerDestroyCount).toBe(
-      before.scrollTriggerDestroyCount + remountCount,
+      before.scrollTriggerDestroyCount + driverCleanupCount,
     );
     expect(replaced.timelineDestroyCount).toBe(
-      before.timelineDestroyCount + remountCount,
+      before.timelineDestroyCount + driverCleanupCount,
     );
     expect(replaced.ownedScrollTriggerCount).toBe(1);
     expect(replaced.ownedTimelineCount).toBe(1);

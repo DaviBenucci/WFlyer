@@ -1,21 +1,13 @@
 import {
-  applicationHeaderLinks,
   institutionalHeaderLinks,
   type HeaderLink,
 } from "@/config/navigation";
 
-export type HeaderNavigationId =
-  | (typeof applicationHeaderLinks)[number]["id"]
-  | (typeof institutionalHeaderLinks)[number]["id"];
+export type HeaderNavigationId = (typeof institutionalHeaderLinks)[number]["id"];
 
 export type HeaderNavigationItem = HeaderLink & {
-  readonly branch: "application" | "institutional";
+  readonly branch: "institutional";
 };
-
-export const APPLICATION_NAVIGATION = applicationHeaderLinks.map((item) => ({
-  ...item,
-  branch: "application" as const,
-})) satisfies readonly HeaderNavigationItem[];
 
 export const INSTITUTIONAL_NAVIGATION = institutionalHeaderLinks.map((item) => ({
   ...item,
@@ -57,10 +49,7 @@ export function getHeaderRouteState(pathname: string): HeaderRouteState {
     };
   }
 
-  const internalItem = [
-    ...APPLICATION_NAVIGATION,
-    ...INSTITUTIONAL_NAVIGATION,
-  ].find(
+  const internalItem = INSTITUTIONAL_NAVIGATION.find(
     (item) =>
       !("external" in item && item.external) &&
       item.href === normalizedPathname,

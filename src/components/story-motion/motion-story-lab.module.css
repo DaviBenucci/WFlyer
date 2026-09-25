@@ -87,6 +87,12 @@
 
 .track {
   position: relative;
+  background: linear-gradient(
+    180deg,
+    var(--wf-bg),
+    color-mix(in oklab, var(--wf-accent) 3%, var(--wf-bg)) 52%,
+    var(--wf-bg)
+  );
 }
 
 .chapter {
@@ -95,7 +101,6 @@
   min-block-size: min(48rem, 82svh);
   place-items: center;
   padding: clamp(4rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem);
-  border-block-end: 1px solid var(--wf-border);
   scroll-margin-block-start: var(--wf-space-6);
 }
 
@@ -106,25 +111,21 @@
 
 .root[data-projection-mode="vertical-wide"] .chapter {
   min-block-size: var(--story-score-wide-block-size);
-  block-size: var(--story-score-wide-block-size);
 }
 
 .root[data-projection-mode="vertical-compact"] .chapter {
   min-block-size: var(--story-score-compact-block-size);
-  block-size: var(--story-score-compact-block-size);
 }
 
 @media (width >= 48rem) {
   .root[data-projection-mode="static"] .chapter {
     min-block-size: var(--story-score-wide-block-size);
-    block-size: var(--story-score-wide-block-size);
   }
 }
 
 @media (width < 48rem) {
   .root[data-projection-mode="static"] .chapter {
     min-block-size: var(--story-score-compact-block-size);
-    block-size: var(--story-score-compact-block-size);
   }
 }
 
@@ -133,59 +134,33 @@
   padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 5vw, 5rem);
 }
 
-.chapter[data-story-branch="application"] {
-  background: linear-gradient(
-    225deg,
-    color-mix(in oklab, var(--wf-accent) 8%, var(--wf-surface-muted)),
-    var(--wf-bg) 72%
-  );
+.homeChapter {
+  align-content: start;
+  padding-block-start: 15rem;
 }
 
-.chapter[data-story-branch="professional"] {
-  background: linear-gradient(
-    135deg,
-    color-mix(in oklab, var(--wf-text-accent) 8%, var(--wf-surface)),
-    var(--wf-bg) 72%
-  );
-}
-
-.chapter[data-story-branch="origin"] {
-  background: radial-gradient(
-    circle,
-    color-mix(in oklab, var(--wf-accent) 14%, var(--wf-surface)),
-    var(--wf-bg) 70%
-  );
-}
-
-:global([data-theme="dark"]) .chapter[data-story-branch="origin"] {
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      var(--wf-home-atmosphere),
-      transparent 34rem
-    ),
-    var(--wf-bg);
-}
-
-.chapterGrid {
+.homeContent {
   display: grid;
   inline-size: min(100%, 42rem);
   gap: var(--wf-space-4);
-  padding: clamp(1.5rem, 4vw, 3rem);
-  border: 1px dashed var(--wf-accent);
-  border-radius: var(--wf-radius-lg);
-  background: color-mix(in oklab, var(--wf-surface) 88%, transparent);
+  text-align: center;
 }
 
-.chapterGrid h2 {
+.homeContent h2 {
   font-family: var(--wf-font-display);
-  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-size: clamp(3rem, 6vw, 5.5rem);
   line-height: 0.95;
 }
 
-.chapterGrid code,
-.chapterGrid p:last-child {
+.homeContent p:last-child {
   color: var(--wf-text-muted);
+  font-size: var(--wf-font-size-body);
+  line-height: 1.6;
+}
+
+.root[data-projection-mode="horizontal-enhanced"] .homeChapter {
+  padding-block-start: calc(47vh + 6rem);
+  align-items: start;
 }
 
 .root[data-projection-mode="horizontal-enhanced"] .inspector {
@@ -208,7 +183,6 @@
   min-block-size: 100%;
   flex: 0 0 max(46rem, var(--motion-lab-chapter-span));
   border-block-end: 0;
-  border-inline-end: 1px solid var(--wf-border);
 }
 
 .root[data-projection-mode="horizontal-enhanced"] .implementedChapter {

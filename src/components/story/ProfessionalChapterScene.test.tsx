@@ -31,11 +31,15 @@ vi.mock("@/components/pages/contact", () => ({
   ContactFormFallback: () => <p>Carregando formulário</p>,
 }));
 
-function renderScene(chapterId: ProfessionalChapterId) {
+function renderScene(
+  chapterId: ProfessionalChapterId,
+  projectsMode?: "horizontal-enhanced" | "vertical-wide" | "vertical-compact",
+) {
   return render(
     <ProfessionalChapterScene
       chapterId={chapterId}
       headingId={`${chapterId}-heading`}
+      projectsMode={projectsMode ?? "static"}
     />,
   );
 }
@@ -45,7 +49,6 @@ describe("ProfessionalChapterScene", () => {
     expect(isProfessionalChapterId("professional-about")).toBe(true);
     expect(isProfessionalChapterId("professional-terminal")).toBe(true);
     expect(isProfessionalChapterId("home")).toBe(false);
-    expect(isProfessionalChapterId("application-overview")).toBe(false);
   });
 
   it("renders the mandatory pending Persona contract without invented media", () => {
@@ -88,17 +91,29 @@ describe("ProfessionalChapterScene", () => {
     expect(within(list).queryByRole("button")).toBeNull();
   });
 
-  it("renders only featured public projects with their retained detail routes", () => {
-    renderScene("professional-projects");
+  it("renders the full fan only in horizontal enhancement", () => {
+    renderScene("professional-projects", "horizontal-enhanced");
 
     for (const project of getFeaturedPublicProjects()) {
       expect(
-        screen.getByRole("link", {
+        screen.getByRole("button", {
           name: new RegExp(`projeto ${project.title}`, "iu"),
         }),
-      ).toHaveAttribute("href", project.route);
+      ).toHaveAttribute("aria-pressed", "false");
     }
   });
+
+  it.each(["vertical-wide", "vertical-compact"] as const)(
+    "renders one canonical teaser and no fan in %s",
+    (projectsMode) => {
+      const { container } = renderScene("professional-projects", projectsMode);
+      expect(container.querySelectorAll("[data-project-teaser]")).toHaveLength(1);
+      expect(container.querySelector("[data-project-card-fan]")).toBeNull();
+      expect(container.querySelector("[data-project-card-link]")).toBeNull();
+      expect(screen.getByRole("heading", { level: 3 })).toHaveTextContent("W_Flyer");
+      expect(screen.queryByRole("link", { name: /projetos selecionados/iu })).toBeNull();
+    },
+  );
 
   it("embeds the protected Contact form and publishes the Persona exclusion", () => {
     const { container } = renderScene("professional-contact");

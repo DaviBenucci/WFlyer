@@ -51,7 +51,6 @@ export type ScorePathReviewTheme = (typeof SCORE_PATH_REVIEW_THEMES)[number];
 
 export const SCORE_PATH_REVIEW_BRANCHES = Object.freeze([
   "professional",
-  "application",
 ] as const);
 export type ScorePathReviewBranch =
   (typeof SCORE_PATH_REVIEW_BRANCHES)[number];
@@ -111,10 +110,6 @@ export const SCORE_PATH_REVIEW_CANDIDATES = Object.freeze({
 >);
 
 export type ScorePathReservedContentReason =
-  | "access-action"
-  | "application-benefits"
-  | "application-overview"
-  | "application-tablet-demo"
   | "contact-form"
   | "heading-and-body"
   | "persona-slot"
@@ -206,22 +201,12 @@ export const SCORE_PATH_REVIEW_FLOWING_BASELINE_METRICS = Object.freeze({
       transitionOnlyVerticalDistance: 8248.86,
       longestConnectorArcLength: 3014.66,
     }),
-    application: Object.freeze({
-      totalTrackHeight: 8140,
-      transitionOnlyVerticalDistance: 7078.82,
-      longestConnectorArcLength: 2666.85,
-    }),
   }),
   "vertical-compact": Object.freeze({
     professional: Object.freeze({
       totalTrackHeight: 12870,
       transitionOnlyVerticalDistance: 11736.37,
       longestConnectorArcLength: 3162.96,
-    }),
-    application: Object.freeze({
-      totalTrackHeight: 9660,
-      transitionOnlyVerticalDistance: 8526.33,
-      longestConnectorArcLength: 2140.45,
     }),
   }),
 } as const);
@@ -235,14 +220,6 @@ export const SCORE_PATH_REVIEW_COMPACT_RESPONSIVE_BASELINE_METRICS =
       totalTrackHeight: 12170,
       transitionOnlyHeight: 2940,
       transitionOnlyVerticalDistance: 10949.731,
-    }),
-    application: Object.freeze({
-      contentOwnedHeight: 6020,
-      largestContentFreeVerticalInterval: 420,
-      longestConnectorArcLength: 2002.002,
-      totalTrackHeight: 8960,
-      transitionOnlyHeight: 2940,
-      transitionOnlyVerticalDistance: 7739.369,
     }),
   } as const);
 
@@ -539,31 +516,19 @@ const BRANCH_CHAPTERS = Object.freeze({
     "professional-contact",
     "professional-terminal",
   ] as const satisfies readonly StoryChapterId[]),
-  application: Object.freeze([
-    "home",
-    "application-overview",
-    "application-how-it-works",
-    "application-benefits",
-    "application-demo",
-    "application-access",
-    "application-terminal",
-  ] as const satisfies readonly StoryChapterId[]),
 });
 
 const CHAPTER_HEIGHTS = Object.freeze({
   "vertical-wide": Object.freeze({
     professional: Object.freeze([840, 1400, 1500, 1350, 1850, 1320, 1050]),
-    application: Object.freeze([840, 1450, 1350, 1250, 1300, 900, 1050]),
   }),
   "vertical-compact": Object.freeze({
     professional: Object.freeze([900, 1964, 2134, 1740, 2900, 2240, 1120]),
-    application: Object.freeze([900, 1660, 1960, 1540, 1480, 1000, 1120]),
   }),
 } as const);
 
 const FLOWING_COMPACT_CONTENT_HEIGHTS = Object.freeze({
   professional: Object.freeze([380, 1380, 1500, 1220, 1880, 1400, 500]),
-  application: Object.freeze([380, 1140, 1140, 980, 780, 500, 470]),
 } as const);
 
 const FLOWING_COMPACT_CONTENT_TOP_GAP = 170;
@@ -597,24 +562,6 @@ const RESERVED_REASONS = Object.freeze({
     "contact-form",
   ]),
   "professional-terminal": Object.freeze(["terminal-content"]),
-  "application-overview": Object.freeze([
-    "heading-and-body",
-    "application-overview",
-  ]),
-  "application-how-it-works": Object.freeze(["heading-and-body"]),
-  "application-benefits": Object.freeze([
-    "heading-and-body",
-    "application-benefits",
-  ]),
-  "application-demo": Object.freeze([
-    "heading-and-body",
-    "application-tablet-demo",
-  ]),
-  "application-access": Object.freeze([
-    "heading-and-body",
-    "access-action",
-  ]),
-  "application-terminal": Object.freeze(["terminal-content"]),
 } as const satisfies Readonly<
   Record<StoryChapterId, readonly ScorePathReservedContentReason[]>
 >);
@@ -623,21 +570,17 @@ const NOTATION_LOCAL_Y = Object.freeze({
   "organic-soft": Object.freeze({
     "vertical-wide": Object.freeze({
       professional: Object.freeze([94, 108, 92, 116, 98, 110, 90]),
-      application: Object.freeze([94, 102, 120, 88, 112, 96, 90]),
     }),
     "vertical-compact": Object.freeze({
       professional: Object.freeze([96, 116, 94, 124, 102, 118, 92]),
-      application: Object.freeze([96, 106, 126, 92, 120, 100, 92]),
     }),
   }),
   "organic-flowing": Object.freeze({
     "vertical-wide": Object.freeze({
       professional: Object.freeze([100, 124, 86, 118, 94, 132, 88]),
-      application: Object.freeze([100, 90, 128, 82, 122, 98, 88]),
     }),
     "vertical-compact": Object.freeze({
       professional: Object.freeze([102, 132, 88, 130, 96, 138, 88]),
-      application: Object.freeze([102, 92, 136, 86, 130, 102, 88]),
     }),
   }),
 } as const);
@@ -755,7 +698,7 @@ function flowingChapterPoints(
 ): readonly Vec2[] {
   const compact = mode === "vertical-compact";
   const compactScale = trackWidth / 390;
-  const branchSign = branch === "professional" ? 1 : -1;
+  const branchSign = 1;
   const localY = NOTATION_LOCAL_Y["organic-flowing"][mode][branch][chapterIndex]!;
   const y = chapter.top + localY;
   const isOrigin = chapterIndex === 0;
@@ -866,7 +809,7 @@ function buildRevisedFlowingGeometry(
     const contentBottom =
       previous.chapter.contentRect.y + previous.chapter.contentRect.height;
     const branchAsymmetry =
-      ((chapterIndex + (branch === "professional" ? 0 : 2)) % 3 - 1) *
+      ((chapterIndex % 3) - 1) *
       (compact ? 4 * (width / 390) : 12);
     const turnDirection = Math.sign(corridorX - start.x) || 1;
     const turnRadius = Math.abs(corridorX - start.x);
@@ -1075,7 +1018,7 @@ export function buildAuthoredGeometry(
     candidateId === "organic-soft"
       ? [0, -14, 12, -8, 16, -12, 4]
       : [-6, -26, 18, -16, 24, -20, 8];
-  const branchSign = branch === "professional" ? 1 : -1;
+  const branchSign = 1;
   const modeScale = mode === "vertical-wide" ? 1 : 0.42 * compactScale;
   const notationY = NOTATION_LOCAL_Y[candidateId][mode][branch];
   const wave = NOTATION_WAVE[candidateId];
@@ -1118,7 +1061,7 @@ export function buildAuthoredGeometry(
     const next = chapters[index + 1];
     if (!next) return;
 
-    const connectorIndex = index + (branch === "professional" ? 0 : 2);
+    const connectorIndex = index;
     const earlyDrop =
       (candidateId === "organic-soft" ? 142 : 166) +
       ((connectorIndex * 17) % 37);
@@ -1404,6 +1347,8 @@ export interface BuildOrganicFlowingModelOptions {
   readonly clefT?: number;
   readonly keySignature?: boolean;
   readonly keySignatureT?: number;
+  /** Successor Projection may supply validated spatial placements. */
+  readonly motifPlacements?: readonly ScoreMotifPlacement[];
   readonly staffSampleCount?: number;
 }
 
@@ -1425,7 +1370,7 @@ export function buildReviewModel(
     throw new RangeError("Review model requires origin and terminal notation zones");
   }
 
-  const motifs: readonly ScoreMotifPlacement[] = composition.motifs.map(
+  const motifs: readonly ScoreMotifPlacement[] = options.motifPlacements ?? composition.motifs.map(
     (motif) => {
       const zone = notationZoneForSlot(zones, motif.slotId);
       return Object.freeze({

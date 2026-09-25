@@ -3,7 +3,6 @@ import type { HTMLAttributes } from "react";
 import { MusicalNote } from "./MusicalNote";
 import styles from "./music.module.css";
 
-type OriginBranch = "application" | "institutional";
 type OriginLayout = "compact" | "desktop";
 
 interface Point {
@@ -55,18 +54,16 @@ const NOTE_BLUEPRINTS = {
 } as const;
 
 function getOriginControlPoints(
-  branch: OriginBranch,
   geometry: OriginGeometry,
   line: number,
 ): readonly [Point, Point, Point, Point] {
-  const direction = branch === "application" ? -1 : 1;
   const lineOffset = line * geometry.gap;
   const start = {
     x: geometry.originX,
     y: geometry.originY + lineOffset,
   };
   const end = {
-    x: branch === "application" ? 0 : geometry.width,
+    x: geometry.width,
     y: geometry.originY + geometry.amplitude * 0.48 + lineOffset,
   };
   const distance = Math.abs(end.x - start.x);
@@ -74,11 +71,11 @@ function getOriginControlPoints(
   return [
     start,
     {
-      x: start.x + direction * distance * 0.28,
+      x: start.x + distance * 0.28,
       y: start.y + geometry.amplitude * 0.2,
     },
     {
-      x: start.x + direction * distance * 0.64,
+      x: start.x + distance * 0.64,
       y: start.y + geometry.amplitude,
     },
     end,
@@ -129,12 +126,10 @@ function cubicAngle(
 }
 
 export function getOriginStaffPath(
-  branch: OriginBranch,
   layout: OriginLayout,
   line: number,
 ): string {
   const [start, firstControl, secondControl, end] = getOriginControlPoints(
-    branch,
     ORIGIN_GEOMETRIES[layout],
     line,
   );
@@ -164,12 +159,11 @@ function OriginScoreGraphic({ layout }: { readonly layout: OriginLayout }) {
         data-score-anchor="origin"
         r="0"
       />
-      {(["application", "institutional"] as const).map((branch) => (
-        <g data-score-branch={branch} key={branch}>
+        <g data-score-branch="institutional">
           {Array.from({ length: STAFF_LINE_COUNT }, (_, line) => (
             <path
               className={styles.originStaffLine}
-              d={getOriginStaffPath(branch, layout, line)}
+              d={getOriginStaffPath(layout, line)}
               data-origin-staff-line={line + 1}
               fill="none"
               key={line}
@@ -178,21 +172,17 @@ function OriginScoreGraphic({ layout }: { readonly layout: OriginLayout }) {
           ))}
           {NOTE_BLUEPRINTS[layout].map((note, index) => {
             const points = getOriginControlPoints(
-              branch,
               geometry,
               note.line,
             );
             const point = cubicPoint(points, note.t);
             const pathAngle = cubicAngle(points, note.t);
-            const readableAngle =
-              branch === "application" ? pathAngle - 180 : pathAngle;
-
             return (
               <MusicalNote
                 data-origin-note={index + 1}
                 filled={note.filled}
-                key={`${branch}-${note.t}`}
-                rotation={readableAngle}
+                key={note.t}
+                rotation={pathAngle}
                 scale={note.scale}
                 stem={note.stem}
                 x={point.x}
@@ -201,7 +191,6 @@ function OriginScoreGraphic({ layout }: { readonly layout: OriginLayout }) {
             );
           })}
         </g>
-      ))}
     </svg>
   );
 }

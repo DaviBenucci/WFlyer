@@ -14,7 +14,7 @@ interface TurnstileResponse {
 
 export type TurnstileResult = "invalid" | "unavailable" | "valid";
 
-export type TurnstileAction = "app-launch-interest" | "contact";
+export type TurnstileAction = "contact";
 
 export async function verifyTurnstileAction(
   token: string,

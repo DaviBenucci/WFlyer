@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  APPLICATION_NAVIGATION,
   getHeaderRouteState,
   INSTITUTIONAL_NAVIGATION,
 } from "./navigation";
@@ -9,13 +8,13 @@ import {
 describe("getHeaderRouteState", () => {
   it.each([
     ["/", null],
-    ["/aplicacao-wflyer", "application"],
-    ["/aplicacao-wflyer/como-funciona", "how-it-works"],
-    ["/aplicacao-wflyer/beneficios", "benefits"],
+    ["/aplicacao-wflyer", null],
+    ["/aplicacao-wflyer/como-funciona", null],
+    ["/aplicacao-wflyer/beneficios", null],
     ["/sobre", "company"],
     ["/servicos", "services"],
     ["/servicos/integracoes", "services"],
-    ["/portfolio", "portfolio"],
+    ["/portfolio", null],
     ["/contato", "contact"],
   ])("mapeia %s para %s", (pathname, activeId) => {
     expect(getHeaderRouteState(pathname).activeId).toBe(activeId);
@@ -28,14 +27,10 @@ describe("getHeaderRouteState", () => {
     });
   });
 
-  it("mantém o acesso ao app fora do cabeçalho e usa rótulos profissionais", () => {
-    expect(
-      APPLICATION_NAVIGATION.some((item) => item.href.startsWith("http")),
-    ).toBe(false);
+  it("usa apenas rótulos profissionais", () => {
     expect(INSTITUTIONAL_NAVIGATION.map(({ label }) => label)).toEqual([
       "Sobre",
       "Serviços",
-      "Projetos",
       "Contato",
     ]);
   });

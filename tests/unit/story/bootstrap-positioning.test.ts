@@ -111,11 +111,11 @@ describe("Phase-4 static semantic positioning adapter", () => {
       frameScheduler: scheduler,
     });
 
-    const positioning = adapter.position("application-terminal");
+    const positioning = adapter.position("professional-terminal");
     await settleTwoFrames(scheduler);
 
     await expect(positioning).resolves.toEqual({
-      requestedChapterId: "application-terminal",
+      requestedChapterId: "professional-terminal",
       positionedChapterId: "home",
       fallbackToHome: true,
       projectionMode: "static",

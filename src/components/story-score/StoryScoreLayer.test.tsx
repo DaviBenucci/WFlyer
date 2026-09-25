@@ -1,9 +1,12 @@
 import { act, render, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { renderToString } from "react-dom/server";
+import { hydrateRoot } from "react-dom/client";
 
 const testSpies = vi.hoisted(() => ({
   projectionBuild: vi.fn(),
   scoreRender: vi.fn(),
+  candidateCountDelta: 0,
 }));
 
 vi.mock("@/lib/story/score/projection", async (importOriginal) => {
@@ -17,7 +20,18 @@ vi.mock("@/lib/story/score/projection", async (importOriginal) => {
       ...args: Parameters<typeof actual.buildStoryScoreProjection>
     ) => {
       testSpies.projectionBuild();
-      return actual.buildStoryScoreProjection(...args);
+      const projection = actual.buildStoryScoreProjection(...args);
+      return {
+        ...projection,
+        branches: {
+          ...projection.branches,
+          professional: {
+            ...projection.branches.professional,
+            eventSafety: { ...projection.branches.professional.eventSafety,
+              candidateCount: projection.branches.professional.eventSafety.candidateCount + testSpies.candidateCountDelta },
+          },
+        },
+      };
     },
   };
 });
@@ -41,13 +55,40 @@ describe("StoryScoreLayer measurement lifecycle", () => {
   beforeEach(() => {
     testSpies.projectionBuild.mockClear();
     testSpies.scoreRender.mockClear();
+    testSpies.candidateCountDelta = 0;
     vi.stubGlobal("ResizeObserver", TestResizeObserver);
     vi.stubGlobal("innerHeight", 900);
     vi.stubGlobal("innerWidth", 1_536);
   });
 
   afterEach(() => {
+    testSpies.candidateCountDelta = 0;
     vi.unstubAllGlobals();
+  });
+
+  it("hydrates equal canonical metadata when only internal search effort differs", async () => {
+    vi.stubGlobal("innerWidth", 1440);
+    const view = <main data-projection-mode="static" data-story-v2=""><div data-motion-track=""><StoryScoreLayer /></div></main>;
+    const container = document.createElement("div");
+    container.innerHTML = renderToString(view);
+    document.body.append(container);
+    const server = container.querySelector('[data-score-branch="professional"]')!;
+    const serverMetadata = server.getAttribute("data-score-event-safety");
+    expect(JSON.parse(serverMetadata!)).not.toHaveProperty("candidateCount");
+    expect(server.hasAttribute("data-score-candidate-count")).toBe(false);
+    // Reproduce the observed count discrepancy without changing any semantic
+    // or raw geometric input. The real engines are covered by Playwright.
+    testSpies.candidateCountDelta = -4;
+    const consoleError = vi.spyOn(console, "error").mockImplementation(() => {});
+    const onRecoverableError = vi.fn();
+    let root: ReturnType<typeof hydrateRoot>;
+    await act(async () => { root = hydrateRoot(container, view, { onRecoverableError }); });
+    expect(server.getAttribute("data-score-event-safety")).toBe(serverMetadata);
+    expect(server).toHaveAttribute("data-score-candidate-count", "17216");
+    expect(onRecoverableError).not.toHaveBeenCalled();
+    expect(consoleError).not.toHaveBeenCalled();
+    await act(async () => root!.unmount());
+    container.remove();
   });
 
   it("does not measure, reproject, recompose, or rerender during ordinary scroll", async () => {
@@ -74,8 +115,8 @@ describe("StoryScoreLayer measurement lifecycle", () => {
     const { container } = render(
       <main data-projection-mode="horizontal-enhanced" data-story-v2="">
         <div data-motion-track="">
-          <section data-chapter-id="application-demo">
-            <div data-score-content-exclusion="application-tablet-demo" />
+          <section data-chapter-id="professional-services">
+            <div data-score-content-exclusion="services-modules" />
           </section>
           <StoryScoreLayer />
         </div>
@@ -111,6 +152,6 @@ describe("StoryScoreLayer measurement lifecycle", () => {
       container.querySelector<HTMLElement>("[data-story-score-layer]")
         ?.dataset.scoreComposerInvocations,
     ).toBe(beforeScroll.composerInvocations);
-    expect(beforeScroll.composerInvocations).toBe("2");
+    expect(beforeScroll.composerInvocations).toBe("1");
   });
 });

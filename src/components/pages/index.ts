@@ -1,23 +1,11 @@
 export { LegalPage } from "./LegalPage";
-export { ProjectListing } from "./ProjectListing";
 export { ServiceDetailPage } from "./ServiceDetailPage";
 export {
-  ApplicationDemoDevice,
-  ApplicationDemoTablet,
-  type ApplicationDemoDeviceProps,
-  type ApplicationDemoMediaContract,
-  type ApplicationDemoTabletProps,
-  type DemoState,
-} from "./application-demo";
-export {
-  ApplicationFeatureStrip,
   AudienceList,
-  BenefitsGrid,
   CompanyMark,
   ContactWorkspace,
   EditorialPillars,
   PageIcon,
-  ProjectGrid,
   ServiceDetailMark,
   ServiceSolutionGrid,
   StepSequence,

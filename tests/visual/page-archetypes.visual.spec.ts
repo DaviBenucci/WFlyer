@@ -1,22 +1,12 @@
 import { expect, test, type Page } from "@playwright/test";
 
 const routes = [
-  { route: "/aplicacao-wflyer", selector: "[data-application-demo]" },
-  {
-    route: "/aplicacao-wflyer/como-funciona",
-    selector: '[data-step-sequence="application"]',
-  },
-  {
-    route: "/aplicacao-wflyer/beneficios",
-    selector: "[data-benefits-grid]",
-  },
   { route: "/sobre", selector: "[data-editorial-pillars]" },
   { route: "/servicos", selector: "[data-service-grid]" },
   {
     route: "/processo",
     selector: '[data-step-sequence="institutional"]',
   },
-  { route: "/portfolio", selector: "[data-project-grid]" },
   { route: "/contato", selector: "[data-contact-workspace]" },
   {
     route: "/servicos/criacao-de-sites",
@@ -64,32 +54,6 @@ function expectInsideViewport(
   expect(box!.y + box!.height).toBeLessThanOrEqual(viewportHeight);
 }
 
-test("Aplicação preserva a composição canônica completa em 1536 × 1024", async ({
-  page,
-}) => {
-  await page.setViewportSize({ height: 1024, width: 1536 });
-  await page.goto("/aplicacao-wflyer");
-
-  const copy = page.locator("main header").locator("div").first();
-  const preview = page.locator("[data-application-demo]");
-  const strip = page.locator("[data-feature-strip]");
-  const cue = page.getByText("Role para explorar a experiência");
-  const copyBox = await copy.boundingBox();
-  const previewBox = await preview.boundingBox();
-  const stripBox = await strip.boundingBox();
-  const cueBox = await cue.boundingBox();
-
-  expect(copyBox).not.toBeNull();
-  expect(previewBox).not.toBeNull();
-  expect(stripBox).not.toBeNull();
-  expect(copyBox!.x).toBeLessThan(previewBox!.x);
-  expect(stripBox!.width).toBeGreaterThan(1200);
-  expect(stripBox!.y).toBeGreaterThan(copyBox!.y);
-  expectInsideViewport(previewBox, 1024);
-  expectInsideViewport(stripBox, 1024);
-  expectInsideViewport(cueBox, 1024);
-});
-
 test("Serviços mantém CTA e quatro cards no primeiro viewport normativo", async ({
   page,
 }) => {
@@ -116,11 +80,8 @@ test("Serviços mantém CTA e quatro cards no primeiro viewport normativo", asyn
 });
 
 for (const route of [
-  "/aplicacao-wflyer/como-funciona",
-  "/aplicacao-wflyer/beneficios",
   "/sobre",
   "/processo",
-  "/portfolio",
 ] as const) {
   test(`${route} mantém a pauta do hero fora do texto legível`, async ({
     page,
@@ -145,32 +106,12 @@ for (const route of [
   });
 }
 
-test("a legenda da Aplicação isola o texto da pauta decorativa", async ({
-  page,
-}) => {
-  await page.setViewportSize({ height: 1024, width: 1536 });
-  await page.goto("/aplicacao-wflyer");
-
-  await expect(
-    page.locator("[data-application-demo] figcaption"),
-  ).not.toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
-});
-
 for (const composition of [
-  {
-    route: "/aplicacao-wflyer/como-funciona",
-    selector: '[data-step-sequence="application"]',
-  },
-  {
-    route: "/aplicacao-wflyer/beneficios",
-    selector: "[data-benefits-grid]",
-  },
   { route: "/sobre", selector: "[data-editorial-pillars]" },
   {
     route: "/processo",
     selector: '[data-step-sequence="institutional"]',
   },
-  { route: "/portfolio", selector: "[data-project-grid]" },
 ] as const) {
   test(`${composition.route} mantém o bloco canônico no primeiro viewport`, async ({
     page,
@@ -184,18 +125,6 @@ for (const composition of [
     );
   });
 }
-
-test("tablet remove inclinação quando reduced motion está ativo", async ({
-  page,
-}) => {
-  await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.goto("/aplicacao-wflyer");
-
-  await expect(page.locator("[data-tablet-shell]")).toHaveCSS(
-    "transform",
-    "none",
-  );
-});
 
 for (const { route, selector } of routes) {
   for (const viewport of viewports) {
@@ -258,10 +187,9 @@ for (const width of [767, 768, 1023, 1024, 1199, 1200]) {
     await page.setViewportSize({ height: 900, width });
 
     for (const route of [
-      "/aplicacao-wflyer",
+      "/sobre",
       "/servicos",
       "/processo",
-      "/portfolio",
       "/contato",
     ]) {
       await page.goto(route);

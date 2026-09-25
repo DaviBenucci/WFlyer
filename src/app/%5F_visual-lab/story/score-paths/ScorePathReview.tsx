@@ -3,9 +3,7 @@
 import { useSyncExternalStore, type CSSProperties, type ReactNode } from "react";
 
 import {
-  ApplicationChapterScene,
   ProfessionalChapterScene,
-  type Phase8ApplicationChapterId,
   type ProfessionalChapterId,
 } from "@/components/story";
 import { ScoreSvg } from "@/components/score/ScoreSvg";
@@ -79,14 +77,13 @@ function useReviewViewportWidth(): number {
 function HomeReviewScene({ headingId }: { readonly headingId: string }) {
   return (
     <div className={styles.homeScene} data-structural-placeholder="home">
-      <Eyebrow>Origem compartilhada · contrato de revisão</Eyebrow>
+      <Eyebrow>Origem do portfólio · contrato de revisão</Eyebrow>
       <Heading as="h2" id={headingId} size="xl">
         W_Flyer
       </Heading>
       <Text size="lead" tone="muted">
-        A origem é repetida apenas para comparar cada ramo isoladamente. A
-        composição pública compartilhada pertence à tarefa 34 e ainda não está
-        integrada.
+        A origem inicia o único percurso profissional. Esta superfície de
+        revisão conserva a geometria musical aprovada.
       </Text>
     </div>
   );
@@ -134,6 +131,7 @@ function ChapterContent({
 function renderChapter(
   branch: ScorePathReviewBranch,
   chapter: ScorePathReviewChapterLayout,
+  mode: ScorePathReviewMode,
 ) {
   const headingId = `score-path-review-${branch}-${chapter.chapterId}`;
 
@@ -141,26 +139,12 @@ function renderChapter(
     return <HomeReviewScene headingId={headingId} />;
   }
 
-  if (branch === "professional") {
-    return (
-      <ProfessionalChapterScene
-        chapterId={chapter.chapterId as ProfessionalChapterId}
-        headingId={headingId}
-      />
-    );
-  }
-
-  if (branch === "application") {
-    return (
-      <ApplicationChapterScene
-        chapterId={chapter.chapterId as Phase8ApplicationChapterId}
-        headingId={headingId}
-      />
-    );
-  }
-
-  throw new RangeError(
-    `Unsupported ${branch} ScorePath review chapter: ${chapter.chapterId}`,
+  return (
+    <ProfessionalChapterScene
+      chapterId={chapter.chapterId as ProfessionalChapterId}
+      headingId={headingId}
+      projectsMode={mode}
+    />
   );
 }
 
@@ -430,10 +414,10 @@ function BranchReview({
       <header className={styles.branchHeader}>
         <div>
           <p className={styles.eyebrow}>Ramo isolado para task-33 review</p>
-          <h2>{branch === "professional" ? "Profissional" : "Aplicação"}</h2>
+          <h2>Profissional</h2>
           <p>
-            Origem compartilhada + seis cenas reais · composição determinística
-            preservada entre geometrias.
+            Origem + seis cenas reais · composição determinística preservada
+            entre geometrias.
           </p>
         </div>
         <ReviewEvidence track={track} />
@@ -460,7 +444,7 @@ function BranchReview({
         <div className={styles.chapterLayer}>
           {track.chapters.map((chapter) => (
             <ChapterContent branch={branch} chapter={chapter} key={chapter.chapterId}>
-              {renderChapter(branch, chapter)}
+              {renderChapter(branch, chapter, track.mode)}
             </ChapterContent>
           ))}
         </div>
@@ -547,9 +531,8 @@ export function ScorePathReviewShell({
         <p className={styles.eyebrow}>Development only · human subgate</p>
         <h1>Phase-9 ScorePath candidates</h1>
         <p>
-          Compare both organic directions in the exact vertical mode and theme
-          matrices. The embedded viewport keeps the real Phase-7/8 responsive
-          scene CSS at review capacity.
+          Compare the Professional score in the vertical mode and theme
+          matrices. The embedded viewport keeps the responsive scene CSS.
         </p>
       </header>
 

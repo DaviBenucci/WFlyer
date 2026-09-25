@@ -146,7 +146,7 @@ test.describe("Phase-9 ScorePath hydration regression", () => {
       await page.emulateMedia({ colorScheme: fallbackTheme });
 
       const response = await page.goto(state.route, {
-        waitUntil: "networkidle",
+        waitUntil: "domcontentloaded",
       });
       expect(response?.ok()).toBe(true);
       await expect(page.locator(state.root)).toBeVisible();
@@ -186,36 +186,35 @@ test.describe("Phase-9 ScorePath task-33 candidate matrix", () => {
       page.on("pageerror", (error) => pageErrors.push(error.message));
       await openPreview(page, candidate, mode, theme);
 
-      await expect(page.locator("[data-review-branch]")).toHaveCount(2);
-      await expect(page.locator("[data-review-chapter-id]")).toHaveCount(14);
+      await expect(page.locator("[data-review-branch]")).toHaveCount(1);
+      await expect(page.locator("[data-review-chapter-id]")).toHaveCount(7);
       await expect(page.locator("[data-professional-scene]")).toHaveCount(6);
-      await expect(page.locator("[data-application-scene]")).toHaveCount(6);
-      await expect(page.locator('[data-score-role="staff-line"]')).toHaveCount(10);
-      await expect(page.locator('[data-score-role="clef"]')).toHaveCount(2);
+      await expect(page.locator('[data-score-role="staff-line"]')).toHaveCount(5);
+      await expect(page.locator('[data-score-role="clef"]')).toHaveCount(1);
       await expect(
         page.locator('[data-score-role="final-barline-thin"]'),
-      ).toHaveCount(2);
+      ).toHaveCount(1);
       await expect(
         page.locator('[data-score-role="final-barline-thick"]'),
-      ).toHaveCount(2);
+      ).toHaveCount(1);
       await expect(page.locator('[data-review-zone-kind="notation-safe"]')).toHaveCount(
-        14,
+        7,
       );
       const expectedConnectorCount =
-        candidate === "organic-flowing" ? 12 : 14;
+        candidate === "organic-flowing" ? 6 : 7;
       await expect(page.locator('[data-review-zone-kind="connector"]')).toHaveCount(
         expectedConnectorCount,
       );
-      await expect(page.locator("[data-review-diagnostics]")).toHaveCount(2);
+      await expect(page.locator("[data-review-diagnostics]")).toHaveCount(1);
       await expect(page.locator('[data-review-marker-only="true"]')).toHaveCount(
-        14 + expectedConnectorCount,
+        7 + expectedConnectorCount,
       );
       await expect(
         page.locator("[data-review-zone-markers] polyline"),
       ).toHaveCount(0);
       await expect(
         page.locator('[data-review-terminal-invariant="pass"]'),
-      ).toHaveCount(2);
+      ).toHaveCount(1);
       expect(
         await page
           .locator("[data-review-primitive-span-violations]")
@@ -279,14 +278,14 @@ test.describe("Phase-9 ScorePath task-33 candidate matrix", () => {
         ),
       ).toContain(theme);
 
-      await expect(page.locator("[data-project-card-link]")).toHaveCount(3);
+      await expect(page.locator("[data-project-card-link]")).toHaveCount(0);
+      await expect(page.locator("[data-project-teaser]")).toHaveCount(1);
       await expect(page.locator("[data-contact-form]")).toHaveCount(1);
-      await expect(page.locator('[data-primary-app-access="true"]')).toHaveCount(1);
-      await expect(page.locator("[data-app04-deterministic-fallback]")).toHaveCount(1);
+      await expect(page.locator('[data-primary-app-access="true"]')).toHaveCount(0);
       expect(
         await page
           .locator(
-            "[data-project-card-link], [data-contact-form] input, [data-contact-form] textarea, [data-primary-app-access]",
+            "[data-project-card-link], [data-contact-form] input, [data-contact-form] textarea",
           )
           .evaluateAll((elements) =>
             elements.every((element) => {
@@ -310,8 +309,8 @@ test.describe("Phase-9 ScorePath task-33 candidate matrix", () => {
     await page.emulateMedia({ reducedMotion: "reduce" });
     await openPreview(page, "organic-flowing", "vertical-compact", "dark");
 
-    await expect(page.locator('[data-score-role="staff-line"]')).toHaveCount(10);
-    await expect(page.locator("[data-review-chapter-id]")).toHaveCount(14);
+    await expect(page.locator('[data-score-role="staff-line"]')).toHaveCount(5);
+    await expect(page.locator("[data-review-chapter-id]")).toHaveCount(7);
     expect(
       await page.evaluate(() =>
         document.getAnimations().filter((animation) => {
@@ -327,7 +326,7 @@ test.describe("Phase-9 ScorePath task-33 candidate matrix", () => {
       ),
     ).toEqual([]);
     await expect(page.locator("[data-contact-form]")).toBeVisible();
-    await expect(page.locator('[data-primary-app-access="true"]')).toBeVisible();
+    await expect(page.locator('[data-primary-app-access="true"]')).toHaveCount(0);
   });
 });
 
@@ -356,9 +355,8 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
         "data-review-track-width",
         String(viewport.trackWidth),
       );
-      await expect(page.locator("[data-review-content-envelope]")).toHaveCount(14);
+      await expect(page.locator("[data-review-content-envelope]")).toHaveCount(7);
       await expect(page.locator("[data-professional-scene]")).toHaveCount(6);
-      await expect(page.locator("[data-application-scene]")).toHaveCount(6);
 
       const fit = await page.evaluate(() => {
         const storyHeader = document.querySelector<HTMLElement>(
@@ -396,17 +394,17 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
         );
         const scenes = Array.from(
           document.querySelectorAll<HTMLElement>(
-            "[data-professional-scene], [data-application-scene]",
+            "[data-professional-scene]",
           ),
           (scene) => ({
             horizontal: scene.scrollWidth - scene.clientWidth,
             id:
-              scene.dataset.professionalScene ?? scene.dataset.applicationScene,
+              scene.dataset.professionalScene,
             vertical: scene.scrollHeight - scene.clientHeight,
           }),
         );
         const cards = Array.from(
-          document.querySelectorAll<HTMLElement>("[data-project-card-link]"),
+          document.querySelectorAll<HTMLElement>("[data-project-teaser]"),
           (card) => {
             const envelope = card.closest<HTMLElement>(
               "[data-review-content-envelope]",
@@ -425,13 +423,10 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
             };
           },
         );
-        const fan = document.querySelector<HTMLElement>("[data-project-card-fan]");
-        const fallback = document.querySelector<HTMLElement>(
-          "[data-app04-deterministic-fallback]",
-        );
+        const teaser = document.querySelector<HTMLElement>("[data-project-teaser]");
         const contact = document.querySelector<HTMLElement>("[data-contact-form]");
 
-        if (!storyHeader || !reviewRoot || !fan || !fallback || !contact) {
+        if (!storyHeader || !reviewRoot || !teaser || !contact) {
           throw new Error("Required responsive review nodes are missing");
         }
 
@@ -445,11 +440,11 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
             document.documentElement.scrollWidth -
             document.documentElement.clientWidth,
           envelopes,
-          fanWidth: fan.getBoundingClientRect().width,
+          teaserWidth: teaser.getBoundingClientRect().width,
           headerHeight: storyHeader.getBoundingClientRect().height,
           reviewOverflow: reviewRoot.scrollWidth - reviewRoot.clientWidth,
           scenes,
-          structuralContentVisible: [fallback, contact].every((element) => {
+          structuralContentVisible: [contact].every((element) => {
             const rect = element.getBoundingClientRect();
             return rect.width > 0 && rect.height > 0;
           }),
@@ -458,7 +453,7 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
 
       expect(fit.documentOverflow).toBe(0);
       expect(fit.reviewOverflow).toBe(0);
-      expect(fit.headerHeight).toBe(149);
+      expect(fit.headerHeight).toBe(105);
       expect(fit.controlsFit).toBe(true);
       expect(fit.controlsOverlap).toBe(false);
       expect(fit.envelopes.every(({ horizontal, vertical }) =>
@@ -467,8 +462,9 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
       expect(fit.scenes.every(({ horizontal, vertical }) =>
         horizontal === 0 && vertical === 0,
       )).toBe(true);
+      expect(fit.cards).toHaveLength(1);
       expect(fit.cards.every(({ contained, horizontal, width }) =>
-        contained && horizontal === 0 && width / fit.fanWidth > 0.9,
+        contained && horizontal === 0 && width === fit.teaserWidth,
       )).toBe(true);
       expect(fit.structuralContentVisible).toBe(true);
 
@@ -515,41 +511,11 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
           trackHeight: "9898",
           transitionHeight: "1638",
         }),
-        expect.objectContaining({
-          bounds: "0",
-          collisions: "0",
-          connectorEvents: "0",
-          fingerprint: "fnv1a32:1fe3356b",
-          largestGap: "234",
-          pathIntersections: "0",
-          staffIntersections: "0",
-          trackHeight: "7028",
-          transitionHeight: "1638",
-        }),
       ]);
       expect(evidence.every(({ tangent }) => tangent <= 18)).toBe(true);
 
-      const firstCard = page.locator("[data-project-card-link]").first();
-      await firstCard.focus();
-      const focus = await firstCard.evaluate((card) => {
-        const header = document.querySelector<HTMLElement>(
-          "header[data-story-v2-header]",
-        );
-        const rect = card.getBoundingClientRect();
-        const style = getComputedStyle(card);
-
-        if (!header) throw new Error("Story header is missing");
-
-        return {
-          headerBottom: header.getBoundingClientRect().bottom,
-          outlineStyle: style.outlineStyle,
-          outlineWidth: Number.parseFloat(style.outlineWidth),
-          top: rect.top,
-        };
-      });
-      expect(focus.outlineStyle).not.toBe("none");
-      expect(focus.outlineWidth).toBeGreaterThanOrEqual(2);
-      expect(focus.top).toBeGreaterThanOrEqual(focus.headerBottom + 14);
+      await expect(page.locator("[data-project-card-link]")).toHaveCount(0);
+      await expect(page.locator("[data-project-teaser] button, [data-project-teaser] a")).toHaveCount(0);
 
       await page.evaluate(() => window.localStorage.setItem("wf-theme", "light"));
       await page.emulateMedia({ colorScheme: "light" });
@@ -579,12 +545,9 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
           "main[data-phase-9-task-33-review]",
           "[data-review-score]",
           "[data-professional-scene]",
-          "[data-project-card-link]",
+          "[data-project-teaser]",
           "[data-contact-form]",
-          "[data-application-scene]",
-          "[data-app04-deterministic-fallback]",
           '[data-professional-scene="terminal"]',
-          '[data-application-scene="terminal"]',
         ] as const;
         const tokenNames = [
           "--wf-bg",
@@ -594,14 +557,14 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
           "--wf-emphasis",
         ] as const;
         const cards = Array.from(
-          document.querySelectorAll<HTMLElement>("[data-project-card-link]"),
+          document.querySelectorAll<HTMLElement>("[data-project-teaser]"),
           (card) => {
             const rectangle = card.getBoundingClientRect();
             return { height: rectangle.height, width: rectangle.width };
           },
         );
-        const fan = document.querySelector<HTMLElement>(
-          "[data-project-card-fan]",
+        const teaser = document.querySelector<HTMLElement>(
+          "[data-project-teaser]",
         );
         const header = document.querySelector<HTMLElement>(
           "header[data-story-v2-header]",
@@ -610,7 +573,7 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
           "main[data-phase-9-task-33-review]",
         );
 
-        if (fan === null || header === null || reviewRoot === null) {
+        if (teaser === null || header === null || reviewRoot === null) {
           throw new Error("Required compact dark geometry is missing");
         }
 
@@ -619,12 +582,12 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
           documentOverflow:
             document.documentElement.scrollWidth -
             document.documentElement.clientWidth,
-          fanWidth: fan.getBoundingClientRect().width,
+          teaserWidth: teaser.getBoundingClientRect().width,
           headerHeight: header.getBoundingClientRect().height,
           reviewOverflow: reviewRoot.scrollWidth - reviewRoot.clientWidth,
           sceneOverflow: Array.from(
             document.querySelectorAll<HTMLElement>(
-              "[data-review-content-envelope], [data-professional-scene], [data-application-scene]",
+              "[data-review-content-envelope], [data-professional-scene]",
             ),
             (element) => ({
               horizontal: element.scrollWidth - element.clientWidth,
@@ -662,7 +625,7 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
         ),
       ).toBe(true);
       expect(darkState.headerHeight).toBe(fit.headerHeight);
-      expect(darkState.fanWidth).toBe(fit.fanWidth);
+      expect(darkState.teaserWidth).toBe(fit.teaserWidth);
       expect(darkState.cards).toEqual(
         fit.cards.map(({ height, width }) => ({ height, width })),
       );
@@ -675,26 +638,7 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
         if (surface.selector !== "html") expect(surface.dataTheme).toBeNull();
       }
 
-      await firstCard.focus();
-      const darkFocus = await firstCard.evaluate((card) => {
-        const header = document.querySelector<HTMLElement>(
-          "header[data-story-v2-header]",
-        );
-        const rectangle = card.getBoundingClientRect();
-        const style = getComputedStyle(card);
-
-        if (header === null) throw new Error("Story header is missing");
-
-        return {
-          headerBottom: header.getBoundingClientRect().bottom,
-          outlineWidth: Number.parseFloat(style.outlineWidth),
-          top: rectangle.top,
-        };
-      });
-      expect(darkFocus.outlineWidth).toBeGreaterThanOrEqual(2);
-      expect(darkFocus.top).toBeGreaterThanOrEqual(
-        darkFocus.headerBottom + 14,
-      );
+      await expect(page.locator("[data-project-card-link]")).toHaveCount(0);
       expect(consoleErrors).toEqual([]);
       expect(pageErrors).toEqual([]);
     });
@@ -717,7 +661,6 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
       ),
     ).toBe(true);
     await expect(page.locator("[data-professional-scene]")).toHaveCount(6);
-    await expect(page.locator("[data-application-scene]")).toHaveCount(6);
 
     await page.setViewportSize({ height: 820, width: 1340 });
     response = await page.goto(
@@ -729,7 +672,7 @@ test.describe("Phase-9 task-33 responsive refinement", () => {
       "data-story-header-block-size",
       "77",
     );
-    await expect(page.locator("[data-review-content-envelope]")).toHaveCount(14);
+    await expect(page.locator("[data-review-content-envelope]")).toHaveCount(7);
     expect(
       await page.evaluate(() =>
         document.documentElement.scrollWidth <=
@@ -796,10 +739,10 @@ test.describe("Phase-9 task-33 real-origin review", () => {
         "HUMAN_APPROVAL_PENDING",
       );
       await expect(root).toHaveAttribute("data-origin-review-mode", state.mode);
-      await expect(page.locator("[data-origin-score-branch]")).toHaveCount(2);
-      await expect(page.locator('[data-score-role="staff-line"]')).toHaveCount(10);
+      await expect(page.locator("[data-origin-score-branch]")).toHaveCount(1);
+      await expect(page.locator('[data-score-role="staff-line"]')).toHaveCount(5);
       await expect(page.locator('[data-score-role="clef"]')).toHaveCount(1);
-      await expect(page.locator("[data-origin-zone-kind]")).toHaveCount(4);
+      await expect(page.locator("[data-origin-zone-kind]")).toHaveCount(2);
       await expect(page.locator('[data-score-role*="barline"]')).toHaveCount(0);
       await expect(page.locator('[data-score-role="notehead"]')).toHaveCount(0);
       await expect(page.getByText("ORIGIN_CURVE — HUMAN_APPROVAL_PENDING")).toHaveCount(

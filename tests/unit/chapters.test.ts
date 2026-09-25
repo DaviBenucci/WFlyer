@@ -136,7 +136,7 @@ function readNormativeManifest(): Record<string, unknown> {
   };
 }
 
-describe("manifesto da dupla partitura", () => {
+describe("manifesto do portfólio", () => {
   it("espelha campo a campo o YAML normativo", () => {
     expect(scoreManifest).toEqual(readNormativeManifest());
   });
@@ -151,33 +151,24 @@ describe("manifesto da dupla partitura", () => {
     expect(new Set(coordinates).size).toBe(coordinates.length);
   });
 
-  it("declara a Home como origem e ordena os dois ramos", () => {
+  it("declara a Home como origem e ordena o percurso profissional", () => {
     expect(scoreChapterById.home).toMatchObject({
       branch: "origin",
       coordinate: 0,
       route: "/",
     });
 
-    const applicationCoordinates = scoreChapters
-      .filter(({ branch }) => branch === "application")
-      .sort((left, right) => left.order - right.order)
-      .map(({ coordinate }) => coordinate);
     const institutionalCoordinates = scoreChapters
       .filter(({ branch }) => branch === "institutional")
       .sort((left, right) => left.order - right.order)
       .map(({ coordinate }) => coordinate);
 
-    expect(applicationCoordinates).toEqual([-1, -2, -3]);
-    expect(institutionalCoordinates).toEqual([1, 2, 3, 4, 5]);
+    expect(institutionalCoordinates).toEqual([1, 2, 3, 4]);
   });
 
-  it("preserva as rotas normativas aninhadas do ramo da aplicação", () => {
-    expect(scoreChapterById.application.route).toBe("/aplicacao-wflyer");
-    expect(scoreChapterById["application-how-it-works"].route).toBe(
-      "/aplicacao-wflyer/como-funciona",
-    );
-    expect(scoreChapterById["application-benefits"].route).toBe(
-      "/aplicacao-wflyer/beneficios",
+  it("não registra rotas da narrativa removida", () => {
+    expect(scoreChapters.map(({ route }) => route)).not.toContain(
+      "/aplicacao-wflyer",
     );
   });
 
@@ -187,7 +178,7 @@ describe("manifesto da dupla partitura", () => {
         expect(scoreChapterById[chapter.next].previous).toBe(chapter.id);
       }
 
-      if (chapter.previous && chapter.previous !== "home") {
+      if (chapter.previous) {
         expect(scoreChapterById[chapter.previous].next).toBe(chapter.id);
       }
     }
@@ -195,7 +186,7 @@ describe("manifesto da dupla partitura", () => {
 
   it("conecta a altura de saída à entrada do próximo capítulo", () => {
     for (const chapter of scoreChapters) {
-      if (!chapter.next) {
+      if (!chapter.next || chapter.id === "home") {
         continue;
       }
 
@@ -212,17 +203,10 @@ describe("manifesto da dupla partitura", () => {
       exit_anchor_y: 0.5,
       exit_edge: "center",
       final_barline: false,
-      next: null,
+      next: "company",
       previous: null,
       terminal: false,
     });
-
-    for (const chapter of scoreChapters.filter(
-      ({ branch }) => branch === "application",
-    )) {
-      expect(chapter.entry_edge).toBe("right");
-      expect(chapter.exit_edge).toBe("left");
-    }
 
     for (const chapter of scoreChapters.filter(
       ({ branch }) => branch === "institutional",
@@ -232,29 +216,22 @@ describe("manifesto da dupla partitura", () => {
     }
   });
 
-  it("usa a Home somente como pivô inicial dos dois ramos", () => {
+  it("usa a Home como único início do percurso", () => {
     const chaptersStartingAtHome = scoreChapters.filter(
       ({ previous }) => previous === "home",
     );
 
-    expect(chaptersStartingAtHome.map(({ id }) => id).sort()).toEqual([
-      "application",
-      "company",
-    ]);
-    expect(chaptersStartingAtHome.map(({ coordinate }) => Math.abs(coordinate))).toEqual([
-      1,
-      1,
-    ]);
+    expect(chaptersStartingAtHome.map(({ id }) => id)).toEqual(["company"]);
+    expect(chaptersStartingAtHome.map(({ coordinate }) => coordinate)).toEqual([1]);
   });
 
-  it("encerra somente Benefícios e Contato com barra final", () => {
+  it("encerra somente Contato com barra final", () => {
     const terminalIds = scoreChapters
       .filter(({ terminal, final_barline }) => terminal && final_barline)
       .map(({ id }) => id)
       .sort();
 
-    expect(terminalIds).toEqual(["application-benefits", "contact"]);
-    expect(scoreChapterById["application-benefits"].next).toBeNull();
+    expect(terminalIds).toEqual(["contact"]);
     expect(scoreChapterById.contact.next).toBeNull();
   });
 

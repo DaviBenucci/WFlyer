@@ -45,7 +45,7 @@
 .desktopHeader {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   block-size: var(--wf-header-height-desktop, 88px);
   inline-size: min(100%, var(--wf-content-max, 1440px));
@@ -70,14 +70,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(5.5rem, 1fr));
   min-inline-size: 0;
-}
-
-.desktopMeasureGroup:first-child {
-  padding-inline-end: clamp(1rem, 2.5vw, 2.5rem);
-}
-
-.desktopMeasureGroup:nth-of-type(2) {
-  padding-inline-start: clamp(1rem, 2.5vw, 2.5rem);
+  padding-inline: clamp(1rem, 2.5vw, 2.5rem);
 }
 
 .brandHomeLink,
@@ -217,7 +210,7 @@
   translate: 0 -50%;
 }
 
-.desktopHeader[data-has-theme-control="true"] .desktopMeasureGroup:nth-of-type(2) {
+.desktopHeader[data-has-theme-control="true"] .desktopMeasureGroup {
   padding-inline-end: 3.5rem;
 }
 
@@ -243,12 +236,8 @@
     grid-template-columns: repeat(4, minmax(4.8rem, 1fr));
   }
 
-  .desktopMeasureGroup:first-child {
-    padding-inline-end: 0.75rem;
-  }
-
-  .desktopMeasureGroup:nth-of-type(2) {
-    padding-inline-start: 0.75rem;
+  .desktopMeasureGroup {
+    padding-inline: 0.75rem;
   }
 
   .measureLabel {

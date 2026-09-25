@@ -19,13 +19,13 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Institutional: Story = {
+export const Forward: Story = {
   args: {
     direction: "right",
   },
 };
 
-export const Application: Story = {
+export const Reverse: Story = {
   args: {
     direction: "left",
   },

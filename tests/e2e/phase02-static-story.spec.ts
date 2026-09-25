@@ -13,20 +13,9 @@ const CHAPTER_IDS = [
   "professional-projects",
   "professional-contact",
   "professional-terminal",
-  "application-overview",
-  "application-how-it-works",
-  "application-benefits",
-  "application-demo",
-  "application-access",
-  "application-terminal",
 ] as const;
 
 const CHAPTER_HASHES = {
-  "application-access": "acessar-wflyer",
-  "application-benefits": "beneficios",
-  "application-demo": "demonstracao",
-  "application-how-it-works": "como-funciona",
-  "application-overview": "aplicacao",
   home: "home",
   "professional-about": "sobre",
   "professional-contact": "contato",
@@ -36,12 +25,10 @@ const CHAPTER_HASHES = {
 } as const;
 
 const HEADER_HASHES = [
-  "#aplicacao",
-  "#como-funciona",
-  "#beneficios",
   "#home",
   "#sobre",
   "#servicos",
+  "#processo",
   "#projetos",
   "#contato",
 ] as const;
@@ -125,7 +112,7 @@ test.describe("Phase 2 static vertical story", () => {
       await page.locator(STORY_MAIN).evaluate((main, footerSelector) => {
         const footer = document.querySelector(footerSelector);
         const lastChapter = main.querySelector(
-          '[data-chapter-id="application-terminal"]',
+          '[data-chapter-id="professional-terminal"]',
         );
 
         if (!footer || !lastChapter) return false;
@@ -219,8 +206,8 @@ test.describe("Phase 2 static vertical story", () => {
 
     await expectNativeHashNavigation(
       page,
-      header.locator('a[href="#beneficios"]'),
-      "#beneficios",
+      header.locator('a[href="#processo"]'),
+      "#processo",
     );
     await expectNativeHashNavigation(
       page,
@@ -245,7 +232,7 @@ test.describe("Phase 2 static vertical story", () => {
     ).toBe(true);
   });
 
-  test("keeps the application CTA at the access chapter and omits company framing and Music renderer output", async ({
+  test("omits the removed application CTA, company framing, and Music renderer output", async ({
     page,
   }) => {
     await openDevelopmentStory(page);
@@ -253,12 +240,7 @@ test.describe("Phase 2 static vertical story", () => {
     const applicationLinks = page.locator(
       'a[href^="https://app.wflyer.com.br"]',
     );
-    await expect(applicationLinks).toHaveCount(1);
-    await expect(
-      page.locator(
-        '[data-chapter-id="application-access"] a[href^="https://app.wflyer.com.br"]',
-      ),
-    ).toHaveCount(1);
+    await expect(applicationLinks).toHaveCount(0);
 
     const mainCopy = (await page.locator(STORY_MAIN).innerText()).normalize(
       "NFC",

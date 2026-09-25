@@ -7,20 +7,10 @@ import { siteConfig } from "@/config/site";
 
 import styles from "./site-footer.module.css";
 
-const applicationLinks = [
-  { href: "/aplicacao-wflyer", label: "Aplicação" },
-  {
-    href: "/aplicacao-wflyer/como-funciona",
-    label: "Como funciona",
-  },
-  { href: "/aplicacao-wflyer/beneficios", label: "Benefícios" },
-] as const;
-
 const institutionalLinks = [
   { href: "/sobre", label: "Sobre" },
   { href: "/servicos", label: "Serviços" },
   { href: "/processo", label: "Processo" },
-  { href: "/portfolio", label: "Projetos" },
   { href: "/contato", label: "Contato" },
 ] as const;
 
@@ -99,11 +89,6 @@ export function SiteFooter() {
             digitais claras, úteis e cuidadosamente executadas.
           </p>
         </div>
-
-        <nav aria-label="Aplicação no rodapé" className={styles.column}>
-          <h2>Aplicação</h2>
-          <FooterLinkList links={applicationLinks} />
-        </nav>
 
         <nav aria-label="Trabalho profissional no rodapé" className={styles.column}>
           <h2>Trabalho profissional</h2>

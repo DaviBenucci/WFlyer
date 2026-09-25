@@ -22,7 +22,7 @@ import {
 import styles from "./score-path-origin-review.module.css";
 
 function branchLabel(branch: ScorePathOriginReviewBranch): string {
-  return branch === "application" ? "Application · left" : "Professional · right";
+  return branch === "professional" ? "Professional · portfolio" : branch;
 }
 
 function pointsAttribute(points: readonly { readonly x: number; readonly y: number }[]) {
@@ -59,7 +59,7 @@ export function ScorePathOriginReview({
         <p>
           The approved downstream Organic Flowing alternating-S grammar is not
           modified here. This renderer-only fixture isolates the proposed
-          shared origin for human optical review before Task 34.
+          portfolio origin for human optical review before Task 34.
         </p>
       </header>
 
@@ -98,8 +98,8 @@ export function ScorePathOriginReview({
               <dd>{fixture.geometry.staffSpace}px</dd>
             </div>
             <div>
-              <dt>common-origin gap</dt>
-              <dd>{fixture.evidence.commonOriginGap.toFixed(3)}px</dd>
+              <dt>origin point gap</dt>
+              <dd>{fixture.evidence.originPointGap.toFixed(3)}px</dd>
             </div>
             <div>
               <dt>frame clearance</dt>
@@ -110,7 +110,7 @@ export function ScorePathOriginReview({
 
         <div
           className={styles.stage}
-          data-origin-common-gap={fixture.evidence.commonOriginGap}
+          data-origin-point-gap={fixture.evidence.originPointGap}
           data-origin-frame-clearance={
             fixture.evidence.minimumFrameContentClearance
           }
@@ -187,7 +187,7 @@ export function ScorePathOriginReview({
                 fixture.geometry.origin.y,
                 SCORE_REVIEW_SVG_PRECISION,
               )}
-              data-origin-shared-anchor="true"
+              data-origin-anchor="true"
               r={serializeSvgNumber(
                 fixture.geometry.staffSpace * 0.36,
                 SCORE_REVIEW_SVG_PRECISION,
@@ -199,7 +199,7 @@ export function ScorePathOriginReview({
         <div className={styles.legend}>
           <span><i className={styles.notationKey} />first notation-safe zone</span>
           <span><i className={styles.connectorKey} />first connector transition</span>
-          <span><i className={styles.originKey} />shared origin</span>
+          <span><i className={styles.originKey} />portfolio origin</span>
         </div>
       </section>
 

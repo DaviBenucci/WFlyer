@@ -5,8 +5,8 @@ import { ChapterScore, getChapterScorePath } from "./ChapterScore";
 import { NarrativeClef } from "./NarrativeClef";
 import { getOriginStaffPath, OriginScore } from "./OriginScore";
 
-describe("sistema de dupla partitura", () => {
-  it("origina dois ramos determinísticos no centro da Home", () => {
+describe("partitura do portfólio", () => {
+  it("origina um percurso determinístico na Home", () => {
     const { container } = render(<OriginScore />);
     const score = container.querySelector("[data-origin-score]");
     const desktop = container.querySelector(
@@ -18,24 +18,21 @@ describe("sistema de dupla partitura", () => {
 
     expect(score).toHaveAttribute("aria-hidden", "true");
     expect(
-      desktop?.querySelectorAll('[data-score-branch="application"]'),
-    ).toHaveLength(1);
-    expect(
       desktop?.querySelectorAll('[data-score-branch="institutional"]'),
     ).toHaveLength(1);
     expect(desktop?.querySelectorAll("[data-origin-staff-line]")).toHaveLength(
-      10,
+      5,
     );
     expect(compact?.querySelectorAll("[data-origin-staff-line]")).toHaveLength(
-      10,
+      5,
     );
     expect(
       desktop?.querySelector(
-        '[data-score-branch="application"] [data-origin-staff-line="1"]',
+        '[data-score-branch="institutional"] [data-origin-staff-line="1"]',
       ),
     ).toHaveAttribute(
       "d",
-      getOriginStaffPath("application", "desktop", 0),
+      getOriginStaffPath("desktop", 0),
     );
   });
 
@@ -77,27 +74,8 @@ describe("sistema de dupla partitura", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("encerra cada ramo exatamente na borda de saída", () => {
-    const { container, rerender } = render(
-      <ChapterScore
-        branch="application"
-        entryAnchorY={0.56}
-        entryEdge="right"
-        exitAnchorY={0.64}
-        exitEdge="left"
-        terminal
-      />,
-    );
-
-    expect(container.querySelector("[data-final-barline]")).toHaveAttribute(
-      "data-side",
-      "start",
-    );
-    expect(
-      container.querySelector("[data-final-barline] line:last-child"),
-    ).toHaveAttribute("x1", "14");
-
-    rerender(
+  it("encerra o percurso na borda de saída", () => {
+    const { container } = render(
       <ChapterScore
         branch="institutional"
         entryAnchorY={0.72}

@@ -91,7 +91,7 @@ test.describe("Phase-5 Motion Lab accessibility", () => {
         colorScheme: state.colorScheme,
         reducedMotion: state.reducedMotion,
       });
-      await page.goto(`${MOTION_PATH}#beneficios`, {
+      await page.goto(`${MOTION_PATH}#projetos`, {
         waitUntil: "domcontentloaded",
       });
       await expect(page.locator("[data-story-bootstrap]")).toHaveAttribute(
@@ -101,7 +101,7 @@ test.describe("Phase-5 Motion Lab accessibility", () => {
       );
       await expect(page.locator("main[data-motion-lab]")).toHaveAttribute(
         "data-motion-active-chapter",
-        "application-benefits",
+        "professional-projects",
       );
 
       expect(await relevantFindings(page), JSON.stringify(state)).toEqual([]);

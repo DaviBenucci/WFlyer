@@ -17,12 +17,10 @@ export type AnchorPoint = ViewportPoint;
 export interface MeasuredTransitionAnchors {
   readonly source?: ViewportPoint | null;
   readonly destination?: ViewportPoint | null;
-  readonly pivot?: ViewportPoint | null;
 }
 
 export interface ScoreTransitionGeometry {
   readonly height: number;
-  readonly pivot: ViewportPoint;
   readonly source: ViewportPoint;
   readonly target: ViewportPoint;
   readonly width: number;
@@ -30,7 +28,7 @@ export interface ScoreTransitionGeometry {
 
 export interface ScoreTransitionSegment {
   readonly end: ViewportPoint;
-  readonly id: "direct" | "from-home" | "to-home";
+  readonly id: "direct";
   readonly start: ViewportPoint;
 }
 
@@ -89,20 +87,12 @@ function movesAwayFromHome(transition: ScoreTransition): boolean {
 export function sourceAnchorKind(
   transition: ScoreTransition,
 ): "entry" | "exit" {
-  if (transition.mode === "home-pivot") {
-    return "entry";
-  }
-
   return movesAwayFromHome(transition) ? "exit" : "entry";
 }
 
 export function destinationAnchorKind(
   transition: ScoreTransition,
 ): "entry" | "exit" {
-  if (transition.mode === "home-pivot") {
-    return "entry";
-  }
-
   return movesAwayFromHome(transition) ? "entry" : "exit";
 }
 
@@ -141,12 +131,6 @@ export function resolveTransitionGeometry(
 
   return {
     height: viewport.height,
-    pivot: isFinitePoint(measured.pivot)
-      ? measured.pivot
-      : {
-          x: viewport.width / 2,
-          y: Math.min(120, viewport.height * 0.14),
-        },
     source: isFinitePoint(measured.source)
       ? measured.source
       : fallbackChapterPoint(transition, "source", viewport),
@@ -165,19 +149,8 @@ export function resolveTransitionSegments(
     return [];
   }
 
-  if (mode !== "home-pivot") {
-    return [
-      {
-        end: geometry.target,
-        id: "direct",
-        start: geometry.source,
-      },
-    ];
-  }
-
   return [
-    { end: geometry.pivot, id: "to-home", start: geometry.source },
-    { end: geometry.target, id: "from-home", start: geometry.pivot },
+    { end: geometry.target, id: "direct", start: geometry.source },
   ];
 }
 

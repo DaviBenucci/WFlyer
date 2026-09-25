@@ -125,7 +125,6 @@ export const BOOTSTRAP_RESOURCE_POLICY = Object.freeze({
     "critical-fonts-or-fallback",
   ] as const),
   noncritical: Object.freeze([
-    "application-demo-media",
     "project-media",
     "persona-variants",
     "detailed-route-media",

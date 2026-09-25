@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 
 import {
   PHASE3_ROUTE_SEO,
-  PUBLIC_PROJECTS,
   PUBLIC_SERVICES,
-  type ProjectRoute,
   type PublicSeo,
   type ServiceRoute,
 } from "@/content/public";
@@ -17,19 +15,14 @@ const servicePageSeo = Object.fromEntries(
   PUBLIC_SERVICES.map((service) => [service.route, service.seo]),
 ) as Readonly<Record<ServiceRoute, PageSeo>>;
 
-const projectPageSeo = Object.fromEntries(
-  PUBLIC_PROJECTS.map((project) => [project.route, project.seo]),
-) as Readonly<Record<ProjectRoute, PageSeo>>;
-
 export const pageSeo = {
   "/": {
-    title: "W_Flyer — música e soluções digitais",
+    title: "W_Flyer — portfólio profissional",
     description:
-      "Conheça a aplicação musical W_Flyer em desenvolvimento e os serviços digitais de sites, aplicações, integrações e soluções sob medida.",
+      "Conheça o trabalho profissional da W_Flyer em sites, aplicações, integrações e soluções digitais sob medida.",
   },
   ...PHASE3_ROUTE_SEO,
   ...servicePageSeo,
-  ...projectPageSeo,
   "/politica-de-privacidade": {
     title: "Política de privacidade — W_Flyer",
     description:

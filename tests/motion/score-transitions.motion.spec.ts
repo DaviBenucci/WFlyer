@@ -23,15 +23,15 @@ test("an interrupted midpoint releases its timeline, overlay, and content", asyn
   page,
 }) => {
   await page.goto("/sobre");
-  await warmRoute(page, "/aplicacao-wflyer");
+  await warmRoute(page, "/servicos");
   await holdAt(page, "midpoint");
-  await visibleHeaderLink(page, "/aplicacao-wflyer").click();
+  await visibleHeaderLink(page, "/servicos").click();
   await waitForCheckpoint(page, "midpoint");
   await expect(experience(page)).toHaveAttribute("data-active-timelines", "1");
 
   await interruptTransition(page);
 
-  await waitForSettledTransition(page, "/aplicacao-wflyer", "cancelled");
+  await waitForSettledTransition(page, "/servicos", "cancelled");
   await expectSafeSettledDocument(page);
   await expect(page.getByRole("main")).toBeFocused();
 });
@@ -77,7 +77,7 @@ test("reduced motion keeps route semantics without score drawing or lateral trav
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/sobre");
-  await warmRoute(page, "/aplicacao-wflyer");
+  await warmRoute(page, "/servicos");
   await page.evaluate(() => {
     interface TimedWindow extends Window {
       __phase05ReducedElapsed?: number;
@@ -114,12 +114,12 @@ test("reduced motion keeps route semantics without score drawing or lateral trav
     });
   });
 
-  await visibleHeaderLink(page, "/aplicacao-wflyer").click();
+  await visibleHeaderLink(page, "/servicos").click();
 
   await expectTransitionMetadata(page, {
-    destination: "/aplicacao-wflyer",
-    direction: "left",
-    mode: "home-pivot",
+    destination: "/servicos",
+    direction: "right",
+    mode: "adjacent-score",
     source: "/sobre",
     sourceKind: "link",
   });
@@ -131,7 +131,7 @@ test("reduced motion keeps route semantics without score drawing or lateral trav
   await expect(
     overlay(page).locator("[data-transition-segment]"),
   ).toHaveCount(0);
-  await waitForSettledTransition(page, "/aplicacao-wflyer");
+  await waitForSettledTransition(page, "/servicos");
   const elapsed = await page.evaluate(() => {
     interface TimedWindow extends Window {
       __phase05ReducedElapsed?: number;
@@ -160,14 +160,14 @@ test("a runtime reduced-motion change reverts incompatible active work", async (
 }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("/sobre");
-  await warmRoute(page, "/aplicacao-wflyer");
+  await warmRoute(page, "/servicos");
   await holdAt(page, "midpoint");
-  await visibleHeaderLink(page, "/aplicacao-wflyer").click();
+  await visibleHeaderLink(page, "/servicos").click();
   await waitForCheckpoint(page, "midpoint");
 
   await page.emulateMedia({ reducedMotion: "reduce" });
 
-  await waitForSettledTransition(page, "/aplicacao-wflyer", "recovered");
+  await waitForSettledTransition(page, "/servicos", "recovered");
   await expect(experience(page)).toHaveAttribute(
     "data-transition-reduced-motion",
     "true",
@@ -175,14 +175,14 @@ test("a runtime reduced-motion change reverts incompatible active work", async (
   await expectSafeSettledDocument(page);
 });
 
-test("theme changes at midpoint preserve deterministic Home-pivot geometry", async ({
+test("theme changes at midpoint preserve deterministic portfolio geometry", async ({
   page,
 }) => {
   await page.emulateMedia({ colorScheme: "light" });
-  await page.goto("/aplicacao-wflyer");
-  await warmRoute(page, "/sobre");
+  await page.goto("/servicos");
+  await warmRoute(page, "/contato");
   await holdAt(page, "midpoint");
-  await visibleHeaderLink(page, "/sobre").click();
+  await visibleHeaderLink(page, "/contato").click();
   await waitForCheckpoint(page, "midpoint");
   const pathsBefore = await overlay(page)
     .locator("[data-transition-staff-line]")
@@ -198,7 +198,7 @@ test("theme changes at midpoint preserve deterministic Home-pivot geometry", asy
   await expect(overlay(page)).toHaveAttribute("data-checkpoint", "midpoint");
 
   await releaseTransition(page);
-  await waitForSettledTransition(page, "/sobre");
+  await waitForSettledTransition(page, "/contato");
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
 });
 

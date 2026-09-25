@@ -86,8 +86,6 @@ export type ProjectSlug =
   | "msn-distribuidora"
   | "msn-suprimentos";
 
-export type ProjectRoute = `/portfolio/${ProjectSlug}`;
-
 export interface ProjectRecord {
   readonly areas: readonly string[];
   readonly context: string;
@@ -96,7 +94,6 @@ export interface ProjectRecord {
   readonly publicUrl?: string;
   readonly publicationStatus: PublicationStatus;
   readonly role: string;
-  readonly route: ProjectRoute;
   readonly seo: PublicSeo;
   readonly shortLandingSummary: string;
   readonly slug: ProjectSlug;
@@ -107,14 +104,10 @@ export interface ProjectRecord {
 }
 
 export type Phase3StaticRoute =
-  | "/aplicacao-wflyer"
-  | "/aplicacao-wflyer/como-funciona"
-  | "/aplicacao-wflyer/beneficios"
   | "/sobre"
   | "/servicos"
   | ServiceRoute
   | "/processo"
-  | "/portfolio"
   | "/contato";
 
-export type Phase3PublicRoute = Phase3StaticRoute | ProjectRoute;
+export type Phase3PublicRoute = Phase3StaticRoute;

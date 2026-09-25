@@ -10,7 +10,6 @@ import {
 export type TransitionMode =
   | "adjacent-score"
   | "compressed-score-jump"
-  | "home-pivot"
   | "neutral";
 
 export type TransitionDirection = "left" | "right" | "none";
@@ -219,18 +218,10 @@ export function classifyScoreTransition(
     );
   }
 
-  const sourceIsMainBranch = sourceChapter.branch !== "origin";
-  const destinationIsMainBranch = destinationChapter.branch !== "origin";
-  const crossesMainBranches =
-    sourceIsMainBranch &&
-    destinationIsMainBranch &&
-    sourceChapter.branch !== destinationChapter.branch;
   const coordinateDistance = Math.abs(coordinateDelta);
 
   return {
-    mode: crossesMainBranches
-      ? "home-pivot"
-      : coordinateDistance === 1
+    mode: coordinateDistance === 1
         ? "adjacent-score"
         : "compressed-score-jump",
     direction: coordinateDelta < 0 ? "left" : "right",
@@ -242,9 +233,7 @@ export function classifyScoreTransition(
     destinationKind,
     sourceChapter,
     destinationChapter,
-    effectiveBranch: crossesMainBranches
-      ? null
-      : resolveEffectiveBranch(sourceChapter, destinationChapter),
+    effectiveBranch: resolveEffectiveBranch(sourceChapter, destinationChapter),
     neutralReason: null,
   };
 }

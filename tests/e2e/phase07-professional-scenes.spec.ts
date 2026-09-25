@@ -27,11 +27,7 @@ const PROFESSIONAL_SCENES = [
   "terminal",
 ] as const;
 
-const PROJECT_DESTINATIONS = [
-  ["W_Flyer", "/portfolio/w-flyer"],
-  ["MSN Distribuidora", "/portfolio/msn-distribuidora"],
-  ["MSN Suprimentos", "/portfolio/msn-suprimentos"],
-] as const;
+const PROJECT_TITLES = ["W_Flyer", "MSN Distribuidora", "MSN Suprimentos"] as const;
 
 interface Bounds {
   readonly bottom: number;
@@ -309,10 +305,8 @@ test.describe("Phase-7 professional branch scenes", () => {
 
     const projectLinks = page.locator("[data-project-card-link]");
     await expect(projectLinks).toHaveCount(3);
-    for (const [title, destination] of PROJECT_DESTINATIONS) {
-      await expect(
-        page.getByRole("link", { name: `Conhecer o projeto ${title}` }),
-      ).toHaveAttribute("href", destination);
+    for (const title of PROJECT_TITLES) {
+      await expect(page.getByRole("button", { name: `Selecionar projeto ${title}` })).toHaveCount(1);
     }
 
     const contact = page.locator('[data-professional-scene="contact"]');
@@ -359,8 +353,8 @@ test.describe("Phase-7 professional branch scenes", () => {
         };
       }),
     );
-    expect(restingBounds[1]?.left).toBeLessThan(restingBounds[0]?.right ?? 0);
-    expect(restingBounds[2]?.left).toBeLessThan(restingBounds[1]?.right ?? 0);
+    expect(restingBounds[1]?.left).toBeGreaterThan(restingBounds[0]?.right ?? 0);
+    expect(restingBounds[2]?.left).toBeGreaterThan(restingBounds[1]?.right ?? 0);
     expect(new Set(restingBounds.map(({ transform }) => transform)).size).toBe(3);
 
     const firstItem = items.first();
@@ -432,11 +426,11 @@ test.describe("Phase-7 professional branch scenes", () => {
     }
   });
 
-  test("fits every scene at the minimum enhanced capacity, including verified Contact", async ({
+  test("fits every scene at a qualified enhanced capacity, including verified Contact", async ({
     page,
   }) => {
     await mockTurnstile(page);
-    await page.setViewportSize({ height: 640, width: 1100 });
+    await page.setViewportSize({ height: 900, width: 1536 });
     await openMotionLab(page);
     await expect(page.locator(MOTION_ROOT)).toHaveAttribute(
       "data-projection-mode",
@@ -466,7 +460,7 @@ test.describe("Phase-7 professional branch scenes", () => {
     }
   });
 
-  test("provides a staggered, non-carousel project stack with touch activation", async ({
+  test("provides one noninteractive Projects teaser on compact touch viewports", async ({
     baseURL,
     browser,
   }) => {
@@ -485,30 +479,10 @@ test.describe("Phase-7 professional branch scenes", () => {
         "data-projection-mode",
         "vertical-compact",
       );
-      const items = page.locator("[data-project-card-item]");
-      await expect(items).toHaveCount(3);
-      const stack = await items.evaluateAll((cards) =>
-        cards.map((card) => {
-          const rectangle = card.getBoundingClientRect();
-          return {
-            bottom: rectangle.bottom,
-            left: rectangle.left,
-            right: rectangle.right,
-            top: rectangle.top,
-            transform: getComputedStyle(card).transform,
-          };
-        }),
-      );
-      expect(stack[1]?.top).toBeGreaterThan(stack[0]?.bottom ?? 0);
-      expect(stack[2]?.top).toBeGreaterThan(stack[1]?.bottom ?? 0);
-      expect(Math.abs((stack[0]?.left ?? 0) - (stack[1]?.left ?? 0))).toBeGreaterThan(
-        5,
-      );
-      for (const card of stack) {
-        expect(card.left).toBeGreaterThanOrEqual(-1);
-        expect(card.right).toBeLessThanOrEqual(391);
-        expect(card.transform).toBe("none");
-      }
+      await expect(page.locator("[data-project-card-item]")).toHaveCount(0);
+      await expect(page.locator("[data-project-teaser]")).toHaveCount(1);
+      await expect(page.locator("[data-project-teaser]")).toContainText("W_Flyer");
+      await expect(page.locator("[data-project-teaser] button, [data-project-teaser] a")).toHaveCount(0);
       expect(
         await page.evaluate(
           () =>
@@ -517,26 +491,6 @@ test.describe("Phase-7 professional branch scenes", () => {
         ),
       ).toBe(true);
 
-      const firstLink = items.first().locator("[data-project-card-link]");
-      await firstLink.scrollIntoViewIfNeeded();
-      await page.evaluate(() => {
-        const link = document.querySelector<HTMLAnchorElement>(
-          "[data-project-card-link]",
-        );
-        link?.addEventListener(
-          "click",
-          (event) => {
-            event.preventDefault();
-            document.body.dataset.phase7TouchProject = "activated";
-          },
-          { once: true },
-        );
-      });
-      await firstLink.tap();
-      await expect(page.locator("body")).toHaveAttribute(
-        "data-phase7-touch-project",
-        "activated",
-      );
     } finally {
       await context.close();
     }
@@ -723,6 +677,8 @@ test.describe("Phase-7 professional branch scenes", () => {
       "vertical-compact",
       { timeout: 5_000 },
     );
+    await expect(page.locator("[data-project-card-link]")).toHaveCount(0);
+    await expect(page.locator("[data-project-teaser]")).toHaveCount(1);
     await expect(page.locator(MOTION_ROOT)).toHaveAttribute(
       "data-motion-active-chapter",
       "professional-projects",
@@ -738,7 +694,8 @@ test.describe("Phase-7 professional branch scenes", () => {
       "data-motion-active-chapter",
       "professional-projects",
     );
-    await expect(page.locator("[data-project-card-link]")).toHaveCount(3);
+    await expect(page.locator("[data-project-card-link]")).toHaveCount(0);
+    await expect(page.locator("[data-project-teaser]")).toHaveCount(1);
 
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await page.setViewportSize({ height: 900, width: 1536 });
@@ -754,8 +711,8 @@ test.describe("Phase-7 professional branch scenes", () => {
       "data-projection-mode",
       "vertical-wide",
     );
-    expect(
-      await page.evaluate(() =>
+    await expect.poll(() =>
+      page.evaluate(() =>
         window.__WFLYER_PHASE5_MOTION__?.snapshot().projectionReason,
       ),
     ).toBe("driver-failure");

@@ -2,16 +2,16 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { expect, userEvent, within } from "storybook/test";
 
 import { NavigationMeasure } from "./NavigationMeasure";
-import { APPLICATION_NAVIGATION } from "./navigation";
+import { INSTITUTIONAL_NAVIGATION } from "./navigation";
 
-const applicationItem = APPLICATION_NAVIGATION[0]!;
-const benefitsItem = APPLICATION_NAVIGATION[2]!;
+const professionalItem = INSTITUTIONAL_NAVIGATION[0]!;
+const contactItem = INSTITUTIONAL_NAVIGATION[2]!;
 
 const meta = {
   title: "Navigation/Navigation measure",
   component: NavigationMeasure,
   args: {
-    item: applicationItem,
+    item: professionalItem,
   },
   decorators: [
     (Story) => (
@@ -43,7 +43,7 @@ export const Active: Story = {
 export const Hover: Story = {
   play: async ({ canvasElement }) => {
     const link = within(canvasElement).getByRole("link", {
-      name: "Aplicação",
+      name: "Sobre",
     });
 
     await userEvent.hover(link);
@@ -54,7 +54,7 @@ export const Hover: Story = {
 export const Focus: Story = {
   play: async ({ canvasElement }) => {
     const link = within(canvasElement).getByRole("link", {
-      name: "Aplicação",
+      name: "Sobre",
     });
 
     link.focus();
@@ -62,18 +62,18 @@ export const Focus: Story = {
   },
 };
 
-export const Benefits: Story = {
+export const Contact: Story = {
   args: {
-    item: benefitsItem,
+    item: contactItem,
   },
   play: async ({ canvasElement }) => {
     const link = within(canvasElement).getByRole("link", {
-      name: "Benefícios",
+      name: "Contato",
     });
 
     await expect(link).toHaveAttribute(
       "href",
-      "/aplicacao-wflyer/beneficios",
+      "/contato",
     );
   },
 };

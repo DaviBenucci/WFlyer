@@ -9,21 +9,14 @@ interface RelevantViolation {
 }
 
 const internalRoutes = [
-  "/aplicacao-wflyer",
-  "/aplicacao-wflyer/como-funciona",
-  "/aplicacao-wflyer/beneficios",
   "/sobre",
   "/servicos",
   "/processo",
-  "/portfolio",
   "/contato",
   "/servicos/criacao-de-sites",
   "/servicos/criacao-de-aplicacoes",
   "/servicos/integracoes",
   "/servicos/solucoes-sob-medida",
-  "/portfolio/w-flyer",
-  "/portfolio/msn-distribuidora",
-  "/portfolio/msn-suprimentos",
   "/politica-de-privacidade",
   "/politica-de-cookies",
   "/termos-de-uso",

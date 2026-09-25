@@ -11,44 +11,19 @@ import { ContactForm, ContactFormFallback } from "@/components/pages/contact";
 import {
   type ContentCard,
   type ContentStep,
-  type PortfolioProject,
   type ServiceSummary,
 } from "@/content/site-content";
 
 import { PageIcon, type PageIconName } from "./PageIcons";
 import styles from "./archetypes.module.css";
 
-export function ApplicationFeatureStrip({
-  items,
-}: {
-  readonly items: readonly ContentCard[];
-}) {
-  return (
-    <ul
-      aria-label="Benefícios em destaque"
-      className={styles.featureStrip}
-      data-feature-strip=""
-    >
-      {items.map((item) => (
-        <li key={item.title}>
-          <PageIcon name={item.icon} />
-          <Heading as="h3" size="sm">
-            {item.title}
-          </Heading>
-          <Text size="small" tone="muted">
-            {item.description}
-          </Text>
-        </li>
-      ))}
-    </ul>
-  );
-}
+
 
 export function StepSequence({
   branch,
   steps,
 }: {
-  readonly branch: "application" | "institutional";
+  readonly branch: "institutional";
   readonly steps: readonly ContentStep[];
 }) {
   return (
@@ -59,7 +34,7 @@ export function StepSequence({
       <Staff
         className={styles.sequenceStaff}
         density="regular"
-        direction={branch === "application" ? "left" : "right"}
+        direction="right"
       />
       <ol>
         {steps.map((step) => (
@@ -81,41 +56,9 @@ export function StepSequence({
   );
 }
 
-function IconCard({
-  description,
-  icon,
-  title,
-}: ContentCard & { readonly icon: PageIconName }) {
-  return (
-    <article className={styles.iconCard}>
-      <PageIcon name={icon} />
-      <Heading as="h3" size="sm">
-        {title}
-      </Heading>
-      <Text tone="muted">{description}</Text>
-    </article>
-  );
-}
 
-export function BenefitsGrid({
-  items,
-}: {
-  readonly items: readonly ContentCard[];
-}) {
-  return (
-    <ul
-      aria-label="Benefícios da aplicação"
-      className={styles.iconCardGrid}
-      data-benefits-grid=""
-    >
-      {items.map((item) => (
-        <li key={item.title}>
-          <IconCard {...item} icon={item.icon} />
-        </li>
-      ))}
-    </ul>
-  );
-}
+
+
 
 export function CompanyMark() {
   return (
@@ -234,83 +177,6 @@ export function AudienceList({
         </li>
       ))}
     </ol>
-  );
-}
-
-function ProjectArtwork({
-  index,
-  name,
-}: {
-  readonly index: number;
-  readonly name: string;
-}) {
-  return (
-    <div
-      aria-label={`Composição abstrata original para ${name}`}
-      className={styles.projectArtwork}
-      data-project-artwork={index + 1}
-      role="img"
-    >
-      <svg
-        aria-hidden="true"
-        focusable="false"
-        viewBox="0 0 360 180"
-      >
-        <path d="M18 126C78 62 132 150 190 87s104-29 152-60" />
-        <path d="M18 142C82 82 136 164 198 105s102-35 144-61" />
-        <rect height="104" rx="12" width="164" x="98" y="34" />
-        <path d="M116 58h128M116 78h72M116 102h104" />
-        <circle cx="224" cy="103" r="20" />
-      </svg>
-      <span>{String(index + 1).padStart(2, "0")}</span>
-    </div>
-  );
-}
-
-export function ProjectGrid({
-  projects,
-}: {
-  readonly projects: readonly PortfolioProject[];
-}) {
-  return (
-    <ul
-      aria-label="Projetos selecionados"
-      className={styles.projectGrid}
-      data-project-grid=""
-    >
-      {projects.map((project, index) => (
-        <li key={project.name}>
-          <article className={styles.projectCard}>
-            <ProjectArtwork
-              index={index}
-              name={project.name}
-            />
-            <div className={styles.projectMeta}>
-              <span>{project.type}</span>
-              <span>{project.status}</span>
-            </div>
-            <Heading as="h3" size="md">
-              {project.name}
-            </Heading>
-            <Text tone="muted">{project.description}</Text>
-            <ul className={styles.projectScope}>
-              {project.scope.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <LinkButton
-              external
-              href={project.url}
-              target="_blank"
-              trailingIcon={<ArrowIcon />}
-              variant="secondary"
-            >
-              Visitar {project.name}
-            </LinkButton>
-          </article>
-        </li>
-      ))}
-    </ul>
   );
 }
 

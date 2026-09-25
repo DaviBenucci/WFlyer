@@ -20,21 +20,7 @@ describe("SiteHeader", () => {
   it("mantém os grupos, destinos e símbolo central normativos", () => {
     const { container } = render(<SiteHeader />);
 
-    expect(
-      screen.getByRole("navigation", { name: "Navegação da aplicação" }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("navigation", { name: "Navegação profissional" }),
-    ).toBeInTheDocument();
-    expect(screen.getAllByRole("link", { name: "Aplicação" })[0]).toHaveAttribute(
-      "href",
-      "/aplicacao-wflyer",
-    );
-    expect(
-      screen.getAllByRole("link", {
-        name: "Como funciona",
-      })[0],
-    ).toHaveAttribute("href", "/aplicacao-wflyer/como-funciona");
+    expect(screen.getByRole("navigation", { name: "Navegação profissional" })).toBeInTheDocument();
     expect(
       screen.queryByRole("link", { name: /Acessar (?:app|W_Flyer)/u }),
     ).not.toBeInTheDocument();
@@ -42,38 +28,28 @@ describe("SiteHeader", () => {
       "href",
       "/sobre",
     );
-    expect(
-      screen.getAllByRole("link", { name: "Projetos" })[0],
-    ).toHaveAttribute("href", "/portfolio");
+    expect(screen.queryByRole("link", { name: "Projetos" })).toBeNull();
     expect(
       screen.getAllByRole("link", {
         name: "W_Flyer — voltar à página inicial",
       })[0],
     ).toHaveAttribute("href", "/");
-    const applicationMeasureBars = container.querySelectorAll(
-      '[data-navigation-id="application"] [data-measure-bar]',
-    );
-
-    expect(applicationMeasureBars).toHaveLength(2);
-    expect(
-      Array.from(applicationMeasureBars, (bar) => bar.getAttribute("x1")),
-    ).toEqual(["2", "158"]);
     expect(container.querySelector("[data-brand-intro-header]")).not.toBeNull();
     expect(
       container.querySelectorAll("[data-brand-intro-header-pivot]"),
     ).toHaveLength(2);
     expect(
       container.querySelectorAll("[data-brand-intro-header-score]"),
-    ).toHaveLength(7);
+    ).toHaveLength(4);
     expect(
       container.querySelectorAll("[data-brand-intro-header-score-lines]"),
-    ).toHaveLength(7);
+    ).toHaveLength(4);
     expect(
       container.querySelectorAll("[data-brand-intro-header-score-detail]"),
-    ).toHaveLength(21);
+    ).toHaveLength(12);
     expect(
       container.querySelectorAll("[data-brand-intro-header-label]"),
-    ).toHaveLength(7);
+    ).toHaveLength(4);
   });
 
   it("indica Processo como subcompasso ativo de Serviços", () => {
@@ -125,16 +101,16 @@ describe("SiteHeader", () => {
 
     await user.click(screen.getByRole("button", { name: "Abrir menu" }));
     const dialog = screen.getByRole("dialog", { name: "Navegação W_Flyer" });
-    const applicationLink = Array.from(
+    const professionalLink = Array.from(
       dialog.querySelectorAll<HTMLAnchorElement>("a"),
-    ).find((link) => link.textContent?.includes("Aplicação"));
+    ).find((link) => link.textContent?.includes("Sobre"));
 
-    expect(applicationLink).toBeDefined();
-    applicationLink?.addEventListener("click", (event) => {
+    expect(professionalLink).toBeDefined();
+    professionalLink?.addEventListener("click", (event) => {
       event.preventDefault();
     });
 
-    await user.click(applicationLink!);
+    await user.click(professionalLink!);
 
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });

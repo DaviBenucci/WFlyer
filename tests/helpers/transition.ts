@@ -5,7 +5,6 @@ export type TransitionDirection = "left" | "none" | "right";
 export type TransitionMode =
   | "adjacent-score"
   | "compressed-score-jump"
-  | "home-pivot"
   | "neutral";
 export type SettledTransitionResult =
   | "animation-error"

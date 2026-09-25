@@ -1,11 +1,5 @@
 export type StoryChapterId =
   | "home"
-  | "application-overview"
-  | "application-how-it-works"
-  | "application-benefits"
-  | "application-demo"
-  | "application-access"
-  | "application-terminal"
   | "professional-about"
   | "professional-services"
   | "professional-process"
@@ -15,16 +9,10 @@ export type StoryChapterId =
 
 export type StoryDocumentNodeId = StoryChapterId | "global-footer";
 
-export type StoryBranch = "origin" | "application" | "professional";
+export type StoryBranch = "origin" | "professional";
 
 export type StoryTimelineLabel =
   | "home"
-  | "app-overview"
-  | "app-how"
-  | "app-benefits"
-  | "app-demo"
-  | "app-access"
-  | "app-terminal"
   | "pro-about"
   | "pro-services"
   | "pro-process"
@@ -34,11 +22,6 @@ export type StoryTimelineLabel =
 
 export type StoryHash =
   | "#home"
-  | "#aplicacao"
-  | "#como-funciona"
-  | "#beneficios"
-  | "#demonstracao"
-  | "#lancamento"
   | "#sobre"
   | "#servicos"
   | "#processo"
@@ -47,19 +30,10 @@ export type StoryHash =
 
 export type StoryDetailRoute =
   | "/"
-  | "/aplicacao-wflyer"
-  | "/aplicacao-wflyer/como-funciona"
-  | "/aplicacao-wflyer/beneficios"
-  | "/aplicacao-wflyer#demonstracao"
   | "/sobre"
   | "/servicos"
   | "/processo"
-  | "/portfolio"
   | "/contato";
-
-export type StoryExternalAction = "https://app.wflyer.com.br";
-
-export type ApplicationAvailabilityState = "PRELAUNCH" | "LIVE";
 
 export type StoryHeaderMembership = boolean | "center-brand";
 
@@ -70,8 +44,8 @@ export interface StoryScoreHook<
 > {
   readonly segmentId: TChapterId;
   /**
-   * Phase 9 maps each real branch segment to the approved deterministic Music
-   * slots. Home remains the shared origin rather than a thirteenth segment.
+   * Phase 9 maps each Professional segment to approved deterministic Music
+   * slots. Home remains the narrative origin.
    */
   readonly semanticSlotIds: readonly StorySemanticSlotId[];
 }
@@ -87,8 +61,6 @@ export interface StoryChapter<
   readonly header: StoryHeaderMembership;
   readonly hash?: StoryHash;
   readonly detailRoute?: StoryDetailRoute;
-  readonly externalAction?: StoryExternalAction;
-  readonly availabilityState?: ApplicationAvailabilityState;
   readonly finalBarlineBefore?: true;
   /** Stable, geometry-free hook for later scene integration. */
   readonly sceneId: TChapterId;
@@ -104,12 +76,11 @@ export interface StoryGlobalFooter {
 export type StoryDocumentNode = StoryChapter | StoryGlobalFooter;
 
 export interface StoryBranchDefinition {
-  readonly desktopDirection: "left" | "right";
-  readonly mobileOrder: 1 | 2;
+  readonly desktopDirection: "right";
+  readonly mobileOrder: 1;
 }
 
 export interface StoryHeaderNavigation {
-  readonly application: readonly StoryChapterId[];
   readonly center: "home";
   readonly professional: readonly StoryChapterId[];
 }

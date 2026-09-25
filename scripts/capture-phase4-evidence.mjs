@@ -1,3 +1,5 @@
+// Historical Phase-4 capture recipe. ADR-056 withdrew its Projects route;
+// do not use this script as current-route validation.
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
 

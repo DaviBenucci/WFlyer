@@ -35,23 +35,23 @@ test("captures the deterministic transition start checkpoint", async ({
   page,
 }, testInfo) => {
   await page.setViewportSize({ height: 1024, width: 1536 });
-  await page.goto("/aplicacao-wflyer");
+  await page.goto("/sobre");
   await holdAt(page, "start");
 
-  await visibleHeaderLink(page, "/sobre").click();
+  await visibleHeaderLink(page, "/servicos").click();
   await waitForCheckpoint(page, "start");
 
   await expect(experience(page)).toHaveAttribute(
     "data-transition-mode",
-    "home-pivot",
+    "adjacent",
   );
   await expect(
     overlay(page).locator("[data-transition-segment]"),
-  ).toHaveCount(2);
+  ).toHaveCount(1);
   await captureEvidence(page, testInfo, "phase05-transition-start");
 
   await interruptTransition(page);
-  await waitForSettledTransition(page, "/aplicacao-wflyer", "cancelled");
+  await waitForSettledTransition(page, "/sobre", "cancelled");
 });
 
 test("captures the deterministic transition midpoint checkpoint", async ({
@@ -61,11 +61,11 @@ test("captures the deterministic transition midpoint checkpoint", async ({
   await page.addInitScript(() => {
     window.localStorage.setItem("wf-theme", "dark");
   });
-  await page.goto("/aplicacao-wflyer");
-  await warmRoute(page, "/sobre");
+  await page.goto("/sobre");
+  await warmRoute(page, "/servicos");
   await holdAt(page, "midpoint");
 
-  await visibleHeaderLink(page, "/sobre").click();
+  await visibleHeaderLink(page, "/servicos").click();
   await waitForCheckpoint(page, "midpoint");
 
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
@@ -73,7 +73,7 @@ test("captures the deterministic transition midpoint checkpoint", async ({
   await captureEvidence(page, testInfo, "phase05-transition-midpoint-dark");
 
   await releaseTransition(page);
-  await waitForSettledTransition(page, "/sobre");
+  await waitForSettledTransition(page, "/servicos");
 });
 
 test("captures the deterministic transition completion checkpoint", async ({
@@ -101,11 +101,6 @@ test("captures both final barlines in light and dark desktop states", async ({
   await page.setViewportSize({ height: 1024, width: 1536 });
 
   for (const terminal of [
-    {
-      name: "benefits",
-      route: "/aplicacao-wflyer/beneficios",
-      side: "start",
-    },
     { name: "contact", route: "/contato", side: "end" },
   ] as const) {
     for (const theme of ["light", "dark"] as const) {

@@ -211,7 +211,6 @@ const SERVICE_RECORDS = [
 const PROJECT_RECORDS = [
   {
     slug: "w-flyer",
-    route: "/portfolio/w-flyer",
     title: "W_Flyer",
     type: "Produto próprio",
     shortLandingSummary:
@@ -236,7 +235,6 @@ const PROJECT_RECORDS = [
   },
   {
     slug: "msn-distribuidora",
-    route: "/portfolio/msn-distribuidora",
     title: "MSN Distribuidora",
     type: "E-commerce",
     shortLandingSummary:
@@ -261,7 +259,6 @@ const PROJECT_RECORDS = [
   },
   {
     slug: "msn-suprimentos",
-    route: "/portfolio/msn-suprimentos",
     title: "MSN Suprimentos",
     type: "Site comercial e institucional",
     shortLandingSummary:
@@ -318,6 +315,13 @@ export function getFeaturedPublicProjects(
   return selectPublishedRecords(records).filter(({ featured }) => featured);
 }
 
+export function getPrimaryPublicProject(
+  records: readonly ProjectRecord[] = PUBLIC_PROJECTS,
+): ProjectRecord | undefined {
+  const publicProjects = selectPublishedRecords(records);
+  return publicProjects.find(({ featured }) => featured) ?? publicProjects[0];
+}
+
 export const CONTACT_PROJECT_TYPES = [
   { label: "Site institucional", value: "site-institucional" },
   { label: "Landing page", value: "landing-page" },
@@ -332,21 +336,6 @@ export const CONTACT_PROJECT_TYPES = [
 }[];
 
 export const PHASE3_ROUTE_SEO = {
-  "/aplicacao-wflyer": {
-    title: "Aplicação musical W_Flyer",
-    description:
-      "Conheça a proposta pública da aplicação W_Flyer para apoiar adaptações musicais com escolhas visíveis e revisão humana.",
-  },
-  "/aplicacao-wflyer/como-funciona": {
-    title: "Como funciona a aplicação W_Flyer",
-    description:
-      "Veja as cinco etapas públicas da aplicação W_Flyer, da seleção da partitura à revisão e continuidade do resultado.",
-  },
-  "/aplicacao-wflyer/beneficios": {
-    title: "Benefícios da aplicação W_Flyer",
-    description:
-      "Conheça os quatro benefícios públicos da aplicação W_Flyer sem promessas quantitativas ou garantias musicais.",
-  },
   "/sobre": {
     title: "Sobre o trabalho profissional — W_Flyer",
     description:
@@ -361,11 +350,6 @@ export const PHASE3_ROUTE_SEO = {
     title: "Processo de trabalho — W_Flyer",
     description:
       "Conheça as etapas de descoberta, direção, implementação incremental, validação e evolução usadas no trabalho profissional.",
-  },
-  "/portfolio": {
-    title: "Projetos selecionados — W_Flyer",
-    description:
-      "Conheça os projetos públicos autorizados W_Flyer, MSN Distribuidora e MSN Suprimentos, sem métricas ou resultados inventados.",
   },
   "/contato": {
     title: "Contato profissional — W_Flyer",
@@ -387,7 +371,6 @@ const projectItems = PUBLIC_PROJECTS.map((project) => ({
   title: project.title,
   meta: `${project.type} · ${project.status.toLocaleLowerCase("pt-BR")}`,
   description: project.shortLandingSummary,
-  link: { href: project.route, label: `Conhecer o projeto ${project.title}` },
 }));
 
 export const PUBLIC_STORY_CONTENT: Readonly<
@@ -397,12 +380,12 @@ export const PUBLIC_STORY_CONTENT: Readonly<
     chapterId: "home",
     branch: "origin",
     publicationStatus: "public",
-    eyebrow: "Uma origem, duas expressões",
+    eyebrow: "Origem do portfólio",
     title: "W_Flyer",
     description:
-      "A W_Flyer reúne meu trabalho profissional em tecnologia e a proposta pública de uma aplicação musical, em percursos independentes e complementares.",
+      "A W_Flyer apresenta meu trabalho profissional em tecnologia, produto e design por um único percurso.",
     note:
-      "Na leitura vertical, o percurso profissional aparece primeiro e a aplicação musical vem em seguida.",
+      "Na leitura vertical, os capítulos profissionais seguem até o rodapé global.",
   },
   "professional-about": {
     chapterId: "professional-about",
@@ -451,8 +434,6 @@ export const PUBLIC_STORY_CONTENT: Readonly<
     title: "Trabalhos selecionados com escopo verificável.",
     description:
       "A seleção apresenta somente projetos autorizados, sem métricas, resultados ou estudos de caso inventados.",
-    detailLink: { href: "/portfolio", label: "Ver projetos selecionados" },
-    seo: PHASE3_ROUTE_SEO["/portfolio"],
     items: projectItems,
   },
   "professional-contact": {
@@ -473,149 +454,6 @@ export const PUBLIC_STORY_CONTENT: Readonly<
     eyebrow: "Conclusão profissional",
     title: "Fim do percurso profissional.",
     description:
-      "Uma barra final encerra visualmente este ramo. Na leitura vertical, ela é uma transição para a aplicação, não um segundo rodapé.",
-  },
-  "application-overview": {
-    chapterId: "application-overview",
-    branch: "application",
-    publicationStatus: "public",
-    eyebrow: "Aplicação W_Flyer",
-    title: "Adaptação musical com escolhas visíveis e revisão humana.",
-    description:
-      "A proposta é apoiar a adaptação de partituras entre instrumentos e contextos tonais. A conferência e a decisão musical permanecem com quem usa a aplicação.",
-    detailLink: {
-      href: "/aplicacao-wflyer",
-      label: "Conhecer a proposta da aplicação",
-    },
-    seo: PHASE3_ROUTE_SEO["/aplicacao-wflyer"],
-    items: [
-      {
-        title: "Contexto de origem",
-        description:
-          "A partitura parte de um instrumento e de um contexto tonal conhecidos.",
-      },
-      {
-        title: "Contexto de destino",
-        description:
-          "A pessoa informa o instrumento e o contexto tonal para os quais deseja adaptar o material.",
-      },
-      {
-        title: "Revisão humana",
-        description:
-          "O resultado é apresentado para conferência; a decisão musical não é automatizada nem garantida.",
-      },
-    ],
-  },
-  "application-how-it-works": {
-    chapterId: "application-how-it-works",
-    branch: "application",
-    publicationStatus: "public",
-    eyebrow: "Como funciona",
-    title: "Um fluxo orientado da partitura ao resultado.",
-    description:
-      "Cada etapa torna as escolhas compreensíveis e preserva um momento explícito de revisão antes de continuar.",
-    detailLink: {
-      href: "/aplicacao-wflyer/como-funciona",
-      label: "Ver como funciona em detalhes",
-    },
-    seo: PHASE3_ROUTE_SEO["/aplicacao-wflyer/como-funciona"],
-    items: [
-      {
-        label: "01",
-        title: "Insira ou selecione a partitura",
-        description: "Escolha o material que será usado no fluxo.",
-      },
-      {
-        label: "02",
-        title: "Informe instrumento e tonalidade de origem",
-        description: "Contextualize o material de partida.",
-      },
-      {
-        label: "03",
-        title: "Defina instrumento e tonalidade de destino",
-        description: "Indique o contexto para o qual deseja adaptar.",
-      },
-      {
-        label: "04",
-        title: "Visualize e revise",
-        description: "Confira o resultado e faça a avaliação musical necessária.",
-      },
-      {
-        label: "05",
-        title: "Exporte ou continue",
-        description: "Siga com o resultado ou continue o trabalho na aplicação.",
-      },
-    ],
-  },
-  "application-benefits": {
-    chapterId: "application-benefits",
-    branch: "application",
-    publicationStatus: "public",
-    eyebrow: "Benefícios",
-    title: "Mais clareza para revisar e continuar.",
-    description:
-      "Quatro grupos traduzem a proposta pública em valor sem promessas quantitativas ou garantias.",
-    detailLink: {
-      href: "/aplicacao-wflyer/beneficios",
-      label: "Conhecer os benefícios",
-    },
-    seo: PHASE3_ROUTE_SEO["/aplicacao-wflyer/beneficios"],
-    items: [
-      {
-        title: "Menos trabalho repetitivo",
-        description: "Organize tarefas recorrentes em um fluxo orientado.",
-      },
-      {
-        title: "Diferentes contextos",
-        description:
-          "Prepare materiais para outros instrumentos ou contextos tonais com escolhas explícitas.",
-      },
-      {
-        title: "Revisão antes de prosseguir",
-        description:
-          "Mantenha a interpretação, a conferência e a decisão musical com você.",
-      },
-      {
-        title: "Continuidade do fluxo",
-        description:
-          "Exporte o resultado nos formatos aprovados ou continue na aplicação.",
-      },
-    ],
-  },
-  "application-demo": {
-    chapterId: "application-demo",
-    branch: "application",
-    publicationStatus: "public",
-    eyebrow: "Demonstração",
-    title: "Veja um percurso ilustrativo pela aplicação.",
-    description:
-      "A tela simulada permanece inerte. A reprodução ocorre somente quando esta etapa está ativa, e o único controle disponível é o de mídia.",
-    detailLink: {
-      href: "/aplicacao-wflyer#demonstracao",
-      label: "Ver o contrato da demonstração",
-    },
-    structuralPlaceholder: {
-      label: "Espaço estrutural APP-04",
-      status:
-        "WebM, MP4, poster e quadro final dependem de fornecimento e aprovação humana.",
-    },
-  },
-  "application-access": {
-    chapterId: "application-access",
-    branch: "application",
-    publicationStatus: "public",
-    eyebrow: "Lançamento",
-    title: "A aplicação está em desenvolvimento.",
-    description:
-      "Quer saber quando ela estiver disponível? Cadastre seu e-mail para receber apenas este aviso.",
-  },
-  "application-terminal": {
-    chapterId: "application-terminal",
-    branch: "application",
-    publicationStatus: "public",
-    eyebrow: "Conclusão da aplicação",
-    title: "Fim da narrativa vertical.",
-    description:
-      "A barra final encerra o ramo da aplicação e a navegação institucional conclui a experiência sem duplicar um segundo rodapé.",
+      "Uma barra final encerra visualmente o percurso antes do rodapé global.",
   },
 };

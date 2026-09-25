@@ -28,27 +28,6 @@ interface AdjacentEdge {
 
 const adjacentEdges: readonly AdjacentEdge[] = [
   {
-    destination: "/aplicacao-wflyer",
-    destinationChapter: "application",
-    direction: "left",
-    source: "/",
-    sourceChapter: "home",
-  },
-  {
-    destination: "/aplicacao-wflyer/como-funciona",
-    destinationChapter: "application-how-it-works",
-    direction: "left",
-    source: "/aplicacao-wflyer",
-    sourceChapter: "application",
-  },
-  {
-    destination: "/aplicacao-wflyer/beneficios",
-    destinationChapter: "application-benefits",
-    direction: "left",
-    source: "/aplicacao-wflyer/como-funciona",
-    sourceChapter: "application-how-it-works",
-  },
-  {
     destination: "/sobre",
     destinationChapter: "company",
     direction: "right",
@@ -70,18 +49,11 @@ const adjacentEdges: readonly AdjacentEdge[] = [
     sourceChapter: "services",
   },
   {
-    destination: "/portfolio",
-    destinationChapter: "portfolio",
-    direction: "right",
-    source: "/processo",
-    sourceChapter: "process",
-  },
-  {
     destination: "/contato",
     destinationChapter: "contact",
     direction: "right",
-    source: "/portfolio",
-    sourceChapter: "portfolio",
+    source: "/processo",
+    sourceChapter: "process",
   },
 ];
 
@@ -190,14 +162,8 @@ test.describe("Phase 05 adjacent score navigation", () => {
   }
 });
 
-test.describe("Phase 05 compressed and cross-branch navigation", () => {
+test.describe("Phase 05 compressed portfolio navigation", () => {
   for (const jump of [
-    {
-      destination: "/aplicacao-wflyer/beneficios",
-      direction: "left" as const,
-      excluded: "application-how-it-works",
-      source: "/aplicacao-wflyer",
-    },
     {
       destination: "/contato",
       direction: "right" as const,
@@ -246,62 +212,7 @@ test.describe("Phase 05 compressed and cross-branch navigation", () => {
     });
   }
 
-  for (const crossing of [
-    {
-      destination: "/sobre",
-      direction: "right" as const,
-      source: "/aplicacao-wflyer",
-    },
-    {
-      destination: "/aplicacao-wflyer",
-      direction: "left" as const,
-      source: "/sobre",
-    },
-  ] as const) {
-    test(`${crossing.source} to ${crossing.destination} pivots through Home without adding it to history`, async ({
-      page,
-    }) => {
-      await warmRoute(page, crossing.destination);
-      await page.goto(crossing.source);
-      await holdAt(page, "midpoint");
 
-      await visibleHeaderLink(page, crossing.destination).click();
-
-      await waitForCheckpoint(page, "midpoint");
-      await expectTransitionMetadata(page, {
-        destination: crossing.destination,
-        direction: crossing.direction,
-        mode: "home-pivot",
-        source: crossing.source,
-        sourceKind: "link",
-      });
-      await expect(
-        overlay(page).locator("[data-transition-segment]"),
-      ).toHaveCount(2);
-      await expect(
-        overlay(page).locator('[data-segment-id="to-home"]'),
-      ).toHaveCount(1);
-      await expect(
-        overlay(page).locator('[data-segment-id="from-home"]'),
-      ).toHaveCount(1);
-
-      await releaseTransition(page);
-      await waitForSettledTransition(page, crossing.destination);
-
-      await holdAt(page, "midpoint");
-      await page.goBack();
-      await waitForCheckpoint(page, "midpoint");
-      await expectTransitionMetadata(page, {
-        destination: crossing.source,
-        direction: crossing.direction === "left" ? "right" : "left",
-        mode: "home-pivot",
-        source: crossing.destination,
-        sourceKind: "history",
-      });
-      await releaseTransition(page);
-      await waitForSettledTransition(page, crossing.source);
-    });
-  }
 });
 
 test("Back and Forward restore one route without focus theft or route loops", async ({
@@ -348,13 +259,9 @@ test("Back and Forward restore one route without focus theft or route loops", as
 test("every main chapter remains a clean direct deep link", async ({ page }) => {
   const routes = [
     ["/", "home"],
-    ["/aplicacao-wflyer", "application"],
-    ["/aplicacao-wflyer/como-funciona", "application-how-it-works"],
-    ["/aplicacao-wflyer/beneficios", "application-benefits"],
     ["/sobre", "company"],
     ["/servicos", "services"],
     ["/processo", "process"],
-    ["/portfolio", "portfolio"],
     ["/contato", "contact"],
   ] as const;
 
@@ -362,6 +269,14 @@ test("every main chapter remains a clean direct deep link", async ({ page }) => 
     const response = await page.goto(route);
 
     expect(response?.ok(), route).toBe(true);
+    if (route === "/") {
+      // Public Home owns BrandIntroController, not the story-lab bootstrap.
+      await expect(page.locator("[data-brand-intro-home-state]")).toHaveAttribute(
+        "data-brand-intro-home-state",
+        "ready",
+        { timeout: 10_000 },
+      );
+    }
     await expect(page.getByRole("main")).toHaveAttribute(
       "data-chapter",
       chapter,
@@ -370,13 +285,14 @@ test("every main chapter remains a clean direct deep link", async ({ page }) => 
     await expect(experience(page)).toHaveAttribute("data-transition-phase", "idle");
     await expect(experience(page)).toHaveAttribute("data-active-timelines", "0");
     await expect(overlay(page)).toHaveAttribute("data-active", "false");
+    await expectSafeSettledDocument(page);
   }
 });
 
 test("the latest rapid activation supersedes one pending destination", async ({
   page,
 }) => {
-  await warmRoute(page, "/aplicacao-wflyer");
+  await warmRoute(page, "/servicos");
   await warmRoute(page, "/sobre");
   await page.goto("/");
   const initialHistoryLength = await page.evaluate(
@@ -384,7 +300,7 @@ test("the latest rapid activation supersedes one pending destination", async ({
   );
   await holdAt(page, "start");
 
-  await visibleMainLink(page, "/aplicacao-wflyer").click();
+  await visibleMainLink(page, "/servicos").click();
   await waitForCheckpoint(page, "start");
   const firstRequest = await transitionSnapshot(page);
 
@@ -453,8 +369,8 @@ test("a destination committed before continued navigation remains in history", a
 test("Enter activates chapter navigation and transfers focus once to main", async ({
   page,
 }) => {
-  await warmRoute(page, "/aplicacao-wflyer/como-funciona");
-  await page.goto("/aplicacao-wflyer");
+  await warmRoute(page, "/servicos");
+  await page.goto("/sobre");
   const nextChapter = chapterControl(page, "next");
   await expect(nextChapter).toBeVisible();
   await expect
@@ -473,7 +389,7 @@ test("Enter activates chapter navigation and transfers focus once to main", asyn
   await page.keyboard.press("Enter");
   await waitForSettledTransition(
     page,
-    "/aplicacao-wflyer/como-funciona",
+    "/servicos",
   );
 
   await expect(page.getByRole("main")).toBeFocused();
@@ -515,34 +431,12 @@ test("auxiliary links keep native navigation and do not create a chapter", async
   await expect(experience(page)).toHaveAttribute("data-transition-phase", "idle");
 });
 
-test("the public application CTA remains an external new-context link", async ({
-  page,
-}) => {
-  await page.goto("/");
-  const applicationCta = page.getByRole("link", {
-    name: /Acessar aplicação/u,
-  });
-
-  await expect(applicationCta).toHaveAttribute(
-    "href",
-    "https://app.wflyer.com.br",
-  );
-  await expect(applicationCta).toHaveAttribute("target", "_blank");
-  await applicationCta.dispatchEvent("click", { ctrlKey: true });
-  await expect(page).toHaveURL(/\/$/u);
-  await expect(experience(page)).toHaveAttribute("data-transition-source", "none");
-});
 
 for (const terminal of [
   {
-    destination: "/aplicacao-wflyer/beneficios",
-    side: "start",
-    source: "/aplicacao-wflyer/como-funciona",
-  },
-  {
     destination: "/contato",
     side: "end",
-    source: "/portfolio",
+    source: "/processo",
   },
 ] as const) {
   test(`${terminal.destination} retains its final barline and previous navigation`, async ({
@@ -575,14 +469,10 @@ for (const terminal of [
   });
 }
 
-test("both final barlines persist on mobile and with reduced motion", async ({
+test("the final barline persists on mobile and with reduced motion", async ({
   page,
 }) => {
   const terminals = [
-    {
-      route: "/aplicacao-wflyer/beneficios",
-      side: "start",
-    },
     { route: "/contato", side: "end" },
   ] as const;
   const states = [

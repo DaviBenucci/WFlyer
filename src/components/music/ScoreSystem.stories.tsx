@@ -54,16 +54,3 @@ export const InstitutionalChapter: Story = {
     />
   ),
 };
-
-export const ApplicationTerminal: Story = {
-  render: () => (
-    <ChapterScore
-      branch="application"
-      entryAnchorY={0.56}
-      entryEdge="right"
-      exitAnchorY={0.64}
-      exitEdge="left"
-      terminal
-    />
-  ),
-};

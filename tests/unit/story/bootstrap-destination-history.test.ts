@@ -29,7 +29,7 @@ describe("Phase-4 semantic bootstrap destination", () => {
       });
     }
 
-    expect(addressableChapters).toHaveLength(11);
+    expect(addressableChapters).toHaveLength(6);
   });
 
   it("gives a valid explicit hash priority over validated history", () => {
@@ -37,12 +37,12 @@ describe("Phase-4 semantic bootstrap destination", () => {
 
     expect(
       resolveStoryBootstrapDestination({
-        explicitHash: "#beneficios",
+        explicitHash: "#sobre",
         historyState,
       }),
     ).toEqual({
-      chapterId: "application-benefits",
-      hash: "#beneficios",
+      chapterId: "professional-about",
+      hash: "#sobre",
       source: "explicit-hash",
     });
   });
@@ -95,7 +95,7 @@ describe("Phase-4 namespaced history envelope", () => {
     };
     const merged = mergeStoryHistoryState(
       foreignState,
-      "application-how-it-works",
+      "professional-services",
     );
 
     expect(merged).toEqual({
@@ -103,12 +103,12 @@ describe("Phase-4 namespaced history envelope", () => {
       framework: { tree: ["route"] },
       [STORY_HISTORY_STATE_KEY]: {
         version: 1,
-        chapterId: "application-how-it-works",
+        chapterId: "professional-services",
       },
     });
     expect(merged.framework).toBe(foreignState.framework);
     expect(readStoryHistoryChapterId(merged)).toBe(
-      "application-how-it-works",
+      "professional-services",
     );
   });
 

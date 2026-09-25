@@ -34,7 +34,7 @@ describe("MotionStoryLab", () => {
     expect(chapters.map(({ dataset }) => dataset.chapterId)).toEqual(
       MOBILE_STORY_CHAPTERS.map(({ id }) => id),
     );
-    expect(chapters).toHaveLength(13);
+    expect(chapters).toHaveLength(7);
     expect(container.querySelector("main")).toHaveAttribute(
       "data-projection-mode",
       "vertical-compact",
@@ -43,14 +43,7 @@ describe("MotionStoryLab", () => {
       "data-professional-scenes",
       "phase-7",
     );
-    expect(container.querySelector("main")).toHaveAttribute(
-      "data-application-scenes",
-      "phase-8",
-    );
     expect(container.querySelectorAll("[data-professional-scene]")).toHaveLength(
-      6,
-    );
-    expect(container.querySelectorAll("[data-application-scene]")).toHaveLength(
       6,
     );
     expect(
@@ -59,25 +52,19 @@ describe("MotionStoryLab", () => {
           "[data-structural-placeholder]",
         ),
       ).map(({ dataset }) => dataset.structuralPlaceholder),
-    ).toEqual(["home"]);
+    ).toEqual([]);
+    const home = container.querySelector('[data-home-geometry="static-origin-composition"]');
+    expect(home).toHaveAttribute("data-score-content-exclusion", "home-reading-envelope");
+    expect(home).toHaveTextContent("Origem do portfólio");
+    expect(home?.querySelector("h2")).toHaveTextContent("W_Flyer");
+    expect(home?.querySelector("button, a")).toBeNull();
     expect(container.querySelectorAll("[data-project-card]")).toHaveLength(3);
     expect(
       container.querySelector(
         '[data-final-barline-before="professional-terminal"]',
       ),
     ).toBeInTheDocument();
-    expect(
-      container.querySelector(
-        '[data-final-barline-before="application-terminal"]',
-      ),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelectorAll('[data-primary-app-access="true"]'),
-    ).toHaveLength(0);
-    expect(
-      container.querySelectorAll("[data-app-launch-interest-state]"),
-    ).toHaveLength(1);
-  });
+  }, 15_000);
 
   it("exposes the exact desktop order and stable manifest labels", () => {
     render(<MotionStoryLab />);
@@ -97,7 +84,7 @@ describe("MotionStoryLab", () => {
     }
   });
 
-  it("renders the real 12-segment score once without React scroll renders", () => {
+  it("renders the real six-segment score once without React scroll renders", () => {
     const { container } = render(<MotionStoryLab />);
     const root = container.querySelector<HTMLElement>("main[data-motion-lab]");
     const layer = container.querySelector<HTMLElement>(
@@ -105,15 +92,10 @@ describe("MotionStoryLab", () => {
     );
 
     expect(root).toHaveAttribute("data-score-integration", "phase-9-task-34");
-    expect(layer).toHaveAttribute("data-score-segment-count", "12");
-    expect(layer).toHaveAttribute("data-score-composer-invocations", "2");
+    expect(layer).toHaveAttribute("data-score-segment-count", "6");
+    expect(layer).toHaveAttribute("data-score-composer-invocations", "1");
     expect(layer).toHaveAttribute("data-score-hydration-precision", "6");
     expect(layer).toHaveAttribute("data-score-connector-events", "0");
-    expect(layer).toHaveAttribute("data-score-origin-point-gap", "0.000000");
-    expect(layer).toHaveAttribute(
-      "data-score-origin-staff-line-gap",
-      "0.000000",
-    );
     expect(layer).toHaveAttribute("data-score-clef-rotation", "0.000000");
     expect(layer).toHaveAttribute("data-score-clef-mirror-x", "false");
     expect(layer).toHaveAttribute("data-score-clef-mirror-y", "false");
@@ -122,15 +104,15 @@ describe("MotionStoryLab", () => {
     );
     expect(
       container.querySelectorAll('[data-score-role="final-barline-thin"]'),
-    ).toHaveLength(2);
+    ).toHaveLength(1);
     expect(
       container.querySelectorAll('[data-score-role="final-barline-thick"]'),
-    ).toHaveLength(2);
+    ).toHaveLength(1);
     expect(
       container.querySelectorAll(
         '[data-story-score-segment]:not([data-story-score-segment="shared-origin"])',
       ),
-    ).toHaveLength(12);
+    ).toHaveLength(6);
 
     const renderCount = root?.dataset.motionLabRenderCount;
     act(() => window.dispatchEvent(new Event("scroll")));

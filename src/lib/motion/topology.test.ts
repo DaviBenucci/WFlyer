@@ -19,18 +19,10 @@ describe("normalizePathname", () => {
 
 describe("classifyScoreTransition", () => {
   const forwardAdjacentRoutes = [
-    ["/", "/aplicacao-wflyer", "left"],
-    ["/aplicacao-wflyer", "/aplicacao-wflyer/como-funciona", "left"],
-    [
-      "/aplicacao-wflyer/como-funciona",
-      "/aplicacao-wflyer/beneficios",
-      "left",
-    ],
     ["/", "/sobre", "right"],
     ["/sobre", "/servicos", "right"],
     ["/servicos", "/processo", "right"],
-    ["/processo", "/portfolio", "right"],
-    ["/portfolio", "/contato", "right"],
+    ["/processo", "/contato", "right"],
   ] as const;
 
   it.each(forwardAdjacentRoutes)(
@@ -47,29 +39,18 @@ describe("classifyScoreTransition", () => {
 
   it.each(forwardAdjacentRoutes)(
     "reverses direction for %s <- %s",
-    (source, destination, forwardDirection) => {
-      const expectedDirection = forwardDirection === "left" ? "right" : "left";
-
+    (source, destination) => {
       expect(classifyScoreTransition(destination, source)).toMatchObject({
         mode: "adjacent-score",
-        direction: expectedDirection,
+        direction: "left",
         coordinateDistance: 1,
       });
     },
   );
 
   it.each([
-    ["/", "/aplicacao-wflyer/beneficios", "left", "application", -3],
-    ["/aplicacao-wflyer/beneficios", "/", "right", "application", 3],
-    ["/", "/contato", "right", "institutional", 5],
-    ["/contato", "/", "left", "institutional", -5],
-    [
-      "/aplicacao-wflyer",
-      "/aplicacao-wflyer/beneficios",
-      "left",
-      "application",
-      -2,
-    ],
+    ["/", "/contato", "right", "institutional", 4],
+    ["/contato", "/", "left", "institutional", -4],
     ["/sobre", "/processo", "right", "institutional", 2],
   ] as const)(
     "uses a compressed jump for same-side travel %s -> %s",
@@ -84,34 +65,11 @@ describe("classifyScoreTransition", () => {
     },
   );
 
-  it.each([
-    ["/aplicacao-wflyer", "/sobre", "right", 2],
-    ["/aplicacao-wflyer/beneficios", "/contato", "right", 8],
-    ["/contato", "/aplicacao-wflyer/como-funciona", "left", -7],
-    ["/processo", "/aplicacao-wflyer", "left", -4],
-  ] as const)(
-    "uses Home as a conceptual pivot for %s -> %s",
-    (source, destination, direction, coordinateDelta) => {
-      expect(classifyScoreTransition(source, destination)).toMatchObject({
-        mode: "home-pivot",
-        direction,
-        coordinateDelta,
-        coordinateDistance: Math.abs(coordinateDelta),
-        effectiveBranch: null,
-        neutralReason: null,
-      });
-    },
-  );
-
-  it("never treats Home as a cross-branch endpoint", () => {
-    for (const chapter of scoreChapters.filter(({ id }) => id !== "home")) {
-      expect(classifyScoreTransition("/", chapter.route).mode).not.toBe(
-        "home-pivot",
-      );
-      expect(classifyScoreTransition(chapter.route, "/").mode).not.toBe(
-        "home-pivot",
-      );
-    }
+  it("treats removed institutional routes as unknown", () => {
+    expect(classifyScoreTransition("/aplicacao-wflyer", "/sobre")).toMatchObject({
+      mode: "neutral",
+      neutralReason: "source-unknown",
+    });
   });
 
   it.each([

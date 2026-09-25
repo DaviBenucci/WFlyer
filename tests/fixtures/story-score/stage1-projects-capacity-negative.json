@@ -1,0 +1,596 @@
+{
+  "source": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-lineage-and-capacity-diagnostics.json",
+  "rootDefect": "ASM-PC-001",
+  "replayInput": {
+    "mode": "horizontal-enhanced",
+    "options": {
+      "viewportWidth": 1100,
+      "viewportHeight": 640,
+      "sceneMeasurements": {
+        "applicationHowItWorksCards": [
+          {
+            "x": 4362.89,
+            "y": 225.52,
+            "width": 194.39,
+            "height": 137.95
+          },
+          {
+            "x": 4565.28,
+            "y": 225.52,
+            "width": 194.41,
+            "height": 137.95
+          },
+          {
+            "x": 4767.69,
+            "y": 225.52,
+            "width": 194.41,
+            "height": 137.95
+          },
+          {
+            "x": 4970.09,
+            "y": 225.52,
+            "width": 194.41,
+            "height": 137.95
+          },
+          {
+            "x": 4362.89,
+            "y": 371.47,
+            "width": 194.39,
+            "height": 137.95
+          }
+        ],
+        "chapterContentExclusions": {
+          "home": [
+            {
+              "x": 6709,
+              "y": 396.8,
+              "width": 672,
+              "height": 20.39,
+              "reason": "home-reading-envelope"
+            },
+            {
+              "x": 6709,
+              "y": 433.19,
+              "width": 672,
+              "height": 62.69,
+              "reason": "home-reading-envelope"
+            },
+            {
+              "x": 6709,
+              "y": 511.88,
+              "width": 672,
+              "height": 51.19,
+              "reason": "home-reading-envelope"
+            }
+          ],
+          "professional-about": [
+            {
+              "x": 7748.5,
+              "y": 97.25,
+              "width": 590.11,
+              "height": 16.8,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 7748.5,
+              "y": 122.05,
+              "width": 350,
+              "height": 258.67,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 7748.5,
+              "y": 388.72,
+              "width": 590.11,
+              "height": 102,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 7748.5,
+              "y": 498.72,
+              "width": 253,
+              "height": 44,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 8350.61,
+              "y": 29.19,
+              "width": 465.88,
+              "height": 581.61,
+              "reason": "persona-slot"
+            }
+          ],
+          "professional-services": [
+            {
+              "x": 9041,
+              "y": 89.13,
+              "width": 240,
+              "height": 16.8,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 9041,
+              "y": 113.92,
+              "width": 240,
+              "height": 206.94,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 9041,
+              "y": 328.86,
+              "width": 240,
+              "height": 170,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 9041,
+              "y": 506.86,
+              "width": 165,
+              "height": 44,
+              "reason": "heading-and-body"
+            }
+          ],
+          "professional-process": [
+            {
+              "x": 10318,
+              "y": 60.31,
+              "width": 768,
+              "height": 16.8,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 10318,
+              "y": 85.11,
+              "width": 350,
+              "height": 155.2,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 10318,
+              "y": 248.31,
+              "width": 704,
+              "height": 68,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 10318,
+              "y": 324.31,
+              "width": 166,
+              "height": 44,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 10318,
+              "y": 380.31,
+              "width": 257.11,
+              "height": 199.36,
+              "reason": "process-stages"
+            },
+            {
+              "x": 10588.3,
+              "y": 380.31,
+              "width": 257.11,
+              "height": 199.36,
+              "reason": "process-stages"
+            },
+            {
+              "x": 10858.59,
+              "y": 380.31,
+              "width": 257.11,
+              "height": 199.36,
+              "reason": "process-stages"
+            },
+            {
+              "x": 11128.89,
+              "y": 380.31,
+              "width": 257.11,
+              "height": 199.36,
+              "reason": "process-stages"
+            }
+          ],
+          "professional-projects": [
+            {
+              "x": 11732.5,
+              "y": 89.13,
+              "width": 256,
+              "height": 16.8,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 11732.5,
+              "y": 113.92,
+              "width": 256,
+              "height": 206.94,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 11732.5,
+              "y": 328.86,
+              "width": 256,
+              "height": 170,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 11732.5,
+              "y": 506.86,
+              "width": 202,
+              "height": 44,
+              "reason": "heading-and-body"
+            }
+          ],
+          "professional-contact": [
+            {
+              "x": 13162.5,
+              "y": 41.59,
+              "width": 380.16,
+              "height": 16.8,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 13162.5,
+              "y": 66.39,
+              "width": 350,
+              "height": 155.2,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 13162.5,
+              "y": 229.59,
+              "width": 380.16,
+              "height": 136,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 13554.66,
+              "y": 41.59,
+              "width": 675.84,
+              "height": 556.81,
+              "reason": "contact-form"
+            }
+          ],
+          "professional-terminal": [
+            {
+              "x": 14357,
+              "y": 77.47,
+              "width": 1068,
+              "height": 16.8,
+              "reason": "terminal-content"
+            },
+            {
+              "x": 14357,
+              "y": 102.27,
+              "width": 350,
+              "height": 103.47,
+              "reason": "terminal-content"
+            },
+            {
+              "x": 14357,
+              "y": 213.73,
+              "width": 704,
+              "height": 68,
+              "reason": "terminal-content"
+            },
+            {
+              "x": 14357,
+              "y": 289.73,
+              "width": 1068,
+              "height": 272.8,
+              "reason": "terminal-content"
+            }
+          ],
+          "application-overview": [
+            {
+              "x": 5456,
+              "y": 6.5,
+              "width": 315.19,
+              "height": 16.8,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 5456,
+              "y": 31.3,
+              "width": 315.19,
+              "height": 372.19,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 5456,
+              "y": 411.48,
+              "width": 315.19,
+              "height": 170,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 5456,
+              "y": 589.48,
+              "width": 261,
+              "height": 44,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 5783.19,
+              "y": 172.66,
+              "width": 573.81,
+              "height": 74.36,
+              "reason": "application-overview"
+            },
+            {
+              "x": 5783.19,
+              "y": 259.02,
+              "width": 573.81,
+              "height": 98.16,
+              "reason": "application-overview"
+            },
+            {
+              "x": 5783.19,
+              "y": 369.17,
+              "width": 573.81,
+              "height": 98.16,
+              "reason": "application-overview"
+            }
+          ],
+          "application-how-it-works": [
+            {
+              "x": 4096.5,
+              "y": 4,
+              "width": 240,
+              "height": 16.8,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 4096.5,
+              "y": 28.8,
+              "width": 240,
+              "height": 372.19,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 4096.5,
+              "y": 408.98,
+              "width": 240,
+              "height": 170,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 4096.5,
+              "y": 586.98,
+              "width": 240,
+              "height": 54.38,
+              "reason": "heading-and-body"
+            }
+          ],
+          "application-benefits": [
+            {
+              "x": 2904,
+              "y": 116.55,
+              "width": 315.19,
+              "height": 16.8,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 2904,
+              "y": 141.34,
+              "width": 315.19,
+              "height": 186.09,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 2904,
+              "y": 335.44,
+              "width": 315.19,
+              "height": 136,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 2904,
+              "y": 479.44,
+              "width": 184,
+              "height": 44,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 3231.19,
+              "y": 196.03,
+              "width": 280.91,
+              "height": 117.95,
+              "reason": "application-benefits"
+            },
+            {
+              "x": 3524.09,
+              "y": 212.03,
+              "width": 280.91,
+              "height": 117.95,
+              "reason": "application-benefits"
+            },
+            {
+              "x": 3231.19,
+              "y": 341.98,
+              "width": 280.91,
+              "height": 117.95,
+              "reason": "application-benefits"
+            },
+            {
+              "x": 3524.09,
+              "y": 325.98,
+              "width": 280.91,
+              "height": 117.95,
+              "reason": "application-benefits"
+            }
+          ],
+          "application-demo": [
+            {
+              "x": 1749,
+              "y": 37.52,
+              "width": 268.31,
+              "height": 16.8,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 1749,
+              "y": 62.31,
+              "width": 268.31,
+              "height": 310.16,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 1749,
+              "y": 380.47,
+              "width": 268.31,
+              "height": 170,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 1749,
+              "y": 558.47,
+              "width": 247,
+              "height": 44,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 2029.31,
+              "y": 78.7,
+              "width": 763.69,
+              "height": 482.56,
+              "reason": "application-tablet-demo"
+            }
+          ],
+          "application-access": [
+            {
+              "x": 847,
+              "y": 159.55,
+              "width": 411.03,
+              "height": 16.8,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 847,
+              "y": 184.34,
+              "width": 411.03,
+              "height": 186.09,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 847,
+              "y": 378.44,
+              "width": 411.03,
+              "height": 102,
+              "reason": "heading-and-body"
+            },
+            {
+              "x": 1211,
+              "y": 139.17,
+              "width": 427,
+              "height": 361.66,
+              "reason": "access-action"
+            }
+          ],
+          "application-terminal": [
+            {
+              "x": 55,
+              "y": 67.17,
+              "width": 681,
+              "height": 16.8,
+              "reason": "terminal-content"
+            },
+            {
+              "x": 55,
+              "y": 91.97,
+              "width": 434,
+              "height": 124.06,
+              "reason": "terminal-content"
+            },
+            {
+              "x": 55,
+              "y": 224.03,
+              "width": 681,
+              "height": 68,
+              "reason": "terminal-content"
+            },
+            {
+              "x": 55,
+              "y": 300.03,
+              "width": 681,
+              "height": 272.8,
+              "reason": "terminal-content"
+            }
+          ]
+        },
+        "professionalProjectCards": [
+          {
+            "x": 11994.78,
+            "y": 44.13,
+            "width": 268.84,
+            "height": 564.95
+          },
+          {
+            "x": 12276.91,
+            "y": 42.16,
+            "width": 247.2,
+            "height": 555.67
+          },
+          {
+            "x": 12537.39,
+            "y": 44.13,
+            "width": 268.83,
+            "height": 564.95
+          }
+        ],
+        "professionalServicesCards": [
+          {
+            "x": 9293,
+            "y": 174.85,
+            "width": 194.11,
+            "height": 367.08
+          },
+          {
+            "x": 9500.3,
+            "y": 174.85,
+            "width": 194.11,
+            "height": 367.08
+          },
+          {
+            "x": 9707.59,
+            "y": 174.85,
+            "width": 194.11,
+            "height": 367.08
+          },
+          {
+            "x": 9914.89,
+            "y": 174.85,
+            "width": 194.11,
+            "height": 367.08
+          }
+        ]
+      }
+    }
+  },
+  "cards": [
+    {
+      "projectIndex": 1,
+      "idle": {
+        "x": 11994.77978515625,
+        "y": 44.131797790527344,
+        "width": 268.84375,
+        "height": 564.9492797851562
+      }
+    },
+    {
+      "projectIndex": 2,
+      "idle": {
+        "x": 12276.90625,
+        "y": 42.15625,
+        "width": 247.203125,
+        "height": 555.671875
+      }
+    },
+    {
+      "projectIndex": 3,
+      "idle": {
+        "x": 12537.39208984375,
+        "y": 44.132102966308594,
+        "width": 268.828125,
+        "height": 564.9486694335938
+      }
+    }
+  ]
+}

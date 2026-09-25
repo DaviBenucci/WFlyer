@@ -86,14 +86,6 @@ const REVIEW_SCENARIOS: readonly ReviewScenario[] = [
     viewport: { height: 844, width: 390 },
   },
   {
-    label: "Portfolio mobile dark",
-    rootSelector: 'main[data-chapter="portfolio"]',
-    route: "/portfolio",
-    theme: "dark",
-    touchTargetSelector: 'button[aria-label="Tema escuro"]:visible',
-    viewport: { height: 844, width: 390 },
-  },
-  {
     label: "Contact tablet dark",
     rootSelector: 'main[data-chapter="contact"]',
     route: "/contato",
@@ -116,14 +108,6 @@ const REVIEW_SCENARIOS: readonly ReviewScenario[] = [
     theme: "dark",
     touchTargetSelector: 'nav[aria-label="Origin review variants"] a:visible',
     viewport: { height: 900, width: 1440 },
-  },
-  {
-    label: "Portfolio desktop light regression",
-    rootSelector: 'main[data-chapter="portfolio"]',
-    route: "/portfolio",
-    theme: "light",
-    touchTargetSelector: 'button[aria-label="Tema escuro"]:visible',
-    viewport: { height: 1024, width: 1536 },
   },
 ] as const;
 
@@ -159,12 +143,9 @@ async function storyThemeInheritance(page: Page) {
     ["review", "main[data-phase-9-task-33-review]"],
     ["score", "[data-review-score]"],
     ["professional", "[data-professional-scene]"],
-    ["projects", "[data-project-card-link]"],
+    ["projects", "[data-project-teaser], [data-project-card-link]"],
     ["contact", "[data-contact-form]"],
-    ["application", "[data-application-scene]"],
-    ["app04", "[data-app04-deterministic-fallback]"],
     ["professional-terminal", '[data-professional-scene="terminal"]'],
-    ["application-terminal", '[data-application-scene="terminal"]'],
   ] as const;
   const tokenNames = [
     "--wf-bg",
@@ -222,29 +203,7 @@ async function expectMinimumTouchTargets(page: Page, selector: string) {
   }
 }
 
-async function portfolioGeometry(page: Page) {
-  return page
-    .locator(
-      'main[data-chapter="portfolio"], [data-project-list], [data-project-list] article',
-    )
-    .evaluateAll((elements) =>
-      elements.map((element) => {
-        const rectangle = element.getBoundingClientRect();
-        const round = (value: number) => Math.round(value * 1_000) / 1_000;
-
-        return {
-          height: round(rectangle.height),
-          left: round(rectangle.left),
-          scrollHeight: element.scrollHeight,
-          scrollWidth: element.scrollWidth,
-          top: round(rectangle.top),
-          width: round(rectangle.width),
-        };
-      }),
-    );
-}
-
-test("the canonical warm dark tokens reach Portfolio and Contact without changing layout", async ({
+test("the canonical warm dark tokens reach Contact without changing layout", async ({
   page,
 }) => {
   const pageErrors: string[] = [];
@@ -254,19 +213,20 @@ test("the canonical warm dark tokens reach Portfolio and Contact without changin
   await page.emulateMedia({ colorScheme: "light" });
   await setStoredTheme(page, "light");
 
-  const portfolioResponse = await page.goto("/portfolio", {
+  const contactResponse = await page.goto("/contato", {
     waitUntil: "networkidle",
   });
-  expect(portfolioResponse?.ok()).toBe(true);
-  await expect(page.locator('main[data-chapter="portfolio"]')).toBeVisible();
+  expect(contactResponse?.ok()).toBe(true);
+  const form = page.locator("[data-contact-form]");
+  await expect(form).toBeVisible();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await settleLayout(page);
 
-  const lightGeometry = await portfolioGeometry(page);
+  const lightGeometry = await form.boundingBox();
   await page.locator('button[aria-label="Tema escuro"]:visible').click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await settleLayout(page);
-  expect(await portfolioGeometry(page)).toEqual(lightGeometry);
+  expect(await form.boundingBox()).toEqual(lightGeometry);
 
   const tokens = await page.evaluate((tokenNames) => {
     const styles = getComputedStyle(document.documentElement);
@@ -302,34 +262,6 @@ test("the canonical warm dark tokens reach Portfolio and Contact without changin
   expect(resolvedRoles.link).toBe(resolvedRoles.textAccent);
   expect(resolvedRoles.textAccent).toBe("rgb(231, 146, 113)");
 
-  const projectColors = await page.evaluate(() => ({
-    callsToAction: Array.from(
-      document.querySelectorAll<HTMLElement>(
-        "[data-project-list] article > a:last-child",
-      ),
-      (element) => getComputedStyle(element).color,
-    ),
-    metadata: Array.from(
-      document.querySelectorAll<HTMLElement>(
-        "[data-project-list] article > span:first-child",
-      ),
-      (element) => getComputedStyle(element).color,
-    ),
-  }));
-  expect(projectColors.metadata.length).toBeGreaterThan(0);
-  expect(
-    projectColors.metadata.every(
-      (color) => color === resolvedRoles.textAccent,
-    ),
-  ).toBe(true);
-  expect(projectColors.callsToAction.length).toBeGreaterThan(0);
-  expect(
-    projectColors.callsToAction.every(
-      (color) =>
-        color === resolvedRoles.text || color === resolvedRoles.textAccent,
-    ),
-  ).toBe(true);
-
   expect(
     await page.locator('meta[name="theme-color"]').evaluateAll((elements) =>
       elements.map((element) => ({
@@ -342,14 +274,6 @@ test("the canonical warm dark tokens reach Portfolio and Contact without changin
     { content: "#12100f", media: "(prefers-color-scheme: dark)" },
   ]);
   await expectNoHorizontalOverflow(page);
-
-  const contactResponse = await page.goto("/contato", {
-    waitUntil: "networkidle",
-  });
-  expect(contactResponse?.ok()).toBe(true);
-  const form = page.locator("[data-contact-form]");
-  await expect(form).toBeVisible();
-  await settleLayout(page);
 
   const borderColors = await page.evaluate(() => {
     const probe = document.createElement("span");

@@ -21,17 +21,17 @@ describe("ScorePathOriginReview task-33 surface", () => {
     expect(root).toHaveAttribute("data-origin-review-mode", "vertical-compact");
     expect(root).toHaveAttribute("data-origin-review-theme", "dark");
     expect(container.querySelectorAll("[data-origin-score-branch]")).toHaveLength(
-      2,
+      1,
     );
     expect(container.querySelectorAll('[data-score-role="staff-line"]')).toHaveLength(
-      10,
+      5,
     );
     expect(container.querySelectorAll('[data-score-role="clef"]')).toHaveLength(1);
     expect(container.querySelector('[data-score-role="clef"]')).toHaveAttribute(
       "data-score-glyph",
       "wf-music-treble-clef",
     );
-    expect(container.querySelectorAll("[data-origin-zone-kind]")).toHaveLength(4);
+    expect(container.querySelectorAll("[data-origin-zone-kind]")).toHaveLength(2);
     expect(container.querySelectorAll('[data-score-role*="barline"]')).toHaveLength(
       0,
     );

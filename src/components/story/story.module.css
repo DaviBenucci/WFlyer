@@ -41,14 +41,6 @@
   );
 }
 
-.chapter[data-story-branch="application"] {
-  background: linear-gradient(
-    225deg,
-    color-mix(in oklab, var(--wf-surface-muted) 62%, transparent),
-    transparent 74%
-  );
-}
-
 .chapter[data-story-branch="origin"] {
   min-block-size: min(52rem, 92svh);
   text-align: center;

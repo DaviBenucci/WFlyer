@@ -1,6 +1,6 @@
 import type { ComposedSegment } from "@/lib/music/composer/types";
 import type { ScorePath, Vec2 } from "@/lib/music/geometry/types";
-import { distanceBetween, dotVectors } from "@/lib/music/geometry/vectors";
+import { APPROVED_RENDERER_TOKENS } from "@/lib/music/renderer/approved-runtime";
 import type {
   GlyphRenderPrimitive,
   PolylineRenderPrimitive,
@@ -14,6 +14,11 @@ import {
   MOTION_LAB_DRAFT_ELIGIBILITY,
 } from "@/lib/story/motion";
 import type { StoryChapterId } from "@/lib/story/types";
+import {
+  projectStoryTimelineGeometry,
+  type StorySpatialProjection,
+  type StorySpatialTimelineGeometry,
+} from "@/lib/story/motion/geometry";
 
 import {
   STORY_SCORE_BRANCHES,
@@ -30,6 +35,7 @@ import {
   buildReviewModel,
   buildZones,
   ReviewCubicSplineScorePath,
+  SCORE_PATH_REVIEW_GEOMETRY_EPSILON,
   SCORE_PATH_REVIEW_MAX_NOTATION_TANGENT_ANGLE_DEG,
   type ScorePathReviewChapterLayout,
   type ScorePathReviewMode,
@@ -39,10 +45,16 @@ import {
   type ScorePathReviewZone,
 } from "./organic-flowing";
 import {
-  buildScorePathOriginReviewFixture,
+  buildProfessionalOriginPath,
   SCORE_PATH_ORIGIN_REVIEW_ASSET,
   type ScorePathOriginReviewMode,
 } from "./shared-origin";
+import {
+  allocateEventSafePlacements,
+  eventPrimitiveFootprintPoints,
+  type EventSafePlacementDiagnostics,
+} from "./event-safe-placement";
+import { projectsSegmentClearance } from "./projects-clearance";
 
 export const STORY_SCORE_PROJECTION_MODES = Object.freeze([
   "horizontal-enhanced",
@@ -66,17 +78,29 @@ export interface StoryScoreMeasuredRect {
   readonly y: number;
 }
 
+export interface StoryScoreMeasuredInteractionSweep {
+  /** Maximum physical-CSS-pixel distance from any between-sample contour. */
+  readonly interpolationPadding: number;
+  /** Idle bounds followed by ordered production-transition contour samples. */
+  readonly polygons: readonly (readonly Vec2[])[];
+}
+
 export interface StoryScoreMeasuredExclusionRect
   extends StoryScoreMeasuredRect {
   readonly reason: string;
 }
 
 export interface StoryScoreSceneMeasurements {
-  readonly applicationHowItWorksCards?: readonly StoryScoreMeasuredRect[];
   readonly chapterContentExclusions?: Readonly<
     Partial<Record<StoryChapterId, readonly StoryScoreMeasuredExclusionRect[]>>
   >;
   readonly professionalProjectCards?: readonly StoryScoreMeasuredRect[];
+  readonly professionalProjectInteractionEnvelopes?: Readonly<
+    Partial<Record<1 | 2 | 3, StoryScoreMeasuredRect>>
+  >;
+  readonly professionalProjectInteractionSweeps?: Readonly<
+    Partial<Record<1 | 2 | 3, StoryScoreMeasuredInteractionSweep>>
+  >;
   readonly professionalServicesCards?: readonly StoryScoreMeasuredRect[];
 }
 
@@ -84,6 +108,15 @@ export interface StoryScoreBranchProjection {
   readonly branch: StoryScoreBranch;
   readonly chapters: readonly ScorePathReviewChapterLayout[];
   readonly composition: ComposedSegment;
+  readonly eventSafety: EventSafePlacementDiagnostics;
+  /** Bounded Stage-1 handoff target geometry; no ownership or motion state. */
+  readonly homeEntry: {
+    readonly t: number;
+    readonly point: Vec2;
+    readonly tangent: Vec2;
+    readonly staffPoints: readonly Vec2[];
+    readonly eventFreeLeadIn: { readonly startT: 0; readonly endT: number };
+  };
   readonly height: number;
   readonly model: ScoreRenderModel;
   readonly path: ReviewCubicSplineScorePath;
@@ -100,7 +133,7 @@ export interface StoryScoreProjectionEvidence {
   >;
   readonly cardScoreInteractions: Readonly<
     Record<
-      "application-how-it-works" | "professional-services",
+      "professional-services",
       {
         readonly cardCount: number;
         readonly eventCount: 0;
@@ -126,12 +159,6 @@ export interface StoryScoreProjectionEvidence {
     readonly rotationDegrees: number;
     readonly scenographicScale: number;
   };
-  readonly commonOrigin: {
-    readonly pointGap: number;
-    readonly staffLineGap: number;
-    readonly staffSpaceDelta: number;
-    readonly tangentAlignment: number;
-  };
   readonly connectorEventCount: 0;
   readonly continuity: {
     readonly maximumCurvatureDelta: number;
@@ -154,7 +181,7 @@ export interface StoryScoreProjectionEvidence {
     readonly staffLineSelfIntersections: 0;
     readonly visitAnchors: readonly ScorePathReviewProjectVisit[];
   };
-  readonly segmentCount: 12;
+  readonly segmentCount: 6;
   readonly staffLineSelfIntersections: Readonly<
     Record<StoryScoreBranch, number>
   >;
@@ -189,36 +216,107 @@ export interface StoryScoreProjection {
     | ScorePathReviewMode;
   readonly sectionBlockSizes: Readonly<Record<StoryChapterId, number>>;
   readonly sessionSeed: typeof STORY_SCORE_SESSION_SEED;
+  readonly spatialGeometry: StorySpatialTimelineGeometry;
   readonly width: number;
+}
+
+function projectSpatialGeometry(
+  mode: StoryScoreProjectionMode,
+  branch: StoryScoreBranchProjection,
+  viewportWidth: number,
+  viewportHeight: number,
+): StorySpatialTimelineGeometry {
+  const horizontal = mode === "horizontal-enhanced";
+  const frames = horizontal
+    ? horizontalChapterFrames(viewportWidth, viewportHeight).frames
+    : null;
+  const axisEnd = horizontal ? branch.width : branch.height;
+  const viewportExtent = horizontal ? viewportWidth : viewportHeight;
+  const travel = Math.max(0, axisEnd - viewportExtent);
+  const chapters: StorySpatialProjection["chapters"] = branch.chapters.map(
+    (chapter, index) => {
+      const start = horizontal ? frames![chapter.chapterId].left : chapter.top;
+      const next = branch.chapters[index + 1];
+      const end = next
+        ? horizontal ? frames![next.chapterId].left : next.top
+        : axisEnd;
+      const contentStart = horizontal
+        ? chapter.contentRect.x
+        : chapter.contentRect.y;
+      const contentExtent = horizontal
+        ? chapter.contentRect.width
+        : chapter.contentRect.height;
+      const contentEnd = next
+        ? Math.min(end - 1, Math.max(start + 1, contentStart + contentExtent))
+        : end;
+      const contentSpan = { start, end: contentEnd };
+      const stationLength = (contentEnd - start) / chapter.reservedReasons.length;
+      const stations = chapter.reservedReasons.map((id, stationIndex) => ({
+        id,
+        span: {
+          start: start + stationIndex * stationLength,
+          end: start + (stationIndex + 1) * stationLength,
+        },
+      }));
+      const entryAnchor = Math.min(contentEnd - 0.5,
+        Math.max(start + 0.5, contentStart));
+      const interactionSpans = chapter.chapterId === "professional-contact"
+        ? [stations.at(-1)!.span]
+        : chapter.chapterId === "professional-projects" && !horizontal
+          ? []
+          : [contentSpan];
+
+      return {
+        chapterId: chapter.chapterId,
+        structuralStart: start,
+        entryAnchor,
+        contentSpan,
+        interactionSpans,
+        exitTransition: next ? { start: contentEnd, end } : null,
+        stations,
+      };
+    },
+  );
+  const cameraAt = (coordinate: number) =>
+    travel * coordinate / axisEnd;
+  const cameraSegments: StorySpatialProjection["cameraSegments"] = horizontal
+    ? (() => {
+        const contactHold = chapters.find(({ chapterId }) =>
+          chapterId === "professional-contact")!.interactionSpans[0]!;
+        const holdX = cameraAt(contactHold.start);
+        return [
+          { kind: "traverse", span: { start: 0, end: contactHold.start }, from: { x: 0, y: 0 }, to: { x: holdX, y: 0 } },
+          { kind: "local-hold", span: contactHold, from: { x: holdX, y: 0 }, to: { x: holdX, y: 0 } },
+          { kind: "traverse", span: { start: contactHold.end, end: axisEnd }, from: { x: holdX, y: 0 }, to: { x: travel, y: 0 } },
+        ];
+      })()
+    : chapters.flatMap((chapter) => {
+        const y = (coordinate: number) => cameraAt(coordinate);
+        return [
+          { kind: "local-hold" as const, span: chapter.contentSpan,
+            from: { x: 0, y: y(chapter.contentSpan.start) },
+            to: { x: 0, y: y(chapter.contentSpan.end) } },
+          ...(chapter.exitTransition ? [{ kind: "traverse" as const,
+            span: chapter.exitTransition,
+            from: { x: 0, y: y(chapter.exitTransition.start) },
+            to: { x: 0, y: y(chapter.exitTransition.end) } }] : []),
+        ];
+      });
+
+  return projectStoryTimelineGeometry({
+    chapters,
+    cameraSegments,
+    nativeScrollSpan: { start: 0, end: travel },
+    trackWidth: horizontal ? branch.width : viewportWidth,
+    viewportWidth,
+  });
 }
 
 const DEFAULT_VIEWPORT_WIDTH = 1440;
 const DEFAULT_VIEWPORT_HEIGHT = 900;
-const HORIZONTAL_APPLICATION_HOME_START_CLEARANCE = 1150;
 const HORIZONTAL_MIN_CHAPTER_WIDTH = 736;
 const HORIZONTAL_ORIGIN_CLEARANCE = 960;
 const HORIZONTAL_STAFF_SPACE = 12;
-const HORIZONTAL_APPLICATION_HOW_HALF_TURN_SEGMENTS = 16;
-const HORIZONTAL_APPLICATION_HOW_INTERACTION_SEGMENTS = 65;
-const HORIZONTAL_APPLICATION_HOW_APPROACH_SEGMENTS = 16;
-const HORIZONTAL_APPLICATION_HOW_HALF_TURN_RADIUS =
-  HORIZONTAL_STAFF_SPACE * 4;
-const HORIZONTAL_APPLICATION_HOW_CONNECTOR_SEGMENTS =
-  2 +
-  HORIZONTAL_APPLICATION_HOW_HALF_TURN_SEGMENTS * 2 +
-  HORIZONTAL_APPLICATION_HOW_APPROACH_SEGMENTS * 2 +
-  HORIZONTAL_APPLICATION_HOW_INTERACTION_SEGMENTS;
-const HORIZONTAL_APPLICATION_HOW_TRANSFORM_START =
-  (1 +
-    HORIZONTAL_APPLICATION_HOW_HALF_TURN_SEGMENTS +
-    HORIZONTAL_APPLICATION_HOW_APPROACH_SEGMENTS) /
-  HORIZONTAL_APPLICATION_HOW_CONNECTOR_SEGMENTS;
-const HORIZONTAL_APPLICATION_HOW_TRANSFORM_END =
-  (1 +
-    HORIZONTAL_APPLICATION_HOW_HALF_TURN_SEGMENTS +
-    HORIZONTAL_APPLICATION_HOW_APPROACH_SEGMENTS +
-    HORIZONTAL_APPLICATION_HOW_INTERACTION_SEGMENTS) /
-  HORIZONTAL_APPLICATION_HOW_CONNECTOR_SEGMENTS;
 export const STORY_SCORE_SCENOGRAPHIC_CLEF_SCALE = Object.freeze({
   "horizontal-enhanced": 3.6,
   "vertical-compact": 2,
@@ -255,27 +353,12 @@ export const STORY_SCORE_CHAPTER_BARLINES = Object.freeze({
   "professional-projects": CHAPTER_BARLINE_REQUIRES_COMPOSITION_DECISION,
   "professional-contact": CHAPTER_BARLINE_REQUIRES_COMPOSITION_DECISION,
   "professional-terminal": BRANCH_FINAL_BARLINE,
-  "application-overview": CHAPTER_BARLINE_REQUIRES_COMPOSITION_DECISION,
-  "application-how-it-works": CHAPTER_BARLINE_REQUIRES_COMPOSITION_DECISION,
-  "application-benefits": CHAPTER_BARLINE_REQUIRES_COMPOSITION_DECISION,
-  "application-demo": CHAPTER_BARLINE_REQUIRES_COMPOSITION_DECISION,
-  "application-access": CHAPTER_BARLINE_REQUIRES_COMPOSITION_DECISION,
-  "application-terminal": BRANCH_FINAL_BARLINE,
 } satisfies Readonly<
   Record<StoryChapterId, StoryScoreChapterBarlineClassification>
 >);
 const PROJECTION_CACHE = new Map<string, StoryScoreProjection>();
 
-class ApplicationOrganicFlowingPath extends ReviewCubicSplineScorePath {
-  override normalAt(t: number): Vec2 {
-    const tangent = this.tangentAt(t);
 
-    // The approved Application departure travels left from the common origin;
-    // a right normal keeps all five physical origin lines coincident with the
-    // Professional branch without mirroring the single shared clef.
-    return { x: -tangent.y, y: tangent.x };
-  }
-}
 
 function clampViewport(value: number | undefined, fallback: number): number {
   if (!Number.isFinite(value)) return fallback;
@@ -300,9 +383,6 @@ function sceneMeasurementCacheKey(
     ]) ?? [];
 
   return JSON.stringify({
-    applicationHowItWorksCards: serialize(
-      measurements.applicationHowItWorksCards,
-    ),
     chapterContentExclusions: Object.fromEntries(
       DESKTOP_TIMELINE_ORDER.map((chapterId) => [
         chapterId,
@@ -314,6 +394,10 @@ function sceneMeasurementCacheKey(
     professionalProjectCards: serialize(
       measurements.professionalProjectCards,
     ),
+    professionalProjectInteractionEnvelopes:
+      measurements.professionalProjectInteractionEnvelopes,
+    professionalProjectInteractionSweeps:
+      measurements.professionalProjectInteractionSweeps,
     professionalServicesCards: serialize(
       measurements.professionalServicesCards,
     ),
@@ -342,12 +426,28 @@ function polylineSelfIntersections(points: readonly Vec2[]): number {
 
   for (let left = 0; left < points.length - 1; left += 1) {
     for (let right = left + 4; right < points.length - 1; right += 1) {
+      const leftStart = points[left]!;
+      const leftEnd = points[left + 1]!;
+      const rightStart = points[right]!;
+      const rightEnd = points[right + 1]!;
+      if (
+        Math.max(leftStart.x, leftEnd.x) <
+          Math.min(rightStart.x, rightEnd.x) ||
+        Math.max(rightStart.x, rightEnd.x) <
+          Math.min(leftStart.x, leftEnd.x) ||
+        Math.max(leftStart.y, leftEnd.y) <
+          Math.min(rightStart.y, rightEnd.y) ||
+        Math.max(rightStart.y, rightEnd.y) <
+          Math.min(leftStart.y, leftEnd.y)
+      ) {
+        continue;
+      }
       if (
         segmentsIntersect(
-          points[left]!,
-          points[left + 1]!,
-          points[right]!,
-          points[right + 1]!,
+          leftStart,
+          leftEnd,
+          rightStart,
+          rightEnd,
         )
       ) {
         count += 1;
@@ -370,21 +470,37 @@ function firstPolylineSelfIntersection(
 } | null {
   for (let left = 0; left < points.length - 1; left += 1) {
     for (let right = left + 4; right < points.length - 1; right += 1) {
+      const leftStart = points[left]!;
+      const leftEnd = points[left + 1]!;
+      const rightStart = points[right]!;
+      const rightEnd = points[right + 1]!;
+      if (
+        Math.max(leftStart.x, leftEnd.x) <
+          Math.min(rightStart.x, rightEnd.x) ||
+        Math.max(rightStart.x, rightEnd.x) <
+          Math.min(leftStart.x, leftEnd.x) ||
+        Math.max(leftStart.y, leftEnd.y) <
+          Math.min(rightStart.y, rightEnd.y) ||
+        Math.max(rightStart.y, rightEnd.y) <
+          Math.min(leftStart.y, leftEnd.y)
+      ) {
+        continue;
+      }
       if (
         segmentsIntersect(
-          points[left]!,
-          points[left + 1]!,
-          points[right]!,
-          points[right + 1]!,
+          leftStart,
+          leftEnd,
+          rightStart,
+          rightEnd,
         )
       ) {
         return {
           left,
-          leftEnd: points[left + 1]!,
-          leftPoint: points[left]!,
+          leftEnd,
+          leftPoint: leftStart,
           right,
-          rightEnd: points[right + 1]!,
-          rightPoint: points[right]!,
+          rightEnd,
+          rightPoint: rightStart,
         };
       }
     }
@@ -437,6 +553,7 @@ function smoothstep(progress: number): number {
 function horizontalProfessionalBridge(
   start: Vec2,
   target: Vec2,
+  servicesDeparture = false,
 ): readonly Vec2[] {
   const deltaX = target.x - start.x;
 
@@ -453,7 +570,10 @@ function horizontalProfessionalBridge(
         y:
           start.y +
           (target.y - start.y) * smoothstep(progress) +
-          Math.sin(Math.PI * progress) * 22,
+          Math.sin(Math.PI * progress) * 22 -
+          // ASM-SI-024: retain a shallow first step leaving Services' short
+          // trailing shelf before the existing Process descent resumes.
+          (servicesDeparture && progress === 0.18 ? HORIZONTAL_STAFF_SPACE : 0),
       }),
     ),
   );
@@ -469,6 +589,7 @@ function horizontalProfessionalAboutBoundaryBridge(
   start: Vec2,
   target: Vec2,
   boundary: HorizontalProfessionalAboutBoundary,
+  controlReach = (boundary.descentEndX - start.x) * 0.28,
 ): readonly Vec2[] {
   const descentWidth = boundary.descentEndX - start.x;
 
@@ -485,11 +606,11 @@ function horizontalProfessionalAboutBoundaryBridge(
   const descent = sampledCubicBridge(
     start,
     Object.freeze({
-      x: start.x + descentWidth * 0.28,
+      x: start.x + controlReach,
       y: start.y,
     }),
     Object.freeze({
-      x: boundary.descentEndX - descentWidth * 0.28,
+      x: boundary.descentEndX - controlReach,
       y: boundary.safeY,
     }),
     Object.freeze({ x: boundary.descentEndX, y: boundary.safeY }),
@@ -498,8 +619,12 @@ function horizontalProfessionalAboutBoundaryBridge(
   const remainingWidth = target.x - boundary.descentEndX;
 
   return Object.freeze([
-    ...descent,
-    Object.freeze({ x: boundary.descentEndX, y: boundary.safeY }),
+    // ASM-SI-020/021: open the two inner-offset folds while retaining
+    // the measured corridor, origin endpoint and About shelf.
+    ...descent.map((point, index) => index === 1
+      ? Object.freeze({ ...point, x: point.x + HORIZONTAL_STAFF_SPACE / 2 })
+      : point),
+    Object.freeze({ x: boundary.descentEndX + HORIZONTAL_STAFF_SPACE, y: boundary.safeY }),
     Object.freeze({
       x: boundary.descentEndX + remainingWidth * 0.34,
       y: boundary.safeY,
@@ -511,27 +636,36 @@ function horizontalProfessionalAboutBoundaryBridge(
   ]);
 }
 
-function horizontalApplicationHowArrivalBridge(
-  start: Vec2,
-  target: Vec2,
-): readonly Vec2[] {
-  const deltaX = target.x - start.x;
-
-  if (deltaX <= 0) {
-    throw new RangeError(
-      "The Application How arrival bridge must enter Benefits monotonically",
-    );
+function measuredAboutBridgeIsRegular(
+  knots: readonly Vec2[],
+  firstConnectorIndex: number,
+  connectorLength: number,
+): boolean {
+  const path = new ReviewCubicSplineScorePath(knots);
+  const halfStroke =
+    APPROVED_RENDERER_TOKENS.score.staffLineThicknessSp * HORIZONTAL_STAFF_SPACE / 2;
+  const outerInkOffset = HORIZONTAL_STAFF_SPACE * 2 + halfStroke;
+  // The guide's right normal has N' = kappa*T. Both outer staff edges must
+  // therefore retain 1 + d*kappa > 0 through the B-spline joins, not just
+  // through the provisional cubic or its rendered samples.
+  for (
+    let segment = Math.max(0, firstConnectorIndex - 3);
+    segment <= Math.min(path.segmentCount - 1, firstConnectorIndex + connectorLength + 1);
+    segment += 1
+  ) {
+    for (let sample = 0; sample <= 64; sample += 1) {
+      const t = (segment + sample / 64) / path.segmentCount;
+      if (
+        path.tangentAt(t).x <= SCORE_PATH_REVIEW_GEOMETRY_EPSILON ||
+        1 - outerInkOffset * Math.abs(path.curvatureAt(t)) <=
+          SCORE_PATH_REVIEW_GEOMETRY_EPSILON
+      ) return false;
+    }
   }
-
-  return Object.freeze(
-    [0.25, 0.5, 0.75].map((progress) =>
-      Object.freeze({
-        x: start.x + deltaX * progress,
-        y: start.y + (target.y - start.y) * smoothstep(progress),
-      }),
-    ),
-  );
+  return true;
 }
+
+
 
 function sampledCubicBridge(
   start: Vec2,
@@ -561,127 +695,9 @@ function sampledCubicBridge(
   );
 }
 
-function applicationOriginBridge(
-  start: Vec2,
-  target: Vec2,
-  mode: ScorePathOriginReviewMode,
-): readonly Vec2[] {
-  if (mode === "horizontal-enhanced") {
-    const deltaX = start.x - target.x;
-    const authoredTurnStartY = start.y + (target.y - start.y) * 0.08;
-    // Preserve one staff-space of clearance beyond the complete five-line
-    // envelope so a shallow measured Home arrival cannot fold an outer line
-    // through itself around the half turn.
-    const turnStartY = Math.min(
-      authoredTurnStartY,
-      target.y - HORIZONTAL_STAFF_SPACE * 5,
-    );
-    const turnRadius = Math.abs(target.y - turnStartY) / 2;
-    const turnCenterY = (turnStartY + target.y) / 2;
-    const approachEnd = Object.freeze({ x: target.x, y: turnStartY });
-    const approach = sampledCubicBridge(
-      start,
-      Object.freeze({
-        x: start.x - deltaX * 0.34,
-        y: start.y,
-      }),
-      Object.freeze({
-        x: target.x + deltaX * 0.24,
-        y: turnStartY,
-      }),
-      approachEnd,
-      9,
-    );
-    const turn = Array.from({ length: 17 }, (_, index) => {
-      const angle = -Math.PI / 2 - (Math.PI * index) / 16;
 
-      return Object.freeze({
-        x: target.x + Math.cos(angle) * turnRadius,
-        y: turnCenterY + Math.sin(angle) * turnRadius,
-      });
-    }).slice(0, -1);
 
-    return Object.freeze([...approach, ...turn]);
-  }
 
-  const handle =
-    mode === "vertical-compact"
-      ? 42
-      : 90;
-
-  return sampledCubicBridge(
-    start,
-    Object.freeze({ x: start.x - handle, y: start.y }),
-    Object.freeze({ x: target.x - handle, y: target.y }),
-    target,
-    7,
-  );
-}
-
-function horizontalApplicationReturn(
-  start: Vec2,
-  target: Vec2,
-  laneY: number,
-): readonly Vec2[] {
-  const exitsDownward = laneY > start.y;
-  const arrivesFromBelow = laneY > target.y;
-  const departureRadius = Math.abs(laneY - start.y) / 2;
-  const arrivalRadius = Math.abs(laneY - target.y) / 2;
-  const arrivalCenterX = target.x - 48;
-
-  if (
-    departureRadius < 22 ||
-    arrivalRadius < 22 ||
-    start.x <= arrivalCenterX
-  ) {
-    throw new RangeError(
-      `The Application horizontal return needs a lower clearance lane: ${JSON.stringify({ arrivalCenterX, arrivalRadius, departureRadius, laneY, start, target })}`,
-    );
-  }
-  const departureCenterY = (start.y + laneY) / 2;
-  const departureStartAngle = exitsDownward ? -Math.PI / 2 : Math.PI / 2;
-  const departureEndAngle = -departureStartAngle;
-  const departure = Array.from({ length: 9 }, (_, index) => {
-    const progress = index / 8;
-    const angle =
-      departureStartAngle +
-      (departureEndAngle - departureStartAngle) * progress;
-
-    return Object.freeze({
-      x: start.x + Math.cos(angle) * departureRadius,
-      y: departureCenterY + Math.sin(angle) * departureRadius,
-    });
-  }).slice(1);
-  const lane = [0.25, 0.5, 0.75].map((progress) =>
-    Object.freeze({
-      x: start.x + (arrivalCenterX - start.x) * progress,
-      y: laneY,
-    }),
-  );
-  const arrivalCenterY = (laneY + target.y) / 2;
-  const arrivalStartAngle = arrivesFromBelow ? Math.PI / 2 : -Math.PI / 2;
-  const arrivalEndAngle = arrivesFromBelow
-    ? (Math.PI * 3) / 2
-    : (-Math.PI * 3) / 2;
-  const arrival = Array.from({ length: 9 }, (_, index) => {
-    const progress = index / 8;
-    const angle =
-      arrivalStartAngle +
-      (arrivalEndAngle - arrivalStartAngle) * progress;
-
-    return Object.freeze({
-      x: arrivalCenterX + Math.cos(angle) * arrivalRadius,
-      y: arrivalCenterY + Math.sin(angle) * arrivalRadius,
-    });
-  });
-
-  return Object.freeze([
-    ...departure,
-    ...lane,
-    ...arrival,
-    Object.freeze({ x: target.x - 20, y: target.y }),
-  ]);
-}
 
 function prependApprovedOrigin(
   geometry: AuthoredTrackGeometry,
@@ -691,13 +707,13 @@ function prependApprovedOrigin(
   horizontalOriginY?: number,
   professionalAboutBoundary?: HorizontalProfessionalAboutBoundary,
 ): AuthoredTrackGeometry {
-  const fixture = buildScorePathOriginReviewFixture(mode);
-  const originPath = fixture.branches[branch].path;
-  const translateX = originX - fixture.geometry.origin.x;
+  const origin = buildProfessionalOriginPath(mode);
+  const originPath = origin.path;
+  const translateX = originX - origin.origin.x;
   const translateY =
     mode === "horizontal-enhanced"
       ? (horizontalOriginY ?? geometry.height * 0.47) -
-        fixture.geometry.origin.y
+        origin.origin.y
       : 54;
   const originSampleCount = 33;
   const sampledOriginPoints = Array.from(
@@ -712,7 +728,6 @@ function prependApprovedOrigin(
   );
   const measuredOriginCutIndex =
     mode === "horizontal-enhanced" &&
-    branch === "professional" &&
     professionalAboutBoundary !== undefined
       ? sampledOriginPoints.findLastIndex(
           ({ x }) => x <= professionalAboutBoundary.originCutoffX,
@@ -728,14 +743,11 @@ function prependApprovedOrigin(
     ...originPoints[1]!,
     y: originPoints[0]!.y,
   });
-  const trimsReviewedHomeShelf = branch === "professional";
-  const cutIndex = trimsReviewedHomeShelf
-    ? Math.max(
+  const cutIndex = Math.max(
         0,
         geometry.notationRanges[1]!.startSegmentIndex -
           (mode === "horizontal-enhanced" ? 1 : 8),
-      )
-    : 0;
+      );
   const downstreamKnots = geometry.knots.slice(cutIndex);
   const departureEnd = originPoints.at(-1)!;
   const target = downstreamKnots[0]!;
@@ -746,10 +758,8 @@ function prependApprovedOrigin(
     target.x >
       professionalAboutBoundary.descentEndX + HORIZONTAL_STAFF_SPACE * 8 &&
     professionalAboutBoundary.safeY >= target.y - HORIZONTAL_STAFF_SPACE;
-  const connector =
-    branch === "application"
-      ? applicationOriginBridge(departureEnd, target, mode)
-      : mode === "horizontal-enhanced"
+  let connector =
+    mode === "horizontal-enhanced"
         ? !supportsMeasuredAboutBoundary
           ? horizontalProfessionalBridge(departureEnd, target)
           : horizontalProfessionalAboutBoundaryBridge(
@@ -762,15 +772,17 @@ function prependApprovedOrigin(
             Math.max(departureEnd.y, target.y) +
             (mode === "vertical-compact" ? 30 : 72);
           const deltaX = target.x - departureEnd.x;
-          const departureDirection = branch === "professional" ? 1 : -1;
+          const departureDirection = 1;
           const turnRadius = mode === "vertical-compact" ? 54 : 118;
 
           return Object.freeze([
             Object.freeze({
               x:
                 departureEnd.x +
-                departureDirection * turnRadius * 0.55,
-              y: departureEnd.y + 8,
+                departureDirection * turnRadius * 0.55 +
+                (mode === "vertical-compact" ? geometry.staffSpace * 3 : 0),
+              // ASM-SI-010: preserve the outgoing origin tangent before descent.
+              y: departureEnd.y + (mode === "vertical-compact" ? 0 : 8),
             }),
             Object.freeze({
               x: departureEnd.x + departureDirection * turnRadius,
@@ -787,27 +799,50 @@ function prependApprovedOrigin(
               x: departureEnd.x + deltaX * 0.76,
               y: routeY - 12,
             }),
-            Object.freeze({ x: target.x - 36, y: target.y + 16 }),
+            // ASM-SI-006/007/011..014: approach the leftward About turn
+            // from its right; the former wrong-side knot reversed twice.
+            Object.freeze({ x: target.x + 36, y: target.y + 16 }),
           ]);
         })();
+  if (mode === "horizontal-enhanced" && supportsMeasuredAboutBoundary) {
+    const firstConnectorIndex = originPoints.length;
+    const fullKnots = () => [...originPoints, ...connector, ...downstreamKnots];
+    if (!measuredAboutBridgeIsRegular(fullKnots(), firstConnectorIndex, connector.length)) {
+      const boundary = professionalAboutBoundary!;
+      const width = boundary.descentEndX - departureEnd.x;
+      const rise = Math.abs(boundary.safeY - departureEnd.y);
+      const outerInkOffset = HORIZONTAL_STAFF_SPACE * (
+        2 + APPROVED_RENDERER_TOKENS.score.staffLineThicknessSp / 2
+      );
+      // Endpoint curvature of the provisional cubic is 2*rise/(3*reach²).
+      // Use this as a measured seed, then check the actual smoothed spline.
+      const reach = Math.max(width * 0.28, Math.sqrt(2 * outerInkOffset * rise / 3));
+      if (reach >= width) {
+        throw new RangeError("The measured About bridge has no forward control reach");
+      }
+      connector = horizontalProfessionalAboutBoundaryBridge(
+        departureEnd, target, boundary, reach,
+      );
+      if (!measuredAboutBridgeIsRegular(fullKnots(), firstConnectorIndex, connector.length)) {
+        throw new RangeError("The measured About bridge folds a visible staff offset");
+      }
+    }
+  }
   const prefix = originPoints.length + connector.length;
-  const downstreamRanges = geometry.notationRanges.slice(
-    trimsReviewedHomeShelf ? 1 : 0,
-  );
-  const notationRanges = downstreamRanges.map((range, index) =>
+  const downstreamRanges = geometry.notationRanges.slice(1);
+  const notationRanges = downstreamRanges.map((range) =>
     Object.freeze({
       ...range,
       startSegmentIndex:
         range.startSegmentIndex -
         cutIndex +
-        prefix +
-        (!trimsReviewedHomeShelf && index === 0 ? 1 : 0),
+        prefix,
       endSegmentIndex: range.endSegmentIndex - cutIndex + prefix,
     }),
   );
 
-  if (trimsReviewedHomeShelf) {
-    const approvedNotationEndT = fixture.branches.professional.zones[0].endT;
+  {
+    const approvedNotationEndT = origin.notationSafeEndT;
     notationRanges.unshift(
       Object.freeze({
         chapterId: "home" as const,
@@ -843,69 +878,7 @@ function verticalGeometry(
     compactTrackWidth,
   );
 
-  if (branch === "professional") {
-    return prependApprovedOrigin(
-      base,
-      mode,
-      branch,
-      base.width / 2,
-    );
-  }
-
-  const professional = buildAuthoredGeometry(
-    "organic-flowing",
-    mode,
-    "professional",
-    compactTrackWidth,
-  );
-  const homeHeight = base.chapters[0]!.height;
-  const homeClearance = mode === "vertical-wide" ? 160 : 72;
-  const interveningProfessionalHeight = professional.height - homeHeight;
-  const professionalKnots = professional.knots;
-  const homeRange = base.notationRanges[0]!;
-  const knots = base.knots.map((point, index) => {
-    // Both branches own the exact same origin point and initial tangent frame.
-    const commonFramePoint =
-      index <= 1 ? professionalKnots[index]! : point;
-
-    return Object.freeze({
-      x: commonFramePoint.x,
-      y:
-        commonFramePoint.y > homeHeight
-          ? commonFramePoint.y + interveningProfessionalHeight
-          : commonFramePoint.y + homeClearance,
-    });
-  });
-  const chapters = base.chapters.map((chapter, index) =>
-    index === 0
-      ? chapter
-      : Object.freeze({
-          ...chapter,
-          top: chapter.top + interveningProfessionalHeight,
-          contentRect: Object.freeze({
-            ...chapter.contentRect,
-            y: chapter.contentRect.y + interveningProfessionalHeight,
-          }),
-        }),
-  );
-
-  if (homeRange.startSegmentIndex !== 0) {
-    throw new RangeError("The approved Organic Flowing origin must start at t=0");
-  }
-
-  const integrated = freezeGeometry({
-    ...base,
-    chapters,
-    height: base.height + interveningProfessionalHeight,
-    knots,
-  });
-
-  return prependApprovedOrigin(
-    integrated,
-    mode,
-    branch,
-    integrated.width / 2,
-  );
+  return prependApprovedOrigin(base, mode, branch, base.width / 2);
 }
 
 interface HorizontalChapterFrame {
@@ -941,10 +914,6 @@ function horizontalChapterFrames(
 }
 
 interface HorizontalNotationShelf {
-  readonly applicationBridge?: HorizontalApplicationBridge;
-  readonly applicationHowArrivalBridge?: boolean;
-  readonly applicationHowInteraction?: HorizontalApplicationHowInteraction;
-  readonly applicationReturnLaneY?: number;
   readonly barlineAfter: boolean;
   readonly connectorInteraction?: "CARD_SCORE_INTERACTION";
   readonly connectorInteractionExpandedY?: number;
@@ -956,42 +925,22 @@ interface HorizontalNotationShelf {
   readonly semanticSlotIds: readonly string[];
 }
 
+type ProjectShelfMinimumYs = Readonly<
+  Partial<Record<1 | 2 | 3, number>>
+>;
+
 interface ResolvedSceneCards {
   readonly cards: readonly StoryScoreMeasuredRect[];
   readonly source: "deterministic-fallback" | "dom-measured";
 }
 
-interface HorizontalApplicationBridge {
-  readonly lowerLaneY: number;
-  readonly transitionX: number;
-  readonly upperLaneY: number;
-}
 
-interface HorizontalApplicationHowInteraction {
-  readonly canonicalY: number;
-  readonly interactionEndX: number;
-  readonly interactionStartX: number;
-  readonly overviewExitCorridor?: HorizontalApplicationOverviewExitCorridor;
-}
 
-interface HorizontalApplicationOverviewExitCorridor {
-  readonly contentClearX: number;
-  readonly lowerLaneY: number;
-  readonly turnClearX: number;
-}
 
-interface HorizontalApplicationFamilyARecipe {
-  readonly accessReturnLaneY: number;
-  readonly accessShelfEndX: number;
-  readonly accessShelfStartX: number;
-  readonly accessShelfY: number;
-  readonly demoBridge: HorizontalApplicationBridge;
-  readonly demoShelfEndX: number;
-  readonly demoShelfStartX: number;
-  readonly demoShelfY: number;
-  readonly terminalReturnLaneY: number;
-  readonly terminalShelfY: number;
-}
+
+
+
+
 
 interface HorizontalHomeOriginRecipe {
   readonly shelfY: number;
@@ -999,13 +948,7 @@ interface HorizontalHomeOriginRecipe {
   readonly y: number;
 }
 
-interface HorizontalApplicationOverviewRecipe {
-  readonly endX: number;
-  readonly howExitCorridor: HorizontalApplicationOverviewExitCorridor;
-  readonly returnLaneY: number;
-  readonly shelfY: number;
-  readonly startX: number;
-}
+
 
 function validMeasuredRect(
   rect: StoryScoreMeasuredRect | undefined,
@@ -1045,140 +988,19 @@ function measuredChapterBottom(
 }
 
 function resolveHorizontalHomeOrigin(
-  measurements: StoryScoreSceneMeasurements | undefined,
   frame: HorizontalChapterFrame,
   viewportHeight: number,
-): HorizontalHomeOriginRecipe | undefined {
-  const exclusions = measuredChapterExclusions(measurements, "home");
-  if (exclusions.length === 0) return undefined;
-
-  const fixture = buildScorePathOriginReviewFixture("horizontal-enhanced");
-  // The immutable 1,440 px origin needs twelve staff spaces of runway at
-  // both frame edges before its DOM-derived placement can remain five-line
-  // crossing-free. Narrower enhanced frames retain the deterministic origin
-  // placement while all downstream scene measurements stay active.
-  const minimumMeasuredOriginFrameWidth =
-    fixture.geometry.pathWidth + HORIZONTAL_STAFF_SPACE * 24;
-  if (frame.width < minimumMeasuredOriginFrameWidth) return undefined;
-
-  const contentBottom = Math.max(
-    ...exclusions.map((rect) => rect.y + rect.height),
-  );
-  const contentRight = Math.max(
-    ...exclusions.map((rect) => rect.x + rect.width),
-  );
-  const clef = fixture.evidence.clef;
-  const clefHalfWidth =
-    (clef.width * STORY_SCORE_SCENOGRAPHIC_CLEF_SCALE["horizontal-enhanced"]) /
-    2;
-  const x = Math.min(
-    frame.left + frame.width - HORIZONTAL_STAFF_SPACE * 8,
-    contentRight + clefHalfWidth + HORIZONTAL_STAFF_SPACE,
-  );
-  const y = Math.min(
-    viewportHeight - HORIZONTAL_STAFF_SPACE * 7,
-    contentBottom + HORIZONTAL_STAFF_SPACE * 7,
-  );
-
+): HorizontalHomeOriginRecipe {
+  // Keep the accepted origin elevation and center both corridors. The Home
+  // reading envelope sits below the complete scenic clef, outside both exits.
   return Object.freeze({
-    shelfY: Math.min(
-      viewportHeight - HORIZONTAL_STAFF_SPACE * 9,
-      y + HORIZONTAL_STAFF_SPACE * 10,
-    ),
-    x,
-    y,
+    shelfY: viewportHeight * 0.68,
+    x: frame.left + frame.width / 2,
+    y: viewportHeight * 0.47,
   });
 }
 
-function resolveHorizontalApplicationOverview(
-  measurements: StoryScoreSceneMeasurements | undefined,
-  frame: HorizontalChapterFrame,
-  homeFrame: HorizontalChapterFrame,
-  viewportHeight: number,
-): HorizontalApplicationOverviewRecipe | undefined {
-  const exclusions = measuredChapterExclusions(
-    measurements,
-    "application-overview",
-  );
-  const heading = exclusions.filter(
-    ({ reason }) => reason === "heading-and-body",
-  );
-  const overviewItems = exclusions.filter(
-    ({ reason }) => reason === "application-overview",
-  );
-  if (heading.length === 0 || overviewItems.length === 0) return undefined;
 
-  const headingRight = Math.max(
-    ...heading.map((rect) => rect.x + rect.width),
-  );
-  const headingBottom = Math.max(
-    ...heading.map((rect) => rect.y + rect.height),
-  );
-  const shelfY = viewportHeight - HORIZONTAL_STAFF_SPACE * 9;
-  const returnLaneY = viewportHeight - HORIZONTAL_STAFF_SPACE * 2;
-  const arrivalRadius = (returnLaneY - shelfY) / 2;
-  const desiredStartX = Math.max(
-    frame.left + HORIZONTAL_STAFF_SPACE * 8,
-    headingRight + HORIZONTAL_STAFF_SPACE * 24,
-  );
-  // End before the measured Home-arrival turn. The following explicit How
-  // departure owns the upper corridor; keeping the two boundary turns in
-  // disjoint X ranges prevents the opposite-direction connectors from
-  // becoming a trapped loop.
-  const baselineEndX = frame.left + frame.width * 0.68;
-  const minimumShelfWidth = HORIZONTAL_STAFF_SPACE * 8;
-  const homeShelfStartX =
-    homeFrame.left +
-    homeFrame.width / 2 -
-    Math.min(
-      HORIZONTAL_APPLICATION_HOME_START_CLEARANCE,
-      homeFrame.width * 0.7,
-    );
-  const maximumSafeEndX =
-    Math.min(
-      frame.left + frame.width - HORIZONTAL_STAFF_SPACE * 8,
-      homeShelfStartX - HORIZONTAL_STAFF_SPACE * 8,
-    );
-  const endX = Math.min(
-    maximumSafeEndX,
-    Math.max(baselineEndX, desiredStartX + minimumShelfWidth),
-  );
-  const startX = Math.min(desiredStartX, endX - minimumShelfWidth);
-  const minimumCorridorStartX =
-    headingRight +
-    HORIZONTAL_STAFF_SPACE * 12 +
-    arrivalRadius +
-    1;
-
-  if (
-    startX < minimumCorridorStartX ||
-    endX - startX < minimumShelfWidth
-  ) {
-    return undefined;
-  }
-
-  return Object.freeze({
-    endX,
-    howExitCorridor: Object.freeze({
-      contentClearX: headingRight + HORIZONTAL_STAFF_SPACE * 4,
-      lowerLaneY: Math.min(
-        viewportHeight - HORIZONTAL_STAFF_SPACE * 3,
-        headingBottom + HORIZONTAL_STAFF_SPACE * 4,
-      ),
-      // The Home return arrives at startX from its lower lane. Clear its
-      // leftmost edge plus one complete staff before lowering the later,
-      // event-free How connector beside the measured reading column.
-      turnClearX:
-        startX -
-        HORIZONTAL_STAFF_SPACE * 4 -
-        arrivalRadius -
-        HORIZONTAL_STAFF_SPACE * 4,
-    }),
-    returnLaneY,
-    shelfY,
-    startX,
-  });
-}
 
 function measuredLowerCorridorY(
   chapterId: StoryChapterId,
@@ -1194,7 +1016,8 @@ function measuredLowerCorridorY(
       { readonly bottomGap: number; readonly viewportGap: number }
     >
   > = {
-    "application-benefits": { bottomGap: 5, viewportGap: 7 },
+    // Successor delta 003 reserves an unconstricted return corridor between
+    // the protected Benefits content and its complete five-line event shelf.
     "professional-about": { bottomGap: 3.5, viewportGap: 7 },
     "professional-process": { bottomGap: 3.5, viewportGap: 7 },
     "professional-terminal": { bottomGap: 4, viewportGap: 7 },
@@ -1240,125 +1063,10 @@ function resolveHorizontalProfessionalAboutBoundary(
   });
 }
 
-function resolveHorizontalApplicationFamilyA(
-  measurements: StoryScoreSceneMeasurements | undefined,
-  viewportHeight: number,
-): HorizontalApplicationFamilyARecipe | undefined {
-  const exclusions = measurements?.chapterContentExclusions;
-  const readChapter = (chapterId: StoryChapterId) =>
-    exclusions?.[chapterId]?.filter(
-      (rect): rect is StoryScoreMeasuredExclusionRect =>
-        validMeasuredRect(rect),
-    ) ?? [];
-  const demo = readChapter("application-demo");
-  const access = readChapter("application-access");
-  const terminal = readChapter("application-terminal");
-  const hasReason = (
-    rects: readonly StoryScoreMeasuredExclusionRect[],
-    reason: string,
-  ) => rects.some((rect) => rect.reason === reason);
 
-  if (
-    !hasReason(demo, "heading-and-body") ||
-    !hasReason(demo, "application-tablet-demo") ||
-    !hasReason(access, "heading-and-body") ||
-    !hasReason(access, "access-action") ||
-    !hasReason(terminal, "terminal-content")
-  ) {
-    return undefined;
-  }
-
-  const chapterBottom = (rects: readonly StoryScoreMeasuredExclusionRect[]) =>
-    Math.max(...rects.map((rect) => rect.y + rect.height));
-  const demoBottom = chapterBottom(demo);
-  const accessBottom = chapterBottom(access);
-  const terminalBottom = chapterBottom(terminal);
-  const demoLeft = Math.min(...demo.map((rect) => rect.x));
-  const accessLeft = Math.min(...access.map((rect) => rect.x));
-  const accessRight = Math.max(
-    ...access.map((rect) => rect.x + rect.width),
-  );
-  const demoRight = Math.max(
-    ...demo.map((rect) => rect.x + rect.width),
-  );
-  const terminalRight = Math.max(
-    ...terminal.map((rect) => rect.x + rect.width),
-  );
-  // Reserve the complete outer staff plus the approved content gap before the
-  // Demo copy. The return toward Launch must reverse its tangent here, so its
-  // outer line reaches farther right than the centerline shelf itself.
-  const demoShelfEndX = demoLeft - HORIZONTAL_STAFF_SPACE * 7.25;
-  const demoShelfStartX = Math.min(
-    accessRight + HORIZONTAL_STAFF_SPACE,
-    demoShelfEndX - HORIZONTAL_STAFF_SPACE * 6.25,
-  );
-  const accessShelfStartX = terminalRight + HORIZONTAL_STAFF_SPACE * 10;
-  const accessShelfEndX = Math.max(
-    accessLeft - HORIZONTAL_STAFF_SPACE * 2,
-    accessShelfStartX + HORIZONTAL_STAFF_SPACE * 8,
-  );
-  const demoShelfY = viewportHeight * 0.86;
-  const accessShelfY = Math.max(
-    viewportHeight * 0.74,
-    accessBottom + HORIZONTAL_STAFF_SPACE * 8.83,
-  );
-  const terminalShelfY = Math.max(
-    viewportHeight * 0.74,
-    terminalBottom + HORIZONTAL_STAFF_SPACE * 7 - 1,
-  );
-  const benefitsSafeY = measuredLowerCorridorY(
-    "application-benefits",
-    measurements,
-    viewportHeight,
-  );
-  const demoBridge = Object.freeze({
-    lowerLaneY: viewportHeight - HORIZONTAL_STAFF_SPACE * 2,
-    transitionX: demoRight + HORIZONTAL_STAFF_SPACE * 2 + 1,
-    upperLaneY:
-      benefitsSafeY === undefined
-        ? viewportHeight * 0.74 - HORIZONTAL_STAFF_SPACE * 5.5
-        : benefitsSafeY - HORIZONTAL_STAFF_SPACE * 3,
-  });
-  const accessReturnLaneY = accessBottom + HORIZONTAL_STAFF_SPACE * 4;
-  // Bound the final hairpin to one complete staff envelope. On taller Firefox
-  // viewports the viewport-bottom lane can otherwise drift far enough below
-  // the measured terminal shelf for the opposing normals of the fifth staff
-  // line to swap order and cross on the return.
-  const terminalReturnLaneY = Math.min(
-    viewportHeight - HORIZONTAL_STAFF_SPACE * 2,
-    terminalShelfY + HORIZONTAL_STAFF_SPACE * 4,
-  );
-
-  if (
-    demoBridge.lowerLaneY - demoBottom < HORIZONTAL_STAFF_SPACE * 4 ||
-    demoBridge.transitionX - demoRight < HORIZONTAL_STAFF_SPACE * 2 ||
-    demoShelfEndX - demoShelfStartX < HORIZONTAL_STAFF_SPACE * 6 ||
-    accessShelfEndX - accessShelfStartX < HORIZONTAL_STAFF_SPACE * 6 ||
-    accessReturnLaneY - accessBottom < HORIZONTAL_STAFF_SPACE * 4 ||
-    terminalShelfY - terminalBottom < HORIZONTAL_STAFF_SPACE * 6 ||
-    terminalReturnLaneY - terminalShelfY <
-      HORIZONTAL_STAFF_SPACE * 4 - 4
-  ) {
-    return undefined;
-  }
-
-  return Object.freeze({
-    accessReturnLaneY,
-    accessShelfEndX,
-    accessShelfStartX,
-    accessShelfY,
-    demoBridge,
-    demoShelfEndX,
-    demoShelfStartX,
-    demoShelfY,
-    terminalReturnLaneY,
-    terminalShelfY,
-  });
-}
 
 function fallbackSceneCards(
   chapterId:
-    | "application-how-it-works"
     | "professional-projects"
     | "professional-services",
   frame: HorizontalChapterFrame,
@@ -1367,9 +1075,7 @@ function fallbackSceneCards(
   const count =
     chapterId === "professional-services"
       ? 4
-      : chapterId === "application-how-it-works"
-        ? 5
-        : 3;
+      : 3;
   const bounds =
     chapterId === "professional-projects"
       ? { end: 0.86, start: 0.36 }
@@ -1408,7 +1114,6 @@ function fallbackSceneCards(
 
 function resolveSceneCards(
   chapterId:
-    | "application-how-it-works"
     | "professional-projects"
     | "professional-services",
   frame: HorizontalChapterFrame,
@@ -1418,15 +1123,11 @@ function resolveSceneCards(
   const measured =
     chapterId === "professional-services"
       ? measurements?.professionalServicesCards
-      : chapterId === "application-how-it-works"
-        ? measurements?.applicationHowItWorksCards
-        : measurements?.professionalProjectCards;
+      : measurements?.professionalProjectCards;
   const expectedCount =
     chapterId === "professional-services"
       ? 4
-      : chapterId === "application-how-it-works"
-        ? 5
-        : 3;
+      : 3;
   const valid = measured
     ?.filter(validMeasuredRect)
     .slice(0, expectedCount)
@@ -1478,12 +1179,6 @@ function horizontalChapterY(
     "professional-projects": 0.36,
     "professional-contact": 0.9,
     "professional-terminal": 0.84,
-    "application-overview": 0.74,
-    "application-how-it-works": 0.72,
-    "application-benefits": 0.74,
-    "application-demo": 0.74,
-    "application-access": 0.74,
-    "application-terminal": 0.74,
   };
 
   return viewportHeight * ratio[chapterId];
@@ -1493,163 +1188,45 @@ function horizontalChapterShelves(
   frame: HorizontalChapterFrame,
   chapterId: StoryChapterId,
   chapterIndex: number,
-  branch: StoryScoreBranch,
   originX: number,
   homeShelfY: number | undefined,
   viewportHeight: number,
   semanticSlotIds: readonly string[],
   measurements: StoryScoreSceneMeasurements | undefined,
-  frames: Readonly<Record<StoryChapterId, HorizontalChapterFrame>>,
+  projectShelfMinimumYs?: ProjectShelfMinimumYs,
 ): readonly HorizontalNotationShelf[] {
   const padding = Math.min(132, frame.width * 0.14);
   const midpoint = frame.left + frame.width / 2;
-  const familyA =
-    branch === "application"
-      ? resolveHorizontalApplicationFamilyA(measurements, viewportHeight)
-      : undefined;
-  const applicationOverview =
-    branch === "application" && chapterId === "application-overview"
-      ? resolveHorizontalApplicationOverview(
-          measurements,
-          frame,
-          frames.home,
-          viewportHeight,
-        )
-      : undefined;
   const authoredStartX =
-    chapterIndex === 0 && branch === "professional"
-      ? midpoint + padding * 0.35
-      : chapterIndex === 0 && branch === "application"
-        ? midpoint -
-          Math.min(
-            HORIZONTAL_APPLICATION_HOME_START_CLEARANCE,
-            frame.width * 0.7,
-          )
-        : frame.left + padding;
-  const authoredEndX =
-    chapterIndex === 0 && branch === "application"
-      ? midpoint - padding * 1.15
-      : chapterId === "application-overview"
-        ? frame.left + frame.width * 0.26
-        : chapterId === "application-access"
-          ? frame.left + frame.width * 0.68
-          : chapterId === "application-benefits"
-          ? frame.left + frame.width * 0.6
-          : chapterId === "application-demo"
-            ? frame.left + frame.width * 0.68
-      : frame.left + frame.width - padding;
+    chapterIndex === 0 ? midpoint + padding * 0.35 : frame.left + padding;
+  const authoredEndX = frame.left + frame.width - padding;
   const unadjustedStartX =
-    branch === "professional" && chapterIndex === 1
+    chapterIndex === 1
       ? Math.max(authoredStartX, originX + HORIZONTAL_ORIGIN_CLEARANCE)
       : authoredStartX;
-  const unadjustedEndX =
-    branch === "application" && chapterIndex === 1
-      ? Math.min(authoredEndX, originX - HORIZONTAL_ORIGIN_CLEARANCE)
-      : authoredEndX;
   const maximumEndX = frame.left + frame.width - padding;
-  const authoredShelfStartX = Math.min(unadjustedStartX, maximumEndX - 48);
-  const authoredShelfEndX = Math.min(
+  const startX = Math.min(unadjustedStartX, maximumEndX - 48);
+  const endX = Math.min(
     maximumEndX,
-    Math.max(
-      unadjustedEndX,
-      authoredShelfStartX + HORIZONTAL_STAFF_SPACE * 8,
-    ),
+    Math.max(authoredEndX, startX + HORIZONTAL_STAFF_SPACE * 8),
   );
-  const familyAShelf:
-    | {
-        readonly applicationBridge?: HorizontalApplicationBridge;
-        readonly applicationReturnLaneY?: number;
-        readonly endX: number;
-        readonly startX: number;
-        readonly y: number;
-      }
-    | undefined = applicationOverview
-    ? {
-        applicationReturnLaneY: applicationOverview.returnLaneY,
-        endX: applicationOverview.endX,
-        startX: applicationOverview.startX,
-        y: applicationOverview.shelfY,
-      }
-    : familyA
-      ? chapterId === "application-demo"
-      ? {
-          applicationBridge: familyA.demoBridge,
-          endX: familyA.demoShelfEndX,
-          startX: familyA.demoShelfStartX,
-          y: familyA.demoShelfY,
-        }
-      : chapterId === "application-access"
-        ? {
-            applicationReturnLaneY: familyA.accessReturnLaneY,
-            endX: familyA.accessShelfEndX,
-            startX: familyA.accessShelfStartX,
-            y: familyA.accessShelfY,
-          }
-        : chapterId === "application-terminal"
-          ? {
-              applicationReturnLaneY: familyA.terminalReturnLaneY,
-              endX: authoredShelfEndX,
-              startX: authoredShelfStartX,
-              y: familyA.terminalShelfY,
-            }
-          : undefined
-    : undefined;
-  const startX = familyAShelf?.startX ?? authoredShelfStartX;
-  const measuredApplicationHomeEndX =
-    branch === "application" &&
-    chapterId === "home" &&
-    homeShelfY !== undefined
-      ? originX -
-        buildScorePathOriginReviewFixture("horizontal-enhanced").geometry
-          .origin.x -
-        HORIZONTAL_STAFF_SPACE * 8
-      : undefined;
-  const endX =
-    familyAShelf?.endX ??
-    (measuredApplicationHomeEndX === undefined
-      ? authoredShelfEndX
-      : Math.max(
-          startX + HORIZONTAL_STAFF_SPACE * 8,
-        Math.min(authoredShelfEndX, measuredApplicationHomeEndX),
-      ));
   const measuredCorridorY = measuredLowerCorridorY(
     chapterId,
     measurements,
     viewportHeight,
   );
   const baseY =
-    familyAShelf?.y ??
     (chapterId === "home" ? homeShelfY : undefined) ??
     measuredCorridorY ??
     horizontalChapterY(chapterId, viewportHeight);
   const descent = Math.min(14, viewportHeight * 0.016);
   const standardShelf: HorizontalNotationShelf = Object.freeze({
-    ...(familyAShelf?.applicationBridge
-      ? { applicationBridge: familyAShelf.applicationBridge }
-      : {}),
-    ...(familyAShelf?.applicationReturnLaneY !== undefined
-      ? { applicationReturnLaneY: familyAShelf.applicationReturnLaneY }
-      : {}),
-    ...(!familyAShelf &&
-    branch === "application" &&
-    chapterId === "application-benefits"
-      ? { applicationHowArrivalBridge: true }
-      : {}),
     barlineAfter: true,
-    points: horizontalShelfPoints(
-      startX,
-      endX,
-      baseY,
-      baseY + descent,
-      branch === "professional" ? -1.5 : 1.5,
-    ),
+    points: horizontalShelfPoints(startX, endX, baseY, baseY + descent, -1.5),
     semanticSlotIds: Object.freeze([...semanticSlotIds]),
   });
 
-  if (
-    chapterId === "professional-services" ||
-    chapterId === "application-how-it-works"
-  ) {
+  if (chapterId === "professional-services") {
     const { cards, source } = resolveSceneCards(
       chapterId,
       frame,
@@ -1658,10 +1235,8 @@ function horizontalChapterShelves(
     );
     const firstCard = cards[0]!;
     const lastCard = cards.at(-1)!;
-    const reversesForApplication =
-      chapterId === "application-how-it-works";
-    const entryCard = reversesForApplication ? lastCard : firstCard;
-    const exitCard = reversesForApplication ? firstCard : lastCard;
+    const entryCard = firstCard;
+    const exitCard = lastCard;
     const firstCardX = firstCard.x;
     const lastCardEndX = lastCard.x + lastCard.width;
     const leadInLength = Math.max(
@@ -1702,10 +1277,7 @@ function horizontalChapterShelves(
         (maximum, rect) => Math.max(maximum, rect.y + rect.height),
         Number.NEGATIVE_INFINITY,
       );
-    const canonicalGap =
-      chapterId === "professional-services"
-        ? HORIZONTAL_STAFF_SPACE * 4
-        : HORIZONTAL_STAFF_SPACE * 3 + 3;
+    const canonicalGap = HORIZONTAL_STAFF_SPACE * 4;
     const canonicalY = Number.isFinite(headingBottom)
       ? Math.min(
           viewportHeight - HORIZONTAL_STAFF_SPACE * 3,
@@ -1742,71 +1314,8 @@ function horizontalChapterShelves(
       nearestLeadInCardWidth: entryCard.width,
       nearestLeadOutCardWidth: exitCard.width,
     });
-    const interactionStartX = reversesForApplication
-      ? lastCardEndX + leadInLength
-      : firstCardX - leadInLength;
-    const interactionEndX = reversesForApplication
-      ? firstCardX - leadOutLength
-      : lastCardEndX + leadOutLength;
-
-    if (reversesForApplication) {
-      const benefitsFrame = frames["application-benefits"];
-      const measuredOverview = resolveHorizontalApplicationOverview(
-        measurements,
-        frames["application-overview"],
-        frames.home,
-        viewportHeight,
-      );
-      const benefitsPadding = Math.min(
-        132,
-        benefitsFrame.width * 0.14,
-      );
-      const benefitsShelfStartX = benefitsFrame.left + benefitsPadding;
-      const landingShelfStartX =
-        benefitsShelfStartX - HORIZONTAL_STAFF_SPACE * 6;
-      const landingShelfEndX =
-        benefitsShelfStartX - HORIZONTAL_STAFF_SPACE * 2;
-      const benefitsY =
-        measuredLowerCorridorY(
-          "application-benefits",
-          measurements,
-          viewportHeight,
-        ) ??
-        horizontalChapterY("application-benefits", viewportHeight);
-      const landingPoints = horizontalShelfPoints(
-        landingShelfStartX,
-        landingShelfEndX,
-        benefitsY,
-        benefitsY + descent * 0.45,
-      );
-      const routedInteractionProfile = Object.freeze({
-        ...interactionProfile,
-        transformEndFraction: HORIZONTAL_APPLICATION_HOW_TRANSFORM_END,
-        transformStartFraction: HORIZONTAL_APPLICATION_HOW_TRANSFORM_START,
-      });
-
-      return Object.freeze([
-        Object.freeze({
-          applicationHowInteraction: Object.freeze({
-            canonicalY,
-            interactionEndX,
-            interactionStartX,
-            ...(measuredOverview === undefined
-              ? {}
-              : {
-                  overviewExitCorridor:
-                    measuredOverview.howExitCorridor,
-                }),
-          }),
-          barlineAfter: true,
-          connectorInteraction: "CARD_SCORE_INTERACTION" as const,
-          connectorInteractionExpandedY: expandedY,
-          connectorInteractionProfile: routedInteractionProfile,
-          points: landingPoints,
-          semanticSlotIds: Object.freeze([...semanticSlotIds]),
-        }),
-      ]);
-    }
+    const interactionStartX = firstCardX - leadInLength;
+    const interactionEndX = lastCardEndX + leadOutLength;
 
     const preShelfStartX = Math.min(
       frame.left + frame.width * 0.08,
@@ -1841,6 +1350,9 @@ function horizontalChapterShelves(
           postShelfEndX,
           fallbackInteractionY,
           fallbackInteractionY + descent * 0.45,
+          // ASM-SI-022/023: the short trailing shelf cannot carry an offset
+          // sinusoidal fold. Keep its endpoints and straight inclination.
+          0,
         ),
         semanticSlotIds: Object.freeze([]),
       }),
@@ -1855,15 +1367,25 @@ function horizontalChapterShelves(
       measurements,
     );
     const [primarySlot, reservedSlot] = semanticSlotIds;
-    const anchors = cards.map((card) =>
-      Object.freeze({
+    const anchors = cards.map((card, index) => {
+      const projectIndex = (index + 1) as 1 | 2 | 3;
+      const authoredY = card.y + card.height + HORIZONTAL_STAFF_SPACE * 3.5;
+      const minimumY = projectShelfMinimumYs?.[projectIndex];
+      const authoredCapY =
+        viewportHeight - HORIZONTAL_STAFF_SPACE * 7;
+      const completeInkCapY =
+        viewportHeight - HORIZONTAL_STAFF_SPACE * 3;
+      return Object.freeze({
         x: card.x + card.width / 2,
-        y: Math.min(
-          viewportHeight - HORIZONTAL_STAFF_SPACE * 7,
-          card.y + card.height + HORIZONTAL_STAFF_SPACE * 3.5,
-        ),
-      }),
-    );
+        y:
+          minimumY === undefined || minimumY > completeInkCapY
+            ? Math.min(authoredCapY, authoredY)
+            : Math.max(
+                Math.min(authoredCapY, authoredY),
+                minimumY,
+              ),
+      });
+    });
     const valleyY = Math.min(
       viewportHeight - HORIZONTAL_STAFF_SPACE * 3,
       Math.max(...anchors.map(({ y }) => y)) + HORIZONTAL_STAFF_SPACE * 3,
@@ -2006,301 +1528,21 @@ function horizontalCardInteractionBridge(
   );
 }
 
-/**
- * Projection-only boundary route for Application / How It Works. The musical
- * shelf remains forward-readable; this connector alone owns the physical
- * right-to-left card traversal.
- */
-function horizontalApplicationHowInteractionRoute(
-  start: Vec2,
-  target: Vec2,
-  viewportHeight: number,
-  interaction: HorizontalApplicationHowInteraction,
-  profile: ScorePathReviewInteractionProfile,
-  expandedY: number,
-): readonly Vec2[] {
-  const radius = HORIZONTAL_APPLICATION_HOW_HALF_TURN_RADIUS;
-  const coreStart = Object.freeze({
-    x: interaction.interactionStartX,
-    y: interaction.canonicalY,
-  });
-  const coreEnd = Object.freeze({
-    x: interaction.interactionEndX,
-    y: interaction.canonicalY,
-  });
-  const approachEnd = Object.freeze({
-    x: target.x,
-    y: target.y + radius * 2,
-  });
-
-  if (
-    start.x <= coreStart.x + radius * 2 ||
-    coreStart.x <= coreEnd.x ||
-    coreEnd.x <= target.x + radius * 2
-  ) {
-    throw new RangeError(
-      `The Application How route needs ordered right-to-left corridors: ${JSON.stringify({ interaction, start, target })}`,
-    );
-  }
-
-  const departureCenterY = start.y - radius;
-  const departureTurn = Array.from(
-    { length: HORIZONTAL_APPLICATION_HOW_HALF_TURN_SEGMENTS },
-    (_, index) => {
-      const progress =
-        (index + 1) / HORIZONTAL_APPLICATION_HOW_HALF_TURN_SEGMENTS;
-      const angle = Math.PI / 2 - Math.PI * progress;
-
-      return Object.freeze({
-        x: start.x + Math.cos(angle) * radius,
-        y: departureCenterY + Math.sin(angle) * radius,
-      });
-    },
-  );
-  const departureEnd = departureTurn.at(-1)!;
-  const overviewExitCorridor = interaction.overviewExitCorridor;
-  const entryLaneY = Math.max(
-    HORIZONTAL_STAFF_SPACE * 6,
-    Math.min(departureEnd.y, coreStart.y) - radius * 3,
-  );
-  const overviewLowerLaneY =
-    overviewExitCorridor === undefined
-      ? undefined
-      : Math.max(
-          overviewExitCorridor.lowerLaneY,
-          coreStart.y,
-          departureEnd.y,
-        );
-
-  if (
-    overviewExitCorridor !== undefined &&
-    (overviewExitCorridor.turnClearX >= departureEnd.x ||
-      overviewExitCorridor.turnClearX <=
-        overviewExitCorridor.contentClearX ||
-      overviewExitCorridor.contentClearX <= coreStart.x ||
-      overviewLowerLaneY! < departureEnd.y)
-  ) {
-    throw new RangeError(
-      `The measured Overview exit needs an open lower corridor: ${JSON.stringify({ coreStart, departureEnd, overviewExitCorridor })}`,
-    );
-  }
-  const canonicalApproach = Array.from(
-    { length: HORIZONTAL_APPLICATION_HOW_APPROACH_SEGMENTS },
-    (_, index) => {
-      const progress =
-        (index + 1) / HORIZONTAL_APPLICATION_HOW_APPROACH_SEGMENTS;
-      const corridorProgress =
-        progress < 0.22
-          ? smoothstep(progress / 0.22)
-          : progress <= 0.7
-            ? 1
-            : 1 - smoothstep((progress - 0.7) / 0.3);
-      const baselineY =
-        departureEnd.y +
-        (coreStart.y - departureEnd.y) * smoothstep(progress);
-      const x =
-        departureEnd.x + (coreStart.x - departureEnd.x) * progress;
-      const measuredCorridorY =
-        overviewExitCorridor === undefined
-          ? undefined
-          : x >= overviewExitCorridor.turnClearX
-            ? departureEnd.y
-            : x > overviewExitCorridor.contentClearX
-              ? departureEnd.y +
-                (overviewLowerLaneY! - departureEnd.y) *
-                  smoothstep(
-                    (overviewExitCorridor.turnClearX - x) /
-                      (overviewExitCorridor.turnClearX -
-                        overviewExitCorridor.contentClearX),
-                  )
-              : overviewLowerLaneY! +
-                (coreStart.y - overviewLowerLaneY!) *
-                  smoothstep(
-                    (overviewExitCorridor.contentClearX - x) /
-                      (overviewExitCorridor.contentClearX - coreStart.x),
-                  );
-
-      return Object.freeze({
-        x,
-        y:
-          measuredCorridorY ??
-          baselineY + (entryLaneY - baselineY) * corridorProgress,
-      });
-    },
-  );
-  const interactionCore = [
-    ...horizontalCardInteractionBridge(
-      coreStart,
-      coreEnd,
-      profile,
-      expandedY,
-      "right-to-left",
-    ),
-    coreEnd,
-  ];
-  const lowLaneY = viewportHeight - HORIZONTAL_STAFF_SPACE * 2;
-  const approach = Array.from(
-    { length: HORIZONTAL_APPLICATION_HOW_APPROACH_SEGMENTS },
-    (_, index) => {
-      const progress =
-        (index + 1) / HORIZONTAL_APPLICATION_HOW_APPROACH_SEGMENTS;
-      const verticalProgress =
-        progress < 0.25
-          ? smoothstep(progress / 0.25)
-          : progress <= 0.75
-            ? 1
-            : 1 - smoothstep((progress - 0.75) / 0.25);
-      const baselineY =
-        coreEnd.y + (approachEnd.y - coreEnd.y) * smoothstep(progress);
-
-      return Object.freeze({
-        x: coreEnd.x + (approachEnd.x - coreEnd.x) * progress,
-        y: baselineY + (lowLaneY - baselineY) * verticalProgress,
-      });
-    },
-  );
-  const arrivalCenterY = target.y + radius;
-  const arrivalTurn = Array.from(
-    { length: HORIZONTAL_APPLICATION_HOW_HALF_TURN_SEGMENTS },
-    (_, index) => {
-      const progress =
-        (index + 1) / HORIZONTAL_APPLICATION_HOW_HALF_TURN_SEGMENTS;
-      const angle = Math.PI / 2 + Math.PI * progress;
-
-      return Object.freeze({
-        x: target.x + Math.cos(angle) * radius,
-        y: arrivalCenterY + Math.sin(angle) * radius,
-      });
-    },
-  );
-  return Object.freeze([
-    ...departureTurn,
-    ...canonicalApproach,
-    ...interactionCore,
-    ...approach,
-    ...arrivalTurn.slice(0, -1),
-  ]);
-}
-
-function horizontalApplicationBoundaryBridge(
-  start: Vec2,
-  target: Vec2,
-  bridge: HorizontalApplicationBridge,
-): readonly Vec2[] {
-  const departureRadius = Math.abs(bridge.upperLaneY - start.y) / 2;
-  const arrivalRadius = Math.abs(bridge.lowerLaneY - target.y) / 2;
-  const arrivalCenterX = target.x - HORIZONTAL_STAFF_SPACE * 4;
-
-  if (
-    departureRadius < HORIZONTAL_STAFF_SPACE * 2 ||
-    arrivalRadius < HORIZONTAL_STAFF_SPACE * 2 ||
-    bridge.upperLaneY >= start.y ||
-    bridge.lowerLaneY <= target.y ||
-    bridge.transitionX >= start.x ||
-    bridge.transitionX <= arrivalCenterX
-  ) {
-    throw new RangeError(
-      `The measured Application boundary bridge needs ordered outer corridors: ${JSON.stringify({ bridge, start, target })}`,
-    );
-  }
-
-  const departureCenterY = (start.y + bridge.upperLaneY) / 2;
-  const departure = Array.from({ length: 9 }, (_, index) => {
-    const progress = index / 8;
-    const angle = Math.PI / 2 - Math.PI * progress;
-
-    return Object.freeze({
-      x: start.x + Math.cos(angle) * departureRadius,
-      y: departureCenterY + Math.sin(angle) * departureRadius,
-    });
-  }).slice(1);
-  const upperLane = [0.22, 0.44, 0.66, 0.82, 1].map((progress) =>
-    Object.freeze({
-      x: start.x + (bridge.transitionX - start.x) * progress,
-      y: bridge.upperLaneY,
-    }),
-  );
-  const transition = [0.12, 0.28, 0.46, 0.64, 0.8, 0.93, 1].map(
-    (progress) =>
-      Object.freeze({
-        x: bridge.transitionX,
-        y:
-          bridge.upperLaneY +
-          (bridge.lowerLaneY - bridge.upperLaneY) * progress,
-      }),
-  );
-  const lowerLane = [0.2, 0.4, 0.6, 0.8, 1].map((progress) =>
-    Object.freeze({
-      x:
-        bridge.transitionX +
-        (arrivalCenterX - bridge.transitionX) * progress,
-      y: bridge.lowerLaneY,
-    }),
-  );
-  const arrivalCenterY = (bridge.lowerLaneY + target.y) / 2;
-  const arrival = Array.from({ length: 9 }, (_, index) => {
-    const progress = index / 8;
-    const angle = Math.PI / 2 + Math.PI * progress;
-
-    return Object.freeze({
-      x: arrivalCenterX + Math.cos(angle) * arrivalRadius,
-      y: arrivalCenterY + Math.sin(angle) * arrivalRadius,
-    });
-  });
-
-  return Object.freeze([
-    ...departure,
-    ...upperLane,
-    ...transition,
-    ...lowerLane,
-    ...arrival,
-    Object.freeze({ x: target.x - 20, y: target.y }),
-  ]);
-}
-
 function pushHorizontalConnector(
   knots: Vec2[],
   target: Vec2,
   viewportHeight: number,
-  connectorIndex: number,
-  branch: StoryScoreBranch,
+  targetChapterId: StoryChapterId,
   connectorKind?: HorizontalNotationShelf["connectorKind"],
   connectorValleyY?: number,
   connectorInteraction?: HorizontalNotationShelf["connectorInteraction"],
   connectorInteractionExpandedY?: number,
   connectorInteractionProfile?: ScorePathReviewInteractionProfile,
-  applicationBridge?: HorizontalApplicationBridge,
-  applicationHowArrivalBridge?: boolean,
-  applicationReturnLaneY?: number,
-  applicationHowInteraction?: HorizontalApplicationHowInteraction,
 ): void {
   const start = knots.at(-1)!;
-  const preferredApplicationLaneY =
-    viewportHeight * (connectorIndex % 2 === 1 ? 0.94 : 0.58);
-  const alternateApplicationLaneY =
-    viewportHeight * (connectorIndex % 2 === 1 ? 0.7 : 0.66);
-  const applicationLaneY =
-    applicationReturnLaneY ??
-    (Math.abs(preferredApplicationLaneY - start.y) >= 60 &&
-    Math.abs(preferredApplicationLaneY - target.y) >= 60
-      ? preferredApplicationLaneY
-      : alternateApplicationLaneY);
 
   knots.push(
-    ...(applicationBridge
-      ? horizontalApplicationBoundaryBridge(start, target, applicationBridge)
-      : applicationHowArrivalBridge
-        ? horizontalApplicationHowArrivalBridge(start, target)
-      : applicationHowInteraction
-        ? horizontalApplicationHowInteractionRoute(
-            start,
-            target,
-            viewportHeight,
-            applicationHowInteraction,
-            connectorInteractionProfile!,
-            connectorInteractionExpandedY!,
-          )
-      : connectorInteraction
+    ...(connectorInteraction
       ? horizontalCardInteractionBridge(
           start,
           target,
@@ -2314,9 +1556,7 @@ function pushHorizontalConnector(
           connectorValleyY ?? viewportHeight * 0.72,
           connectorKind,
         )
-      : target.x > start.x
-      ? horizontalProfessionalBridge(start, target)
-      : horizontalApplicationReturn(start, target, applicationLaneY)),
+      : horizontalProfessionalBridge(start, target, targetChapterId === "professional-process")),
   );
 }
 
@@ -2325,6 +1565,7 @@ function horizontalGeometry(
   viewportWidth: number,
   viewportHeight: number,
   measurements: StoryScoreSceneMeasurements | undefined,
+  projectShelfMinimumYs?: ProjectShelfMinimumYs,
 ): AuthoredTrackGeometry {
   const { frames, totalWidth } = horizontalChapterFrames(
     viewportWidth,
@@ -2341,30 +1582,18 @@ function horizontalGeometry(
       "professional-projects": ["heading-and-body", "project-card-fan"],
       "professional-contact": ["heading-and-body", "contact-form"],
       "professional-terminal": ["terminal-content"],
-      "application-overview": ["heading-and-body", "application-overview"],
-      "application-how-it-works": ["heading-and-body"],
-      "application-benefits": ["heading-and-body", "application-benefits"],
-      "application-demo": ["heading-and-body", "application-tablet-demo"],
-      "application-access": ["heading-and-body", "access-action"],
-      "application-terminal": ["terminal-content"],
     } satisfies Readonly<
       Record<StoryChapterId, readonly ScorePathReservedContentReason[]>
     >;
     return Object.freeze({
       chapterId,
       contentRect: Object.freeze({
-        x: frame.left + frame.width * (chapterId === "home" ? 0.08 : 0.1),
-        y: viewportHeight * 0.08,
-        width: frame.width * (chapterId === "home" ? 0.36 : 0.8),
-        height:
+        x: chapterId === "home" ? frame.left + (frame.width - Math.min(672, frame.width * 0.8)) / 2 : frame.left + frame.width * 0.1,
+        y: chapterId === "home" ? viewportHeight * 0.47 + 96 : viewportHeight * 0.08,
+        width: chapterId === "home" ? Math.min(672, frame.width * 0.8) : frame.width * 0.8,
+        height: chapterId === "home" ? 224 :
           viewportHeight *
-          (chapterId === "home"
-            ? 0.36
-            : chapterId === "professional-contact" ||
-                chapterId === "application-demo" ||
-                chapterId === "application-access"
-              ? 0.72
-              : 0.62),
+          (chapterId === "professional-contact" ? 0.72 : 0.62),
       }),
       height: viewportHeight,
       reservedReasons: Object.freeze([...reservedReasons[chapterId]]),
@@ -2372,17 +1601,13 @@ function horizontalGeometry(
     });
   });
   const measuredHomeOrigin = resolveHorizontalHomeOrigin(
-    measurements,
     frames.home,
     viewportHeight,
   );
-  const professionalAboutBoundary =
-    branch === "professional"
-      ? resolveHorizontalProfessionalAboutBoundary(
-          measurements,
-          viewportHeight,
-        )
-      : undefined;
+  const professionalAboutBoundary = resolveHorizontalProfessionalAboutBoundary(
+    measurements,
+    viewportHeight,
+  );
   const originX =
     measuredHomeOrigin?.x ?? frames.home.left + frames.home.width / 2;
   const originY = measuredHomeOrigin?.y ?? viewportHeight * 0.47;
@@ -2395,7 +1620,6 @@ function horizontalGeometry(
       frames[chapter.chapterId],
       chapter.chapterId,
       index,
-      branch,
       originX,
       measuredHomeOrigin?.shelfY,
       viewportHeight,
@@ -2403,12 +1627,11 @@ function horizontalGeometry(
         slotId.startsWith(`${chapter.chapterId}:`),
       ),
       measurements,
-      frames,
+      projectShelfMinimumYs,
     ).map((shelf) => Object.freeze({ chapterId: chapter.chapterId, shelf })),
   );
 
   const knots: Vec2[] = [];
-  let applicationReturnIndex = 0;
   const notationRanges: Array<{
     readonly barlineAfter?: boolean;
     readonly chapterId: StoryChapterId;
@@ -2422,28 +1645,16 @@ function horizontalGeometry(
 
   shelves.forEach(({ chapterId, shelf }, index) => {
     if (index > 0) {
-      if (
-        branch === "application" &&
-        shelf.applicationHowInteraction === undefined &&
-        shelf.points[0]!.x < knots.at(-1)!.x
-      ) {
-        applicationReturnIndex += 1;
-      }
       pushHorizontalConnector(
         knots,
         shelf.points[0]!,
         viewportHeight,
-        branch === "application" ? applicationReturnIndex : index,
-        branch,
+        chapterId,
         shelf.connectorKind,
         shelf.connectorValleyY,
         shelf.connectorInteraction,
         shelf.connectorInteractionExpandedY,
         shelf.connectorInteractionProfile,
-        shelf.applicationBridge,
-        shelf.applicationHowArrivalBridge,
-        shelf.applicationReturnLaneY,
-        shelf.applicationHowInteraction,
       );
     }
 
@@ -2565,62 +1776,6 @@ function interactionProgress(
   return cardInteractionState(t, zones).progress;
 }
 
-function familyABoundaryContraction(
-  t: number,
-  path: ReviewCubicSplineScorePath,
-  zones: readonly ScorePathReviewZone[],
-  familyA: HorizontalApplicationFamilyARecipe | undefined,
-): number {
-  if (!familyA) return 0;
-
-  const boundaryZone = zones.find(
-    (zone) =>
-      zone.kind === "connector" &&
-      zone.chapterId === "application-demo",
-  );
-  if (
-    !boundaryZone ||
-    t < boundaryZone.startT ||
-    t > boundaryZone.endT
-  ) {
-    return 0;
-  }
-
-  const center = path.pointAt(t);
-  const transition = familyA.demoBridge;
-  const verticalPadding = HORIZONTAL_STAFF_SPACE * 2;
-  if (
-    center.y < transition.upperLaneY - verticalPadding ||
-    center.y > transition.lowerLaneY + verticalPadding
-  ) {
-    return 0;
-  }
-
-  const departure = path.pointAt(boundaryZone.startT);
-  const departureHeight = departure.y - transition.upperLaneY;
-  const departureContraction =
-    departureHeight > 0 && center.x >= transition.transitionX
-      ? 1.5 *
-        smoothstep(
-          Math.max(
-            0,
-            Math.min(
-              1,
-              (departure.y - center.y) / departureHeight,
-            ),
-          ),
-        )
-      : 0;
-  const transitionWidth = HORIZONTAL_STAFF_SPACE * 8;
-  const transitionContraction = smoothstep(
-    Math.max(
-      0,
-      1 - Math.abs(center.x - transition.transitionX) / transitionWidth,
-    ),
-  );
-
-  return Math.max(departureContraction, transitionContraction);
-}
 
 function splitInteractionStaffLine(
   line: PolylineRenderPrimitive,
@@ -2680,7 +1835,6 @@ function choreographModel(
   zones: readonly ScorePathReviewZone[],
   mode: "horizontal-enhanced" | ScorePathReviewMode,
   staffSpace: number,
-  familyA?: HorizontalApplicationFamilyARecipe,
 ): ScoreRenderModel {
   const interactionZones = zones.filter(
     ({ interactionId }) =>
@@ -2693,19 +1847,11 @@ function choreographModel(
         line.points.map((point, index) => {
           const t = index / (line.points.length - 1);
           const progress = interactionProgress(t, interactionZones);
-          const contraction = familyABoundaryContraction(
-            t,
-            path,
-            zones,
-            familyA,
-          );
-          if (progress === 0 && contraction === 0) return point;
+          if (progress === 0) return point;
           const center = path.pointAt(t);
           const spread =
-            (1 +
-              (STORY_SCORE_CARD_INTERACTION.maximumStaffSpread - 1) *
-                progress) *
-            (1 - contraction * 0.5);
+            1 +
+            (STORY_SCORE_CARD_INTERACTION.maximumStaffSpread - 1) * progress;
 
           return Object.freeze({
             x: center.x + (point.x - center.x) * spread,
@@ -2772,12 +1918,13 @@ function choreographModel(
   });
 }
 
-function buildBranchProjection(
+function buildBranchProjectionAttempt(
   mode: "horizontal-enhanced" | ScorePathReviewMode,
   branch: StoryScoreBranch,
   viewportWidth: number,
   viewportHeight: number,
   measurements: StoryScoreSceneMeasurements | undefined,
+  projectShelfMinimumYs?: ProjectShelfMinimumYs,
 ): StoryScoreBranchProjection {
   const authoredGeometry =
     mode === "horizontal-enhanced"
@@ -2786,42 +1933,56 @@ function buildBranchProjection(
           viewportWidth,
           viewportHeight,
           measurements,
+          projectShelfMinimumYs,
         )
       : verticalGeometry(mode, branch, viewportWidth);
   const geometry = applyChapterBarlineClassification(authoredGeometry);
-  const path =
-    branch === "application"
-      ? new ApplicationOrganicFlowingPath(geometry.knots)
-      : new ReviewCubicSplineScorePath(geometry.knots);
+  const path = new ReviewCubicSplineScorePath(geometry.knots);
   const composition = STORY_SCORE_COMPOSITIONS[branch];
-  const zones = buildZones(path, geometry, composition);
-  const firstNotationZone = zones.find(
+  const authoredZones = buildZones(path, geometry, composition);
+  const firstNotationZone = authoredZones.find(
     ({ kind }) => kind === "notation-safe",
   );
 
-  if (
-    !firstNotationZone ||
-    (branch === "application" && firstNotationZone.startT <= 0)
-  ) {
+  if (!firstNotationZone) {
     throw new RangeError("Task 34 requires an event-free approved origin departure");
   }
+  const modelOptions = {
+    clef: true, clefT: 0, keySignature: true,
+    keySignatureT: firstNotationZone.startT + (firstNotationZone.endT - firstNotationZone.startT) * 0.12,
+    staffSampleCount: 1025,
+  };
+  let structuralStartT: number | undefined;
+  {
+    // Measure the existing approved structural ink at its rendered scenic scale.
+    // A short Home shelf may remain event-free; Composer groups continue later.
+    const structuralModel = choreographModel(buildReviewModel(
+      "stage-1-structural-footprint", path, geometry.staffSpace, authoredZones, composition,
+      { ...modelOptions, motifPlacements: [], staffSampleCount: 2 },
+    ), path, authoredZones, mode, geometry.staffSpace);
+    const maximumX = Math.max(...structuralModel.primitives.filter(({ role }) =>
+      role === "clef" || role === "key-signature").flatMap(eventPrimitiveFootprintPoints).map(({ x }) => x));
+    let left = firstNotationZone.startT;
+    let right = firstNotationZone.endT;
+    for (let iteration = 0; iteration < 40; iteration += 1) {
+      const middle = (left + right) / 2;
+      if (path.pointAt(middle).x < maximumX) left = middle;
+      else right = middle;
+    }
+    structuralStartT = Math.max(right, Math.min(firstNotationZone.endT, 16 / path.segmentCount));
+  }
+  const allocation = allocateEventSafePlacements({
+    path, staffSpace: geometry.staffSpace, zones: authoredZones, composition,
+    ...(structuralStartT === undefined ? {} : { structuralStartT }),
+  });
+  const zones = allocation.zones;
   const baseModel = buildReviewModel(
     `phase-9-task-34:${mode}:${branch}`,
     path,
     geometry.staffSpace,
     zones,
     composition,
-    branch === "professional"
-      ? {
-          clef: true,
-          clefT: 0,
-          keySignature: true,
-          keySignatureT:
-            firstNotationZone.startT +
-            (firstNotationZone.endT - firstNotationZone.startT) * 0.12,
-          staffSampleCount: 1025,
-        }
-      : { clef: false, keySignature: false, staffSampleCount: 1025 },
+    { ...modelOptions, motifPlacements: allocation.motifs },
   );
   const model = choreographModel(
     baseModel,
@@ -2829,16 +1990,29 @@ function buildBranchProjection(
     zones,
     mode,
     geometry.staffSpace,
-    mode === "horizontal-enhanced" && branch === "application"
-      ? resolveHorizontalApplicationFamilyA(measurements, viewportHeight)
-      : undefined,
   );
+  const firstEvent = allocation.diagnostics.groups[0]!;
+  const entryT = Math.min(8 / path.segmentCount, firstEvent.marginStartT / 2);
+  const entryPoint = path.pointAt(entryT);
+  const entryNormal = path.normalAt(entryT);
+  const homeEntry = Object.freeze({
+    t: entryT,
+    point: Object.freeze(entryPoint),
+    tangent: Object.freeze(path.tangentAt(entryT)),
+    staffPoints: Object.freeze(Array.from({ length: 5 }, (_, index) => Object.freeze({
+      x: entryPoint.x + entryNormal.x * (index - 2) * geometry.staffSpace,
+      y: entryPoint.y + entryNormal.y * (index - 2) * geometry.staffSpace,
+    }))),
+    eventFreeLeadIn: Object.freeze({ startT: 0 as const, endT: firstEvent.marginStartT }),
+  });
 
   return Object.freeze({
     branch,
     chapters: geometry.chapters,
     composition,
+    eventSafety: allocation.diagnostics,
     height: geometry.height,
+    homeEntry,
     model,
     path,
     semanticSegmentIds: Object.freeze(
@@ -2851,6 +2025,178 @@ function buildBranchProjection(
     width: geometry.width,
     zones,
   });
+}
+
+const PROJECTS_REQUIRED_CLEARANCE = HORIZONTAL_STAFF_SPACE;
+
+function projectVisitClearance(
+  projection: StoryScoreBranchProjection,
+  projectIndex: 1 | 2 | 3,
+  rect: StoryScoreMeasuredRect,
+): number {
+  const zone = projection.zones.find(
+    (candidate) =>
+      candidate.chapterId === "professional-projects" &&
+      candidate.kind === "notation-safe" &&
+      candidate.projectVisit?.projectIndex === projectIndex,
+  );
+
+  if (!zone) return Number.NEGATIVE_INFINITY;
+
+  const staffEdges = projection.model.staff.lines.flatMap((line) =>
+    line.points.slice(1).map((end, index) => ({
+      start: line.points[index]!,
+      end,
+      radius: line.thickness / 2,
+    })),
+  );
+  const eventEdges = projection.model.primitives
+    .filter((primitive) =>
+      zone.semanticSlotIds.some((slotId) =>
+        primitive.id.startsWith(`wf-${slotId}:`),
+      ),
+    )
+    .flatMap((primitive) => {
+      const points = eventPrimitiveFootprintPoints(primitive);
+
+      if (points.length === 0) return [];
+
+      const xs = points.map(({ x }) => x);
+      const ys = points.map(({ y }) => y);
+      const left = Math.min(...xs);
+      const right = Math.max(...xs);
+      const top = Math.min(...ys);
+      const bottom = Math.max(...ys);
+
+      return [
+        { start: { x: left, y: top }, end: { x: right, y: bottom }, radius: 0 },
+        { start: { x: right, y: top }, end: { x: left, y: bottom }, radius: 0 },
+      ];
+    });
+
+  return Math.min(
+    ...[...staffEdges, ...eventEdges].map(({ start, end, radius }) =>
+      projectsSegmentClearance(start, end, rect, radius),
+    ),
+  );
+}
+
+function requiredProjectShelfMinimumYs(
+  projection: StoryScoreBranchProjection,
+  measurements: StoryScoreSceneMeasurements | undefined,
+): ProjectShelfMinimumYs | undefined {
+  const cards = measurements?.professionalProjectCards
+    ?.filter(validMeasuredRect)
+    .slice(0, 3)
+    .sort((left, right) => left.x - right.x);
+
+  if (cards?.length !== 3) return undefined;
+
+  const minimumYs: Partial<Record<1 | 2 | 3, number>> = {};
+  const envelopes = measurements?.professionalProjectInteractionEnvelopes;
+  let firstVisitShift = 0;
+
+  for (const projectIndex of [1, 2] as const) {
+    const zone = projection.zones.find(
+      (candidate) =>
+        candidate.chapterId === "professional-projects" &&
+        candidate.kind === "notation-safe" &&
+        candidate.projectVisit?.projectIndex === projectIndex,
+    );
+    const envelope = envelopes?.[projectIndex];
+    const rect = envelope && validMeasuredRect(envelope)
+      ? envelope
+      : projectIndex === 1
+        ? cards[0]!
+        : undefined;
+
+    if (!zone?.projectVisit || !rect) continue;
+
+    const clearance = projectVisitClearance(projection, projectIndex, rect);
+    if (clearance >= PROJECTS_REQUIRED_CLEARANCE) continue;
+
+    const magnitude = Math.max(
+      1,
+      Math.abs(rect.x),
+      Math.abs(rect.y),
+      Math.abs(rect.x + rect.width),
+      Math.abs(rect.y + rect.height),
+      Math.abs(zone.projectVisit.anchor.x),
+      Math.abs(zone.projectVisit.anchor.y),
+    );
+    const svgNumericPadding = magnitude * 2 ** -21;
+    const requiredY =
+      zone.projectVisit.anchor.y +
+      PROJECTS_REQUIRED_CLEARANCE -
+      clearance +
+      svgNumericPadding;
+    if (
+      projectIndex === 1 &&
+      requiredY >
+        projection.height - HORIZONTAL_STAFF_SPACE * 3
+    ) {
+      continue;
+    }
+    minimumYs[projectIndex] = requiredY;
+    if (projectIndex === 1) {
+      firstVisitShift = requiredY - zone.projectVisit.anchor.y;
+    }
+  }
+
+  if (firstVisitShift > 0) {
+    const secondVisit = projection.zones.find(
+      (candidate) =>
+        candidate.chapterId === "professional-projects" &&
+        candidate.kind === "notation-safe" &&
+        candidate.projectVisit?.projectIndex === 2,
+    )?.projectVisit;
+
+    if (secondVisit) {
+      minimumYs[2] = Math.max(
+        minimumYs[2] ?? Number.NEGATIVE_INFINITY,
+        secondVisit.anchor.y + firstVisitShift,
+      );
+    }
+  }
+
+  return Object.keys(minimumYs).length > 0
+    ? Object.freeze(minimumYs)
+    : undefined;
+}
+
+function buildBranchProjection(
+  mode: "horizontal-enhanced" | ScorePathReviewMode,
+  branch: StoryScoreBranch,
+  viewportWidth: number,
+  viewportHeight: number,
+  measurements: StoryScoreSceneMeasurements | undefined,
+): StoryScoreBranchProjection {
+  const initial = buildBranchProjectionAttempt(
+    mode,
+    branch,
+    viewportWidth,
+    viewportHeight,
+    measurements,
+  );
+
+  if (mode !== "horizontal-enhanced") {
+    return initial;
+  }
+
+  const projectShelfMinimumYs = requiredProjectShelfMinimumYs(
+    initial,
+    measurements,
+  );
+  return projectShelfMinimumYs
+    ? buildBranchProjectionAttempt(
+        mode,
+        branch,
+        viewportWidth,
+        viewportHeight,
+        measurements,
+        projectShelfMinimumYs,
+      )
+    : initial;
 }
 
 function clefs(
@@ -2892,20 +2238,6 @@ function projectionEvidence(
   branches: Readonly<Record<StoryScoreBranch, StoryScoreBranchProjection>>,
   mode: "horizontal-enhanced" | ScorePathReviewMode,
 ): StoryScoreProjectionEvidence {
-  const originPoints = STORY_SCORE_BRANCHES.map((branch) =>
-    branches[branch].path.pointAt(0),
-  );
-  const originTangents = STORY_SCORE_BRANCHES.map((branch) =>
-    branches[branch].path.tangentAt(0),
-  );
-  const originStaffLineGap = Math.max(
-    ...branches.professional.model.staff.lines.map((line, index) =>
-      distanceBetween(
-        line.points[0]!,
-        branches.application.model.staff.lines[index]!.points[0]!,
-      ),
-    ),
-  );
   const branchClefs = clefs(branches);
   const clef = branchClefs[0];
   const maximumNotationTangentAngleDeg = Math.max(
@@ -2964,9 +2296,7 @@ function projectionEvidence(
   });
   const cardInteractionEvidence = (
     branch: StoryScoreBranch,
-    chapterId:
-      | "application-how-it-works"
-      | "professional-services",
+    chapterId: "professional-services",
   ) => {
     const interactionZones = branches[branch].zones.filter(
       (zone) =>
@@ -3014,10 +2344,6 @@ function projectionEvidence(
     "professional-services": cardInteractionEvidence(
       "professional",
       "professional-services",
-    ),
-    "application-how-it-works": cardInteractionEvidence(
-      "application",
-      "application-how-it-works",
     ),
   });
   const projectNotationZones = branches.professional.zones.filter(
@@ -3084,8 +2410,6 @@ function projectionEvidence(
     clef.mirrorX ||
     clef.mirrorY ||
     Math.abs(clef.rotationRadians) > 1e-7 ||
-    distanceBetween(originPoints[0]!, originPoints[1]!) > 1e-7 ||
-    originStaffLineGap > 1e-7 ||
     maximumNotationTangentAngleDeg >
       SCORE_PATH_REVIEW_MAX_NOTATION_TANGENT_ANGLE_DEG + 1e-7 ||
     connectorEventCount !== 0 ||
@@ -3095,11 +2419,8 @@ function projectionEvidence(
     ordinaryBarlineCount !== 0 ||
     (mode === "horizontal-enhanced" &&
       (cardScoreInteractions["professional-services"].zoneCount !== 1 ||
-        cardScoreInteractions["application-how-it-works"].zoneCount !== 1 ||
         cardScoreInteractions["professional-services"].cardCount !== 4 ||
-        cardScoreInteractions["application-how-it-works"].cardCount !== 5 ||
         cardScoreInteractions["professional-services"].eventCount !== 0 ||
-        cardScoreInteractions["application-how-it-works"].eventCount !== 0 ||
         Object.values(cardScoreInteractions).some(
           (interaction) =>
             interaction.leadInLength + 1e-7 <
@@ -3145,8 +2466,6 @@ function projectionEvidence(
         ),
         maximumNotationTangentAngleDeg,
         ordinaryBarlineCount,
-        originPointGap: distanceBetween(originPoints[0]!, originPoints[1]!),
-        originStaffLineGap,
         pathSelfIntersections,
         projectSerpentine,
         pathDiagnostics: Object.fromEntries(
@@ -3199,18 +2518,9 @@ function projectionEvidence(
       rotationDegrees: (clef.rotationRadians * 180) / Math.PI,
       scenographicScale: STORY_SCORE_SCENOGRAPHIC_CLEF_SCALE[mode],
     }),
-    commonOrigin: Object.freeze({
-      pointGap: distanceBetween(originPoints[0]!, originPoints[1]!),
-      staffLineGap: originStaffLineGap,
-      staffSpaceDelta: Math.abs(
-        branches.professional.staffSpace - branches.application.staffSpace,
-      ),
-      tangentAlignment: dotVectors(originTangents[0]!, originTangents[1]!),
-    }),
     connectorEventCount: 0 as const,
     continuity,
     finalBarlines: Object.freeze({
-      application: "thin-gap-thick-and-physical-end" as const,
       professional: "thin-gap-thick-and-physical-end" as const,
     }),
     fiveLineContinuity: true as const,
@@ -3218,7 +2528,7 @@ function projectionEvidence(
     ordinaryBarlineCount,
     pathSelfIntersections,
     projectSerpentine,
-    segmentCount: 12 as const,
+    segmentCount: 6 as const,
     staffLineSelfIntersections,
   });
 }
@@ -3233,16 +2543,9 @@ function verticalSectionBlockSizes(
     "professional",
     compactWidth,
   );
-  const application = buildAuthoredGeometry(
-    "organic-flowing",
-    mode,
-    "application",
-    compactWidth,
-  );
-
   return Object.freeze(
     Object.fromEntries(
-      [...professional.chapters, ...application.chapters.slice(1)].map(
+      professional.chapters.map(
         ({ chapterId, height }) => [chapterId, height],
       ),
     ),
@@ -3311,39 +2614,37 @@ export function buildStoryScoreProjection(
   const cached = PROJECTION_CACHE.get(cacheKey);
   if (cached) return cached;
 
-  const branches = Object.freeze({
-    application: buildBranchProjection(
-      resolvedGeometryMode,
-      "application",
-      geometryWidth,
-      geometryHeight,
-      options.sceneMeasurements,
-    ),
-    professional: buildBranchProjection(
+  const professional = buildBranchProjection(
       resolvedGeometryMode,
       "professional",
       geometryWidth,
       geometryHeight,
       options.sceneMeasurements,
-    ),
-  });
+    );
+  const branches = Object.freeze({ professional });
   const horizontal = resolvedGeometryMode === "horizontal-enhanced";
   const sectionBlockSizes = horizontal
     ? horizontalSectionBlockSizes(geometryWidth, geometryHeight)
     : verticalSectionBlockSizes(resolvedGeometryMode, geometryWidth);
+  const evidence = projectionEvidence(branches, resolvedGeometryMode);
+  const spatialGeometry = projectSpatialGeometry(
+    resolvedGeometryMode,
+    professional,
+    viewportWidth,
+    viewportHeight,
+  );
   const projection = Object.freeze({
     branches,
-    evidence: projectionEvidence(branches, resolvedGeometryMode),
+    evidence,
     height: horizontal
       ? geometryHeight
-      : branches.application.height,
+      : branches.professional.height,
     mode,
     resolvedGeometryMode,
     sectionBlockSizes,
     sessionSeed: STORY_SCORE_SESSION_SEED,
-    width: horizontal
-      ? branches.application.width
-      : branches.application.width,
+    spatialGeometry,
+    width: branches.professional.width,
   });
 
   for (const branch of STORY_SCORE_BRANCHES) {

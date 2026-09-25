@@ -218,17 +218,6 @@ function measureScoreAnchor(
   );
 }
 
-function measureHomePivot(): ViewportPoint | null {
-  const pivot = visibleElement(
-    document.querySelectorAll<HTMLElement>("[data-home-pivot]"),
-  );
-  const rect = pivot?.getBoundingClientRect();
-
-  return rect
-    ? { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 }
-    : null;
-}
-
 function resolveGeometry(
   transition: ScoreTransition,
   sourcePoint: ViewportPoint | null,
@@ -238,7 +227,6 @@ function resolveGeometry(
 
   return resolveTransitionGeometry(transition, viewport, {
     destination: destinationPoint ?? null,
-    pivot: measureHomePivot(),
     source: sourcePoint,
   });
 }

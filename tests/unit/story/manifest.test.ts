@@ -25,9 +25,7 @@ interface CanonicalChapter {
   readonly branch: string;
   readonly timelineLabel: string;
   readonly header: boolean | string;
-  readonly availabilityState?: string;
   readonly detailRoute?: string;
-  readonly externalAction?: string;
   readonly finalBarlineBefore?: boolean;
 }
 
@@ -61,15 +59,9 @@ function toCanonicalChapter(chapter: StoryChapter): CanonicalChapter {
     branch: chapter.branch,
     timelineLabel: chapter.timelineLabel,
     header: chapter.header,
-    ...(chapter.availabilityState === undefined
-      ? {}
-      : { availabilityState: chapter.availabilityState }),
     ...(chapter.detailRoute === undefined
       ? {}
       : { detailRoute: chapter.detailRoute }),
-    ...(chapter.externalAction === undefined
-      ? {}
-      : { externalAction: chapter.externalAction }),
     ...(chapter.finalBarlineBefore === undefined
       ? {}
       : { finalBarlineBefore: chapter.finalBarlineBefore }),
@@ -98,13 +90,13 @@ describe("v2 story manifest", () => {
       hash === undefined ? [] : [hash],
     );
 
-    expect(STORY_CHAPTERS).toHaveLength(13);
+    expect(STORY_CHAPTERS).toHaveLength(7);
     expect(new Set(ids).size).toBe(ids.length);
     expect(new Set(hashes).size).toBe(hashes.length);
     expect(Object.keys(STORY_CHAPTER_BY_ID).sort()).toEqual([...ids].sort());
   });
 
-  it("builds the vertical document with thirteen chapters and one separate footer", () => {
+  it("builds the vertical document with seven chapters and one separate footer", () => {
     expect(MOBILE_STORY_CHAPTERS.map(({ id }) => id)).toEqual(
       MOBILE_DOCUMENT_ORDER.slice(0, -1),
     );
@@ -120,12 +112,6 @@ describe("v2 story manifest", () => {
 
   it("exposes only the approved header targets", () => {
     expect(HEADER_NAVIGATION).toEqual({
-      application: [
-        "application-overview",
-        "application-how-it-works",
-        "application-benefits",
-        "application-access",
-      ],
       center: "home",
       professional: [
         "professional-about",
@@ -137,7 +123,6 @@ describe("v2 story manifest", () => {
     });
 
     const targetIds = [
-      ...HEADER_NAVIGATION.application,
       HEADER_NAVIGATION.center,
       ...HEADER_NAVIGATION.professional,
     ];
@@ -150,10 +135,7 @@ describe("v2 story manifest", () => {
   });
 
   it("keeps terminals unaddressed and places them after future final barlines", () => {
-    for (const terminalId of [
-      "application-terminal",
-      "professional-terminal",
-    ] as const) {
+    for (const terminalId of ["professional-terminal"] as const) {
       expect(STORY_CHAPTER_BY_ID[terminalId]).toMatchObject({
         header: false,
         finalBarlineBefore: true,
@@ -161,9 +143,6 @@ describe("v2 story manifest", () => {
       expect(STORY_CHAPTER_BY_ID[terminalId]).not.toHaveProperty("hash");
       expect(STORY_CHAPTER_BY_ID[terminalId]).not.toHaveProperty(
         "detailRoute",
-      );
-      expect(STORY_CHAPTER_BY_ID[terminalId]).not.toHaveProperty(
-        "externalAction",
       );
     }
   });

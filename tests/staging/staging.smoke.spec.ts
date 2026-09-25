@@ -220,7 +220,7 @@ test("staging fails closed at HTTP, HTML, and robots.txt layers", async ({
     expect(sitemap).toContain(new URL(route, siteConfig.url).toString());
   }
   expect(sitemap).not.toContain("/api/contact");
-  expect(sitemap).not.toContain(siteConfig.applicationUrl);
+  expect(sitemap).not.toContain("app.wflyer.com.br");
 });
 
 test("an unknown route returns unique, non-indexable 404 metadata", async ({
@@ -344,7 +344,7 @@ test("first-session intro completes naturally and releases the public Home", asy
   await expect(page.getByRole("main")).not.toHaveAttribute("aria-hidden");
   await expect(page.locator("body")).not.toHaveCSS("overflow", "hidden");
   await expect(
-    page.getByRole("link", { name: "Acessar aplicação", exact: true }),
+    page.getByRole("link", { name: "Conheça meus serviços", exact: true }),
   ).toBeVisible();
   await expect
     .poll(() =>
@@ -353,33 +353,14 @@ test("first-session intro completes naturally and releases the public Home", asy
     .toBe("1");
 });
 
-test("public tablet journey stays local and contact remains non-destructive", async ({
-  page,
-}) => {
+test("contact remains non-destructive before submission", async ({ page }) => {
   await setCompletedBrandIntro(page);
   let contactSubmissions = 0;
   page.on("request", (request) => {
-    if (
-      request.method() === "POST" &&
-      new URL(request.url()).pathname === "/api/contact"
-    ) {
+    if (request.method() === "POST" && new URL(request.url()).pathname === "/api/contact") {
       contactSubmissions += 1;
     }
   });
-
-  await page.goto("/aplicacao-wflyer");
-  const demo = page.locator("[data-application-demo]");
-  const destinationKey = demo.getByLabel("Tom de destino");
-  await destinationKey.selectOption("g-major");
-  await expect(demo).toHaveAttribute("data-demo-state", "configured");
-  await demo.getByRole("button", { name: "Transpor" }).click();
-  await expect(demo).toHaveAttribute("data-demo-state", "result");
-  await expect(demo.locator('[data-demo-score="result"]')).toBeVisible();
-  await demo
-    .getByRole("button", { name: "Restaurar demonstração" })
-    .click();
-  await expect(demo).toHaveAttribute("data-demo-state", "reset");
-  await expect(destinationKey).toHaveValue("bb-major");
 
   await page.goto("/contato");
   const form = page.getByRole("form", { name: "Formulário de contato" });

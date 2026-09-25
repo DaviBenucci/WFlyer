@@ -3,8 +3,10 @@ import type { ProjectRecord } from "@/content/public";
 import styles from "./project-cards.module.css";
 
 export interface ProjectCardProps {
+  readonly onSelect: () => void;
   readonly position: number;
   readonly project: ProjectRecord;
+  readonly selected: boolean;
   readonly total: number;
 }
 
@@ -13,8 +15,10 @@ function formatPosition(value: number): string {
 }
 
 export function ProjectCard({
+  onSelect,
   position,
   project,
+  selected,
   total,
 }: ProjectCardProps) {
   return (
@@ -22,11 +26,20 @@ export function ProjectCard({
       className={styles.card}
       data-project-card={project.slug}
     >
-      <a
-        aria-label={`Conhecer o projeto ${project.title}`}
+      <div
+        aria-label={`Selecionar projeto ${project.title}`}
+        aria-pressed={selected}
         className={styles.cardLink}
         data-project-card-link=""
-        href={project.route}
+        onClick={onSelect}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            onSelect();
+          }
+        }}
+        role="button"
+        tabIndex={0}
       >
         <header className={styles.cardHeader}>
           <span aria-hidden="true" className={styles.position}>
@@ -60,10 +73,10 @@ export function ProjectCard({
         </div>
 
         <span aria-hidden="true" className={styles.callToAction}>
-          Conhecer projeto
+          Selecionar projeto
           <span className={styles.callToActionArrow}>→</span>
         </span>
-      </a>
+      </div>
     </article>
   );
 }
