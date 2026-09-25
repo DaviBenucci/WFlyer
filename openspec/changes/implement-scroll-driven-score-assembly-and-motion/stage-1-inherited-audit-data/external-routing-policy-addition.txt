@@ -1,0 +1,18 @@
+
+Successor Inherited-Defect Gate
+
+When three or more distinct inherited defects are discovered during the same successor stage, sequential defect-by-defect remediation SHALL pause.
+
+A bounded systematic audit SHALL inventory the complete affected acceptance surface before further remediation.
+
+Findings SHALL be classified as CURRENT_REGRESSION, INHERITED_CRITICAL, INHERITED_NONBLOCKING, or VALIDATION_PIPELINE_DEFECT.
+
+A successor stage SHALL NOT be blocked solely because a stronger validator discovers an unchanged inherited defect unless that defect is critical to the stage acceptance contract or produces materially degraded user experience without an approved safe fallback.
+
+An inherited finding SHALL block when it affects accessibility, usable content, navigation, critical forms/CTAs, data integrity, security, or produces materially broken presentation on a supported path.
+
+Deferred inherited findings SHALL remain visible in validation evidence and SHALL require an explicit owner-approved disposition. Validators SHALL NOT be disabled, weakened, skipped or rewritten to conceal them.
+
+Any current regression relative to an equivalent frozen baseline SHALL remain blocking.
+
+Safe runtime fallback MAY protect the user experience but SHALL NOT convert an invalid enhanced candidate into a validation PASS.

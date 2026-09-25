@@ -1,0 +1,38 @@
+{
+  "startedAt": "2026-09-14T02:17:03.519003+00:00",
+  "scratch": "/tmp/wflyer-systematic-audit-20260913",
+  "historicalSourceDirectory": "/tmp/wflyer-access-history-x6dvq4ay",
+  "frozenSource": "306ccb74da6c7bbf8f187e360c0776c571b5fc3d",
+  "historicalBuildInputFilesMatched": 322,
+  "historicalMismatches": [],
+  "currentSourceDirectory": "/home/davi-benucci/\u00c1rea de trabalho/WFlyer",
+  "sourceServers": {
+    "current": "http://127.0.0.1:3100",
+    "historical": "http://127.0.0.1:3101"
+  },
+  "serverMode": "development webpack both sources",
+  "productRepairsAllowed": false,
+  "manifestDigest": "78c04b22d05831a8581b06723bfa12abbde8132ea104f477097024ebf68883a4",
+  "versions": {
+    "node": "v24.18.0",
+    "pnpm": "11.26.0",
+    "next": "16.4.0-canary.13",
+    "playwright": "1.63.0"
+  },
+  "lockfiles": {
+    "current": "6ad95c300fc1d6304f795c5699a71ddf8a6e04bfd55f842b94e39028a7d762af",
+    "historical": "b5ae713644533a2300f6a365b0d47d6c5083631c7f23e9c9a185d87dce166249"
+  },
+  "fontHashes": {
+    "src/assets/fonts/manrope-latin-variable.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+    "src/assets/fonts/cormorant-garamond-latin-variable-italic.woff2": "6f2f5c3b1abc3d0bb035a927f66a90ca873f94fc31c4966c8d024142c2036e55",
+    "src/assets/fonts/cormorant-garamond-latin-variable.woff2": "d80df8ff5aecd299a61549f9e29ab1ed0b9b05f4ea71d50fe978e07d5240b235"
+  },
+  "historicalFontHashes": {
+    "src/assets/fonts/manrope-latin-variable.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+    "src/assets/fonts/cormorant-garamond-latin-variable-italic.woff2": "6f2f5c3b1abc3d0bb035a927f66a90ca873f94fc31c4966c8d024142c2036e55",
+    "src/assets/fonts/cormorant-garamond-latin-variable.woff2": "d80df8ff5aecd299a61549f9e29ab1ed0b9b05f4ea71d50fe978e07d5240b235"
+  },
+  "dirtyWorktreeFingerprint": "8e0a8a92c9cdffb037c12ca967ee62066e6a0e22b51acb6caaf8b7b44c72bbc5",
+  "sourcePinsDigest": "4384c5d2057d873049dd70248ec9d7241b87d0d8215192b55c201e0326c8e629"
+}

@@ -1,0 +1,101 @@
+ M .agents/skills/openspec-apply-change/SKILL.md
+ M .agents/skills/openspec-archive-change/SKILL.md
+ M .agents/skills/openspec-explore/SKILL.md
+ M .agents/skills/openspec-propose/SKILL.md
+ M .agents/skills/openspec-sync-specs/SKILL.md
+ M .agents/skills/openspec-update-change/SKILL.md
+ M .codex/hooks.json
+ M .codex/hooks.json.graphify-bak
+ M .codex/skills/graphify/.graphify_version
+ M .github/workflows/ci.yml
+ M .github/workflows/deploy.yml
+ M .serena/project.yml
+ M AGENTS.md
+ M WFLYER_IMPLEMENTATION_PLAN.md
+ M docs/05-implementacao/09-manifesto-tecnologico.yaml
+ M docs/05-implementacao/18-graphify-repository-map.md
+ M docs/05-implementacao/19-openspec-workflow.md
+ M docs/05-implementacao/21-staging-release-operations.md
+ M docs/05-implementacao/22-napoleon-node-runtime-runbook.md
+ M docs/07-qa/09-staging-homologation-runbook.md
+ M docs/07-qa/10-staging-homologation-report.md
+ M docs/canonical-v2/00-governance/03-decision-register.md
+ M docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md
+ M docs/canonical-v2/06-migration/CURRENT_HANDOFF.md
+ M graphify-out/GRAPH_REPORT.md
+ M openspec/changes/implement-scroll-driven-score-assembly-and-motion/design.md
+ M openspec/changes/implement-scroll-driven-score-assembly-and-motion/proposal.md
+ M openspec/changes/implement-scroll-driven-score-assembly-and-motion/specs/continuous-dual-score/spec.md
+ M openspec/changes/implement-scroll-driven-score-assembly-and-motion/specs/music-renderer/spec.md
+ M openspec/changes/implement-scroll-driven-score-assembly-and-motion/specs/responsive-story-mode/spec.md
+ M openspec/changes/implement-scroll-driven-score-assembly-and-motion/specs/score-assembly-motion/spec.md
+ M openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-authorization.md
+ M openspec/changes/implement-scroll-driven-score-assembly-and-motion/tasks.md
+ M package.json
+ M pnpm-lock.yaml
+ M pnpm-workspace.yaml
+ M src/app/%5F_visual-lab/story/score-paths/ScorePathReview.test.tsx
+ M src/components/projects/project-cards.module.css
+ M src/components/story-motion/MotionStoryLab.test.tsx
+ M src/components/story-motion/MotionStoryLab.tsx
+ M src/components/story-motion/motion-story-lab.module.css
+ M src/components/story-score/StoryScoreLayer.test.tsx
+ M src/components/story-score/StoryScoreLayer.tsx
+ M src/components/story-score/measurement.ts
+ M src/lib/story/motion/eligibility.ts
+ M src/lib/story/motion/index.ts
+ M src/lib/story/motion/runtime.ts
+ M src/lib/story/score/organic-flowing.ts
+ M src/lib/story/score/projection.ts
+ M tests/e2e/phase09-score-path-review.spec.ts
+ M tests/unit/story/motion-eligibility.test.ts
+ M tests/unit/story/story-score-projection.test.ts
+?? docs/.ai/
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-classification.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-batch-2-inherited-defect-diagnostics.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-batch-2-inherited-defect-review.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-batch-2-repair-diagnostics.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-numeric-determinism-diagnostics.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-progress.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-capacity-authorization-review.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-capacity-governance-validation.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-capacity-model-handoff.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-clearance-stop-diagnostics.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-clearance-stop.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-full-ink-authorization-review.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-full-ink-governance-validation.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-full-ink-stop-diagnostics.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-full-ink-stop.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-authorization-review.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-clearance-stop-diagnostics.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-clearance-stop.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-governance-validation.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-lineage-diagnostics.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-lineage-review.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-intersection-classification-diagnostics.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-intersection-classification.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-lineage-and-capacity-diagnostics.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-lineage-and-capacity-review.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-visit3-classification-diagnostics.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-visit3-classification.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-visit3-interaction-clearance-stop-diagnostics.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-visit3-interaction-clearance-stop.md
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-self-intersection-diagnostics.json
+?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-self-intersection-review.md
+?? scripts/capture-assembly-stage1-evidence.mjs
+?? src/components/story-score/projection-metadata.ts
+?? src/components/story-score/projects-capacity-candidate.ts
+?? src/lib/story/score/event-safe-placement.ts
+?? src/lib/story/score/projects-capacity.ts
+?? src/lib/story/score/projects-clearance.ts
+?? tests/e2e/assembly-stage1-geometry.spec.ts
+?? tests/e2e/assembly-stage1-hydration.spec.ts
+?? tests/e2e/assembly-stage1-projects-capacity.spec.ts
+?? tests/e2e/helpers/
+?? tests/fixtures/
+?? tests/helpers/assembly-stage1-determinism.ts
+?? tests/unit/story/story-score-batch2-geometry.test.ts
+?? tests/unit/story/story-score-event-safety.test.ts
+?? tests/unit/story/story-score-projects-capacity.test.ts
+?? tests/unit/story/story-score-successor-geometry.test.ts

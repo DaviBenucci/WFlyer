@@ -1,49 +1,26 @@
 ## ADDED Requirements
 
-### Requirement: Home uses independent entry and branch progress
-Home SHALL derive presentation from one-shot `originRevealProgress` and
-reversible `signedBranchProgress`, where Application is negative, Home is zero,
-and Professional is positive. Readiness MAY advance the origin sequence once
-per defined entry/session lifecycle, while ordinary native scroll SHALL control
-branch activation reversibly without replaying the entry sequence.
+### Requirement: Home is the single musical and spatial origin
+Home SHALL introduce one portfolio staff and one Professional/Portfolio path.
+It SHALL NOT present branch selection, an Application CTA, a second staff, or a
+hidden compatibility direction.
 
-#### Scenario: First ready entry settles at Home
-- **WHEN** motion readiness becomes valid for an initial Home entry
-- **THEN** the scenic clef, center-out desktop header, latent edge scores, and neutral settled Home resolve in canonical order while semantic Home content remains usable throughout
+#### Scenario: A first visit reaches Home
+- **WHEN** the opening presentation completes or is skipped
+- **THEN** one five-line portfolio score and the surviving professional actions are available
 
-#### Scenario: User scrolls back to Home
-- **WHEN** branch progress returns to zero after either branch was active
-- **THEN** Home returns directly to its settled origin state without replaying the one-shot entry cinematic
+### Requirement: Home remains usable when motion is unavailable
+Readiness failure, timeout, reduced motion, skip, or missing GSAP SHALL release
+semantic content, focus, native scroll, and navigation.
 
-### Requirement: The scenic origin remains stable and presentation-only
-The Home scenic treble clef SHALL remain an intact origin anchor and SHALL NOT
-mirror, rotate arbitrarily, travel into a branch, or replace either canonical
-branch clef. Scenic glyph fragments SHALL remain restrained, presentation-only,
-and excluded from Composer output and canonical event semantics.
+#### Scenario: Opening initialization fails
+- **WHEN** the cinematic cannot complete
+- **THEN** Home fails open with the portfolio path usable and no stale inert or scroll lock
 
-#### Scenario: A branch becomes active
-- **WHEN** signed branch progress moves away from Home
-- **THEN** the selected branch gains bounded emphasis while the scenic clef remains at the origin and no scenic fragment becomes a Composer-backed event
+### Requirement: Deep links do not replay the opening
+A valid Professional deep link or history restoration SHALL settle at the
+requested chapter without replaying Home entry.
 
-### Requirement: Scenic branches transfer through exact canonical geometry
-Desktop scenic staff SHALL emerge from the corresponding edge depth zone and
-converge to Projection-owned `CANONICAL_ENTRY_ANCHOR` geometry before ownership
-transfers to canonical staff. The matched overlap SHALL control total opacity,
-avoid a duplicate staff or cusp, and lead through an event-free canonical
-interval before the first `EVENT_SAFE_STRAIGHT` Composer event. Compact mobile
-SHALL preserve origin and Professional-first entry with substantially reduced
-spectacle.
-
-#### Scenario: Scenic staff hands off during normal branch entry
-- **WHEN** branch formation reaches the ownership-transfer interval
-- **THEN** scenic and canonical staff coincide geometrically, ownership transfers reversibly by semantic progress, and the first Composer event remains hidden until after the canonical lead-in
-
-### Requirement: Restoration settles without replay or geometry swap
-Deep links, refresh restoration, browser history restoration, and popstate
-SHALL resolve beneath readiness cover directly to the appropriate settled Home
-or canonical branch state. Reduced motion SHALL use the same semantics with a
-direct or minimal handoff rather than replaying prior Scenic choreography.
-
-#### Scenario: A deep link opens beyond Home
-- **WHEN** readiness resolves a valid branch destination from URL or history state
-- **THEN** the destination settles with correct canonical geometry, semantic ownership, scroll state, and focus contract without playing the Home entry cinematic
+#### Scenario: The page loads with a surviving chapter hash
+- **WHEN** readiness resolves the hash
+- **THEN** the matching chapter owns semantic state directly and Home entry remains complete

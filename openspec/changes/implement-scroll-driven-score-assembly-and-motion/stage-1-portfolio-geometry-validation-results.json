@@ -1,0 +1,986 @@
+{
+  "schemaVersion": 1,
+  "resultId": "ASM-STAGE1-PORTFOLIO-GEOMETRY-RESULT-001",
+  "manifestId": "ASM-STAGE1-PORTFOLIO-GEOMETRY-001",
+  "activeChange": "implement-scroll-driven-score-assembly-and-motion",
+  "gitHead": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+  "outcome": "PASS",
+  "summary": {
+    "manifestLogicalCases": 21,
+    "expandedObservations": 63,
+    "completedObservations": 63,
+    "infrastructureBlocked": 0,
+    "pendingObservations": 0,
+    "uniqueRootCauses": 4,
+    "currentRegressions": 0,
+    "inheritedCritical": 0,
+    "inheritedNonblocking": 0,
+    "validationPipelineDefects": 4,
+    "unclassified": 0,
+    "safeFallbackOccurrences": 25
+  },
+  "preflight": {
+    "focusedUnitComponent": {
+      "result": "PASS",
+      "files": 8,
+      "tests": 58
+    },
+    "typecheck": "PASS",
+    "lint": "PASS"
+  },
+  "engines": {
+    "chromium": {
+      "result": "PASS",
+      "completed": 21,
+      "blocked": 0,
+      "note": "One lifecycle observation passed on the single allowed retry after VP-001."
+    },
+    "firefox": {
+      "result": "PASS",
+      "completed": 21,
+      "blocked": 0,
+      "note": "VP-003 resolved; durable prior passes retained."
+    },
+    "webkit": {
+      "result": "PASS",
+      "completed": 21,
+      "blocked": 0,
+      "note": "Playwright WebKit 26.6 launched after the supported dependency installation; all 21 manifest observations passed."
+    }
+  },
+  "rootCauses": [
+    {
+      "id": "VP-001",
+      "classification": "VALIDATION_PIPELINE_DEFECT",
+      "blocking": false,
+      "status": "RESOLVED_ACROSS_SUPPORTED_ENGINES",
+      "description": "The lifecycle collector rejected canonical fail-open DEGRADED bootstrap completion even when the motion scene mounted and all subsequent semantic assertions remained available. The same terminal-state predicate now covers the helper and its two inline sibling waits.",
+      "evidence": [
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/chromium-lifecycle.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/chromium-lifecycle-retry.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-lifecycle-attempt-1.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-lifecycle-retry.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-lifecycle-pass.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-life-04-retry.json"
+      ]
+    },
+    {
+      "id": "VP-002",
+      "classification": "VALIDATION_PIPELINE_DEFECT",
+      "blocking": false,
+      "status": "RESOLVED_BY_BOUNDED_PIPELINE_CORRECTION",
+      "affectedObservations": [
+        "FIREFOX-LIFE-03",
+        "FIREFOX-LIFE-04"
+      ],
+      "description": "Firefox correctly selects the registered Projects capacity fallback before creating a horizontal driver, while remaining lifecycle assertions still require driver destruction or driver-failure precedence.",
+      "evidence": [
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-lifecycle-retry.json"
+      ],
+      "resolution": "Firefox now asserts zero driver cleanup when capacity prevents driver ownership and asserts projects-capacity-insufficient precedence for the injected failure scenario.",
+      "remediationEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-vp-002-remediation.json"
+    },
+    {
+      "id": "VP-003",
+      "classification": "VALIDATION_PIPELINE_DEFECT",
+      "blocking": false,
+      "status": "RESOLVED_BY_ASTRA_CAUSAL_DIAGNOSIS",
+      "affectedObservations": [
+        "FIREFOX-ROUTE-01"
+      ],
+      "description": "Public Home uses BrandIntroController, not story-lab bootstrap. The unmanaged server omitted configured transition test mode; the collector sampled before the actual intro readiness signal.",
+      "evidence": [
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-lifecycle-retry.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp003/unmanaged-server-dom.json"
+      ],
+      "attemptHistory": [
+        {
+          "attempt": 1,
+          "outcome": "FAIL",
+          "progress": "Moved the failure from an unlocked-overflow probe to proof that later direct routes may omit the bootstrap owner.",
+          "evidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-vp-003-remediation-attempt-1.json"
+        },
+        {
+          "attempt": 2,
+          "outcome": "FAIL",
+          "progress": "Proved the first direct route can still be covered before the main element exists, so bootstrap synchronization must precede main assertions.",
+          "evidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-vp-003-remediation-attempt-2.json"
+        },
+        {
+          "attempt": 3,
+          "outcome": "FAIL",
+          "progress": "Returned to the original body overflow lock despite conditional pre-main synchronization; cross-owner timing remains unresolved.",
+          "evidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-vp-003-remediation-attempt-3.json"
+        }
+      ],
+      "escalation": {
+        "nextModel": "GPT-6-ASTRA",
+        "nextReasoning": "HIGH",
+        "reason": "Persistent cross-owner Firefox bootstrap/readiness/route timing after bounded causal attempts.",
+        "status": "CLOSED_BY_SUCCESSFUL_ASTRA_VERIFICATION"
+      },
+      "resolution": "Await data-brand-intro-home-state=ready on Home and use Playwright-managed server with configured WFLYER_TRANSITION_TEST_MODE=1; all original route/lock/overflow assertions pass.",
+      "remediationEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp003/managed-observation.json"
+    },
+    {
+      "id": "VP-004",
+      "classification": "VALIDATION_PIPELINE_DEFECT",
+      "blocking": false,
+      "status": "RESOLVED_BY_SUPPORTED_DEPENDENCY_INSTALLATION",
+      "affectedObservations": [
+        "WEBKIT-GEO-01",
+        "WEBKIT-GEO-02",
+        "WEBKIT-GEO-03",
+        "WEBKIT-GEO-04",
+        "WEBKIT-GEO-05",
+        "WEBKIT-GEO-06",
+        "WEBKIT-GEO-07",
+        "WEBKIT-HYD-01",
+        "WEBKIT-HYD-02",
+        "WEBKIT-PC-01",
+        "WEBKIT-PC-02",
+        "WEBKIT-PC-03",
+        "WEBKIT-PC-04",
+        "WEBKIT-PC-05",
+        "WEBKIT-PC-06",
+        "WEBKIT-LIFE-01",
+        "WEBKIT-LIFE-02",
+        "WEBKIT-LIFE-03",
+        "WEBKIT-LIFE-04",
+        "WEBKIT-ROUTE-01",
+        "WEBKIT-BOOT-01"
+      ],
+      "description": "The owner completed Playwright's supported WebKit dependency installation. The repository runtime launched WebKit 26.6, linker inspection found no missing libraries, and all 21 WebKit observations executed.",
+      "evidence": [
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/webkit-core.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/webkit-lifecycle.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/environment.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/install-deps.log",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/runtime-smoke.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-lifecycle-pass.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-life-04-retry.json"
+      ],
+      "environmentCorrectionAttempts": 1,
+      "environmentCorrectionResult": "PASS: supported dependency installation completed; WebKit runtime smoke and 21 manifest observations passed."
+    }
+  ],
+  "invariantResults": {
+    "desktopSingleOrigin": "PASS",
+    "globalOverflow": "PASS",
+    "globalIntersections": "PASS",
+    "projectsCapacity": "PASS",
+    "projectsVisitClearance": "PASS",
+    "responsiveTransitions": "PASS",
+    "hydrationDeterminism": "PASS",
+    "reducedMotionGeometry": "PASS",
+    "deepLinkGeometry": "PASS"
+  },
+  "observations": [
+    {
+      "observationId": "CHROMIUM-GEO-01",
+      "engine": "chromium",
+      "logicalCaseId": "GEO-01",
+      "title": "Stage-1 complete footprints and Home entries 1440x900 capacity-selected",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-GEO-02",
+      "engine": "chromium",
+      "logicalCaseId": "GEO-02",
+      "title": "Stage-1 complete footprints and Home entries 1536x900 capacity-selected",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-GEO-03",
+      "engine": "chromium",
+      "logicalCaseId": "GEO-03",
+      "title": "Stage-1 complete footprints and Home entries 1920x917 capacity-selected",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "CHROMIUM-GEO-04",
+      "engine": "chromium",
+      "logicalCaseId": "GEO-04",
+      "title": "Stage-1 complete footprints and Home entries 1100x640 capacity-selected",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "CHROMIUM-GEO-05",
+      "engine": "chromium",
+      "logicalCaseId": "GEO-05",
+      "title": "Stage-1 complete footprints and Home entries 900x1024 vertical-wide",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-GEO-06",
+      "engine": "chromium",
+      "logicalCaseId": "GEO-06",
+      "title": "Stage-1 complete footprints and Home entries 390x844 vertical-compact",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-GEO-07",
+      "engine": "chromium",
+      "logicalCaseId": "GEO-07",
+      "title": "Stage-1 complete footprints and Home entries 1440x900 static",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-HYD-01",
+      "engine": "chromium",
+      "logicalCaseId": "HYD-01",
+      "title": "keeps semantic allocation, canonical geometry and SVG identical to Node",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-HYD-02",
+      "engine": "chromium",
+      "logicalCaseId": "HYD-02",
+      "title": "matches SSR metadata on the first render and reprojects after hydration",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-PC-01",
+      "engine": "chromium",
+      "logicalCaseId": "PC-01",
+      "title": "interaction probes cannot precede canonical Projects rest-bound reads",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-PC-02",
+      "engine": "chromium",
+      "logicalCaseId": "PC-02",
+      "title": "focused and repeated generations preserve canonical rest Projection inputs",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-PC-03",
+      "engine": "chromium",
+      "logicalCaseId": "PC-03",
+      "title": "complete Projects candidate 1440x900",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-PC-04",
+      "engine": "chromium",
+      "logicalCaseId": "PC-04",
+      "title": "complete Projects candidate 1536x900",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-PC-05",
+      "engine": "chromium",
+      "logicalCaseId": "PC-05",
+      "title": "complete Projects candidate 1920x917",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "CHROMIUM-PC-06",
+      "engine": "chromium",
+      "logicalCaseId": "PC-06",
+      "title": "the registered 1100x640 candidate selects whole-story fallback",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "CHROMIUM-LIFE-01",
+      "engine": "chromium",
+      "logicalCaseId": "LIFE-01",
+      "title": "uses native scroll for the portfolio, exact labels, and keyboard extremes without React frame renders",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-LIFE-02",
+      "engine": "chromium",
+      "logicalCaseId": "LIFE-02",
+      "title": "positions portfolio deep links and retains Phase-4 Back/Forward semantics",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-LIFE-03",
+      "engine": "chromium",
+      "logicalCaseId": "LIFE-03",
+      "title": "preserves the active semantic chapter across capacity and orientation rebuilds",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-LIFE-04",
+      "engine": "chromium",
+      "logicalCaseId": "LIFE-04",
+      "title": "keeps reduced, compact, and driver-failure paths vertical and usable",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "CHROMIUM-ROUTE-01",
+      "engine": "chromium",
+      "logicalCaseId": "ROUTE-01",
+      "title": "every main chapter remains a clean direct deep link",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "CHROMIUM-BOOT-01",
+      "engine": "chromium",
+      "logicalCaseId": "BOOT-01",
+      "title": "reconciles resize during boot and retains the mobile vertical Home origin",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "FIREFOX-GEO-01",
+      "engine": "firefox",
+      "logicalCaseId": "GEO-01",
+      "title": "Stage-1 complete footprints and Home entries 1440x900 capacity-selected",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-GEO-02",
+      "engine": "firefox",
+      "logicalCaseId": "GEO-02",
+      "title": "Stage-1 complete footprints and Home entries 1536x900 capacity-selected",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-GEO-03",
+      "engine": "firefox",
+      "logicalCaseId": "GEO-03",
+      "title": "Stage-1 complete footprints and Home entries 1920x917 capacity-selected",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-GEO-04",
+      "engine": "firefox",
+      "logicalCaseId": "GEO-04",
+      "title": "Stage-1 complete footprints and Home entries 1100x640 capacity-selected",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-GEO-05",
+      "engine": "firefox",
+      "logicalCaseId": "GEO-05",
+      "title": "Stage-1 complete footprints and Home entries 900x1024 vertical-wide",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "FIREFOX-GEO-06",
+      "engine": "firefox",
+      "logicalCaseId": "GEO-06",
+      "title": "Stage-1 complete footprints and Home entries 390x844 vertical-compact",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "FIREFOX-GEO-07",
+      "engine": "firefox",
+      "logicalCaseId": "GEO-07",
+      "title": "Stage-1 complete footprints and Home entries 1440x900 static",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "FIREFOX-HYD-01",
+      "engine": "firefox",
+      "logicalCaseId": "HYD-01",
+      "title": "keeps semantic allocation, canonical geometry and SVG identical to Node",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "FIREFOX-HYD-02",
+      "engine": "firefox",
+      "logicalCaseId": "HYD-02",
+      "title": "matches SSR metadata on the first render and reprojects after hydration",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-PC-01",
+      "engine": "firefox",
+      "logicalCaseId": "PC-01",
+      "title": "interaction probes cannot precede canonical Projects rest-bound reads",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-PC-02",
+      "engine": "firefox",
+      "logicalCaseId": "PC-02",
+      "title": "focused and repeated generations preserve canonical rest Projection inputs",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-PC-03",
+      "engine": "firefox",
+      "logicalCaseId": "PC-03",
+      "title": "complete Projects candidate 1440x900",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-PC-04",
+      "engine": "firefox",
+      "logicalCaseId": "PC-04",
+      "title": "complete Projects candidate 1536x900",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-PC-05",
+      "engine": "firefox",
+      "logicalCaseId": "PC-05",
+      "title": "complete Projects candidate 1920x917",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-PC-06",
+      "engine": "firefox",
+      "logicalCaseId": "PC-06",
+      "title": "the registered 1100x640 candidate selects whole-story fallback",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-LIFE-01",
+      "engine": "firefox",
+      "logicalCaseId": "LIFE-01",
+      "title": "uses native scroll for the portfolio, exact labels, and keyboard extremes without React frame renders",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-LIFE-02",
+      "engine": "firefox",
+      "logicalCaseId": "LIFE-02",
+      "title": "positions portfolio deep links and retains Phase-4 Back/Forward semantics",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true
+    },
+    {
+      "observationId": "FIREFOX-LIFE-03",
+      "engine": "firefox",
+      "logicalCaseId": "LIFE-03",
+      "title": "preserves the active semantic chapter across capacity and orientation rebuilds",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-vp-002-remediation.json"
+    },
+    {
+      "observationId": "FIREFOX-LIFE-04",
+      "engine": "firefox",
+      "logicalCaseId": "LIFE-04",
+      "title": "keeps reduced, compact, and driver-failure paths vertical and usable",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-vp-002-remediation.json"
+    },
+    {
+      "observationId": "FIREFOX-ROUTE-01",
+      "engine": "firefox",
+      "logicalCaseId": "ROUTE-01",
+      "title": "every main chapter remains a clean direct deep link",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp003/managed-observation.json"
+    },
+    {
+      "observationId": "FIREFOX-BOOT-01",
+      "engine": "firefox",
+      "logicalCaseId": "BOOT-01",
+      "title": "reconciles resize during boot and retains the mobile vertical Home origin",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false
+    },
+    {
+      "observationId": "WEBKIT-GEO-01",
+      "engine": "webkit",
+      "logicalCaseId": "GEO-01",
+      "title": "Stage-1 complete footprints and Home entries 1440x900 capacity-selected",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-GEO-02",
+      "engine": "webkit",
+      "logicalCaseId": "GEO-02",
+      "title": "Stage-1 complete footprints and Home entries 1536x900 capacity-selected",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-GEO-03",
+      "engine": "webkit",
+      "logicalCaseId": "GEO-03",
+      "title": "Stage-1 complete footprints and Home entries 1920x917 capacity-selected",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-GEO-04",
+      "engine": "webkit",
+      "logicalCaseId": "GEO-04",
+      "title": "Stage-1 complete footprints and Home entries 1100x640 capacity-selected",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-GEO-05",
+      "engine": "webkit",
+      "logicalCaseId": "GEO-05",
+      "title": "Stage-1 complete footprints and Home entries 900x1024 vertical-wide",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-GEO-06",
+      "engine": "webkit",
+      "logicalCaseId": "GEO-06",
+      "title": "Stage-1 complete footprints and Home entries 390x844 vertical-compact",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-GEO-07",
+      "engine": "webkit",
+      "logicalCaseId": "GEO-07",
+      "title": "Stage-1 complete footprints and Home entries 1440x900 static",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-HYD-01",
+      "engine": "webkit",
+      "logicalCaseId": "HYD-01",
+      "title": "keeps semantic allocation, canonical geometry and SVG identical to Node",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-HYD-02",
+      "engine": "webkit",
+      "logicalCaseId": "HYD-02",
+      "title": "matches SSR metadata on the first render and reprojects after hydration",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-PC-01",
+      "engine": "webkit",
+      "logicalCaseId": "PC-01",
+      "title": "interaction probes cannot precede canonical Projects rest-bound reads",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-PC-02",
+      "engine": "webkit",
+      "logicalCaseId": "PC-02",
+      "title": "focused and repeated generations preserve canonical rest Projection inputs",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-PC-03",
+      "engine": "webkit",
+      "logicalCaseId": "PC-03",
+      "title": "complete Projects candidate 1440x900",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-PC-04",
+      "engine": "webkit",
+      "logicalCaseId": "PC-04",
+      "title": "complete Projects candidate 1536x900",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-PC-05",
+      "engine": "webkit",
+      "logicalCaseId": "PC-05",
+      "title": "complete Projects candidate 1920x917",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-PC-06",
+      "engine": "webkit",
+      "logicalCaseId": "PC-06",
+      "title": "the registered 1100x640 candidate selects whole-story fallback",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-LIFE-01",
+      "engine": "webkit",
+      "logicalCaseId": "LIFE-01",
+      "title": "uses native scroll for the portfolio, exact labels, and keyboard extremes without React frame renders",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-lifecycle-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-LIFE-02",
+      "engine": "webkit",
+      "logicalCaseId": "LIFE-02",
+      "title": "positions portfolio deep links and retains Phase-4 Back/Forward semantics",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-lifecycle-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-LIFE-03",
+      "engine": "webkit",
+      "logicalCaseId": "LIFE-03",
+      "title": "preserves the active semantic chapter across capacity and orientation rebuilds",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-lifecycle-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-LIFE-04",
+      "engine": "webkit",
+      "logicalCaseId": "LIFE-04",
+      "title": "keeps reduced, compact, and driver-failure paths vertical and usable",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": true,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-life-04-retry.json"
+    },
+    {
+      "observationId": "WEBKIT-ROUTE-01",
+      "engine": "webkit",
+      "logicalCaseId": "ROUTE-01",
+      "title": "every main chapter remains a clean direct deep link",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-lifecycle-pass.json"
+    },
+    {
+      "observationId": "WEBKIT-BOOT-01",
+      "engine": "webkit",
+      "logicalCaseId": "BOOT-01",
+      "title": "reconciles resize during boot and retains the mobile vertical Home origin",
+      "status": "PASS",
+      "failureClass": null,
+      "rootCauseId": null,
+      "safeFallback": false,
+      "completionEvidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-lifecycle-pass.json"
+    }
+  ],
+  "rawEvidenceDirectory": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data",
+  "scopeStatement": "No product geometry repair, GSAP work, Assembly work, refreeze, Human Geometry Approval, commit, push, or deployment was performed.",
+  "finalValidation": {
+    "focusedLintAfterHarnessCorrection": "PASS",
+    "typecheckAfterHarnessCorrection": "PASS",
+    "openspecStrict": "PASS",
+    "structuredJson": {
+      "result": "PASS",
+      "artifacts": 20
+    },
+    "phase9Integrity": {
+      "result": "PASS",
+      "manifestSealPairs": 4
+    },
+    "graphifyUpdate": "PASS",
+    "gitDiffCheck": {
+      "full": "PREEXISTING_UNRELATED_FAILURE",
+      "finding": ".env.example line 9 trailing whitespace/new blank line at EOF",
+      "scopedExcludingEnvExample": "PASS"
+    }
+  },
+  "remediationHistory": [
+    {
+      "rootCauseId": "VP-002",
+      "result": "PASS",
+      "affectedObservations": [
+        "FIREFOX-LIFE-03",
+        "FIREFOX-LIFE-04"
+      ],
+      "evidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-vp-002-remediation.json"
+    },
+    {
+      "rootCauseId": "VP-003",
+      "result": "ESCALATED",
+      "affectedObservations": [
+        "FIREFOX-ROUTE-01"
+      ],
+      "evidence": [
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-vp-003-remediation-attempt-1.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-vp-003-remediation-attempt-2.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/firefox-vp-003-remediation-attempt-3.json"
+      ]
+    },
+    {
+      "rootCauseId": "VP-003",
+      "result": "PASS",
+      "affectedObservations": [
+        "FIREFOX-ROUTE-01"
+      ],
+      "evidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp003/managed-observation.json"
+    },
+    {
+      "rootCauseId": "VP-004",
+      "result": "BLOCKED_SYSTEM_AUTHENTICATION",
+      "affectedObservations": [
+        "WEBKIT-GEO-01",
+        "WEBKIT-GEO-02",
+        "WEBKIT-GEO-03",
+        "WEBKIT-GEO-04",
+        "WEBKIT-GEO-05",
+        "WEBKIT-GEO-06",
+        "WEBKIT-GEO-07",
+        "WEBKIT-HYD-01",
+        "WEBKIT-HYD-02",
+        "WEBKIT-PC-01",
+        "WEBKIT-PC-02",
+        "WEBKIT-PC-03",
+        "WEBKIT-PC-04",
+        "WEBKIT-PC-05",
+        "WEBKIT-PC-06",
+        "WEBKIT-LIFE-01",
+        "WEBKIT-LIFE-02",
+        "WEBKIT-LIFE-03",
+        "WEBKIT-LIFE-04",
+        "WEBKIT-ROUTE-01",
+        "WEBKIT-BOOT-01"
+      ],
+      "evidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/environment.json"
+    },
+    {
+      "rootCauseId": "VP-001",
+      "result": "PASS",
+      "affectedObservations": [
+        "WEBKIT-LIFE-04"
+      ],
+      "evidence": [
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-lifecycle-pass.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-life-04-retry.json"
+      ],
+      "note": "Applied the already-approved REVEALED|DEGRADED terminal predicate to two missed inline sibling waits; the focused retry passed."
+    },
+    {
+      "rootCauseId": "VP-004",
+      "result": "PASS",
+      "affectedObservations": [
+        "WEBKIT-GEO-01",
+        "WEBKIT-GEO-02",
+        "WEBKIT-GEO-03",
+        "WEBKIT-GEO-04",
+        "WEBKIT-GEO-05",
+        "WEBKIT-GEO-06",
+        "WEBKIT-GEO-07",
+        "WEBKIT-HYD-01",
+        "WEBKIT-HYD-02",
+        "WEBKIT-PC-01",
+        "WEBKIT-PC-02",
+        "WEBKIT-PC-03",
+        "WEBKIT-PC-04",
+        "WEBKIT-PC-05",
+        "WEBKIT-PC-06",
+        "WEBKIT-LIFE-01",
+        "WEBKIT-LIFE-02",
+        "WEBKIT-LIFE-03",
+        "WEBKIT-LIFE-04",
+        "WEBKIT-ROUTE-01",
+        "WEBKIT-BOOT-01"
+      ],
+      "evidence": [
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/runtime-smoke.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-core-pass.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-lifecycle-pass.json",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-portfolio-geometry-validation-data/astra-vp004/webkit-life-04-retry.json"
+      ]
+    }
+  ],
+  "routing": {
+    "status": "STOP_HUMAN_GEOMETRY_APPROVAL",
+    "nextAction": "Automated Stage-1 portfolio geometry validation is complete. Stop at task 5.6 for explicit Human Geometry Approval.",
+    "modelEscalationRequired": false,
+    "productPatchingAuthorized": false
+  },
+  "accountingDefinition": "Pending means not durably completed; infrastructureBlocked is a subset of pending, not an additional set. Final accounting: 63 = 63 + 0.",
+  "continuationValidation": {
+    "webkitRuntimeSmoke": "PASS: WebKit 26.6",
+    "webkitObservations": "PASS: 21/21",
+    "typecheck": "PASS",
+    "focusedLint": "PASS",
+    "activeOpenSpecStrict": "PASS",
+    "graphifyUpdate": "PASS",
+    "frozenHistory": "PRESERVED; prior integrity results retained, not rerun",
+    "fullMatrixRerun": false,
+    "productChanges": false,
+    "structuredAccounting": "PASS: 63 = 63 + 0; pending and infrastructure-blocked are zero",
+    "rawJsonArtifacts": {
+      "result": "PASS",
+      "count": 20
+    },
+    "handoffYaml": "PASS",
+    "scopedGitDiffCheck": "PASS",
+    "fullGitDiffCheck": "PREEXISTING_UNRELATED_FAILURE: .env.example line 9"
+  }
+}

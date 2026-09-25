@@ -1,0 +1,23 @@
+{
+  "runtimeImport": false,
+  "location": "isolated /tmp workspace; these files are reproducibility artifacts only",
+  "sourceFiles": {
+    "prepare-primary.py": "f315e6c4427e406423d8164d89fe48f0c3e9f744bfa3138333d98a638685ab60",
+    "lifecycle.mjs": "3f6f462d6c003f400117e23f866d26c860675c57da67c1efa112e221346a9d71",
+    "cluster-raw.py": "2db2005f9f9fe3635ef08df1f3c781e0e70d32e71e9abf4336a1e8e237884df5",
+    "collect.mjs": "6e09d6f3ec022c888c42a7fefb1334e9793a1e7a2519abfffae217e15199a2b0",
+    "shared-probe.mjs": "89994db128fa8803bbe240761536f7e6e96ddbce09b650ff3e265104dee71599",
+    "check-ink.mjs": "a15f2b07b044731509e96aa89efdf697b7c379aef60419839be09edfc639ed15",
+    "queue-configurations-corrected.py": "bbc8b08bdebadeb41fa0aac449963edbaff2cb80feaaff960e45f3f84f0e7d2d",
+    "coverage.py": "8b2a57f0ea7bf277d5a69865dd4614908103b4e6a94d4b99b071b116ac3916a9",
+    "queue-tail.py": "53c6a90df9a19b2fffadea62587606fad8da90aa6c6849093e8edeed8b0bc2b4",
+    "compare-access.py": "200e944bf84cca1dfbd3febeab7e2e984922777fda086a655e5403bcf2d7046c",
+    "queue-corrected.py": "b9dd05e750aeb0362e3e46de01db3b8ea82880faf1b420d37715be4e73425906",
+    "queue-configurations.py": "69a4c8c726cc14c6f9b09e99123f1ecdcca26e6a7d3cf5078846ebb174283dcf",
+    "queue.py": "6a5d217eba32020324506e585f02a5bbbca6a8aa857d4014f86d08d20b10c2de"
+  },
+  "originalValidatorsModified": false,
+  "dependencyInstall": false,
+  "historicalSourceRewrite": false,
+  "supersededAttempt": "../attempt-1-tooling"
+}

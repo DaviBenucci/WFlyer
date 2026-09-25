@@ -1,0 +1,35 @@
+{
+  "demoCallToAction": {
+    "classification": "CLEAR",
+    "minimumClearance": 30.757,
+    "minimumClearanceRounded": 30.76,
+    "nearest": {
+      "id": "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:canonical:55",
+      "role": "staff-line"
+    },
+    "reason": "demo-call-to-action",
+    "sceneId": "application-demo"
+  },
+  "demonstration": {
+    "classification": "CLEAR",
+    "minimumClearance": 12.638,
+    "minimumClearanceRounded": 12.64,
+    "nearest": {
+      "id": "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:canonical:55",
+      "role": "staff-line"
+    },
+    "reason": "application-tablet-demo",
+    "sceneId": "application-demo"
+  },
+  "launch": {
+    "classification": "CLEAR",
+    "minimumClearance": 23.637,
+    "minimumClearanceRounded": 23.64,
+    "nearest": {
+      "id": "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:canonical:55",
+      "role": "staff-line"
+    },
+    "reason": "access-action",
+    "sceneId": "application-access"
+  }
+}

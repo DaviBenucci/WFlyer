@@ -1,0 +1,14 @@
+{
+  "kind": "controlled third-party script/callback and API fixture; real unmodified React component",
+  "scriptHash": "6420df93a5f2519a1d7d8a3366a3a61cde85b4836ded07c1826cef17d9d0127e",
+  "nonVisibleOccupiedWidget": 0,
+  "visible": "live public interactive test key 3x00000000000000000000FF; unchanged production render options; no mock widget maximum claim",
+  "visibleSizingAuthority": "https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/widget-configurations/",
+  "testingAuthority": "https://developers.cloudflare.com/turnstile/troubleshooting/testing/",
+  "flexible": {
+    "minimumWidth": 300,
+    "height": 65
+  },
+  "unknownFocusMaximum": "must be measured from actual interactive iframe; absent/uncontrolled stays UNCLASSIFIED",
+  "tokenPersistence": false
+}

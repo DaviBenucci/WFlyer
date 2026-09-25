@@ -1,0 +1,84 @@
+{
+  "confirmedRoots": [
+    {
+      "id": "ASM-CR-001",
+      "classification": "INHERITED_CRITICAL",
+      "title": "Access reservation is smaller than the complete PRELAUNCH scene/form envelope.",
+      "rootSignature": "application-access/fixed-reservation-versus-state-complete-prelaunch-form",
+      "owner": "Application scene/layout and review reservation owners; Projection consumes the approved envelope",
+      "severity": "blocking required content and clearance invariant on development review surfaces",
+      "lineage": "Reuse the completed 62/110/118 same-input classification and ASM-CR-001-O01..O06. New paired observations extend only the declared state/profile matrix. Horizontal overflow is separately unresolved.",
+      "evidence": ["../stage-1-access-overflow-classification.md", "access-paired-comparisons.json", "access-key.jsonl", "../stage-1-inherited-audit-manifest.json"],
+      "minimumRepairEnvelope": "Only the already approved ADR-051/ASM-IMP-DEC-015 deterministic Access scene reservation and demonstrated minimum local entry/exit support, after batch disposition.",
+      "fallback": "A usable alternate mode does not waive required Access fit or qualify the failing candidate.",
+      "publicImpact": "Public root cutover is not complete; no public submission loss or real provider delivery impact is asserted.",
+      "verificationState": "Confirmed inherited root; full maximum envelope and all equivalent pairs are not qualified; not repaired."
+    },
+    {
+      "id": "ASM-AUD-001",
+      "classification": "VALIDATION_PIPELINE_DEFECT",
+      "currentRegression": true,
+      "title": "Production Projects measurement reads card rectangles during the return transition started by its own probe.",
+      "rootSignature": "measureStoryScoreScenes/interaction-probe-before-card-read/reverse-transition-contamination",
+      "owner": "src/components/story-score/measurement.ts and Projects candidate measurement lifecycle",
+      "severity": "blocking current candidate qualification",
+      "lineage": "Previously completed classification C proves bad current input and the scratch read-before-probe counterfactual on saved equivalent input. Reused, not repeated. Current source pins are unchanged. Origin is a current regression; the taxonomy entry is a pipeline defect, not a new shelf geometry root.",
+      "evidence": ["../stage-1-projects-intersection-classification.md", "../stage-1-projects-intersection-classification-diagnostics.json", "shared-runtime.jsonl", "primary-current.jsonl"],
+      "minimumRepairEnvelope": "After owner batch disposition, bounded measurement read-order/restoration/repeat-stability correction under ASM-IMP-DEC-012(C–F), with original validators and geometry unchanged.",
+      "fallback": "Current policy can select vertical mode; this is not the required positive horizontal candidate qualification.",
+      "verificationState": "Causal proof retained; no production-pipeline repair during audit. Associated mode mismatch assertions may have other causes and remain individually raw."
+    },
+    {
+      "id": "ASM-AUD-002",
+      "classification": "VALIDATION_PIPELINE_DEFECT",
+      "title": "Static audit instructions require thirteen successor scenes on the retained public root route.",
+      "rootSignature": "staticAccessibility/route-root-versus-pre-cutover-v2-scene-contract",
+      "owner": "Audit manifest/static collector contract; product public cutover remains owner-gated",
+      "severity": "blocking qualification of the declared static sequence",
+      "lineage": "Manifest route is /. The canonical handoff explicitly retains legacy / and defers public cutover. src/app/page.tsx renders legacy Home; persisted Chromium and WebKit static records show the actual page and missing requested successor scenes. This is not evidence that existing public content was deleted.",
+      "evidence": ["static.jsonl", "../../../../docs/canonical-v2/06-migration/CURRENT_HANDOFF.md", "../../../../src/app/page.tsx", "../stage-1-inherited-audit-manifest.json"],
+      "minimumRepairEnvelope": "Owner disposition must reconcile the declared static surface contract. Do not substitute another route, expand coverage or perform public cutover during this audit.",
+      "fallback": "Actual legacy public content was recorded; this does not satisfy the contradictory thirteen-scene obligation.",
+      "verificationState": "Confirmed source/manifest mismatch, no manifest or product mutation."
+    },
+    {
+      "id": "ASM-AUD-003",
+      "classification": "VALIDATION_PIPELINE_DEFECT",
+      "title": "Sequence harness has unbounded browser promises and shutdown can continue into dependent records.",
+      "rootSignature": "audit-sequence/await-without-outer-deadline/termination-cascade",
+      "owner": "Isolated audit tooling only",
+      "severity": "blocking affected evidence acquisition and serial provenance",
+      "lineage": "The resumed Firefox no-JS sequence persisted no progress for more than eight minutes. SIGTERM did not stop its Node process; browser termination generated closed-browser sequence records and one overlap. The one bounded isolation/watchdog correction did not complete the affected current WebKit lifecycle sequence within 120 seconds; the related subset is blocked without another speculative correction. Actual hidden-tab limitations are separate unresolved observation limitations, not proof of the same causal harness bug.",
+      "evidence": ["continuation-harness-boundary.md", "continuation-jobs.jsonl", "infrastructure-blocked.jsonl", "lifecycle.jsonl", "static.jsonl"],
+      "minimumRepairEnvelope": "Any further harness recovery requires owner disposition for the blocked subset; preserve original records and observation keys. No product/runtime repair follows from harness failure.",
+      "fallback": "Independent Access, static and constructor observations continue; missing sequence coverage remains explicit.",
+      "verificationState": "One bounded orchestration correction consumed; no further correction for this failure family."
+    }
+  ],
+  "unclassifiedClusters": [
+    {"id":"UNCLASSIFIED-ACCESS-INLINE","title":"Compact Access X overflow and four WebKit verification-state height deltas.","limitation":"Preserve X5 and larger observed widths without merging them automatically into ASM-CR-001. The ±27px paired deltas localize to one button line-height but do not establish changed product source or full effective-font/input equivalence; no regression waiver or new root ID."},
+    {"id":"UNCLASSIFIED-INK-CLEARANCE","title":"Full visible music/content or focus-envelope clearance failures.","limitation":"Raw full-segment/event-envelope measurements and conservative bounds remain separate. Root owners and actual-mode lineage are not established for every collision; no blanket geometry repair envelope."},
+    {"id":"UNCLASSIFIED-RUNTIME-READINESS","title":"Initialization, script parsing, router and readiness failures in current observations.","limitation":"Failures remain raw. Controlled provider failures, development report-only CSP output, product failures and interrupted downstream states cannot be conflated or automatically called current regressions."},
+    {"id":"UNCLASSIFIED-EQUIVALENCE","title":"Required historical/current pairs or subcontracts without qualified equivalent input.","limitation":"Actual-mode differences, missing observed fingerprints/fonts/state, first-client proof gaps and unavailable shared records block qualification. Absent historical successor-only telemetry is not a product defect."},
+    {"id":"UNCLASSIFIED-TRANSIENT-ENVELOPE","title":"VALIDATING source-derived bounds not proven in every declared slot.","limitation":"No DOM frame is fabricated. Proven source bounds are accounted separately; unproved remaining source obligations remain incomplete."},
+    {"id":"UNCLASSIFIED-PROVIDER-ENVELOPE","title":"Visible verification occupied/focus envelope is not demonstrated in every declared slot.","limitation":"A public key, placeholder, 44px minimum or documented nominal iframe height is not proof of the actual supported interaction maximum. No real registrations or provider email are sent."},
+    {"id":"UNCLASSIFIED-LIFECYCLE","title":"Required hide/resume, interactions, restoration and first-client substeps remain incomplete or unqualified.","limitation":"Record actual hidden-tab provenance and partial sequence failures; no synthetic property overrides. The overlap and blocked families cannot count as serial successful sequences."},
+    {"id":"UNCLASSIFIED-COMPACT-LAYOUT","title":"Compact header height, card containment and header/content separation assertions fail.","limitation":"Current raw assertions are preserved. Shared header/form source is unchanged versus frozen Phase 9, but complete equal-input historical geometry and cause are not established for every occurrence."},
+    {"id":"UNCLASSIFIED-PRIMARY-ASSERTIONS","title":"Remaining primary assertion signatures require causal attribution.","limitation":"Repeated poll failures are deduplicated by observation key, not counted as roots. Missing dependent assertions are not PASS; full-precision diagnostic differences are not automatically ADR-046 canonical-coordinate failures."},
+    {"id":"UNCLASSIFIED-GEOMETRY-LINEAGE","title":"Frozen-source and current complete staff/center geometry has unresolved causal grouping.","limitation":"Use full original vertices and identical saved constructor inputs. Historical crossings, repaired current output and policy-selected fallback are separate facts. Existing ASM-SI/ASM-PC identities are not duplicated or renumbered without proven lineage."}
+  ],
+  "outOfAuditScope": [],
+  "limitations": [
+    "No product/runtime, original validator, historical source, dependency, manifest or approval-gate edit was made in this continuation. Audit tooling and derived records only.",
+    "The manifest hash remains 78c04b22d05831a8581b06723bfa12abbde8132ea104f477097024ebf68883a4; branch and HEAD remain develop/site-institucional / 40e6ae1a8996c53ed2ec372c47f16bc073d6cee9.",
+    "Historical replay uses frozen Phase-9 source with the installed current toolchain and matched webpack servers, not a recreated historical dependency/browser installation or a historical aggregate PASS.",
+    "The original-file fingerprint has one previously recorded external addition to docs/.ai/AI_MODEL_ROUTING_POLICY_v1.1.0.md. Its old and new hashes and exact added text remain in external-routing-policy-addition.json; no attribution to an editor is invented.",
+    "Original primary and guard runs are reused. Repeated assertion polls, screenshot side effects omitted by prior scratch tooling, source-only guards and constructor support are not extra audit cases.",
+    "One WebKit lifecycle key has two overlapping raw records after SIGTERM-resistant shutdown. Both are retained, counted as one logical obligation and excluded from qualified serial evidence. Empty Firefox sequence error records reflect interruption, not observed product behavior.",
+    "Access rows from earlier collector versions can contain cumulative runtime logs. Repeated CSP/provider messages do not multiply root counts. Per-observation scope and original attempt provenance are retained.",
+    "All 24 shared pure mode/engine/source comparisons retained exact six-decimal SVG equality where recorded. Full-precision internal model differences remain raw; existing ADR-046 is not reopened by diagnostic floating-point drift.",
+    "No assertion, threshold, negative fixture, 12px/full-ink/global-zero invariant or required positive horizontal qualification is waived. SAFE_FALLBACK never turns an invalid candidate into PASS.",
+    "UNCLASSIFIED counters denote unresolved clusters, not proved unique causal defects. The four confirmed roots are a lower bound, and the complete batch remains blocked until gaps and classification are dispositioned.",
+    "No Stage 2+, refreeze, new motion, final acceptance capture/matrix, commit, push, deploy, archive or Human Geometry Approval was performed."
+  ]
+}

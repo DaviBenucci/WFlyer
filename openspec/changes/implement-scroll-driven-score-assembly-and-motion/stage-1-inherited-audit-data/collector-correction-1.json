@@ -1,0 +1,12 @@
+{
+  "time": "2026-09-14T11:32:43.815088+00:00",
+  "root": "audit-svgmatrix-serialization",
+  "attempt": 1,
+  "evidence": [
+    "access-key-attempt-1.jsonl",
+    "lifecycle-attempt-1.jsonl"
+  ],
+  "diagnosis": "getScreenCTM returns legacy SVGMatrix without toJSON in these installed engines; this is collector failure, not product failure",
+  "change": "Serialize the six affine numeric fields a,b,c,d,e,f explicitly. No predicate/threshold or application source change.",
+  "rerun": "Same affected manifest slots only; first pilot from declared profiles, preserve old attempt"
+}

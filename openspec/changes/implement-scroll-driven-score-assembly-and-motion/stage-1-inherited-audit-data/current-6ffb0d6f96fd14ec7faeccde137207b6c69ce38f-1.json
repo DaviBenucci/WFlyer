@@ -1,0 +1,2923 @@
+{
+  "state": {
+    "width": 1536,
+    "height": 900,
+    "mode": "capacity-selected"
+  },
+  "branches": [
+    {
+      "branch": "application",
+      "safety": {
+        "staffSpace": 12,
+        "shelves": [
+          {
+            "zoneId": "notation:home:1",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.170088,
+            "endT": 0.174473,
+            "startDistance": 0,
+            "endDistance": 20.734469,
+            "length": 20.734469,
+            "maximumTangentAngleDeg": 11.26308,
+            "tangentVariationDeg": 5.978351,
+            "startPoint": {
+              "x": 9034.744286,
+              "y": 615.025563
+            },
+            "endPoint": {
+              "x": 9055.251629,
+              "y": 618.017538
+            }
+          },
+          {
+            "zoneId": "notation:home:1",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.174473,
+            "endT": 0.183289,
+            "startDistance": 20.734469,
+            "endDistance": 62.148057,
+            "length": 41.413588,
+            "maximumTangentAngleDeg": 9.373733,
+            "tangentVariationDeg": 5.948251,
+            "startPoint": {
+              "x": 9055.251629,
+              "y": 618.017538
+            },
+            "endPoint": {
+              "x": 9096.479933,
+              "y": 621.727295
+            }
+          },
+          {
+            "zoneId": "notation:home:1",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.183289,
+            "endT": 0.184751,
+            "startDistance": 62.148057,
+            "endDistance": 69.096988,
+            "length": 6.94893,
+            "maximumTangentAngleDeg": 11.26308,
+            "tangentVariationDeg": 1.889347,
+            "startPoint": {
+              "x": 9096.479933,
+              "y": 621.727295
+            },
+            "endPoint": {
+              "x": 9103.315714,
+              "y": 622.974437
+            }
+          },
+          {
+            "zoneId": "notation:application-overview:2",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.255132,
+            "endT": 0.269795,
+            "startDistance": 0,
+            "endDistance": 119.091411,
+            "length": 119.091411,
+            "maximumTangentAngleDeg": 6.55805,
+            "tangentVariationDeg": 4.579141,
+            "startPoint": {
+              "x": 8360.137371,
+              "y": 795.025563
+            },
+            "endPoint": {
+              "x": 8478.924229,
+              "y": 802.974437
+            }
+          },
+          {
+            "zoneId": "notation:application-how-it-works:3",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.653959,
+            "endT": 0.656846,
+            "startDistance": 0,
+            "endDistance": 6.894636,
+            "length": 6.894636,
+            "maximumTangentAngleDeg": 13.412211,
+            "tangentVariationDeg": 5.821158,
+            "startPoint": {
+              "x": 4234.277143,
+              "y": 771.06223
+            },
+            "endPoint": {
+              "x": 4241.027143,
+              "y": 772.451438
+            }
+          },
+          {
+            "zoneId": "notation:application-how-it-works:3",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.656846,
+            "endT": 0.658449,
+            "startDistance": 6.894636,
+            "endDistance": 10.657401,
+            "length": 3.762764,
+            "maximumTangentAngleDeg": 7.591053,
+            "tangentVariationDeg": 5.960553,
+            "startPoint": {
+              "x": 4241.027143,
+              "y": 772.451438
+            },
+            "endPoint": {
+              "x": 4244.777143,
+              "y": 772.739639
+            }
+          },
+          {
+            "zoneId": "notation:application-how-it-works:3",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.658449,
+            "endT": 0.665093,
+            "startDistance": 10.657401,
+            "endDistance": 26.199992,
+            "length": 15.542591,
+            "maximumTangentAngleDeg": 3.571272,
+            "tangentVariationDeg": 5.902293,
+            "startPoint": {
+              "x": 4244.777143,
+              "y": 772.739639
+            },
+            "endPoint": {
+              "x": 4260.312857,
+              "y": 772.583203
+            }
+          },
+          {
+            "zoneId": "notation:application-how-it-works:3",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.665093,
+            "endT": 0.66711,
+            "startDistance": 26.199992,
+            "endDistance": 30.947558,
+            "length": 4.747566,
+            "maximumTangentAngleDeg": 9.494797,
+            "tangentVariationDeg": 5.923525,
+            "startPoint": {
+              "x": 4260.312857,
+              "y": 772.583203
+            },
+            "endPoint": {
+              "x": 4265.027143,
+              "y": 773.125729
+            }
+          },
+          {
+            "zoneId": "notation:application-how-it-works:3",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.66711,
+            "endT": 0.668622,
+            "startDistance": 30.947558,
+            "endDistance": 34.55627,
+            "length": 3.608712,
+            "maximumTangentAngleDeg": 13.380975,
+            "tangentVariationDeg": 3.886178,
+            "startPoint": {
+              "x": 4265.027143,
+              "y": 773.125729
+            },
+            "endPoint": {
+              "x": 4268.562857,
+              "y": 773.844437
+            }
+          },
+          {
+            "zoneId": "notation:application-benefits:4",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.686217,
+            "endT": 0.70088,
+            "startDistance": 0,
+            "endDistance": 372.307374,
+            "length": 372.307374,
+            "maximumTangentAngleDeg": 2.472874,
+            "tangentVariationDeg": 1.847793,
+            "startPoint": {
+              "x": 4378.661714,
+              "y": 772.495563
+            },
+            "endPoint": {
+              "x": 4750.870286,
+              "y": 780.444437
+            }
+          },
+          {
+            "zoneId": "notation:application-demo:5",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.812317,
+            "endT": 0.815697,
+            "startDistance": 0,
+            "endDistance": 12.607235,
+            "length": 12.607235,
+            "maximumTangentAngleDeg": 14.300797,
+            "tangentVariationDeg": 5.922185,
+            "startPoint": {
+              "x": 2290.934286,
+              "y": 777.025563
+            },
+            "endPoint": {
+              "x": 2303.284085,
+              "y": 779.53185
+            }
+          },
+          {
+            "zoneId": "notation:application-demo:5",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.815697,
+            "endT": 0.82465,
+            "startDistance": 12.607235,
+            "endDistance": 45.525053,
+            "length": 32.917818,
+            "maximumTangentAngleDeg": 10.371062,
+            "tangentVariationDeg": 5.989773,
+            "startPoint": {
+              "x": 2303.284085,
+              "y": 779.53185
+            },
+            "endPoint": {
+              "x": 2335.994366,
+              "y": 783.101663
+            }
+          },
+          {
+            "zoneId": "notation:application-demo:5",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.82465,
+            "endT": 0.826979,
+            "startDistance": 45.525053,
+            "endDistance": 54.24171,
+            "length": 8.716657,
+            "maximumTangentAngleDeg": 14.300797,
+            "tangentVariationDeg": 3.929735,
+            "startPoint": {
+              "x": 2335.994366,
+              "y": 783.101663
+            },
+            "endPoint": {
+              "x": 2344.505714,
+              "y": 784.974437
+            }
+          },
+          {
+            "zoneId": "notation:application-access:6",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.897361,
+            "endT": 0.90176,
+            "startDistance": 0,
+            "endDistance": 20.798827,
+            "length": 20.798827,
+            "maximumTangentAngleDeg": 11.26308,
+            "tangentVariationDeg": 5.993781,
+            "startPoint": {
+              "x": 1161.824286,
+              "y": 783.435563
+            },
+            "endPoint": {
+              "x": 1182.395714,
+              "y": 786.433457
+            }
+          },
+          {
+            "zoneId": "notation:application-access:6",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.90176,
+            "endT": 0.910557,
+            "startDistance": 20.798827,
+            "endDistance": 62.126406,
+            "length": 41.327579,
+            "maximumTangentAngleDeg": 9.367449,
+            "tangentVariationDeg": 5.942091,
+            "startPoint": {
+              "x": 1182.395714,
+              "y": 786.433457
+            },
+            "endPoint": {
+              "x": 1223.538571,
+              "y": 790.13377
+            }
+          },
+          {
+            "zoneId": "notation:application-access:6",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.910557,
+            "endT": 0.912023,
+            "startDistance": 62.126406,
+            "endDistance": 69.096987,
+            "length": 6.970581,
+            "maximumTangentAngleDeg": 11.26308,
+            "tangentVariationDeg": 1.895631,
+            "startPoint": {
+              "x": 1223.538571,
+              "y": 790.13377
+            },
+            "endPoint": {
+              "x": 1230.395714,
+              "y": 791.384437
+            }
+          },
+          {
+            "zoneId": "notation:application-terminal:7",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.982405,
+            "endT": 1,
+            "startDistance": 0,
+            "endDistance": 493.714286,
+            "length": 493.714286,
+            "maximumTangentAngleDeg": 0,
+            "tangentVariationDeg": 0,
+            "startPoint": {
+              "x": 214.285714,
+              "y": 828.52
+            },
+            "endPoint": {
+              "x": 708,
+              "y": 828.52
+            }
+          }
+        ],
+        "groups": [
+          {
+            "slotId": "home:primary",
+            "zoneId": "notation:application-overview:2",
+            "shelfIndex": 3,
+            "originalZoneId": "notation:home:1",
+            "relocated": true,
+            "eventCount": 2,
+            "footprintStartT": 0.259643,
+            "footprintEndT": 0.265158,
+            "marginStartT": 0.257426,
+            "marginEndT": 0.267375,
+            "maximumTangentAngleDeg": 4.748529,
+            "tangentVariationDeg": 2.769589,
+            "clearanceBefore": 36.680929,
+            "clearanceAfter": 37.701752,
+            "footprintWidth": 44.70873,
+            "footprintBounds": {
+              "left": 8396.685208,
+              "right": 8441.35691,
+              "top": 759.877677,
+              "bottom": 823.254967
+            }
+          },
+          {
+            "slotId": "application-overview:primary",
+            "zoneId": "notation:application-benefits:4",
+            "shelfIndex": 9,
+            "originalZoneId": "notation:application-overview:2",
+            "relocated": true,
+            "eventCount": 1,
+            "footprintStartT": 0.687416,
+            "footprintEndT": 0.688036,
+            "marginStartT": 0.686651,
+            "marginEndT": 0.688746,
+            "maximumTangentAngleDeg": 2.236418,
+            "tangentVariationDeg": 0.794251,
+            "clearanceBefore": 27.614409,
+            "clearanceAfter": 329.378333,
+            "footprintWidth": 15.314632,
+            "footprintBounds": {
+              "left": 4406.256074,
+              "right": 4421.563485,
+              "top": 735.278043,
+              "bottom": 785.415599
+            }
+          },
+          {
+            "slotId": "application-overview:reserved",
+            "zoneId": "notation:application-benefits:4",
+            "shelfIndex": 9,
+            "originalZoneId": "notation:application-overview:2",
+            "relocated": true,
+            "eventCount": 2,
+            "footprintStartT": 0.689507,
+            "footprintEndT": 0.69107,
+            "marginStartT": 0.688806,
+            "marginEndT": 0.691771,
+            "maximumTangentAngleDeg": 1.424331,
+            "tangentVariationDeg": 0.663788,
+            "clearanceBefore": 80.455119,
+            "clearanceAfter": 251.757741,
+            "footprintWidth": 40.094515,
+            "footprintBounds": {
+              "left": 4459.077814,
+              "right": 4499.165672,
+              "top": 730.661299,
+              "bottom": 813.987709
+            }
+          },
+          {
+            "slotId": "application-how-it-works:primary",
+            "zoneId": "notation:application-benefits:4",
+            "shelfIndex": 9,
+            "originalZoneId": "notation:application-how-it-works:3",
+            "relocated": true,
+            "eventCount": 1,
+            "footprintStartT": 0.692536,
+            "footprintEndT": 0.693125,
+            "marginStartT": 0.691835,
+            "marginEndT": 0.693827,
+            "maximumTangentAngleDeg": 0.751443,
+            "tangentVariationDeg": 0.126383,
+            "clearanceBefore": 158.190151,
+            "clearanceAfter": 199.014717,
+            "footprintWidth": 15.102507,
+            "footprintBounds": {
+              "left": 4536.802848,
+              "right": 4551.904386,
+              "top": 746.778678,
+              "bottom": 796.664561
+            }
+          },
+          {
+            "slotId": "application-how-it-works:reserved",
+            "zoneId": "notation:application-benefits:4",
+            "shelfIndex": 9,
+            "originalZoneId": "notation:application-how-it-works:3",
+            "relocated": true,
+            "eventCount": 3,
+            "footprintStartT": 0.694552,
+            "footprintEndT": 0.697073,
+            "marginStartT": 0.693851,
+            "marginEndT": 0.697774,
+            "maximumTangentAngleDeg": 1.275431,
+            "tangentVariationDeg": 0.646399,
+            "clearanceBefore": 209.918779,
+            "clearanceAfter": 97.71207,
+            "footprintWidth": 64.676524,
+            "footprintBounds": {
+              "left": 4588.52825,
+              "right": 4653.197477,
+              "top": 732.443139,
+              "bottom": 789.115136
+            }
+          },
+          {
+            "slotId": "application-benefits:primary",
+            "zoneId": "notation:application-benefits:4",
+            "shelfIndex": 9,
+            "originalZoneId": "notation:application-benefits:4",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.698494,
+            "footprintEndT": 0.70005,
+            "marginStartT": 0.697792,
+            "marginEndT": 0.700751,
+            "maximumTangentAngleDeg": 2.049302,
+            "tangentVariationDeg": 0.768901,
+            "clearanceBefore": 311.055829,
+            "clearanceAfter": 21.296346,
+            "footprintWidth": 39.955199,
+            "footprintBounds": {
+              "left": 4689.64882,
+              "right": 4729.586685,
+              "top": 734.952001,
+              "bottom": 817.221174
+            }
+          },
+          {
+            "slotId": "application-benefits:reserved",
+            "zoneId": "notation:application-terminal:7",
+            "shelfIndex": 16,
+            "originalZoneId": "notation:application-benefits:4",
+            "relocated": true,
+            "eventCount": 1,
+            "footprintStartT": 0.983198,
+            "footprintEndT": 0.983732,
+            "marginStartT": 0.982556,
+            "marginEndT": 0.984373,
+            "maximumTangentAngleDeg": 0,
+            "tangentVariationDeg": 0,
+            "clearanceBefore": 22.253411,
+            "clearanceAfter": 456.484048,
+            "footprintWidth": 14.976827,
+            "footprintBounds": {
+              "left": 236.539125,
+              "right": 251.515952,
+              "top": 817.119587,
+              "bottom": 866.848413
+            }
+          },
+          {
+            "slotId": "application-demo:primary",
+            "zoneId": "notation:application-terminal:7",
+            "shelfIndex": 16,
+            "originalZoneId": "notation:application-demo:5",
+            "relocated": true,
+            "eventCount": 4,
+            "footprintStartT": 0.985148,
+            "footprintEndT": 0.988459,
+            "marginStartT": 0.984506,
+            "marginEndT": 0.989101,
+            "maximumTangentAngleDeg": 0,
+            "tangentVariationDeg": 0,
+            "clearanceBefore": 76.962714,
+            "clearanceAfter": 323.819857,
+            "footprintWidth": 92.931714,
+            "footprintBounds": {
+              "left": 291.248429,
+              "right": 384.180143,
+              "top": 784.191587,
+              "bottom": 866.848413
+            }
+          },
+          {
+            "slotId": "application-access:primary",
+            "zoneId": "notation:application-terminal:7",
+            "shelfIndex": 16,
+            "originalZoneId": "notation:application-access:6",
+            "relocated": true,
+            "eventCount": 3,
+            "footprintStartT": 0.989903,
+            "footprintEndT": 0.992413,
+            "marginStartT": 0.989262,
+            "marginEndT": 0.993055,
+            "maximumTangentAngleDeg": 0,
+            "tangentVariationDeg": 0,
+            "clearanceBefore": 210.409583,
+            "clearanceAfter": 212.877948,
+            "footprintWidth": 70.426754,
+            "footprintBounds": {
+              "left": 424.695297,
+              "right": 495.122052,
+              "top": 808.191585,
+              "bottom": 869.920415
+            }
+          },
+          {
+            "slotId": "application-access:reserved",
+            "zoneId": "notation:application-terminal:7",
+            "shelfIndex": 16,
+            "originalZoneId": "notation:application-access:6",
+            "relocated": true,
+            "eventCount": 1,
+            "footprintStartT": 0.993797,
+            "footprintEndT": 0.994331,
+            "marginStartT": 0.993156,
+            "marginEndT": 0.994973,
+            "maximumTangentAngleDeg": 0,
+            "tangentVariationDeg": 0,
+            "clearanceBefore": 319.671658,
+            "clearanceAfter": 159.065806,
+            "footprintWidth": 14.976821,
+            "footprintBounds": {
+              "left": 533.957373,
+              "right": 548.934194,
+              "top": 811.11959,
+              "bottom": 860.84841
+            }
+          },
+          {
+            "slotId": "application-terminal:primary",
+            "zoneId": "notation:application-terminal:7",
+            "shelfIndex": 16,
+            "originalZoneId": "notation:application-terminal:7",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.995666,
+            "footprintEndT": 0.997126,
+            "marginStartT": 0.995025,
+            "marginEndT": 0.997768,
+            "maximumTangentAngleDeg": 0,
+            "tangentVariationDeg": 0,
+            "clearanceBefore": 372.111194,
+            "clearanceAfter": 80.641314,
+            "footprintWidth": 40.961778,
+            "footprintBounds": {
+              "left": 586.396908,
+              "right": 627.358686,
+              "top": 799.119592,
+              "bottom": 854.848408
+            }
+          },
+          {
+            "slotId": "application-terminal:reserved",
+            "zoneId": "notation:application-terminal:7",
+            "shelfIndex": 16,
+            "originalZoneId": "notation:application-terminal:7",
+            "relocated": false,
+            "eventCount": 1,
+            "footprintStartT": 0.998461,
+            "footprintEndT": 0.998995,
+            "marginStartT": 0.99782,
+            "marginEndT": 0.999636,
+            "maximumTangentAngleDeg": 0,
+            "tangentVariationDeg": 0,
+            "clearanceBefore": 450.535687,
+            "clearanceAfter": 28.20178,
+            "footprintWidth": 14.976818,
+            "footprintBounds": {
+              "left": 664.821402,
+              "right": 679.79822,
+              "top": 808.191591,
+              "bottom": 857.920409
+            }
+          }
+        ],
+        "relocations": [
+          {
+            "branch": "application",
+            "chapter": "home",
+            "sourceShelf": "notation:home:1",
+            "slotId": "home:primary",
+            "motifId": "Q2",
+            "semanticIndex": 0,
+            "reason": "SOURCE_HAS_NO_COMPLETE_FOOTPRINT_INTERVAL",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:home:1",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.170088,
+                "endT": 0.174473,
+                "startDistance": 0,
+                "endDistance": 20.734469,
+                "length": 20.734469,
+                "maximumTangentAngleDeg": 11.26308,
+                "tangentVariationDeg": 5.978351,
+                "startPoint": {
+                  "x": 9034.744286,
+                  "y": 615.025563
+                },
+                "endPoint": {
+                  "x": 9055.251629,
+                  "y": 618.017538
+                }
+              },
+              {
+                "zoneId": "notation:home:1",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.174473,
+                "endT": 0.183289,
+                "startDistance": 20.734469,
+                "endDistance": 62.148057,
+                "length": 41.413588,
+                "maximumTangentAngleDeg": 9.373733,
+                "tangentVariationDeg": 5.948251,
+                "startPoint": {
+                  "x": 9055.251629,
+                  "y": 618.017538
+                },
+                "endPoint": {
+                  "x": 9096.479933,
+                  "y": 621.727295
+                }
+              },
+              {
+                "zoneId": "notation:home:1",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.183289,
+                "endT": 0.184751,
+                "startDistance": 62.148057,
+                "endDistance": 69.096988,
+                "length": 6.94893,
+                "maximumTangentAngleDeg": 11.26308,
+                "tangentVariationDeg": 1.889347,
+                "startPoint": {
+                  "x": 9096.479933,
+                  "y": 621.727295
+                },
+                "endPoint": {
+                  "x": 9103.315714,
+                  "y": 622.974437
+                }
+              }
+            ],
+            "destinationShelf": "notation:application-overview:2",
+            "destinationChapter": "application-overview",
+            "availableSafeInterval": {
+              "zoneId": "notation:application-overview:2",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.255132,
+              "endT": 0.269795,
+              "startDistance": 0,
+              "endDistance": 119.091411,
+              "length": 119.091411,
+              "maximumTangentAngleDeg": 6.55805,
+              "tangentVariationDeg": 4.579141,
+              "startPoint": {
+                "x": 8360.137371,
+                "y": 795.025563
+              },
+              "endPoint": {
+                "x": 8478.924229,
+                "y": 802.974437
+              }
+            },
+            "footprintRequirement": 44.70873,
+            "safetyMarginEachSide": 18,
+            "maximumTangentAngleDeg": 4.748529,
+            "tangentVariationDeg": 2.769589,
+            "semanticOrderPreserved": true
+          },
+          {
+            "branch": "application",
+            "chapter": "application-overview",
+            "sourceShelf": "notation:application-overview:2",
+            "slotId": "application-overview:primary",
+            "motifId": "Q1",
+            "semanticIndex": 1,
+            "reason": "SOURCE_CAPACITY_REQUIRED_BY_SEMANTIC_ORDER",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:application-overview:2",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.255132,
+                "endT": 0.269795,
+                "startDistance": 0,
+                "endDistance": 119.091411,
+                "length": 119.091411,
+                "maximumTangentAngleDeg": 6.55805,
+                "tangentVariationDeg": 4.579141,
+                "startPoint": {
+                  "x": 8360.137371,
+                  "y": 795.025563
+                },
+                "endPoint": {
+                  "x": 8478.924229,
+                  "y": 802.974437
+                }
+              }
+            ],
+            "destinationShelf": "notation:application-benefits:4",
+            "destinationChapter": "application-benefits",
+            "availableSafeInterval": {
+              "zoneId": "notation:application-benefits:4",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.686217,
+              "endT": 0.70088,
+              "startDistance": 0,
+              "endDistance": 372.307374,
+              "length": 372.307374,
+              "maximumTangentAngleDeg": 2.472874,
+              "tangentVariationDeg": 1.847793,
+              "startPoint": {
+                "x": 4378.661714,
+                "y": 772.495563
+              },
+              "endPoint": {
+                "x": 4750.870286,
+                "y": 780.444437
+              }
+            },
+            "footprintRequirement": 15.314632,
+            "safetyMarginEachSide": 18,
+            "maximumTangentAngleDeg": 2.236418,
+            "tangentVariationDeg": 0.794251,
+            "semanticOrderPreserved": true
+          },
+          {
+            "branch": "application",
+            "chapter": "application-overview",
+            "sourceShelf": "notation:application-overview:2",
+            "slotId": "application-overview:reserved",
+            "motifId": "Q2",
+            "semanticIndex": 2,
+            "reason": "SOURCE_CAPACITY_REQUIRED_BY_SEMANTIC_ORDER",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:application-overview:2",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.255132,
+                "endT": 0.269795,
+                "startDistance": 0,
+                "endDistance": 119.091411,
+                "length": 119.091411,
+                "maximumTangentAngleDeg": 6.55805,
+                "tangentVariationDeg": 4.579141,
+                "startPoint": {
+                  "x": 8360.137371,
+                  "y": 795.025563
+                },
+                "endPoint": {
+                  "x": 8478.924229,
+                  "y": 802.974437
+                }
+              }
+            ],
+            "destinationShelf": "notation:application-benefits:4",
+            "destinationChapter": "application-benefits",
+            "availableSafeInterval": {
+              "zoneId": "notation:application-benefits:4",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.686217,
+              "endT": 0.70088,
+              "startDistance": 0,
+              "endDistance": 372.307374,
+              "length": 372.307374,
+              "maximumTangentAngleDeg": 2.472874,
+              "tangentVariationDeg": 1.847793,
+              "startPoint": {
+                "x": 4378.661714,
+                "y": 772.495563
+              },
+              "endPoint": {
+                "x": 4750.870286,
+                "y": 780.444437
+              }
+            },
+            "footprintRequirement": 40.094515,
+            "safetyMarginEachSide": 18,
+            "maximumTangentAngleDeg": 1.424331,
+            "tangentVariationDeg": 0.663788,
+            "semanticOrderPreserved": true
+          },
+          {
+            "branch": "application",
+            "chapter": "application-how-it-works",
+            "sourceShelf": "notation:application-how-it-works:3",
+            "slotId": "application-how-it-works:primary",
+            "motifId": "Q1",
+            "semanticIndex": 3,
+            "reason": "SOURCE_HAS_NO_COMPLETE_FOOTPRINT_INTERVAL",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:application-how-it-works:3",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.653959,
+                "endT": 0.656846,
+                "startDistance": 0,
+                "endDistance": 6.894636,
+                "length": 6.894636,
+                "maximumTangentAngleDeg": 13.412211,
+                "tangentVariationDeg": 5.821158,
+                "startPoint": {
+                  "x": 4234.277143,
+                  "y": 771.06223
+                },
+                "endPoint": {
+                  "x": 4241.027143,
+                  "y": 772.451438
+                }
+              },
+              {
+                "zoneId": "notation:application-how-it-works:3",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.656846,
+                "endT": 0.658449,
+                "startDistance": 6.894636,
+                "endDistance": 10.657401,
+                "length": 3.762764,
+                "maximumTangentAngleDeg": 7.591053,
+                "tangentVariationDeg": 5.960553,
+                "startPoint": {
+                  "x": 4241.027143,
+                  "y": 772.451438
+                },
+                "endPoint": {
+                  "x": 4244.777143,
+                  "y": 772.739639
+                }
+              },
+              {
+                "zoneId": "notation:application-how-it-works:3",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.658449,
+                "endT": 0.665093,
+                "startDistance": 10.657401,
+                "endDistance": 26.199992,
+                "length": 15.542591,
+                "maximumTangentAngleDeg": 3.571272,
+                "tangentVariationDeg": 5.902293,
+                "startPoint": {
+                  "x": 4244.777143,
+                  "y": 772.739639
+                },
+                "endPoint": {
+                  "x": 4260.312857,
+                  "y": 772.583203
+                }
+              },
+              {
+                "zoneId": "notation:application-how-it-works:3",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.665093,
+                "endT": 0.66711,
+                "startDistance": 26.199992,
+                "endDistance": 30.947558,
+                "length": 4.747566,
+                "maximumTangentAngleDeg": 9.494797,
+                "tangentVariationDeg": 5.923525,
+                "startPoint": {
+                  "x": 4260.312857,
+                  "y": 772.583203
+                },
+                "endPoint": {
+                  "x": 4265.027143,
+                  "y": 773.125729
+                }
+              },
+              {
+                "zoneId": "notation:application-how-it-works:3",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.66711,
+                "endT": 0.668622,
+                "startDistance": 30.947558,
+                "endDistance": 34.55627,
+                "length": 3.608712,
+                "maximumTangentAngleDeg": 13.380975,
+                "tangentVariationDeg": 3.886178,
+                "startPoint": {
+                  "x": 4265.027143,
+                  "y": 773.125729
+                },
+                "endPoint": {
+                  "x": 4268.562857,
+                  "y": 773.844437
+                }
+              }
+            ],
+            "destinationShelf": "notation:application-benefits:4",
+            "destinationChapter": "application-benefits",
+            "availableSafeInterval": {
+              "zoneId": "notation:application-benefits:4",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.686217,
+              "endT": 0.70088,
+              "startDistance": 0,
+              "endDistance": 372.307374,
+              "length": 372.307374,
+              "maximumTangentAngleDeg": 2.472874,
+              "tangentVariationDeg": 1.847793,
+              "startPoint": {
+                "x": 4378.661714,
+                "y": 772.495563
+              },
+              "endPoint": {
+                "x": 4750.870286,
+                "y": 780.444437
+              }
+            },
+            "footprintRequirement": 15.102507,
+            "safetyMarginEachSide": 18,
+            "maximumTangentAngleDeg": 0.751443,
+            "tangentVariationDeg": 0.126383,
+            "semanticOrderPreserved": true
+          },
+          {
+            "branch": "application",
+            "chapter": "application-how-it-works",
+            "sourceShelf": "notation:application-how-it-works:3",
+            "slotId": "application-how-it-works:reserved",
+            "motifId": "Q3",
+            "semanticIndex": 4,
+            "reason": "SOURCE_HAS_NO_COMPLETE_FOOTPRINT_INTERVAL",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:application-how-it-works:3",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.653959,
+                "endT": 0.656846,
+                "startDistance": 0,
+                "endDistance": 6.894636,
+                "length": 6.894636,
+                "maximumTangentAngleDeg": 13.412211,
+                "tangentVariationDeg": 5.821158,
+                "startPoint": {
+                  "x": 4234.277143,
+                  "y": 771.06223
+                },
+                "endPoint": {
+                  "x": 4241.027143,
+                  "y": 772.451438
+                }
+              },
+              {
+                "zoneId": "notation:application-how-it-works:3",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.656846,
+                "endT": 0.658449,
+                "startDistance": 6.894636,
+                "endDistance": 10.657401,
+                "length": 3.762764,
+                "maximumTangentAngleDeg": 7.591053,
+                "tangentVariationDeg": 5.960553,
+                "startPoint": {
+                  "x": 4241.027143,
+                  "y": 772.451438
+                },
+                "endPoint": {
+                  "x": 4244.777143,
+                  "y": 772.739639
+                }
+              },
+              {
+                "zoneId": "notation:application-how-it-works:3",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.658449,
+                "endT": 0.665093,
+                "startDistance": 10.657401,
+                "endDistance": 26.199992,
+                "length": 15.542591,
+                "maximumTangentAngleDeg": 3.571272,
+                "tangentVariationDeg": 5.902293,
+                "startPoint": {
+                  "x": 4244.777143,
+                  "y": 772.739639
+                },
+                "endPoint": {
+                  "x": 4260.312857,
+                  "y": 772.583203
+                }
+              },
+              {
+                "zoneId": "notation:application-how-it-works:3",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.665093,
+                "endT": 0.66711,
+                "startDistance": 26.199992,
+                "endDistance": 30.947558,
+                "length": 4.747566,
+                "maximumTangentAngleDeg": 9.494797,
+                "tangentVariationDeg": 5.923525,
+                "startPoint": {
+                  "x": 4260.312857,
+                  "y": 772.583203
+                },
+                "endPoint": {
+                  "x": 4265.027143,
+                  "y": 773.125729
+                }
+              },
+              {
+                "zoneId": "notation:application-how-it-works:3",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.66711,
+                "endT": 0.668622,
+                "startDistance": 30.947558,
+                "endDistance": 34.55627,
+                "length": 3.608712,
+                "maximumTangentAngleDeg": 13.380975,
+                "tangentVariationDeg": 3.886178,
+                "startPoint": {
+                  "x": 4265.027143,
+                  "y": 773.125729
+                },
+                "endPoint": {
+                  "x": 4268.562857,
+                  "y": 773.844437
+                }
+              }
+            ],
+            "destinationShelf": "notation:application-benefits:4",
+            "destinationChapter": "application-benefits",
+            "availableSafeInterval": {
+              "zoneId": "notation:application-benefits:4",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.686217,
+              "endT": 0.70088,
+              "startDistance": 0,
+              "endDistance": 372.307374,
+              "length": 372.307374,
+              "maximumTangentAngleDeg": 2.472874,
+              "tangentVariationDeg": 1.847793,
+              "startPoint": {
+                "x": 4378.661714,
+                "y": 772.495563
+              },
+              "endPoint": {
+                "x": 4750.870286,
+                "y": 780.444437
+              }
+            },
+            "footprintRequirement": 64.676524,
+            "safetyMarginEachSide": 18,
+            "maximumTangentAngleDeg": 1.275431,
+            "tangentVariationDeg": 0.646399,
+            "semanticOrderPreserved": true
+          },
+          {
+            "branch": "application",
+            "chapter": "application-benefits",
+            "sourceShelf": "notation:application-benefits:4",
+            "slotId": "application-benefits:reserved",
+            "motifId": "Q1",
+            "semanticIndex": 6,
+            "reason": "SOURCE_CAPACITY_REQUIRED_BY_SEMANTIC_ORDER",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:application-benefits:4",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.686217,
+                "endT": 0.70088,
+                "startDistance": 0,
+                "endDistance": 372.307374,
+                "length": 372.307374,
+                "maximumTangentAngleDeg": 2.472874,
+                "tangentVariationDeg": 1.847793,
+                "startPoint": {
+                  "x": 4378.661714,
+                  "y": 772.495563
+                },
+                "endPoint": {
+                  "x": 4750.870286,
+                  "y": 780.444437
+                }
+              }
+            ],
+            "destinationShelf": "notation:application-terminal:7",
+            "destinationChapter": "application-terminal",
+            "availableSafeInterval": {
+              "zoneId": "notation:application-terminal:7",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.982405,
+              "endT": 1,
+              "startDistance": 0,
+              "endDistance": 493.714286,
+              "length": 493.714286,
+              "maximumTangentAngleDeg": 0,
+              "tangentVariationDeg": 0,
+              "startPoint": {
+                "x": 214.285714,
+                "y": 828.52
+              },
+              "endPoint": {
+                "x": 708,
+                "y": 828.52
+              }
+            },
+            "footprintRequirement": 14.976827,
+            "safetyMarginEachSide": 18,
+            "maximumTangentAngleDeg": 0,
+            "tangentVariationDeg": 0,
+            "semanticOrderPreserved": true
+          },
+          {
+            "branch": "application",
+            "chapter": "application-demo",
+            "sourceShelf": "notation:application-demo:5",
+            "slotId": "application-demo:primary",
+            "motifId": "Q4",
+            "semanticIndex": 7,
+            "reason": "SOURCE_HAS_NO_COMPLETE_FOOTPRINT_INTERVAL",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:application-demo:5",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.812317,
+                "endT": 0.815697,
+                "startDistance": 0,
+                "endDistance": 12.607235,
+                "length": 12.607235,
+                "maximumTangentAngleDeg": 14.300797,
+                "tangentVariationDeg": 5.922185,
+                "startPoint": {
+                  "x": 2290.934286,
+                  "y": 777.025563
+                },
+                "endPoint": {
+                  "x": 2303.284085,
+                  "y": 779.53185
+                }
+              },
+              {
+                "zoneId": "notation:application-demo:5",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.815697,
+                "endT": 0.82465,
+                "startDistance": 12.607235,
+                "endDistance": 45.525053,
+                "length": 32.917818,
+                "maximumTangentAngleDeg": 10.371062,
+                "tangentVariationDeg": 5.989773,
+                "startPoint": {
+                  "x": 2303.284085,
+                  "y": 779.53185
+                },
+                "endPoint": {
+                  "x": 2335.994366,
+                  "y": 783.101663
+                }
+              },
+              {
+                "zoneId": "notation:application-demo:5",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.82465,
+                "endT": 0.826979,
+                "startDistance": 45.525053,
+                "endDistance": 54.24171,
+                "length": 8.716657,
+                "maximumTangentAngleDeg": 14.300797,
+                "tangentVariationDeg": 3.929735,
+                "startPoint": {
+                  "x": 2335.994366,
+                  "y": 783.101663
+                },
+                "endPoint": {
+                  "x": 2344.505714,
+                  "y": 784.974437
+                }
+              }
+            ],
+            "destinationShelf": "notation:application-terminal:7",
+            "destinationChapter": "application-terminal",
+            "availableSafeInterval": {
+              "zoneId": "notation:application-terminal:7",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.982405,
+              "endT": 1,
+              "startDistance": 0,
+              "endDistance": 493.714286,
+              "length": 493.714286,
+              "maximumTangentAngleDeg": 0,
+              "tangentVariationDeg": 0,
+              "startPoint": {
+                "x": 214.285714,
+                "y": 828.52
+              },
+              "endPoint": {
+                "x": 708,
+                "y": 828.52
+              }
+            },
+            "footprintRequirement": 92.931714,
+            "safetyMarginEachSide": 18,
+            "maximumTangentAngleDeg": 0,
+            "tangentVariationDeg": 0,
+            "semanticOrderPreserved": true
+          },
+          {
+            "branch": "application",
+            "chapter": "application-access",
+            "sourceShelf": "notation:application-access:6",
+            "slotId": "application-access:primary",
+            "motifId": "Q3",
+            "semanticIndex": 8,
+            "reason": "SOURCE_HAS_NO_COMPLETE_FOOTPRINT_INTERVAL",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:application-access:6",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.897361,
+                "endT": 0.90176,
+                "startDistance": 0,
+                "endDistance": 20.798827,
+                "length": 20.798827,
+                "maximumTangentAngleDeg": 11.26308,
+                "tangentVariationDeg": 5.993781,
+                "startPoint": {
+                  "x": 1161.824286,
+                  "y": 783.435563
+                },
+                "endPoint": {
+                  "x": 1182.395714,
+                  "y": 786.433457
+                }
+              },
+              {
+                "zoneId": "notation:application-access:6",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.90176,
+                "endT": 0.910557,
+                "startDistance": 20.798827,
+                "endDistance": 62.126406,
+                "length": 41.327579,
+                "maximumTangentAngleDeg": 9.367449,
+                "tangentVariationDeg": 5.942091,
+                "startPoint": {
+                  "x": 1182.395714,
+                  "y": 786.433457
+                },
+                "endPoint": {
+                  "x": 1223.538571,
+                  "y": 790.13377
+                }
+              },
+              {
+                "zoneId": "notation:application-access:6",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.910557,
+                "endT": 0.912023,
+                "startDistance": 62.126406,
+                "endDistance": 69.096987,
+                "length": 6.970581,
+                "maximumTangentAngleDeg": 11.26308,
+                "tangentVariationDeg": 1.895631,
+                "startPoint": {
+                  "x": 1223.538571,
+                  "y": 790.13377
+                },
+                "endPoint": {
+                  "x": 1230.395714,
+                  "y": 791.384437
+                }
+              }
+            ],
+            "destinationShelf": "notation:application-terminal:7",
+            "destinationChapter": "application-terminal",
+            "availableSafeInterval": {
+              "zoneId": "notation:application-terminal:7",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.982405,
+              "endT": 1,
+              "startDistance": 0,
+              "endDistance": 493.714286,
+              "length": 493.714286,
+              "maximumTangentAngleDeg": 0,
+              "tangentVariationDeg": 0,
+              "startPoint": {
+                "x": 214.285714,
+                "y": 828.52
+              },
+              "endPoint": {
+                "x": 708,
+                "y": 828.52
+              }
+            },
+            "footprintRequirement": 70.426754,
+            "safetyMarginEachSide": 18,
+            "maximumTangentAngleDeg": 0,
+            "tangentVariationDeg": 0,
+            "semanticOrderPreserved": true
+          },
+          {
+            "branch": "application",
+            "chapter": "application-access",
+            "sourceShelf": "notation:application-access:6",
+            "slotId": "application-access:reserved",
+            "motifId": "Q1",
+            "semanticIndex": 9,
+            "reason": "SOURCE_HAS_NO_COMPLETE_FOOTPRINT_INTERVAL",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:application-access:6",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.897361,
+                "endT": 0.90176,
+                "startDistance": 0,
+                "endDistance": 20.798827,
+                "length": 20.798827,
+                "maximumTangentAngleDeg": 11.26308,
+                "tangentVariationDeg": 5.993781,
+                "startPoint": {
+                  "x": 1161.824286,
+                  "y": 783.435563
+                },
+                "endPoint": {
+                  "x": 1182.395714,
+                  "y": 786.433457
+                }
+              },
+              {
+                "zoneId": "notation:application-access:6",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.90176,
+                "endT": 0.910557,
+                "startDistance": 20.798827,
+                "endDistance": 62.126406,
+                "length": 41.327579,
+                "maximumTangentAngleDeg": 9.367449,
+                "tangentVariationDeg": 5.942091,
+                "startPoint": {
+                  "x": 1182.395714,
+                  "y": 786.433457
+                },
+                "endPoint": {
+                  "x": 1223.538571,
+                  "y": 790.13377
+                }
+              },
+              {
+                "zoneId": "notation:application-access:6",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.910557,
+                "endT": 0.912023,
+                "startDistance": 62.126406,
+                "endDistance": 69.096987,
+                "length": 6.970581,
+                "maximumTangentAngleDeg": 11.26308,
+                "tangentVariationDeg": 1.895631,
+                "startPoint": {
+                  "x": 1223.538571,
+                  "y": 790.13377
+                },
+                "endPoint": {
+                  "x": 1230.395714,
+                  "y": 791.384437
+                }
+              }
+            ],
+            "destinationShelf": "notation:application-terminal:7",
+            "destinationChapter": "application-terminal",
+            "availableSafeInterval": {
+              "zoneId": "notation:application-terminal:7",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.982405,
+              "endT": 1,
+              "startDistance": 0,
+              "endDistance": 493.714286,
+              "length": 493.714286,
+              "maximumTangentAngleDeg": 0,
+              "tangentVariationDeg": 0,
+              "startPoint": {
+                "x": 214.285714,
+                "y": 828.52
+              },
+              "endPoint": {
+                "x": 708,
+                "y": 828.52
+              }
+            },
+            "footprintRequirement": 14.976821,
+            "safetyMarginEachSide": 18,
+            "maximumTangentAngleDeg": 0,
+            "tangentVariationDeg": 0,
+            "semanticOrderPreserved": true
+          }
+        ],
+        "eventCount": 23,
+        "forbiddenEventCount": 0,
+        "maximumTangentAngleDeg": 4.748529,
+        "maximumTangentVariationDeg": 2.769589
+      },
+      "entry": {
+        "t": 0.02346,
+        "point": {
+          "x": 9676.937813,
+          "y": 439.036523
+        },
+        "tangent": {
+          "x": -0.987019,
+          "y": 0.160606
+        },
+        "staffPoints": [
+          {
+            "x": 9680.792351,
+            "y": 462.724971
+          },
+          {
+            "x": 9678.865082,
+            "y": 450.880747
+          },
+          {
+            "x": 9676.937813,
+            "y": 439.036523
+          },
+          {
+            "x": 9675.010543,
+            "y": 427.1923
+          },
+          {
+            "x": 9673.083274,
+            "y": 415.348076
+          }
+        ],
+        "eventFreeLeadIn": {
+          "startT": 0,
+          "endT": 0.257426
+        }
+      },
+      "ids": [
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:canonical:1",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:2",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:3",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:4",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:5",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:6",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:7",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:8",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:9",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:10",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:11",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:12",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:13",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:14",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:15",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:16",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:17",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:18",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:19",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:20",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:21",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:22",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:23",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:24",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:25",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:26",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:pre-transition:27",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:expanded:28",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:29",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:30",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:31",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:32",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:33",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:34",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:35",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:36",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:37",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:38",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:39",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:40",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:41",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:42",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:43",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:44",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:45",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:46",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:47",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:48",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:49",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:50",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:51",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:52",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:53",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:card-score-interaction:post-transition:54",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:0:canonical:55",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:canonical:1",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:2",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:3",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:4",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:5",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:6",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:7",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:8",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:9",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:10",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:11",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:12",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:13",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:14",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:15",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:16",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:17",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:18",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:19",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:20",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:21",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:22",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:23",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:24",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:25",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:26",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:pre-transition:27",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:expanded:28",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:29",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:30",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:31",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:32",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:33",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:34",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:35",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:36",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:37",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:38",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:39",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:40",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:41",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:42",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:43",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:44",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:45",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:46",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:47",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:48",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:49",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:50",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:51",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:52",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:53",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:card-score-interaction:post-transition:54",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:2:canonical:55",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:canonical:1",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:2",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:3",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:4",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:5",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:6",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:7",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:8",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:9",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:10",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:11",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:12",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:13",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:14",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:15",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:16",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:17",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:18",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:19",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:20",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:21",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:22",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:23",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:24",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:25",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:26",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:pre-transition:27",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:expanded:28",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:29",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:30",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:31",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:32",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:33",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:34",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:35",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:36",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:37",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:38",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:39",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:40",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:41",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:42",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:43",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:44",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:45",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:46",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:47",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:48",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:49",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:50",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:51",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:52",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:53",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:card-score-interaction:post-transition:54",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:4:canonical:55",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:canonical:1",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:2",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:3",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:4",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:5",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:6",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:7",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:8",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:9",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:10",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:11",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:12",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:13",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:14",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:15",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:16",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:17",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:18",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:19",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:20",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:21",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:22",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:23",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:24",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:25",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:26",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:pre-transition:27",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:expanded:28",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:29",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:30",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:31",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:32",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:33",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:34",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:35",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:36",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:37",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:38",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:39",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:40",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:41",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:42",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:43",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:44",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:45",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:46",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:47",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:48",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:49",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:50",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:51",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:52",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:53",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:card-score-interaction:post-transition:54",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:6:canonical:55",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:canonical:1",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:2",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:3",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:4",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:5",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:6",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:7",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:8",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:9",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:10",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:11",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:12",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:13",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:14",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:15",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:16",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:17",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:18",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:19",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:20",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:21",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:22",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:23",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:24",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:25",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:26",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:pre-transition:27",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:expanded:28",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:29",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:30",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:31",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:32",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:33",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:34",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:35",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:36",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:37",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:38",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:39",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:40",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:41",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:42",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:43",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:44",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:45",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:46",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:47",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:48",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:49",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:50",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:51",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:52",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:53",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:54",
+        "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:canonical:55",
+        "wf-application-access:primary:note:2:ledger:0",
+        "wf-home:primary:note:0:notehead",
+        "wf-home:primary:note:0:stem",
+        "wf-home:primary:note:1:notehead",
+        "wf-home:primary:note:1:stem",
+        "wf-application-overview:primary:note:0:notehead",
+        "wf-application-overview:primary:note:0:stem",
+        "wf-application-overview:reserved:note:0:notehead",
+        "wf-application-overview:reserved:note:0:stem",
+        "wf-application-overview:reserved:note:1:notehead",
+        "wf-application-overview:reserved:note:1:stem",
+        "wf-application-how-it-works:primary:note:0:notehead",
+        "wf-application-how-it-works:primary:note:0:stem",
+        "wf-application-how-it-works:reserved:note:0:notehead",
+        "wf-application-how-it-works:reserved:note:0:stem",
+        "wf-application-how-it-works:reserved:note:1:notehead",
+        "wf-application-how-it-works:reserved:note:1:stem",
+        "wf-application-how-it-works:reserved:note:2:notehead",
+        "wf-application-how-it-works:reserved:note:2:stem",
+        "wf-application-benefits:primary:note:0:notehead",
+        "wf-application-benefits:primary:note:0:stem",
+        "wf-application-benefits:primary:note:1:notehead",
+        "wf-application-benefits:primary:note:1:stem",
+        "wf-application-benefits:reserved:note:0:notehead",
+        "wf-application-benefits:reserved:note:0:stem",
+        "wf-application-demo:primary:note:0:notehead",
+        "wf-application-demo:primary:note:0:stem",
+        "wf-application-demo:primary:note:1:notehead",
+        "wf-application-demo:primary:note:1:stem",
+        "wf-application-demo:primary:note:2:notehead",
+        "wf-application-demo:primary:note:2:stem",
+        "wf-application-demo:primary:note:3:notehead",
+        "wf-application-demo:primary:note:3:stem",
+        "wf-application-access:primary:note:0:notehead",
+        "wf-application-access:primary:note:0:stem",
+        "wf-application-access:primary:note:1:notehead",
+        "wf-application-access:primary:note:1:stem",
+        "wf-application-access:primary:note:2:notehead",
+        "wf-application-access:primary:note:2:stem",
+        "wf-application-access:reserved:note:0:notehead",
+        "wf-application-access:reserved:note:0:stem",
+        "wf-application-terminal:primary:note:0:notehead",
+        "wf-application-terminal:primary:note:0:stem",
+        "wf-application-terminal:primary:note:1:notehead",
+        "wf-application-terminal:primary:note:1:stem",
+        "wf-application-terminal:reserved:note:0:notehead",
+        "wf-application-terminal:reserved:note:0:stem",
+        "wf-phase-9-task-34:horizontal-enhanced:application:final-barline:terminal:thin",
+        "wf-phase-9-task-34:horizontal-enhanced:application:final-barline:terminal:thick"
+      ],
+      "noteheads": 23,
+      "footprints": [
+        {
+          "slotId": "home:primary",
+          "primitiveCount": 4,
+          "left": 8396.688274814313,
+          "right": 8441.353317998331,
+          "top": 760.4817181031917,
+          "bottom": 823.2508889343535
+        },
+        {
+          "slotId": "application-overview:primary",
+          "primitiveCount": 2,
+          "left": 4406.258219092672,
+          "right": 4421.56095487975,
+          "top": 735.8801533330533,
+          "bottom": 785.4134830991122
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "primitiveCount": 4,
+          "left": 4459.0800013106145,
+          "right": 4499.163501103117,
+          "top": 731.2634536882919,
+          "bottom": 813.3855315787034
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "primitiveCount": 2,
+          "left": 4536.804617857745,
+          "right": 4551.902275500899,
+          "top": 746.7808501397092,
+          "bottom": 796.0623488278426
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "primitiveCount": 6,
+          "left": 4588.530208568285,
+          "right": 4653.195253597829,
+          "top": 733.0453752394395,
+          "bottom": 789.1128852959476
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "primitiveCount": 4,
+          "left": 4689.651311649354,
+          "right": 4729.584420802979,
+          "top": 735.5542866037648,
+          "bottom": 816.6188692794072
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "primitiveCount": 2,
+          "left": 236.5390843269215,
+          "right": 251.51564820890235,
+          "top": 817.1200289936211,
+          "bottom": 866.2479632144592
+        },
+        {
+          "slotId": "application-demo:primary",
+          "primitiveCount": 8,
+          "left": 291.24905031284834,
+          "right": 384.17972295063555,
+          "top": 784.7919620456669,
+          "bottom": 866.2479632144592
+        },
+        {
+          "slotId": "application-access:primary",
+          "primitiveCount": 7,
+          "left": 424.6953516892627,
+          "right": 494.641647206141,
+          "top": 808.7919642602953,
+          "bottom": 869.9200216587715
+        },
+        {
+          "slotId": "application-access:reserved",
+          "primitiveCount": 2,
+          "left": 533.9580570841081,
+          "right": 548.933644403498,
+          "top": 811.120028439964,
+          "bottom": 860.247962660802
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "primitiveCount": 4,
+          "left": 586.3975150480219,
+          "right": 627.35845632774,
+          "top": 799.1200273326498,
+          "bottom": 854.2479621071449
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "primitiveCount": 2,
+          "left": 664.8223269722639,
+          "right": 679.7979142916538,
+          "top": 808.7919642602953,
+          "bottom": 857.9200205514572
+        }
+      ]
+    },
+    {
+      "branch": "professional",
+      "safety": {
+        "staffSpace": 12,
+        "shelves": [
+          {
+            "zoneId": "notation:home:1",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0,
+            "endT": 0.015938,
+            "startDistance": 0,
+            "endDistance": 78.095659,
+            "length": 78.095659,
+            "maximumTangentAngleDeg": 5.996263,
+            "tangentVariationDeg": 5.996263,
+            "startPoint": {
+              "x": 9838.08,
+              "y": 423
+            },
+            "endPoint": {
+              "x": 9916.001694,
+              "y": 427.570045
+            }
+          },
+          {
+            "zoneId": "notation:home:1",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.015938,
+            "endT": 0.024,
+            "startDistance": 78.095659,
+            "endDistance": 119.629096,
+            "length": 41.533437,
+            "maximumTangentAngleDeg": 7.939474,
+            "tangentVariationDeg": 1.943211,
+            "startPoint": {
+              "x": 9916.001694,
+              "y": 427.570045
+            },
+            "endPoint": {
+              "x": 9957.221016,
+              "y": 432.652236
+            }
+          },
+          {
+            "zoneId": "notation:professional-about:2",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.152,
+            "endT": 0.172,
+            "startDistance": 0,
+            "endDistance": 1018.361593,
+            "length": 1018.361593,
+            "maximumTangentAngleDeg": 0.894324,
+            "tangentVariationDeg": 0.537371,
+            "startPoint": {
+              "x": 11056.937143,
+              "y": 777.274437
+            },
+            "endPoint": {
+              "x": 12075.222857,
+              "y": 789.325563
+            }
+          },
+          {
+            "zoneId": "notation:professional-services:3",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.2,
+            "endT": 0.22,
+            "startDistance": 0,
+            "endDistance": 236.239538,
+            "length": 236.239538,
+            "maximumTangentAngleDeg": 1.977576,
+            "tangentVariationDeg": 2.316109,
+            "startPoint": {
+              "x": 12611.721429,
+              "y": 754.515563
+            },
+            "endPoint": {
+              "x": 12847.928571,
+              "y": 756.964437
+            }
+          },
+          {
+            "zoneId": "notation:professional-services:4",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.488,
+            "endT": 0.508,
+            "startDistance": 0,
+            "endDistance": 51.625071,
+            "length": 51.625071,
+            "maximumTangentAngleDeg": 5.000645,
+            "tangentVariationDeg": 0,
+            "startPoint": {
+              "x": 14132.605714,
+              "y": 612.9
+            },
+            "endPoint": {
+              "x": 14184.034286,
+              "y": 617.4
+            }
+          },
+          {
+            "zoneId": "notation:professional-process:5",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.536,
+            "endT": 0.556,
+            "startDistance": 0,
+            "endDistance": 908.656469,
+            "length": 908.656469,
+            "maximumTangentAngleDeg": 1.0023,
+            "tangentVariationDeg": 0.602243,
+            "startPoint": {
+              "x": 14644.594286,
+              "y": 797.364437
+            },
+            "endPoint": {
+              "x": 15553.165714,
+              "y": 809.415563
+            }
+          },
+          {
+            "zoneId": "notation:professional-projects:6",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.624,
+            "endT": 0.644,
+            "startDistance": 0,
+            "endDistance": 107.386804,
+            "length": 107.386804,
+            "maximumTangentAngleDeg": 0.966238,
+            "tangentVariationDeg": 1.528792,
+            "startPoint": {
+              "x": 16816.558571,
+              "y": 824.750178
+            },
+            "endPoint": {
+              "x": 16923.941429,
+              "y": 824.849126
+            }
+          },
+          {
+            "zoneId": "notation:professional-projects:7",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.752,
+            "endT": 0.772,
+            "startDistance": 0,
+            "endDistance": 99.395121,
+            "length": 99.395121,
+            "maximumTangentAngleDeg": 1.043916,
+            "tangentVariationDeg": 1.651702,
+            "startPoint": {
+              "x": 17140.639571,
+              "y": 812.660178
+            },
+            "endPoint": {
+              "x": 17240.030429,
+              "y": 812.759126
+            }
+          },
+          {
+            "zoneId": "notation:professional-projects:8",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.88,
+            "endT": 0.9,
+            "startDistance": 0,
+            "endDistance": 107.386804,
+            "length": 107.386804,
+            "maximumTangentAngleDeg": 0.966238,
+            "tangentVariationDeg": 1.528792,
+            "startPoint": {
+              "x": 17456.718571,
+              "y": 804.290526
+            },
+            "endPoint": {
+              "x": 17564.101429,
+              "y": 804.389474
+            }
+          },
+          {
+            "zoneId": "notation:professional-contact:9",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.928,
+            "endT": 0.948,
+            "startDistance": 0,
+            "endDistance": 1018.361593,
+            "length": 1018.361593,
+            "maximumTangentAngleDeg": 0.894324,
+            "tangentVariationDeg": 0.537371,
+            "startPoint": {
+              "x": 18506.537143,
+              "y": 810.974437
+            },
+            "endPoint": {
+              "x": 19524.822857,
+              "y": 823.025563
+            }
+          },
+          {
+            "zoneId": "notation:professional-terminal:10",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.976,
+            "endT": 1,
+            "startDistance": 0,
+            "endDistance": 892.907097,
+            "length": 892.907097,
+            "maximumTangentAngleDeg": 1.223943,
+            "tangentVariationDeg": 0.905411,
+            "startPoint": {
+              "x": 20141.28,
+              "y": 784.024437
+            },
+            "endPoint": {
+              "x": 21034.08,
+              "y": 797.05
+            }
+          }
+        ],
+        "groups": [
+          {
+            "slotId": "home:primary",
+            "zoneId": "notation:professional-about:2",
+            "shelfIndex": 2,
+            "originalZoneId": "notation:home:1",
+            "relocated": true,
+            "eventCount": 1,
+            "footprintStartT": 0.156853,
+            "footprintEndT": 0.15715,
+            "marginStartT": 0.1565,
+            "marginEndT": 0.157504,
+            "maximumTangentAngleDeg": 0.740355,
+            "tangentVariationDeg": 0.066944,
+            "clearanceBefore": 247.104424,
+            "clearanceAfter": 756.136885,
+            "footprintWidth": 15.120284,
+            "footprintBounds": {
+              "left": 11304.030923,
+              "right": 11319.150052,
+              "top": 768.122229,
+              "bottom": 817.871154
+            }
+          },
+          {
+            "slotId": "professional-about:primary",
+            "zoneId": "notation:professional-about:2",
+            "shelfIndex": 2,
+            "originalZoneId": "notation:professional-about:2",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.165208,
+            "footprintEndT": 0.168801,
+            "marginStartT": 0.164854,
+            "marginEndT": 0.169155,
+            "maximumTangentAngleDeg": 0.826502,
+            "tangentVariationDeg": 0.27733,
+            "clearanceBefore": 672.523956,
+            "clearanceAfter": 162.85716,
+            "footprintWidth": 182.980477,
+            "footprintBounds": {
+              "left": 11729.404513,
+              "right": 11912.371109,
+              "top": 756.361237,
+              "bottom": 814.198831
+            }
+          },
+          {
+            "slotId": "professional-services:primary",
+            "zoneId": "notation:professional-services:3",
+            "shelfIndex": 3,
+            "originalZoneId": "notation:professional-services:3",
+            "relocated": false,
+            "eventCount": 4,
+            "footprintStartT": 0.202009,
+            "footprintEndT": 0.209959,
+            "marginStartT": 0.200485,
+            "marginEndT": 0.211483,
+            "maximumTangentAngleDeg": 1.845864,
+            "tangentVariationDeg": 2.184379,
+            "clearanceBefore": 23.73333,
+            "clearanceAfter": 118.604881,
+            "footprintWidth": 93.901327,
+            "footprintBounds": {
+              "left": 12635.444242,
+              "right": 12729.339896,
+              "top": 726.338081,
+              "bottom": 793.587643
+            }
+          },
+          {
+            "slotId": "professional-services:reserved",
+            "zoneId": "notation:professional-services:3",
+            "shelfIndex": 3,
+            "originalZoneId": "notation:professional-services:3",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.213253,
+            "footprintEndT": 0.21676,
+            "marginStartT": 0.211729,
+            "marginEndT": 0.218284,
+            "maximumTangentAngleDeg": 1.494111,
+            "tangentVariationDeg": 1.721541,
+            "clearanceBefore": 156.544795,
+            "clearanceAfter": 38.27952,
+            "footprintWidth": 41.415223,
+            "footprintBounds": {
+              "left": 12768.249693,
+              "right": 12809.662879,
+              "top": 744.31833,
+              "bottom": 799.926921
+            }
+          },
+          {
+            "slotId": "professional-process:primary",
+            "zoneId": "notation:professional-process:5",
+            "shelfIndex": 5,
+            "originalZoneId": "notation:professional-process:5",
+            "relocated": false,
+            "eventCount": 1,
+            "footprintStartT": 0.540841,
+            "footprintEndT": 0.541174,
+            "marginStartT": 0.540445,
+            "marginEndT": 0.54157,
+            "maximumTangentAngleDeg": 0.8343,
+            "tangentVariationDeg": 0.084049,
+            "clearanceBefore": 219.918891,
+            "clearanceAfter": 673.589978,
+            "footprintWidth": 15.147601,
+            "footprintBounds": {
+              "left": 14864.501299,
+              "right": 14879.647445,
+              "top": 770.201332,
+              "bottom": 819.954368
+            }
+          },
+          {
+            "slotId": "professional-process:reserved",
+            "zoneId": "notation:professional-process:5",
+            "shelfIndex": 5,
+            "originalZoneId": "notation:professional-process:5",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.549169,
+            "footprintEndT": 0.552839,
+            "marginStartT": 0.548773,
+            "marginEndT": 0.553235,
+            "maximumTangentAngleDeg": 0.930249,
+            "tangentVariationDeg": 0.321309,
+            "clearanceBefore": 598.299499,
+            "clearanceAfter": 143.610799,
+            "footprintWidth": 166.746172,
+            "footprintBounds": {
+              "left": 15242.83059,
+              "right": 15409.560874,
+              "top": 778.539321,
+              "bottom": 838.178179
+            }
+          },
+          {
+            "slotId": "professional-projects:primary",
+            "zoneId": "notation:professional-projects:6",
+            "shelfIndex": 6,
+            "originalZoneId": "notation:professional-projects:6",
+            "relocated": false,
+            "eventCount": 1,
+            "footprintStartT": 0.63189,
+            "footprintEndT": 0.635978,
+            "marginStartT": 0.628538,
+            "marginEndT": 0.639331,
+            "maximumTangentAngleDeg": 0.56257,
+            "tangentVariationDeg": 0.620808,
+            "clearanceBefore": 42.363906,
+            "clearanceAfter": 43.070874,
+            "footprintWidth": 21.952024,
+            "footprintBounds": {
+              "left": 16858.920983,
+              "right": 16880.872071,
+              "top": 783.320076,
+              "bottom": 833.197823
+            }
+          },
+          {
+            "slotId": "professional-contact:primary",
+            "zoneId": "notation:professional-contact:9",
+            "shelfIndex": 9,
+            "originalZoneId": "notation:professional-contact:9",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.936202,
+            "footprintEndT": 0.939802,
+            "marginStartT": 0.935849,
+            "marginEndT": 0.940156,
+            "maximumTangentAngleDeg": 0.894326,
+            "tangentVariationDeg": 0.039952,
+            "clearanceBefore": 417.633319,
+            "clearanceAfter": 417.419193,
+            "footprintWidth": 183.309081,
+            "footprintBounds": {
+              "left": 18924.143445,
+              "right": 19107.430656,
+              "top": 800.778729,
+              "bottom": 853.936372
+            }
+          },
+          {
+            "slotId": "professional-terminal:primary",
+            "zoneId": "notation:professional-terminal:10",
+            "shelfIndex": 10,
+            "originalZoneId": "notation:professional-terminal:10",
+            "relocated": false,
+            "eventCount": 1,
+            "footprintStartT": 0.981793,
+            "footprintEndT": 0.982206,
+            "marginStartT": 0.981309,
+            "marginEndT": 0.98269,
+            "maximumTangentAngleDeg": 1.102399,
+            "tangentVariationDeg": 0.105732,
+            "clearanceBefore": 215.519526,
+            "clearanceAfter": 662.01218,
+            "footprintWidth": 15.375391,
+            "footprintBounds": {
+              "left": 20356.779658,
+              "right": 20372.152453,
+              "top": 748.812281,
+              "bottom": 798.572055
+            }
+          },
+          {
+            "slotId": "professional-terminal:reserved",
+            "zoneId": "notation:professional-terminal:10",
+            "shelfIndex": 10,
+            "originalZoneId": "notation:professional-terminal:10",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.991799,
+            "footprintEndT": 0.996202,
+            "marginStartT": 0.991315,
+            "marginEndT": 0.996686,
+            "maximumTangentAngleDeg": 0.939651,
+            "tangentVariationDeg": 0.504438,
+            "clearanceBefore": 587.814415,
+            "clearanceAfter": 141.273848,
+            "footprintWidth": 163.818835,
+            "footprintBounds": {
+              "left": 20729.001978,
+              "right": 20892.809137,
+              "top": 776.806797,
+              "bottom": 840.357538
+            }
+          }
+        ],
+        "relocations": [
+          {
+            "branch": "professional",
+            "chapter": "home",
+            "sourceShelf": "notation:home:1",
+            "slotId": "home:primary",
+            "motifId": "Q1",
+            "semanticIndex": 0,
+            "reason": "SOURCE_HAS_NO_COMPLETE_FOOTPRINT_INTERVAL",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:home:1",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0,
+                "endT": 0.015938,
+                "startDistance": 0,
+                "endDistance": 78.095659,
+                "length": 78.095659,
+                "maximumTangentAngleDeg": 5.996263,
+                "tangentVariationDeg": 5.996263,
+                "startPoint": {
+                  "x": 9838.08,
+                  "y": 423
+                },
+                "endPoint": {
+                  "x": 9916.001694,
+                  "y": 427.570045
+                }
+              },
+              {
+                "zoneId": "notation:home:1",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.015938,
+                "endT": 0.024,
+                "startDistance": 78.095659,
+                "endDistance": 119.629096,
+                "length": 41.533437,
+                "maximumTangentAngleDeg": 7.939474,
+                "tangentVariationDeg": 1.943211,
+                "startPoint": {
+                  "x": 9916.001694,
+                  "y": 427.570045
+                },
+                "endPoint": {
+                  "x": 9957.221016,
+                  "y": 432.652236
+                }
+              }
+            ],
+            "destinationShelf": "notation:professional-about:2",
+            "destinationChapter": "professional-about",
+            "availableSafeInterval": {
+              "zoneId": "notation:professional-about:2",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.152,
+              "endT": 0.172,
+              "startDistance": 0,
+              "endDistance": 1018.361593,
+              "length": 1018.361593,
+              "maximumTangentAngleDeg": 0.894324,
+              "tangentVariationDeg": 0.537371,
+              "startPoint": {
+                "x": 11056.937143,
+                "y": 777.274437
+              },
+              "endPoint": {
+                "x": 12075.222857,
+                "y": 789.325563
+              }
+            },
+            "footprintRequirement": 15.120284,
+            "safetyMarginEachSide": 18,
+            "maximumTangentAngleDeg": 0.740355,
+            "tangentVariationDeg": 0.066944,
+            "semanticOrderPreserved": true
+          }
+        ],
+        "eventCount": 18,
+        "forbiddenEventCount": 0,
+        "maximumTangentAngleDeg": 1.845864,
+        "maximumTangentVariationDeg": 2.184379
+      },
+      "entry": {
+        "t": 0.032,
+        "point": {
+          "x": 9999.222188,
+          "y": 439.036523
+        },
+        "tangent": {
+          "x": 0.987019,
+          "y": 0.160606
+        },
+        "staffPoints": [
+          {
+            "x": 9995.367649,
+            "y": 462.724971
+          },
+          {
+            "x": 9997.294918,
+            "y": 450.880747
+          },
+          {
+            "x": 9999.222188,
+            "y": 439.036523
+          },
+          {
+            "x": 10001.149457,
+            "y": 427.1923
+          },
+          {
+            "x": 10003.076726,
+            "y": 415.348076
+          }
+        ],
+        "eventFreeLeadIn": {
+          "startT": 0,
+          "endT": 0.1565
+        }
+      },
+      "ids": [
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:canonical:1",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:2",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:3",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:4",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:5",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:6",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:7",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:8",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:9",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:10",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:11",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:12",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:13",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:14",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:15",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:16",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:17",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:18",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:19",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:20",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:21",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:22",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:23",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:24",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:25",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:26",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:27",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:28",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:29",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:30",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:31",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:pre-transition:32",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:expanded:33",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:34",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:35",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:36",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:37",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:38",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:39",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:40",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:41",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:42",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:43",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:44",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:45",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:46",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:47",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:48",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:49",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:50",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:51",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:52",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:53",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:54",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:55",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:56",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:57",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:58",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:59",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:60",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:61",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:62",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:63",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:card-score-interaction:post-transition:64",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:canonical:65",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:canonical:1",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:2",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:3",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:4",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:5",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:6",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:7",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:8",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:9",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:10",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:11",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:12",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:13",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:14",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:15",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:16",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:17",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:18",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:19",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:20",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:21",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:22",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:23",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:24",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:25",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:26",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:27",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:28",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:29",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:30",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:31",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:pre-transition:32",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:expanded:33",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:34",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:35",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:36",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:37",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:38",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:39",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:40",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:41",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:42",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:43",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:44",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:45",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:46",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:47",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:48",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:49",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:50",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:51",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:52",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:53",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:54",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:55",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:56",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:57",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:58",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:59",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:60",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:61",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:62",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:63",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:card-score-interaction:post-transition:64",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:2:canonical:65",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:canonical:1",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:2",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:3",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:4",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:5",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:6",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:7",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:8",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:9",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:10",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:11",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:12",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:13",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:14",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:15",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:16",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:17",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:18",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:19",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:20",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:21",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:22",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:23",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:24",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:25",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:26",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:27",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:28",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:29",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:30",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:31",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:pre-transition:32",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:expanded:33",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:34",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:35",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:36",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:37",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:38",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:39",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:40",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:41",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:42",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:43",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:44",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:45",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:46",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:47",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:48",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:49",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:50",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:51",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:52",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:53",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:54",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:55",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:56",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:57",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:58",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:59",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:60",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:61",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:62",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:63",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:card-score-interaction:post-transition:64",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:canonical:65",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:canonical:1",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:2",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:3",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:4",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:5",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:6",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:7",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:8",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:9",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:10",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:11",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:12",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:13",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:14",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:15",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:16",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:17",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:18",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:19",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:20",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:21",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:22",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:23",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:24",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:25",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:26",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:27",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:28",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:29",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:30",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:31",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:pre-transition:32",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:expanded:33",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:34",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:35",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:36",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:37",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:38",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:39",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:40",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:41",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:42",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:43",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:44",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:45",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:46",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:47",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:48",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:49",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:50",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:51",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:52",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:53",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:54",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:55",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:56",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:57",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:58",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:59",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:60",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:61",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:62",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:63",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:card-score-interaction:post-transition:64",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:6:canonical:65",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:canonical:1",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:2",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:3",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:4",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:5",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:6",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:7",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:8",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:9",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:10",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:11",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:12",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:13",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:14",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:15",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:16",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:17",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:18",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:19",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:20",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:21",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:22",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:23",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:24",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:25",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:26",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:27",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:28",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:29",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:30",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:31",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:32",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:expanded:33",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:34",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:35",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:36",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:37",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:38",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:39",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:40",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:41",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:42",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:43",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:44",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:45",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:46",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:47",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:48",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:49",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:50",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:51",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:52",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:53",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:54",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:55",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:56",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:57",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:58",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:59",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:60",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:61",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:62",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:63",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:post-transition:64",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:canonical:65",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:clef",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:key-signature:0",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:key-signature:1",
+        "wf-professional-projects:primary:note:0:ledger:0",
+        "wf-home:primary:note:0:notehead",
+        "wf-home:primary:note:0:stem",
+        "wf-professional-about:primary:note:0:notehead",
+        "wf-professional-about:primary:note:0:stem",
+        "wf-professional-about:primary:note:1:notehead",
+        "wf-professional-about:primary:note:1:stem",
+        "wf-professional-services:primary:note:0:notehead",
+        "wf-professional-services:primary:note:0:stem",
+        "wf-professional-services:primary:note:1:notehead",
+        "wf-professional-services:primary:note:1:stem",
+        "wf-professional-services:primary:note:2:notehead",
+        "wf-professional-services:primary:note:2:stem",
+        "wf-professional-services:primary:note:3:notehead",
+        "wf-professional-services:primary:note:3:stem",
+        "wf-professional-services:reserved:note:0:notehead",
+        "wf-professional-services:reserved:note:0:stem",
+        "wf-professional-services:reserved:note:1:notehead",
+        "wf-professional-services:reserved:note:1:stem",
+        "wf-professional-process:primary:note:0:notehead",
+        "wf-professional-process:primary:note:0:stem",
+        "wf-professional-process:reserved:note:0:notehead",
+        "wf-professional-process:reserved:note:0:stem",
+        "wf-professional-process:reserved:note:1:notehead",
+        "wf-professional-process:reserved:note:1:stem",
+        "wf-professional-projects:primary:note:0:notehead",
+        "wf-professional-projects:primary:note:0:stem",
+        "wf-professional-contact:primary:note:0:notehead",
+        "wf-professional-contact:primary:note:0:stem",
+        "wf-professional-contact:primary:note:1:notehead",
+        "wf-professional-contact:primary:note:1:stem",
+        "wf-professional-terminal:primary:note:0:notehead",
+        "wf-professional-terminal:primary:note:0:stem",
+        "wf-professional-terminal:reserved:note:0:notehead",
+        "wf-professional-terminal:reserved:note:0:stem",
+        "wf-professional-terminal:reserved:note:1:notehead",
+        "wf-professional-terminal:reserved:note:1:stem",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:final-barline:terminal:thin",
+        "wf-phase-9-task-34:horizontal-enhanced:professional:final-barline:terminal:thick"
+      ],
+      "noteheads": 18,
+      "footprints": [
+        {
+          "slotId": "home:primary",
+          "primitiveCount": 2,
+          "left": 11304.03717590586,
+          "right": 11319.144599174915,
+          "top": 768.1276538673231,
+          "bottom": 817.2657199250336
+        },
+        {
+          "slotId": "professional-about:primary",
+          "primitiveCount": 4,
+          "left": 11729.423933908925,
+          "right": 11912.36535704006,
+          "top": 756.3669716297486,
+          "bottom": 813.5931121642644
+        },
+        {
+          "slotId": "professional-services:primary",
+          "primitiveCount": 8,
+          "left": 12635.734564414808,
+          "right": 12729.334182426823,
+          "top": 726.3441417109191,
+          "bottom": 792.9815379966822
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "primitiveCount": 4,
+          "left": 12768.256061018385,
+          "right": 12809.656455463655,
+          "top": 744.3244290146025,
+          "bottom": 799.3207719800799
+        },
+        {
+          "slotId": "professional-process:primary",
+          "primitiveCount": 2,
+          "left": 14864.516020078245,
+          "right": 14879.641021473923,
+          "top": 770.2084646062075,
+          "bottom": 819.3472630858605
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "primitiveCount": 4,
+          "left": 15242.918398745769,
+          "right": 15409.554156309781,
+          "top": 778.5467222115675,
+          "bottom": 837.5707755096441
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "primitiveCount": 3,
+          "left": 16859.407805721738,
+          "right": 16880.38437015737,
+          "top": 783.3280947230868,
+          "bottom": 832.5897569836085
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "primitiveCount": 4,
+          "left": 18924.21268375404,
+          "right": 19107.419731909686,
+          "top": 800.7878131310779,
+          "bottom": 853.3272466901536
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "primitiveCount": 2,
+          "left": 20356.78898782171,
+          "right": 20371.960864221714,
+          "top": 749.422024699833,
+          "bottom": 798.5622880233711
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "primitiveCount": 4,
+          "left": 20729.072225299584,
+          "right": 20892.798802907648,
+          "top": 776.8168026183433,
+          "bottom": 839.7475335230071
+        }
+      ]
+    }
+  ],
+  "runtime": {
+    "consoleMessages": [],
+    "consoleWarningCount": 0,
+    "consoleErrorCount": 0,
+    "relevantConsoleErrorCount": 0,
+    "developmentCspReports": [],
+    "hydrationWarningCount": 0,
+    "pageErrorCount": 0,
+    "pageErrors": []
+  }
+}

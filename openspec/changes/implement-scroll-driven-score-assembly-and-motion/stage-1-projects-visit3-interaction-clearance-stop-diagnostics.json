@@ -1,0 +1,132 @@
+{
+  "schema": "wflyer-stage1-projects-visit3-interaction-clearance-stop/v1",
+  "recordedAt": "2026-09-12T10:07:04-03:00",
+  "status": "BLOCKED_OWNER_DECISION",
+  "diagnosticIdentity": "PROJECTS-VISIT-3-INTERACTION-CLEARANCE",
+  "identityIsAuthorization": false,
+  "classification": "Current corrected horizontal candidate exposes a complete-interaction clearance failure inside visit 3's own notation shelf; historical lineage is not investigated and no inherited repair authority is claimed",
+  "head": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+  "branch": "develop/site-institucional",
+  "activeChange": "implement-scroll-driven-score-assembly-and-motion",
+  "openSpecProgress": {
+    "complete": 7,
+    "total": 92
+  },
+  "requiredClearanceCssPx": 12,
+  "occurrences": [
+    {
+      "diagnosticOccurrence": "PROJECTS-VISIT-3-INTERACTION-CLEARANCE:1536x900",
+      "viewport": {
+        "width": 1536,
+        "height": 900
+      },
+      "mode": "horizontal-enhanced-candidate",
+      "projectIndex": 3,
+      "candidateStatus": "INSUFFICIENT_CAPACITY",
+      "candidateReason": "projects-protected-clearance-or-clip",
+      "interactionEnvelope": {
+        "x": 17340.71,
+        "y": 108.29,
+        "width": 335.78,
+        "height": 663.04
+      },
+      "internalShelfMinimumClearanceCssPx": 8.475144370079207,
+      "inclusiveBoundaryMinimumClearanceCssPx": 8.475144370079207,
+      "globalVisitMinimumClearanceCssPx": 8.372450414027085,
+      "globalLimitingConstraint": {
+        "kind": "staff-ink",
+        "ownerId": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+        "radiusCssPx": 0.36,
+        "start": {
+          "x": 17437.188857098834,
+          "y": 780.0818363598142
+        },
+        "end": {
+          "x": 17441.53012162987,
+          "y": 780.062450414027
+        },
+        "startT": 0.8759765625,
+        "endT": 0.876953125,
+        "visitZoneStartT": 0.88,
+        "visitZoneEndT": 0.9,
+        "relation": "incoming"
+      },
+      "method": "Independent inert production-story clone; actual computed production idle/hover/focus/touch-equivalent transition envelope; complete rendered staff/event ink; internal shelf value filters staff segments to startT >= 0.88 and endT <= 0.9"
+    }
+  ],
+  "sameCandidateAuthorizedRepairs": {
+    "visit1": {
+      "minimumClearanceCssPx": 12.008125281333946,
+      "internalShelfMinimumClearanceCssPx": 12.008125281333946,
+      "visible": true,
+      "limitingOwner": "wf-professional-projects:primary:note:0:notehead"
+    },
+    "visit2": {
+      "minimumClearanceCssPx": 29.246151033756192,
+      "internalShelfMinimumClearanceCssPx": 29.355298689582256,
+      "visible": true,
+      "limitingOwner": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8"
+    }
+  },
+  "authorityConflict": {
+    "preservedDecision": "ADR-050 / ASM-IMP-DEC-014",
+    "preservedClause": "Visit 3's own shelf remains frozen; STOP if repair needs visit 3's own shelf or another unregistered defect",
+    "requiredAction": "Owner must decide whether to register a distinct bounded defect/repair envelope or explicitly amend named scope; no repair may proceed from this diagnostic identity"
+  },
+  "attemptHistory": [
+    {
+      "attempt": 1,
+      "hypothesis": "Complete production envelopes and derived local shelf minima can repair ASM-PC-002/003 without changing responsive policy",
+      "result": "Material progress: visit 2 passed with >29px; visit 1 remained capped; visit 3 was isolated as the other limiting visit"
+    },
+    {
+      "attempt": 2,
+      "hypothesis": "A clip-aware release of the first-shelf authored cap can satisfy ASM-PC-002 while preserving global geometry",
+      "result": "Supported at 1536x900: visit 1 reached 12.008125281333946px, visit 2 stayed >29px, both remained visible, and the complete candidate remained structurally valid but insufficient because of visit 3"
+    },
+    {
+      "attempt": "reverted-diagnostic-variation",
+      "hypothesis": "A direct smooth arrival offset could also repair the visit-2-to-3 junction",
+      "result": "Rejected and reverted after producing global-visible-segment-intersection; it did not establish a valid repair"
+    }
+  ],
+  "validation": {
+    "focusedUnit": {
+      "command": "pnpm exec vitest run --project=unit tests/unit/story/story-score-projects-capacity.test.ts tests/unit/story/motion-eligibility.test.ts",
+      "result": "PASS",
+      "tests": 17
+    },
+    "focusedChromium": {
+      "command": "pnpm exec playwright test tests/e2e/assembly-stage1-projects-capacity.spec.ts --project=chromium --workers=1 --retries=0 -g '1536x900'",
+      "result": "EXPECTED STOP FAILURE",
+      "assertion": "Expected complete candidate PASS; received INSUFFICIENT_CAPACITY",
+      "pageErrors": []
+    },
+    "eslint": {
+      "result": "PASS",
+      "scope": "changed Projects capacity/projection/runtime/candidate/test files"
+    },
+    "successorOpenSpecStrict": "PASS",
+    "workspaceOpenSpecStrict": {
+      "result": "PASS",
+      "items": 17
+    },
+    "structuredJson": "PASS",
+    "gitDiffCheckAfterArtifactWrite": "PASS",
+    "typescript": {
+      "result": "BLOCKED_PREEXISTING_GENERATED_ROUTE_MISMATCH",
+      "detail": ".next/types uses /__visual-lab/music while .next/dev/types uses /%5F_visual-lab/music; no source-code diagnostic reported"
+    },
+    "finalBrowserMatrix": "NOT RUN",
+    "finalCaptures": "NOT GENERATED"
+  },
+  "sourceSha256": {
+    "src/lib/story/score/projection.ts": "31f4537bfab680b0210d3024ecaf80d7202b98619a688e81fa41a77354ac4845",
+    "src/lib/story/score/projects-capacity.ts": "6a79d5b4bfad631dd3ef7362a8d256fb5c2b6b6d3510bcbaa4b1f17eb94a0836",
+    "src/components/story-score/measurement.ts": "bedd59dabc7d2535a0f83e58f1fb338e019d472a5b19d92b188a8b86262e45a6",
+    "src/components/story-score/projects-capacity-candidate.ts": "812fa575c3c655c5a086717e2010e99c3c88a1bfc56e301b9541e72f25736dfd",
+    "tests/e2e/assembly-stage1-projects-capacity.spec.ts": "5d78abf213f693627de3cc42d9e6122691e714b9c111649e0d4af0d1c48af9a0"
+  },
+  "historicalEvidenceMutated": false,
+  "visit3RepairImplemented": false
+}

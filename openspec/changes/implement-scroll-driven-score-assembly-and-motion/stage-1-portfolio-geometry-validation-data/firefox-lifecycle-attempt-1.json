@@ -1,0 +1,546 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/home/davi-benucci/Área de trabalho/WFlyer/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/cli.js",
+      "test",
+      "tests/e2e/phase05-master-story.spec.ts",
+      "tests/e2e/phase05-navigation.spec.ts",
+      "tests/e2e/phase04-bootstrap.spec.ts",
+      "--grep",
+      "uses native scroll for the portfolio|positions portfolio deep links|preserves the active semantic chapter|keeps reduced, compact, and driver-failure paths|every main chapter remains a clean direct deep link|reconciles resize during boot",
+      "--project=firefox",
+      "--workers=1",
+      "--reporter=json"
+    ],
+    "configFile": "/home/davi-benucci/Área de trabalho/WFlyer/playwright.config.ts",
+    "rootDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/a11y/**/*.spec.ts",
+          "**/visual/**/*.spec.ts",
+          "**/motion/**/*.spec.ts",
+          "**/staging/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/a11y/**/*.spec.ts",
+          "**/visual/**/*.spec.ts",
+          "**/motion/**/*.spec.ts",
+          "**/staging/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/a11y/**/*.spec.ts",
+          "**/visual/**/*.spec.ts",
+          "**/motion/**/*.spec.ts",
+          "**/staging/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "e2e/phase04-bootstrap.spec.ts",
+      "file": "e2e/phase04-bootstrap.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Phase-4 readiness and semantic bootstrap",
+          "file": "e2e/phase04-bootstrap.spec.ts",
+          "line": 69,
+          "column": 6,
+          "specs": [
+            {
+              "title": "reconciles resize during boot and retains the mobile vertical Home origin",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10496,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:28:45.159Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ff2983c5cefe4e7ee320-af7ddc69ae7a522bb127",
+              "file": "e2e/phase04-bootstrap.spec.ts",
+              "line": 346,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e/phase05-master-story.spec.ts",
+      "file": "e2e/phase05-master-story.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Phase-5 native-scroll master story",
+          "file": "e2e/phase05-master-story.spec.ts",
+          "line": 62,
+          "column": 6,
+          "specs": [
+            {
+              "title": "uses native scroll for the portfolio, exact labels, and keyboard extremes without React frame renders",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7354,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at /home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts:236:66",
+                        "location": {
+                          "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                          "column": 66,
+                          "line": 236
+                        },
+                        "snippet": "  234 |       ),\n  235 |     ).toBe(baseline);\n> 236 |     expect((await motionSnapshot(page)).ownedScrollTriggerCount).toBe(1);\n      |                                                                  ^\n  237 |   });\n  238 |\n  239 |   test(\"allows a literal headed native-scrollbar drag without React frame renders\", async ({"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                            "column": 66,
+                            "line": 236
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  234 |       ),\n  235 |     ).toBe(baseline);\n> 236 |     expect((await motionSnapshot(page)).ownedScrollTriggerCount).toBe(1);\n      |                                                                  ^\n  237 |   });\n  238 |\n  239 |   test(\"allows a literal headed native-scrollbar drag without React frame renders\", async ({\n    at /home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts:236:66"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:28:57.322Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle/e2e-phase05-master-story-P-d3edf-without-React-frame-renders-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle/e2e-phase05-master-story-P-d3edf-without-React-frame-renders-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle/e2e-phase05-master-story-P-d3edf-without-React-frame-renders-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                        "column": 66,
+                        "line": 236
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4b43acf023c0f4176caa-12f68de5809745c9c687",
+              "file": "e2e/phase05-master-story.spec.ts",
+              "line": 150,
+              "column": 3
+            },
+            {
+              "title": "positions portfolio deep links and retains Phase-4 Back/Forward semantics",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12259,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-story-bootstrap]')\nExpected: \u001b[32m\"\u001b[7mREVEAL\u001b[27mED\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mDEGRAD\u001b[27mED\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-story-bootstrap]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-story-bootstrap]')\u001b[22m\n\u001b[2m    5 × locator resolved to <div data-bootstrap-state=\"INITIAL\" data-bootstrap-trace=\"INITIAL\" data-story-bootstrap=\"phase-4\" data-bootstrap-scenario=\"normal\" data-bootstrap-source=\"unresolved\" data-bootstrap-degraded-reason=\"none\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-release-cause=\"pending\" data-bootstrap-destination=\"unresolved\" data-bootstrap-history-status=\"pending\" data-bootstrap-session-repeated=\"false\" data-bootstrap-position-status=\"pending\" class=\"story-bootstrap-module__ZnSCIG__root\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"INITIAL\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-story-bootstrap=\"phase-4\" data-bootstrap-scenario=\"normal\" data-bootstrap-source=\"unresolved\" data-bootstrap-degraded-reason=\"none\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-release-cause=\"pending\" data-bootstrap-destination=\"unresolved\" data-bootstrap-history-status=\"pending\" data-bootstrap-session-repeated=\"false\" data-bootstrap-state=\"WAITING_CRITICAL\" data-bootstrap-trace=\"WAITING_CRITICAL\" data-bootstrap-position-status=\"pending\" class=\"story-bootstrap-module__ZnSCIG__root\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"WAITING_CRITICAL\"\u001b[22m\n\u001b[2m    6 × locator resolved to <div data-story-bootstrap=\"phase-4\" data-bootstrap-state=\"DEGRADED\" data-bootstrap-trace=\"DEGRADED\" data-bootstrap-scenario=\"normal\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-source=\"explicit-hash\" data-bootstrap-session-repeated=\"false\" data-bootstrap-history-status=\"replaced\" data-bootstrap-position-status=\"positioned\" class=\"story-bootstrap-module__ZnSCIG__root\" data-bootstrap-release-cause=\"css-fail-open\" data-bootstrap-degraded-reason=\"hard-timeout\" data-bootstrap-destination=\"profe…>…</div>\u001b[22m\n\u001b[2m      - unexpected value \"DEGRADED\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-story-bootstrap]')\nExpected: \u001b[32m\"\u001b[7mREVEAL\u001b[27mED\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mDEGRAD\u001b[27mED\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-story-bootstrap]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-story-bootstrap]')\u001b[22m\n\u001b[2m    5 × locator resolved to <div data-bootstrap-state=\"INITIAL\" data-bootstrap-trace=\"INITIAL\" data-story-bootstrap=\"phase-4\" data-bootstrap-scenario=\"normal\" data-bootstrap-source=\"unresolved\" data-bootstrap-degraded-reason=\"none\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-release-cause=\"pending\" data-bootstrap-destination=\"unresolved\" data-bootstrap-history-status=\"pending\" data-bootstrap-session-repeated=\"false\" data-bootstrap-position-status=\"pending\" class=\"story-bootstrap-module__ZnSCIG__root\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"INITIAL\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-story-bootstrap=\"phase-4\" data-bootstrap-scenario=\"normal\" data-bootstrap-source=\"unresolved\" data-bootstrap-degraded-reason=\"none\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-release-cause=\"pending\" data-bootstrap-destination=\"unresolved\" data-bootstrap-history-status=\"pending\" data-bootstrap-session-repeated=\"false\" data-bootstrap-state=\"WAITING_CRITICAL\" data-bootstrap-trace=\"WAITING_CRITICAL\" data-bootstrap-position-status=\"pending\" class=\"story-bootstrap-module__ZnSCIG__root\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"WAITING_CRITICAL\"\u001b[22m\n\u001b[2m    6 × locator resolved to <div data-story-bootstrap=\"phase-4\" data-bootstrap-state=\"DEGRADED\" data-bootstrap-trace=\"DEGRADED\" data-bootstrap-scenario=\"normal\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-source=\"explicit-hash\" data-bootstrap-session-repeated=\"false\" data-bootstrap-history-status=\"replaced\" data-bootstrap-position-status=\"positioned\" class=\"story-bootstrap-module__ZnSCIG__root\" data-bootstrap-release-cause=\"css-fail-open\" data-bootstrap-degraded-reason=\"hard-timeout\" data-bootstrap-destination=\"profe…>…</div>\u001b[22m\n\u001b[2m      - unexpected value \"DEGRADED\"\u001b[22m\n\n    at openMotionLab (/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts:15:46)\n    at /home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts:298:5",
+                        "location": {
+                          "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                          "column": 46,
+                          "line": 15
+                        },
+                        "snippet": "  13 |   });\n  14 |   expect(response?.ok()).toBe(true);\n> 15 |   await expect(page.locator(BOOTSTRAP_ROOT)).toHaveAttribute(\n     |                                              ^\n  16 |     \"data-bootstrap-state\",\n  17 |     \"REVEALED\",\n  18 |     { timeout: 10_000 },"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                            "column": 46,
+                            "line": 15
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-story-bootstrap]')\nExpected: \u001b[32m\"\u001b[7mREVEAL\u001b[27mED\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mDEGRAD\u001b[27mED\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-story-bootstrap]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-story-bootstrap]')\u001b[22m\n\u001b[2m    5 × locator resolved to <div data-bootstrap-state=\"INITIAL\" data-bootstrap-trace=\"INITIAL\" data-story-bootstrap=\"phase-4\" data-bootstrap-scenario=\"normal\" data-bootstrap-source=\"unresolved\" data-bootstrap-degraded-reason=\"none\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-release-cause=\"pending\" data-bootstrap-destination=\"unresolved\" data-bootstrap-history-status=\"pending\" data-bootstrap-session-repeated=\"false\" data-bootstrap-position-status=\"pending\" class=\"story-bootstrap-module__ZnSCIG__root\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"INITIAL\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-story-bootstrap=\"phase-4\" data-bootstrap-scenario=\"normal\" data-bootstrap-source=\"unresolved\" data-bootstrap-degraded-reason=\"none\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-release-cause=\"pending\" data-bootstrap-destination=\"unresolved\" data-bootstrap-history-status=\"pending\" data-bootstrap-session-repeated=\"false\" data-bootstrap-state=\"WAITING_CRITICAL\" data-bootstrap-trace=\"WAITING_CRITICAL\" data-bootstrap-position-status=\"pending\" class=\"story-bootstrap-module__ZnSCIG__root\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"WAITING_CRITICAL\"\u001b[22m\n\u001b[2m    6 × locator resolved to <div data-story-bootstrap=\"phase-4\" data-bootstrap-state=\"DEGRADED\" data-bootstrap-trace=\"DEGRADED\" data-bootstrap-scenario=\"normal\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-source=\"explicit-hash\" data-bootstrap-session-repeated=\"false\" data-bootstrap-history-status=\"replaced\" data-bootstrap-position-status=\"positioned\" class=\"story-bootstrap-module__ZnSCIG__root\" data-bootstrap-release-cause=\"css-fail-open\" data-bootstrap-degraded-reason=\"hard-timeout\" data-bootstrap-destination=\"profe…>…</div>\u001b[22m\n\u001b[2m      - unexpected value \"DEGRADED\"\u001b[22m\n\n\n  13 |   });\n  14 |   expect(response?.ok()).toBe(true);\n> 15 |   await expect(page.locator(BOOTSTRAP_ROOT)).toHaveAttribute(\n     |                                              ^\n  16 |     \"data-bootstrap-state\",\n  17 |     \"REVEALED\",\n  18 |     { timeout: 10_000 },\n    at openMotionLab (/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts:15:46)\n    at /home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts:298:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:29:05.662Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle/e2e-phase05-master-story-P-4f380-se-4-Back-Forward-semantics-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle/e2e-phase05-master-story-P-4f380-se-4-Back-Forward-semantics-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle/e2e-phase05-master-story-P-4f380-se-4-Back-Forward-semantics-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                        "column": 46,
+                        "line": 15
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4b43acf023c0f4176caa-8459c52e5bf7991defa3",
+              "file": "e2e/phase05-master-story.spec.ts",
+              "line": 295,
+              "column": 3
+            },
+            {
+              "title": "preserves the active semantic chapter across capacity and orientation rebuilds",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 15560,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"horizontal-enhanced\"\u001b[39m\nReceived: \u001b[31m\"vertical-wide\"\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"horizontal-enhanced\"\u001b[39m\nReceived: \u001b[31m\"vertical-wide\"\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at /home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts:377:8",
+                        "location": {
+                          "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                          "column": 8,
+                          "line": 377
+                        },
+                        "snippet": "  375 |         timeout: 5_000,\n  376 |       })\n> 377 |       .toBe(\"horizontal-enhanced\");\n      |        ^\n  378 |     await expect\n  379 |       .poll(async () => (await motionSnapshot(page)).activeChapterId, {\n  380 |         timeout: 5_000,"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                            "column": 8,
+                            "line": 377
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"horizontal-enhanced\"\u001b[39m\nReceived: \u001b[31m\"vertical-wide\"\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  375 |         timeout: 5_000,\n  376 |       })\n> 377 |       .toBe(\"horizontal-enhanced\");\n      |        ^\n  378 |     await expect\n  379 |       .poll(async () => (await motionSnapshot(page)).activeChapterId, {\n  380 |         timeout: 5_000,\n    at /home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts:377:8"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:29:19.454Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle/e2e-phase05-master-story-P-4a210-ty-and-orientation-rebuilds-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle/e2e-phase05-master-story-P-4a210-ty-and-orientation-rebuilds-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle/e2e-phase05-master-story-P-4a210-ty-and-orientation-rebuilds-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                        "column": 8,
+                        "line": 377
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4b43acf023c0f4176caa-9304818627c508504b28",
+              "file": "e2e/phase05-master-story.spec.ts",
+              "line": 336,
+              "column": 3
+            },
+            {
+              "title": "keeps reduced, compact, and driver-failure paths vertical and usable",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10311,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"horizontal-enhanced\"\u001b[39m\nReceived: \u001b[31m\"vertical-wide\"\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"horizontal-enhanced\"\u001b[39m\nReceived: \u001b[31m\"vertical-wide\"\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at /home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts:460:8",
+                        "location": {
+                          "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                          "column": 8,
+                          "line": 460
+                        },
+                        "snippet": "  458 |         timeout: 5_000,\n  459 |       })\n> 460 |       .toBe(\"horizontal-enhanced\");\n      |        ^\n  461 |     expect((await motionSnapshot(page)).activeChapterId).toBe(\n  462 |       \"professional-projects\",\n  463 |     );"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                            "column": 8,
+                            "line": 460
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"horizontal-enhanced\"\u001b[39m\nReceived: \u001b[31m\"vertical-wide\"\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  458 |         timeout: 5_000,\n  459 |       })\n> 460 |       .toBe(\"horizontal-enhanced\");\n      |        ^\n  461 |     expect((await motionSnapshot(page)).activeChapterId).toBe(\n  462 |       \"professional-projects\",\n  463 |     );\n    at /home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts:460:8"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:29:36.538Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle/e2e-phase05-master-story-P-462d4-e-paths-vertical-and-usable-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle/e2e-phase05-master-story-P-462d4-e-paths-vertical-and-usable-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-lifecycle/e2e-phase05-master-story-P-462d4-e-paths-vertical-and-usable-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                        "column": 8,
+                        "line": 460
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4b43acf023c0f4176caa-3d227ecb93ad73aa5cb7",
+              "file": "e2e/phase05-master-story.spec.ts",
+              "line": 445,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e/phase05-navigation.spec.ts",
+      "file": "e2e/phase05-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "every main chapter remains a clean direct deep link",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-navigation.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6985,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-23T12:29:48.269Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-navigation.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a561895dde1b6b73eb60-fdfd09161638568883d5",
+          "file": "e2e/phase05-navigation.spec.ts",
+          "line": 266,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-23T12:28:44.327Z",
+    "duration": 71997.437,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

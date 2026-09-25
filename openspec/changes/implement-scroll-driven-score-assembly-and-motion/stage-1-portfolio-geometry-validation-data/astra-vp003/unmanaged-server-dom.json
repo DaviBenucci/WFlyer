@@ -1,0 +1,368 @@
+[
+  {
+    "route": "/",
+    "timeline": [
+      {
+        "ms": 9678,
+        "route": "/",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": false,
+        "mainInert": false,
+        "transitionLock": null,
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 9681,
+        "route": "/",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": "pending",
+        "main": true,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 10078,
+        "route": "/",
+        "bootstrap": null,
+        "brandActive": "true",
+        "brandState": null,
+        "homeReady": "pending",
+        "main": true,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "hidden",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 10092,
+        "route": "/",
+        "bootstrap": null,
+        "brandActive": "true",
+        "brandState": "waiting",
+        "homeReady": "pending",
+        "main": true,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "hidden",
+        "htmlOverflow": "visible",
+        "cover": true
+      },
+      {
+        "ms": 10124,
+        "route": "/",
+        "bootstrap": null,
+        "brandActive": "true",
+        "brandState": "waiting",
+        "homeReady": "pending",
+        "main": true,
+        "mainInert": true,
+        "transitionLock": "false",
+        "bodyOverflow": "hidden",
+        "htmlOverflow": "visible",
+        "cover": true
+      },
+      {
+        "ms": 10203,
+        "route": "/",
+        "bootstrap": null,
+        "brandActive": "true",
+        "brandState": "playing",
+        "homeReady": "pending",
+        "main": true,
+        "mainInert": true,
+        "transitionLock": "false",
+        "bodyOverflow": "hidden",
+        "htmlOverflow": "visible",
+        "cover": true
+      },
+      {
+        "ms": 15786,
+        "route": "/",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": "playing",
+        "homeReady": "pending",
+        "main": true,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": true
+      },
+      {
+        "ms": 15796,
+        "route": "/",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": "pending",
+        "main": true,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 15798,
+        "route": "/",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": "ready",
+        "main": true,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      }
+    ]
+  },
+  {
+    "route": "/sobre",
+    "timeline": [
+      {
+        "ms": 372,
+        "route": "/sobre",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": false,
+        "mainInert": false,
+        "transitionLock": null,
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 373,
+        "route": "/sobre",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": false,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 373,
+        "route": "/sobre",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": true,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      }
+    ]
+  },
+  {
+    "route": "/servicos",
+    "timeline": [
+      {
+        "ms": 325,
+        "route": "/servicos",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": false,
+        "mainInert": false,
+        "transitionLock": null,
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 326,
+        "route": "/servicos",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": false,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 326,
+        "route": "/servicos",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": true,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      }
+    ]
+  },
+  {
+    "route": "/processo",
+    "timeline": [
+      {
+        "ms": 221,
+        "route": "/processo",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": false,
+        "mainInert": false,
+        "transitionLock": null,
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 223,
+        "route": "/processo",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": false,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 224,
+        "route": "/processo",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": true,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      }
+    ]
+  },
+  {
+    "route": "/portfolio",
+    "timeline": [
+      {
+        "ms": 201,
+        "route": "/portfolio",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": false,
+        "mainInert": false,
+        "transitionLock": null,
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 202,
+        "route": "/portfolio",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": false,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 203,
+        "route": "/portfolio",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": true,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      }
+    ]
+  },
+  {
+    "route": "/contato",
+    "timeline": [
+      {
+        "ms": 159,
+        "route": "/contato",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": false,
+        "mainInert": false,
+        "transitionLock": null,
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 160,
+        "route": "/contato",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": false,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      },
+      {
+        "ms": 165,
+        "route": "/contato",
+        "bootstrap": null,
+        "brandActive": null,
+        "brandState": null,
+        "homeReady": null,
+        "main": true,
+        "mainInert": false,
+        "transitionLock": "false",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible",
+        "cover": false
+      }
+    ]
+  }
+]

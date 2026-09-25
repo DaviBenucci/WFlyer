@@ -1,0 +1,10 @@
+import fs from 'node:fs';import path from 'node:path';
+import {strictIntersections} from '/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/helpers/assembly-stage1-audit.ts';
+const dir='/home/davi-benucci/Área de trabalho/WFlyer/openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-inherited-audit-data';
+const target=dir+'/complete-ink-oracle.jsonl';const seen=new Set(fs.existsSync(target)?fs.readFileSync(target,'utf8').trim().split('\n').filter(Boolean).map(x=>JSON.parse(x).evidence):[]);let n=0;
+for(const file of fs.readdirSync(dir).filter(x=>/^(ink|projects-ink)-.*\.json$/.test(x))){if(seen.has(file))continue;const ink=JSON.parse(fs.readFileSync(path.join(dir,file)));const record={evidence:file,oracle:'unchanged strictIntersections from pinned tests/e2e/helpers/assembly-stage1-audit.ts; every original serialized DOM vertex; no thinning/near-neighbor exemption',groups:[],errors:[]};const groups=new Map();
+ for(const p of ink.primitives||[]){if(p.role!=='staff-line')continue;if(!p.points){record.errors.push({id:p.id,error:'Missing complete points'});continue;}const id=p.id.replace(/:(?:canonical:\d+|card-score-interaction:[^:]+:\d+)$/u,'');const group=groups.get(id)||{id,points:[],runs:[]};const last=group.points.at(-1),first=p.points[0];if(last&&(last.x!==first.x||last.y!==first.y))record.errors.push({id,error:'Split staff run discontinuous or out of order',last,first});group.runs.push({id:p.id,edges:p.points.length-1});group.points.push(...(last?p.points.slice(1):p.points));groups.set(id,group);}
+ for(const g of groups.values())record.groups.push({id:g.id,pointCount:g.points.length,runs:g.runs,crossings:strictIntersections(g.points)});
+ record.staffLineCount=groups.size;record.crossingCount=record.groups.reduce((a,g)=>a+g.crossings.length,0);record.rawValidatorOutcome=record.errors.length||groups.size!==5?'ERROR':record.crossingCount?'FAIL':'PASS';fs.appendFileSync(target,JSON.stringify(record)+'\n');n++;
+}
+console.log('New full visible-staff oracle records',n);

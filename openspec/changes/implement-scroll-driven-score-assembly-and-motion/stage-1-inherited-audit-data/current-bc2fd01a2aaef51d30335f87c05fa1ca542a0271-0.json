@@ -1,0 +1,390 @@
+{
+  "connectorEventCount": 0,
+  "howReadability": {
+    "beamCount": 0,
+    "maximumRenderedRotation": 1.028,
+    "noteheadCount": 4,
+    "noteheads": [
+      {
+        "id": "wf-application-how-it-works:primary:note:0:notehead",
+        "left": 4536.805,
+        "transform": "translate(4544.353617 752.265197) rotate(0.648068) scale(1 -1) translate(-7.488 -5.4)"
+      },
+      {
+        "id": "wf-application-how-it-works:reserved:note:0:notehead",
+        "left": 4588.53,
+        "transform": "translate(4596.083717 776.847673) rotate(0.698225) scale(1 -1) translate(-7.488 -5.4)"
+      },
+      {
+        "id": "wf-application-how-it-works:reserved:note:1:notehead",
+        "left": 4613.335,
+        "transform": "translate(4620.902 777.178358) rotate(0.837375) scale(1 -1) translate(-7.488 -5.4)"
+      },
+      {
+        "id": "wf-application-how-it-works:reserved:note:2:notehead",
+        "left": 4638.028,
+        "transform": "translate(4645.61162 783.579498) rotate(1.027581) scale(1 -1) translate(-7.488 -5.4)"
+      }
+    ],
+    "stemCount": 4,
+    "strictlyLeftToRight": true,
+    "xMirrored": false
+  },
+  "maximumNotationTangent": 14.300797,
+  "scenes": [
+    {
+      "branch": "professional",
+      "cardRegions": [
+        {
+          "classification": "CLEAR",
+          "foregroundContract": true,
+          "intendedOcclusionSamples": 616,
+          "rect": {
+            "bottom": 641.844,
+            "height": 275.719,
+            "left": 12991.172,
+            "right": 13237.953,
+            "top": 366.125,
+            "width": 246.781
+          },
+          "surfaceAlpha": 0.925
+        },
+        {
+          "classification": "CLEAR",
+          "foregroundContract": true,
+          "intendedOcclusionSamples": 618,
+          "rect": {
+            "bottom": 641.844,
+            "height": 275.719,
+            "left": 13253.953,
+            "right": 13500.734,
+            "top": 366.125,
+            "width": 246.781
+          },
+          "surfaceAlpha": 0.925
+        },
+        {
+          "classification": "CLEAR",
+          "foregroundContract": true,
+          "intendedOcclusionSamples": 618,
+          "rect": {
+            "bottom": 641.844,
+            "height": 275.719,
+            "left": 13516.734,
+            "right": 13763.516,
+            "top": 366.125,
+            "width": 246.781
+          },
+          "surfaceAlpha": 0.925
+        },
+        {
+          "classification": "CLEAR",
+          "foregroundContract": true,
+          "intendedOcclusionSamples": 912,
+          "rect": {
+            "bottom": 641.844,
+            "height": 275.719,
+            "left": 13779.516,
+            "right": 14026.313,
+            "top": 366.125,
+            "width": 246.797
+          },
+          "surfaceAlpha": 0.925
+        }
+      ],
+      "direction": "left-to-right",
+      "expandedSpan": 633.549,
+      "finalCardGroupBoundary": 14026.313,
+      "firstCardGroupBoundary": 12991.172,
+      "fullExpansionEnd": {
+        "x": 13787.618,
+        "y": 503.882
+      },
+      "fullExpansionStart": {
+        "x": 13225.298,
+        "y": 508.856
+      },
+      "interactionEnd": {
+        "x": 14130.809,
+        "y": 612.744
+      },
+      "interactionStart": {
+        "x": 12844.698,
+        "y": 756.825
+      },
+      "introductionRegions": [
+        {
+          "classification": "CLEAR",
+          "minimumClearance": 312.194,
+          "nearest": {
+            "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:expanded:33",
+            "x": 13238.847,
+            "y": 449.47
+          },
+          "rect": {
+            "bottom": 205.922,
+            "height": 16.797,
+            "left": 12714.313,
+            "right": 13042.953,
+            "top": 189.125,
+            "width": 328.641
+          },
+          "tagName": "p"
+        },
+        {
+          "classification": "CLEAR",
+          "minimumClearance": 140.442,
+          "nearest": {
+            "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:11",
+            "x": 13077.074,
+            "y": 643.464
+          },
+          "rect": {
+            "bottom": 506.859,
+            "height": 288.938,
+            "left": 12714.313,
+            "right": 13042.953,
+            "top": 217.922,
+            "width": 328.641
+          },
+          "tagName": "h2"
+        },
+        {
+          "classification": "CLEAR",
+          "minimumClearance": 23.985,
+          "nearest": {
+            "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:9",
+            "x": 13064.388,
+            "y": 666.4
+          },
+          "rect": {
+            "bottom": 654.859,
+            "height": 136,
+            "left": 12714.313,
+            "right": 13042.953,
+            "top": 518.859,
+            "width": 328.641
+          },
+          "tagName": "p"
+        },
+        {
+          "classification": "CLEAR",
+          "minimumClearance": 21.619,
+          "nearest": {
+            "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:card-score-interaction:pre-transition:2",
+            "x": 12845.495,
+            "y": 732.838
+          },
+          "rect": {
+            "bottom": 710.859,
+            "height": 44,
+            "left": 12714.313,
+            "right": 12877.516,
+            "top": 666.859,
+            "width": 163.203
+          },
+          "tagName": "a"
+        }
+      ],
+      "layering": {
+        "foregroundMarker": "true",
+        "sceneZIndex": 2,
+        "scorePointerEvents": "none",
+        "scoreZIndex": 1
+      },
+      "leadInLength": 400.997,
+      "leadOutLength": 401.02,
+      "maximumFiveLineSpread": 117.012,
+      "measurementSource": "dom-measured",
+      "minimumOpacity": 0.34,
+      "sceneId": "professional-services",
+      "sceneMinimumClearance": 21.619,
+      "status": "CLEAR",
+      "unsafeEventCount": 0
+    },
+    {
+      "branch": "application",
+      "cardRegions": [
+        {
+          "classification": "CLEAR",
+          "foregroundContract": true,
+          "intendedOcclusionSamples": 359,
+          "rect": {
+            "bottom": 611.281,
+            "height": 196.594,
+            "left": 6086.875,
+            "right": 6287.5,
+            "top": 414.688,
+            "width": 200.625
+          },
+          "surfaceAlpha": 0.92
+        },
+        {
+          "classification": "CLEAR",
+          "foregroundContract": true,
+          "intendedOcclusionSamples": 524,
+          "rect": {
+            "bottom": 611.281,
+            "height": 196.594,
+            "left": 6295.5,
+            "right": 6496.125,
+            "top": 414.688,
+            "width": 200.625
+          },
+          "surfaceAlpha": 0.92
+        },
+        {
+          "classification": "CLEAR",
+          "foregroundContract": true,
+          "intendedOcclusionSamples": 500,
+          "rect": {
+            "bottom": 611.281,
+            "height": 196.594,
+            "left": 6504.125,
+            "right": 6704.75,
+            "top": 414.688,
+            "width": 200.625
+          },
+          "surfaceAlpha": 0.92
+        },
+        {
+          "classification": "CLEAR",
+          "foregroundContract": true,
+          "intendedOcclusionSamples": 521,
+          "rect": {
+            "bottom": 611.281,
+            "height": 196.594,
+            "left": 6712.75,
+            "right": 6913.375,
+            "top": 414.688,
+            "width": 200.625
+          },
+          "surfaceAlpha": 0.92
+        },
+        {
+          "classification": "CLEAR",
+          "foregroundContract": true,
+          "intendedOcclusionSamples": 348,
+          "rect": {
+            "bottom": 611.281,
+            "height": 196.594,
+            "left": 6921.375,
+            "right": 7122.016,
+            "top": 414.688,
+            "width": 200.641
+          },
+          "surfaceAlpha": 0.92
+        }
+      ],
+      "direction": "right-to-left",
+      "expandedSpan": 1300.312,
+      "finalCardGroupBoundary": 6086.875,
+      "firstCardGroupBoundary": 7122.016,
+      "fullExpansionEnd": {
+        "x": 6289.866,
+        "y": 513.018
+      },
+      "fullExpansionStart": {
+        "x": 6924.841,
+        "y": 517.496
+      },
+      "interactionEnd": {
+        "x": 5986.158,
+        "y": 853.876
+      },
+      "interactionStart": {
+        "x": 7234.746,
+        "y": 853.6
+      },
+      "introductionRegions": [
+        {
+          "classification": "CLEAR",
+          "minimumClearance": 392.794,
+          "nearest": {
+            "id": "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:expanded:28",
+            "x": 6287.94,
+            "y": 456.312
+          },
+          "rect": {
+            "bottom": 102.234,
+            "height": 16.797,
+            "left": 5810.016,
+            "right": 6117.063,
+            "top": 85.438,
+            "width": 307.047
+          },
+          "tagName": "p"
+        },
+        {
+          "classification": "CLEAR",
+          "minimumClearance": 63.49,
+          "nearest": {
+            "id": "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:41",
+            "x": 6178.275,
+            "y": 628.71
+          },
+          "rect": {
+            "bottom": 610.547,
+            "height": 496.313,
+            "left": 5810.016,
+            "right": 6117.063,
+            "top": 114.234,
+            "width": 307.047
+          },
+          "tagName": "h2"
+        },
+        {
+          "classification": "CLEAR",
+          "minimumClearance": 19.947,
+          "nearest": {
+            "id": "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:48",
+            "x": 6136.212,
+            "y": 765.305
+          },
+          "rect": {
+            "bottom": 758.547,
+            "height": 136,
+            "left": 5810.016,
+            "right": 6117.063,
+            "top": 622.547,
+            "width": 307.047
+          },
+          "tagName": "p"
+        },
+        {
+          "classification": "CLEAR",
+          "minimumClearance": 14.404,
+          "nearest": {
+            "id": "wf-phase-9-task-34:horizontal-enhanced:application:staff:8:card-score-interaction:post-transition:54",
+            "x": 6048.263,
+            "y": 829.309
+          },
+          "rect": {
+            "bottom": 814.547,
+            "height": 44,
+            "left": 5810.016,
+            "right": 6048.063,
+            "top": 770.547,
+            "width": 238.047
+          },
+          "tagName": "a"
+        }
+      ],
+      "layering": {
+        "foregroundMarker": "true",
+        "sceneZIndex": 2,
+        "scorePointerEvents": "none",
+        "scoreZIndex": 1
+      },
+      "leadInLength": 608.523,
+      "leadOutLength": 608.503,
+      "maximumFiveLineSpread": 116.772,
+      "measurementSource": "dom-measured",
+      "minimumOpacity": 0.34,
+      "sceneId": "application-how-it-works",
+      "sceneMinimumClearance": 14.404,
+      "status": "CLEAR",
+      "unsafeEventCount": 0
+    }
+  ]
+}

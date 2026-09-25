@@ -1,0 +1,11 @@
+{
+  "time": "2026-09-14T11:36:18.916026+00:00",
+  "root": "audit-nojs-frame-wait",
+  "evidence": [
+    "lifecycle-attempt-1.jsonl",
+    "static-pilot-attempt-1.jsonl"
+  ],
+  "change": "No-JS declared profiles use synchronous browser layout reads instead of awaiting an app animation-frame callback; font readiness is polled with a bounded deadline from Node. Recognize existing data-chapter=home markup without inventing missing v2 chapters.",
+  "result": "No-JS pilot terminates and retains missing-scene errors; no product source or validation threshold changed",
+  "rootRegistration": "collector limitation, not canonical product repair identity"
+}

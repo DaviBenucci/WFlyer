@@ -1,0 +1,8 @@
+{
+  "time": "2026-09-14T12:23:18.129605+00:00",
+  "purpose": "Extend fail-record-continue to sequence-level context creation and cleanup, which otherwise sit outside per-step collectors. Resume existing exact sequence keys; persist setup errors and continue independent declared sequences.",
+  "productChange": false,
+  "assertionChange": false,
+  "unsupportedStateAssumption": false,
+  "attemptType": "Audit orchestration boundary; not product root repair"
+}

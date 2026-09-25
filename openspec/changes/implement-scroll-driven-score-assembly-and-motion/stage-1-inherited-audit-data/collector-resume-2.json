@@ -1,0 +1,7 @@
+{
+  "time": "2026-09-14T12:03:24.111312+00:00",
+  "persistedObservations": 1097,
+  "lastSlot": "access/historical/firefox/light/organic-flowing-vertical-compact-430x844/VERIFYING_EXPIRED_TOKEN",
+  "reason": "Load already documented cascade-isolation correction. Previous Node process remained alive after SIGTERM; audit-owned process and its browser were stopped before restart. All recorded observations retained; missing or explicitly preserved dependent-cascade slots only are resumed.",
+  "runtimeErrorInterpretation": "Earlier rows may retain cumulative console errors from preceding states in the same context; resumed rows declare this-observation scope. Attribution requires matching the originating state, never counting repeated cumulative messages as distinct roots."
+}

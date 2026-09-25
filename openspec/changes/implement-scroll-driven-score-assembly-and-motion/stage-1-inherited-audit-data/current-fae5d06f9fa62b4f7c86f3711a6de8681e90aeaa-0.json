@@ -1,0 +1,90 @@
+[
+  {
+    "mode": "horizontal-enhanced",
+    "branch": "application",
+    "nodeCandidateCount": 5512,
+    "browserCandidateCount": 5512,
+    "maximumRawCoordinateDelta": 0,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "horizontal-enhanced",
+    "branch": "professional",
+    "nodeCandidateCount": 9600,
+    "browserCandidateCount": 9600,
+    "maximumRawCoordinateDelta": 0,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "vertical-wide",
+    "branch": "application",
+    "nodeCandidateCount": 22057,
+    "browserCandidateCount": 22057,
+    "maximumRawCoordinateDelta": 0,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "vertical-wide",
+    "branch": "professional",
+    "nodeCandidateCount": 17220,
+    "browserCandidateCount": 17220,
+    "maximumRawCoordinateDelta": 0,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "vertical-compact",
+    "branch": "application",
+    "nodeCandidateCount": 9292,
+    "browserCandidateCount": 9292,
+    "maximumRawCoordinateDelta": 0,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "vertical-compact",
+    "branch": "professional",
+    "nodeCandidateCount": 8528,
+    "browserCandidateCount": 8528,
+    "maximumRawCoordinateDelta": 0,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "static",
+    "branch": "application",
+    "nodeCandidateCount": 22057,
+    "browserCandidateCount": 22057,
+    "maximumRawCoordinateDelta": 0,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "static",
+    "branch": "professional",
+    "nodeCandidateCount": 17220,
+    "browserCandidateCount": 17220,
+    "maximumRawCoordinateDelta": 0,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  }
+]

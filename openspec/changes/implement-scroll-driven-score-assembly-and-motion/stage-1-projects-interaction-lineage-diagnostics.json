@@ -1,0 +1,3588 @@
+{
+  "schema": "wflyer-stage-1-projects-interaction-lineage/v1",
+  "recordedAt": "2026-09-11",
+  "status": "BLOCKED_OWNER_DECISION",
+  "head": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+  "branch": "develop/site-institucional",
+  "stage0": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+  "phase9": "306ccb74da6c7bbf8f187e360c0776c571b5fc3d",
+  "activeChange": "implement-scroll-driven-score-assembly-and-motion",
+  "openSpecProgress": "7/92",
+  "humanGeometryApproval": "pending",
+  "diagnosticIdentity": "PROJECTS-VISIT-2-FOCUS-CLEARANCE",
+  "canonicalIdentityAllocated": false,
+  "identityIsAuthorization": false,
+  "newOwnerApprovalPresent": false,
+  "runtimeRepairPerformed": false,
+  "repairCandidateConstructed": false,
+  "finalBrowserMatrixRun": false,
+  "finalCapturesGenerated": false,
+  "classification": {
+    "primary": "C: inherited staff reservation interacting with required focus envelope",
+    "lineage": "E: distinct inherited defect under successor complete interaction contract",
+    "notStage1Regression": true,
+    "notRequiredFirstShelfContinuityConsequence": true,
+    "independentFocusStyleCanonicalViolationFound": false,
+    "styleReviewIsFullAccessibilityAudit": false
+  },
+  "requiredClearanceCssPx": 12,
+  "occurrenceCount": 3,
+  "currentDOMSource": {
+    "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-clearance-stop-diagnostics.json",
+    "sha256": "058ec613801e13e8eafb1a5b8c4ccb6de2110f4834190a5709d39197f0ac8c9c",
+    "scope": "Previously collected current Chromium DOM; actual keyboard-visible focus at animation currentTime=0; sufficient bottom-center witness, not global minimum",
+    "occurrences": [
+      {
+        "diagnosticOccurrence": "PROJECTS-VISIT-2-FOCUS-CLEARANCE:1440x900",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "mode": "horizontal-enhanced",
+        "projectIndex": 2,
+        "state": "first requestAnimationFrame after real link focus; CSS transform transition currentTime=0",
+        "measurement": {
+          "card": {
+            "x": 15996.53125,
+            "y": 153.25,
+            "width": 292.546875,
+            "height": 593.484375
+          },
+          "link": {
+            "x": 15997.53125,
+            "y": 154.25,
+            "width": 290.546875,
+            "height": 591.484375
+          },
+          "outlineWidth": 4,
+          "outlineOffset": 6,
+          "outlineStyle": "solid",
+          "focusVisible": true,
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "transitionDuration": "0.36s",
+          "animations": [
+            {
+              "time": 0,
+              "state": "running"
+            }
+          ],
+          "track": {
+            "x": -8503,
+            "y": 0.171875,
+            "width": 1440,
+            "height": 900
+          }
+        },
+        "idleCard": {
+          "x": 15996.53125,
+          "y": 153.25,
+          "width": 292.546875,
+          "height": 593.484375
+        },
+        "outlineBottomCssPx": 755.734375,
+        "witness": {
+          "primitiveId": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:canonical:65",
+          "segmentCssPx": [
+            {
+              "x": 16141.133547564308,
+              "y": 765.24594082586
+            },
+            {
+              "x": 16146.03558966932,
+              "y": 765.1946848561302
+            }
+          ],
+          "centerlineAtFocusBottomMidpoint": {
+            "x": 16142.8046875,
+            "y": 765.228467312552
+          },
+          "svgScreenToTrackMatrix": [
+            0.9999994094324272,
+            0,
+            0,
+            0.9999994094324272,
+            0,
+            0.0002657554077794555
+          ],
+          "strokeWidthSvgUnits": 0.72,
+          "strokeRadiusCssPx": 0.3599997873956738,
+          "verticalGapIncludingStrokeCssPx": 9.134092525156348
+        },
+        "pageErrors": [],
+        "method": "Same physical track coordinates; actual uniform SVG scale applied to points and stroke; vertical separation from actual bottom horizontal focus-outline segment to rendered staff centerline less half stroke; sufficient failure witness, not global minimum or full capacity proof"
+      },
+      {
+        "diagnosticOccurrence": "PROJECTS-VISIT-2-FOCUS-CLEARANCE:1536x900",
+        "viewport": {
+          "width": 1536,
+          "height": 900
+        },
+        "mode": "horizontal-enhanced",
+        "projectIndex": 2,
+        "state": "first requestAnimationFrame after real link focus; CSS transform transition currentTime=0",
+        "measurement": {
+          "card": {
+            "x": 17045.390625,
+            "y": 150.234375,
+            "width": 289.890625,
+            "height": 599.515625
+          },
+          "link": {
+            "x": 17046.390625,
+            "y": 151.234375,
+            "width": 287.890625,
+            "height": 597.515625
+          },
+          "outlineWidth": 4,
+          "outlineOffset": 6,
+          "outlineStyle": "solid",
+          "focusVisible": true,
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "transitionDuration": "0.36s",
+          "animations": [
+            {
+              "time": 0,
+              "state": "running"
+            }
+          ],
+          "track": {
+            "x": -9070,
+            "y": 0.171875,
+            "width": 1536,
+            "height": 900
+          }
+        },
+        "idleCard": {
+          "x": 17045.390625,
+          "y": 150.234375,
+          "width": 289.890625,
+          "height": 599.515625
+        },
+        "outlineBottomCssPx": 758.75,
+        "witness": {
+          "primitiveId": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:canonical:65",
+          "segmentCssPx": [
+            {
+              "x": 17188.68201289395,
+              "y": 768.2661226316155
+            },
+            {
+              "x": 17193.539566445714,
+              "y": 768.2148646363453
+            }
+          ],
+          "centerlineAtFocusBottomMidpoint": {
+            "x": 17190.3359375,
+            "y": 768.2486700479784
+          },
+          "svgScreenToTrackMatrix": [
+            0.9999999077238207,
+            0,
+            0,
+            0.9999999077238207,
+            0,
+            4.152428065207214e-05
+          ],
+          "strokeWidthSvgUnits": 0.72,
+          "strokeRadiusCssPx": 0.35999996678057544,
+          "verticalGapIncludingStrokeCssPx": 9.138670081197802
+        },
+        "pageErrors": [],
+        "method": "Same physical track coordinates; actual uniform SVG scale applied to points and stroke; vertical separation from actual bottom horizontal focus-outline segment to rendered staff centerline less half stroke; sufficient failure witness, not global minimum or full capacity proof"
+      },
+      {
+        "diagnosticOccurrence": "PROJECTS-VISIT-2-FOCUS-CLEARANCE:1920x917",
+        "viewport": {
+          "width": 1920,
+          "height": 917
+        },
+        "mode": "horizontal-enhanced",
+        "projectIndex": 2,
+        "state": "first requestAnimationFrame after real link focus; CSS transform transition currentTime=0",
+        "measurement": {
+          "card": {
+            "x": 21305.96875,
+            "y": 154.828125,
+            "width": 285.546875,
+            "height": 607.328125
+          },
+          "link": {
+            "x": 21306.96875,
+            "y": 155.828125,
+            "width": 283.546875,
+            "height": 605.328125
+          },
+          "outlineWidth": 4,
+          "outlineOffset": 6,
+          "outlineStyle": "solid",
+          "focusVisible": true,
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "transitionDuration": "0.36s",
+          "animations": [
+            {
+              "time": 0,
+              "state": "running"
+            }
+          ],
+          "track": {
+            "x": -11337.9990234375,
+            "y": 0.171875,
+            "width": 1920,
+            "height": 917
+          }
+        },
+        "idleCard": {
+          "x": 21305.96875,
+          "y": 154.828125,
+          "width": 285.546875,
+          "height": 607.328125
+        },
+        "outlineBottomCssPx": 771.15625,
+        "witness": {
+          "primitiveId": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:canonical:65",
+          "segmentCssPx": [
+            {
+              "x": 21447.10591826208,
+              "y": 780.6761216499472
+            },
+            {
+              "x": 21451.89088320239,
+              "y": 780.6248626612992
+            }
+          ],
+          "centerlineAtFocusBottomMidpoint": {
+            "x": 21448.7421875,
+            "y": 780.6585930980481
+          },
+          "svgScreenToTrackMatrix": [
+            0.9999997785371656,
+            0,
+            0,
+            0.9999997785371656,
+            0,
+            0.00010154070954487837
+          ],
+          "strokeWidthSvgUnits": 0.72,
+          "strokeRadiusCssPx": 0.3599999202733796,
+          "verticalGapIncludingStrokeCssPx": 9.142343177774706
+        },
+        "pageErrors": [],
+        "method": "Same physical track coordinates; actual uniform SVG scale applied to points and stroke; vertical separation from actual bottom horizontal focus-outline segment to rendered staff centerline less half stroke; sufficient failure witness, not global minimum or full capacity proof"
+      }
+    ]
+  },
+  "sourceLineage": [
+    {
+      "revision": "current",
+      "ref": null,
+      "path": "src/lib/story/score/projection.ts",
+      "sha256": "5fda8a5f4c0767857cb95842d1c7e49b0ec230d248bad52f7bd33729a37b29ed"
+    },
+    {
+      "revision": "current",
+      "ref": null,
+      "path": "src/lib/story/score/organic-flowing.ts",
+      "sha256": "91081e1263fa89c72f0ddd05ef0d0de9d188c4118bd6e5c999c8cbab5b9f0b1c"
+    },
+    {
+      "revision": "stage0",
+      "ref": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+      "path": "src/lib/story/score/projection.ts",
+      "sha256": "885b7dd562564f939f300faa404856cd2c4904f70b498e5abd3127430ec0bcd2"
+    },
+    {
+      "revision": "stage0",
+      "ref": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+      "path": "src/lib/story/score/organic-flowing.ts",
+      "sha256": "5bd7bd584c3a6818d377b1409620c3cccbe29eafa26e3874919cd161263c3e25"
+    },
+    {
+      "revision": "phase9",
+      "ref": "306ccb74da6c7bbf8f187e360c0776c571b5fc3d",
+      "path": "src/lib/story/score/projection.ts",
+      "sha256": "885b7dd562564f939f300faa404856cd2c4904f70b498e5abd3127430ec0bcd2"
+    },
+    {
+      "revision": "phase9",
+      "ref": "306ccb74da6c7bbf8f187e360c0776c571b5fc3d",
+      "path": "src/lib/story/score/organic-flowing.ts",
+      "sha256": "5bd7bd584c3a6818d377b1409620c3cccbe29eafa26e3874919cd161263c3e25"
+    }
+  ],
+  "styleLineage": [
+    {
+      "path": "src/components/projects/ProjectCardFan.tsx",
+      "sha256": "5f12847ba68ab6a8262d445b8d9c2dd2d48a5d02e61dde16d56b1a1cad4d5bfc",
+      "historicalDigests": {
+        "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9": "5f12847ba68ab6a8262d445b8d9c2dd2d48a5d02e61dde16d56b1a1cad4d5bfc",
+        "306ccb74da6c7bbf8f187e360c0776c571b5fc3d": "5f12847ba68ab6a8262d445b8d9c2dd2d48a5d02e61dde16d56b1a1cad4d5bfc"
+      }
+    },
+    {
+      "path": "src/components/projects/ProjectCard.tsx",
+      "sha256": "0c7ef3ece07f2cc890c105e86ae1d97b53373fd19fcc7664b9fa13f6f5701c9c",
+      "historicalDigests": {
+        "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9": "0c7ef3ece07f2cc890c105e86ae1d97b53373fd19fcc7664b9fa13f6f5701c9c",
+        "306ccb74da6c7bbf8f187e360c0776c571b5fc3d": "0c7ef3ece07f2cc890c105e86ae1d97b53373fd19fcc7664b9fa13f6f5701c9c"
+      }
+    },
+    {
+      "path": "src/components/projects/project-cards.module.css",
+      "sha256": "752562f7b9b3a9d70b477021aaf5366bbaa08f31a64e8c9eec6986982528e253",
+      "historicalDigests": {
+        "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9": "752562f7b9b3a9d70b477021aaf5366bbaa08f31a64e8c9eec6986982528e253",
+        "306ccb74da6c7bbf8f187e360c0776c571b5fc3d": "752562f7b9b3a9d70b477021aaf5366bbaa08f31a64e8c9eec6986982528e253"
+      }
+    },
+    {
+      "path": "src/styles/base.css",
+      "sha256": "f6546eb440c578bc82b982f6a6ed680b6ff16a773191c261ecc1cb7a4965015e",
+      "historicalDigests": {
+        "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9": "f6546eb440c578bc82b982f6a6ed680b6ff16a773191c261ecc1cb7a4965015e",
+        "306ccb74da6c7bbf8f187e360c0776c571b5fc3d": "f6546eb440c578bc82b982f6a6ed680b6ff16a773191c261ecc1cb7a4965015e"
+      }
+    },
+    {
+      "path": "src/styles/tokens.css",
+      "sha256": "0bf31db9fb26d5dc371329c810901f351344a63d536238bd1b2ecd5724850ea3",
+      "historicalDigests": {
+        "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9": "0bf31db9fb26d5dc371329c810901f351344a63d536238bd1b2ecd5724850ea3",
+        "306ccb74da6c7bbf8f187e360c0776c571b5fc3d": "0bf31db9fb26d5dc371329c810901f351344a63d536238bd1b2ecd5724850ea3"
+      }
+    },
+    {
+      "path": "src/app/globals.css",
+      "sha256": "bc6f3ac4765cc9374df3a898be1a91307347c2bbca5460bdce08b6292352faf3",
+      "historicalDigests": {
+        "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9": "bc6f3ac4765cc9374df3a898be1a91307347c2bbca5460bdce08b6292352faf3",
+        "306ccb74da6c7bbf8f187e360c0776c571b5fc3d": "bc6f3ac4765cc9374df3a898be1a91307347c2bbca5460bdce08b6292352faf3"
+      }
+    }
+  ],
+  "unchangedSharedSourceInventory": [
+    {
+      "path": "src/lib/app-launch-interest/email.ts",
+      "sha256": "f458963bf37070306d17250431f7d273b1379850820c5619f87a1e65a7934f16",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/app-launch-interest/guard.ts",
+      "sha256": "d7b9a6c715ebf60621084caf55a048ad7a9ba26c0788eddbebaa0b8cf4b0aa84",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/app-launch-interest/index.ts",
+      "sha256": "1c898c68a1d8af5faa6be56089821465e637d2ae40d68e0b5617ea90ba9d250d",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/app-launch-interest/schema.ts",
+      "sha256": "14361c165812eb30e7f98dfcf66e95c7ab3a2ab94a055dc3b67abdfea15304a0",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/contact/config.ts",
+      "sha256": "e0538425855fc0bfb76ec8f086be042569102c85fb4d4fba47cfd6c07e46e0fc",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/contact/email.ts",
+      "sha256": "6617aea172e5bc96258e17803706b7bf8c033b2aafd6dead6852a5d14265aac6",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/contact/index.ts",
+      "sha256": "99da40bbf8d5533ce85579674471c5c164cad471d3cb3add751ac4e846f5cb8d",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/contact/schema.ts",
+      "sha256": "fcb4e5da297349fb892488ab532953daa3690fd338961be1bea4f173a61caecd",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/contact/turnstile.ts",
+      "sha256": "1d255b5623317ca7c73f3182dee895f95268a27b61ef070d22f432415c51feae",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/cleanup.test.ts",
+      "sha256": "eba1adfe3d73eb02ee0a5e5172d919390d0130946d19a79299661558593a4cc3",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/cleanup.ts",
+      "sha256": "c757ad82bf2cb8df8319826ecacf64024428d9de0bfd552338e1d0aa9bbe9ad2",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/eligibility.test.ts",
+      "sha256": "810ac1afe6f2a71d138eb663edc747705f09e1e14ab3d94cdda228cec6f48a19",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/eligibility.ts",
+      "sha256": "66ef976feba5f0e6ccbdb0c4fe746892dfc2ce283e953dc29f656c482479bf36",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/geometry.test.ts",
+      "sha256": "de4c0fa44380080482121b4a308e5f5688ca1d6ccaf845f637363062c1755317",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/geometry.ts",
+      "sha256": "a903da788f2898aa33e5592d748c72c1f57b326426f0e9012273d0a4941e1516",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/index.ts",
+      "sha256": "780436830212752ecfcc8186663285647569527d334b054357fa77b1431c3f31",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/lifecycle.test.ts",
+      "sha256": "3be69733a08b633d88f7f1a25bbebfb03327b2dbb91356c1c2f5d7c93114b262",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/lifecycle.ts",
+      "sha256": "e755f55a7e958e0167352c01f534ba5079af238e9fbf8845ee7d023e3fb76fcf",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/timing.test.ts",
+      "sha256": "183dd8ad36971d7c373b0d175f1bdd453ebe54d4e495c60e584844dedf9c3d85",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/timing.ts",
+      "sha256": "2dec622a3d5bc3dbbb3f1b23e776609f8ce844cf371c423674bc6b48ca684495",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/topology.test.ts",
+      "sha256": "1c3c61634e16e730bb22742f9164e1ddf04ee8961cabf9814e28c6a7b68db376",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/motion/topology.ts",
+      "sha256": "26c820bf145fb339751541154cd6aaba8fac28b0f9c8f51af79ee79003a4a529",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/composer/anti-repetition.ts",
+      "sha256": "a0f021cc7cfac48fb7a6dd1c3f2f80737d197a56b80db6aa9299d85d46319e85",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/composer/compose-motif.ts",
+      "sha256": "5251d1ad843ebe57a250a6cedc91d42ebdb7bbcc522cbaab1e0d498903de9f0a",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/composer/compose-segment.ts",
+      "sha256": "8a1dec293df9167fa3bb10a5a90e0e9e61799bfac64f18109f5edbcbf10fd342",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/composer/index.ts",
+      "sha256": "cfbe059f5cbbeb38cf3b977f2a027bf8a1ba4a6a4771aedf04f3ce51f73e7188",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/composer/motifs.ts",
+      "sha256": "35cdbe42fbfa794729a6fb4475ccbbfd3fe10f88c0943051c4b681ac109e7c00",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/composer/pitch-contours.ts",
+      "sha256": "6b328b8d00c377e7067f201abf22034731fd55ca2334a265fddc745001f9224f",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/composer/prng.ts",
+      "sha256": "dc1c9dd448cea8778320fae5dc130dcbdf1a05ab95b31f00427433db2df86a99",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/composer/profiles.ts",
+      "sha256": "9e06977226e00b5b9da463a15d7f9bf0ffe05ee2810eb3b1dd48d1b9a710ef7e",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/composer/session-seed.ts",
+      "sha256": "8c63936c3c690440c82c6d3e47d1246e2c49088d68655cb6ed3e6cfe8433020b",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/composer/types.ts",
+      "sha256": "8f1843546d079f9c65a750cb98fd363a571bb7862766d6a642255027e36b21fa",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/accidentals.ts",
+      "sha256": "0d2fdce4e0aa6b5458a94d4f91fbe435a02c89c7b8a767ac96c005f9e98d7e29",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/barlines.ts",
+      "sha256": "b83aab771e1d6a4458ed38a58952dce53416aa01e1b4612adb3071dc98dac5f6",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/beams.ts",
+      "sha256": "ea0ae16c7c6261b6e7a1aef6be36ccb8632af58f035ca74d11031ce66a10522c",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/cubic-bezier-score-path.ts",
+      "sha256": "679fc1995ca63bfd04dbc2eb13af23f9f2e2ba64c5c162e5efa284b4c82f6cc3",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/key-signatures.ts",
+      "sha256": "af5c670b7da070313e3759e6b07896b03db564e809ff0b0845d52a370e332868",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/ledger-lines.ts",
+      "sha256": "15f85938e249b3f855630c05f642c8c9adae87e4be21988798628eb13ca311b3",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/pitch.ts",
+      "sha256": "980edb4413a455158c92be38e69d85f8240de556ca1449660e11638f945c0029",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/responsive-score-projection.ts",
+      "sha256": "eb1a7a483c4ad9b47951219ac712ba6cae78d47b0039e2d438152af14b3cd62c",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/score-path.ts",
+      "sha256": "a976ff46745f64ca704e2ff99592caddec788f97761fd6abd3571efc85edaa6f",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/staff.ts",
+      "sha256": "1c831fd93fd2e0153b951269bccdfd05637682caa3b6f3c186e2dc7db44bdb98",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/stems.ts",
+      "sha256": "0329e2820aa13d59621e2918537c2fa831a4219a4de8bf8248f50de3f097a8e7",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/straight-score-path.ts",
+      "sha256": "06fe855ee791460211c018d0224af955a36e4aa76ecfa0f9e9c5eb71c91cad47",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/types.ts",
+      "sha256": "8f6bceb44ad39580a158522a7fab1a31bb9cee30e96ea181e5d39161dd75b348",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/units.ts",
+      "sha256": "27240b4fc7c8855b1c49479fe6964539b4fc4657b3e07703b9a880420e95eb8d",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/geometry/vectors.ts",
+      "sha256": "7913dc708e6feb381d77b9cc495067ea9a5c90cd5aa2d899c8a2c2c6c86f9fed",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/glyphs/metrics.ts",
+      "sha256": "875677600f773e7314d458468e121b635dfc4a854b051ebd38b1d863864da03f",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/glyphs/registry.ts",
+      "sha256": "5ec3376c5a41e0e70b87ab04bd5cecb3043c582c7c867d1a54ec1d9f3149c254",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/glyphs/types.ts",
+      "sha256": "a2536cc2ef491b20be34e7778bdc8b845698836a494163ab1fb82e62fed9bc6b",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/renderer/approved-runtime.ts",
+      "sha256": "f65c4ca925cf95affc984eaf3d0d2918ee1cd9e5f6b862f63a75b0a3fd361a55",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/renderer/build-motif-model.ts",
+      "sha256": "a02a7ceeec2b88af34b254c93e1eb5bf5d34d00b338331fbab2efdb39eb79e02",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/renderer/build-note-model.ts",
+      "sha256": "159e845e4190fc13bd8bec14d97c7114fc31414fd85df951f3f2dcd6df12e7c9",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/renderer/build-score-model.ts",
+      "sha256": "af3068e0570cc77ee560e168b557787500f98ab27b048b2247b06206bcb8f8a8",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/renderer/glyph-frame.ts",
+      "sha256": "22982aa179d9ec1634747ce5c11e6772475c4c0a0630317a1b2eb2b45a39cbd9",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/renderer/ids.ts",
+      "sha256": "cbd4b79e0fffc13d27c3e61800e45dc01620b2cf71e58ce65016f8d94b1f60fd",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/renderer/paint-order.ts",
+      "sha256": "661bdc89755ce1a5859d5c526f0c6db54be5d8daef6f6a4c1b40e5ccb080801d",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/music/renderer/types.ts",
+      "sha256": "65a74d3ac23a3344bc0492d95f50a64404e376a5d62b2201f1b31c34381c544e",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/bootstrap/destination.ts",
+      "sha256": "171f62b5522a8d80ecda0d0f15e186b27869639b25a4ccc9c164d470113d39d1",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/bootstrap/history.ts",
+      "sha256": "f8285e98232e1da362a2d63e8db4ef2084650c2dbb5209504a381bc5c00041c4",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/bootstrap/index.ts",
+      "sha256": "9b9c0ad80a776c7b2f24fd3df0198c5a0db62981ced78fdd0ad0ab3986514f4b",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/bootstrap/positioning.ts",
+      "sha256": "c615bcf6015d6f0d8ba788b213da58c57e6a406a1503115109a6dfec0c458133",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/bootstrap/readiness.ts",
+      "sha256": "7c70dba03d221aee03ce162e45872463166bf4aa9f7418821daaf13a8c4e981a",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/bootstrap/session.ts",
+      "sha256": "84ae5ee35b0c7261fb1df145217feb6aae5eef5a2dcfcdd57717d8fa2bcb8340",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/bootstrap/timing.ts",
+      "sha256": "04b5edd36c443b142f27a5171400b868474b863de24e65a057988df03927c05f",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/index.ts",
+      "sha256": "417999d3e85fcf1c72cd36221c4c9441cf28d01566746b7b0e969014dd448877",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/manifest.ts",
+      "sha256": "344be4d963da70e7c67486c46448b329eebf1269f9fed432900220593db13eb9",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/motion/eligibility.ts",
+      "sha256": "fe151dc6f5f03e369f5b4162924dd55ef539ad5576bc7a6c887916201d50f26e",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/motion/geometry.ts",
+      "sha256": "27299ef002a594500779de47b09e03eb9487dd485d7b6d736382840e34b59b2a",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/motion/index.ts",
+      "sha256": "df22e5b3810fd910f21a91cbc469bd70e5ff1835264d3e657668ab98065dc1fe",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/motion/lab.ts",
+      "sha256": "2f23b916a23741edf57e27ad3853d6c708876ce9fade4f8149338993a38f817f",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/motion/positioning.ts",
+      "sha256": "4a8342b28bc094c8d53b0d791ae684c9abd523388ff25dc9d9bf4b103f4973b1",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/motion/runtime.ts",
+      "sha256": "80bddfccc97a7bbe215751f912f63268bc04f2f8cc0c7ee2bb60743663bb3670",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/motion/traversal.ts",
+      "sha256": "7300811e4c1d5494cc80b7e6be7ddb23203a98a95321d27b8938f7135712cd18",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/score/composition.ts",
+      "sha256": "e6eaab5d61dec728063f717da57b469371fabd2ad62115c9c49d85d1fc40ec2d",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/score/shared-origin.ts",
+      "sha256": "0af7ff70fcbb2f0ef4346de97f587c27c782a4b48d337ef7101717be01babf92",
+      "matchesBoth": true
+    },
+    {
+      "path": "src/lib/story/types.ts",
+      "sha256": "cc9994298b2dae73e69e589ad2b993536426af8374c695b73b08fbc7ed2a169c",
+      "matchesBoth": true
+    }
+  ],
+  "savedInputSha256": "61f26ce52ebffcee4b3751d41b856be60d97c38e1e63ba3dd4a97ad6d569f9e3",
+  "replays": [
+    {
+      "revision": "current",
+      "fixture": "1440x900",
+      "card": {
+        "x": 15996.53,
+        "y": 153.25,
+        "width": 292.55,
+        "height": 593.48
+      },
+      "anchor": {
+        "x": 16142.805,
+        "y": 788.73
+      },
+      "zone": {
+        "id": "notation:professional-projects:7",
+        "startT": 0.752,
+        "endT": 0.772,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ],
+        "eventCount": 0
+      },
+      "range": {
+        "barlineAfter": false,
+        "chapterId": "professional-projects",
+        "projectVisit": {
+          "anchor": {
+            "x": 16142.805,
+            "y": 788.73
+          },
+          "cardRect": {
+            "x": 15996.53,
+            "y": 153.25,
+            "width": 292.55,
+            "height": 593.48
+          },
+          "measurementSource": "dom-measured",
+          "projectIndex": 2
+        },
+        "startSegmentIndex": 188,
+        "endSegmentIndex": 193,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ]
+      },
+      "shelfControlKnots": [
+        {
+          "x": 16072.593,
+          "y": 788.73
+        },
+        {
+          "x": 16092.653571428573,
+          "y": 789.2246813099678
+        },
+        {
+          "x": 16112.714142857143,
+          "y": 789.4544318461961
+        },
+        {
+          "x": 16132.774714285715,
+          "y": 789.3538191111744
+        },
+        {
+          "x": 16152.835285714285,
+          "y": 789.1061808888256
+        },
+        {
+          "x": 16172.895857142857,
+          "y": 789.0055681538039
+        },
+        {
+          "x": 16192.956428571428,
+          "y": 789.2353186900323
+        },
+        {
+          "x": 16213.017,
+          "y": 789.73
+        }
+      ],
+      "centerWitness": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+        "a": {
+          "x": 16141.143080349262,
+          "y": 765.2461274500055
+        },
+        "b": {
+          "x": 16146.045125432687,
+          "y": 765.1948709223975
+        },
+        "stroke": 0.72,
+        "y": 765.2287501658291,
+        "gap": 9.138750165829038
+      },
+      "minimumClearanceAgainstNormalizedStartFocusEnvelope": 8.856556903061929,
+      "staffCount": 5,
+      "eventPrimitives": [],
+      "joins": [
+        {
+          "visit": 1,
+          "start": 156,
+          "end": 161,
+          "anchor": {
+            "x": 15821.34,
+            "y": 800.87
+          },
+          "firstPoint": {
+            "x": 15745.5912,
+            "y": 800.87
+          },
+          "lastPoint": {
+            "x": 15897.0888,
+            "y": 801.87
+          }
+        },
+        {
+          "visit": 2,
+          "start": 188,
+          "end": 193,
+          "anchor": {
+            "x": 16142.805,
+            "y": 788.73
+          },
+          "firstPoint": {
+            "x": 16072.593,
+            "y": 788.73
+          },
+          "lastPoint": {
+            "x": 16213.017,
+            "y": 789.73
+          }
+        },
+        {
+          "visit": 3,
+          "start": 220,
+          "end": 225,
+          "anchor": {
+            "x": 16464.27,
+            "y": 800.87
+          },
+          "firstPoint": {
+            "x": 16388.5212,
+            "y": 800.87
+          },
+          "lastPoint": {
+            "x": 16540.0188,
+            "y": 801.87
+          }
+        }
+      ],
+      "continuity": {
+        "maximumCurvatureDelta": 2.380572562671714e-13,
+        "maximumPointGap": 0,
+        "minimumTangentAlignment": 0.9999999999999994
+      },
+      "maximumExistingLocalCurvature": 0.03566387614895002,
+      "existingOuterOffsetCurvatureProduct": 0.8559330275748005,
+      "minimumExistingLocalDeltaX": 0.23651933202745568,
+      "necessaryWitnessDownwardShift": 2.8612498341709625,
+      "conservativeStraightShelfOnlyAnchorBand": {
+        "minimum": 792.094375,
+        "maximum": 816,
+        "slack": 23.905624999999986,
+        "meaning": "Analytic reservation band for full five-line ink below focus envelope; original height cap retained. NOT a repaired spline/connector/global acceptance interval or repair candidate."
+      },
+      "savedInput": {
+        "path": "tests/fixtures/story-score/stage1-batch2-measurements.json",
+        "fixtureId": "1440x900",
+        "optionsUnchanged": true
+      },
+      "constraints": {
+        "fullTransitionOuterBounds": {
+          "x": 15983.6494140625,
+          "y": 105.18789062500002,
+          "width": 318.310546875,
+          "height": 650.546484375
+        },
+        "minimumExistingStaffClearanceToConservativeSweepCssPx": 8.851996118442633,
+        "interiorWitnessSegment": 190,
+        "interiorWitnessKnotIndices": [
+          189,
+          190,
+          191,
+          192
+        ],
+        "interiorWitnessKnots": [
+          {
+            "x": 16112.714142857143,
+            "y": 789.4544318461961
+          },
+          {
+            "x": 16132.774714285715,
+            "y": 789.3538191111744
+          },
+          {
+            "x": 16152.835285714285,
+            "y": 789.1061808888256
+          },
+          {
+            "x": 16172.895857142857,
+            "y": 789.0055681538039
+          }
+        ],
+        "incomingConnectorEndsBeforeKnot": 187,
+        "outgoingConnectorStartsAfterKnot": 194,
+        "existingBranchIntersections": {
+          "center2049": 0,
+          "staff1025": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "valleyY": 836.87,
+        "neighborAnchorHorizontalSeparations": [
+          321.46500000000015,
+          321.46500000000015
+        ],
+        "connectorEndpointHorizontalRuns": [
+          175.50420000000122,
+          175.5041999999994
+        ]
+      }
+    },
+    {
+      "revision": "current",
+      "fixture": "1536x900",
+      "card": {
+        "x": 17045.39,
+        "y": 150.23,
+        "width": 289.89,
+        "height": 599.52
+      },
+      "anchor": {
+        "x": 17190.335,
+        "y": 791.75
+      },
+      "zone": {
+        "id": "notation:professional-projects:7",
+        "startT": 0.752,
+        "endT": 0.772,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ],
+        "eventCount": 0
+      },
+      "range": {
+        "barlineAfter": false,
+        "chapterId": "professional-projects",
+        "projectVisit": {
+          "anchor": {
+            "x": 17190.335,
+            "y": 791.75
+          },
+          "cardRect": {
+            "x": 17045.39,
+            "y": 150.23,
+            "width": 289.89,
+            "height": 599.52
+          },
+          "measurementSource": "dom-measured",
+          "projectIndex": 2
+        },
+        "startSegmentIndex": 188,
+        "endSegmentIndex": 193,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ]
+      },
+      "shelfControlKnots": [
+        {
+          "x": 17120.7614,
+          "y": 791.75
+        },
+        {
+          "x": 17140.63957142857,
+          "y": 792.2446813099677
+        },
+        {
+          "x": 17160.51774285714,
+          "y": 792.4744318461961
+        },
+        {
+          "x": 17180.395914285713,
+          "y": 792.3738191111744
+        },
+        {
+          "x": 17200.274085714285,
+          "y": 792.1261808888256
+        },
+        {
+          "x": 17220.152257142858,
+          "y": 792.0255681538039
+        },
+        {
+          "x": 17240.030428571426,
+          "y": 792.2553186900323
+        },
+        {
+          "x": 17259.9086,
+          "y": 792.75
+        }
+      ],
+      "centerWitness": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+        "a": {
+          "x": 17188.683598687694,
+          "y": 768.2661517255078
+        },
+        "b": {
+          "x": 17193.54115329126,
+          "y": 768.2148943472101
+        },
+        "stroke": 0.72,
+        "y": 768.2487259817552,
+        "gap": 9.138725981755215
+      },
+      "minimumClearanceAgainstNormalizedStartFocusEnvelope": 8.856501317742428,
+      "staffCount": 5,
+      "eventPrimitives": [],
+      "joins": [
+        {
+          "visit": 1,
+          "start": 156,
+          "end": 161,
+          "anchor": {
+            "x": 16870.25,
+            "y": 803.8399999999999
+          },
+          "firstPoint": {
+            "x": 16795.082,
+            "y": 803.8399999999999
+          },
+          "lastPoint": {
+            "x": 16945.418,
+            "y": 804.8399999999999
+          }
+        },
+        {
+          "visit": 2,
+          "start": 188,
+          "end": 193,
+          "anchor": {
+            "x": 17190.335,
+            "y": 791.75
+          },
+          "firstPoint": {
+            "x": 17120.7614,
+            "y": 791.75
+          },
+          "lastPoint": {
+            "x": 17259.9086,
+            "y": 792.75
+          }
+        },
+        {
+          "visit": 3,
+          "start": 220,
+          "end": 225,
+          "anchor": {
+            "x": 17510.41,
+            "y": 803.8399999999999
+          },
+          "firstPoint": {
+            "x": 17435.242,
+            "y": 803.8399999999999
+          },
+          "lastPoint": {
+            "x": 17585.578,
+            "y": 804.8399999999999
+          }
+        }
+      ],
+      "continuity": {
+        "maximumCurvatureDelta": 2.9719629535129855e-13,
+        "maximumPointGap": 0,
+        "minimumTangentAlignment": 0.9999999999999996
+      },
+      "maximumExistingLocalCurvature": 0.035619969136727,
+      "existingOuterOffsetCurvatureProduct": 0.854879259281448,
+      "minimumExistingLocalDeltaX": 0.23628915233712178,
+      "necessaryWitnessDownwardShift": 2.861274018244785,
+      "conservativeStraightShelfOnlyAnchorBand": {
+        "minimum": 795.11,
+        "maximum": 816,
+        "slack": 20.889999999999986,
+        "meaning": "Analytic reservation band for full five-line ink below focus envelope; original height cap retained. NOT a repaired spline/connector/global acceptance interval or repair candidate."
+      },
+      "savedInput": {
+        "path": "tests/fixtures/story-score/stage1-batch2-measurements.json",
+        "fixtureId": "1536x900",
+        "optionsUnchanged": true
+      },
+      "constraints": {
+        "fullTransitionOuterBounds": {
+          "x": 17032.5419921875,
+          "y": 102.021484375,
+          "width": 315.587890625,
+          "height": 656.728515625
+        },
+        "minimumExistingStaffClearanceToConservativeSweepCssPx": 8.85647201022792,
+        "interiorWitnessSegment": 190,
+        "interiorWitnessKnotIndices": [
+          189,
+          190,
+          191,
+          192
+        ],
+        "interiorWitnessKnots": [
+          {
+            "x": 17160.51774285714,
+            "y": 792.4744318461961
+          },
+          {
+            "x": 17180.395914285713,
+            "y": 792.3738191111744
+          },
+          {
+            "x": 17200.274085714285,
+            "y": 792.1261808888256
+          },
+          {
+            "x": 17220.152257142858,
+            "y": 792.0255681538039
+          }
+        ],
+        "incomingConnectorEndsBeforeKnot": 187,
+        "outgoingConnectorStartsAfterKnot": 194,
+        "existingBranchIntersections": {
+          "center2049": 0,
+          "staff1025": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "valleyY": 839.8399999999999,
+        "neighborAnchorHorizontalSeparations": [
+          320.0849999999991,
+          320.0750000000007
+        ],
+        "connectorEndpointHorizontalRuns": [
+          175.34339999999793,
+          175.33339999999953
+        ]
+      }
+    },
+    {
+      "revision": "current",
+      "fixture": "1920x917",
+      "card": {
+        "x": 21305.97,
+        "y": 154.83,
+        "width": 285.55,
+        "height": 607.33
+      },
+      "anchor": {
+        "x": 21448.745000000003,
+        "y": 804.1600000000001
+      },
+      "zone": {
+        "id": "notation:professional-projects:7",
+        "startT": 0.752,
+        "endT": 0.772,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ],
+        "eventCount": 0
+      },
+      "range": {
+        "barlineAfter": false,
+        "chapterId": "professional-projects",
+        "projectVisit": {
+          "anchor": {
+            "x": 21448.745000000003,
+            "y": 804.1600000000001
+          },
+          "cardRect": {
+            "x": 21305.97,
+            "y": 154.83,
+            "width": 285.55,
+            "height": 607.33
+          },
+          "measurementSource": "dom-measured",
+          "projectIndex": 2
+        },
+        "startSegmentIndex": 188,
+        "endSegmentIndex": 193,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ]
+      },
+      "shelfControlKnots": [
+        {
+          "x": 21380.213000000003,
+          "y": 804.1600000000001
+        },
+        {
+          "x": 21399.793571428574,
+          "y": 804.6546813099678
+        },
+        {
+          "x": 21419.374142857145,
+          "y": 804.8844318461962
+        },
+        {
+          "x": 21438.954714285715,
+          "y": 804.7838191111745
+        },
+        {
+          "x": 21458.53528571429,
+          "y": 804.5361808888257
+        },
+        {
+          "x": 21478.11585714286,
+          "y": 804.435568153804
+        },
+        {
+          "x": 21497.69642857143,
+          "y": 804.6653186900323
+        },
+        {
+          "x": 21517.277000000002,
+          "y": 805.1600000000001
+        }
+      ],
+      "centerWitness": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+        "a": {
+          "x": 21447.110667944162,
+          "y": 780.6761927987774
+        },
+        "b": {
+          "x": 21451.895634447297,
+          "y": 780.6249339811494
+        },
+        "stroke": 0.72,
+        "y": 780.6586850630933,
+        "gap": 9.138685063093249
+      },
+      "minimumClearanceAgainstNormalizedStartFocusEnvelope": 8.85640059226877,
+      "staffCount": 5,
+      "eventPrimitives": [],
+      "joins": [
+        {
+          "visit": 1,
+          "start": 156,
+          "end": 161,
+          "anchor": {
+            "x": 21131.274999999998,
+            "y": 816.1600000000001
+          },
+          "firstPoint": {
+            "x": 21057.0742,
+            "y": 816.1600000000001
+          },
+          "lastPoint": {
+            "x": 21205.475799999997,
+            "y": 817.1600000000001
+          }
+        },
+        {
+          "visit": 2,
+          "start": 188,
+          "end": 193,
+          "anchor": {
+            "x": 21448.745000000003,
+            "y": 804.1600000000001
+          },
+          "firstPoint": {
+            "x": 21380.213000000003,
+            "y": 804.1600000000001
+          },
+          "lastPoint": {
+            "x": 21517.277000000002,
+            "y": 805.1600000000001
+          }
+        },
+        {
+          "visit": 3,
+          "start": 220,
+          "end": 225,
+          "anchor": {
+            "x": 21766.215,
+            "y": 816.1600000000001
+          },
+          "firstPoint": {
+            "x": 21692.0142,
+            "y": 816.1600000000001
+          },
+          "lastPoint": {
+            "x": 21840.4158,
+            "y": 817.1600000000001
+          }
+        }
+      ],
+      "continuity": {
+        "maximumCurvatureDelta": 3.7786961060159996e-13,
+        "maximumPointGap": 0,
+        "minimumTangentAlignment": 0.9999999999999994
+      },
+      "maximumExistingLocalCurvature": 0.035691389853363654,
+      "existingOuterOffsetCurvatureProduct": 0.8565933564807278,
+      "minimumExistingLocalDeltaX": 0.23548567968100542,
+      "necessaryWitnessDownwardShift": 2.8613149369067514,
+      "conservativeStraightShelfOnlyAnchorBand": {
+        "minimum": 807.51625,
+        "maximum": 833,
+        "slack": 25.483749999999986,
+        "meaning": "Analytic reservation band for full five-line ink below focus envelope; original height cap retained. NOT a repaired spline/connector/global acceptance interval or repair candidate."
+      },
+      "savedInput": {
+        "path": "tests/fixtures/story-score/stage1-batch2-measurements.json",
+        "fixtureId": "1920x917",
+        "optionsUnchanged": true
+      },
+      "constraints": {
+        "fullTransitionOuterBounds": {
+          "x": 21293.1744140625,
+          "y": 106.419921875,
+          "width": 311.135546875,
+          "height": 664.736328125
+        },
+        "minimumExistingStaffClearanceToConservativeSweepCssPx": 8.860079388335508,
+        "interiorWitnessSegment": 190,
+        "interiorWitnessKnotIndices": [
+          189,
+          190,
+          191,
+          192
+        ],
+        "interiorWitnessKnots": [
+          {
+            "x": 21419.374142857145,
+            "y": 804.8844318461962
+          },
+          {
+            "x": 21438.954714285715,
+            "y": 804.7838191111745
+          },
+          {
+            "x": 21458.53528571429,
+            "y": 804.5361808888257
+          },
+          {
+            "x": 21478.11585714286,
+            "y": 804.435568153804
+          }
+        ],
+        "incomingConnectorEndsBeforeKnot": 187,
+        "outgoingConnectorStartsAfterKnot": 194,
+        "existingBranchIntersections": {
+          "center2049": 0,
+          "staff1025": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "valleyY": 852.1600000000001,
+        "neighborAnchorHorizontalSeparations": [
+          317.4700000000048,
+          317.4699999999975
+        ],
+        "connectorEndpointHorizontalRuns": [
+          174.73720000000685,
+          174.73719999999958
+        ]
+      }
+    },
+    {
+      "revision": "stage0",
+      "fixture": "1440x900",
+      "card": {
+        "x": 15996.53,
+        "y": 153.25,
+        "width": 292.55,
+        "height": 593.48
+      },
+      "anchor": {
+        "x": 16142.805,
+        "y": 788.73
+      },
+      "zone": {
+        "id": "notation:professional-projects:7",
+        "startT": 0.752,
+        "endT": 0.772,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ],
+        "eventCount": 0
+      },
+      "range": {
+        "barlineAfter": false,
+        "chapterId": "professional-projects",
+        "projectVisit": {
+          "anchor": {
+            "x": 16142.805,
+            "y": 788.73
+          },
+          "cardRect": {
+            "x": 15996.53,
+            "y": 153.25,
+            "width": 292.55,
+            "height": 593.48
+          },
+          "measurementSource": "dom-measured",
+          "projectIndex": 2
+        },
+        "startSegmentIndex": 188,
+        "endSegmentIndex": 193,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ]
+      },
+      "shelfControlKnots": [
+        {
+          "x": 16072.593,
+          "y": 788.73
+        },
+        {
+          "x": 16092.653571428573,
+          "y": 789.2246813099678
+        },
+        {
+          "x": 16112.714142857143,
+          "y": 789.4544318461961
+        },
+        {
+          "x": 16132.774714285715,
+          "y": 789.3538191111744
+        },
+        {
+          "x": 16152.835285714285,
+          "y": 789.1061808888256
+        },
+        {
+          "x": 16172.895857142857,
+          "y": 789.0055681538039
+        },
+        {
+          "x": 16192.956428571428,
+          "y": 789.2353186900323
+        },
+        {
+          "x": 16213.017,
+          "y": 789.73
+        }
+      ],
+      "centerWitness": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+        "a": {
+          "x": 16141.143080349262,
+          "y": 765.2461274500055
+        },
+        "b": {
+          "x": 16146.045125432687,
+          "y": 765.1948709223975
+        },
+        "stroke": 0.72,
+        "y": 765.2287501658291,
+        "gap": 9.138750165829038
+      },
+      "minimumClearanceAgainstNormalizedStartFocusEnvelope": 8.856556903061929,
+      "staffCount": 5,
+      "eventPrimitives": [],
+      "joins": [
+        {
+          "visit": 1,
+          "start": 156,
+          "end": 161,
+          "anchor": {
+            "x": 15821.34,
+            "y": 800.87
+          },
+          "firstPoint": {
+            "x": 15745.5912,
+            "y": 800.87
+          },
+          "lastPoint": {
+            "x": 15897.0888,
+            "y": 801.87
+          }
+        },
+        {
+          "visit": 2,
+          "start": 188,
+          "end": 193,
+          "anchor": {
+            "x": 16142.805,
+            "y": 788.73
+          },
+          "firstPoint": {
+            "x": 16072.593,
+            "y": 788.73
+          },
+          "lastPoint": {
+            "x": 16213.017,
+            "y": 789.73
+          }
+        },
+        {
+          "visit": 3,
+          "start": 220,
+          "end": 225,
+          "anchor": {
+            "x": 16464.27,
+            "y": 800.87
+          },
+          "firstPoint": {
+            "x": 16388.5212,
+            "y": 800.87
+          },
+          "lastPoint": {
+            "x": 16540.0188,
+            "y": 801.87
+          }
+        }
+      ],
+      "continuity": {
+        "maximumCurvatureDelta": 2.380572562671714e-13,
+        "maximumPointGap": 0,
+        "minimumTangentAlignment": 0.9999999999999994
+      },
+      "maximumExistingLocalCurvature": 0.03566387614895002,
+      "existingOuterOffsetCurvatureProduct": 0.8559330275748005,
+      "minimumExistingLocalDeltaX": 0.23651933202745568,
+      "necessaryWitnessDownwardShift": 2.8612498341709625,
+      "conservativeStraightShelfOnlyAnchorBand": {
+        "minimum": 792.094375,
+        "maximum": 816,
+        "slack": 23.905624999999986,
+        "meaning": "Analytic reservation band for full five-line ink below focus envelope; original height cap retained. NOT a repaired spline/connector/global acceptance interval or repair candidate."
+      },
+      "savedInput": {
+        "path": "tests/fixtures/story-score/stage1-batch2-measurements.json",
+        "fixtureId": "1440x900",
+        "optionsUnchanged": true
+      },
+      "constraints": {
+        "fullTransitionOuterBounds": {
+          "x": 15983.6494140625,
+          "y": 105.18789062500002,
+          "width": 318.310546875,
+          "height": 650.546484375
+        },
+        "minimumExistingStaffClearanceToConservativeSweepCssPx": 8.851996118442633,
+        "interiorWitnessSegment": 190,
+        "interiorWitnessKnotIndices": [
+          189,
+          190,
+          191,
+          192
+        ],
+        "interiorWitnessKnots": [
+          {
+            "x": 16112.714142857143,
+            "y": 789.4544318461961
+          },
+          {
+            "x": 16132.774714285715,
+            "y": 789.3538191111744
+          },
+          {
+            "x": 16152.835285714285,
+            "y": 789.1061808888256
+          },
+          {
+            "x": 16172.895857142857,
+            "y": 789.0055681538039
+          }
+        ],
+        "incomingConnectorEndsBeforeKnot": 187,
+        "outgoingConnectorStartsAfterKnot": 194,
+        "existingBranchIntersections": {
+          "center2049": 0,
+          "staff1025": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "valleyY": 836.87,
+        "neighborAnchorHorizontalSeparations": [
+          321.46500000000015,
+          321.46500000000015
+        ],
+        "connectorEndpointHorizontalRuns": [
+          175.50420000000122,
+          175.5041999999994
+        ]
+      }
+    },
+    {
+      "revision": "stage0",
+      "fixture": "1536x900",
+      "card": {
+        "x": 17045.39,
+        "y": 150.23,
+        "width": 289.89,
+        "height": 599.52
+      },
+      "anchor": {
+        "x": 17190.335,
+        "y": 791.75
+      },
+      "zone": {
+        "id": "notation:professional-projects:7",
+        "startT": 0.75,
+        "endT": 0.7701612903225806,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ],
+        "eventCount": 0
+      },
+      "range": {
+        "barlineAfter": false,
+        "chapterId": "professional-projects",
+        "projectVisit": {
+          "anchor": {
+            "x": 17190.335,
+            "y": 791.75
+          },
+          "cardRect": {
+            "x": 17045.39,
+            "y": 150.23,
+            "width": 289.89,
+            "height": 599.52
+          },
+          "measurementSource": "dom-measured",
+          "projectIndex": 2
+        },
+        "startSegmentIndex": 186,
+        "endSegmentIndex": 191,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ]
+      },
+      "shelfControlKnots": [
+        {
+          "x": 17120.7614,
+          "y": 791.75
+        },
+        {
+          "x": 17140.63957142857,
+          "y": 792.2446813099677
+        },
+        {
+          "x": 17160.51774285714,
+          "y": 792.4744318461961
+        },
+        {
+          "x": 17180.395914285713,
+          "y": 792.3738191111744
+        },
+        {
+          "x": 17200.274085714285,
+          "y": 792.1261808888256
+        },
+        {
+          "x": 17220.152257142858,
+          "y": 792.0255681538039
+        },
+        {
+          "x": 17240.030428571426,
+          "y": 792.2553186900323
+        },
+        {
+          "x": 17259.9086,
+          "y": 792.75
+        }
+      ],
+      "centerWitness": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+        "a": {
+          "x": 17188.528506293776,
+          "y": 768.2677907318656
+        },
+        "b": {
+          "x": 17193.346444880073,
+          "y": 768.2169188368281
+        },
+        "stroke": 0.72,
+        "y": 768.2487162342225,
+        "gap": 9.138716234222443
+      },
+      "minimumClearanceAgainstNormalizedStartFocusEnvelope": 8.854905921239052,
+      "staffCount": 5,
+      "eventPrimitives": [],
+      "joins": [
+        {
+          "visit": 1,
+          "start": 154,
+          "end": 159,
+          "anchor": {
+            "x": 16870.25,
+            "y": 803.8399999999999
+          },
+          "firstPoint": {
+            "x": 16795.082,
+            "y": 803.8399999999999
+          },
+          "lastPoint": {
+            "x": 16945.418,
+            "y": 804.8399999999999
+          }
+        },
+        {
+          "visit": 2,
+          "start": 186,
+          "end": 191,
+          "anchor": {
+            "x": 17190.335,
+            "y": 791.75
+          },
+          "firstPoint": {
+            "x": 17120.7614,
+            "y": 791.75
+          },
+          "lastPoint": {
+            "x": 17259.9086,
+            "y": 792.75
+          }
+        },
+        {
+          "visit": 3,
+          "start": 218,
+          "end": 223,
+          "anchor": {
+            "x": 17510.41,
+            "y": 803.8399999999999
+          },
+          "firstPoint": {
+            "x": 17435.242,
+            "y": 803.8399999999999
+          },
+          "lastPoint": {
+            "x": 17585.578,
+            "y": 804.8399999999999
+          }
+        }
+      ],
+      "continuity": {
+        "maximumCurvatureDelta": 2.9719629535129855e-13,
+        "maximumPointGap": 0,
+        "minimumTangentAlignment": 0.9999999999999996
+      },
+      "maximumExistingLocalCurvature": 0.035619969136727,
+      "existingOuterOffsetCurvatureProduct": 0.854879259281448,
+      "minimumExistingLocalDeltaX": 0.23628915233712178,
+      "necessaryWitnessDownwardShift": 2.861283765777557,
+      "conservativeStraightShelfOnlyAnchorBand": {
+        "minimum": 795.11,
+        "maximum": 816,
+        "slack": 20.889999999999986,
+        "meaning": "Analytic reservation band for full five-line ink below focus envelope; original height cap retained. NOT a repaired spline/connector/global acceptance interval or repair candidate."
+      },
+      "savedInput": {
+        "path": "tests/fixtures/story-score/stage1-batch2-measurements.json",
+        "fixtureId": "1536x900",
+        "optionsUnchanged": true
+      },
+      "constraints": {
+        "fullTransitionOuterBounds": {
+          "x": 17032.5419921875,
+          "y": 102.021484375,
+          "width": 315.587890625,
+          "height": 656.728515625
+        },
+        "minimumExistingStaffClearanceToConservativeSweepCssPx": 8.854876613871768,
+        "interiorWitnessSegment": 188,
+        "interiorWitnessKnotIndices": [
+          187,
+          188,
+          189,
+          190
+        ],
+        "interiorWitnessKnots": [
+          {
+            "x": 17160.51774285714,
+            "y": 792.4744318461961
+          },
+          {
+            "x": 17180.395914285713,
+            "y": 792.3738191111744
+          },
+          {
+            "x": 17200.274085714285,
+            "y": 792.1261808888256
+          },
+          {
+            "x": 17220.152257142858,
+            "y": 792.0255681538039
+          }
+        ],
+        "incomingConnectorEndsBeforeKnot": 185,
+        "outgoingConnectorStartsAfterKnot": 192,
+        "existingBranchIntersections": {
+          "center2049": 0,
+          "staff1025": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "valleyY": 839.8399999999999,
+        "neighborAnchorHorizontalSeparations": [
+          320.0849999999991,
+          320.0750000000007
+        ],
+        "connectorEndpointHorizontalRuns": [
+          175.34339999999793,
+          175.33339999999953
+        ]
+      }
+    },
+    {
+      "revision": "stage0",
+      "fixture": "1920x917",
+      "card": {
+        "x": 21305.97,
+        "y": 154.83,
+        "width": 285.55,
+        "height": 607.33
+      },
+      "anchor": {
+        "x": 21448.745000000003,
+        "y": 804.1600000000001
+      },
+      "zone": {
+        "id": "notation:professional-projects:7",
+        "startT": 0.752,
+        "endT": 0.772,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ],
+        "eventCount": 0
+      },
+      "range": {
+        "barlineAfter": false,
+        "chapterId": "professional-projects",
+        "projectVisit": {
+          "anchor": {
+            "x": 21448.745000000003,
+            "y": 804.1600000000001
+          },
+          "cardRect": {
+            "x": 21305.97,
+            "y": 154.83,
+            "width": 285.55,
+            "height": 607.33
+          },
+          "measurementSource": "dom-measured",
+          "projectIndex": 2
+        },
+        "startSegmentIndex": 188,
+        "endSegmentIndex": 193,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ]
+      },
+      "shelfControlKnots": [
+        {
+          "x": 21380.213000000003,
+          "y": 804.1600000000001
+        },
+        {
+          "x": 21399.793571428574,
+          "y": 804.6546813099678
+        },
+        {
+          "x": 21419.374142857145,
+          "y": 804.8844318461962
+        },
+        {
+          "x": 21438.954714285715,
+          "y": 804.7838191111745
+        },
+        {
+          "x": 21458.53528571429,
+          "y": 804.5361808888257
+        },
+        {
+          "x": 21478.11585714286,
+          "y": 804.435568153804
+        },
+        {
+          "x": 21497.69642857143,
+          "y": 804.6653186900323
+        },
+        {
+          "x": 21517.277000000002,
+          "y": 805.1600000000001
+        }
+      ],
+      "centerWitness": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+        "a": {
+          "x": 21447.110667944162,
+          "y": 780.6761927987774
+        },
+        "b": {
+          "x": 21451.895634447297,
+          "y": 780.6249339811494
+        },
+        "stroke": 0.72,
+        "y": 780.6586850630933,
+        "gap": 9.138685063093249
+      },
+      "minimumClearanceAgainstNormalizedStartFocusEnvelope": 8.85640059226877,
+      "staffCount": 5,
+      "eventPrimitives": [],
+      "joins": [
+        {
+          "visit": 1,
+          "start": 156,
+          "end": 161,
+          "anchor": {
+            "x": 21131.274999999998,
+            "y": 816.1600000000001
+          },
+          "firstPoint": {
+            "x": 21057.0742,
+            "y": 816.1600000000001
+          },
+          "lastPoint": {
+            "x": 21205.475799999997,
+            "y": 817.1600000000001
+          }
+        },
+        {
+          "visit": 2,
+          "start": 188,
+          "end": 193,
+          "anchor": {
+            "x": 21448.745000000003,
+            "y": 804.1600000000001
+          },
+          "firstPoint": {
+            "x": 21380.213000000003,
+            "y": 804.1600000000001
+          },
+          "lastPoint": {
+            "x": 21517.277000000002,
+            "y": 805.1600000000001
+          }
+        },
+        {
+          "visit": 3,
+          "start": 220,
+          "end": 225,
+          "anchor": {
+            "x": 21766.215,
+            "y": 816.1600000000001
+          },
+          "firstPoint": {
+            "x": 21692.0142,
+            "y": 816.1600000000001
+          },
+          "lastPoint": {
+            "x": 21840.4158,
+            "y": 817.1600000000001
+          }
+        }
+      ],
+      "continuity": {
+        "maximumCurvatureDelta": 3.7786961060159996e-13,
+        "maximumPointGap": 0,
+        "minimumTangentAlignment": 0.9999999999999994
+      },
+      "maximumExistingLocalCurvature": 0.035691389853363654,
+      "existingOuterOffsetCurvatureProduct": 0.8565933564807278,
+      "minimumExistingLocalDeltaX": 0.23548567968100542,
+      "necessaryWitnessDownwardShift": 2.8613149369067514,
+      "conservativeStraightShelfOnlyAnchorBand": {
+        "minimum": 807.51625,
+        "maximum": 833,
+        "slack": 25.483749999999986,
+        "meaning": "Analytic reservation band for full five-line ink below focus envelope; original height cap retained. NOT a repaired spline/connector/global acceptance interval or repair candidate."
+      },
+      "savedInput": {
+        "path": "tests/fixtures/story-score/stage1-batch2-measurements.json",
+        "fixtureId": "1920x917",
+        "optionsUnchanged": true
+      },
+      "constraints": {
+        "fullTransitionOuterBounds": {
+          "x": 21293.1744140625,
+          "y": 106.419921875,
+          "width": 311.135546875,
+          "height": 664.736328125
+        },
+        "minimumExistingStaffClearanceToConservativeSweepCssPx": 8.860079388335508,
+        "interiorWitnessSegment": 190,
+        "interiorWitnessKnotIndices": [
+          189,
+          190,
+          191,
+          192
+        ],
+        "interiorWitnessKnots": [
+          {
+            "x": 21419.374142857145,
+            "y": 804.8844318461962
+          },
+          {
+            "x": 21438.954714285715,
+            "y": 804.7838191111745
+          },
+          {
+            "x": 21458.53528571429,
+            "y": 804.5361808888257
+          },
+          {
+            "x": 21478.11585714286,
+            "y": 804.435568153804
+          }
+        ],
+        "incomingConnectorEndsBeforeKnot": 187,
+        "outgoingConnectorStartsAfterKnot": 194,
+        "existingBranchIntersections": {
+          "center2049": 0,
+          "staff1025": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "valleyY": 852.1600000000001,
+        "neighborAnchorHorizontalSeparations": [
+          317.4700000000048,
+          317.4699999999975
+        ],
+        "connectorEndpointHorizontalRuns": [
+          174.73720000000685,
+          174.73719999999958
+        ]
+      }
+    },
+    {
+      "revision": "phase9",
+      "fixture": "1440x900",
+      "card": {
+        "x": 15996.53,
+        "y": 153.25,
+        "width": 292.55,
+        "height": 593.48
+      },
+      "anchor": {
+        "x": 16142.805,
+        "y": 788.73
+      },
+      "zone": {
+        "id": "notation:professional-projects:7",
+        "startT": 0.752,
+        "endT": 0.772,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ],
+        "eventCount": 0
+      },
+      "range": {
+        "barlineAfter": false,
+        "chapterId": "professional-projects",
+        "projectVisit": {
+          "anchor": {
+            "x": 16142.805,
+            "y": 788.73
+          },
+          "cardRect": {
+            "x": 15996.53,
+            "y": 153.25,
+            "width": 292.55,
+            "height": 593.48
+          },
+          "measurementSource": "dom-measured",
+          "projectIndex": 2
+        },
+        "startSegmentIndex": 188,
+        "endSegmentIndex": 193,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ]
+      },
+      "shelfControlKnots": [
+        {
+          "x": 16072.593,
+          "y": 788.73
+        },
+        {
+          "x": 16092.653571428573,
+          "y": 789.2246813099678
+        },
+        {
+          "x": 16112.714142857143,
+          "y": 789.4544318461961
+        },
+        {
+          "x": 16132.774714285715,
+          "y": 789.3538191111744
+        },
+        {
+          "x": 16152.835285714285,
+          "y": 789.1061808888256
+        },
+        {
+          "x": 16172.895857142857,
+          "y": 789.0055681538039
+        },
+        {
+          "x": 16192.956428571428,
+          "y": 789.2353186900323
+        },
+        {
+          "x": 16213.017,
+          "y": 789.73
+        }
+      ],
+      "centerWitness": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+        "a": {
+          "x": 16141.143080349262,
+          "y": 765.2461274500055
+        },
+        "b": {
+          "x": 16146.045125432687,
+          "y": 765.1948709223975
+        },
+        "stroke": 0.72,
+        "y": 765.2287501658291,
+        "gap": 9.138750165829038
+      },
+      "minimumClearanceAgainstNormalizedStartFocusEnvelope": 8.856556903061929,
+      "staffCount": 5,
+      "eventPrimitives": [],
+      "joins": [
+        {
+          "visit": 1,
+          "start": 156,
+          "end": 161,
+          "anchor": {
+            "x": 15821.34,
+            "y": 800.87
+          },
+          "firstPoint": {
+            "x": 15745.5912,
+            "y": 800.87
+          },
+          "lastPoint": {
+            "x": 15897.0888,
+            "y": 801.87
+          }
+        },
+        {
+          "visit": 2,
+          "start": 188,
+          "end": 193,
+          "anchor": {
+            "x": 16142.805,
+            "y": 788.73
+          },
+          "firstPoint": {
+            "x": 16072.593,
+            "y": 788.73
+          },
+          "lastPoint": {
+            "x": 16213.017,
+            "y": 789.73
+          }
+        },
+        {
+          "visit": 3,
+          "start": 220,
+          "end": 225,
+          "anchor": {
+            "x": 16464.27,
+            "y": 800.87
+          },
+          "firstPoint": {
+            "x": 16388.5212,
+            "y": 800.87
+          },
+          "lastPoint": {
+            "x": 16540.0188,
+            "y": 801.87
+          }
+        }
+      ],
+      "continuity": {
+        "maximumCurvatureDelta": 2.380572562671714e-13,
+        "maximumPointGap": 0,
+        "minimumTangentAlignment": 0.9999999999999994
+      },
+      "maximumExistingLocalCurvature": 0.03566387614895002,
+      "existingOuterOffsetCurvatureProduct": 0.8559330275748005,
+      "minimumExistingLocalDeltaX": 0.23651933202745568,
+      "necessaryWitnessDownwardShift": 2.8612498341709625,
+      "conservativeStraightShelfOnlyAnchorBand": {
+        "minimum": 792.094375,
+        "maximum": 816,
+        "slack": 23.905624999999986,
+        "meaning": "Analytic reservation band for full five-line ink below focus envelope; original height cap retained. NOT a repaired spline/connector/global acceptance interval or repair candidate."
+      },
+      "savedInput": {
+        "path": "tests/fixtures/story-score/stage1-batch2-measurements.json",
+        "fixtureId": "1440x900",
+        "optionsUnchanged": true
+      },
+      "constraints": {
+        "fullTransitionOuterBounds": {
+          "x": 15983.6494140625,
+          "y": 105.18789062500002,
+          "width": 318.310546875,
+          "height": 650.546484375
+        },
+        "minimumExistingStaffClearanceToConservativeSweepCssPx": 8.851996118442633,
+        "interiorWitnessSegment": 190,
+        "interiorWitnessKnotIndices": [
+          189,
+          190,
+          191,
+          192
+        ],
+        "interiorWitnessKnots": [
+          {
+            "x": 16112.714142857143,
+            "y": 789.4544318461961
+          },
+          {
+            "x": 16132.774714285715,
+            "y": 789.3538191111744
+          },
+          {
+            "x": 16152.835285714285,
+            "y": 789.1061808888256
+          },
+          {
+            "x": 16172.895857142857,
+            "y": 789.0055681538039
+          }
+        ],
+        "incomingConnectorEndsBeforeKnot": 187,
+        "outgoingConnectorStartsAfterKnot": 194,
+        "existingBranchIntersections": {
+          "center2049": 0,
+          "staff1025": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "valleyY": 836.87,
+        "neighborAnchorHorizontalSeparations": [
+          321.46500000000015,
+          321.46500000000015
+        ],
+        "connectorEndpointHorizontalRuns": [
+          175.50420000000122,
+          175.5041999999994
+        ]
+      }
+    },
+    {
+      "revision": "phase9",
+      "fixture": "1536x900",
+      "card": {
+        "x": 17045.39,
+        "y": 150.23,
+        "width": 289.89,
+        "height": 599.52
+      },
+      "anchor": {
+        "x": 17190.335,
+        "y": 791.75
+      },
+      "zone": {
+        "id": "notation:professional-projects:7",
+        "startT": 0.75,
+        "endT": 0.7701612903225806,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ],
+        "eventCount": 0
+      },
+      "range": {
+        "barlineAfter": false,
+        "chapterId": "professional-projects",
+        "projectVisit": {
+          "anchor": {
+            "x": 17190.335,
+            "y": 791.75
+          },
+          "cardRect": {
+            "x": 17045.39,
+            "y": 150.23,
+            "width": 289.89,
+            "height": 599.52
+          },
+          "measurementSource": "dom-measured",
+          "projectIndex": 2
+        },
+        "startSegmentIndex": 186,
+        "endSegmentIndex": 191,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ]
+      },
+      "shelfControlKnots": [
+        {
+          "x": 17120.7614,
+          "y": 791.75
+        },
+        {
+          "x": 17140.63957142857,
+          "y": 792.2446813099677
+        },
+        {
+          "x": 17160.51774285714,
+          "y": 792.4744318461961
+        },
+        {
+          "x": 17180.395914285713,
+          "y": 792.3738191111744
+        },
+        {
+          "x": 17200.274085714285,
+          "y": 792.1261808888256
+        },
+        {
+          "x": 17220.152257142858,
+          "y": 792.0255681538039
+        },
+        {
+          "x": 17240.030428571426,
+          "y": 792.2553186900323
+        },
+        {
+          "x": 17259.9086,
+          "y": 792.75
+        }
+      ],
+      "centerWitness": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+        "a": {
+          "x": 17188.528506293776,
+          "y": 768.2677907318656
+        },
+        "b": {
+          "x": 17193.346444880073,
+          "y": 768.2169188368281
+        },
+        "stroke": 0.72,
+        "y": 768.2487162342225,
+        "gap": 9.138716234222443
+      },
+      "minimumClearanceAgainstNormalizedStartFocusEnvelope": 8.854905921239052,
+      "staffCount": 5,
+      "eventPrimitives": [],
+      "joins": [
+        {
+          "visit": 1,
+          "start": 154,
+          "end": 159,
+          "anchor": {
+            "x": 16870.25,
+            "y": 803.8399999999999
+          },
+          "firstPoint": {
+            "x": 16795.082,
+            "y": 803.8399999999999
+          },
+          "lastPoint": {
+            "x": 16945.418,
+            "y": 804.8399999999999
+          }
+        },
+        {
+          "visit": 2,
+          "start": 186,
+          "end": 191,
+          "anchor": {
+            "x": 17190.335,
+            "y": 791.75
+          },
+          "firstPoint": {
+            "x": 17120.7614,
+            "y": 791.75
+          },
+          "lastPoint": {
+            "x": 17259.9086,
+            "y": 792.75
+          }
+        },
+        {
+          "visit": 3,
+          "start": 218,
+          "end": 223,
+          "anchor": {
+            "x": 17510.41,
+            "y": 803.8399999999999
+          },
+          "firstPoint": {
+            "x": 17435.242,
+            "y": 803.8399999999999
+          },
+          "lastPoint": {
+            "x": 17585.578,
+            "y": 804.8399999999999
+          }
+        }
+      ],
+      "continuity": {
+        "maximumCurvatureDelta": 2.9719629535129855e-13,
+        "maximumPointGap": 0,
+        "minimumTangentAlignment": 0.9999999999999996
+      },
+      "maximumExistingLocalCurvature": 0.035619969136727,
+      "existingOuterOffsetCurvatureProduct": 0.854879259281448,
+      "minimumExistingLocalDeltaX": 0.23628915233712178,
+      "necessaryWitnessDownwardShift": 2.861283765777557,
+      "conservativeStraightShelfOnlyAnchorBand": {
+        "minimum": 795.11,
+        "maximum": 816,
+        "slack": 20.889999999999986,
+        "meaning": "Analytic reservation band for full five-line ink below focus envelope; original height cap retained. NOT a repaired spline/connector/global acceptance interval or repair candidate."
+      },
+      "savedInput": {
+        "path": "tests/fixtures/story-score/stage1-batch2-measurements.json",
+        "fixtureId": "1536x900",
+        "optionsUnchanged": true
+      },
+      "constraints": {
+        "fullTransitionOuterBounds": {
+          "x": 17032.5419921875,
+          "y": 102.021484375,
+          "width": 315.587890625,
+          "height": 656.728515625
+        },
+        "minimumExistingStaffClearanceToConservativeSweepCssPx": 8.854876613871768,
+        "interiorWitnessSegment": 188,
+        "interiorWitnessKnotIndices": [
+          187,
+          188,
+          189,
+          190
+        ],
+        "interiorWitnessKnots": [
+          {
+            "x": 17160.51774285714,
+            "y": 792.4744318461961
+          },
+          {
+            "x": 17180.395914285713,
+            "y": 792.3738191111744
+          },
+          {
+            "x": 17200.274085714285,
+            "y": 792.1261808888256
+          },
+          {
+            "x": 17220.152257142858,
+            "y": 792.0255681538039
+          }
+        ],
+        "incomingConnectorEndsBeforeKnot": 185,
+        "outgoingConnectorStartsAfterKnot": 192,
+        "existingBranchIntersections": {
+          "center2049": 0,
+          "staff1025": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "valleyY": 839.8399999999999,
+        "neighborAnchorHorizontalSeparations": [
+          320.0849999999991,
+          320.0750000000007
+        ],
+        "connectorEndpointHorizontalRuns": [
+          175.34339999999793,
+          175.33339999999953
+        ]
+      }
+    },
+    {
+      "revision": "phase9",
+      "fixture": "1920x917",
+      "card": {
+        "x": 21305.97,
+        "y": 154.83,
+        "width": 285.55,
+        "height": 607.33
+      },
+      "anchor": {
+        "x": 21448.745000000003,
+        "y": 804.1600000000001
+      },
+      "zone": {
+        "id": "notation:professional-projects:7",
+        "startT": 0.752,
+        "endT": 0.772,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ],
+        "eventCount": 0
+      },
+      "range": {
+        "barlineAfter": false,
+        "chapterId": "professional-projects",
+        "projectVisit": {
+          "anchor": {
+            "x": 21448.745000000003,
+            "y": 804.1600000000001
+          },
+          "cardRect": {
+            "x": 21305.97,
+            "y": 154.83,
+            "width": 285.55,
+            "height": 607.33
+          },
+          "measurementSource": "dom-measured",
+          "projectIndex": 2
+        },
+        "startSegmentIndex": 188,
+        "endSegmentIndex": 193,
+        "semanticSlotIds": [
+          "professional-projects:reserved"
+        ]
+      },
+      "shelfControlKnots": [
+        {
+          "x": 21380.213000000003,
+          "y": 804.1600000000001
+        },
+        {
+          "x": 21399.793571428574,
+          "y": 804.6546813099678
+        },
+        {
+          "x": 21419.374142857145,
+          "y": 804.8844318461962
+        },
+        {
+          "x": 21438.954714285715,
+          "y": 804.7838191111745
+        },
+        {
+          "x": 21458.53528571429,
+          "y": 804.5361808888257
+        },
+        {
+          "x": 21478.11585714286,
+          "y": 804.435568153804
+        },
+        {
+          "x": 21497.69642857143,
+          "y": 804.6653186900323
+        },
+        {
+          "x": 21517.277000000002,
+          "y": 805.1600000000001
+        }
+      ],
+      "centerWitness": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+        "a": {
+          "x": 21447.110667944162,
+          "y": 780.6761927987774
+        },
+        "b": {
+          "x": 21451.895634447297,
+          "y": 780.6249339811494
+        },
+        "stroke": 0.72,
+        "y": 780.6586850630933,
+        "gap": 9.138685063093249
+      },
+      "minimumClearanceAgainstNormalizedStartFocusEnvelope": 8.85640059226877,
+      "staffCount": 5,
+      "eventPrimitives": [],
+      "joins": [
+        {
+          "visit": 1,
+          "start": 156,
+          "end": 161,
+          "anchor": {
+            "x": 21131.274999999998,
+            "y": 816.1600000000001
+          },
+          "firstPoint": {
+            "x": 21057.0742,
+            "y": 816.1600000000001
+          },
+          "lastPoint": {
+            "x": 21205.475799999997,
+            "y": 817.1600000000001
+          }
+        },
+        {
+          "visit": 2,
+          "start": 188,
+          "end": 193,
+          "anchor": {
+            "x": 21448.745000000003,
+            "y": 804.1600000000001
+          },
+          "firstPoint": {
+            "x": 21380.213000000003,
+            "y": 804.1600000000001
+          },
+          "lastPoint": {
+            "x": 21517.277000000002,
+            "y": 805.1600000000001
+          }
+        },
+        {
+          "visit": 3,
+          "start": 220,
+          "end": 225,
+          "anchor": {
+            "x": 21766.215,
+            "y": 816.1600000000001
+          },
+          "firstPoint": {
+            "x": 21692.0142,
+            "y": 816.1600000000001
+          },
+          "lastPoint": {
+            "x": 21840.4158,
+            "y": 817.1600000000001
+          }
+        }
+      ],
+      "continuity": {
+        "maximumCurvatureDelta": 3.7786961060159996e-13,
+        "maximumPointGap": 0,
+        "minimumTangentAlignment": 0.9999999999999994
+      },
+      "maximumExistingLocalCurvature": 0.035691389853363654,
+      "existingOuterOffsetCurvatureProduct": 0.8565933564807278,
+      "minimumExistingLocalDeltaX": 0.23548567968100542,
+      "necessaryWitnessDownwardShift": 2.8613149369067514,
+      "conservativeStraightShelfOnlyAnchorBand": {
+        "minimum": 807.51625,
+        "maximum": 833,
+        "slack": 25.483749999999986,
+        "meaning": "Analytic reservation band for full five-line ink below focus envelope; original height cap retained. NOT a repaired spline/connector/global acceptance interval or repair candidate."
+      },
+      "savedInput": {
+        "path": "tests/fixtures/story-score/stage1-batch2-measurements.json",
+        "fixtureId": "1920x917",
+        "optionsUnchanged": true
+      },
+      "constraints": {
+        "fullTransitionOuterBounds": {
+          "x": 21293.1744140625,
+          "y": 106.419921875,
+          "width": 311.135546875,
+          "height": 664.736328125
+        },
+        "minimumExistingStaffClearanceToConservativeSweepCssPx": 8.860079388335508,
+        "interiorWitnessSegment": 190,
+        "interiorWitnessKnotIndices": [
+          189,
+          190,
+          191,
+          192
+        ],
+        "interiorWitnessKnots": [
+          {
+            "x": 21419.374142857145,
+            "y": 804.8844318461962
+          },
+          {
+            "x": 21438.954714285715,
+            "y": 804.7838191111745
+          },
+          {
+            "x": 21458.53528571429,
+            "y": 804.5361808888257
+          },
+          {
+            "x": 21478.11585714286,
+            "y": 804.435568153804
+          }
+        ],
+        "incomingConnectorEndsBeforeKnot": 187,
+        "outgoingConnectorStartsAfterKnot": 194,
+        "existingBranchIntersections": {
+          "center2049": 0,
+          "staff1025": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "valleyY": 852.1600000000001,
+        "neighborAnchorHorizontalSeparations": [
+          317.4700000000048,
+          317.4699999999975
+        ],
+        "connectorEndpointHorizontalRuns": [
+          174.73720000000685,
+          174.73719999999958
+        ]
+      }
+    }
+  ],
+  "lineageLimits": [
+    "Original Professional branch constructors/style sources on saved normalized inputs with observed focus parameters; no fresh historical browser or historical aggregate PASS.",
+    "Local shelf controls match; complete projection files differ because prior Stage-1 repairs are retained.",
+    "1536x900 global knot count/sample phase differs, so rendered replay polylines are not claimed byte-identical across revisions.",
+    "Small DOM/replay differences reflect raw versus two-decimal normalized geometry and actual SVG-to-track scaling.",
+    "Focused center/per-line crossing diagnostic is not the complete global visible-run/cross-line validator."
+  ],
+  "interactionEnvelope": {
+    "scope": "Middle unrotated card; observed used outline width4 offset6 link inset1, scale1.025, lift24, origin50%100%; do not hardcode across engines/root sizes.",
+    "progress": "e is monotone eased progress in [0,1], including reverse traversal while focus is present",
+    "scale": "s=1+0.025e",
+    "focusLeftRight": "cx +/- s*(W/2+9)",
+    "focusTop": "B-24e-s*(H+9)",
+    "focusBottom": "B+9-23.775e",
+    "wholeTransitionBound": "Conservative outer AABB: minimum top and maximum x extent at e=1; maximum bottom at e=0. Rounded corners enclosed conservatively.",
+    "notAllFramesDOMMeasurement": true,
+    "fullOriginalProbeSha256": "dfe4e3d8cdd951a13c1ceaacef88f9c23638ff158ad93168af371163e9a505df",
+    "retainedMiddleCardProbeStates": [
+      {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "idle": {
+          "card": {
+            "x": 15996.53125,
+            "y": 153.25,
+            "width": 292.546875,
+            "height": 593.484375
+          },
+          "link": {
+            "x": 15997.53125,
+            "y": 154.25,
+            "width": 290.546875,
+            "height": 591.484375
+          },
+          "outlineWidth": 3,
+          "outlineOffset": 0,
+          "outlineStyle": "none",
+          "focusVisible": false,
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "transitionDuration": "0.36s",
+          "animations": [],
+          "track": {
+            "x": -8503,
+            "y": 0.171875,
+            "width": 1440,
+            "height": 900
+          }
+        },
+        "states": {
+          "projectIndex": 2,
+          "immediate": {
+            "card": {
+              "x": 15996.53125,
+              "y": 153.25,
+              "width": 292.546875,
+              "height": 593.484375
+            },
+            "link": {
+              "x": 15997.53125,
+              "y": 154.25,
+              "width": 290.546875,
+              "height": 591.484375
+            },
+            "outlineWidth": 4,
+            "outlineOffset": 6,
+            "outlineStyle": "solid",
+            "focusVisible": true,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "transitionDuration": "0.36s",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ],
+            "track": {
+              "x": -8503,
+              "y": 0.171875,
+              "width": 1440,
+              "height": 900
+            }
+          },
+          "firstFrame": {
+            "card": {
+              "x": 15996.53125,
+              "y": 153.25,
+              "width": 292.546875,
+              "height": 593.484375
+            },
+            "link": {
+              "x": 15997.53125,
+              "y": 154.25,
+              "width": 290.546875,
+              "height": 591.484375
+            },
+            "outlineWidth": 4,
+            "outlineOffset": 6,
+            "outlineStyle": "solid",
+            "focusVisible": true,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "transitionDuration": "0.36s",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ],
+            "track": {
+              "x": -8503,
+              "y": 0.171875,
+              "width": 1440,
+              "height": 900
+            }
+          },
+          "secondFrame": {
+            "card": {
+              "x": 15995.7998046875,
+              "y": 145.480224609375,
+              "width": 294.009765625,
+              "height": 596.4526977539062
+            },
+            "link": {
+              "x": 15996.8046875,
+              "y": 146.4852294921875,
+              "width": 292,
+              "height": 594.4426879882812
+            },
+            "outlineWidth": 4,
+            "outlineOffset": 6,
+            "outlineStyle": "solid",
+            "focusVisible": true,
+            "transform": "matrix(1.005, 0, 0, 1.005, 0, -4.80145)",
+            "transitionDuration": "0.36s",
+            "animations": [
+              {
+                "time": 16.66999999923835,
+                "state": "running"
+              }
+            ],
+            "track": {
+              "x": -8503,
+              "y": 0.171875,
+              "width": 1440,
+              "height": 900
+            }
+          },
+          "settled": {
+            "card": {
+              "x": 15992.87451171875,
+              "y": 114.41290283203125,
+              "width": 299.8603515625,
+              "height": 608.3214721679688
+            },
+            "link": {
+              "x": 15993.8994140625,
+              "y": 115.43790435791016,
+              "width": 297.810546875,
+              "height": 606.2714233398438
+            },
+            "outlineWidth": 4,
+            "outlineOffset": 6,
+            "outlineStyle": "solid",
+            "focusVisible": true,
+            "transform": "matrix(1.025, 0, 0, 1.025, 0, -24)",
+            "transitionDuration": "0.36s",
+            "animations": [],
+            "track": {
+              "x": -8503,
+              "y": 0.171875,
+              "width": 1440,
+              "height": 900
+            }
+          }
+        }
+      },
+      {
+        "viewport": {
+          "width": 1536,
+          "height": 900
+        },
+        "idle": {
+          "card": {
+            "x": 17045.390625,
+            "y": 150.234375,
+            "width": 289.890625,
+            "height": 599.515625
+          },
+          "link": {
+            "x": 17046.390625,
+            "y": 151.234375,
+            "width": 287.890625,
+            "height": 597.515625
+          },
+          "outlineWidth": 3,
+          "outlineOffset": 0,
+          "outlineStyle": "none",
+          "focusVisible": false,
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "transitionDuration": "0.36s",
+          "animations": [],
+          "track": {
+            "x": -9070,
+            "y": 0.171875,
+            "width": 1536,
+            "height": 900
+          }
+        },
+        "states": {
+          "projectIndex": 2,
+          "immediate": {
+            "card": {
+              "x": 17045.390625,
+              "y": 150.234375,
+              "width": 289.890625,
+              "height": 599.515625
+            },
+            "link": {
+              "x": 17046.390625,
+              "y": 151.234375,
+              "width": 287.890625,
+              "height": 597.515625
+            },
+            "outlineWidth": 4,
+            "outlineOffset": 6,
+            "outlineStyle": "solid",
+            "focusVisible": true,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "transitionDuration": "0.36s",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ],
+            "track": {
+              "x": -9070,
+              "y": 0.171875,
+              "width": 1536,
+              "height": 900
+            }
+          },
+          "firstFrame": {
+            "card": {
+              "x": 17045.390625,
+              "y": 150.234375,
+              "width": 289.890625,
+              "height": 599.515625
+            },
+            "link": {
+              "x": 17046.390625,
+              "y": 151.234375,
+              "width": 287.890625,
+              "height": 597.515625
+            },
+            "outlineWidth": 4,
+            "outlineOffset": 6,
+            "outlineStyle": "solid",
+            "focusVisible": true,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "transitionDuration": "0.36s",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ],
+            "track": {
+              "x": -9070,
+              "y": 0.171875,
+              "width": 1536,
+              "height": 900
+            }
+          },
+          "secondFrame": {
+            "card": {
+              "x": 17044.66552734375,
+              "y": 142.43267822265625,
+              "width": 291.34033203125,
+              "height": 602.5147705078125
+            },
+            "link": {
+              "x": 17045.67041015625,
+              "y": 143.43768310546875,
+              "width": 289.33056640625,
+              "height": 600.5047607421875
+            },
+            "outlineWidth": 4,
+            "outlineOffset": 6,
+            "outlineStyle": "solid",
+            "focusVisible": true,
+            "transform": "matrix(1.005, 0, 0, 1.005, 0, -4.80254)",
+            "transitionDuration": "0.36s",
+            "animations": [
+              {
+                "time": 16.6739999976242,
+                "state": "running"
+              }
+            ],
+            "track": {
+              "x": -9070,
+              "y": 0.171875,
+              "width": 1536,
+              "height": 900
+            }
+          },
+          "settled": {
+            "card": {
+              "x": 17041.76708984375,
+              "y": 111.24652099609375,
+              "width": 297.13818359375,
+              "height": 614.5034790039062
+            },
+            "link": {
+              "x": 17042.7919921875,
+              "y": 112.27152252197266,
+              "width": 295.087890625,
+              "height": 612.4534912109375
+            },
+            "outlineWidth": 4,
+            "outlineOffset": 6,
+            "outlineStyle": "solid",
+            "focusVisible": true,
+            "transform": "matrix(1.025, 0, 0, 1.025, 0, -24)",
+            "transitionDuration": "0.36s",
+            "animations": [],
+            "track": {
+              "x": -9070,
+              "y": 0.171875,
+              "width": 1536,
+              "height": 900
+            }
+          }
+        }
+      },
+      {
+        "viewport": {
+          "width": 1920,
+          "height": 917
+        },
+        "idle": {
+          "card": {
+            "x": 21305.96875,
+            "y": 154.828125,
+            "width": 285.546875,
+            "height": 607.328125
+          },
+          "link": {
+            "x": 21306.96875,
+            "y": 155.828125,
+            "width": 283.546875,
+            "height": 605.328125
+          },
+          "outlineWidth": 3,
+          "outlineOffset": 0,
+          "outlineStyle": "none",
+          "focusVisible": false,
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "transitionDuration": "0.36s",
+          "animations": [],
+          "track": {
+            "x": -11337.9990234375,
+            "y": 0.171875,
+            "width": 1920,
+            "height": 917
+          }
+        },
+        "states": {
+          "projectIndex": 2,
+          "immediate": {
+            "card": {
+              "x": 21305.96875,
+              "y": 154.828125,
+              "width": 285.546875,
+              "height": 607.328125
+            },
+            "link": {
+              "x": 21306.96875,
+              "y": 155.828125,
+              "width": 283.546875,
+              "height": 605.328125
+            },
+            "outlineWidth": 4,
+            "outlineOffset": 6,
+            "outlineStyle": "solid",
+            "focusVisible": true,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "transitionDuration": "0.36s",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ],
+            "track": {
+              "x": -11337.9990234375,
+              "y": 0.171875,
+              "width": 1920,
+              "height": 917
+            }
+          },
+          "firstFrame": {
+            "card": {
+              "x": 21305.96875,
+              "y": 154.828125,
+              "width": 285.546875,
+              "height": 607.328125
+            },
+            "link": {
+              "x": 21306.96875,
+              "y": 155.828125,
+              "width": 283.546875,
+              "height": 605.328125
+            },
+            "outlineWidth": 4,
+            "outlineOffset": 6,
+            "outlineStyle": "solid",
+            "focusVisible": true,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "transitionDuration": "0.36s",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ],
+            "track": {
+              "x": -11337.9990234375,
+              "y": 0.171875,
+              "width": 1920,
+              "height": 917
+            }
+          },
+          "secondFrame": {
+            "card": {
+              "x": 21305.251953125,
+              "y": 146.9647216796875,
+              "width": 286.98046875,
+              "height": 610.3751220703125
+            },
+            "link": {
+              "x": 21306.2578125,
+              "y": 147.96974182128906,
+              "width": 284.96875,
+              "height": 608.3651123046875
+            },
+            "outlineWidth": 4,
+            "outlineOffset": 6,
+            "outlineStyle": "solid",
+            "focusVisible": true,
+            "transform": "matrix(1.00502, 0, 0, 1.00502, 0, -4.81639)",
+            "transitionDuration": "0.36s",
+            "animations": [
+              {
+                "time": 16.724999995448186,
+                "state": "running"
+              }
+            ],
+            "track": {
+              "x": -11337.9990234375,
+              "y": 0.171875,
+              "width": 1920,
+              "height": 917
+            }
+          },
+          "settled": {
+            "card": {
+              "x": 21302.3984375,
+              "y": 115.64495849609375,
+              "width": 292.6875,
+              "height": 622.5112915039062
+            },
+            "link": {
+              "x": 21303.423828125,
+              "y": 116.66996002197266,
+              "width": 290.63671875,
+              "height": 620.4613037109375
+            },
+            "outlineWidth": 4,
+            "outlineOffset": 6,
+            "outlineStyle": "solid",
+            "focusVisible": true,
+            "transform": "matrix(1.025, 0, 0, 1.025, 0, -24)",
+            "transitionDuration": "0.36s",
+            "animations": [],
+            "track": {
+              "x": -11337.9990234375,
+              "y": 0.171875,
+              "width": 1920,
+              "height": 917
+            }
+          }
+        }
+      }
+    ]
+  },
+  "authorityConflict": {
+    "canonicalRegister": "docs/canonical-v2/00-governance/03-decision-register.md",
+    "canonicalSpec": "docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md",
+    "decisions": [
+      "ADR-048 / ASM-IMP-DEC-012(D/E, I.B)",
+      "ADR-049 / ASM-IMP-DEC-013(B-D)"
+    ],
+    "canIncomingContinuityNecessarilyAndSufficientlyFixWithVisit2GeometryFixed": false,
+    "proof": "Local cubic segment190 uses only visit2 controls189..192 (shelf187..194); incoming controls end before187. Historical1536 indices are lower by2 with identical coordinates. Normal/staff offset at the physical interior locus is independent of connector-only edits. Resampling is not clearance repair."
+  },
+  "ownerProposal": {
+    "status": "PROPOSED_NOT_AUTHORIZED",
+    "registration": "Distinct inherited defect retaining diagnostic alias and three known viewport occurrences; allocate canonical IDs only after approval.",
+    "minimumEnvelope": "Second horizontal Projects notation shelf plus minimum necessary adjacent visit1-to2 and visit2-to3 controls for continuous event-free joins; minimum must be proved, no unrelated geometry or shared valley propagation.",
+    "geometryOwners": [
+      "src/lib/story/score/projection.ts:horizontalChapterShelves",
+      "src/lib/story/score/projection.ts:horizontalProjectConnector",
+      "src/lib/story/score/projection.ts:horizontalGeometry"
+    ],
+    "readOnlySupportOwner": "src/lib/story/score/organic-flowing.ts:buildCubicSplineSegments",
+    "reservation": "Complete rendered staff/event ink and actual production interaction envelopes over transitions plus12 physical CSS px; full precision and explicit coordinate scale.",
+    "protected": [
+      "ASM-PC-001 approved fallback/vertical/lifecycle support",
+      "ASM-PC-002 separate first-shelf authority",
+      "visit1 and visit3 own shelves outside new envelope",
+      "cards/content/section dimensions/fan position and behavior",
+      "focus visibility/style/accessibility and transition frames",
+      "three visits, reserved/empty slots, NON-ASSEMBLY",
+      "Composer fingerprints/semantics/seed and approved glyphs",
+      "five deltas, Batch1 fourteen repairs/eighteen occurrences, Batch2 six repairs/eight occurrences",
+      "ADR-046 hydration/numeric determinism",
+      "12px physical clearance, full visible ink, global zero intersections, all validators",
+      "all historical evidence and immutable prior successor records"
+    ],
+    "necessaryConditionalNormalization": "If approved, update only named scope references and candidate qualification in012(I.B)/013(C) to refer to combined separately named authorized envelopes. Preserve at least one appropriate complete-PASS horizontal candidate among1440x900,1536x900,1920x917; old fixtures remain negative.",
+    "feasibilityLimit": "Nonempty ideal straight-shelf bands are not a candidate/spline/connector/global PASS. Stop if complete contract cannot fit the explicitly approved envelopes; no scope expansion or universal fallback completion.",
+    "alternatives": [
+      "Explicit named amendment to013 adding identical local authority and independent-root identity; more normative scope wording changes, not a continuity clarification.",
+      "Defer authorization and leave Stage1 blocked.",
+      "Fallback-only completion would need a larger new owner decision changing candidate acceptance; unavailable under current authority and not recommended."
+    ],
+    "ultraImplementationStillForbiddenAfterApproval": true
+  },
+  "reproduction": {
+    "scratchDirectory": "/tmp/wflyer-visit2-governance",
+    "command": "pnpm exec vitest run --config /tmp/wflyer-visit2-governance/vitest.config.mts",
+    "runtime": {
+      "node": "v24.18.0",
+      "pnpm": "11.26.0"
+    },
+    "method": "Copy original current/git-show projection.ts and organic-flowing.ts to scratch; rebase relative imports to repository source, route each projection to matching scratch organic-flowing, append diagnostic exports for buildBranchProjection/horizontalGeometry. Keep function bodies and guards unchanged. Relevant shared source hashes match both refs. Run embedded harness in node environment. No repository source/test edits.",
+    "configSource": "export default {\"root\": \"/home/davi-benucci/\\u00c1rea de trabalho/WFlyer\", \"resolve\": {\"alias\": {\"@\": \"/home/davi-benucci/\\u00c1rea de trabalho/WFlyer/src\"}}, \"test\": {\"environment\": \"node\", \"include\": [\"/tmp/wflyer-visit2-governance/lineage.test.ts\"]}};\n",
+    "harnessSource": "import { it, expect } from '/home/davi-benucci/Área de trabalho/WFlyer/node_modules/vitest/dist/index.js';\nimport { readFileSync, writeFileSync } from 'node:fs';\nimport { diagnosticBuildBranchProjection as current, diagnosticHorizontalGeometry as currentGeometry } from './current-projection';\nimport { diagnosticBuildBranchProjection as stage0, diagnosticHorizontalGeometry as stage0Geometry } from './stage0-projection';\nimport { diagnosticBuildBranchProjection as phase9, diagnosticHorizontalGeometry as phase9Geometry } from './phase9-projection';\nimport { projectsSegmentClearance } from '/home/davi-benucci/Área de trabalho/WFlyer/src/lib/story/score/projects-capacity';\nconst root='/home/davi-benucci/Área de trabalho/WFlyer/';\nconst measured=JSON.parse(readFileSync(root+'tests/fixtures/story-score/stage1-batch2-measurements.json','utf8')).slice(0,3);\nconst stop=JSON.parse(readFileSync(root+'openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-clearance-stop-diagnostics.json','utf8'));\nit('replays unmodified Professional constructors and derives only existing visit-2 constraints',()=>{\n const records=[];\n const extra=[];\n for(const [revision,build,buildGeometry] of [['current',current,currentGeometry],['stage0',stage0,stage0Geometry],['phase9',phase9,phase9Geometry]] as const){\n  for(let index=0;index<3;index++){\n   const fixture=measured[index],o=fixture.options,w=stop.occurrences[index];\n   const branch=build('horizontal-enhanced','professional',o.viewportWidth,o.viewportHeight,o.sceneMeasurements);\n   const geometry=buildGeometry('professional',o.viewportWidth,o.viewportHeight,o.sceneMeasurements,48);\n   const zones=branch.zones.filter(z=>z.chapterId==='professional-projects' && z.kind==='notation-safe');\n   const zone=zones[1]!,anchor=zone.projectVisit!.anchor,card=zone.projectVisit!.cardRect;\n   const range=geometry.notationRanges.find(r=>r.projectVisit?.projectIndex===2)!;\n   const ranges=geometry.notationRanges.filter(r=>r.chapterId==='professional-projects');\n   const normalizedFocus={x:card.x-9,y:card.y-9,width:card.width+18,height:card.height+18};\n   const edgeAt=(x:number)=>branch.model.staff.lines.flatMap(line=>line.points.slice(1).flatMap((b,i)=>{const a=line.points[i]!;return Math.min(a.x,b.x)<=x && x<=Math.max(a.x,b.x) && a.x!==b.x ? [{id:line.id,a,b,stroke:line.thickness,y:a.y+(b.y-a.y)*(x-a.x)/(b.x-a.x)}]:[]}));\n   const targetEdges=edgeAt(anchor.x).filter(e=>e.y>card.y+card.height);\n   const centerWitness=targetEdges.map(e=>({...e,gap:e.y-e.stroke/2-(card.y+card.height+9)})).sort((a,b)=>a.gap-b.gap)[0]!;\n   expect(centerWitness.gap).toBeGreaterThan(0);expect(centerWitness.gap).toBeLessThan(12);\n   const edges=branch.model.staff.lines.flatMap(line=>line.points.slice(1).map((b,i)=>({a:line.points[i]!,b,radius:line.thickness/2})));\n   const minGap=Math.min(...edges.map(e=>projectsSegmentClearance(e.a,e.b,normalizedFocus,e.radius)));\n   const samples=Array.from({length:65},(_,i)=>{const t=zone.startT+(zone.endT-zone.startT)*i/64;return branch.path.pointAt(t)});\n   const localStart=zones[0]!.startT,localEnd=zones[2]!.endT;\n   const local=Array.from({length:2049},(_,i)=>{const t=localStart+(localEnd-localStart)*i/2048;return {point:branch.path.pointAt(t),curvature:branch.path.curvatureAt(t)}});\n   const maximumLocalCurvature=Math.max(...local.map(p=>Math.abs(p.curvature)));\n   const clearanceFloor=w.outlineBottomCssPx+12+24+0.36;\n   const cap=o.viewportHeight-7*12;\n   // Existing geometry only; no hypothetical knot mutation or candidate repair.\n   let low=zone.startT,high=zone.endT;\n   for(let k=0;k<50;k++){const mid=(low+high)/2;if(branch.path.pointAt(mid).x<anchor.x)low=mid;else high=mid;}\n   const segmentIndex=Math.floor((low+high)/2*branch.path.segmentCount);\n   const rawCard=w.measurement.card,B=rawCard.y+rawCard.height,cx=rawCard.x+rawCard.width/2;\n   const sweep={x:cx-1.025*(rawCard.width/2+9),y:B-24-1.025*(rawCard.height+9),width:2*1.025*(rawCard.width/2+9),height:(B+9)-(B-24-1.025*(rawCard.height+9))};\n   const transformedEdges=edges.map(e=>({a:{x:e.a.x*w.witness.svgScreenToTrackMatrix[0]+w.witness.svgScreenToTrackMatrix[4],y:e.a.y*w.witness.svgScreenToTrackMatrix[3]+w.witness.svgScreenToTrackMatrix[5]},b:{x:e.b.x*w.witness.svgScreenToTrackMatrix[0]+w.witness.svgScreenToTrackMatrix[4],y:e.b.y*w.witness.svgScreenToTrackMatrix[3]+w.witness.svgScreenToTrackMatrix[5]},radius:e.radius*w.witness.svgScreenToTrackMatrix[0]}));\n   const minSweep=Math.min(...transformedEdges.map(e=>projectsSegmentClearance(e.a,e.b,sweep,e.radius)));\n   const crossCount=(points:readonly {x:number,y:number}[])=>{\n    let count=0;const orient=(a:{x:number,y:number},b:{x:number,y:number},c:{x:number,y:number})=>(b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x);\n    for(let i=0;i<points.length-1;i++)for(let j=i+2;j<points.length-1;j++){const a=points[i]!,b=points[i+1]!,c=points[j]!,d=points[j+1]!;if(Math.max(a.x,b.x)<Math.min(c.x,d.x)||Math.max(c.x,d.x)<Math.min(a.x,b.x)||Math.max(a.y,b.y)<Math.min(c.y,d.y)||Math.max(c.y,d.y)<Math.min(a.y,b.y))continue;if(orient(a,b,c)*orient(a,b,d)<-1e-7&&orient(c,d,a)*orient(c,d,b)<-1e-7)count++;}return count;\n   };\n   extra.push({revision,fixture:fixture.id,fullTransitionOuterBounds:sweep,minimumExistingStaffClearanceToConservativeSweepCssPx:minSweep,interiorWitnessSegment:segmentIndex,interiorWitnessKnotIndices:[segmentIndex-1,segmentIndex,segmentIndex+1,segmentIndex+2],interiorWitnessKnots:geometry.knots.slice(segmentIndex-1,segmentIndex+3),incomingConnectorEndsBeforeKnot:range.startSegmentIndex-1,outgoingConnectorStartsAfterKnot:range.endSegmentIndex+1,existingBranchIntersections:{center2049:crossCount(Array.from({length:2049},(_,i)=>branch.path.pointAt(i/2048))),staff1025:branch.model.staff.lines.map(l=>crossCount(l.points))},joinHorizontalRuns:[ranges[1]!.projectVisit!.anchor.x-ranges[0]!.projectVisit!.anchor.x,ranges[2]!.projectVisit!.anchor.x-ranges[1]!.projectVisit!.anchor.x],valleyY:Math.min(o.viewportHeight-36,Math.max(...ranges.map(r=>r.projectVisit!.anchor.y))+36)});\n   records.push({revision,fixture:fixture.id,input:o,focusInputSource:'Saved DOM link inset 1px, observed outline width4+offset6; common normalized card frame reconstructed at focus start. Historical style source equality checked independently.',card,anchor,zone:{id:zone.id,startT:zone.startT,endT:zone.endT,semanticSlotIds:zone.semanticSlotIds,eventCount:zone.eventCount},range,shelfControlKnots:geometry.knots.slice(range.startSegmentIndex-1,range.endSegmentIndex+2),zoneSamples:samples,centerWitness,minimumClearanceAgainstNormalizedStartFocusEnvelope:minGap,staffCount:branch.model.staff.lines.length,eventPrimitives:branch.model.primitives.filter(p=>p.id.startsWith('wf-professional-projects:reserved:')),joins:ranges.map(r=>({visit:r.projectVisit?.projectIndex,start:r.startSegmentIndex,end:r.endSegmentIndex,anchor:r.projectVisit?.anchor,firstPoint:geometry.knots[r.startSegmentIndex-1],lastPoint:geometry.knots[r.endSegmentIndex+1]})),continuity:branch.path.continuity,maximumExistingLocalCurvature:maximumLocalCurvature,existingOuterOffsetCurvatureProduct:maximumLocalCurvature*24,minimumExistingLocalDeltaX:Math.min(...local.slice(1).map((v,i)=>v.point.x-local[i]!.point.x)),necessaryWitnessDownwardShift:12-centerWitness.gap,conservativeStraightShelfOnlyAnchorBand:{minimum:clearanceFloor,maximum:cap,slack:cap-clearanceFloor,meaning:'Analytic reservation band for full five-line ink below focus envelope; original height cap retained. NOT a repaired spline/connector/global acceptance interval or repair candidate.'}});\n  }\n }\n for(let i=0;i<3;i++){\n  const group=records.filter(r=>r.fixture===measured[i].id);\n  expect(group[0]!.card).toEqual(group[1]!.card);expect(group[1]!.card).toEqual(group[2]!.card);\n  // Stable local control geometry; global parameter/sample phase may differ after other Stage-1 repairs.\n  expect(group[0]!.shelfControlKnots).toEqual(group[1]!.shelfControlKnots);expect(group[1]!.shelfControlKnots).toEqual(group[2]!.shelfControlKnots);\n  expect(group.every(r=>r.zone.eventCount===0 && r.staffCount===5)).toBe(true);\n }\n writeFileSync('/tmp/wflyer-visit2-governance/constraint-results.json',JSON.stringify(extra,null,2)+'\\n');\n writeFileSync('/tmp/wflyer-visit2-governance/lineage-results.json',JSON.stringify(records,null,2)+'\\n');\n console.log(JSON.stringify(records.map(r=>({revision:r.revision,fixture:r.fixture,witness:r.centerWitness.gap,minimumStartFocusGap:r.minimumClearanceAgainstNormalizedStartFocusEnvelope,anchorBand:r.conservativeStraightShelfOnlyAnchorBand,curvature:r.maximumExistingLocalCurvature,eventCount:r.zone.eventCount})),null,2));\n},30000);\n",
+    "log": "\n RUN  v4.1.11 /home/davi-benucci/Área de trabalho/WFlyer\n\n\n Test Files  1 passed (1)\n      Tests  1 passed (1)\n   Start at  13:52:23\n   Duration  2.88s (transform 623ms, setup 0ms, import 754ms, tests 1.99s, environment 0ms)\n\n",
+    "result": {
+      "testFilesPassed": 1,
+      "testsPassed": 1,
+      "revisionViewportReplays": 9,
+      "runtimeAcceptance": false
+    }
+  },
+  "priorFocusedTestState": {
+    "source": "stage-1-projects-interaction-clearance-stop-diagnostics.json",
+    "passed": 5,
+    "expectedPendingRepairFailures": 3,
+    "rerunThisUltra": false,
+    "testsAndPartialEvaluatorPreserved": true
+  },
+  "routing": {
+    "status": "BLOCKED_OWNER_DECISION",
+    "safeToDowngrade": false,
+    "humanAuthorizationRequired": true,
+    "safeToContinueImplementation": false,
+    "nextAction": "Owner decision on separate visit2 shelf and minimal adjacent-join registration/repair envelope; no implementation before explicit approval and bounded governance normalization."
+  },
+  "validation": {
+    "successorStrict": {
+      "status": "PASS",
+      "log": "Change 'implement-scroll-driven-score-assembly-and-motion' is valid\n"
+    },
+    "workspaceStrict": {
+      "status": "PASS",
+      "passed": 17,
+      "failed": 0,
+      "log": "✓ spec/accessible-navigation-lifecycle\n✓ spec/brand-opening-motion\n✓ spec/complete-quality-gate\n✓ change/complete-site-qa-release-preparation\n✓ spec/governed-release-candidate\n  ℹ [INFO] requirements[1]: Requirement text is very long (>500 characters). Consider breaking it down.\n  ℹ [INFO] requirements[7]: Requirement text is very long (>500 characters). Consider breaking it down.\n✓ change/implement-scroll-driven-score-assembly-and-motion\n✓ spec/interactive-application-demo\n✓ spec/music-renderer\n  ℹ [INFO] requirements[4]: Requirement text is very long (>500 characters). Consider breaking it down.\n  ℹ [INFO] requirements[5]: Requirement text is very long (>500 characters). Consider breaking it down.\n✓ spec/music-visual-lab\n✓ spec/procedural-score-composer\n  ℹ [INFO] requirements[4]: Requirement text is very long (>500 characters). Consider breaking it down.\n✓ spec/public-security-content-baseline\n  ℹ [INFO] requirements[1]: Requirement text is very long (>500 characters). Consider breaking it down.\n✓ change/rebuild-scroll-driven-wflyer-v2\n✓ change/refine-phase-9-score-choreography-and-prelaunch\n✓ spec/score-transition-navigation\n✓ spec/secure-contact-workflow\n✓ change/stabilize-browser-visual-regression\n✓ spec/staging-index-isolation\nTotals: 17 passed, 0 failed (17 items)\n"
+    },
+    "structured": {
+      "status": "PASS",
+      "activeChangeJsonFiles": 11,
+      "canonicalYamlFiles": 4,
+      "handoffYamlBlocks": 1,
+      "diagnosticShapeAndFiniteNumbersChecked": true
+    },
+    "gitDiffCheck": "PASS",
+    "newFilesWhitespaceCheck": "PASS",
+    "historicalIntegrity": {
+      "status": "PASS",
+      "method": "SHA256 plus exact Git blobs against Stage0 and frozenPhase9",
+      "manifestSealPairs": 4,
+      "payloads": 64,
+      "manifests": [
+        {
+          "manifest": "docs/canonical-v2/06-migration/evidence/phase-9/task-33-refinement-2026-08-30/SHA256SUMS.txt",
+          "sha256": "10ce142087e3e249842f04c2d47a47d988ac499c71f13f7da7a6fd267659cba0",
+          "seal": "docs/canonical-v2/06-migration/evidence/phase-9/task-33-refinement-2026-08-30/SHA256SUMS.txt.sha256",
+          "sealSha256": "1bb774e0b2d822f078bd6a32e0ce4885970e3419bd7ec680299e4c43b9abf8a2",
+          "payloadCount": 11
+        },
+        {
+          "manifest": "docs/canonical-v2/06-migration/evidence/phase-9/task-34-integration-review-2026-08-31/SHA256SUMS.txt",
+          "sha256": "c4bec2d7f6b546c44d9b7bd053ad0b4ff0c42d1d143cc079dd0714068c3fef8a",
+          "seal": "docs/canonical-v2/06-migration/evidence/phase-9/task-34-integration-review-2026-08-31/SHA256SUMS.txt.sha256",
+          "sealSha256": "34198bc211b1d05a444e65811f670e106f2a1a8b70f3c02c2610923225fceb93",
+          "payloadCount": 11
+        },
+        {
+          "manifest": "docs/canonical-v2/06-migration/evidence/phase-9/task-34-refinement-2026-08-31/SHA256SUMS.txt",
+          "sha256": "1ce1043412c6ad77b34c0d77bad565cb9aef3af6808c8b54d48b0d7e13fdc442",
+          "seal": "docs/canonical-v2/06-migration/evidence/phase-9/task-34-refinement-2026-08-31/SHA256SUMS.txt.sha256",
+          "sealSha256": "fbe31b8ee5ab13dbe924b3c15b21b28dd1b4e25b8a2d1ae897ad1aa5c08d631f",
+          "payloadCount": 28
+        },
+        {
+          "manifest": "docs/canonical-v2/06-migration/evidence/phase-9/task-34-refinement-firefox-correction-2026-09-04/SHA256SUMS.txt",
+          "sha256": "807a15b57e1a5bbc88011d546e69d4a4b281c552344876cddfc3a17042392923",
+          "seal": "docs/canonical-v2/06-migration/evidence/phase-9/task-34-refinement-firefox-correction-2026-09-04/SHA256SUMS.txt.sha256",
+          "sealSha256": "c9a436bc59da050623f3219e88222d998ce5e546e12feaea8b414be8ee52bba3",
+          "payloadCount": 14
+        }
+      ]
+    },
+    "immutableSuccessorRecords": {
+      "status": "PASS",
+      "count": 18,
+      "digests": {
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-batch-2-inherited-defect-diagnostics.json": "2d6c605ff30c49357916b7a8752a2a6690c270c9d5d38b8b300e3e8894a897a6",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-batch-2-inherited-defect-review.md": "0301d2cda53977b4bfc6f5cf60f6c1ffe080a63395607224ed43b12383373c22",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-batch-2-repair-diagnostics.json": "bd5793556de6a7eb7d9bb76f2631f1d4e9a71914ec6144cddb74806b3f6d97ed",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-numeric-determinism-diagnostics.json": "86dc7bd4320f3216fab03afa90f5ce15c4889a883a98ece1d5f96edb24d69721",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-capacity-authorization-review.md": "76046e37ff9909bc34467145099b020bd6455f798ee3e808efc2c71b17acc434",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-capacity-governance-validation.json": "c56ba967bc7784f1a4d5f9c6158cdd8c6ef34df4c5877852bcbb6549690ea971",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-clearance-stop-diagnostics.json": "0510b194c5545e340dff7ed8d1c5a0614e9fd9cd924e184b52c25353669493b0",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-clearance-stop.md": "9fe93486964a4e7fc6ee26315e43fa38abd42782268f96463782bf5d0b6b8f9e",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-full-ink-authorization-review.md": "099c7b025d9d7f618e1d263b051758f9e91ce6b3da80d9a6cf39278ac5d80e20",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-full-ink-governance-validation.json": "57ae016b8f75f2484d17b8804e8ee660ac0f43a4d13d3851b7768c42dfe0227f",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-full-ink-stop-diagnostics.json": "2598a4d98d00b45b4c2698364a27bb91fa2f6377ffb9494ffee24a10a70dd1c7",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-full-ink-stop.md": "0815b098197934d88a551bd73f8c38cba725d48c38fee61de3ad0ce786789f0d",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-clearance-stop-diagnostics.json": "058ec613801e13e8eafb1a5b8c4ccb6de2110f4834190a5709d39197f0ac8c9c",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-clearance-stop.md": "ee554f8a2f4a4b11908137e8b7ec01430d631796af1b6719f40fe40fd92eabec",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-lineage-and-capacity-diagnostics.json": "178c4ac08af064de165a093a56b8520e8ddb697474fd60db891f5bc715941a41",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-lineage-and-capacity-review.md": "d9cdf2fc64d9772de3a003de18d09d7c4b567ace4125ce802470e4bfde073223",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-self-intersection-diagnostics.json": "5e7eb0d1966ff6b1a6a3020e54125c788354c3437528f2ebf1db5205fb46580d",
+        "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-self-intersection-review.md": "72855a6bc1d38ae59a6e1f48a9c94870bd6f359abb542c913c538902a8bf9351"
+      }
+    },
+    "protectedFiles": {
+      "countAtStart": 546,
+      "unchanged": 546,
+      "newRuntimeTestScriptPublicFiles": 0
+    },
+    "allOtherPreexistingFilesUnchanged": true,
+    "normativeGovernanceAndOpenSpecUnchanged": true,
+    "scratchConstructorIntegrity": [
+      {
+        "path": "/tmp/wflyer-visit2-governance/current-projection.ts",
+        "sha256": "49af4e3211520ae038594d0a3278d86a03c1893bc25964dc0103a42b64330352",
+        "functionBodiesAndGuardsUnmodified": true
+      },
+      {
+        "path": "/tmp/wflyer-visit2-governance/current-organic-flowing.ts",
+        "sha256": "af48b5dae049102d11911e37761f7b672965ab56ed22104bf6a6bb510a3a826d",
+        "functionBodiesAndGuardsUnmodified": true
+      },
+      {
+        "path": "/tmp/wflyer-visit2-governance/stage0-projection.ts",
+        "sha256": "df2e527c928b66def8f6634d215132fffe11aecaf4746d65a766f67af33b1947",
+        "functionBodiesAndGuardsUnmodified": true
+      },
+      {
+        "path": "/tmp/wflyer-visit2-governance/stage0-organic-flowing.ts",
+        "sha256": "112b188157c3a92797f10ed93755f4add2a3f33eef57dd214ed40b406d60d22e",
+        "functionBodiesAndGuardsUnmodified": true
+      },
+      {
+        "path": "/tmp/wflyer-visit2-governance/phase9-projection.ts",
+        "sha256": "70a61e0c8d645124b64a63277f82ab79305892ea1c48b31e286c02c1d297c3e8",
+        "functionBodiesAndGuardsUnmodified": true
+      },
+      {
+        "path": "/tmp/wflyer-visit2-governance/phase9-organic-flowing.ts",
+        "sha256": "112b188157c3a92797f10ed93755f4add2a3f33eef57dd214ed40b406d60d22e",
+        "functionBodiesAndGuardsUnmodified": true
+      }
+    ],
+    "focusedDiagnosticReplay": {
+      "status": "PASS",
+      "tests": 1,
+      "replays": 9,
+      "completeRuntimeAcceptance": false
+    },
+    "graphifyUpdate": "Not applicable: no repository code changes in this Ultra run."
+  },
+  "currentRunChangedFiles": [
+    {
+      "path": "docs/canonical-v2/06-migration/CURRENT_HANDOFF.md",
+      "beforeSha256": "a265c061d0e98086b54ac869dee14e804395409db01fd24afe1d41ec847490a4",
+      "afterSha256": "bcd21d367a029ef6eaaa1382e5b812050f6912d62d2293403830a952adcc55a8"
+    },
+    {
+      "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-progress.md",
+      "beforeSha256": "318d6ebfa09acd3dde2d6a5f3dc5b13315b7e33891253e60751aa6b94b7f7247",
+      "afterSha256": "a357c071ec21e2b81ef07a836d98f09f8cff4cbccbaa5eb95aeb01e653f38bcb"
+    }
+  ],
+  "newFiles": [
+    "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-lineage-diagnostics.json",
+    "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-lineage-review.md"
+  ],
+  "sourceDigests": {
+    "src/lib/story/score/projection.ts": "5fda8a5f4c0767857cb95842d1c7e49b0ec230d248bad52f7bd33729a37b29ed",
+    "src/lib/story/score/organic-flowing.ts": "91081e1263fa89c72f0ddd05ef0d0de9d188c4118bd6e5c999c8cbab5b9f0b1c",
+    "src/lib/story/score/projects-capacity.ts": "9125152068c434446a51def6db5991daab6932eeaa93139309b4d862ac1a5a5c",
+    "src/lib/story/score/event-safe-placement.ts": "888a0eae30e2bc3fddf25a8fa2bb4c4fcdf848a4923e5264a300580abf823c3b",
+    "src/components/projects/project-cards.module.css": "752562f7b9b3a9d70b477021aaf5366bbaa08f31a64e8c9eec6986982528e253",
+    "src/components/projects/ProjectCardFan.tsx": "5f12847ba68ab6a8262d445b8d9c2dd2d48a5d02e61dde16d56b1a1cad4d5bfc",
+    "tests/unit/story/story-score-projects-capacity.test.ts": "782ed181a882135a994271ce853a6258400f0ccdc4a180bc7433b432238a8629",
+    "tests/fixtures/story-score/stage1-batch2-measurements.json": "61f26ce52ebffcee4b3751d41b856be60d97c38e1e63ba3dd4a97ad6d569f9e3",
+    "tests/fixtures/story-score/stage1-projects-capacity-negative.json": "8d9cd18bcc1b26c53d2ea9e5c4a4ebcb7092a7ab5d68f702315cd1b9f6219b4f",
+    "package.json": "6252e7505e52c4d6690d5dee7dc1da1b8d2733456519a44e54ea90448247565a",
+    "pnpm-lock.yaml": "6ad95c300fc1d6304f795c5699a71ddf8a6e04bfd55f842b94e39028a7d762af"
+  },
+  "gitStatusShort": [
+    " M .agents/skills/openspec-apply-change/SKILL.md",
+    " M .agents/skills/openspec-archive-change/SKILL.md",
+    " M .agents/skills/openspec-explore/SKILL.md",
+    " M .agents/skills/openspec-propose/SKILL.md",
+    " M .agents/skills/openspec-sync-specs/SKILL.md",
+    " M .agents/skills/openspec-update-change/SKILL.md",
+    " M .codex/hooks.json",
+    " M .codex/hooks.json.graphify-bak",
+    " M .codex/skills/graphify/.graphify_version",
+    " M .github/workflows/ci.yml",
+    " M .github/workflows/deploy.yml",
+    " M .serena/project.yml",
+    " M AGENTS.md",
+    " M WFLYER_IMPLEMENTATION_PLAN.md",
+    " M docs/05-implementacao/09-manifesto-tecnologico.yaml",
+    " M docs/05-implementacao/18-graphify-repository-map.md",
+    " M docs/05-implementacao/19-openspec-workflow.md",
+    " M docs/05-implementacao/21-staging-release-operations.md",
+    " M docs/05-implementacao/22-napoleon-node-runtime-runbook.md",
+    " M docs/07-qa/09-staging-homologation-runbook.md",
+    " M docs/07-qa/10-staging-homologation-report.md",
+    " M docs/canonical-v2/00-governance/03-decision-register.md",
+    " M docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md",
+    " M docs/canonical-v2/06-migration/CURRENT_HANDOFF.md",
+    " M graphify-out/GRAPH_REPORT.md",
+    " M openspec/changes/implement-scroll-driven-score-assembly-and-motion/design.md",
+    " M openspec/changes/implement-scroll-driven-score-assembly-and-motion/proposal.md",
+    " M openspec/changes/implement-scroll-driven-score-assembly-and-motion/specs/continuous-dual-score/spec.md",
+    " M openspec/changes/implement-scroll-driven-score-assembly-and-motion/specs/music-renderer/spec.md",
+    " M openspec/changes/implement-scroll-driven-score-assembly-and-motion/specs/responsive-story-mode/spec.md",
+    " M openspec/changes/implement-scroll-driven-score-assembly-and-motion/specs/score-assembly-motion/spec.md",
+    " M openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-authorization.md",
+    " M openspec/changes/implement-scroll-driven-score-assembly-and-motion/tasks.md",
+    " M package.json",
+    " M pnpm-lock.yaml",
+    " M pnpm-workspace.yaml",
+    " M src/app/%5F_visual-lab/story/score-paths/ScorePathReview.test.tsx",
+    " M src/components/story-motion/MotionStoryLab.test.tsx",
+    " M src/components/story-motion/MotionStoryLab.tsx",
+    " M src/components/story-motion/motion-story-lab.module.css",
+    " M src/components/story-score/StoryScoreLayer.test.tsx",
+    " M src/components/story-score/StoryScoreLayer.tsx",
+    " M src/lib/story/score/organic-flowing.ts",
+    " M src/lib/story/score/projection.ts",
+    " M tests/e2e/phase09-score-path-review.spec.ts",
+    " M tests/unit/story/story-score-projection.test.ts",
+    "?? docs/.ai/",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-batch-2-inherited-defect-diagnostics.json",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-batch-2-inherited-defect-review.md",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-batch-2-repair-diagnostics.json",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-numeric-determinism-diagnostics.json",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-progress.md",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-capacity-authorization-review.md",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-capacity-governance-validation.json",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-clearance-stop-diagnostics.json",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-clearance-stop.md",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-full-ink-authorization-review.md",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-full-ink-governance-validation.json",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-full-ink-stop-diagnostics.json",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-full-ink-stop.md",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-clearance-stop-diagnostics.json",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-clearance-stop.md",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-lineage-diagnostics.json",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-interaction-lineage-review.md",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-lineage-and-capacity-diagnostics.json",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-lineage-and-capacity-review.md",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-self-intersection-diagnostics.json",
+    "?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-self-intersection-review.md",
+    "?? scripts/capture-assembly-stage1-evidence.mjs",
+    "?? src/components/story-score/projection-metadata.ts",
+    "?? src/lib/story/score/event-safe-placement.ts",
+    "?? src/lib/story/score/projects-capacity.ts",
+    "?? tests/e2e/assembly-stage1-geometry.spec.ts",
+    "?? tests/e2e/assembly-stage1-hydration.spec.ts",
+    "?? tests/e2e/helpers/",
+    "?? tests/fixtures/",
+    "?? tests/helpers/assembly-stage1-determinism.ts",
+    "?? tests/unit/story/story-score-batch2-geometry.test.ts",
+    "?? tests/unit/story/story-score-event-safety.test.ts",
+    "?? tests/unit/story/story-score-projects-capacity.test.ts",
+    "?? tests/unit/story/story-score-successor-geometry.test.ts"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "detectedAt": "2026-09-14T12:34:28.136499+00:00",
+  "path": "docs/.ai/AI_MODEL_ROUTING_POLICY_v1.1.0.md",
+  "initialSha256": "e25193ef42a10c53be7f62350e4e94b4ae951a879145505c457838f368fbcd4a",
+  "observedSha256": "a1f0e518664b1915a76f2e73a0fa601a6a8401140b4ffc3a2aef239642c73c3d",
+  "exactInitialBytesRecoveredAsPrefix": true,
+  "addition": "\nSuccessor Inherited-Defect Gate\n\nWhen three or more distinct inherited defects are discovered during the same successor stage, sequential defect-by-defect remediation SHALL pause.\n\nA bounded systematic audit SHALL inventory the complete affected acceptance surface before further remediation.\n\nFindings SHALL be classified as CURRENT_REGRESSION, INHERITED_CRITICAL, INHERITED_NONBLOCKING, or VALIDATION_PIPELINE_DEFECT.\n\nA successor stage SHALL NOT be blocked solely because a stronger validator discovers an unchanged inherited defect unless that defect is critical to the stage acceptance contract or produces materially degraded user experience without an approved safe fallback.\n\nAn inherited finding SHALL block when it affects accessibility, usable content, navigation, critical forms/CTAs, data integrity, security, or produces materially broken presentation on a supported path.\n\nDeferred inherited findings SHALL remain visible in validation evidence and SHALL require an explicit owner-approved disposition. Validators SHALL NOT be disabled, weakened, skipped or rewritten to conceal them.\n\nAny current regression relative to an equivalent frozen baseline SHALL remain blocking.\n\nSafe runtime fallback MAY protect the user experience but SHALL NOT convert an invalid enhanced candidate into a validation PASS.",
+  "attribution": "External to recorded audit tooling/actions; no claim about editor identity. File is preserved.",
+  "contractReview": "Added general successor inherited-defect gate requires bounded systematic inventory, explicit owner defer and unchanged validators; it agrees with the already approved closed ASM-AUDIT-001 manifest and batch owner stop. No new runtime repair authorization or scope expansion is inferred.",
+  "impactOnEvidence": "One initial non-runtime governance file changed; all original runtime/test/source pins and historical seals/payloads must be checked separately. Do not rewrite the initial fingerprint or claim all initial files unchanged.",
+  "continuation": "Continue already authorized audit; report this byte-level difference independently in final integrity."
+}

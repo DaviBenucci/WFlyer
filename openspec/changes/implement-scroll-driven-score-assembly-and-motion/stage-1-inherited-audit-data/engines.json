@@ -1,0 +1,20 @@
+[
+  {
+    "name": "chromium",
+    "available": true,
+    "version": "153.0.8010.12",
+    "executable": "/home/davi-benucci/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome"
+  },
+  {
+    "name": "firefox",
+    "available": true,
+    "version": "155.0",
+    "executable": "/home/davi-benucci/.cache/ms-playwright/firefox-1543/firefox/firefox"
+  },
+  {
+    "name": "webkit",
+    "available": true,
+    "version": "26.6",
+    "executable": "/home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh"
+  }
+]

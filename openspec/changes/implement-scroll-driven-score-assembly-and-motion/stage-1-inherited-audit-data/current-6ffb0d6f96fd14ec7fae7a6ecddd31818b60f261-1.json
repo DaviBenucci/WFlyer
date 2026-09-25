@@ -1,0 +1,1658 @@
+{
+  "state": {
+    "width": 1440,
+    "height": 900,
+    "mode": "static"
+  },
+  "branches": [
+    {
+      "branch": "application",
+      "safety": {
+        "staffSpace": 4.5,
+        "shelves": [
+          {
+            "zoneId": "notation:home:1",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.197044,
+            "endT": 0.231527,
+            "startDistance": 0,
+            "endDistance": 959.113827,
+            "length": 959.113827,
+            "maximumTangentAngleDeg": 2.6057,
+            "tangentVariationDeg": 2.290804,
+            "startPoint": {
+              "x": 200,
+              "y": 265.164214
+            },
+            "endPoint": {
+              "x": 1158.60781,
+              "y": 293.900776
+            }
+          },
+          {
+            "zoneId": "notation:application-overview:2",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.344828,
+            "endT": 0.369458,
+            "startDistance": 0,
+            "endDistance": 42.218005,
+            "length": 42.218005,
+            "maximumTangentAngleDeg": 9.017981,
+            "tangentVariationDeg": 1.907088,
+            "startPoint": {
+              "x": 53.333333,
+              "y": 8841.036763
+            },
+            "endPoint": {
+              "x": 95.120889,
+              "y": 8847.030302
+            }
+          },
+          {
+            "zoneId": "notation:application-how-it-works:3",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.44335,
+            "endT": 0.487685,
+            "startDistance": 0,
+            "endDistance": 668.074497,
+            "length": 668.074497,
+            "maximumTangentAngleDeg": 12.766676,
+            "tangentVariationDeg": 5.001873,
+            "startPoint": {
+              "x": 526.63,
+              "y": 10147
+            },
+            "endPoint": {
+              "x": 1185.669905,
+              "y": 10255.058697
+            }
+          },
+          {
+            "zoneId": "notation:application-benefits:4",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.600985,
+            "endT": 0.625616,
+            "startDistance": 0,
+            "endDistance": 39.827717,
+            "length": 39.827717,
+            "maximumTangentAngleDeg": 9.583232,
+            "tangentVariationDeg": 2.160795,
+            "startPoint": {
+              "x": 55.833333,
+              "y": 11473.036763
+            },
+            "endPoint": {
+              "x": 95.204222,
+              "y": 11479.030302
+            }
+          },
+          {
+            "zoneId": "notation:application-demo:5",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.699507,
+            "endT": 0.743842,
+            "startDistance": 0,
+            "endDistance": 667.072503,
+            "length": 667.072503,
+            "maximumTangentAngleDeg": 12.774312,
+            "tangentVariationDeg": 5.09222,
+            "startPoint": {
+              "x": 527.8,
+              "y": 12580.74
+            },
+            "endPoint": {
+              "x": 1185.753238,
+              "y": 12689.058697
+            }
+          },
+          {
+            "zoneId": "notation:application-access:6",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.857143,
+            "endT": 0.881773,
+            "startDistance": 0,
+            "endDistance": 44.61118,
+            "length": 44.61118,
+            "maximumTangentAngleDeg": 8.515212,
+            "tangentVariationDeg": 1.738646,
+            "startPoint": {
+              "x": 50.833333,
+              "y": 13879.036763
+            },
+            "endPoint": {
+              "x": 95.037556,
+              "y": 13885.030302
+            }
+          },
+          {
+            "zoneId": "notation:application-terminal:7",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.955665,
+            "endT": 0.983061,
+            "startDistance": 0,
+            "endDistance": 646.280762,
+            "length": 646.280762,
+            "maximumTangentAngleDeg": 13.775249,
+            "tangentVariationDeg": 5.996023,
+            "startPoint": {
+              "x": 528.97,
+              "y": 14587.26
+            },
+            "endPoint": {
+              "x": 1166.660186,
+              "y": 14690.921971
+            }
+          },
+          {
+            "zoneId": "notation:application-terminal:7",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.983061,
+            "endT": 1,
+            "startDistance": 646.280762,
+            "endDistance": 665.072478,
+            "length": 18.791716,
+            "maximumTangentAngleDeg": 13.927169,
+            "tangentVariationDeg": 3.195657,
+            "startPoint": {
+              "x": 1166.660186,
+              "y": 14690.921971
+            },
+            "endPoint": {
+              "x": 1185,
+              "y": 14695
+            }
+          }
+        ],
+        "groups": [
+          {
+            "slotId": "home:primary",
+            "zoneId": "notation:home:1",
+            "shelfIndex": 0,
+            "originalZoneId": "notation:home:1",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.212696,
+            "footprintEndT": 0.215107,
+            "marginStartT": 0.212459,
+            "marginEndT": 0.215345,
+            "maximumTangentAngleDeg": 2.601472,
+            "tangentVariationDeg": 0.125496,
+            "clearanceBefore": 445.054767,
+            "clearanceAfter": 445.4548,
+            "footprintWidth": 68.60426,
+            "footprintBounds": {
+              "left": 644.814883,
+              "right": 713.350911,
+              "top": 263.797256,
+              "bottom": 289.963059
+            }
+          },
+          {
+            "slotId": "application-overview:primary",
+            "zoneId": "notation:application-overview:2",
+            "shelfIndex": 1,
+            "originalZoneId": "notation:application-overview:2",
+            "relocated": false,
+            "eventCount": 1,
+            "footprintStartT": 0.355135,
+            "footprintEndT": 0.35879,
+            "marginStartT": 0.351193,
+            "marginEndT": 0.362738,
+            "maximumTangentAngleDeg": 9.01796,
+            "tangentVariationDeg": 1.191245,
+            "clearanceBefore": 17.627704,
+            "clearanceAfter": 18.3327,
+            "footprintWidth": 6.257601,
+            "footprintBounds": {
+              "left": 70.769725,
+              "right": 76.952282,
+              "top": 8829.588477,
+              "bottom": 8848.826176
+            }
+          },
+          {
+            "slotId": "application-overview:reserved",
+            "zoneId": "notation:application-how-it-works:3",
+            "shelfIndex": 2,
+            "originalZoneId": "notation:application-overview:2",
+            "relocated": true,
+            "eventCount": 2,
+            "footprintStartT": 0.444876,
+            "footprintEndT": 0.446223,
+            "marginStartT": 0.444745,
+            "marginEndT": 0.446353,
+            "maximumTangentAngleDeg": 11.603246,
+            "tangentVariationDeg": 1.104142,
+            "clearanceBefore": 76.621915,
+            "clearanceAfter": 521.613917,
+            "footprintWidth": 69.838665,
+            "footprintBounds": {
+              "left": 601.546651,
+              "right": 670.093883,
+              "top": 10146.93418,
+              "bottom": 10190.342598
+            }
+          },
+          {
+            "slotId": "application-how-it-works:primary",
+            "zoneId": "notation:application-how-it-works:3",
+            "shelfIndex": 2,
+            "originalZoneId": "notation:application-how-it-works:3",
+            "relocated": false,
+            "eventCount": 1,
+            "footprintStartT": 0.449926,
+            "footprintEndT": 0.45006,
+            "marginStartT": 0.449783,
+            "marginEndT": 0.450206,
+            "maximumTangentAngleDeg": 8.503895,
+            "tangentVariationDeg": 0.177624,
+            "clearanceBefore": 332.257382,
+            "clearanceAfter": 329.591581,
+            "footprintWidth": 6.225534,
+            "footprintBounds": {
+              "left": 853.346279,
+              "right": 859.504795,
+              "top": 10195.948322,
+              "bottom": 10215.168363
+            }
+          },
+          {
+            "slotId": "application-how-it-works:reserved",
+            "zoneId": "notation:application-how-it-works:3",
+            "shelfIndex": 2,
+            "originalZoneId": "notation:application-how-it-works:3",
+            "relocated": false,
+            "eventCount": 3,
+            "footprintStartT": 0.45373,
+            "footprintEndT": 0.459567,
+            "marginStartT": 0.453542,
+            "marginEndT": 0.460624,
+            "maximumTangentAngleDeg": 8.306025,
+            "tangentVariationDeg": 0.506205,
+            "clearanceBefore": 490.63812,
+            "clearanceAfter": 45.564939,
+            "footprintWidth": 131.871438,
+            "footprintBounds": {
+              "left": 1010.198536,
+              "right": 1140.805484,
+              "top": 10212.573257,
+              "bottom": 10251.413434
+            }
+          },
+          {
+            "slotId": "application-benefits:primary",
+            "zoneId": "notation:application-benefits:4",
+            "shelfIndex": 3,
+            "originalZoneId": "notation:application-benefits:4",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.608543,
+            "footprintEndT": 0.618387,
+            "marginStartT": 0.604352,
+            "marginEndT": 0.622583,
+            "maximumTangentAngleDeg": 9.583132,
+            "tangentVariationDeg": 2.00813,
+            "clearanceBefore": 12.160163,
+            "clearanceAfter": 11.807499,
+            "footprintWidth": 15.860055,
+            "footprintBounds": {
+              "left": 67.851556,
+              "right": 83.504866,
+              "top": 11460.166187,
+              "bottom": 11489.924539
+            }
+          },
+          {
+            "slotId": "application-benefits:reserved",
+            "zoneId": "notation:application-demo:5",
+            "shelfIndex": 4,
+            "originalZoneId": "notation:application-benefits:4",
+            "relocated": true,
+            "eventCount": 1,
+            "footprintStartT": 0.702708,
+            "footprintEndT": 0.70283,
+            "marginStartT": 0.702578,
+            "marginEndT": 0.702959,
+            "maximumTangentAngleDeg": 10.538041,
+            "tangentVariationDeg": 0.245166,
+            "clearanceBefore": 163.995185,
+            "clearanceAfter": 496.704346,
+            "footprintWidth": 6.372972,
+            "footprintBounds": {
+              "left": 688.469052,
+              "right": 694.736994,
+              "top": 12609.331254,
+              "bottom": 12628.627031
+            }
+          },
+          {
+            "slotId": "application-demo:primary",
+            "zoneId": "notation:application-demo:5",
+            "shelfIndex": 4,
+            "originalZoneId": "notation:application-demo:5",
+            "relocated": false,
+            "eventCount": 4,
+            "footprintStartT": 0.707611,
+            "footprintEndT": 0.713746,
+            "marginStartT": 0.707455,
+            "marginEndT": 0.714139,
+            "maximumTangentAngleDeg": 8.037602,
+            "tangentVariationDeg": 0.355509,
+            "clearanceBefore": 402.092233,
+            "clearanceAfter": 68.536081,
+            "footprintWidth": 196.44419,
+            "footprintBounds": {
+              "left": 923.597155,
+              "right": 1118.220615,
+              "top": 12639.053637,
+              "bottom": 12689.397902
+            }
+          },
+          {
+            "slotId": "application-access:primary",
+            "zoneId": "notation:application-access:6",
+            "shelfIndex": 5,
+            "originalZoneId": "notation:application-access:6",
+            "relocated": false,
+            "eventCount": 3,
+            "footprintStartT": 0.862045,
+            "footprintEndT": 0.875723,
+            "marginStartT": 0.858314,
+            "marginEndT": 0.879457,
+            "maximumTangentAngleDeg": 8.515121,
+            "tangentVariationDeg": 1.738529,
+            "clearanceBefore": 8.867121,
+            "clearanceAfter": 10.965873,
+            "footprintWidth": 24.778186,
+            "footprintBounds": {
+              "left": 59.624052,
+              "right": 84.151389,
+              "top": 13872.93351,
+              "bottom": 13899.175612
+            }
+          },
+          {
+            "slotId": "application-access:reserved",
+            "zoneId": "notation:application-terminal:7",
+            "shelfIndex": 6,
+            "originalZoneId": "notation:application-access:6",
+            "relocated": true,
+            "eventCount": 1,
+            "footprintStartT": 0.957798,
+            "footprintEndT": 0.957921,
+            "marginStartT": 0.957668,
+            "marginEndT": 0.95805,
+            "maximumTangentAngleDeg": 10.989134,
+            "tangentVariationDeg": 0.262255,
+            "clearanceBefore": 108.505351,
+            "clearanceAfter": 531.3679,
+            "footprintWidth": 6.407511,
+            "footprintBounds": {
+              "left": 635.21157,
+              "right": 641.504385,
+              "top": 14602.785259,
+              "bottom": 14622.096226
+            }
+          },
+          {
+            "slotId": "application-terminal:primary",
+            "zoneId": "notation:application-terminal:7",
+            "shelfIndex": 6,
+            "originalZoneId": "notation:application-terminal:7",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.961516,
+            "footprintEndT": 0.962978,
+            "marginStartT": 0.961378,
+            "marginEndT": 0.963128,
+            "maximumTangentAngleDeg": 8.788196,
+            "tangentVariationDeg": 0.681484,
+            "clearanceBefore": 299.289132,
+            "clearanceAfter": 278.168107,
+            "footprintWidth": 68.823522,
+            "footprintBounds": {
+              "left": 823.219513,
+              "right": 891.300738,
+              "top": 14630.582652,
+              "bottom": 14661.269793
+            }
+          },
+          {
+            "slotId": "application-terminal:reserved",
+            "zoneId": "notation:application-terminal:7",
+            "shelfIndex": 6,
+            "originalZoneId": "notation:application-terminal:7",
+            "relocated": false,
+            "eventCount": 1,
+            "footprintStartT": 0.967786,
+            "footprintEndT": 0.968005,
+            "marginStartT": 0.967556,
+            "marginEndT": 0.968253,
+            "maximumTangentAngleDeg": 7.921738,
+            "tangentVariationDeg": 0.034197,
+            "clearanceBefore": 549.880993,
+            "clearanceAfter": 90.207083,
+            "footprintWidth": 6.192686,
+            "footprintBounds": {
+              "left": 1071.355306,
+              "right": 1077.489019,
+              "top": 14669.340532,
+              "bottom": 14688.541978
+            }
+          }
+        ],
+        "relocations": [
+          {
+            "branch": "application",
+            "chapter": "application-overview",
+            "sourceShelf": "notation:application-overview:2",
+            "slotId": "application-overview:reserved",
+            "motifId": "Q2",
+            "semanticIndex": 2,
+            "reason": "SOURCE_CAPACITY_REQUIRED_BY_SEMANTIC_ORDER",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:application-overview:2",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.344828,
+                "endT": 0.369458,
+                "startDistance": 0,
+                "endDistance": 42.218005,
+                "length": 42.218005,
+                "maximumTangentAngleDeg": 9.017981,
+                "tangentVariationDeg": 1.907088,
+                "startPoint": {
+                  "x": 53.333333,
+                  "y": 8841.036763
+                },
+                "endPoint": {
+                  "x": 95.120889,
+                  "y": 8847.030302
+                }
+              }
+            ],
+            "destinationShelf": "notation:application-how-it-works:3",
+            "destinationChapter": "application-how-it-works",
+            "availableSafeInterval": {
+              "zoneId": "notation:application-how-it-works:3",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.44335,
+              "endT": 0.487685,
+              "startDistance": 0,
+              "endDistance": 668.074497,
+              "length": 668.074497,
+              "maximumTangentAngleDeg": 12.766676,
+              "tangentVariationDeg": 5.001873,
+              "startPoint": {
+                "x": 526.63,
+                "y": 10147
+              },
+              "endPoint": {
+                "x": 1185.669905,
+                "y": 10255.058697
+              }
+            },
+            "footprintRequirement": 69.838665,
+            "safetyMarginEachSide": 6.75,
+            "maximumTangentAngleDeg": 11.603246,
+            "tangentVariationDeg": 1.104142,
+            "semanticOrderPreserved": true
+          },
+          {
+            "branch": "application",
+            "chapter": "application-benefits",
+            "sourceShelf": "notation:application-benefits:4",
+            "slotId": "application-benefits:reserved",
+            "motifId": "Q1",
+            "semanticIndex": 6,
+            "reason": "SOURCE_CAPACITY_REQUIRED_BY_SEMANTIC_ORDER",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:application-benefits:4",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.600985,
+                "endT": 0.625616,
+                "startDistance": 0,
+                "endDistance": 39.827717,
+                "length": 39.827717,
+                "maximumTangentAngleDeg": 9.583232,
+                "tangentVariationDeg": 2.160795,
+                "startPoint": {
+                  "x": 55.833333,
+                  "y": 11473.036763
+                },
+                "endPoint": {
+                  "x": 95.204222,
+                  "y": 11479.030302
+                }
+              }
+            ],
+            "destinationShelf": "notation:application-demo:5",
+            "destinationChapter": "application-demo",
+            "availableSafeInterval": {
+              "zoneId": "notation:application-demo:5",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.699507,
+              "endT": 0.743842,
+              "startDistance": 0,
+              "endDistance": 667.072503,
+              "length": 667.072503,
+              "maximumTangentAngleDeg": 12.774312,
+              "tangentVariationDeg": 5.09222,
+              "startPoint": {
+                "x": 527.8,
+                "y": 12580.74
+              },
+              "endPoint": {
+                "x": 1185.753238,
+                "y": 12689.058697
+              }
+            },
+            "footprintRequirement": 6.372972,
+            "safetyMarginEachSide": 6.75,
+            "maximumTangentAngleDeg": 10.538041,
+            "tangentVariationDeg": 0.245166,
+            "semanticOrderPreserved": true
+          },
+          {
+            "branch": "application",
+            "chapter": "application-access",
+            "sourceShelf": "notation:application-access:6",
+            "slotId": "application-access:reserved",
+            "motifId": "Q1",
+            "semanticIndex": 9,
+            "reason": "SOURCE_CAPACITY_REQUIRED_BY_SEMANTIC_ORDER",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:application-access:6",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.857143,
+                "endT": 0.881773,
+                "startDistance": 0,
+                "endDistance": 44.61118,
+                "length": 44.61118,
+                "maximumTangentAngleDeg": 8.515212,
+                "tangentVariationDeg": 1.738646,
+                "startPoint": {
+                  "x": 50.833333,
+                  "y": 13879.036763
+                },
+                "endPoint": {
+                  "x": 95.037556,
+                  "y": 13885.030302
+                }
+              }
+            ],
+            "destinationShelf": "notation:application-terminal:7",
+            "destinationChapter": "application-terminal",
+            "availableSafeInterval": {
+              "zoneId": "notation:application-terminal:7",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.955665,
+              "endT": 0.983061,
+              "startDistance": 0,
+              "endDistance": 646.280762,
+              "length": 646.280762,
+              "maximumTangentAngleDeg": 13.775249,
+              "tangentVariationDeg": 5.996023,
+              "startPoint": {
+                "x": 528.97,
+                "y": 14587.26
+              },
+              "endPoint": {
+                "x": 1166.660186,
+                "y": 14690.921971
+              }
+            },
+            "footprintRequirement": 6.407511,
+            "safetyMarginEachSide": 6.75,
+            "maximumTangentAngleDeg": 10.989134,
+            "tangentVariationDeg": 0.262255,
+            "semanticOrderPreserved": true
+          }
+        ],
+        "eventCount": 23,
+        "forbiddenEventCount": 0,
+        "maximumTangentAngleDeg": 11.603246,
+        "maximumTangentVariationDeg": 2.00813
+      },
+      "entry": {
+        "t": 0.039409,
+        "point": {
+          "x": 579.57168,
+          "y": 90.763696
+        },
+        "tangent": {
+          "x": -0.987019,
+          "y": 0.160606
+        },
+        "staffPoints": [
+          {
+            "x": 581.017132,
+            "y": 99.646864
+          },
+          {
+            "x": 580.294406,
+            "y": 95.20528
+          },
+          {
+            "x": 579.57168,
+            "y": 90.763696
+          },
+          {
+            "x": 578.848954,
+            "y": 86.322112
+          },
+          {
+            "x": 578.126228,
+            "y": 81.880529
+          }
+        ],
+        "eventFreeLeadIn": {
+          "startT": 0,
+          "endT": 0.212459
+        }
+      },
+      "ids": [
+        "wf-phase-9-task-34:vertical-wide:application:staff:0",
+        "wf-phase-9-task-34:vertical-wide:application:staff:2",
+        "wf-phase-9-task-34:vertical-wide:application:staff:4",
+        "wf-phase-9-task-34:vertical-wide:application:staff:6",
+        "wf-phase-9-task-34:vertical-wide:application:staff:8",
+        "wf-application-access:primary:note:2:ledger:0",
+        "wf-home:primary:note:0:notehead",
+        "wf-home:primary:note:0:stem",
+        "wf-home:primary:note:1:notehead",
+        "wf-home:primary:note:1:stem",
+        "wf-application-overview:primary:note:0:notehead",
+        "wf-application-overview:primary:note:0:stem",
+        "wf-application-overview:reserved:note:0:notehead",
+        "wf-application-overview:reserved:note:0:stem",
+        "wf-application-overview:reserved:note:1:notehead",
+        "wf-application-overview:reserved:note:1:stem",
+        "wf-application-how-it-works:primary:note:0:notehead",
+        "wf-application-how-it-works:primary:note:0:stem",
+        "wf-application-how-it-works:reserved:note:0:notehead",
+        "wf-application-how-it-works:reserved:note:0:stem",
+        "wf-application-how-it-works:reserved:note:1:notehead",
+        "wf-application-how-it-works:reserved:note:1:stem",
+        "wf-application-how-it-works:reserved:note:2:notehead",
+        "wf-application-how-it-works:reserved:note:2:stem",
+        "wf-application-benefits:primary:note:0:notehead",
+        "wf-application-benefits:primary:note:0:stem",
+        "wf-application-benefits:primary:note:1:notehead",
+        "wf-application-benefits:primary:note:1:stem",
+        "wf-application-benefits:reserved:note:0:notehead",
+        "wf-application-benefits:reserved:note:0:stem",
+        "wf-application-demo:primary:note:0:notehead",
+        "wf-application-demo:primary:note:0:stem",
+        "wf-application-demo:primary:note:1:notehead",
+        "wf-application-demo:primary:note:1:stem",
+        "wf-application-demo:primary:note:2:notehead",
+        "wf-application-demo:primary:note:2:stem",
+        "wf-application-demo:primary:note:3:notehead",
+        "wf-application-demo:primary:note:3:stem",
+        "wf-application-access:primary:note:0:notehead",
+        "wf-application-access:primary:note:0:stem",
+        "wf-application-access:primary:note:1:notehead",
+        "wf-application-access:primary:note:1:stem",
+        "wf-application-access:primary:note:2:notehead",
+        "wf-application-access:primary:note:2:stem",
+        "wf-application-access:reserved:note:0:notehead",
+        "wf-application-access:reserved:note:0:stem",
+        "wf-application-terminal:primary:note:0:notehead",
+        "wf-application-terminal:primary:note:0:stem",
+        "wf-application-terminal:primary:note:1:notehead",
+        "wf-application-terminal:primary:note:1:stem",
+        "wf-application-terminal:reserved:note:0:notehead",
+        "wf-application-terminal:reserved:note:0:stem",
+        "wf-phase-9-task-34:vertical-wide:application:final-barline:terminal:thin",
+        "wf-phase-9-task-34:vertical-wide:application:final-barline:terminal:thick"
+      ],
+      "noteheads": 23,
+      "footprints": [
+        {
+          "slotId": "home:primary",
+          "primitiveCount": 4,
+          "left": 644.815185546875,
+          "right": 713.3505859375,
+          "top": 264.0225830078125,
+          "bottom": 289.96270751953125
+        },
+        {
+          "slotId": "application-overview:primary",
+          "primitiveCount": 2,
+          "left": 70.77394104003906,
+          "right": 76.94805908203125,
+          "top": 8829.8173828125,
+          "bottom": 8848.822265625
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "primitiveCount": 4,
+          "left": 601.551513671875,
+          "right": 670.0890502929688,
+          "top": 10147.1640625,
+          "bottom": 10190.1123046875
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "primitiveCount": 2,
+          "left": 853.3511352539062,
+          "right": 859.4999389648438,
+          "top": 10195.953125,
+          "bottom": 10214.9384765625
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "primitiveCount": 6,
+          "left": 1010.203369140625,
+          "right": 1140.8006591796875,
+          "top": 10212.802734375,
+          "bottom": 10251.408203125
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "primitiveCount": 4,
+          "left": 67.85702514648438,
+          "right": 83.4993896484375,
+          "top": 11460.396484375,
+          "bottom": 11489.6943359375
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "primitiveCount": 2,
+          "left": 688.47509765625,
+          "right": 694.73095703125,
+          "top": 12609.337890625,
+          "bottom": 12628.396484375
+        },
+        {
+          "slotId": "application-demo:primary",
+          "primitiveCount": 8,
+          "left": 923.6032104492188,
+          "right": 1118.214599609375,
+          "top": 12639.28515625,
+          "bottom": 12689.1669921875
+        },
+        {
+          "slotId": "application-access:primary",
+          "primitiveCount": 7,
+          "left": 59.63067626953125,
+          "right": 83.96475219726562,
+          "top": 13873.1650390625,
+          "bottom": 13899.1689453125
+        },
+        {
+          "slotId": "application-access:reserved",
+          "primitiveCount": 2,
+          "left": 635.218505859375,
+          "right": 641.4974365234375,
+          "top": 14602.7919921875,
+          "bottom": 14621.8642578125
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "primitiveCount": 4,
+          "left": 823.2265014648438,
+          "right": 891.2937622070312,
+          "top": 14630.58984375,
+          "bottom": 14661.0380859375
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "primitiveCount": 2,
+          "left": 1071.3623046875,
+          "right": 1077.48193359375,
+          "top": 14669.572265625,
+          "bottom": 14688.5341796875
+        }
+      ]
+    },
+    {
+      "branch": "professional",
+      "safety": {
+        "staffSpace": 4.5,
+        "shelves": [
+          {
+            "zoneId": "notation:home:1",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0,
+            "endT": 0.022259,
+            "startDistance": 0,
+            "endDistance": 29.285872,
+            "length": 29.285872,
+            "maximumTangentAngleDeg": 5.996263,
+            "tangentVariationDeg": 5.996263,
+            "startPoint": {
+              "x": 640,
+              "y": 84.75
+            },
+            "endPoint": {
+              "x": 669.220635,
+              "y": 86.463767
+            }
+          },
+          {
+            "zoneId": "notation:home:1",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.022259,
+            "endT": 0.03352,
+            "startDistance": 29.285872,
+            "endDistance": 44.860911,
+            "length": 15.575039,
+            "maximumTangentAngleDeg": 7.939474,
+            "tangentVariationDeg": 1.943211,
+            "startPoint": {
+              "x": 669.220635,
+              "y": 86.463767
+            },
+            "endPoint": {
+              "x": 684.677881,
+              "y": 88.369589
+            }
+          },
+          {
+            "zoneId": "notation:professional-about:2",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.256983,
+            "endT": 0.284916,
+            "startDistance": 0,
+            "endDistance": 42.174495,
+            "length": 42.174495,
+            "maximumTangentAngleDeg": 8.700309,
+            "tangentVariationDeg": 1.784467,
+            "startPoint": {
+              "x": 53.333333,
+              "y": 885.29657
+            },
+            "endPoint": {
+              "x": 95.120889,
+              "y": 890.978341
+            }
+          },
+          {
+            "zoneId": "notation:professional-services:3",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.368715,
+            "endT": 0.418994,
+            "startDistance": 0,
+            "endDistance": 665.876662,
+            "length": 665.876662,
+            "maximumTangentAngleDeg": 13.231173,
+            "tangentVariationDeg": 5.451931,
+            "startPoint": {
+              "x": 528.97,
+              "y": 2065.26
+            },
+            "endPoint": {
+              "x": 1185.836571,
+              "y": 2173.006736
+            }
+          },
+          {
+            "zoneId": "notation:professional-process:4",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.547486,
+            "endT": 0.575419,
+            "startDistance": 0,
+            "endDistance": 44.570349,
+            "length": 44.570349,
+            "maximumTangentAngleDeg": 8.262546,
+            "tangentVariationDeg": 1.734669,
+            "startPoint": {
+              "x": 50.833333,
+              "y": 3619.29657
+            },
+            "endPoint": {
+              "x": 95.037556,
+              "y": 3624.978341
+            }
+          },
+          {
+            "zoneId": "notation:professional-projects:5",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.659218,
+            "endT": 0.709497,
+            "startDistance": 0,
+            "endDistance": 666.99041,
+            "length": 666.99041,
+            "maximumTangentAngleDeg": 12.730352,
+            "tangentVariationDeg": 4.98811,
+            "startPoint": {
+              "x": 527.8,
+              "y": 4763
+            },
+            "endPoint": {
+              "x": 1185.753238,
+              "y": 4871.006736
+            }
+          },
+          {
+            "zoneId": "notation:professional-contact:6",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.837989,
+            "endT": 0.865922,
+            "startDistance": 0,
+            "endDistance": 39.781173,
+            "length": 39.781173,
+            "maximumTangentAngleDeg": 9.206796,
+            "tangentVariationDeg": 1.854183,
+            "startPoint": {
+              "x": 55.833333,
+              "y": 6673.29657
+            },
+            "endPoint": {
+              "x": 95.204222,
+              "y": 6678.978341
+            }
+          },
+          {
+            "zoneId": "notation:professional-terminal:7",
+            "classification": "EVENT_SAFE_STRAIGHT",
+            "startT": 0.949721,
+            "endT": 1,
+            "startDistance": 0,
+            "endDistance": 667.453709,
+            "length": 667.453709,
+            "maximumTangentAngleDeg": 12.808607,
+            "tangentVariationDeg": 5.10412,
+            "startPoint": {
+              "x": 526.63,
+              "y": 7766.74
+            },
+            "endPoint": {
+              "x": 1185,
+              "y": 7875
+            }
+          }
+        ],
+        "groups": [
+          {
+            "slotId": "home:primary",
+            "zoneId": "notation:professional-about:2",
+            "shelfIndex": 2,
+            "originalZoneId": "notation:home:1",
+            "relocated": true,
+            "eventCount": 1,
+            "footprintStartT": 0.268097,
+            "footprintEndT": 0.273222,
+            "marginStartT": 0.263606,
+            "marginEndT": 0.277705,
+            "maximumTangentAngleDeg": 8.189417,
+            "tangentVariationDeg": 1.273555,
+            "clearanceBefore": 16.723783,
+            "clearanceAfter": 17.748932,
+            "footprintWidth": 7.701779,
+            "footprintBounds": {
+              "left": 69.912096,
+              "right": 77.55548,
+              "top": 883.430271,
+              "bottom": 901.99145
+            }
+          },
+          {
+            "slotId": "professional-about:primary",
+            "zoneId": "notation:professional-services:3",
+            "shelfIndex": 3,
+            "originalZoneId": "notation:professional-about:2",
+            "relocated": true,
+            "eventCount": 2,
+            "footprintStartT": 0.370493,
+            "footprintEndT": 0.371886,
+            "marginStartT": 0.370344,
+            "marginEndT": 0.372032,
+            "maximumTangentAngleDeg": 11.404771,
+            "tangentVariationDeg": 1.029213,
+            "clearanceBefore": 79.145886,
+            "clearanceAfter": 522.715467,
+            "footprintWidth": 64.015309,
+            "footprintBounds": {
+              "left": 606.401268,
+              "right": 669.267582,
+              "top": 2071.073454,
+              "bottom": 2102.176652
+            }
+          },
+          {
+            "slotId": "professional-services:primary",
+            "zoneId": "notation:professional-services:3",
+            "shelfIndex": 3,
+            "originalZoneId": "notation:professional-services:3",
+            "relocated": false,
+            "eventCount": 4,
+            "footprintStartT": 0.374109,
+            "footprintEndT": 0.378369,
+            "marginStartT": 0.373958,
+            "marginEndT": 0.378553,
+            "maximumTangentAngleDeg": 9.369465,
+            "tangentVariationDeg": 1.526724,
+            "clearanceBefore": 244.786252,
+            "clearanceAfter": 245.368043,
+            "footprintWidth": 175.722367,
+            "footprintBounds": {
+              "left": 769.387886,
+              "right": 943.187453,
+              "top": 2107.241416,
+              "bottom": 2143.648725
+            }
+          },
+          {
+            "slotId": "professional-services:reserved",
+            "zoneId": "notation:professional-services:3",
+            "shelfIndex": 3,
+            "originalZoneId": "notation:professional-services:3",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.381443,
+            "footprintEndT": 0.384073,
+            "marginStartT": 0.381211,
+            "marginEndT": 0.384435,
+            "maximumTangentAngleDeg": 8.04778,
+            "tangentVariationDeg": 0.199735,
+            "clearanceBefore": 522.271383,
+            "clearanceAfter": 79.82435,
+            "footprintWidth": 63.780929,
+            "footprintBounds": {
+              "left": 1044.005829,
+              "right": 1107.17757,
+              "top": 2149.124939,
+              "bottom": 2173.073079
+            }
+          },
+          {
+            "slotId": "professional-process:primary",
+            "zoneId": "notation:professional-process:4",
+            "shelfIndex": 4,
+            "originalZoneId": "notation:professional-process:4",
+            "relocated": false,
+            "eventCount": 1,
+            "footprintStartT": 0.55929,
+            "footprintEndT": 0.564048,
+            "marginStartT": 0.555049,
+            "marginEndT": 0.568281,
+            "maximumTangentAngleDeg": 7.74469,
+            "tangentVariationDeg": 1.21683,
+            "clearanceBefore": 18.807501,
+            "clearanceAfter": 18.187875,
+            "footprintWidth": 7.574973,
+            "footprintBounds": {
+              "left": 69.496838,
+              "right": 77.020015,
+              "top": 3610.734859,
+              "bottom": 3629.311012
+            }
+          },
+          {
+            "slotId": "professional-process:reserved",
+            "zoneId": "notation:professional-projects:5",
+            "shelfIndex": 5,
+            "originalZoneId": "notation:professional-process:4",
+            "relocated": true,
+            "eventCount": 2,
+            "footprintStartT": 0.662119,
+            "footprintEndT": 0.663699,
+            "marginStartT": 0.661972,
+            "marginEndT": 0.663848,
+            "maximumTangentAngleDeg": 10.84336,
+            "tangentVariationDeg": 1.046234,
+            "clearanceBefore": 130.381649,
+            "clearanceAfter": 464.002076,
+            "footprintWidth": 72.606685,
+            "footprintBounds": {
+              "left": 655.477897,
+              "right": 726.911078,
+              "top": 4783.353705,
+              "bottom": 4808.668452
+            }
+          },
+          {
+            "slotId": "professional-projects:primary",
+            "zoneId": "notation:professional-projects:5",
+            "shelfIndex": 5,
+            "originalZoneId": "notation:professional-projects:5",
+            "relocated": false,
+            "eventCount": 1,
+            "footprintStartT": 0.671155,
+            "footprintEndT": 0.671449,
+            "marginStartT": 0.67094,
+            "marginEndT": 0.671675,
+            "maximumTangentAngleDeg": 7.831555,
+            "tangentVariationDeg": 0.044252,
+            "clearanceBefore": 497.228937,
+            "clearanceAfter": 160.780156,
+            "footprintWidth": 8.981317,
+            "footprintBounds": {
+              "left": 1017.932207,
+              "right": 1026.830274,
+              "top": 4830.300769,
+              "bottom": 4848.839881
+            }
+          },
+          {
+            "slotId": "professional-contact:primary",
+            "zoneId": "notation:professional-contact:6",
+            "shelfIndex": 6,
+            "originalZoneId": "notation:professional-contact:6",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.845379,
+            "footprintEndT": 0.858192,
+            "marginStartT": 0.840613,
+            "marginEndT": 0.862932,
+            "maximumTangentAngleDeg": 9.206595,
+            "tangentVariationDeg": 1.854004,
+            "clearanceBefore": 10.472646,
+            "clearanceAfter": 11.178625,
+            "footprintWidth": 18.129902,
+            "footprintBounds": {
+              "left": 66.196123,
+              "right": 84.162052,
+              "top": 6669.837396,
+              "bottom": 6689.338194
+            }
+          },
+          {
+            "slotId": "professional-terminal:primary",
+            "zoneId": "notation:professional-terminal:7",
+            "shelfIndex": 7,
+            "originalZoneId": "notation:professional-terminal:7",
+            "relocated": false,
+            "eventCount": 1,
+            "footprintStartT": 0.953344,
+            "footprintEndT": 0.953537,
+            "marginStartT": 0.953197,
+            "marginEndT": 0.953684,
+            "maximumTangentAngleDeg": 10.57201,
+            "tangentVariationDeg": 0.276966,
+            "clearanceBefore": 163.263429,
+            "clearanceAfter": 495.36367,
+            "footprintWidth": 8.82661,
+            "footprintBounds": {
+              "left": 686.562178,
+              "right": 695.242821,
+              "top": 7786.442612,
+              "bottom": 7804.869212
+            }
+          },
+          {
+            "slotId": "professional-terminal:reserved",
+            "zoneId": "notation:professional-terminal:7",
+            "shelfIndex": 7,
+            "originalZoneId": "notation:professional-terminal:7",
+            "relocated": false,
+            "eventCount": 2,
+            "footprintStartT": 0.960698,
+            "footprintEndT": 0.963017,
+            "marginStartT": 0.960498,
+            "marginEndT": 0.963274,
+            "maximumTangentAngleDeg": 7.895903,
+            "tangentVariationDeg": 0.191201,
+            "clearanceBefore": 464.860511,
+            "clearanceAfter": 132.27149,
+            "footprintWidth": 70.321708,
+            "footprintBounds": {
+              "left": 984.592243,
+              "right": 1054.264926,
+              "top": 7839.238111,
+              "bottom": 7870.770586
+            }
+          }
+        ],
+        "relocations": [
+          {
+            "branch": "professional",
+            "chapter": "home",
+            "sourceShelf": "notation:home:1",
+            "slotId": "home:primary",
+            "motifId": "Q1",
+            "semanticIndex": 0,
+            "reason": "SOURCE_HAS_NO_COMPLETE_FOOTPRINT_INTERVAL",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:home:1",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0,
+                "endT": 0.022259,
+                "startDistance": 0,
+                "endDistance": 29.285872,
+                "length": 29.285872,
+                "maximumTangentAngleDeg": 5.996263,
+                "tangentVariationDeg": 5.996263,
+                "startPoint": {
+                  "x": 640,
+                  "y": 84.75
+                },
+                "endPoint": {
+                  "x": 669.220635,
+                  "y": 86.463767
+                }
+              },
+              {
+                "zoneId": "notation:home:1",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.022259,
+                "endT": 0.03352,
+                "startDistance": 29.285872,
+                "endDistance": 44.860911,
+                "length": 15.575039,
+                "maximumTangentAngleDeg": 7.939474,
+                "tangentVariationDeg": 1.943211,
+                "startPoint": {
+                  "x": 669.220635,
+                  "y": 86.463767
+                },
+                "endPoint": {
+                  "x": 684.677881,
+                  "y": 88.369589
+                }
+              }
+            ],
+            "destinationShelf": "notation:professional-about:2",
+            "destinationChapter": "professional-about",
+            "availableSafeInterval": {
+              "zoneId": "notation:professional-about:2",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.256983,
+              "endT": 0.284916,
+              "startDistance": 0,
+              "endDistance": 42.174495,
+              "length": 42.174495,
+              "maximumTangentAngleDeg": 8.700309,
+              "tangentVariationDeg": 1.784467,
+              "startPoint": {
+                "x": 53.333333,
+                "y": 885.29657
+              },
+              "endPoint": {
+                "x": 95.120889,
+                "y": 890.978341
+              }
+            },
+            "footprintRequirement": 7.701779,
+            "safetyMarginEachSide": 6.75,
+            "maximumTangentAngleDeg": 8.189417,
+            "tangentVariationDeg": 1.273555,
+            "semanticOrderPreserved": true
+          },
+          {
+            "branch": "professional",
+            "chapter": "professional-about",
+            "sourceShelf": "notation:professional-about:2",
+            "slotId": "professional-about:primary",
+            "motifId": "Q2",
+            "semanticIndex": 1,
+            "reason": "SOURCE_CAPACITY_REQUIRED_BY_SEMANTIC_ORDER",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:professional-about:2",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.256983,
+                "endT": 0.284916,
+                "startDistance": 0,
+                "endDistance": 42.174495,
+                "length": 42.174495,
+                "maximumTangentAngleDeg": 8.700309,
+                "tangentVariationDeg": 1.784467,
+                "startPoint": {
+                  "x": 53.333333,
+                  "y": 885.29657
+                },
+                "endPoint": {
+                  "x": 95.120889,
+                  "y": 890.978341
+                }
+              }
+            ],
+            "destinationShelf": "notation:professional-services:3",
+            "destinationChapter": "professional-services",
+            "availableSafeInterval": {
+              "zoneId": "notation:professional-services:3",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.368715,
+              "endT": 0.418994,
+              "startDistance": 0,
+              "endDistance": 665.876662,
+              "length": 665.876662,
+              "maximumTangentAngleDeg": 13.231173,
+              "tangentVariationDeg": 5.451931,
+              "startPoint": {
+                "x": 528.97,
+                "y": 2065.26
+              },
+              "endPoint": {
+                "x": 1185.836571,
+                "y": 2173.006736
+              }
+            },
+            "footprintRequirement": 64.015309,
+            "safetyMarginEachSide": 6.75,
+            "maximumTangentAngleDeg": 11.404771,
+            "tangentVariationDeg": 1.029213,
+            "semanticOrderPreserved": true
+          },
+          {
+            "branch": "professional",
+            "chapter": "professional-process",
+            "sourceShelf": "notation:professional-process:4",
+            "slotId": "professional-process:reserved",
+            "motifId": "Q2",
+            "semanticIndex": 5,
+            "reason": "SOURCE_CAPACITY_REQUIRED_BY_SEMANTIC_ORDER",
+            "sourceSafeIntervals": [
+              {
+                "zoneId": "notation:professional-process:4",
+                "classification": "EVENT_SAFE_STRAIGHT",
+                "startT": 0.547486,
+                "endT": 0.575419,
+                "startDistance": 0,
+                "endDistance": 44.570349,
+                "length": 44.570349,
+                "maximumTangentAngleDeg": 8.262546,
+                "tangentVariationDeg": 1.734669,
+                "startPoint": {
+                  "x": 50.833333,
+                  "y": 3619.29657
+                },
+                "endPoint": {
+                  "x": 95.037556,
+                  "y": 3624.978341
+                }
+              }
+            ],
+            "destinationShelf": "notation:professional-projects:5",
+            "destinationChapter": "professional-projects",
+            "availableSafeInterval": {
+              "zoneId": "notation:professional-projects:5",
+              "classification": "EVENT_SAFE_STRAIGHT",
+              "startT": 0.659218,
+              "endT": 0.709497,
+              "startDistance": 0,
+              "endDistance": 666.99041,
+              "length": 666.99041,
+              "maximumTangentAngleDeg": 12.730352,
+              "tangentVariationDeg": 4.98811,
+              "startPoint": {
+                "x": 527.8,
+                "y": 4763
+              },
+              "endPoint": {
+                "x": 1185.753238,
+                "y": 4871.006736
+              }
+            },
+            "footprintRequirement": 72.606685,
+            "safetyMarginEachSide": 6.75,
+            "maximumTangentAngleDeg": 10.84336,
+            "tangentVariationDeg": 1.046234,
+            "semanticOrderPreserved": true
+          }
+        ],
+        "eventCount": 18,
+        "forbiddenEventCount": 0,
+        "maximumTangentAngleDeg": 11.404771,
+        "maximumTangentVariationDeg": 1.854004
+      },
+      "entry": {
+        "t": 0.044693,
+        "point": {
+          "x": 700.42832,
+          "y": 90.763696
+        },
+        "tangent": {
+          "x": 0.987019,
+          "y": 0.160606
+        },
+        "staffPoints": [
+          {
+            "x": 698.982868,
+            "y": 99.646864
+          },
+          {
+            "x": 699.705594,
+            "y": 95.20528
+          },
+          {
+            "x": 700.42832,
+            "y": 90.763696
+          },
+          {
+            "x": 701.151046,
+            "y": 86.322112
+          },
+          {
+            "x": 701.873772,
+            "y": 81.880529
+          }
+        ],
+        "eventFreeLeadIn": {
+          "startT": 0,
+          "endT": 0.263606
+        }
+      },
+      "ids": [
+        "wf-phase-9-task-34:vertical-wide:professional:staff:0",
+        "wf-phase-9-task-34:vertical-wide:professional:staff:2",
+        "wf-phase-9-task-34:vertical-wide:professional:staff:4",
+        "wf-phase-9-task-34:vertical-wide:professional:staff:6",
+        "wf-phase-9-task-34:vertical-wide:professional:staff:8",
+        "wf-phase-9-task-34:vertical-wide:professional:clef",
+        "wf-phase-9-task-34:vertical-wide:professional:key-signature:0",
+        "wf-phase-9-task-34:vertical-wide:professional:key-signature:1",
+        "wf-professional-projects:primary:note:0:ledger:0",
+        "wf-home:primary:note:0:notehead",
+        "wf-home:primary:note:0:stem",
+        "wf-professional-about:primary:note:0:notehead",
+        "wf-professional-about:primary:note:0:stem",
+        "wf-professional-about:primary:note:1:notehead",
+        "wf-professional-about:primary:note:1:stem",
+        "wf-professional-services:primary:note:0:notehead",
+        "wf-professional-services:primary:note:0:stem",
+        "wf-professional-services:primary:note:1:notehead",
+        "wf-professional-services:primary:note:1:stem",
+        "wf-professional-services:primary:note:2:notehead",
+        "wf-professional-services:primary:note:2:stem",
+        "wf-professional-services:primary:note:3:notehead",
+        "wf-professional-services:primary:note:3:stem",
+        "wf-professional-services:reserved:note:0:notehead",
+        "wf-professional-services:reserved:note:0:stem",
+        "wf-professional-services:reserved:note:1:notehead",
+        "wf-professional-services:reserved:note:1:stem",
+        "wf-professional-process:primary:note:0:notehead",
+        "wf-professional-process:primary:note:0:stem",
+        "wf-professional-process:reserved:note:0:notehead",
+        "wf-professional-process:reserved:note:0:stem",
+        "wf-professional-process:reserved:note:1:notehead",
+        "wf-professional-process:reserved:note:1:stem",
+        "wf-professional-projects:primary:note:0:notehead",
+        "wf-professional-projects:primary:note:0:stem",
+        "wf-professional-contact:primary:note:0:notehead",
+        "wf-professional-contact:primary:note:0:stem",
+        "wf-professional-contact:primary:note:1:notehead",
+        "wf-professional-contact:primary:note:1:stem",
+        "wf-professional-terminal:primary:note:0:notehead",
+        "wf-professional-terminal:primary:note:0:stem",
+        "wf-professional-terminal:reserved:note:0:notehead",
+        "wf-professional-terminal:reserved:note:0:stem",
+        "wf-professional-terminal:reserved:note:1:notehead",
+        "wf-professional-terminal:reserved:note:1:stem",
+        "wf-phase-9-task-34:vertical-wide:professional:final-barline:terminal:thin",
+        "wf-phase-9-task-34:vertical-wide:professional:final-barline:terminal:thick"
+      ],
+      "noteheads": 18,
+      "footprints": [
+        {
+          "slotId": "home:primary",
+          "primitiveCount": 2,
+          "left": 70.13752746582031,
+          "right": 77.5550537109375,
+          "top": 883.4306640625,
+          "bottom": 901.76611328125
+        },
+        {
+          "slotId": "professional-about:primary",
+          "primitiveCount": 4,
+          "left": 606.6272583007812,
+          "right": 669.2665405273438,
+          "top": 2071.07421875,
+          "bottom": 2101.95068359375
+        },
+        {
+          "slotId": "professional-services:primary",
+          "primitiveCount": 8,
+          "left": 769.6138916015625,
+          "right": 943.1864013671875,
+          "top": 2107.2421875,
+          "bottom": 2143.4228515625
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "primitiveCount": 4,
+          "left": 1044.2318115234375,
+          "right": 1107.176513671875,
+          "top": 2149.1259765625,
+          "bottom": 2172.8466796875
+        },
+        {
+          "slotId": "professional-process:primary",
+          "primitiveCount": 2,
+          "left": 69.72357177734375,
+          "right": 77.01828002929688,
+          "top": 3610.736328125,
+          "bottom": 3629.083984375
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "primitiveCount": 4,
+          "left": 655.7052001953125,
+          "right": 726.9088134765625,
+          "top": 4783.35546875,
+          "bottom": 4808.44140625
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "primitiveCount": 3,
+          "left": 1018.1595458984375,
+          "right": 1026.64794921875,
+          "top": 4830.302734375,
+          "bottom": 4848.61328125
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "primitiveCount": 4,
+          "left": 66.42431640625,
+          "right": 84.15887451171875,
+          "top": 6669.83984375,
+          "bottom": 6689.109375
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "primitiveCount": 2,
+          "left": 686.56591796875,
+          "right": 695.0140991210938,
+          "top": 7786.671875,
+          "bottom": 7804.865234375
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "primitiveCount": 4,
+          "left": 984.821044921875,
+          "right": 1054.26123046875,
+          "top": 7839.2421875,
+          "bottom": 7870.5419921875
+        }
+      ]
+    }
+  ],
+  "runtime": {
+    "consoleMessages": [
+      {
+        "type": "warning",
+        "text": "The resource http://127.0.0.1:3100/_next/static/media/546e7577bc4972bf-s.p.woff2?v=1789352872292 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+        "location": {
+          "url": "http://127.0.0.1:3100/__visual-lab/story/motion",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      {
+        "type": "warning",
+        "text": "The resource https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+        "location": {
+          "url": "http://127.0.0.1:3100/__visual-lab/story/motion",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      {
+        "type": "warning",
+        "text": "The resource http://127.0.0.1:3100/_next/static/media/e149ed1307c6abe9-s.p.woff2?v=1789352872292 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+        "location": {
+          "url": "http://127.0.0.1:3100/__visual-lab/story/motion",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      {
+        "type": "warning",
+        "text": "The resource http://127.0.0.1:3100/_next/static/css/app/not-found.css?v=1789352872292 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+        "location": {
+          "url": "http://127.0.0.1:3100/__visual-lab/story/motion",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      {
+        "type": "warning",
+        "text": "The resource http://127.0.0.1:3100/_next/static/css/app/error.css?v=1789352872292 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+        "location": {
+          "url": "http://127.0.0.1:3100/__visual-lab/story/motion",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      {
+        "type": "warning",
+        "text": "The resource http://127.0.0.1:3100/_next/static/media/fedf4c9280b16369-s.p.woff2?v=1789352872292 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+        "location": {
+          "url": "http://127.0.0.1:3100/__visual-lab/story/motion",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      {
+        "type": "warning",
+        "text": "The resource http://127.0.0.1:3100/_next/static/css/app/global-error.css?v=1789352872292 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+        "location": {
+          "url": "http://127.0.0.1:3100/__visual-lab/story/motion",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      }
+    ],
+    "consoleWarningCount": 7,
+    "consoleErrorCount": 0,
+    "relevantConsoleErrorCount": 0,
+    "developmentCspReports": [],
+    "hydrationWarningCount": 0,
+    "pageErrorCount": 2,
+    "pageErrors": [
+      "Invalid or unexpected token",
+      "Invalid or unexpected token"
+    ]
+  }
+}

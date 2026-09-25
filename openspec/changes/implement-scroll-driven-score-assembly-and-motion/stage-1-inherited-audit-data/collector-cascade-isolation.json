@@ -1,0 +1,18 @@
+{
+  "time": "2026-09-14T11:59:37.076001+00:00",
+  "root": "audit-dependent-state-cascade",
+  "productFailurePreserved": "Historical1440x900 held503 response causes StoryScoreLayer invariant RangeError and ErrorBoundary; raw error retained in prior runtimeErrors and superseded dependent attempts",
+  "change": "Start a fresh declared profile when the previous independent state removed the form; collect new runtime errors per observation while preserving earlier context history. No runtime repair, assertion loosening or automatic repair authorization.",
+  "dependentSlotsToObserveIndependently": [
+    "access/historical/chromium/dark/integrated-capacity-selected-1440x900/INVALID_EMAIL",
+    "access/historical/chromium/dark/integrated-capacity-selected-1440x900/SUCCESS",
+    "access/historical/chromium/light/integrated-capacity-selected-1440x900/CONSENT_REQUIRED",
+    "access/historical/chromium/light/integrated-capacity-selected-1440x900/DELIVERY_FAILED",
+    "access/historical/chromium/light/integrated-capacity-selected-1440x900/INVALID_EMAIL",
+    "access/historical/chromium/light/integrated-capacity-selected-1440x900/RATE_LIMITED",
+    "access/historical/chromium/light/integrated-capacity-selected-1440x900/SUCCESS",
+    "access/historical/chromium/light/integrated-capacity-selected-1440x900/SUCCESS_ACKNOWLEDGMENT_PENDING"
+  ],
+  "unfinishedObservation": "Collector stopped between persisted records; only non-recorded or explicitly listed dependent slots resume",
+  "lastPersistedSlot": "access/current/chromium/dark/integrated-static-390x844/VERIFYING_EXPIRED_TOKEN"
+}

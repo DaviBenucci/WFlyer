@@ -1,0 +1,304 @@
+OWNER DECISION — APPROVED WITH EXECUTION-EFFICIENCY GUARDRAILS
+
+Aprovo as recomendações A-H do arquivo:
+
+openspec/changes/implement-scroll-driven-score-assembly-and-motion/
+stage-1-inherited-audit-owner-decision-proposal.md
+
+Aprovo também o manifesto proposto:
+
+openspec/changes/implement-scroll-driven-score-assembly-and-motion/
+stage-1-inherited-audit-scope.proposed.json
+
+APPLICATION-ACCESS
+==================
+
+Aprovo a reserva determinística pertencente à cena Access, derivada de todos
+os estados e envelopes PRELAUNCH necessários, usando o transporte geométrico
+existente.
+
+O limite autorizado é:
+
+- Access content reservation;
+- suporte local de entrada/saída apenas quando comprovadamente necessário.
+
+118px NÃO deve ser tratado como máximo apenas porque foi o maior overflow
+observado até agora.
+
+A reserva deve cobrir o envelope canônico exigido pelos estados aplicáveis,
+e não apenas reproduzir os três estados já diagnosticados.
+
+GUARDRAIL — DETERMINISTIC SCENE INPUT
+=====================================
+
+A reserva Access deve permanecer um input geométrico determinístico pertencente
+à cena/layout contract.
+
+Não autorize um novo loop de medição reativo em que estados ordinários do
+formulário ou Turnstile façam Projection variar continuamente durante a
+interação.
+
+Em particular, evite:
+
+interaction state
+-> DOM measurement
+-> Projection change
+-> layout change
+-> new measurement
+-> Projection change
+
+se o mesmo resultado puder ser expresso como envelope canônico estável.
+
+Projection não deve se tornar owner genérico de medição DOM.
+
+A implementação posterior deve preservar:
+
+- SSR/hydration determinism;
+- stable ordinary interaction;
+- no per-frame measurement;
+- no measurement/projection feedback loop;
+- bounded rebuild semantics;
+- future PRELAUNCH -> LIVE evolution through the same scene contract.
+
+SYSTEMATIC INHERITED-DEFECT AUDIT
+=================================
+
+Aprovo:
+
+- gatilho padrão de três raízes herdadas distintas na mesma successor Stage;
+- taxonomia proposta;
+- registro estruturado de known inherited findings;
+- regras estritas de BLOCK / DEFER;
+- defer somente por decisão explícita do owner;
+- CURRENT_REGRESSION sempre bloqueante;
+- critical inherited finding bloqueante;
+- validator/test-pipeline defect separado de product geometry;
+- safe fallback separado de validation result;
+- safe fallback nunca transforma candidate INVALID em PASS;
+- auditoria finita antes de novos reparos individuais;
+- decisão única posterior sobre o lote auditado.
+
+Esta aprovação NÃO adia automaticamente nenhum achado existente ou futuro.
+
+Cada finding que pretenda DEFER continua exigindo disposition explícita segundo
+o contrato aprovado.
+
+AUDIT SCOPE
+===========
+
+Aprovo o escopo finito descrito no manifesto proposto:
+
+- 150 casos existentes;
+- 3,240 observações de estados Access;
+- 72 sequências complementares;
+
+conforme exatamente definido no manifesto normalizado.
+
+Esse conjunto deve permanecer PREBOUNDED.
+
+Nenhuma expansão automática do escopo é autorizada durante a auditoria.
+
+Se aparecer evidência de uma superfície fora do manifesto que possa exigir
+expansão:
+
+- registre-a como OUT_OF_AUDIT_SCOPE / NEEDS_REVIEW;
+- não expanda automaticamente a auditoria;
+- não inicie nova investigação ampla;
+- preserve a evidência para decisão posterior.
+
+AUDIT EXECUTION EFFICIENCY
+==========================
+
+As milhares de observações previstas são uma MATRIZ AUTOMATIZADA, não milhares
+de tarefas individuais de raciocínio.
+
+A futura execução Astra High deverá:
+
+1. gerar/coletar observações mecanicamente;
+2. persistir resultados estruturados;
+3. comparar baseline/current automaticamente;
+4. agrupar ocorrências equivalentes;
+5. deduplicar por ROOT CAUSE;
+6. investigar profundamente apenas:
+   - diferenças;
+   - failures;
+   - unclassified cases;
+   - candidate root clusters.
+
+Não produzir análise narrativa caso a caso para milhares de observações.
+
+O relatório humano deverá resumir root causes e occurrence matrices.
+
+Do not spend model context reproducing identical passing observations.
+
+SCREENSHOT / ARTIFACT EFFICIENCY
+================================
+
+Não exigir screenshots individuais para cada observação da matriz.
+
+Capturas visuais deverão ser produzidas apenas quando necessárias para:
+
+- representative root-cause evidence;
+- ambiguous classification;
+- material visual defect;
+- later Human Geometry Approval;
+
+salvo se um contrato canônico existente exigir explicitamente outra coisa.
+
+Canonical structured measurements remain the primary audit evidence.
+
+NORMALIZATION
+=============
+
+Na próxima continuação Ultra:
+
+1. retome o worktree sujo atual;
+2. branch esperada:
+   develop/site-institucional
+3. HEAD esperado:
+   40e6ae1a8996c53ed2ec372c47f16bc073d6cee9
+
+Normalize SOMENTE os contratos aprovados necessários.
+
+Use os próximos IDs válidos existentes no repositório.
+
+Registre application-access separadamente de Projects.
+
+Normalize:
+
+A. application-access inherited defect;
+B. deterministic Access reservation contract;
+C. inherited-defect audit trigger;
+D. taxonomy;
+E. blocking/defer rules;
+F. structured known-inherited ledger;
+G. fallback-vs-validation rule;
+H. bounded audit manifest;
+I. batch post-audit disposition flow;
+J. execution-efficiency rules above.
+
+Preserve:
+
+- ASM-PC-001;
+- ASM-PC-002;
+- ASM-PC-003;
+- all existing Stage-1 repairs;
+- measurement/order/restoration corrections;
+- capacity/runtime/policy work;
+- Batch 1;
+- Batch 2;
+- ADR-046;
+- Composer semantics/seed/fingerprints;
+- historical Phase-9 evidence;
+- four historical seals;
+- 64 historical evidence payloads;
+- current dirty worktree.
+
+Do not rewrite historical evidence.
+
+AGENTS / POLICY REFERENCE
+=========================
+
+Correct only the obsolete AI routing-policy reference in AGENTS.md as already
+identified.
+
+Do not rewrite AI-MRP-001 during this task.
+
+Ensure the effective reference resolves to the currently approved v1.1.0
+policy.
+
+VALIDATION
+==========
+
+Validate:
+
+- OpenSpec strict;
+- canonical decision/register consistency;
+- structured JSON/YAML;
+- audit manifest validity;
+- stable ID uniqueness;
+- cross-reference integrity;
+- git diff --check;
+- historical seal/evidence integrity.
+
+Do NOT execute the audit in Ultra.
+
+Do NOT implement application-access runtime repair in Ultra.
+
+Do NOT run the final browser matrix.
+
+ROUTING AFTER NORMALIZATION
+===========================
+
+Once normalization is complete, the NEXT task is the systematic audit.
+
+Therefore classify:
+
+REMAINING_TASK_CLASS=COMPLEX_DIAGNOSIS
+
+and hand off directly to:
+
+NEXT_MODEL=GPT-6-ASTRA
+NEXT_REASONING=HIGH
+
+Expected routing result:
+
+ROUTING_STATUS=DOWNGRADE_READY
+ULTRA_SCOPE_COMPLETE=true
+CURRENT_SCOPE_COMPLETE=true
+SAFE_TO_DOWNGRADE=true
+REMAINING_TASK_CLASS=COMPLEX_DIAGNOSIS
+NEXT_MODEL=GPT-6-ASTRA
+NEXT_REASONING=HIGH
+
+The Astra High handoff must point to the normalized audit manifest and require
+AUDIT ONLY.
+
+It must explicitly prohibit runtime/product repairs during the audit.
+
+POST-AUDIT
+==========
+
+After Astra High completes the systematic audit:
+
+STOP.
+
+Do not begin repairs.
+
+The audit must produce ONE deduplicated batch inventory.
+
+That inventory returns to owner/governance for ONE disposition decision
+covering the complete batch.
+
+Only after that batch disposition should bounded blocking repairs normally be
+routed to:
+
+NEXT_MODEL=GPT-5.6-SOL
+NEXT_REASONING=HIGH
+
+provided no unresolved architecture/governance issue remains.
+
+FORBIDDEN
+=========
+
+- application-access runtime repair in Ultra;
+- systematic audit execution in Ultra;
+- automatic audit-scope expansion;
+- thousands of per-observation model analyses;
+- per-observation screenshots without necessity;
+- automatic DEFER;
+- validator weakening;
+- skipped failures;
+- treating fallback as PASS;
+- runtime DOM/projection feedback loop;
+- unrelated Projects changes;
+- PRELAUNCH redesign;
+- arbitrary magic replacement for 370px;
+- Stage 2+;
+- refreeze;
+- final matrix;
+- final captures;
+- commit;
+- push;
+- deploy;
+- Human Geometry Approval.

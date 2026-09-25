@@ -1,0 +1,220 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/home/davi-benucci/Área de trabalho/WFlyer/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/cli.js",
+      "test",
+      "tests/e2e/phase05-navigation.spec.ts",
+      "--grep",
+      "every main chapter remains a clean direct deep link",
+      "--project=firefox",
+      "--workers=1",
+      "--reporter=json"
+    ],
+    "configFile": "/home/davi-benucci/Área de trabalho/WFlyer/playwright.config.ts",
+    "rootDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-vp-003-attempt-3",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/a11y/**/*.spec.ts",
+          "**/visual/**/*.spec.ts",
+          "**/motion/**/*.spec.ts",
+          "**/staging/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-vp-003-attempt-3",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/a11y/**/*.spec.ts",
+          "**/visual/**/*.spec.ts",
+          "**/motion/**/*.spec.ts",
+          "**/staging/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-vp-003-attempt-3",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/a11y/**/*.spec.ts",
+          "**/visual/**/*.spec.ts",
+          "**/motion/**/*.spec.ts",
+          "**/staging/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "e2e/phase05-navigation.spec.ts",
+      "file": "e2e/phase05-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "every main chapter remains a clean direct deep link",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-navigation.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6986,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('body')\nExpected: not \u001b[32m\"hidden\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mhidden\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveCSS\" locator('body') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('body')\u001b[22m\n\u001b[2m    14 × locator resolved to <body>…</body>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('body')\nExpected: not \u001b[32m\"hidden\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mhidden\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveCSS\" locator('body') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('body')\u001b[22m\n\u001b[2m    14 × locator resolved to <body>…</body>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n    at expectSafeSettledDocument (/home/davi-benucci/Área de trabalho/WFlyer/tests/helpers/transition.ts:239:42)\n    at /home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-navigation.spec.ts:296:5",
+                    "location": {
+                      "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/helpers/transition.ts",
+                      "column": 42,
+                      "line": 239
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/transition.ts:239\n\n  237 |   await expect(experience(page)).toHaveAttribute(\"data-scroll-locked\", \"false\");\n  238 |   await expect(overlay(page)).toHaveCSS(\"pointer-events\", \"none\");\n> 239 |   await expect(page.locator(\"body\")).not.toHaveCSS(\"overflow\", \"hidden\");\n      |                                          ^\n  240 |   await expect(page.locator(\"html\")).not.toHaveCSS(\"overflow\", \"hidden\");\n  241 |\n  242 |   const state = await page.locator(\"html\").evaluate((element) => ({"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/helpers/transition.ts",
+                        "column": 42,
+                        "line": 239
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('body')\nExpected: not \u001b[32m\"hidden\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mhidden\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveCSS\" locator('body') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('body')\u001b[22m\n\u001b[2m    14 × locator resolved to <body>…</body>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n\n   at helpers/transition.ts:239\n\n  237 |   await expect(experience(page)).toHaveAttribute(\"data-scroll-locked\", \"false\");\n  238 |   await expect(overlay(page)).toHaveCSS(\"pointer-events\", \"none\");\n> 239 |   await expect(page.locator(\"body\")).not.toHaveCSS(\"overflow\", \"hidden\");\n      |                                          ^\n  240 |   await expect(page.locator(\"html\")).not.toHaveCSS(\"overflow\", \"hidden\");\n  241 |\n  242 |   const state = await page.locator(\"html\").evaluate((element) => ({\n    at expectSafeSettledDocument (/home/davi-benucci/Área de trabalho/WFlyer/tests/helpers/transition.ts:239:42)\n    at /home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-navigation.spec.ts:296:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-23T12:52:06.213Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-navigation.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-vp-003-attempt-3/e2e-phase05-navigation-eve-94eb1-ns-a-clean-direct-deep-link-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-vp-003-attempt-3/e2e-phase05-navigation-eve-94eb1-ns-a-clean-direct-deep-link-firefox/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/firefox-vp-003-attempt-3/e2e-phase05-navigation-eve-94eb1-ns-a-clean-direct-deep-link-firefox/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/helpers/transition.ts",
+                    "column": 42,
+                    "line": 239
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a561895dde1b6b73eb60-fdfd09161638568883d5",
+          "file": "e2e/phase05-navigation.spec.ts",
+          "line": 266,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-23T12:52:05.562Z",
+    "duration": 8556.026000000002,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "originalTestsUnchanged": true,
+  "assertions": "same matchers and thresholds; soft assertion reporting retains failed test outcome and permits independent statements",
+  "runtimeGuard": "same requireCleanRuntime predicate recorded by soft not.toThrow",
+  "captures": "explicit image-only artifact calls omitted in scratch; source traversal and JSON attachments retained",
+  "historical": "Current probes against frozen runtime; successor-only metadata failures require shared-observable attribution, never automatic product failure",
+  "limitations": "control-flow-dependent literal equality flags in source attachments are not accepted as evidence when assertions fail; thrown dependency errors retained and missing subobservations need companion coverage"
+}

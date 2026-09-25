@@ -1,0 +1,507 @@
+{
+  "schema": "wflyer/hga-001c-owner-small-desktop/v1",
+  "capturedAt": "2026-09-24T13:38:22.747Z",
+  "ownerPhysicalScreen": {
+    "width": 1366,
+    "height": 768,
+    "dpr": 1,
+    "zoomPercent": 100,
+    "gnomeTextScalingFactor": 1
+  },
+  "ownerReported": {
+    "firefox": {
+      "layout": {
+        "width": 1366,
+        "height": 611
+      },
+      "visual": {
+        "width": 1366,
+        "height": 611
+      }
+    },
+    "chromium": {
+      "layout": {
+        "width": 1366,
+        "height": 639
+      },
+      "visual": {
+        "widthApprox": 1351,
+        "height": 639
+      }
+    }
+  },
+  "runtimeSource": "http://127.0.0.1:3000/__visual-lab/story/motion",
+  "profiles": [
+    {
+      "browser": "firefox",
+      "browserVersion": "155.0",
+      "deterministicViewport": {
+        "width": 1366,
+        "height": 611
+      },
+      "errors": [],
+      "screenshots": [
+        {
+          "label": "home",
+          "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-hga-001c-evidence/owner-small-desktop/firefox-1366x611-home.png",
+          "sha256": "d4df597a1e2edef636e69259670bff5298e11013074557138f541906b1a10629",
+          "stablePostReadiness": true
+        },
+        {
+          "label": "projects-focus",
+          "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-hga-001c-evidence/owner-small-desktop/firefox-1366x611-projects-focus.png",
+          "sha256": "f65d87e9f2ed29887e1f3926233d220fa181867e5a2c69da1986c7fa15a21da5",
+          "stablePostReadiness": true,
+          "paintStabilization": "Second compositor capture after stable focused geometry"
+        },
+        {
+          "label": "contact",
+          "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-hga-001c-evidence/owner-small-desktop/firefox-1366x611-contact.png",
+          "sha256": "b6c10735867aef326dc10ff446093b6a37a16d37e22fa1232bdc235968739e76",
+          "stablePostReadiness": true
+        }
+      ],
+      "runtime": {
+        "screen": {
+          "width": 1366,
+          "height": 768
+        },
+        "inner": {
+          "width": 1366,
+          "height": 611
+        },
+        "documentClient": {
+          "width": 1366,
+          "height": 611
+        },
+        "visual": {
+          "width": 1366,
+          "height": 611,
+          "scale": 1
+        },
+        "rootWidth": 1366,
+        "mode": "vertical-wide",
+        "reason": "insufficient-layout-capacity",
+        "presentationClass": "desktop",
+        "capacityDiagnostic": null,
+        "scoreMode": "vertical-wide",
+        "scoreIntersectionDiagnostic": "0",
+        "horizontalOverflow": false,
+        "homeEnvelope": {
+          "top": 458.3999938964844,
+          "bottom": 639.8999938964844,
+          "height": 181.5
+        },
+        "headerBottom": 77,
+        "navLinks": [
+          {
+            "text": "W_Flyer",
+            "left": 454.91668701171875,
+            "right": 499.8833465576172,
+            "top": 16,
+            "bottom": 60
+          },
+          {
+            "text": "Sobre",
+            "left": 515.88330078125,
+            "right": 555.5666351318359,
+            "top": 16,
+            "bottom": 60
+          },
+          {
+            "text": "Serviços",
+            "left": 571.566650390625,
+            "right": 629.2333221435547,
+            "top": 16,
+            "bottom": 60
+          },
+          {
+            "text": "Processo",
+            "left": 645.2333374023438,
+            "right": 707.4499969482422,
+            "top": 16,
+            "bottom": 60
+          },
+          {
+            "text": "Projetos",
+            "left": 723.4500122070312,
+            "right": 779.7000122070312,
+            "top": 16,
+            "bottom": 60
+          },
+          {
+            "text": "Contato",
+            "left": 795.7000122070312,
+            "right": 851.0666809082031,
+            "top": 16,
+            "bottom": 60
+          }
+        ]
+      },
+      "independentStaffIntersectionCount": 0,
+      "staffLinePointCounts": [
+        1025,
+        1025,
+        1025,
+        1025,
+        1025
+      ],
+      "chapterChecks": [
+        {
+          "chapter": "about",
+          "rect": {
+            "left": 260.29998779296875,
+            "right": 1297.7000122070312,
+            "top": -258.3833312988281,
+            "bottom": 869.3832702636719,
+            "width": 1037.4000244140625,
+            "height": 1127.7666015625
+          },
+          "globalHorizontalOverflow": false,
+          "contentHorizontalOverflow": false
+        },
+        {
+          "chapter": "services",
+          "rect": {
+            "left": 68.30000305175781,
+            "right": 363.6499786376953,
+            "top": 173.25,
+            "bottom": 438.3999938964844,
+            "width": 295.3499755859375,
+            "height": 265.1499938964844
+          },
+          "globalHorizontalOverflow": false,
+          "contentHorizontalOverflow": false
+        },
+        {
+          "chapter": "process",
+          "rect": {
+            "left": 260.29998779296875,
+            "right": 507.6499786376953,
+            "top": 83.61666870117188,
+            "bottom": 527.3833312988281,
+            "width": 247.34999084472656,
+            "height": 443.76666259765625
+          },
+          "globalHorizontalOverflow": false,
+          "contentHorizontalOverflow": false
+        },
+        {
+          "chapter": "projects",
+          "rect": {
+            "left": 68.30000305175781,
+            "right": 1297.7000274658203,
+            "top": -111.18333435058594,
+            "bottom": 722.1833648681641,
+            "width": 1229.4000244140625,
+            "height": 833.36669921875
+          },
+          "globalHorizontalOverflow": false,
+          "contentHorizontalOverflow": false
+        },
+        {
+          "chapter": "contact",
+          "rect": {
+            "left": 260.29998779296875,
+            "right": 1297.7000122070312,
+            "top": -218.38333129882812,
+            "bottom": 829.3832702636719,
+            "width": 1037.4000244140625,
+            "height": 1047.7666015625
+          },
+          "globalHorizontalOverflow": false,
+          "contentHorizontalOverflow": false
+        }
+      ],
+      "projectFocus": {
+        "active": true,
+        "top": 2.8333282470703125,
+        "bottom": 644.9833526611328,
+        "left": 274.04998779296875,
+        "right": 607.5,
+        "height": 642.1500244140625,
+        "headerBottom": 77,
+        "viewportHeight": 611,
+        "outlineWidth": "4px",
+        "outlineOffset": "6.4px",
+        "fullyVisible": false,
+        "contentScrollable": true,
+        "scrollY": 5729.716796875,
+        "stablePostPosition": true
+      },
+      "contactFocus": [
+        {
+          "name": "name",
+          "active": true,
+          "top": 209.81666564941406,
+          "bottom": 261.21665954589844,
+          "headerBottom": 77,
+          "viewportHeight": 611,
+          "fullyVisible": true
+        },
+        {
+          "name": "message",
+          "active": true,
+          "top": 392.2166748046875,
+          "bottom": 464.2166748046875,
+          "headerBottom": 77,
+          "viewportHeight": 611,
+          "fullyVisible": true
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "browserVersion": "153.0.8010.12",
+      "deterministicViewport": {
+        "width": 1366,
+        "height": 639
+      },
+      "errors": [],
+      "screenshots": [
+        {
+          "label": "home",
+          "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-hga-001c-evidence/owner-small-desktop/chromium-1366x639-home.png",
+          "sha256": "b3b119dccf07af64bde566fa7710a8b5f948775dcb79dba5f77188f64d7997ef",
+          "stablePostReadiness": true
+        },
+        {
+          "label": "projects-focus",
+          "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-hga-001c-evidence/owner-small-desktop/chromium-1366x639-projects-focus.png",
+          "sha256": "d8dbddfb5ed873347bfeffaf15939bb5bb4eec796dfba251048b68044e3d8c7a",
+          "stablePostReadiness": true
+        },
+        {
+          "label": "contact",
+          "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-hga-001c-evidence/owner-small-desktop/chromium-1366x639-contact.png",
+          "sha256": "0e8d8bf1290df1c543e89a727131db425ca1b1a53d750904d5e5906e5d21c811",
+          "stablePostReadiness": true
+        }
+      ],
+      "runtime": {
+        "screen": {
+          "width": 1366,
+          "height": 768
+        },
+        "inner": {
+          "width": 1366,
+          "height": 639
+        },
+        "documentClient": {
+          "width": 1366,
+          "height": 639
+        },
+        "visual": {
+          "width": 1366,
+          "height": 639,
+          "scale": 1
+        },
+        "rootWidth": 1366,
+        "mode": "vertical-wide",
+        "reason": "insufficient-layout-capacity",
+        "presentationClass": "desktop",
+        "capacityDiagnostic": null,
+        "scoreMode": "vertical-wide",
+        "scoreIntersectionDiagnostic": "0",
+        "horizontalOverflow": false,
+        "homeEnvelope": {
+          "top": 458.390625,
+          "bottom": 639.8125,
+          "height": 181.421875
+        },
+        "headerBottom": 77,
+        "navLinks": [
+          {
+            "text": "W_Flyer",
+            "left": 451,
+            "right": 497,
+            "top": 16,
+            "bottom": 60
+          },
+          {
+            "text": "Sobre",
+            "left": 513,
+            "right": 553,
+            "top": 16,
+            "bottom": 60
+          },
+          {
+            "text": "Serviços",
+            "left": 569,
+            "right": 628,
+            "top": 16,
+            "bottom": 60
+          },
+          {
+            "text": "Processo",
+            "left": 644,
+            "right": 708,
+            "top": 16,
+            "bottom": 60
+          },
+          {
+            "text": "Projetos",
+            "left": 724,
+            "right": 782,
+            "top": 16,
+            "bottom": 60
+          },
+          {
+            "text": "Contato",
+            "left": 798,
+            "right": 855,
+            "top": 16,
+            "bottom": 60
+          }
+        ]
+      },
+      "independentStaffIntersectionCount": 0,
+      "staffLinePointCounts": [
+        1025,
+        1025,
+        1025,
+        1025,
+        1025
+      ],
+      "chapterChecks": [
+        {
+          "chapter": "about",
+          "rect": {
+            "left": 260.296875,
+            "right": 1297.703125,
+            "top": -244,
+            "bottom": 883.78125,
+            "width": 1037.40625,
+            "height": 1127.78125
+          },
+          "globalHorizontalOverflow": false,
+          "contentHorizontalOverflow": false
+        },
+        {
+          "chapter": "services",
+          "rect": {
+            "left": 68.296875,
+            "right": 363.640625,
+            "top": 186.625,
+            "bottom": 451.734375,
+            "width": 295.34375,
+            "height": 265.109375
+          },
+          "globalHorizontalOverflow": false,
+          "contentHorizontalOverflow": false
+        },
+        {
+          "chapter": "process",
+          "rect": {
+            "left": 260.296875,
+            "right": 507.640625,
+            "top": 97.921875,
+            "bottom": 541.78125,
+            "width": 247.34375,
+            "height": 443.859375
+          },
+          "globalHorizontalOverflow": false,
+          "contentHorizontalOverflow": false
+        },
+        {
+          "chapter": "projects",
+          "rect": {
+            "left": 68.296875,
+            "right": 1297.703125,
+            "top": -97.46875,
+            "bottom": 735.765625,
+            "width": 1229.40625,
+            "height": 833.234375
+          },
+          "globalHorizontalOverflow": false,
+          "contentHorizontalOverflow": false
+        },
+        {
+          "chapter": "contact",
+          "rect": {
+            "left": 260.296875,
+            "right": 1297.703125,
+            "top": -204,
+            "bottom": 843.78125,
+            "width": 1037.40625,
+            "height": 1047.78125
+          },
+          "globalHorizontalOverflow": false,
+          "contentHorizontalOverflow": false
+        }
+      ],
+      "projectFocus": {
+        "active": true,
+        "top": 16.512916564941406,
+        "bottom": 658.5312271118164,
+        "left": 270.1778259277344,
+        "right": 606.6997680664062,
+        "height": 642.018310546875,
+        "headerBottom": 77,
+        "viewportHeight": 639,
+        "outlineWidth": "4px",
+        "outlineOffset": "6px",
+        "fullyVisible": false,
+        "contentScrollable": true,
+        "scrollY": 5716,
+        "stablePostPosition": true
+      },
+      "contactFocus": [
+        {
+          "name": "name",
+          "active": true,
+          "top": 210.1875,
+          "bottom": 261.578125,
+          "headerBottom": 77,
+          "viewportHeight": 639,
+          "fullyVisible": true
+        },
+        {
+          "name": "message",
+          "active": true,
+          "top": 392.5625,
+          "bottom": 464.5625,
+          "headerBottom": 77,
+          "viewportHeight": 639,
+          "fullyVisible": true
+        }
+      ]
+    }
+  ],
+  "widthAuthority": {
+    "runtimeEligibility": "min(document.documentElement.clientWidth, window.visualViewport.width); height=min(window.innerHeight, window.visualViewport.height)",
+    "projectsCandidate": "min(Motion Lab root rendered width, document.documentElement.clientWidth, window.visualViewport.width), rounded",
+    "storyScore": "Motion Lab root rendered width; vertical score geometry follows layout width",
+    "sourcePaths": [
+      "src/lib/story/motion/runtime.ts",
+      "src/components/story-motion/MotionStoryLab.tsx",
+      "src/components/story-score/StoryScoreLayer.tsx"
+    ],
+    "chromiumOwnerObservation": "layout 1366px; visual approximately 1351px",
+    "headlessObservation": "layout and visual both 1366px at 1366x639",
+    "controlledVisualWidthProbe": {
+      "layoutWidth": 1366,
+      "syntheticVisualWidth": 1351,
+      "height": 639,
+      "mode": "vertical-wide",
+      "reason": "insufficient-layout-capacity",
+      "presentationClass": "desktop",
+      "scoreMode": "vertical-wide"
+    },
+    "classification": "Observed physical 15px visual-width reduction is not reproduced by headless viewport emulation. At 639px height, both width readings are above the compact threshold and horizontal minimum height 640px fails; no mode/presentation decision conflict was observed. Physical rendered-root width was not supplied."
+  },
+  "verification": {
+    "status": "FAIL",
+    "root": "Focused Projects link/card exceeds usable viewport height and is covered by the sticky header; full focus outline and top card metadata cannot be visible together.",
+    "globalHorizontalOverflow": false,
+    "staffSelfIntersections": 0,
+    "homeBelowInitialFoldPx": {
+      "firefox": 28.9,
+      "chromium": 0.81
+    },
+    "contactNameAndMessageFocusVisible": true,
+    "cardFocusClippedInBothBrowsers": true,
+    "productCodeChanged": false,
+    "humanGeometryApproval": "PENDING"
+  }
+}

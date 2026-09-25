@@ -1,61 +1,83 @@
-## Purpose
-
-Define semantic continuity, locally conventional score geometry, state
-preservation, and reduced-motion behavior across successor responsive modes.
-
 ## ADDED Requirements
 
-### Requirement: Mobile story is Professional-first and branch-separated
-Vertical modes SHALL present Home, a continuous Professional serpentine score,
-the Professional final barline, an event-free inter-branch transition, a
-continuous Application serpentine score, the Application final barline, and
-one global footer in that order. Each branch SHALL terminate independently and
-Application SHALL NOT begin before Professional has reached its final barline.
+### Requirement: Presentations share one continuous portfolio story
+Under ADR-057 / ASM-IMP-DEC-020 the presentation SHALL follow the
+[canonical spatial contract](../../../../../docs/canonical-v2/02-experience/01-global-story-architecture.md).
+EXPANDED_LANDSCAPE, COMPACT_LANDSCAPE and PORTRAIT_TRAVERSE SHALL preserve the
+same Home → About → Services → Process → Projects → Contact → Terminal order.
+Capability selection SHALL consider usable content capacity rather than device
+name, width alone or orientation alone. No class requires whole-chapter fit.
 
-#### Scenario: A compact viewport traverses the complete story
-- **WHEN** the user follows native document flow from Home to the footer
-- **THEN** Professional is encountered first, both branch final barlines remain conventional and distinct, and only one global footer follows Application
+#### Scenario: Capacity changes during traversal
+- **WHEN** usable width, height, input capability or content capacity changes
+- **THEN** the selected presentation preserves the current semantic content station and required content
+- **AND** no second mobile story, viewport hardcode or global scale is introduced
 
-### Requirement: Vertical flow preserves locally left-to-right notation
-Each event-bearing mobile shelf SHALL read locally left-to-right and be
-horizontal or gently inclined. Side repositioning SHALL occur only through an
-event-free `TRUE_CONNECTOR` or authorized Assembly; vertical musical notation
-and Composer-backed events on mobile connectors are prohibited.
+### Requirement: Native input is separate from camera geometry
+Native scroll SHALL remain authoritative. Portrait SHALL use native vertical
+scroll as primary input, which may drive lateral camera progress. Desktop SHALL
+initially use the same native vertical mapping; an optional native horizontal
+adapter SHALL meet the same access and restoration contracts.
 
-#### Scenario: A mobile branch changes side
-- **WHEN** its serpentine staff moves from one event shelf to the next
-- **THEN** the connecting turn contains no Composer-backed event and the next event shelf resumes locally left-to-right notation
+#### Scenario: Portrait traversal reaches a long landmark
+- **WHEN** the reader continues vertical scrolling
+- **THEN** all stations remain reachable through local vertical staging and subsequent global progression
+- **AND** horizontal swiping, scroll interception and a second progress clock are unnecessary
 
-### Requirement: Responsive rebuild preserves semantic state without replay
-Transitions among `horizontal-enhanced`, `vertical-wide`, and
-`vertical-compact` SHALL preserve session seed, Composer output, active semantic
-chapter, logical story progress, and Assembly semantic state. Projection and
-presentation MAY adapt; vertical-wide and vertical-compact SHALL reduce Scenic
-and Structural geometric complexity. Home entry and chapter Assembly SHALL NOT
-replay.
+### Requirement: Capacity is resolved by readable reflow and spans
+Adaptation SHALL follow reflow, redistribution, progressive reveal, span growth,
+then bounded role-token typography adaptation. Partial offscreen content SHALL
+remain reachable; it SHALL NOT by itself fail validation.
 
-#### Scenario: A material mode change occurs during an active chapter
-- **WHEN** viewport change requires a new responsive projection
-- **THEN** one bounded rebuild settles at equivalent semantic progress with the same composition and chapter ownership and without replaying prior Assembly
+#### Scenario: A chapter exceeds the usable viewport
+- **WHEN** simultaneous content cannot fit at readable scale
+- **THEN** it occupies more stations or span while every required item can become readable and operable
+- **AND** focus, ink clearance and interaction safety remain enforced
 
-### Requirement: Responsive Assembly preserves semantic equivalence
-Vertical-wide and vertical-compact modes SHALL reduce physical Scenic and
-Structural geometric complexity while preserving the same scene classification,
-content relationships, event-free Assembly intervals, protected-content
-clearance, and final semantic states as desktop.
+### Requirement: Transitional fan and teaser evidence is preserved
+ADR-056's one vertical teaser SHALL remain classified as valid transitional
+Stage-1 implementation. The final continuous Projects disposition SHALL be
+recorded during implementation, allowing sequential projects across a span.
+The full fan, wherever retained, SHALL still meet ADR-048/049/050's complete
+capacity, three-visit, interaction and NON-ASSEMBLY contracts. Old candidate
+failures SHALL remain failures, separately from usable fallback.
 
-#### Scenario: An authorized structural scene becomes compact
-- **WHEN** Services or How It Works is presented in vertical-compact mode
-- **THEN** its geometric complexity is reduced while its canonical content order, Assembly meaning, event exclusion, and usable settled result remain equivalent
+#### Scenario: Sequential Projects content is evaluated
+- **WHEN** projects are exposed across multiple reachable stations
+- **THEN** safety and required content are evaluated across those stations without requiring simultaneous fan fit
+- **AND** historical fan predicates/results are preserved rather than silently weakened
 
-### Requirement: Reduced motion preserves the complete functional product
-The reduced-motion presentation SHALL remove or substantially reduce prolonged
-staff writing, decorative glyph movement, Assembly separation, docking,
-stagger, atmosphere, and intermediate traversal animation while preserving
-content, score semantics, branch structure, navigation, history, deep links,
-forms, focus, active chapter, state feedback, final barlines, and responsive
-continuity.
+### Requirement: HGA-002 margin remediation is superseded
+The old HGA-002 isolated-block macro-gap plan SHALL NOT resume. Transition spans
+SHALL address continuity under the new target and fresh validation.
 
-#### Scenario: Reduced motion is requested before initialization
-- **WHEN** the story initializes with reduced motion enabled
-- **THEN** every destination and final semantic state remains available through direct or minimal settlement without functional loss or required cinematic playback
+#### Scenario: A transition appears disconnected
+- **WHEN** continuity validation examines the interval between landmarks
+- **THEN** it checks narrative ownership, reachable progression and score continuity rather than merely reducing section margins
+
+### Requirement: Project browsing remains outside the landing-page release
+The current landing-page release SHALL expose no dedicated Projects listing or
+detail route, replacement URL, navigation promise or placeholder link.
+
+#### Scenario: A project has no approved destination
+- **WHEN** its content is presented in any story class
+- **THEN** factual canonical content is available without a dead navigation control
+
+### Requirement: Reduced motion and failure retain access
+Reduced motion and motion failure SHALL retain the same semantic order,
+landmarks, focus and interactions, using the semantic vertical document or
+short/immediate positioning without required long camera travel.
+
+#### Scenario: Reduced motion is enabled inside the story
+- **WHEN** the preference changes or a valid destination is restored
+- **THEN** equivalent content settles without replaying Home, mandatory pinning or scrub
+- **AND** the presentation remains appropriate to available capacity
+
+### Requirement: Responsive lifecycle preserves local semantic state
+Rebuild SHALL preserve landmark, reachable content station and focused control
+with Contact values/status, cancel stale automation, discard stale measurements
+and release only owned resources.
+
+#### Scenario: A virtual keyboard changes the visual viewport
+- **WHEN** a Contact input remains focused while usable height changes
+- **THEN** the control remains visible/reachable and form state is preserved without camera drift or repeated remounts

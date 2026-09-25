@@ -1,0 +1,11 @@
+{
+  "rootCauseId": "VP-004",
+  "playwrightVersion": "1.63.0",
+  "webkitRevision": "2359",
+  "browserVersion": "26.6",
+  "linkerMissingLibraries": [],
+  "browserType": "webkit",
+  "launchExitCode": 0,
+  "pageProbe": "webkit-ready",
+  "result": "PASS"
+}

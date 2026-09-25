@@ -1,0 +1,402 @@
+[
+  {
+    "name": "ASM-PC-001 independent candidate capacity > preserves visit-3 contour correlation instead of occupying the sweep AABB corners",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-001 independent candidate capacity > rejects the exact inherited three-card input without any viewport policy exception",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-001 independent candidate capacity > retains inherited first-event evidence while the repaired idle-only '1440x900' fixture stays unqualified",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-001 independent candidate capacity > retains inherited first-event evidence while the repaired idle-only '1536x900' fixture stays unqualified",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-001 independent candidate capacity > retains inherited first-event evidence while the repaired idle-only '1920x917' fixture stays unqualified",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-001 independent candidate capacity > rejects missing, non-finite or inconsistent measurement inputs",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-002 authorized first horizontal shelf > reserves complete first-visit ink at '1440x900'",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-002 authorized first horizontal shelf > reserves complete first-visit ink at '1536x900'",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-002 authorized first horizontal shelf > reserves complete first-visit ink at '1920x917'",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-003 authorized second horizontal shelf > retains the immutable 'PROJECTS-VISIT-2-FOCUS-CLEARANCE:1440…' focus-start failure",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-003 authorized second horizontal shelf > retains the immutable 'PROJECTS-VISIT-2-FOCUS-CLEARANCE:1536…' focus-start failure",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-003 authorized second horizontal shelf > retains the immutable 'PROJECTS-VISIT-2-FOCUS-CLEARANCE:1920…' focus-start failure",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-003 authorized second horizontal shelf > reserves the complete visit-2 focus transition at '1440x900'",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-003 authorized second horizontal shelf > reserves the complete visit-2 focus transition at '1536x900'",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ASM-PC-003 authorized second horizontal shelf > reserves the complete visit-2 focus transition at '1920x917'",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projects-capacity.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 registered Batch-2 measured geometry > has globally clean center and staff paths at '1440x900'",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-batch2-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 registered Batch-2 measured geometry > has globally clean center and staff paths at '1536x900'",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-batch2-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 registered Batch-2 measured geometry > has globally clean center and staff paths at '1920x917'",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-batch2-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 registered Batch-2 measured geometry > has globally clean center and staff paths at '1100x640'",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-batch2-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ScorePathReview task-33 surface > renders both isolated branches against the real Phase-7/8 scene inventory",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/src/app/%5F_visual-lab/story/score-paths/ScorePathReview.test.tsx",
+    "projectName": "unit"
+  },
+  {
+    "name": "ScorePathReview task-33 surface > renders approved score primitives plus explicit notation/connector evidence",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/src/app/%5F_visual-lab/story/score-paths/ScorePathReview.test.tsx",
+    "projectName": "unit"
+  },
+  {
+    "name": "ScorePathReview task-33 surface > exposes the full eight-case review matrix and a capacity-sized iframe",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/src/app/%5F_visual-lab/story/score-paths/ScorePathReview.test.tsx",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > renders every original group once with its complete footprint and unchanged fingerprints in horizontal-enhanced",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > renders every original group once with its complete footprint and unchanged fingerprints in vertical-wide",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > renders every original group once with its complete footprint and unchanged fingerprints in vertical-compact",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > renders every original group once with its complete footprint and unchanged fingerprints in static",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > uses both halves of long Professional shelves when multiple assigned groups allow it",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > places the unchanged Application sequence safely in horizontal-enhanced",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > places the unchanged Application sequence safely in vertical-wide",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > places the unchanged Application sequence safely in vertical-compact",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > places the unchanged Application sequence safely in static",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > rejects a shelf with insufficient whole-footprint capacity or invalid LTR tangent (36, 0)",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > rejects a shelf with insufficient whole-footprint capacity or invalid LTR tangent (1000, 19)",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > rejects a shelf with insufficient whole-footprint capacity or invalid LTR tangent (1000, 180)",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > rejects invalid geometry and duplicate ownership rather than dropping a group",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 whole-group event placement > keeps accidentals, stems and ledger lines inside the shelf with both margins",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-event-safety.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > does not invent metric chapter barlines and preserves distinct branch finals",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > integrates the shared origin and 12 segments in horizontal-enhanced",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > integrates the shared origin and 12 segments in vertical-wide",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > integrates the shared origin and 12 segments in vertical-compact",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > integrates the shared origin and 12 segments in static",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > reuses cached projections without recomposing the session",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > keys measured projections by normalized physical inputs, not object identity",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > uses rendered card geometry for the shared interaction and three project visits",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > uses measured outer gaps and explicit Family-A boundary transitions",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > projects every responsive mode from the same two semantic compositions",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > fails safe across the transient horizontal-to-compact resize handoff",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > fails safe across the Firefox effective-zoom vertical-wide handoff",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > keeps the measured Firefox 1920x917 terminal return crossing-free",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > keeps the measured Firefox 1536x864 origin departure crossing-free",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > keeps horizontal geometry crossing-free at the 1100×640 runtime boundary",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > keeps horizontal geometry crossing-free at the 1100×800 runtime boundary",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > keeps horizontal geometry crossing-free at the 1280×720 runtime boundary",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > keeps horizontal geometry crossing-free at the 1366×768 runtime boundary",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > keeps horizontal geometry crossing-free at the 1440×900 runtime boundary",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 Organic Flowing production projections > keeps horizontal geometry crossing-free at the 1920×1080 runtime boundary",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-projection.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 static Home geometry > reserves central reading and the complete approved clef at 1100 × 640",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 static Home geometry > reserves central reading and the complete approved clef at 1280 × 720",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 static Home geometry > reserves central reading and the complete approved clef at 1536 × 900",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 static Home geometry > reserves central reading and the complete approved clef at 1920 × 917",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 static Home geometry > reserves central reading and the complete approved clef at 1920 × 1200",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 static Home geometry > derives both deterministic handoff targets and event-free lead-ins from the actual horizontal-enhanced projection",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 static Home geometry > derives both deterministic handoff targets and event-free lead-ins from the actual vertical-wide projection",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 static Home geometry > derives both deterministic handoff targets and event-free lead-ins from the actual vertical-compact projection",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 static Home geometry > derives both deterministic handoff targets and event-free lead-ins from the actual static projection",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 bounded successor geometry > ends Application on its continued side with a short conventional shelf at height 900",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 bounded successor geometry > ends Application on its continued side with a short conventional shelf at height 917",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Stage-1 bounded successor geometry > ends Application on its continued side with a short conventional shelf at height 1200",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "separates How/Benefits from the broad event-free Demo corridor with full staff spacing",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-successor-geometry.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "ApplicationChapterScene Phase-8 content scenes > recognizes exactly the six Phase-8 Application chapter identities",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/src/components/story/ApplicationChapterScene.test.tsx",
+    "projectName": "unit"
+  },
+  {
+    "name": "ApplicationChapterScene Phase-8 content scenes > renders the overview problem, proposition, and human-review flow from typed content",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/src/components/story/ApplicationChapterScene.test.tsx",
+    "projectName": "unit"
+  },
+  {
+    "name": "ApplicationChapterScene Phase-8 content scenes > renders the exact five approved How steps in canonical order",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/src/components/story/ApplicationChapterScene.test.tsx",
+    "projectName": "unit"
+  },
+  {
+    "name": "ApplicationChapterScene Phase-8 content scenes > renders four approved benefit groups without unsupported claims or an Access CTA",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/src/components/story/ApplicationChapterScene.test.tsx",
+    "projectName": "unit"
+  },
+  {
+    "name": "ApplicationChapterScene Phase-8 content scenes > mounts APP-04 as an inert structural demonstration with missing-media fallback",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/src/components/story/ApplicationChapterScene.test.tsx",
+    "projectName": "unit"
+  },
+  {
+    "name": "ApplicationChapterScene Phase-8 content scenes > renders only the purpose-limited PRELAUNCH form in the launch scene",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/src/components/story/ApplicationChapterScene.test.tsx",
+    "projectName": "unit"
+  },
+  {
+    "name": "ApplicationChapterScene Phase-8 content scenes > places the structural application barline before a shared-data terminal",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/src/components/story/ApplicationChapterScene.test.tsx",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 story score composition > owns one stable approved composition per branch",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-composition.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "Task 34 story score composition > exposes exactly six real two-slot segments per branch",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-composition.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "story score rendered-bound normalization > keeps canonical story coordinates stable across native scroll",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-measurement.test.ts",
+    "projectName": "unit"
+  },
+  {
+    "name": "story score rendered-bound normalization > removes an equal GSAP track translation from viewport rectangles",
+    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/unit/story/story-score-measurement.test.ts",
+    "projectName": "unit"
+  }
+]

@@ -1,0 +1,1554 @@
+[
+  {
+    "sceneId": "home",
+    "sceneMinimumClearance": -22.41,
+    "status": "COLLISION",
+    "regions": [
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -3.36,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:0",
+          "role": "staff-line",
+          "x": 438.08,
+          "y": 257.17
+        },
+        "reason": "home-reading-envelope",
+        "rect": {
+          "bottom": 260.4,
+          "height": 20.4,
+          "left": 432,
+          "right": 1104,
+          "top": 240,
+          "width": 672
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -22.41,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 1080.11,
+          "y": 298.67
+        },
+        "reason": "home-reading-envelope",
+        "rect": {
+          "bottom": 360,
+          "height": 83.6,
+          "left": 432,
+          "right": 1104,
+          "top": 276.4,
+          "width": 672
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 76.59,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 1107.1,
+          "y": 299.34
+        },
+        "reason": "home-reading-envelope",
+        "rect": {
+          "bottom": 427.2,
+          "height": 51.2,
+          "left": 432,
+          "right": 1104,
+          "top": 376,
+          "width": 672
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      }
+    ]
+  },
+  {
+    "sceneId": "application-overview",
+    "sceneMinimumClearance": -190.33,
+    "status": "COLLISION",
+    "regions": [
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -8.07,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 249,
+          "y": 9077.88
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 9086.75,
+          "height": 16.8,
+          "left": 76.8,
+          "right": 550.58,
+          "top": 9069.95,
+          "width": 473.78
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -190.33,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:0",
+          "role": "staff-line",
+          "x": 267,
+          "y": 9289.65
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 9595.05,
+          "height": 496.3,
+          "left": 76.8,
+          "right": 550.58,
+          "top": 9098.75,
+          "width": 473.78
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -67.89,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 249,
+          "y": 9674.8
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 9743.05,
+          "height": 136,
+          "left": 76.8,
+          "right": 550.58,
+          "top": 9607.05,
+          "width": 473.78
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -21.88,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 249,
+          "y": 9776.79
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 9799.05,
+          "height": 44,
+          "left": 76.8,
+          "right": 335.37,
+          "top": 9755.05,
+          "width": 258.57
+        },
+        "regionIndex": 4,
+        "tagName": "a"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 329.51,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:0",
+          "role": "staff-line",
+          "x": 267,
+          "y": 9307.65
+        },
+        "reason": "application-overview",
+        "rect": {
+          "bottom": 9383.72,
+          "height": 77.55,
+          "left": 596.65,
+          "right": 1459.2,
+          "top": 9306.17,
+          "width": 862.55
+        },
+        "regionIndex": 5,
+        "tagName": "li"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 329.51,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:0",
+          "role": "staff-line",
+          "x": 267,
+          "y": 9397.64
+        },
+        "reason": "application-overview",
+        "rect": {
+          "bottom": 9473.27,
+          "height": 77.55,
+          "left": 596.65,
+          "right": 1459.2,
+          "top": 9395.72,
+          "width": 862.55
+        },
+        "regionIndex": 6,
+        "tagName": "li"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 329.51,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:0",
+          "role": "staff-line",
+          "x": 267,
+          "y": 9487.63
+        },
+        "reason": "application-overview",
+        "rect": {
+          "bottom": 9562.82,
+          "height": 77.55,
+          "left": 596.65,
+          "right": 1459.2,
+          "top": 9485.27,
+          "width": 862.55
+        },
+        "regionIndex": 7,
+        "tagName": "li"
+      }
+    ]
+  },
+  {
+    "sceneId": "application-how-it-works",
+    "sceneMinimumClearance": -12.47,
+    "status": "COLLISION",
+    "regions": [
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -12.47,
+        "nearest": {
+          "id": "wf-application-how-it-works:reserved:note:0:stem",
+          "rect": {
+            "bottom": 10228.47,
+            "height": 15.72,
+            "left": 1138.75,
+            "right": 1141.35,
+            "top": 10212.75,
+            "width": 2.6
+          },
+          "role": "stem"
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 10232.8,
+          "height": 16.8,
+          "left": 76.8,
+          "right": 1459.2,
+          "top": 10216,
+          "width": 1382.4
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 52.02,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 841.07,
+          "y": 10193.36
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 10410.23,
+          "height": 165.43,
+          "left": 76.8,
+          "right": 832.5,
+          "top": 10244.8,
+          "width": 755.7
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 226.74,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 870.63,
+          "y": 10198.47
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 10490.23,
+          "height": 68,
+          "left": 76.8,
+          "right": 833.2,
+          "top": 10422.23,
+          "width": 756.4
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 420,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 426.35,
+          "y": 10097.16
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 10546.23,
+          "height": 44,
+          "left": 76.8,
+          "right": 314.85,
+          "top": 10502.23,
+          "width": 238.05
+        },
+        "regionIndex": 4,
+        "tagName": "a"
+      }
+    ]
+  },
+  {
+    "sceneId": "application-benefits",
+    "sceneMinimumClearance": -124.09,
+    "status": "COLLISION",
+    "regions": [
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -8.31,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:2",
+          "role": "staff-line",
+          "x": 262.1,
+          "y": 11776.65
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 11784.82,
+          "height": 16.8,
+          "left": 76.8,
+          "right": 550.58,
+          "top": 11768.02,
+          "width": 473.78
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -124.09,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:0",
+          "role": "staff-line",
+          "x": 266.38,
+          "y": 11920.77
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 12044.97,
+          "height": 248.15,
+          "left": 76.8,
+          "right": 550.58,
+          "top": 11796.82,
+          "width": 473.78
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -33.47,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:2",
+          "role": "staff-line",
+          "x": 262.03,
+          "y": 12091.64
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 12124.97,
+          "height": 68,
+          "left": 76.8,
+          "right": 550.58,
+          "top": 12056.97,
+          "width": 473.78
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -8.08,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 248.65,
+          "y": 12146.81
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 12180.97,
+          "height": 44,
+          "left": 76.8,
+          "right": 256.6,
+          "top": 12136.97,
+          "width": 179.8
+        },
+        "regionIndex": 4,
+        "tagName": "a"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 329.99,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:0",
+          "role": "staff-line",
+          "x": 266.53,
+          "y": 11806.79
+        },
+        "reason": "application-benefits",
+        "rect": {
+          "bottom": 11968.5,
+          "height": 160,
+          "left": 596.65,
+          "right": 1021.93,
+          "top": 11808.5,
+          "width": 425.28
+        },
+        "regionIndex": 5,
+        "tagName": "li"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 548.49,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:0",
+          "role": "staff-line",
+          "x": 934.3,
+          "y": 11285
+        },
+        "reason": "application-benefits",
+        "rect": {
+          "bottom": 11984.5,
+          "height": 160,
+          "left": 1033.93,
+          "right": 1459.22,
+          "top": 11824.5,
+          "width": 425.28
+        },
+        "regionIndex": 6,
+        "tagName": "li"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 329.84,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:0",
+          "role": "staff-line",
+          "x": 266.68,
+          "y": 12157.75
+        },
+        "reason": "application-benefits",
+        "rect": {
+          "bottom": 12156.5,
+          "height": 160,
+          "left": 596.65,
+          "right": 1021.93,
+          "top": 11996.5,
+          "width": 425.28
+        },
+        "regionIndex": 7,
+        "tagName": "li"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 493.45,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:0",
+          "role": "staff-line",
+          "x": 958.58,
+          "y": 12628.3
+        },
+        "reason": "application-benefits",
+        "rect": {
+          "bottom": 12140.5,
+          "height": 160,
+          "left": 1033.93,
+          "right": 1459.22,
+          "top": 11980.5,
+          "width": 425.28
+        },
+        "regionIndex": 8,
+        "tagName": "li"
+      }
+    ]
+  },
+  {
+    "sceneId": "application-demo",
+    "sceneMinimumClearance": -115.34,
+    "status": "COLLISION",
+    "regions": [
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 304.63,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 503.36,
+          "y": 12551.99
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 12863.1,
+          "height": 16.8,
+          "left": 76.8,
+          "right": 424.25,
+          "top": 12846.3,
+          "width": 347.45
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 332.44,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 512.05,
+          "y": 12554.33
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 13288.68,
+          "height": 413.58,
+          "left": 76.8,
+          "right": 424.25,
+          "top": 12875.1,
+          "width": 347.45
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 296.57,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 461.11,
+          "y": 13731.09
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 13436.68,
+          "height": 136,
+          "left": 76.8,
+          "right": 424.25,
+          "top": 13300.68,
+          "width": 347.45
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 256.19,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 366.13,
+          "y": 13744.87
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 13492.68,
+          "height": 44,
+          "left": 76.8,
+          "right": 320.3,
+          "top": 13448.68,
+          "width": 243.5
+        },
+        "regionIndex": 4,
+        "tagName": "a"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -115.34,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 1344,
+          "y": 12961.43
+        },
+        "reason": "application-tablet-demo",
+        "rect": {
+          "bottom": 13495.1,
+          "height": 651.22,
+          "left": 470.32,
+          "right": 1459.2,
+          "top": 12843.88,
+          "width": 988.88
+        },
+        "regionIndex": 5,
+        "tagName": "div"
+      }
+    ]
+  },
+  {
+    "sceneId": "application-access",
+    "sceneMinimumClearance": -123.7,
+    "status": "COLLISION",
+    "regions": [
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -8.52,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 249.08,
+          "y": 14019.41
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 14027.82,
+          "height": 16.8,
+          "left": 76.8,
+          "right": 664.78,
+          "top": 14011.02,
+          "width": 587.98
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -123.7,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 249.63,
+          "y": 14163.39
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 14287.97,
+          "height": 248.15,
+          "left": 76.8,
+          "right": 664.78,
+          "top": 14039.82,
+          "width": 587.98
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -34.06,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:6",
+          "role": "staff-line",
+          "x": 253.53,
+          "y": 14334.04
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 14367.97,
+          "height": 68,
+          "left": 76.8,
+          "right": 664.78,
+          "top": 14299.97,
+          "width": 587.98
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 171.67,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:0",
+          "role": "staff-line",
+          "x": 672.45,
+          "y": 14581.44
+        },
+        "reason": "access-action",
+        "rect": {
+          "bottom": 14413.98,
+          "height": 448.98,
+          "left": 710.85,
+          "right": 1459.2,
+          "top": 13965,
+          "width": 748.35
+        },
+        "regionIndex": 4,
+        "tagName": "div"
+      }
+    ]
+  },
+  {
+    "sceneId": "application-terminal",
+    "sceneMinimumClearance": 238.98,
+    "status": "CLEAR",
+    "regions": [
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 238.98,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:final-barline:terminal:thick",
+          "rect": {
+            "bottom": 14704.4,
+            "height": 17.95,
+            "left": 1312.87,
+            "right": 1317.5,
+            "top": 14686.45,
+            "width": 4.63
+          },
+          "role": "final-barline-thick"
+        },
+        "reason": "terminal-content",
+        "rect": {
+          "bottom": 14960.18,
+          "height": 16.8,
+          "left": 76.8,
+          "right": 1459.2,
+          "top": 14943.38,
+          "width": 1382.4
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 368.32,
+        "nearest": {
+          "id": "wf-application-access:reserved:note:0:stem",
+          "rect": {
+            "bottom": 14621.92,
+            "height": 15.58,
+            "left": 765.38,
+            "right": 768.83,
+            "top": 14606.33,
+            "width": 3.45
+          },
+          "role": "stem"
+        },
+        "reason": "terminal-content",
+        "rect": {
+          "bottom": 15141.62,
+          "height": 165.43,
+          "left": 76.8,
+          "right": 664.57,
+          "top": 14976.18,
+          "width": 587.77
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 518.91,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 916.78,
+          "y": 14645.35
+        },
+        "reason": "terminal-content",
+        "rect": {
+          "bottom": 15225.62,
+          "height": 68,
+          "left": 76.8,
+          "right": 833.2,
+          "top": 15157.62,
+          "width": 756.4
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 454.45,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+          "role": "staff-line",
+          "x": 203.93,
+          "y": 207.08
+        },
+        "reason": "terminal-content",
+        "rect": {
+          "bottom": -199.2,
+          "height": 0,
+          "left": 0,
+          "right": 0,
+          "top": -199.2,
+          "width": 0
+        },
+        "regionIndex": 4,
+        "tagName": "nav"
+      }
+    ]
+  },
+  {
+    "sceneId": "professional-about",
+    "sceneMinimumClearance": 1744.13,
+    "status": "CLEAR",
+    "regions": [
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 2289.89,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:clef",
+          "rect": {
+            "bottom": 3520.97,
+            "height": 74.9,
+            "left": 752.7,
+            "right": 783.32,
+            "top": 3446.07,
+            "width": 30.62
+          },
+          "role": "clef"
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 1156.18,
+          "height": 16.8,
+          "left": 112,
+          "right": 819.43,
+          "top": 1139.38,
+          "width": 707.43
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 1922.19,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:clef",
+          "rect": {
+            "bottom": 3520.97,
+            "height": 74.9,
+            "left": 752.7,
+            "right": 783.32,
+            "top": 3446.07,
+            "width": 30.62
+          },
+          "role": "clef"
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 1529.6,
+          "height": 361.42,
+          "left": 112,
+          "right": 604.57,
+          "top": 1168.18,
+          "width": 492.57
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 1802.47,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:clef",
+          "rect": {
+            "bottom": 3520.97,
+            "height": 74.9,
+            "left": 752.7,
+            "right": 783.32,
+            "top": 3446.07,
+            "width": 30.62
+          },
+          "role": "clef"
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 1643.6,
+          "height": 102,
+          "left": 112,
+          "right": 816,
+          "top": 1541.6,
+          "width": 704
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 1788.83,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:clef",
+          "rect": {
+            "bottom": 3520.97,
+            "height": 74.9,
+            "left": 752.7,
+            "right": 783.32,
+            "top": 3446.07,
+            "width": 30.62
+          },
+          "role": "clef"
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 1699.6,
+          "height": 44,
+          "left": 112,
+          "right": 365.7,
+          "top": 1655.6,
+          "width": 253.7
+        },
+        "regionIndex": 4,
+        "tagName": "a"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 1744.13,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:clef",
+          "rect": {
+            "bottom": 3520.97,
+            "height": 74.9,
+            "left": 752.7,
+            "right": 783.32,
+            "top": 3446.07,
+            "width": 30.62
+          },
+          "role": "clef"
+        },
+        "reason": "persona-slot",
+        "rect": {
+          "bottom": 1703.88,
+          "height": 568.77,
+          "left": 865.5,
+          "right": 1424,
+          "top": 1135.12,
+          "width": 558.5
+        },
+        "regionIndex": 5,
+        "tagName": "div"
+      }
+    ]
+  },
+  {
+    "sceneId": "professional-services",
+    "sceneMinimumClearance": 810.95,
+    "status": "CLEAR",
+    "regions": [
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 1119.8,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:clef",
+          "rect": {
+            "bottom": 3520.97,
+            "height": 74.9,
+            "left": 752.7,
+            "right": 783.32,
+            "top": 3446.07,
+            "width": 30.62
+          },
+          "role": "clef"
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 2326.27,
+          "height": 16.8,
+          "left": 112,
+          "right": 880,
+          "top": 2309.47,
+          "width": 768
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 903.18,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:clef",
+          "rect": {
+            "bottom": 3520.97,
+            "height": 74.9,
+            "left": 752.7,
+            "right": 783.32,
+            "top": 3446.07,
+            "width": 30.62
+          },
+          "role": "clef"
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 2555.12,
+          "height": 216.85,
+          "left": 112,
+          "right": 604.57,
+          "top": 2338.27,
+          "width": 492.57
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 810.95,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:clef",
+          "rect": {
+            "bottom": 3520.97,
+            "height": 74.9,
+            "left": 752.7,
+            "right": 783.32,
+            "top": 3446.07,
+            "width": 30.62
+          },
+          "role": "clef"
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 2635.12,
+          "height": 68,
+          "left": 112,
+          "right": 816,
+          "top": 2567.12,
+          "width": 704
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 893.3,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:clef",
+          "rect": {
+            "bottom": 3520.97,
+            "height": 74.9,
+            "left": 752.7,
+            "right": 783.32,
+            "top": 3446.07,
+            "width": 30.62
+          },
+          "role": "clef"
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 2691.12,
+          "height": 44,
+          "left": 112,
+          "right": 275.17,
+          "top": 2647.12,
+          "width": 163.17
+        },
+        "regionIndex": 4,
+        "tagName": "a"
+      }
+    ]
+  },
+  {
+    "sceneId": "professional-process",
+    "sceneMinimumClearance": -155.38,
+    "status": "COLLISION",
+    "regions": [
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 75.03,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:clef",
+          "rect": {
+            "bottom": 3520.97,
+            "height": 74.9,
+            "left": 752.7,
+            "right": 783.32,
+            "top": 3446.07,
+            "width": 30.62
+          },
+          "role": "clef"
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 3671.32,
+          "height": 75.32,
+          "left": 112,
+          "right": 880,
+          "top": 3596,
+          "width": 768
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 219.77,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:clef",
+          "rect": {
+            "bottom": 3520.97,
+            "height": 74.9,
+            "left": 752.7,
+            "right": 783.32,
+            "top": 3446.07,
+            "width": 30.62
+          },
+          "role": "clef"
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 3958.68,
+          "height": 275.37,
+          "left": 112,
+          "right": 604.57,
+          "top": 3683.32,
+          "width": 492.57
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 112.77,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:0",
+          "role": "staff-line",
+          "x": 234.39,
+          "y": 4210.11
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 4097.2,
+          "height": 126.52,
+          "left": 112,
+          "right": 816,
+          "top": 3970.68,
+          "width": 704
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -1.73,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:0",
+          "role": "staff-line",
+          "x": 234.39,
+          "y": 4210.11
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 4211.7,
+          "height": 102.5,
+          "left": 112,
+          "right": 276.37,
+          "top": 4109.2,
+          "width": 164.37
+        },
+        "regionIndex": 4,
+        "tagName": "a"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -155.38,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:8",
+          "role": "staff-line",
+          "x": 267.24,
+          "y": 4514.98
+        },
+        "reason": "process-stages",
+        "rect": {
+          "bottom": 4673,
+          "height": 415.23,
+          "left": 112,
+          "right": 428,
+          "top": 4257.77,
+          "width": 316
+        },
+        "regionIndex": 5,
+        "tagName": "li"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -30.98,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:8",
+          "role": "staff-line",
+          "x": 728.77,
+          "y": 4288.62
+        },
+        "reason": "process-stages",
+        "rect": {
+          "bottom": 4673,
+          "height": 415.23,
+          "left": 444,
+          "right": 760,
+          "top": 4257.77,
+          "width": 316
+        },
+        "regionIndex": 6,
+        "tagName": "li"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -31.37,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:8",
+          "role": "staff-line",
+          "x": 809.77,
+          "y": 4289
+        },
+        "reason": "process-stages",
+        "rect": {
+          "bottom": 4673,
+          "height": 415.23,
+          "left": 776,
+          "right": 1092,
+          "top": 4257.77,
+          "width": 316
+        },
+        "regionIndex": 7,
+        "tagName": "li"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 57.24,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:8",
+          "role": "staff-line",
+          "x": 1060.81,
+          "y": 4225.13
+        },
+        "reason": "process-stages",
+        "rect": {
+          "bottom": 4673,
+          "height": 415.23,
+          "left": 1108,
+          "right": 1424,
+          "top": 4257.77,
+          "width": 316
+        },
+        "regionIndex": 8,
+        "tagName": "li"
+      }
+    ]
+  },
+  {
+    "sceneId": "professional-projects",
+    "sceneMinimumClearance": -108.39,
+    "status": "COLLISION",
+    "regions": [
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -8.21,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:4",
+          "role": "staff-line",
+          "x": 258.38,
+          "y": 5032.65
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 5041.37,
+          "height": 16.8,
+          "left": 112,
+          "right": 880,
+          "top": 5024.57,
+          "width": 768
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -108.39,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:4",
+          "role": "staff-line",
+          "x": 258.11,
+          "y": 5161.63
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 5270.22,
+          "height": 216.85,
+          "left": 112,
+          "right": 604.57,
+          "top": 5053.37,
+          "width": 492.57
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -33.95,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:2",
+          "role": "staff-line",
+          "x": 255.43,
+          "y": 5316.03
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 5350.22,
+          "height": 68,
+          "left": 112,
+          "right": 816,
+          "top": 5282.22,
+          "width": 704
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -16.26,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:0",
+          "role": "staff-line",
+          "x": 293.79,
+          "y": 5378.35
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 5406.22,
+          "height": 44,
+          "left": 112,
+          "right": 311.92,
+          "top": 5362.22,
+          "width": 199.92
+        },
+        "regionIndex": 4,
+        "tagName": "a"
+      }
+    ]
+  },
+  {
+    "sceneId": "professional-contact",
+    "sceneMinimumClearance": -202.69,
+    "status": "COLLISION",
+    "regions": [
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 207.81,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:0",
+          "role": "staff-line",
+          "x": 593.1,
+          "y": 6858.44
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 6652.8,
+          "height": 16.8,
+          "left": 112,
+          "right": 562.2,
+          "top": 6636,
+          "width": 450.2
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -16.53,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:0",
+          "role": "staff-line",
+          "x": 545.59,
+          "y": 6865.25
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 6881.65,
+          "height": 216.85,
+          "left": 112,
+          "right": 562.2,
+          "top": 6664.8,
+          "width": 450.2
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -51,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:4",
+          "role": "staff-line",
+          "x": 232.6,
+          "y": 6944.52
+        },
+        "reason": "heading-and-body",
+        "rect": {
+          "bottom": 6995.65,
+          "height": 102,
+          "left": 112,
+          "right": 562.2,
+          "top": 6893.65,
+          "width": 450.2
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -202.69,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:8",
+          "role": "staff-line",
+          "x": 826.19,
+          "y": 6838.97
+        },
+        "reason": "contact-form",
+        "rect": {
+          "bottom": 7181.5,
+          "height": 545.5,
+          "left": 623.63,
+          "right": 1424,
+          "top": 6636,
+          "width": 800.37
+        },
+        "regionIndex": 4,
+        "tagName": "div"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -23.47,
+        "nearest": {
+          "id": "wf-professional-process:primary:note:0:stem",
+          "rect": {
+            "bottom": 7039.12,
+            "height": 15.73,
+            "left": 197.5,
+            "right": 199.78,
+            "top": 7023.38,
+            "width": 2.28
+          },
+          "role": "stem"
+        },
+        "reason": "contact-channels",
+        "rect": {
+          "bottom": 7059.65,
+          "height": 44,
+          "left": 112,
+          "right": 562.2,
+          "top": 7015.65,
+          "width": 450.2
+        },
+        "regionIndex": 5,
+        "tagName": "address"
+      }
+    ]
+  },
+  {
+    "sceneId": "professional-terminal",
+    "sceneMinimumClearance": -8.33,
+    "status": "COLLISION",
+    "regions": [
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -8.33,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:4",
+          "role": "staff-line",
+          "x": 531.77,
+          "y": 8142.42
+        },
+        "reason": "terminal-content",
+        "rect": {
+          "bottom": 8150.62,
+          "height": 16.8,
+          "left": 112,
+          "right": 1424,
+          "top": 8133.82,
+          "width": 1312
+        },
+        "regionIndex": 1,
+        "tagName": "p"
+      },
+      {
+        "classification": "COLLISION",
+        "minimumClearance": -2.58,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:0",
+          "role": "staff-line",
+          "x": 602.13,
+          "y": 8169.59
+        },
+        "reason": "terminal-content",
+        "rect": {
+          "bottom": 8311.18,
+          "height": 144.57,
+          "left": 112,
+          "right": 604.57,
+          "top": 8166.62,
+          "width": 492.57
+        },
+        "regionIndex": 2,
+        "tagName": "h2"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 110.71,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:staff:0",
+          "role": "staff-line",
+          "x": 834.11,
+          "y": 8217.82
+        },
+        "reason": "terminal-content",
+        "rect": {
+          "bottom": 8395.18,
+          "height": 68,
+          "left": 112,
+          "right": 816,
+          "top": 8327.18,
+          "width": 704
+        },
+        "regionIndex": 3,
+        "tagName": "p"
+      },
+      {
+        "classification": "CLEAR",
+        "minimumClearance": 3722.17,
+        "nearest": {
+          "id": "wf-phase-9-task-34:vertical-wide:professional:clef",
+          "rect": {
+            "bottom": 3520.97,
+            "height": 74.9,
+            "left": 752.7,
+            "right": 783.32,
+            "top": 3446.07,
+            "width": 30.62
+          },
+          "role": "clef"
+        },
+        "reason": "terminal-content",
+        "rect": {
+          "bottom": -199.2,
+          "height": 0,
+          "left": 0,
+          "right": 0,
+          "top": -199.2,
+          "width": 0
+        },
+        "regionIndex": 4,
+        "tagName": "nav"
+      }
+    ]
+  }
+]

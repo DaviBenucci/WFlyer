@@ -1,0 +1,176 @@
+{
+  "schema": "wflyer-stage1-hga001a-runtime-residual/v1",
+  "recordedAt": "2026-09-23T19:21:45.825Z",
+  "repository": {
+    "branch": "develop/site-institucional",
+    "head": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+    "worktree": "DIRTY_PRESERVE"
+  },
+  "capture": {
+    "browser": "Playwright-managed Chromium",
+    "route": "/__visual-lab/story/motion",
+    "viewport": {
+      "innerWidth": 1366,
+      "innerHeight": 768,
+      "devicePixelRatio": 1,
+      "visualWidth": 1366,
+      "visualHeight": 768,
+      "visualScale": 1
+    },
+    "motionPreference": "no-preference",
+    "colorScheme": "dark",
+    "forcedProjection": false,
+    "readiness": {
+      "motionLifecycle": "mounted",
+      "fonts": "loaded",
+      "animationFramesAfterFonts": 2
+    },
+    "measurementSource": "real inert horizontal candidate from current mounted runtime",
+    "measurementMatchesSavedCausalCase": true,
+    "measurementSha256": "fc659fd70b33d88bd4580696048457f6fe4a4e666dd2f96342af4a3a6b4f5a02",
+    "savedMeasurementSource": "stage-1-hga-001-causal-model.json#cases[0].sceneMeasurements"
+  },
+  "runtime": {
+    "selectedProjectionMode": "vertical-wide",
+    "projectionReason": "projects-capacity-insufficient",
+    "candidateCapacity": "INSUFFICIENT_CAPACITY",
+    "candidateCapacitySignature": "projects-capacity:4ef04b46",
+    "candidateRejectionReasons": [
+      "projects-protected-clearance-or-clip"
+    ],
+    "composerInvocations": 1,
+    "sessionSeed": "phase-9-task-33-review-v1",
+    "semanticFingerprint": "fnv1a32:039bce10"
+  },
+  "projects": {
+    "requiredMinimumClearanceCssPx": 12,
+    "visits": [
+      {
+        "limitingConstraint": {
+          "end": {
+            "x": 7110.040477723611,
+            "y": 643.0292332510851
+          },
+          "kind": "event-ink",
+          "ownerId": "wf-professional-projects:primary:note:0:notehead",
+          "radius": 0,
+          "start": {
+            "x": 7094.960300709756,
+            "y": 643.0292332510851
+          },
+          "visitZoneEndT": 0.6536964980544747,
+          "visitZoneRelation": "own-shelf",
+          "visitZoneStartT": 0.6342412451361867
+        },
+        "projectIndex": 1,
+        "minimumClearance": -37.10076674891491,
+        "internalShelfMinimumClearance": -37.10076674891491,
+        "ownShelfMinimumClearance": -37.10076674891491,
+        "protectedRect": {
+          "height": 630.69,
+          "width": 339.28,
+          "x": 6935.05,
+          "y": 58.9
+        },
+        "visible": true
+      },
+      {
+        "limitingConstraint": {
+          "end": {
+            "x": 7353.523593517236,
+            "y": 689.2950204936225
+          },
+          "kind": "staff-ink",
+          "ownerId": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+          "radius": 0.36,
+          "start": {
+            "x": 7350.728539210881,
+            "y": 689.3121927768101
+          },
+          "visitZoneEndT": 0.7782101167315175,
+          "visitZoneRelation": "incoming",
+          "visitZoneStartT": 0.7587548638132295,
+          "endT": 0.75390625,
+          "startT": 0.7529296875
+        },
+        "projectIndex": 2,
+        "minimumClearance": 11.91535072258615,
+        "internalShelfMinimumClearance": 12.150711112366603,
+        "ownShelfMinimumClearance": 12.150711112366603,
+        "protectedRect": {
+          "height": 624.47,
+          "width": 320.56,
+          "x": 7264.7,
+          "y": 52.55
+        },
+        "visible": true
+      },
+      {
+        "limitingConstraint": {
+          "end": {
+            "x": 7675.496704092806,
+            "y": 660.2165539265434
+          },
+          "kind": "staff-ink",
+          "ownerId": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+          "radius": 0.36,
+          "start": {
+            "x": 7671.226737794407,
+            "y": 660.2757997675209
+          },
+          "visitZoneEndT": 0.9027237354085603,
+          "visitZoneRelation": "incoming",
+          "visitZoneStartT": 0.8832684824902723,
+          "endT": 0.8798828125,
+          "startT": 0.87890625
+        },
+        "projectIndex": 3,
+        "minimumClearance": -20.26344607345662,
+        "internalShelfMinimumClearance": -20.154231252144072,
+        "ownShelfMinimumClearance": -20.154231252144072,
+        "protectedRect": {
+          "height": 630.69,
+          "width": 339.28,
+          "x": 7575.64,
+          "y": 58.9
+        },
+        "visible": true
+      }
+    ]
+  },
+  "geometry": {
+    "originalObservedCrossing": {
+      "lineId": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:canonical:1",
+      "segments": [
+        126,
+        131
+      ]
+    },
+    "postRepairCandidateGlobalIntersectionReasonPresent": false,
+    "savedInputFullStaffCrossingTest": "PASS",
+    "passing1440SavedInputControl": "PASS",
+    "regularityRule": "tangent.x > 1e-7 and 1 - (2*staffSpace + halfStroke)*abs(signedCurvature) > 1e-7 over 64 samples per B-spline segment and both joins",
+    "controlReachRule": "max(0.28*measuredDescentWidth, sqrt(2*(2*staffSpace+halfStroke)*abs(measuredRise)/3)) only if old measured bridge fails guard",
+    "viewportSpecificBranch": false,
+    "analyticIntersampleGuarantee": false
+  },
+  "validation": {
+    "affectedUnitFiles": 6,
+    "affectedUnitTests": 52,
+    "affectedUnitResult": "PASS",
+    "focusedLint": "PASS",
+    "typecheck": "PASS",
+    "openSpecStrict": "PASS",
+    "scopedDiffWhitespace": "PASS",
+    "graphifyUpdate": "PASS"
+  },
+  "scope": {
+    "projectsModified": false,
+    "hga002Modified": false,
+    "composerSemanticsChanged": false,
+    "fingerprintChanged": false,
+    "humanGeometryApproval": "PENDING",
+    "nextRoutingClass": "ARCHITECTURE_GOVERNANCE",
+    "stopReason": "The real 1366 candidate remains below the canonical Projects capacity/clearance contract. No further geometry correction is authorized in this run."
+  }
+}

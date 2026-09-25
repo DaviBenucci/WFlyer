@@ -1,0 +1,470 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/home/davi-benucci/Área de trabalho/WFlyer/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/cli.js",
+      "test",
+      "tests/e2e/phase05-master-story.spec.ts",
+      "tests/e2e/phase05-navigation.spec.ts",
+      "tests/e2e/phase04-bootstrap.spec.ts",
+      "--grep",
+      "uses native scroll for the portfolio|positions portfolio deep links|preserves the active semantic chapter|keeps reduced, compact, and driver-failure paths|every main chapter remains a clean direct deep link|reconciles resize during boot",
+      "--project=webkit",
+      "--workers=1",
+      "--reporter=json"
+    ],
+    "configFile": "/home/davi-benucci/Área de trabalho/WFlyer/playwright.config.ts",
+    "rootDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/webkit-lifecycle",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/a11y/**/*.spec.ts",
+          "**/visual/**/*.spec.ts",
+          "**/motion/**/*.spec.ts",
+          "**/staging/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/webkit-lifecycle",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/a11y/**/*.spec.ts",
+          "**/visual/**/*.spec.ts",
+          "**/motion/**/*.spec.ts",
+          "**/staging/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/webkit-lifecycle",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/a11y/**/*.spec.ts",
+          "**/visual/**/*.spec.ts",
+          "**/motion/**/*.spec.ts",
+          "**/staging/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "e2e/phase04-bootstrap.spec.ts",
+      "file": "e2e/phase04-bootstrap.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Phase-4 readiness and semantic bootstrap",
+          "file": "e2e/phase04-bootstrap.spec.ts",
+          "line": 69,
+          "column": 6,
+          "specs": [
+            {
+              "title": "reconciles resize during boot and retains the mobile vertical Home origin",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1,
+                      "error": {
+                        "message": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404604\n[pid=404604][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404604\u001b[22m\n\u001b[2m  - [pid=404604][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404604] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404604] <kill>\u001b[22m\n\u001b[2m  - [pid=404604] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404604] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404604] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404604] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404604] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404604] <gracefully close end>\u001b[22m\n",
+                        "stack": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404604\n[pid=404604][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404604\u001b[22m\n\u001b[2m  - [pid=404604][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404604] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404604] <kill>\u001b[22m\n\u001b[2m  - [pid=404604] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404604] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404604] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404604] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404604] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404604] <gracefully close end>\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404604\n[pid=404604][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404604\u001b[22m\n\u001b[2m  - [pid=404604][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404604] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404604] <kill>\u001b[22m\n\u001b[2m  - [pid=404604] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404604] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404604] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404604] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404604] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404604] <gracefully close end>\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:33:24.030Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/webkit-lifecycle/e2e-phase04-bootstrap-Phas-8d81d-mobile-vertical-Home-origin-webkit/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ff2983c5cefe4e7ee320-d732dba621cdb9cad804",
+              "file": "e2e/phase04-bootstrap.spec.ts",
+              "line": 346,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e/phase05-master-story.spec.ts",
+      "file": "e2e/phase05-master-story.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Phase-5 native-scroll master story",
+          "file": "e2e/phase05-master-story.spec.ts",
+          "line": 62,
+          "column": 6,
+          "specs": [
+            {
+              "title": "uses native scroll for the portfolio, exact labels, and keyboard extremes without React frame renders",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2,
+                      "error": {
+                        "message": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404677\n[pid=404677][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404677\u001b[22m\n\u001b[2m  - [pid=404677][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404677] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404677] <kill>\u001b[22m\n\u001b[2m  - [pid=404677] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404677] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404677] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404677] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404677] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404677] <gracefully close end>\u001b[22m\n",
+                        "stack": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404677\n[pid=404677][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404677\u001b[22m\n\u001b[2m  - [pid=404677][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404677] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404677] <kill>\u001b[22m\n\u001b[2m  - [pid=404677] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404677] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404677] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404677] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404677] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404677] <gracefully close end>\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404677\n[pid=404677][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404677\u001b[22m\n\u001b[2m  - [pid=404677][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404677] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404677] <kill>\u001b[22m\n\u001b[2m  - [pid=404677] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404677] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404677] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404677] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404677] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404677] <gracefully close end>\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:33:24.543Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/webkit-lifecycle/e2e-phase05-master-story-P-d3edf-without-React-frame-renders-webkit/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4b43acf023c0f4176caa-1013c29eb439bcf4f5e0",
+              "file": "e2e/phase05-master-story.spec.ts",
+              "line": 150,
+              "column": 3
+            },
+            {
+              "title": "positions portfolio deep links and retains Phase-4 Back/Forward semantics",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2,
+                      "error": {
+                        "message": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404724\n[pid=404724][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404724\u001b[22m\n\u001b[2m  - [pid=404724][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404724] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404724] <kill>\u001b[22m\n\u001b[2m  - [pid=404724] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404724] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404724] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404724] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404724] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404724] <gracefully close end>\u001b[22m\n",
+                        "stack": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404724\n[pid=404724][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404724\u001b[22m\n\u001b[2m  - [pid=404724][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404724] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404724] <kill>\u001b[22m\n\u001b[2m  - [pid=404724] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404724] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404724] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404724] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404724] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404724] <gracefully close end>\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404724\n[pid=404724][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404724\u001b[22m\n\u001b[2m  - [pid=404724][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404724] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404724] <kill>\u001b[22m\n\u001b[2m  - [pid=404724] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404724] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404724] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404724] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404724] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404724] <gracefully close end>\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:33:25.044Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/webkit-lifecycle/e2e-phase05-master-story-P-4f380-se-4-Back-Forward-semantics-webkit/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4b43acf023c0f4176caa-276d1fb8e2dd315866a9",
+              "file": "e2e/phase05-master-story.spec.ts",
+              "line": 298,
+              "column": 3
+            },
+            {
+              "title": "preserves the active semantic chapter across capacity and orientation rebuilds",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2,
+                      "error": {
+                        "message": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404775\n[pid=404775][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404775\u001b[22m\n\u001b[2m  - [pid=404775][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404775] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404775] <kill>\u001b[22m\n\u001b[2m  - [pid=404775] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404775] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404775] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404775] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404775] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404775] <gracefully close end>\u001b[22m\n",
+                        "stack": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404775\n[pid=404775][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404775\u001b[22m\n\u001b[2m  - [pid=404775][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404775] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404775] <kill>\u001b[22m\n\u001b[2m  - [pid=404775] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404775] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404775] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404775] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404775] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404775] <gracefully close end>\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404775\n[pid=404775][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404775\u001b[22m\n\u001b[2m  - [pid=404775][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404775] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404775] <kill>\u001b[22m\n\u001b[2m  - [pid=404775] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404775] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404775] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404775] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404775] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404775] <gracefully close end>\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:33:25.553Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/webkit-lifecycle/e2e-phase05-master-story-P-4a210-ty-and-orientation-rebuilds-webkit/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4b43acf023c0f4176caa-7908bec04fc2e1e75246",
+              "file": "e2e/phase05-master-story.spec.ts",
+              "line": 339,
+              "column": 3
+            },
+            {
+              "title": "keeps reduced, compact, and driver-failure paths vertical and usable",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2,
+                      "error": {
+                        "message": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404861\n[pid=404861][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404861\u001b[22m\n\u001b[2m  - [pid=404861][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404861] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404861] <kill>\u001b[22m\n\u001b[2m  - [pid=404861] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404861] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404861] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404861] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404861] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404861] <gracefully close end>\u001b[22m\n",
+                        "stack": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404861\n[pid=404861][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404861\u001b[22m\n\u001b[2m  - [pid=404861][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404861] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404861] <kill>\u001b[22m\n\u001b[2m  - [pid=404861] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404861] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404861] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404861] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404861] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404861] <gracefully close end>\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404861\n[pid=404861][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404861\u001b[22m\n\u001b[2m  - [pid=404861][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404861] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404861] <kill>\u001b[22m\n\u001b[2m  - [pid=404861] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404861] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404861] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404861] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404861] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404861] <gracefully close end>\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:33:26.067Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/webkit-lifecycle/e2e-phase05-master-story-P-462d4-e-paths-vertical-and-usable-webkit/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4b43acf023c0f4176caa-5a724b47af5791b32a89",
+              "file": "e2e/phase05-master-story.spec.ts",
+              "line": 451,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e/phase05-navigation.spec.ts",
+      "file": "e2e/phase05-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "every main chapter remains a clean direct deep link",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-navigation.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1,
+                  "error": {
+                    "message": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404934\n[pid=404934][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404934\u001b[22m\n\u001b[2m  - [pid=404934][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404934] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404934] <kill>\u001b[22m\n\u001b[2m  - [pid=404934] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404934] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404934] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404934] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404934] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404934] <gracefully close end>\u001b[22m\n",
+                    "stack": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404934\n[pid=404934][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404934\u001b[22m\n\u001b[2m  - [pid=404934][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404934] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404934] <kill>\u001b[22m\n\u001b[2m  - [pid=404934] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404934] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404934] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404934] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404934] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404934] <gracefully close end>\u001b[22m\n"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=404934\n[pid=404934][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /home/davi-benucci/.cache/ms-playwright/webkit-2359/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=404934\u001b[22m\n\u001b[2m  - [pid=404934][err] /home/davi-benucci/.cache/ms-playwright/webkit-2359/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libevent-2.1.so.7: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=404934] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=404934] <kill>\u001b[22m\n\u001b[2m  - [pid=404934] <will force kill>\u001b[22m\n\u001b[2m  - [pid=404934] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=404934] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=404934] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404934] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=404934] <gracefully close end>\u001b[22m\n"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-23T12:33:26.568Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-navigation.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/webkit-lifecycle/e2e-phase05-navigation-eve-94eb1-ns-a-clean-direct-deep-link-webkit/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a561895dde1b6b73eb60-52d2d9bbb59b1f5dafd6",
+          "file": "e2e/phase05-navigation.spec.ts",
+          "line": 266,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-23T12:33:23.497Z",
+    "duration": 3151.117,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

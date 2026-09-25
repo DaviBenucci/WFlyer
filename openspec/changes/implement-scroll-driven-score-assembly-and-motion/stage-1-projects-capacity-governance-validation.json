@@ -1,0 +1,70 @@
+{
+  "schema": "wflyer-stage1-projects-capacity-governance-validation/v1",
+  "recordedAt": "2026-09-10T11:47:39.446492+00:00",
+  "scope": "Governance normalization only; no runtime implementation or runtime validation",
+  "activeChange": "implement-scroll-driven-score-assembly-and-motion",
+  "head": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+  "branch": "develop/site-institucional",
+  "structuredStatus": "PASS",
+  "canonicalYamlCount": 4,
+  "handoffYamlCount": 1,
+  "runtimeTestScriptPublicFilesUnchanged": 543,
+  "immutableSuccessorRecordsVerified": 10,
+  "historicalIntegrity": {
+    "status": "PASS",
+    "manifestSealPairs": 4,
+    "payloads": 64,
+    "method": "SHA256 plus byte-for-byte git blob equality",
+    "references": [
+      "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+      "306ccb74da6c7bbf8f187e360c0776c571b5fc3d"
+    ]
+  },
+  "decisionIds": [
+    "ADR-048",
+    "ASM-IMP-DEC-012"
+  ],
+  "rootDefect": "ASM-PC-001",
+  "occurrences": [
+    "ASM-PC-001-O01",
+    "ASM-PC-001-O02",
+    "ASM-PC-001-O03"
+  ],
+  "progress": "7/92",
+  "humanApproval": "PENDING",
+  "runtimeRepairPerformed": false,
+  "strictValidation": {
+    "successor": {
+      "command": "openspec validate implement-scroll-driven-score-assembly-and-motion --strict",
+      "exitCode": 0,
+      "status": "PASS",
+      "output": "Change 'implement-scroll-driven-score-assembly-and-motion' is valid\n"
+    },
+    "workspace": {
+      "command": "openspec validate --all --strict",
+      "exitCode": 0,
+      "status": "PASS",
+      "passed": 17,
+      "failed": 0,
+      "output": "- Validating...\n✓ spec/accessible-navigation-lifecycle\n✓ spec/brand-opening-motion\n✓ spec/complete-quality-gate\n✓ change/complete-site-qa-release-preparation\n✓ spec/governed-release-candidate\n✓ change/implement-scroll-driven-score-assembly-and-motion\n✓ spec/interactive-application-demo\n✓ spec/music-renderer\n✓ spec/music-visual-lab\n✓ spec/procedural-score-composer\n✓ spec/public-security-content-baseline\n✓ change/rebuild-scroll-driven-wflyer-v2\n✓ change/refine-phase-9-score-choreography-and-prelaunch\n✓ spec/score-transition-navigation\n✓ spec/secure-contact-workflow\n✓ change/stabilize-browser-visual-regression\n✓ spec/staging-index-isolation\nTotals: 17 passed, 0 failed (17 items)\n"
+    }
+  },
+  "protectedInventorySource": "stage-1-projects-lineage-and-capacity-diagnostics.json#protectedStartFiles",
+  "inheritedProofSource": "stage-1-projects-lineage-and-capacity-diagnostics.json#reproduction",
+  "inheritedProofSourceSha256": "178c4ac08af064de165a093a56b8520e8ddb697474fd60db891f5bc715941a41",
+  "architectureStatus": "BOUNDARIES_NORMALIZED_IMPLEMENTATION_PENDING",
+  "boundedVerticalSupport": "Local projection adapter using existing notationRanges/projectVisit/semanticSlotIds and buildZones; numerical acceptance remains a High obligation with explicit scope STOP",
+  "runtimeTestsRunInThisGovernanceRun": false,
+  "browserMatrixRun": false,
+  "finalCapturesGenerated": false,
+  "diffCheck": {
+    "command": "git diff --check",
+    "status": "PASS",
+    "exitCode": 0
+  },
+  "ultraScopeComplete": true,
+  "safeToDowngrade": true,
+  "nextModel": "GPT-6-ASTRA",
+  "nextReasoning": "HIGH",
+  "gitStatusShort": " M WFLYER_IMPLEMENTATION_PLAN.md\n M docs/canonical-v2/00-governance/03-decision-register.md\n M docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md\n M docs/canonical-v2/06-migration/CURRENT_HANDOFF.md\n M graphify-out/GRAPH_REPORT.md\n M openspec/changes/implement-scroll-driven-score-assembly-and-motion/design.md\n M openspec/changes/implement-scroll-driven-score-assembly-and-motion/proposal.md\n M openspec/changes/implement-scroll-driven-score-assembly-and-motion/specs/continuous-dual-score/spec.md\n M openspec/changes/implement-scroll-driven-score-assembly-and-motion/specs/music-renderer/spec.md\n M openspec/changes/implement-scroll-driven-score-assembly-and-motion/specs/responsive-story-mode/spec.md\n M openspec/changes/implement-scroll-driven-score-assembly-and-motion/specs/score-assembly-motion/spec.md\n M openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-authorization.md\n M openspec/changes/implement-scroll-driven-score-assembly-and-motion/tasks.md\n M src/app/%5F_visual-lab/story/score-paths/ScorePathReview.test.tsx\n M src/components/story-motion/MotionStoryLab.test.tsx\n M src/components/story-motion/MotionStoryLab.tsx\n M src/components/story-motion/motion-story-lab.module.css\n M src/components/story-score/StoryScoreLayer.test.tsx\n M src/components/story-score/StoryScoreLayer.tsx\n M src/lib/story/score/organic-flowing.ts\n M src/lib/story/score/projection.ts\n M tests/e2e/phase09-score-path-review.spec.ts\n M tests/unit/story/story-score-projection.test.ts\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-batch-2-inherited-defect-diagnostics.json\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-batch-2-inherited-defect-review.md\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-batch-2-repair-diagnostics.json\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-numeric-determinism-diagnostics.json\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-progress.md\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-capacity-authorization-review.md\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-capacity-governance-validation.json\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-clearance-stop-diagnostics.json\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-clearance-stop.md\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-lineage-and-capacity-diagnostics.json\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-lineage-and-capacity-review.md\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-self-intersection-diagnostics.json\n?? openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-self-intersection-review.md\n?? scripts/capture-assembly-stage1-evidence.mjs\n?? src/components/story-score/projection-metadata.ts\n?? src/lib/story/score/event-safe-placement.ts\n?? tests/e2e/assembly-stage1-geometry.spec.ts\n?? tests/e2e/assembly-stage1-hydration.spec.ts\n?? tests/e2e/helpers/\n?? tests/fixtures/\n?? tests/helpers/assembly-stage1-determinism.ts\n?? tests/unit/story/story-score-batch2-geometry.test.ts\n?? tests/unit/story/story-score-event-safety.test.ts\n?? tests/unit/story/story-score-successor-geometry.test.ts\n"
+}

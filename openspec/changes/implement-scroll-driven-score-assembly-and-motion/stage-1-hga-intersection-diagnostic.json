@@ -1,0 +1,167 @@
+{
+  "schema": "wflyer-stage1-hga-intersection-diagnostic/v1",
+  "recordedAt": "2026-09-23",
+  "repositoryHead": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+  "humanGeometryApproval": "CHANGES_REQUESTED",
+  "hga001": {
+    "viewport": {
+      "cssWidth": 1366,
+      "cssHeight": 768,
+      "browserZoomPercent": 100,
+      "devicePixelRatio": 1,
+      "visualViewportWidth": 1366,
+      "visualViewportHeight": 768
+    },
+    "ordinaryDesktopEligibility": {
+      "result": "PASS",
+      "widthMinimum": true,
+      "heightMinimum": true,
+      "aspectRatioMinimum": true,
+      "finePointer": true,
+      "hoverCapable": true,
+      "reducedMotion": false
+    },
+    "runtimeBefore": {
+      "responsiveMode": "vertical-wide",
+      "projectionMode": "vertical-wide",
+      "projectionReason": "invalid-projects-capacity",
+      "projectsCapacityResult": "INVALID",
+      "projectsCapacityReasons": [
+        "global-visible-segment-intersection"
+      ]
+    },
+    "forcedHorizontalDiagnostic": {
+      "productionAcceptanceForced": false,
+      "purpose": "Inspect the already rejected horizontal candidate only",
+      "offendingPrimitives": [
+        {
+          "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:canonical:1",
+          "type": "visible staff-line polyline",
+          "staffLineIndex": 0,
+          "pointCount": 248
+        }
+      ],
+      "offendingSegments": [
+        {
+          "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:canonical:1#segment-126",
+          "start": {
+            "x": 1497.949201,
+            "y": 439.066236
+          },
+          "end": {
+            "x": 1500.174643,
+            "y": 438.960113
+          }
+        },
+        {
+          "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0:canonical:1#segment-131",
+          "start": {
+            "x": 1498.2576,
+            "y": 438.918644
+          },
+          "end": {
+            "x": 1500.952253,
+            "y": 442.086181
+          }
+        }
+      ],
+      "intersection": {
+        "coordinateSpace": "horizontal projection CSS pixels",
+        "x": 1498.366239806826,
+        "y": 439.04634898011955,
+        "leftSegmentProgress": 0.18739594508684637
+      },
+      "affectedRegion": "Home origin to professional-about measured-boundary transition",
+      "homeFrameEndX": 1570.890625,
+      "aboutSceneStartX": 1665.6875,
+      "distanceBeforeHomeFrameEnd": 72.524385193174,
+      "distanceBeforeAboutSceneStart": 167.321260193174,
+      "realGeometricIntersection": true,
+      "validatorFalsePositive": false,
+      "interactionOrContentEnvelopeCollision": false,
+      "measurementEnvelopeConservatism": false,
+      "staleOrTransitionalMeasurement": false,
+      "supplementalTelemetryFalseNegative": {
+        "present": true,
+        "detail": "The sampled StoryScoreLayer self-intersection attribute reports zero, while the complete visible-segment capacity validator and independent unthinned segment check find the crossing."
+      }
+    },
+    "comparison1440x900": {
+      "projectsCapacityResult": "PASS",
+      "projectsCapacityReasons": [
+        "none"
+      ],
+      "responsiveMode": "horizontal-enhanced",
+      "independentCrossingCountForOffendingPrimitive": 0
+    },
+    "boundedCorrectionAttempts": {
+      "result": "ESCALATE_AFTER_REPEATED_ROOT",
+      "productGeometryRestored": true,
+      "attempts": [
+        {
+          "hypothesis": "A shared 20-30% chapter-density reduction would move the measured About boundary and remove the fold.",
+          "result": "The original Home-to-About crossing remained and a second Services-to-Process staff fold appeared.",
+          "retained": false
+        },
+        {
+          "hypothesis": "Cut the approved origin two staff spaces earlier to widen the measured descent.",
+          "result": "The Home-to-About fold moved earlier and the Services-to-Process crossing remained with the density trial.",
+          "retained": false
+        },
+        {
+          "hypothesis": "Keep the full origin and extend the descent to the 24px functional-clearance boundary.",
+          "result": "The original global-visible-segment-intersection remained.",
+          "retained": false
+        }
+      ]
+    },
+    "astraCausalResolution": {
+      "status": "RESOLVED",
+      "artifact": "stage-1-hga-001-causal-model.json",
+      "report": "stage-1-hga-001-causal-model.md",
+      "implementationPerformed": false,
+      "nextModel": "GPT-5.6 Sol / High",
+      "scope": "Local Home-to-About offset-regularity correction only; residual Projects capacity is a mandatory separate acceptance/STOP boundary."
+    }
+  },
+  "hga002Before": {
+    "measurementViewport": {
+      "width": 1366,
+      "height": 768
+    },
+    "measurementState": "forced horizontal diagnostic of the rejected candidate",
+    "units": "physical CSS pixels",
+    "sceneMetrics": {
+      "professional-about": {
+        "leadingChapterGutter": 94.796875,
+        "trailingChapterGutter": 95.796875,
+        "primaryToSecondaryGap": 40.96875,
+        "gapToNextScene": 293.046875
+      },
+      "professional-services": {
+        "leadingChapterGutter": 197.25,
+        "trailingChapterGutter": 198.25,
+        "primaryToSecondaryGap": 32.78125,
+        "gapToNextScene": 266.546875
+      },
+      "professional-process": {
+        "leadingChapterGutter": 68.296875,
+        "trailingChapterGutter": 69.296875,
+        "primaryToSecondaryGap": 40.96875,
+        "gapToNextScene": 437.296875
+      },
+      "professional-contact": {
+        "leadingChapterGutter": 94.796875,
+        "trailingChapterGutter": 95.796875,
+        "primaryToSecondaryGap": 54.625,
+        "gapFromProjectsScene": 463.796875
+      }
+    },
+    "classification": {
+      "largestNonFunctionalGaps": "chapter outer gutters and inter-scene travel, especially Services and the transitions adjoining Projects",
+      "internalFunctionalGapsRemainAtLeast24": true,
+      "sharesExactCauseWithHga001": false,
+      "boundedSharedCorrectionCandidate": "Reduce only the authorized desktop chapter gutters/spans while preserving Projects; the About leading-boundary shift may also widen the offending Home-to-About curve, but HGA-001 remains independently gated by the complete intersection validator."
+    }
+  }
+}

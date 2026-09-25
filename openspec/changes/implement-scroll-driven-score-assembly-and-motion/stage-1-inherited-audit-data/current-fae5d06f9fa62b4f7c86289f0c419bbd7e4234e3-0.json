@@ -1,0 +1,90 @@
+[
+  {
+    "mode": "horizontal-enhanced",
+    "branch": "application",
+    "nodeCandidateCount": 5512,
+    "browserCandidateCount": 5512,
+    "maximumRawCoordinateDelta": 9.094947017729282e-13,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "horizontal-enhanced",
+    "branch": "professional",
+    "nodeCandidateCount": 9600,
+    "browserCandidateCount": 9604,
+    "maximumRawCoordinateDelta": 3.637978807091713e-12,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "vertical-wide",
+    "branch": "application",
+    "nodeCandidateCount": 22057,
+    "browserCandidateCount": 22057,
+    "maximumRawCoordinateDelta": 1.8189894035458565e-12,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "vertical-wide",
+    "branch": "professional",
+    "nodeCandidateCount": 17220,
+    "browserCandidateCount": 17216,
+    "maximumRawCoordinateDelta": 1.1368683772161603e-13,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "vertical-compact",
+    "branch": "application",
+    "nodeCandidateCount": 9292,
+    "browserCandidateCount": 9298,
+    "maximumRawCoordinateDelta": 3.637978807091713e-12,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "vertical-compact",
+    "branch": "professional",
+    "nodeCandidateCount": 8528,
+    "browserCandidateCount": 8536,
+    "maximumRawCoordinateDelta": 4.547473508864641e-13,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "static",
+    "branch": "application",
+    "nodeCandidateCount": 22057,
+    "browserCandidateCount": 22057,
+    "maximumRawCoordinateDelta": 1.8189894035458565e-12,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  },
+  {
+    "mode": "static",
+    "branch": "professional",
+    "nodeCandidateCount": 17220,
+    "browserCandidateCount": 17216,
+    "maximumRawCoordinateDelta": 1.1368683772161603e-13,
+    "semanticEqual": true,
+    "canonicalModelEqual": true,
+    "canonicalSafetyEqual": true,
+    "svgEqual": true
+  }
+]

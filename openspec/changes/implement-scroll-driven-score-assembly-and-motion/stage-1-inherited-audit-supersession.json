@@ -1,0 +1,28 @@
+{
+  "format": "wflyer-stage1-audit-supersession/v1",
+  "status": "SUPERSEDED_SCOPE",
+  "authority": [
+    "ADR-053",
+    "ASM-IMP-DEC-017"
+  ],
+  "recordedAt": "2026-09-22T12:45:59.734277+00:00",
+  "supersessionReason": "Owner-approved portfolio-only institutional topology removes the Application branch audited by the closed former manifest.",
+  "manifest": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-inherited-audit-manifest.json",
+  "manifestSha256": "78c04b22d05831a8581b06723bfa12abbde8132ea104f477097024ebf68883a4",
+  "historicalSourceSha": "306ccb74da6c7bbf8f187e360c0776c571b5fc3d",
+  "sourceGitSha": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+  "lastCoveragePath": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-inherited-audit-data/coverage-progress.json",
+  "lastCoverageSha256": "ebb6a64b83121cef33fb3a1f057d4520a53857e41b34409b91f06b70d0e1d784",
+  "manifestObservations": 3692,
+  "recordedTerminalObservations": 3192,
+  "pendingObservations": 500,
+  "auditComplete": false,
+  "repairAuthorizedFromInventory": false,
+  "priorAsmCr001": {
+    "status": "SUPERSEDED_SCOPE_NOT_REPAIRED_NOT_DEFERRED",
+    "historicalEvidencePreserved": true,
+    "activeRepairScope": false
+  },
+  "reuseRule": "Application-only observations are not current product requirements. Shared and Professional evidence may support diagnosis but is not current topology validation PASS.",
+  "historicalIntegrity": "Frozen Phase-9 evidence and old audit raw files are retained in place; no result is rewritten as PASS, FAIL or completed audit."
+}

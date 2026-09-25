@@ -1,0 +1,1704 @@
+{
+  "status": "APPROVED_AUDIT_ONLY_NOT_EXECUTED",
+  "format": "wflyer-stage1-inherited-audit-manifest/v1",
+  "date": "2026-09-13",
+  "proposal": "stage-1-inherited-audit-owner-decision-proposal.md",
+  "change": "implement-scroll-driven-score-assembly-and-motion",
+  "branch": "develop/site-institucional",
+  "head": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+  "historicalSource": "306ccb74da6c7bbf8f187e360c0776c571b5fc3d",
+  "proposalInput": {
+    "trackedAndUntrackedNonignoredFileCount": 1556,
+    "sha256OfSortedCompactJsonPathHashMap": "20fcbdf1f81d2d2046ac1c33d765ff3c40760ccd75d59c469533a333ff89c9f9",
+    "recheckBeforeNormalizationAndAudit": true
+  },
+  "authority": {
+    "canonicalIdsAllocated": true,
+    "accessDefect": "ASM-CR-001",
+    "auditPolicy": "ASM-AUDIT-001",
+    "repairAuthorizedByThisFile": false,
+    "deferApprovedByThisFile": false,
+    "auditPrerequisite": "Successful Ultra normalization validation and completed handoff; no audit execution in this Ultra run",
+    "nextAfterNormalization": "Astra High AUDIT ONLY, then STOP for one owner/governance batch disposition",
+    "auditMayStartInUltra": false,
+    "auditAuthorizedForNextHighRunAfterValidatedHandoff": true
+  },
+  "controls": {
+    "engines": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "sources": [
+      "frozen-phase-9-source",
+      "current-dirty-stage-1-source"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "locale": "pt-BR",
+    "timezoneId": "America/Sao_Paulo",
+    "deviceScaleFactor": 1,
+    "release": "PRELAUNCH",
+    "defaultReducedMotion": "no-preference",
+    "workers": 1,
+    "retries": 0,
+    "build": "development; same bundler/runtime/dependencies for paired source replay; record exact versions; no dependency installation or historical source rewrite",
+    "seed": "use existing pinned test composition seed; record both branch fingerprints and exact semantic input; no regeneration to seek PASS",
+    "fonts": "record loaded families and font-file hashes; wait document.fonts.ready and settled style/layout; retain SSR/first-client observations separately; failed readiness is not product geometry PASS",
+    "externalConfiguration": "public test Turnstile key only, all form submissions intercepted with controlled responses; no real delivery, secrets, registrations or token logging",
+    "projectionComparison": "common explicit mode lane plus separate actual policy-selected runtime lane; never equate different actual modes",
+    "historicalLimit": "frozen source under current installed toolchain, not recreated historical browser installation or historical aggregate PASS",
+    "scopeChanges": "OUT_OF_AUDIT_SCOPE / NEEDS_REVIEW: record available evidence for owner decision; no automatic expansion or new broad investigation; no product/runtime repairs.",
+    "collectionFailure": "continue independent declared slots; missing observations remain UNCLASSIFIED; at most two bounded diagnostic collector corrections per unresolved root, no speculative third attempt",
+    "providerInputLock": "Before a paired observation, persist the exact controlled script/callback/API/occupied-widget input. Metadata population within an approved slot is permitted; adding slot/profile/state is not. Unknown supported maxima remain UNCLASSIFIED.",
+    "toolchainInputLock": "Record installed Node, package manager, Next, Playwright and engine versions plus both lockfile hashes before collection; match bundler/runtime for paired source replay. Do not install dependencies or invent historical equivalence."
+  },
+  "primary": {
+    "currentCaseCount": 150,
+    "historicalComparisonObligations": 150,
+    "sourceFiles": [
+      {
+        "path": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "sha256": "34ae5611c63c23f15d1599acccebe2e74590eeb533980aa0bfe7b8d2a844a7d1",
+        "casesPerEngine": 7
+      },
+      {
+        "path": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "sha256": "48b6b3b7737b9c711cf5264fb826e5afe8bf348e699aba7fda071130fb397cb2",
+        "casesPerEngine": 2
+      },
+      {
+        "path": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "sha256": "2e7b2a7e82272e898a6fc75a9b8a75f877d7fa8dbdc3b53504c321ca5e3d177c",
+        "casesPerEngine": 6
+      },
+      {
+        "path": "tests/e2e/phase09-score-integration.spec.ts",
+        "sha256": "37bb0e726eb397415b349b9055734585406090b9e67e91c979d89c74f3d86c4d",
+        "casesPerEngine": 4
+      },
+      {
+        "path": "tests/e2e/phase09-score-path-review.spec.ts",
+        "sha256": "fede293d35ff11f2149121ae7f8274708a3e1cbc78332adef089aa57e9f01c95",
+        "casesPerEngine": 24
+      },
+      {
+        "path": "tests/e2e/phase09-score-refinement.spec.ts",
+        "sha256": "d2d8cf734c1e2e2ed2809341468f37d8731157f8f5e48e8895288f22d3ccf8a4",
+        "casesPerEngine": 7
+      }
+    ],
+    "cases": [
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1440x900 capacity-selected",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1536x900 capacity-selected",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1920x917 capacity-selected",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1100x640 capacity-selected",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 900x1024 vertical-wide",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 390x844 vertical-compact",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1440x900 static",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1440x900 capacity-selected",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1536x900 capacity-selected",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1920x917 capacity-selected",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1100x640 capacity-selected",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 900x1024 vertical-wide",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 390x844 vertical-compact",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1440x900 static",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1440x900 capacity-selected",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1536x900 capacity-selected",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1920x917 capacity-selected",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1100x640 capacity-selected",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 900x1024 vertical-wide",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 390x844 vertical-compact",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1440x900 static",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "line": 18,
+        "title": "Stage-1 numerical determinism and initial hydration / keeps semantic allocation, canonical geometry and SVG identical to Node",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "line": 76,
+        "title": "Stage-1 numerical determinism and initial hydration / matches SSR metadata on the first render and reprojects after hydration",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "line": 18,
+        "title": "Stage-1 numerical determinism and initial hydration / keeps semantic allocation, canonical geometry and SVG identical to Node",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "line": 76,
+        "title": "Stage-1 numerical determinism and initial hydration / matches SSR metadata on the first render and reprojects after hydration",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "line": 18,
+        "title": "Stage-1 numerical determinism and initial hydration / keeps semantic allocation, canonical geometry and SVG identical to Node",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "line": 76,
+        "title": "Stage-1 numerical determinism and initial hydration / matches SSR metadata on the first render and reprojects after hydration",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 36,
+        "title": "interaction probes cannot precede canonical Projects rest-bound reads",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 118,
+        "title": "focused and repeated generations preserve canonical rest Projection inputs",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1440x900",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1536x900",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1920x917",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 352,
+        "title": "the registered 1100x640 candidate selects whole-story fallback",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 36,
+        "title": "interaction probes cannot precede canonical Projects rest-bound reads",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 118,
+        "title": "focused and repeated generations preserve canonical rest Projection inputs",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1440x900",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1536x900",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1920x917",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 352,
+        "title": "the registered 1100x640 candidate selects whole-story fallback",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 36,
+        "title": "interaction probes cannot precede canonical Projects rest-bound reads",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 118,
+        "title": "focused and repeated generations preserve canonical rest Projection inputs",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1440x900",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1536x900",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1920x917",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 352,
+        "title": "the registered 1100x640 candidate selects whole-story fallback",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-integration.spec.ts",
+        "line": 63,
+        "title": "Phase-9 Task-34 real score integration / horizontal enhanced dark has deterministic hydration and Music contracts",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-integration.spec.ts",
+        "line": 63,
+        "title": "Phase-9 Task-34 real score integration / vertical wide light has deterministic hydration and Music contracts",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-integration.spec.ts",
+        "line": 63,
+        "title": "Phase-9 Task-34 real score integration / vertical compact dark has deterministic hydration and Music contracts",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-integration.spec.ts",
+        "line": 63,
+        "title": "Phase-9 Task-34 real score integration / static fail-open light has deterministic hydration and Music contracts",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-integration.spec.ts",
+        "line": 63,
+        "title": "Phase-9 Task-34 real score integration / horizontal enhanced dark has deterministic hydration and Music contracts",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-integration.spec.ts",
+        "line": 63,
+        "title": "Phase-9 Task-34 real score integration / vertical wide light has deterministic hydration and Music contracts",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-integration.spec.ts",
+        "line": 63,
+        "title": "Phase-9 Task-34 real score integration / vertical compact dark has deterministic hydration and Music contracts",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-integration.spec.ts",
+        "line": 63,
+        "title": "Phase-9 Task-34 real score integration / static fail-open light has deterministic hydration and Music contracts",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-integration.spec.ts",
+        "line": 63,
+        "title": "Phase-9 Task-34 real score integration / horizontal enhanced dark has deterministic hydration and Music contracts",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-integration.spec.ts",
+        "line": 63,
+        "title": "Phase-9 Task-34 real score integration / vertical wide light has deterministic hydration and Music contracts",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-integration.spec.ts",
+        "line": 63,
+        "title": "Phase-9 Task-34 real score integration / vertical compact dark has deterministic hydration and Music contracts",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-integration.spec.ts",
+        "line": 63,
+        "title": "Phase-9 Task-34 real score integration / static fail-open light has deterministic hydration and Music contracts",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 64,
+        "title": "the task-33 ScorePath review surface remains development-only",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 64,
+        "title": "the task-33 ScorePath review surface remains development-only",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 64,
+        "title": "the task-33 ScorePath review surface remains development-only",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 129,
+        "title": "Phase-9 ScorePath hydration regression / zero hydration warnings · vertical-compact light",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 129,
+        "title": "Phase-9 ScorePath hydration regression / zero hydration warnings · vertical-compact dark",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 129,
+        "title": "Phase-9 ScorePath hydration regression / zero hydration warnings · origin vertical-compact",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 129,
+        "title": "Phase-9 ScorePath hydration regression / zero hydration warnings · origin horizontal-enhanced",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 129,
+        "title": "Phase-9 ScorePath hydration regression / zero hydration warnings · vertical-compact light",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 129,
+        "title": "Phase-9 ScorePath hydration regression / zero hydration warnings · vertical-compact dark",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 129,
+        "title": "Phase-9 ScorePath hydration regression / zero hydration warnings · origin vertical-compact",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 129,
+        "title": "Phase-9 ScorePath hydration regression / zero hydration warnings · origin horizontal-enhanced",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 129,
+        "title": "Phase-9 ScorePath hydration regression / zero hydration warnings · vertical-compact light",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 129,
+        "title": "Phase-9 ScorePath hydration regression / zero hydration warnings · vertical-compact dark",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 129,
+        "title": "Phase-9 ScorePath hydration regression / zero hydration warnings · origin vertical-compact",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 129,
+        "title": "Phase-9 ScorePath hydration regression / zero hydration warnings · origin horizontal-enhanced",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-soft · vertical-wide · light",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-soft · vertical-wide · dark",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-soft · vertical-compact · light",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-soft · vertical-compact · dark",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-flowing · vertical-wide · light",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-flowing · vertical-wide · dark",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-flowing · vertical-compact · light",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-flowing · vertical-compact · dark",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 308,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / reduced motion retains the complete static score and usable scenes",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-soft · vertical-wide · light",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-soft · vertical-wide · dark",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-soft · vertical-compact · light",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-soft · vertical-compact · dark",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-flowing · vertical-wide · light",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-flowing · vertical-wide · dark",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-flowing · vertical-compact · light",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-flowing · vertical-compact · dark",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 308,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / reduced motion retains the complete static score and usable scenes",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-soft · vertical-wide · light",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-soft · vertical-wide · dark",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-soft · vertical-compact · light",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-soft · vertical-compact · dark",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-flowing · vertical-wide · light",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-flowing · vertical-wide · dark",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-flowing · vertical-compact · light",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 184,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / organic-flowing · vertical-compact · dark",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 308,
+        "title": "Phase-9 ScorePath task-33 candidate matrix / reduced motion retains the complete static score and usable scenes",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 360×640",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 375×844",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 390×932",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 412×640",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 414×844",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 430×932",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 705,
+        "title": "Phase-9 task-33 responsive refinement / tablet and vertical-wide baselines remain intact",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 360×640",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 375×844",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 390×932",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 412×640",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 414×844",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 430×932",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 705,
+        "title": "Phase-9 task-33 responsive refinement / tablet and vertical-wide baselines remain intact",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 360×640",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 375×844",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 390×932",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 412×640",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 414×844",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 340,
+        "title": "Phase-9 task-33 responsive refinement / Organic Flowing compact real scenes fit 430×932",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 705,
+        "title": "Phase-9 task-33 responsive refinement / tablet and vertical-wide baselines remain intact",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 774,
+        "title": "Phase-9 task-33 real-origin review / horizontal-enhanced · light",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 774,
+        "title": "Phase-9 task-33 real-origin review / vertical-wide · light",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 774,
+        "title": "Phase-9 task-33 real-origin review / vertical-compact · dark",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 774,
+        "title": "Phase-9 task-33 real-origin review / horizontal-enhanced · light",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 774,
+        "title": "Phase-9 task-33 real-origin review / vertical-wide · light",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 774,
+        "title": "Phase-9 task-33 real-origin review / vertical-compact · dark",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 774,
+        "title": "Phase-9 task-33 real-origin review / horizontal-enhanced · light",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 774,
+        "title": "Phase-9 task-33 real-origin review / vertical-wide · light",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-path-review.spec.ts",
+        "line": 774,
+        "title": "Phase-9 task-33 real-origin review / vertical-compact · dark",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 143,
+        "title": "Phase-9 human choreography refinement / keeps the measured 1536x864 origin departure crossing-free",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 143,
+        "title": "Phase-9 human choreography refinement / keeps the measured 1920x917 terminal return crossing-free",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 143,
+        "title": "Phase-9 human choreography refinement / keeps the measured 1920x1200 Overview exit crossing-free",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 166,
+        "title": "Phase-9 human choreography refinement / proves the live 13-scene rendered-clearance audit",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 457,
+        "title": "Phase-9 human choreography refinement / proves the shared Services and How It Works card interaction in rendered geometry",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 952,
+        "title": "Phase-9 human choreography refinement / preserves the accepted Family-A tablet and Launch-form clearances",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 1152,
+        "title": "Phase-9 human choreography refinement / proves the rendered three-card Projects visits",
+        "engine": "chromium"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 143,
+        "title": "Phase-9 human choreography refinement / keeps the measured 1536x864 origin departure crossing-free",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 143,
+        "title": "Phase-9 human choreography refinement / keeps the measured 1920x917 terminal return crossing-free",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 143,
+        "title": "Phase-9 human choreography refinement / keeps the measured 1920x1200 Overview exit crossing-free",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 166,
+        "title": "Phase-9 human choreography refinement / proves the live 13-scene rendered-clearance audit",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 457,
+        "title": "Phase-9 human choreography refinement / proves the shared Services and How It Works card interaction in rendered geometry",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 952,
+        "title": "Phase-9 human choreography refinement / preserves the accepted Family-A tablet and Launch-form clearances",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 1152,
+        "title": "Phase-9 human choreography refinement / proves the rendered three-card Projects visits",
+        "engine": "firefox"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 143,
+        "title": "Phase-9 human choreography refinement / keeps the measured 1536x864 origin departure crossing-free",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 143,
+        "title": "Phase-9 human choreography refinement / keeps the measured 1920x917 terminal return crossing-free",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 143,
+        "title": "Phase-9 human choreography refinement / keeps the measured 1920x1200 Overview exit crossing-free",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 166,
+        "title": "Phase-9 human choreography refinement / proves the live 13-scene rendered-clearance audit",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 457,
+        "title": "Phase-9 human choreography refinement / proves the shared Services and How It Works card interaction in rendered geometry",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 952,
+        "title": "Phase-9 human choreography refinement / preserves the accepted Family-A tablet and Launch-form clearances",
+        "engine": "webkit"
+      },
+      {
+        "file": "tests/e2e/phase09-score-refinement.spec.ts",
+        "line": 1152,
+        "title": "Phase-9 human choreography refinement / proves the rendered three-card Projects visits",
+        "engine": "webkit"
+      }
+    ],
+    "subObservationBoundary": "all assertions, loops, scenes, interaction samples and source-defined viewports/states in these pinned files; no early failed assertion may omit later declared observations",
+    "historicalMapping": "current-only telemetry compared using shared observable contracts; missing historical telemetry is not an invented product failure",
+    "rawAssertions": "preserve original source/thresholds and failures; companion diagnostic collector may gather later inputs independently; no final acceptance screenshots or matrix label"
+  },
+  "accessEnvelope": {
+    "profiles": [
+      {
+        "label": "organic-soft-vertical-wide-1340x820",
+        "route": "/__visual-lab/story/score-paths/preview",
+        "requestedMode": "vertical-wide",
+        "viewport": {
+          "width": 1340,
+          "height": 820
+        },
+        "candidate": "organic-soft",
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "organic-soft-vertical-compact-430x844",
+        "route": "/__visual-lab/story/score-paths/preview",
+        "requestedMode": "vertical-compact",
+        "viewport": {
+          "width": 430,
+          "height": 844
+        },
+        "candidate": "organic-soft",
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "organic-flowing-vertical-wide-1340x820",
+        "route": "/__visual-lab/story/score-paths/preview",
+        "requestedMode": "vertical-wide",
+        "viewport": {
+          "width": 1340,
+          "height": 820
+        },
+        "candidate": "organic-flowing",
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "organic-flowing-vertical-compact-430x844",
+        "route": "/__visual-lab/story/score-paths/preview",
+        "requestedMode": "vertical-compact",
+        "viewport": {
+          "width": 430,
+          "height": 844
+        },
+        "candidate": "organic-flowing",
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "organic-flowing-compact-360x640",
+        "route": "/__visual-lab/story/score-paths/preview",
+        "requestedMode": "vertical-compact",
+        "viewport": {
+          "width": 360,
+          "height": 640
+        },
+        "candidate": "organic-flowing",
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "organic-flowing-compact-375x844",
+        "route": "/__visual-lab/story/score-paths/preview",
+        "requestedMode": "vertical-compact",
+        "viewport": {
+          "width": 375,
+          "height": 844
+        },
+        "candidate": "organic-flowing",
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "organic-flowing-compact-390x932",
+        "route": "/__visual-lab/story/score-paths/preview",
+        "requestedMode": "vertical-compact",
+        "viewport": {
+          "width": 390,
+          "height": 932
+        },
+        "candidate": "organic-flowing",
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "organic-flowing-compact-412x640",
+        "route": "/__visual-lab/story/score-paths/preview",
+        "requestedMode": "vertical-compact",
+        "viewport": {
+          "width": 412,
+          "height": 640
+        },
+        "candidate": "organic-flowing",
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "organic-flowing-compact-414x844",
+        "route": "/__visual-lab/story/score-paths/preview",
+        "requestedMode": "vertical-compact",
+        "viewport": {
+          "width": 414,
+          "height": 844
+        },
+        "candidate": "organic-flowing",
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "organic-flowing-compact-430x932",
+        "route": "/__visual-lab/story/score-paths/preview",
+        "requestedMode": "vertical-compact",
+        "viewport": {
+          "width": 430,
+          "height": 932
+        },
+        "candidate": "organic-flowing",
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "integrated-capacity-selected-1440x900",
+        "route": "/__visual-lab/story/motion",
+        "requestedMode": "capacity-selected",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "integrated-capacity-selected-1536x900",
+        "route": "/__visual-lab/story/motion",
+        "requestedMode": "capacity-selected",
+        "viewport": {
+          "width": 1536,
+          "height": 900
+        },
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "integrated-capacity-selected-1920x917",
+        "route": "/__visual-lab/story/motion",
+        "requestedMode": "capacity-selected",
+        "viewport": {
+          "width": 1920,
+          "height": 917
+        },
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "integrated-capacity-selected-1100x640",
+        "route": "/__visual-lab/story/motion",
+        "requestedMode": "capacity-selected",
+        "viewport": {
+          "width": 1100,
+          "height": 640
+        },
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "integrated-vertical-wide-900x1024",
+        "route": "/__visual-lab/story/motion",
+        "requestedMode": "vertical-wide",
+        "viewport": {
+          "width": 900,
+          "height": 1024
+        },
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "integrated-vertical-compact-390x844",
+        "route": "/__visual-lab/story/motion",
+        "requestedMode": "vertical-compact",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "integrated-static-1440x900",
+        "route": "/__visual-lab/story/motion",
+        "requestedMode": "static",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "reducedMotion": "reduce"
+      },
+      {
+        "label": "integrated-static-390x844",
+        "route": "/__visual-lab/story/motion",
+        "requestedMode": "static",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "reducedMotion": "reduce"
+      }
+    ],
+    "states": [
+      {
+        "label": "IDLE",
+        "uiState": "IDLE",
+        "siteKey": "public-test-key",
+        "driver": "real component with controlled verification/API outcomes; preserve source and response semantics"
+      },
+      {
+        "label": "VALIDATING",
+        "uiState": "VALIDATING",
+        "siteKey": "public-test-key",
+        "driver": "real component with controlled verification/API outcomes; preserve source and response semantics"
+      },
+      {
+        "label": "VERIFYING_TURNSTILE",
+        "uiState": "VERIFYING_TURNSTILE",
+        "siteKey": "public-test-key",
+        "driver": "real component with controlled verification/API outcomes; preserve source and response semantics"
+      },
+      {
+        "label": "SUBMITTING",
+        "uiState": "SUBMITTING",
+        "siteKey": "public-test-key",
+        "driver": "real component with controlled verification/API outcomes; preserve source and response semantics"
+      },
+      {
+        "label": "SUCCESS",
+        "uiState": "SUCCESS",
+        "siteKey": "public-test-key",
+        "driver": "real component with controlled verification/API outcomes; preserve source and response semantics"
+      },
+      {
+        "label": "INVALID_EMAIL",
+        "uiState": "INVALID_EMAIL",
+        "siteKey": "public-test-key",
+        "driver": "real component with controlled verification/API outcomes; preserve source and response semantics"
+      },
+      {
+        "label": "CONSENT_REQUIRED",
+        "uiState": "CONSENT_REQUIRED",
+        "siteKey": "public-test-key",
+        "driver": "real component with controlled verification/API outcomes; preserve source and response semantics"
+      },
+      {
+        "label": "RATE_LIMITED",
+        "uiState": "RATE_LIMITED",
+        "siteKey": "public-test-key",
+        "driver": "real component with controlled verification/API outcomes; preserve source and response semantics"
+      },
+      {
+        "label": "TURNSTILE_FAILED",
+        "uiState": "TURNSTILE_FAILED",
+        "siteKey": "public-test-key",
+        "driver": "real component with controlled verification/API outcomes; preserve source and response semantics"
+      },
+      {
+        "label": "DELIVERY_FAILED",
+        "uiState": "DELIVERY_FAILED",
+        "siteKey": "public-test-key",
+        "driver": "real component with controlled verification/API outcomes; preserve source and response semantics"
+      },
+      {
+        "label": "SUCCESS_ACKNOWLEDGMENT_PENDING",
+        "uiState": "SUCCESS",
+        "siteKey": "public-test-key",
+        "response": {
+          "acknowledgment": "pending"
+        }
+      },
+      {
+        "label": "TURNSTILE_FAILED_NO_KEY",
+        "uiState": "TURNSTILE_FAILED",
+        "siteKey": "absent",
+        "script": "absent"
+      },
+      {
+        "label": "TURNSTILE_FAILED_SCRIPT_ERROR",
+        "uiState": "TURNSTILE_FAILED",
+        "siteKey": "public-test-key",
+        "script": "blocked diagnostic failure"
+      },
+      {
+        "label": "VERIFYING_VISIBLE_INTERACTION",
+        "uiState": "VERIFYING_TURNSTILE",
+        "siteKey": "public-test-key",
+        "widget": "visible interaction using production appearance/size options; record provider sizing authority and exact occupied/focus bounds; placeholder-only success is insufficient"
+      },
+      {
+        "label": "VERIFYING_EXPIRED_TOKEN",
+        "uiState": "VERIFYING_TURNSTILE",
+        "siteKey": "public-test-key",
+        "widget": "expired-callback after verified token"
+      }
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "perSourcePerEngineProfileStateSlots": 540,
+    "totalPairedEngineObservationSlots": 3240,
+    "measurements": [
+      "scene/form/reserved/content/clip rectangles",
+      "complete scrollWidth-clientWidth and scrollHeight-clientHeight raw values",
+      "font/readiness/computed box metrics and state text",
+      "verification occupied/focus bounds and provider contract reference",
+      "control and status focus-outline extent",
+      "staff/event ink minimum physical clearance and intersection/tangent checks",
+      "actual projection and requested responsive mode",
+      "outer reservation and projection/measurement/Composer counters before and after state transitions"
+    ],
+    "transientStateRule": "VALIDATING may not commit visibly; record that and preserve exact source/state envelope obligation; do not manufacture live-frame evidence",
+    "providerRule": "pin concrete callback/script/API fixture and provider geometry metadata before each pair. A mocked 44px container cannot prove a real interactive maximum. Failed/uncontrolled live interaction is UNCLASSIFIED, not PASS. At most one initial plus one explained diagnostic retry per engine/source/profile provider slot; no unbounded challenge loop.",
+    "emailInputs": "empty and 254-character input at IDLE; fixed valid synthetic test input for API outcomes; never persist real personal data",
+    "focusSamples": "email, checkbox, privacy link, submit and status; focus outlines measured in IDLE and failure/success states with the existing controls, no clone markup"
+  },
+  "lifecycle": {
+    "profiles": [
+      {
+        "label": "enhanced-or-fallback-pointer-keyboard",
+        "route": "/__visual-lab/story/motion",
+        "requestedMode": "capacity-selected",
+        "viewport": {
+          "width": 1536,
+          "height": 900
+        },
+        "reducedMotion": "no-preference",
+        "modalities": [
+          "pointer",
+          "keyboard"
+        ]
+      },
+      {
+        "label": "compact-touch-keyboard",
+        "route": "/__visual-lab/story/motion",
+        "requestedMode": "vertical-compact",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "reducedMotion": "no-preference",
+        "modalities": [
+          "touch",
+          "keyboard"
+        ]
+      },
+      {
+        "label": "static-wide-keyboard",
+        "route": "/__visual-lab/story/motion",
+        "requestedMode": "static",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "reducedMotion": "reduce",
+        "modalities": [
+          "keyboard"
+        ]
+      },
+      {
+        "label": "static-compact-touch-keyboard",
+        "route": "/__visual-lab/story/motion",
+        "requestedMode": "static",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "reducedMotion": "reduce",
+        "modalities": [
+          "touch",
+          "keyboard"
+        ]
+      }
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "totalPairedEngineSequences": 48,
+    "scenes": [
+      "home",
+      "professional-about",
+      "professional-services",
+      "professional-process",
+      "professional-projects",
+      "professional-contact",
+      "professional-terminal",
+      "application-overview",
+      "application-how-it-works",
+      "application-benefits",
+      "application-demo",
+      "application-access",
+      "application-terminal"
+    ],
+    "sequence": [
+      "Mount; capture SSR/first-client equality before post-hydration response, then readiness and baseline counters.",
+      "Visit all 13 scenes in canonical traversal; inspect complete content/ink/overflow and semantic branch order.",
+      "At Services, How It Works and each Projects card: declared pointer/touch action, keyboard focus, selection, Escape/dismissal where the existing control supports it, restore idle; retain intermediate and settled envelopes.",
+      "At Access: email/consent/privacy/submit/status focus order; controlled failure and success; no provider transmission.",
+      "Header navigate forward/backward; user-input interruption, active location, browser Back/Forward, restore starting scene; static uses native navigation only.",
+      "Resize width +64 CSS px, restore original dimensions; repeat existing rebuild once only when mode owns one; inspect rest geometry, generation stability and cleanup.",
+      "Hide and resume once; leave and return once; inspect listener/observer/frame/probe cleanup and restored canonical geometry, with actual visibility provenance."
+    ],
+    "notes": "assertions apply to owned mode behavior; do not demand a timeline in reduced/static; unsupported controls recorded with contract justification, never blanket skip. No successor Stage-2+ motion implementation."
+  },
+  "staticAccessibility": {
+    "profiles": [
+      {
+        "label": "public-no-js-wide",
+        "route": "/",
+        "requestedMode": "static",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "javaScriptEnabled": false,
+        "forcedColors": "none",
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "public-no-js-compact",
+        "route": "/",
+        "requestedMode": "static",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "dark",
+        "javaScriptEnabled": false,
+        "forcedColors": "none",
+        "reducedMotion": "no-preference"
+      },
+      {
+        "label": "public-forced-colors-wide",
+        "route": "/",
+        "requestedMode": "static",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "javaScriptEnabled": true,
+        "forcedColors": "active",
+        "reducedMotion": "reduce"
+      },
+      {
+        "label": "public-forced-colors-compact",
+        "route": "/",
+        "requestedMode": "static",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "dark",
+        "javaScriptEnabled": true,
+        "forcedColors": "active",
+        "reducedMotion": "reduce"
+      }
+    ],
+    "totalPairedEngineSequences": 24,
+    "sequence": [
+      "Load root route in the declared JS/media state.",
+      "Traverse all 13 scene contents using native vertical scroll in Professional-first order.",
+      "Check headings, complete text, ink where required, X/Y overflow, form/CTA reachability and contact/Access availability.",
+      "With JS enabled, exercise keyboard/status focus under forced colors using mocked form outcomes; with JS disabled, verify the actual no-JS contract without inventing token/submission support.",
+      "Record inaccessible/unsupported critical actions and cleanup truthfully; no real mail or external form submission."
+    ]
+  },
+  "deterministicGuards": {
+    "scoreUnitFileCount": 7,
+    "componentFileCount": 2,
+    "files": [
+      {
+        "path": "tests/unit/story/story-score-measurement.test.ts",
+        "sha256": "aa111281d74906ac279cf480271a7977a770de0078cfc6a4d693df439bc9d37a",
+        "selection": "every currently defined test and parameterized fixture in pinned source"
+      },
+      {
+        "path": "tests/unit/story/story-score-batch2-geometry.test.ts",
+        "sha256": "4374c44572380cf5788fe1323d0cc1e3fdcd06003e315c34d8fffa33ea29cc45",
+        "selection": "every currently defined test and parameterized fixture in pinned source"
+      },
+      {
+        "path": "tests/unit/story/story-score-projection.test.ts",
+        "sha256": "45d0e8c52f993eae4b0b08990e6ca69737fe013251879c5304cdb3287001bf78",
+        "selection": "every currently defined test and parameterized fixture in pinned source"
+      },
+      {
+        "path": "tests/unit/story/story-score-event-safety.test.ts",
+        "sha256": "a482d0c7548ffb37b0e4ba9b7d84fbfb38e26081c26a16ad7d10392fc536c836",
+        "selection": "every currently defined test and parameterized fixture in pinned source"
+      },
+      {
+        "path": "tests/unit/story/story-score-successor-geometry.test.ts",
+        "sha256": "88c9c10cf27f09e3675e0e7d74b824b7f5b2a10f456b23d5f57b8e55265eff43",
+        "selection": "every currently defined test and parameterized fixture in pinned source"
+      },
+      {
+        "path": "tests/unit/story/story-score-composition.test.ts",
+        "sha256": "156b3f6290a83668507bf06049b58e5137fe55758edd33d6fdd6f8ffa5d7fc00",
+        "selection": "every currently defined test and parameterized fixture in pinned source"
+      },
+      {
+        "path": "tests/unit/story/story-score-projects-capacity.test.ts",
+        "sha256": "df2c3068585df132d0d03a2fdcb8689b02c547034b435c109e540ab594a6dedd",
+        "selection": "every currently defined test and parameterized fixture in pinned source"
+      },
+      {
+        "path": "src/app/%5F_visual-lab/story/score-paths/ScorePathReview.test.tsx",
+        "sha256": "7309cff768c7ddb2bcb573c079522d1829c2cbb8b4eb73f8c5e4b63e2fea429e",
+        "selection": "every currently defined test and parameterized fixture in pinned source"
+      },
+      {
+        "path": "src/components/story/ApplicationChapterScene.test.tsx",
+        "sha256": "b5aca1dbd418c17732ad4f15f66cc978f81223a0348b63c2456668eacc0c88df",
+        "selection": "every currently defined test and parameterized fixture in pinned source"
+      }
+    ],
+    "historical": "reuse existing exact-case lineage where available; shared observable contracts only for new successor guards, no fake historical metadata"
+  },
+  "contractSources": [
+    {
+      "path": "src/components/story/ApplicationChapterScene.tsx",
+      "sha256": "96e1d333eed5ad698b1f64cbdae22089893253e642048e0e79b3f4bf2a14085a"
+    },
+    {
+      "path": "src/components/story/ApplicationLaunchInterestForm.tsx",
+      "sha256": "957d3ae577060c703bdbba1dd8424699c646d44c5f1ad3727a2fd43a839b6e4e"
+    },
+    {
+      "path": "src/components/story/application-launch-interest-form.module.css",
+      "sha256": "6bb218b269d662086ff8d525f45d86242836e336931c859a21dfe8f493bf1f45"
+    },
+    {
+      "path": "src/components/story/application-chapter-scene.module.css",
+      "sha256": "540687f4c2668f0e5c11b9e8d7f69c887fcd877106a3f8eba73cf2c26a48eb99"
+    },
+    {
+      "path": "src/app/%5F_visual-lab/story/score-paths/ScorePathReview.tsx",
+      "sha256": "01f02fcf591e95bd331446c230cb2c1719dd34acbcefb7003145b9ad081be6f4"
+    },
+    {
+      "path": "src/app/%5F_visual-lab/story/score-paths/score-path-review.module.css",
+      "sha256": "3d8b6d950f4088e581402b2e8c8e313212dc245b99f92877f6e992bb9c8b3653"
+    },
+    {
+      "path": "src/lib/story/score/organic-flowing.ts",
+      "sha256": "91081e1263fa89c72f0ddd05ef0d0de9d188c4118bd6e5c999c8cbab5b9f0b1c"
+    },
+    {
+      "path": "src/lib/story/score/projection.ts",
+      "sha256": "449c139a6898a096a45df13f1d116c7a440cf40b978bde9f403e1e6b1aa767a8"
+    },
+    {
+      "path": "src/config/application-release.ts",
+      "sha256": "a5e7d236f19949b1db8ce1e6f97d49e0aa6214c3b6d148a9ee1b341e9ae0b771"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "cd94a8e1bd3ce22c785e42b1de352c9d95b582b24d2be5b5277533a438741928"
+    }
+  ],
+  "mandatoryPreservation": [
+    "five successor deltas",
+    "14 Batch-1 repairs / 18 occurrences",
+    "six Batch-2 repairs / eight occurrences",
+    "ASM-PC-001/002/003 and approved fallback/local repairs",
+    "measurement ordering/restoration and current candidate/runtime/policy work",
+    "ADR-046 and identical SSR/first client",
+    "Composer fnv1a32:039bce10 and fnv1a32:1fe3356b",
+    "approved glyphs; three Projects visits; NON-ASSEMBLY",
+    "12 physical CSS pixel full-ink clearance",
+    "global zero center and visible-staff self-intersections; all tangent/event-safe guards",
+    "all historical evidence, previous diagnostics and original negative fixtures",
+    "all enabled validators; raw candidate failure separate from fallback and gate disposition"
+  ],
+  "completion": {
+    "required": [
+      "each declared slot result or explicit blocker",
+      "one deduplicated root inventory with equivalent evidence, severity/impact/owner and repair envelope",
+      "one coverage ledger retaining raw results and independent runtime/gate status",
+      "source/historical integrity proof",
+      "unresolved coverage/classification blocks qualification; no audit PASS invented"
+    ],
+    "stopAt": "STOP after ONE deduplicated batch inventory for owner/governance disposition; do not begin repairs. No direct audit-to-Sol continuation.",
+    "noFinalEvidenceClaim": true,
+    "noRuntimeRepair": true,
+    "noHumanGeometryApproval": true
+  },
+  "counts": {
+    "primaryCurrentCases": 150,
+    "primaryHistoricalComparisonObligations": 150,
+    "accessObservationSlots": 3240,
+    "lifecycleSequences": 48,
+    "staticAccessibilitySequences": 24,
+    "scoreUnitSources": 7,
+    "componentTestSources": 2,
+    "countsAreNotExecutedTestsOrPassClaims": true,
+    "overlapReuse": "same-input observations may be referenced across groups; all slots retain evidence references"
+  },
+  "contract": "ASM-AUDIT-001",
+  "approval": {
+    "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-inherited-audit-owner-approval.txt",
+    "sha256": "d0c2c56ca6a88b77d43cc5aa5ffbef1a32c2c34acab53a2f8ed4162f634042e2",
+    "date": "2026-09-13",
+    "decisions": [
+      "ADR-051",
+      "ADR-052",
+      "ASM-IMP-DEC-015",
+      "ASM-IMP-DEC-016"
+    ],
+    "includesExecutionEfficiencyGuardrails": true
+  },
+  "approvedProposal": {
+    "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-inherited-audit-scope.proposed.json",
+    "sha256": "8ee6e98963139b5df57c89c5f11cebd4cb9bd89f93568950d983f51006c9d47b",
+    "scopeUnchanged": true
+  },
+  "sourcePins": {
+    "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-inherited-audit-source-pins.json",
+    "sha256": "4384c5d2057d873049dd70248ec9d7241b87d0d8215192b55c201e0326c8e629",
+    "codeAndFixtureCount": 559
+  },
+  "executionEfficiency": {
+    "collection": "automated batched observation matrix, not independent model tasks",
+    "persistence": "raw structured current/frozen measurements keyed by manifest slot; retain PASS data on disk",
+    "comparison": "automatic equivalent-input join and delta extraction, retain raw failures and unmatched/unknown inputs",
+    "grouping": "mechanical occurrence grouping followed by evidence-based ROOT CAUSE deduplication; equal symptoms alone do not prove shared roots",
+    "modelAnalysisOnly": [
+      "differences",
+      "failures",
+      "unclassified cases",
+      "candidate root clusters"
+    ],
+    "humanReport": "one deduplicated batch inventory and occurrence matrices; summarize passing groups by count and fingerprints",
+    "forbidden": [
+      "per-observation narrative analysis for thousands of slots",
+      "reproducing identical passing observations in model context",
+      "skipping failures to reduce reporting cost",
+      "product/runtime/production-pipeline repair",
+      "automatic scope expansion"
+    ],
+    "screenshots": {
+      "perObservationRequired": false,
+      "primaryEvidence": "canonical structured measurements",
+      "allowedWhenNecessary": [
+        "representative root-cause evidence",
+        "ambiguous classification",
+        "material visual defect"
+      ],
+      "existingCanonicalArtifactException": "Retain an explicitly required artifact and cite its contract; a test screenshot side effect alone is not a new per-slot mandate. Original tests/thresholds remain unchanged; audit collectors preserve assertion evidence.",
+      "laterHumanGeometryApproval": "separate later acceptance captures after repair/qualification; not this audit"
+    }
+  },
+  "observationRecordContract": {
+    "required": [
+      "slotKey",
+      "group",
+      "sourceRevision",
+      "sourcePinsDigest",
+      "engineVersion",
+      "exactInputs",
+      "readiness",
+      "rawValidatorOutcome",
+      "measurements",
+      "evidencePaths",
+      "comparisonKey",
+      "equivalenceStatus",
+      "candidateStatus",
+      "runtimeDisposition",
+      "classification",
+      "rootOrUnclassifiedClusterKey"
+    ],
+    "rawOutcomes": [
+      "PASS",
+      "FAIL",
+      "ERROR",
+      "NOT_OBSERVED"
+    ],
+    "classifications": [
+      "PASS",
+      "CURRENT_REGRESSION",
+      "INHERITED_CRITICAL",
+      "INHERITED_NONBLOCKING",
+      "VALIDATION_PIPELINE_DEFECT",
+      "UNCLASSIFIED / NEEDS_REVIEW"
+    ],
+    "outOfScopeClassification": "OUT_OF_AUDIT_SCOPE / NEEDS_REVIEW",
+    "identityPatterns": {
+      "primary": "primary/{engine}/{file}/{title}/{source}",
+      "access": "access/{source}/{engine}/{theme}/{profile.label}/{state.label}",
+      "lifecycle": "lifecycle/{source}/{engine}/{theme}/{profile.label}",
+      "static": "static/{source}/{engine}/{profile.label}"
+    },
+    "groupingRule": "preserve per-slot results on disk; root signature includes causal owner/mechanism and equivalent-input evidence, not only rounded geometry or identical error text",
+    "unobservedRule": "never PASS; all required gaps block evidence qualification",
+    "outsideRule": "separate incident list; does not change expected slot count"
+  },
+  "coverageFingerprint": {
+    "algorithm": "sha256 sorted compact JSON of named coverage sections",
+    "sections": [
+      "primary",
+      "accessEnvelope",
+      "lifecycle",
+      "staticAccessibility",
+      "deterministicGuards",
+      "contractSources",
+      "counts"
+    ],
+    "sha256": "66972ca76d5e3091f267f535f2927d90a0bf49c4c477f402fe77d00d40ff2b81",
+    "rule": "Must equal the approved proposed coverage; execution efficiency changes collection/reporting, not slot coverage."
+  }
+}

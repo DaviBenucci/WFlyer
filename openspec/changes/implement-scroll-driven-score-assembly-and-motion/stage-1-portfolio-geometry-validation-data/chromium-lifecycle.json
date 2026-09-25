@@ -1,0 +1,426 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/home/davi-benucci/Área de trabalho/WFlyer/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/cli.js",
+      "test",
+      "tests/e2e/phase05-master-story.spec.ts",
+      "tests/e2e/phase05-navigation.spec.ts",
+      "tests/e2e/phase04-bootstrap.spec.ts",
+      "--grep",
+      "uses native scroll for the portfolio|positions portfolio deep links|preserves the active semantic chapter|keeps reduced, compact, and driver-failure paths|every main chapter remains a clean direct deep link|reconciles resize during boot",
+      "--project=chromium",
+      "--workers=1",
+      "--reporter=json"
+    ],
+    "configFile": "/home/davi-benucci/Área de trabalho/WFlyer/playwright.config.ts",
+    "rootDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/chromium-lifecycle",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/a11y/**/*.spec.ts",
+          "**/visual/**/*.spec.ts",
+          "**/motion/**/*.spec.ts",
+          "**/staging/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/chromium-lifecycle",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/a11y/**/*.spec.ts",
+          "**/visual/**/*.spec.ts",
+          "**/motion/**/*.spec.ts",
+          "**/staging/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/chromium-lifecycle",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/davi-benucci/Área de trabalho/WFlyer/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/a11y/**/*.spec.ts",
+          "**/visual/**/*.spec.ts",
+          "**/motion/**/*.spec.ts",
+          "**/staging/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "e2e/phase04-bootstrap.spec.ts",
+      "file": "e2e/phase04-bootstrap.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Phase-4 readiness and semantic bootstrap",
+          "file": "e2e/phase04-bootstrap.spec.ts",
+          "line": 69,
+          "column": 6,
+          "specs": [
+            {
+              "title": "reconciles resize during boot and retains the mobile vertical Home origin",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6990,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:23:54.880Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ff2983c5cefe4e7ee320-89f69d7b89a0f5273227",
+              "file": "e2e/phase04-bootstrap.spec.ts",
+              "line": 346,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e/phase05-master-story.spec.ts",
+      "file": "e2e/phase05-master-story.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Phase-5 native-scroll master story",
+          "file": "e2e/phase05-master-story.spec.ts",
+          "line": 62,
+          "column": 6,
+          "specs": [
+            {
+              "title": "uses native scroll for the portfolio, exact labels, and keyboard extremes without React frame renders",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9325,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:24:02.077Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b43acf023c0f4176caa-ac927a13ea47d3163fef",
+              "file": "e2e/phase05-master-story.spec.ts",
+              "line": 150,
+              "column": 3
+            },
+            {
+              "title": "positions portfolio deep links and retains Phase-4 Back/Forward semantics",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8781,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:24:11.421Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b43acf023c0f4176caa-a79abe9b34d231e22404",
+              "file": "e2e/phase05-master-story.spec.ts",
+              "line": 295,
+              "column": 3
+            },
+            {
+              "title": "preserves the active semantic chapter across capacity and orientation rebuilds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9666,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:24:20.221Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b43acf023c0f4176caa-1ac2ca5612168dad84f0",
+              "file": "e2e/phase05-master-story.spec.ts",
+              "line": 336,
+              "column": 3
+            },
+            {
+              "title": "keeps reduced, compact, and driver-failure paths vertical and usable",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 18610,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-story-bootstrap]')\nExpected: \u001b[32m\"\u001b[7mREVEAL\u001b[27mED\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mDEGRAD\u001b[27mED\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-story-bootstrap]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-story-bootstrap]')\u001b[22m\n\u001b[2m    5 × locator resolved to <div data-bootstrap-state=\"INITIAL\" data-bootstrap-trace=\"INITIAL\" data-story-bootstrap=\"phase-4\" data-bootstrap-scenario=\"normal\" data-bootstrap-source=\"unresolved\" data-bootstrap-degraded-reason=\"none\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-release-cause=\"pending\" data-bootstrap-destination=\"unresolved\" data-bootstrap-history-status=\"pending\" data-bootstrap-session-repeated=\"false\" data-bootstrap-position-status=\"pending\" class=\"story-bootstrap-module__ZnSCIG__root\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"INITIAL\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-story-bootstrap=\"phase-4\" data-bootstrap-scenario=\"normal\" data-bootstrap-source=\"unresolved\" data-bootstrap-degraded-reason=\"none\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-release-cause=\"pending\" data-bootstrap-session-repeated=\"true\" data-bootstrap-destination=\"unresolved\" data-bootstrap-history-status=\"pending\" data-bootstrap-state=\"WAITING_CRITICAL\" data-bootstrap-trace=\"WAITING_CRITICAL\" data-bootstrap-position-status=\"pending\" class=\"story-bootstrap-module__ZnSCIG__root\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"WAITING_CRITICAL\"\u001b[22m\n\u001b[2m    8 × locator resolved to <div data-story-bootstrap=\"phase-4\" data-bootstrap-state=\"DEGRADED\" data-bootstrap-trace=\"DEGRADED\" data-bootstrap-scenario=\"normal\" data-bootstrap-destination=\"home\" data-bootstrap-source=\"default-home\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-session-repeated=\"true\" data-bootstrap-history-status=\"replaced\" data-bootstrap-position-status=\"positioned\" class=\"story-bootstrap-module__ZnSCIG__root\" data-bootstrap-release-cause=\"css-fail-open\" data-bootstrap-degraded-reason=\"hard-timeout\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"DEGRADED\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-story-bootstrap]')\nExpected: \u001b[32m\"\u001b[7mREVEAL\u001b[27mED\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mDEGRAD\u001b[27mED\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-story-bootstrap]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-story-bootstrap]')\u001b[22m\n\u001b[2m    5 × locator resolved to <div data-bootstrap-state=\"INITIAL\" data-bootstrap-trace=\"INITIAL\" data-story-bootstrap=\"phase-4\" data-bootstrap-scenario=\"normal\" data-bootstrap-source=\"unresolved\" data-bootstrap-degraded-reason=\"none\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-release-cause=\"pending\" data-bootstrap-destination=\"unresolved\" data-bootstrap-history-status=\"pending\" data-bootstrap-session-repeated=\"false\" data-bootstrap-position-status=\"pending\" class=\"story-bootstrap-module__ZnSCIG__root\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"INITIAL\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-story-bootstrap=\"phase-4\" data-bootstrap-scenario=\"normal\" data-bootstrap-source=\"unresolved\" data-bootstrap-degraded-reason=\"none\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-release-cause=\"pending\" data-bootstrap-session-repeated=\"true\" data-bootstrap-destination=\"unresolved\" data-bootstrap-history-status=\"pending\" data-bootstrap-state=\"WAITING_CRITICAL\" data-bootstrap-trace=\"WAITING_CRITICAL\" data-bootstrap-position-status=\"pending\" class=\"story-bootstrap-module__ZnSCIG__root\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"WAITING_CRITICAL\"\u001b[22m\n\u001b[2m    8 × locator resolved to <div data-story-bootstrap=\"phase-4\" data-bootstrap-state=\"DEGRADED\" data-bootstrap-trace=\"DEGRADED\" data-bootstrap-scenario=\"normal\" data-bootstrap-destination=\"home\" data-bootstrap-source=\"default-home\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-session-repeated=\"true\" data-bootstrap-history-status=\"replaced\" data-bootstrap-position-status=\"positioned\" class=\"story-bootstrap-module__ZnSCIG__root\" data-bootstrap-release-cause=\"css-fail-open\" data-bootstrap-degraded-reason=\"hard-timeout\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"DEGRADED\"\u001b[22m\n\n    at /home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts:513:48",
+                        "location": {
+                          "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                          "column": 48,
+                          "line": 513
+                        },
+                        "snippet": "  511 |       waitUntil: \"domcontentloaded\",\n  512 |     });\n> 513 |     await expect(page.locator(BOOTSTRAP_ROOT)).toHaveAttribute(\n      |                                                ^\n  514 |       \"data-bootstrap-state\",\n  515 |       \"REVEALED\",\n  516 |       { timeout: 10_000 },"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                            "column": 48,
+                            "line": 513
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-story-bootstrap]')\nExpected: \u001b[32m\"\u001b[7mREVEAL\u001b[27mED\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mDEGRAD\u001b[27mED\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-story-bootstrap]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-story-bootstrap]')\u001b[22m\n\u001b[2m    5 × locator resolved to <div data-bootstrap-state=\"INITIAL\" data-bootstrap-trace=\"INITIAL\" data-story-bootstrap=\"phase-4\" data-bootstrap-scenario=\"normal\" data-bootstrap-source=\"unresolved\" data-bootstrap-degraded-reason=\"none\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-release-cause=\"pending\" data-bootstrap-destination=\"unresolved\" data-bootstrap-history-status=\"pending\" data-bootstrap-session-repeated=\"false\" data-bootstrap-position-status=\"pending\" class=\"story-bootstrap-module__ZnSCIG__root\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"INITIAL\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-story-bootstrap=\"phase-4\" data-bootstrap-scenario=\"normal\" data-bootstrap-source=\"unresolved\" data-bootstrap-degraded-reason=\"none\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-release-cause=\"pending\" data-bootstrap-session-repeated=\"true\" data-bootstrap-destination=\"unresolved\" data-bootstrap-history-status=\"pending\" data-bootstrap-state=\"WAITING_CRITICAL\" data-bootstrap-trace=\"WAITING_CRITICAL\" data-bootstrap-position-status=\"pending\" class=\"story-bootstrap-module__ZnSCIG__root\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"WAITING_CRITICAL\"\u001b[22m\n\u001b[2m    8 × locator resolved to <div data-story-bootstrap=\"phase-4\" data-bootstrap-state=\"DEGRADED\" data-bootstrap-trace=\"DEGRADED\" data-bootstrap-scenario=\"normal\" data-bootstrap-destination=\"home\" data-bootstrap-source=\"default-home\" data-bootstrap-reduced-motion=\"false\" data-bootstrap-session-repeated=\"true\" data-bootstrap-history-status=\"replaced\" data-bootstrap-position-status=\"positioned\" class=\"story-bootstrap-module__ZnSCIG__root\" data-bootstrap-release-cause=\"css-fail-open\" data-bootstrap-degraded-reason=\"hard-timeout\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"DEGRADED\"\u001b[22m\n\n\n  511 |       waitUntil: \"domcontentloaded\",\n  512 |     });\n> 513 |     await expect(page.locator(BOOTSTRAP_ROOT)).toHaveAttribute(\n      |                                                ^\n  514 |       \"data-bootstrap-state\",\n  515 |       \"REVEALED\",\n  516 |       { timeout: 10_000 },\n    at /home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts:513:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-23T12:24:29.909Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/chromium-lifecycle/e2e-phase05-master-story-P-462d4-e-paths-vertical-and-usable-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/chromium-lifecycle/e2e-phase05-master-story-P-462d4-e-paths-vertical-and-usable-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/davi-benucci/Área de trabalho/WFlyer/test-results/stage1-portfolio/chromium-lifecycle/e2e-phase05-master-story-P-462d4-e-paths-vertical-and-usable-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-master-story.spec.ts",
+                        "column": 48,
+                        "line": 513
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4b43acf023c0f4176caa-761fd2efd8e63f0d3ee7",
+              "file": "e2e/phase05-master-story.spec.ts",
+              "line": 445,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e/phase05-navigation.spec.ts",
+      "file": "e2e/phase05-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "every main chapter remains a clean direct deep link",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-navigation.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5949,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-23T12:24:49.089Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/home/davi-benucci/Área de trabalho/WFlyer/tests/e2e/phase05-navigation.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a561895dde1b6b73eb60-54d5a52c9501c1040946",
+          "file": "e2e/phase05-navigation.spec.ts",
+          "line": 266,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-23T12:23:54.115Z",
+    "duration": 61173.665,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

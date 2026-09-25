@@ -1,0 +1,29 @@
+{
+  "baseline": {
+    "capacitySignature": "projects-capacity:0cf7586a",
+    "scoreHash": 4137470140,
+    "visitAnchors": "[]"
+  },
+  "repeated": {
+    "capacitySignature": "projects-capacity:0cf7586a",
+    "probeState": [
+      {
+        "interaction": null,
+        "rest": null,
+        "transition": ""
+      },
+      {
+        "interaction": null,
+        "rest": null,
+        "transition": ""
+      },
+      {
+        "interaction": null,
+        "rest": null,
+        "transition": ""
+      }
+    ],
+    "scoreHash": 4137470140,
+    "visitAnchors": "[]"
+  }
+}

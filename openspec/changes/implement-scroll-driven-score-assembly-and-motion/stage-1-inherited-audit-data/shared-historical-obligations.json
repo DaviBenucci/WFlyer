@@ -1,0 +1,1128 @@
+{
+  "status": "OBSERVABLE_MAPPING_NOT_HISTORICAL_AGGREGATE_PASS",
+  "obligations": [
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1440x900 capacity-selected/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1440x900 capacity-selected",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-capacity-selected-1440x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1536x900 capacity-selected/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1536x900 capacity-selected",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-capacity-selected-1536x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1920x917 capacity-selected/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1920x917 capacity-selected",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-capacity-selected-1920x917",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1100x640 capacity-selected/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1100x640 capacity-selected",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-capacity-selected-1100x640",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 900x1024 vertical-wide/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 900x1024 vertical-wide",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-vertical-wide-900x1024",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 390x844 vertical-compact/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 390x844 vertical-compact",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-vertical-compact-390x844",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1440x900 static/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1440x900 static",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-static-1440x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1440x900 capacity-selected/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1440x900 capacity-selected",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-capacity-selected-1440x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1536x900 capacity-selected/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1536x900 capacity-selected",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-capacity-selected-1536x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1920x917 capacity-selected/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1920x917 capacity-selected",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-capacity-selected-1920x917",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1100x640 capacity-selected/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1100x640 capacity-selected",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-capacity-selected-1100x640",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 900x1024 vertical-wide/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 900x1024 vertical-wide",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-vertical-wide-900x1024",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 390x844 vertical-compact/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 390x844 vertical-compact",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-vertical-compact-390x844",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1440x900 static/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1440x900 static",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-static-1440x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1440x900 capacity-selected/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1440x900 capacity-selected",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": "integrated-capacity-selected-1440x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1536x900 capacity-selected/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1536x900 capacity-selected",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": "integrated-capacity-selected-1536x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1920x917 capacity-selected/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1920x917 capacity-selected",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": "integrated-capacity-selected-1920x917",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1100x640 capacity-selected/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1100x640 capacity-selected",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": "integrated-capacity-selected-1100x640",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 900x1024 vertical-wide/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 900x1024 vertical-wide",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": "integrated-vertical-wide-900x1024",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 390x844 vertical-compact/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 390x844 vertical-compact",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "NOT_OBSERVED",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": true
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-geometry.spec.ts/Stage-1 complete footprints and Home entries 1440x900 static/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-geometry.spec.ts",
+        "line": 43,
+        "title": "Stage-1 complete footprints and Home entries 1440x900 static",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "NOT_OBSERVED",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": true
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-hydration.spec.ts/Stage-1 numerical determinism and initial hydration / keeps semantic allocation, canonical geometry and SVG identical to Node/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "line": 18,
+        "title": "Stage-1 numerical determinism and initial hydration / keeps semantic allocation, canonical geometry and SVG identical to Node",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-pure.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": null,
+          "mode": "horizontal-enhanced"
+        },
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": null,
+          "mode": "vertical-wide"
+        },
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": null,
+          "mode": "vertical-compact"
+        },
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": null,
+          "mode": "static"
+        }
+      ],
+      "historicalLimits": [
+        "Historical source rendered with current toolchain. New event-safe metadata absent in historical source is not a failed historical contract. Actual complete-model/SVG equality is recorded per mode, never copied from source literal true flags."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-hydration.spec.ts/Stage-1 numerical determinism and initial hydration / matches SSR metadata on the first render and reprojects after hydration/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "line": 76,
+        "title": "Stage-1 numerical determinism and initial hydration / matches SSR metadata on the first render and reprojects after hydration",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-capacity-selected-1440x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL.",
+        "SSR metadata and actual runtime errors/settled projection are collected. A settled DOM snapshot is not proof of exact first-client serialization; that historical sub-observation remains unqualified unless separately demonstrated."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-hydration.spec.ts/Stage-1 numerical determinism and initial hydration / keeps semantic allocation, canonical geometry and SVG identical to Node/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "line": 18,
+        "title": "Stage-1 numerical determinism and initial hydration / keeps semantic allocation, canonical geometry and SVG identical to Node",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-pure.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": null,
+          "mode": "horizontal-enhanced"
+        },
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": null,
+          "mode": "vertical-wide"
+        },
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": null,
+          "mode": "vertical-compact"
+        },
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": null,
+          "mode": "static"
+        }
+      ],
+      "historicalLimits": [
+        "Historical source rendered with current toolchain. New event-safe metadata absent in historical source is not a failed historical contract. Actual complete-model/SVG equality is recorded per mode, never copied from source literal true flags."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-hydration.spec.ts/Stage-1 numerical determinism and initial hydration / matches SSR metadata on the first render and reprojects after hydration/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "line": 76,
+        "title": "Stage-1 numerical determinism and initial hydration / matches SSR metadata on the first render and reprojects after hydration",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-capacity-selected-1440x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL.",
+        "SSR metadata and actual runtime errors/settled projection are collected. A settled DOM snapshot is not proof of exact first-client serialization; that historical sub-observation remains unqualified unless separately demonstrated."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-hydration.spec.ts/Stage-1 numerical determinism and initial hydration / keeps semantic allocation, canonical geometry and SVG identical to Node/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "line": 18,
+        "title": "Stage-1 numerical determinism and initial hydration / keeps semantic allocation, canonical geometry and SVG identical to Node",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-pure.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": null,
+          "mode": "horizontal-enhanced"
+        },
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": null,
+          "mode": "vertical-wide"
+        },
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": null,
+          "mode": "vertical-compact"
+        },
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": null,
+          "mode": "static"
+        }
+      ],
+      "historicalLimits": [
+        "Historical source rendered with current toolchain. New event-safe metadata absent in historical source is not a failed historical contract. Actual complete-model/SVG equality is recorded per mode, never copied from source literal true flags."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-hydration.spec.ts/Stage-1 numerical determinism and initial hydration / matches SSR metadata on the first render and reprojects after hydration/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-hydration.spec.ts",
+        "line": 76,
+        "title": "Stage-1 numerical determinism and initial hydration / matches SSR metadata on the first render and reprojects after hydration",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": "integrated-capacity-selected-1440x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL.",
+        "SSR metadata and actual runtime errors/settled projection are collected. A settled DOM snapshot is not proof of exact first-client serialization; that historical sub-observation remains unqualified unless separately demonstrated."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-projects-capacity.spec.ts/interaction probes cannot precede canonical Projects rest-bound reads/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 36,
+        "title": "interaction probes cannot precede canonical Projects rest-bound reads",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-capacity-selected-1536x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-projects-capacity.spec.ts/focused and repeated generations preserve canonical rest Projection inputs/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 118,
+        "title": "focused and repeated generations preserve canonical rest Projection inputs",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-capacity-selected-1536x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-projects-capacity.spec.ts/complete Projects candidate 1440x900/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1440x900",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-capacity-selected-1440x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-projects-capacity.spec.ts/complete Projects candidate 1536x900/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1536x900",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-capacity-selected-1536x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-projects-capacity.spec.ts/complete Projects candidate 1920x917/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1920x917",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-capacity-selected-1920x917",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/chromium/tests/e2e/assembly-stage1-projects-capacity.spec.ts/the registered 1100x640 candidate selects whole-story fallback/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 352,
+        "title": "the registered 1100x640 candidate selects whole-story fallback",
+        "engine": "chromium"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "chromium",
+          "profile": "integrated-capacity-selected-1100x640",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-projects-capacity.spec.ts/interaction probes cannot precede canonical Projects rest-bound reads/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 36,
+        "title": "interaction probes cannot precede canonical Projects rest-bound reads",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-capacity-selected-1536x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-projects-capacity.spec.ts/focused and repeated generations preserve canonical rest Projection inputs/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 118,
+        "title": "focused and repeated generations preserve canonical rest Projection inputs",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-capacity-selected-1536x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-projects-capacity.spec.ts/complete Projects candidate 1440x900/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1440x900",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-capacity-selected-1440x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-projects-capacity.spec.ts/complete Projects candidate 1536x900/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1536x900",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-capacity-selected-1536x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-projects-capacity.spec.ts/complete Projects candidate 1920x917/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1920x917",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-capacity-selected-1920x917",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/firefox/tests/e2e/assembly-stage1-projects-capacity.spec.ts/the registered 1100x640 candidate selects whole-story fallback/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 352,
+        "title": "the registered 1100x640 candidate selects whole-story fallback",
+        "engine": "firefox"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "firefox",
+          "profile": "integrated-capacity-selected-1100x640",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-projects-capacity.spec.ts/interaction probes cannot precede canonical Projects rest-bound reads/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 36,
+        "title": "interaction probes cannot precede canonical Projects rest-bound reads",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": "integrated-capacity-selected-1536x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-projects-capacity.spec.ts/focused and repeated generations preserve canonical rest Projection inputs/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 118,
+        "title": "focused and repeated generations preserve canonical rest Projection inputs",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": "integrated-capacity-selected-1536x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-projects-capacity.spec.ts/complete Projects candidate 1440x900/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1440x900",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": "integrated-capacity-selected-1440x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-projects-capacity.spec.ts/complete Projects candidate 1536x900/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1536x900",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": "integrated-capacity-selected-1536x900",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-projects-capacity.spec.ts/complete Projects candidate 1920x917/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 298,
+        "title": "complete Projects candidate 1920x917",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": "integrated-capacity-selected-1920x917",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    },
+    {
+      "slotKey": "primary/webkit/tests/e2e/assembly-stage1-projects-capacity.spec.ts/the registered 1100x640 candidate selects whole-story fallback/historical",
+      "case": {
+        "file": "tests/e2e/assembly-stage1-projects-capacity.spec.ts",
+        "line": 352,
+        "title": "the registered 1100x640 candidate selects whole-story fallback",
+        "engine": "webkit"
+      },
+      "rawValidatorOutcome": "OBSERVED_SHARED_CONTRACT",
+      "evidence": "shared-runtime.jsonl",
+      "recordSelectors": [
+        {
+          "source": "historical",
+          "engine": "webkit",
+          "profile": "integrated-capacity-selected-1100x640",
+          "mode": null
+        }
+      ],
+      "historicalLimits": [
+        "Shared historical DOM, explicit same-input constructors and existing focus/rebuild behavior only. Historical source has no successor candidate probe/read-order/generation or Home/event-safe acceptance telemetry; absence is not manufactured historical FAIL."
+      ],
+      "qualifiedAsAcceptancePass": false,
+      "missingEvidence": false
+    }
+  ]
+}

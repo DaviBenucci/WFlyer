@@ -1,0 +1,8 @@
+{
+  "time": "2026-09-14T12:10:50.995438+00:00",
+  "boundedPreflight": "Both source bundles execute all four registered pure modes through the collector serializer and unchanged intersection helper in Node. Eight records completed without exception.",
+  "recordCount": 8,
+  "log": "shared-preflight-node.log",
+  "limitation": "Preflight tests collector compatibility only; it is not live browser lineage or a geometry PASS.",
+  "processLifecycle": "Preflight remained alive after its eight results. The finite shared collector now explicitly exits only after all awaited loops persist and esbuild stops, preventing inactive runtime handles from blocking the next serial job. No browser assertion or source code changed."
+}

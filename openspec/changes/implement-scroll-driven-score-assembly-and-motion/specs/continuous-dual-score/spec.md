@@ -1,88 +1,54 @@
-## Purpose
-
-Define the bounded successor refinements, geometry approval/refreeze boundary,
-and Projection metadata for the continuous dual score without owning motion.
-
 ## ADDED Requirements
 
-### Requirement: Successor geometry scope is limited to five registered deltas
-Before motion integration, Projection SHALL change Phase-9 geometry only as
-required by `ASM-LAYOUT-DELTA-001..005`. Unrelated Professional, Application,
-responsive, origin, terminal, card, content-clearance, or composition behavior
-SHALL remain frozen unless a separately proven defect triggers the canonical
-stop-and-review process.
+### Requirement: The active score has one portfolio branch
+The retained capability key `continuous-dual-score` SHALL describe one active
+continuous institutional score: Home/Origin followed by the Professional and
+Portfolio chapters. No Application chapter, empty left reservation, hidden
+compatibility branch, or dormant geometry SHALL exist in the active model.
 
-#### Scenario: An unrelated geometry improvement is proposed
-- **WHEN** implementation identifies a desirable geometry change outside the five registered deltas
-- **THEN** work stops for an explicit decision and the change is not folded silently into successor stabilization
+#### Scenario: The current story is constructed
+- **WHEN** manifest, composition, Projection, or score rendering enumerates the active story
+- **THEN** it contains Home and the Professional/Portfolio sequence only, with one five-line origin staff
 
-### Requirement: Application terminal continues naturally to a conventional final shelf
-The Application terminal SHALL remove the unnecessary large return/U-turn and
-remain on the spatial continuation of its branch while ending on a locally
-left-to-right `EVENT_SAFE_STRAIGHT` shelf with the conventional final barline.
-The resulting path SHALL preserve content clearance, continuity, and zero path
-or staff-line self-intersections.
+### Requirement: Historical geometry remains historical
+Frozen Phase-9 and superseded audit artifacts MAY retain the former topology,
+but SHALL remain immutable and SHALL NOT be represented as a current portfolio
+validation PASS.
 
-#### Scenario: Application reaches its terminal
-- **WHEN** the final Application score region is projected in a supported mode
-- **THEN** it reads as the natural branch continuation without a return loop, its last event shelf reads left-to-right, and the canonical final barline physically terminates the score
+#### Scenario: A historical fixture is reused by a focused unit test
+- **WHEN** an old Professional measurement is translated into the portfolio coordinate space
+- **THEN** the test labels the source as pre-rebaseline input and does not claim fresh browser evidence
 
-### Requirement: Benefits to Demo uses a broad event-free corridor
-The Application Benefits↔Demo transition SHALL prefer direct or broad
-low-curvature continuity, contain zero Composer-backed events, avoid compressed
-decorative folds, preserve Benefits/tablet clearances, and resume events only
-on the next `EVENT_SAFE_STRAIGHT` shelf. Demo↔Launch continuity SHALL remain
-protected while this corridor changes.
+### Requirement: Landmarks occupy continuous story spans
+Under ADR-057 / ASM-IMP-DEC-020, the story SHALL expose semantic entry anchors,
+content and interaction spans, exit transitions and a coherent viewport-camera
+mapping through the existing chapter authority. The
+[canonical contract](../../../../../docs/canonical-v2/02-experience/01-global-story-architecture.md)
+SHALL govern their semantics; no independent mobile story SHALL be introduced.
 
-#### Scenario: Application crosses from Benefits toward Demo
-- **WHEN** both scenes expose a compatible unobstructed corridor
-- **THEN** one broad predominantly direct event-free transition connects them without squeezed staff, protected-content collision, or early event resumption
+#### Scenario: A landmark occupies multiple viewports
+- **WHEN** its content extends beyond the current camera frame
+- **THEN** continued native traversal reaches every required station in order
+- **AND** the score and transitions remain coherent with no unintended dead zone
 
-### Requirement: Professional shelf utilization uses existing composition first
-Projection SHALL distribute existing ordered semantic event groups more
-effectively across long Professional `EVENT_SAFE_STRAIGHT` shelves while
-preserving rhythm, motif identity, pitch/accidental/beam/tuplet/ledger/key
-semantics, seed, and reference fingerprints. It SHALL NOT duplicate or invent
-notes to fill space.
+### Requirement: General geometry safety survives the rebaseline
+ADR-046 determinism, HGA-001A offset regularity, Composer fingerprints, approved
+glyphs, complete ink, 12px clearance, event-safe zoning and zero invalid visible
+self-intersections SHALL remain mandatory. Prior fan-specific shelves/visits
+SHALL remain applicable to the retained fan, not be imposed on every sequential
+presentation. All old repair/evidence records SHALL be preserved.
 
-#### Scenario: Existing events can improve a long shelf
-- **WHEN** a long Professional safe shelf can use existing event groups more effectively
-- **THEN** physical allocation improves while semantic order, group identity, and composition fingerprints remain unchanged
+#### Scenario: New continuous geometry is validated
+- **WHEN** a candidate changes content or transition spans
+- **THEN** general safety checks remain enabled and historical negative fixtures keep their truthful outcomes
+- **AND** intentional partial visibility is accepted only with proven reachability and safe focus
 
-#### Scenario: Adequate density requires new semantic events
-- **WHEN** the approved optical result cannot be achieved from the existing canonical composition
-- **THEN** Stage 1 stops and requests a separate explicit Composer-version decision without duplicating, synthesizing, or silently changing an event
+### Requirement: Human approval remains blocking
+Automated rebaseline validation SHALL NOT mark Human Geometry Approval; the new continuous target requires implemented geometry and fresh human review before
+Stage 2, refreeze, Assembly, final temporal choreography or new GSAP presentation
+integration. Stage-1 structural native/story/camera mapping under canonical §3
+is permitted to prove reachability; it is not later motion choreography.
 
-### Requirement: Home exposes exact canonical entry geometry before Scenic motion
-Stage-1 geometry SHALL replace the structural Home placeholder only to the extent
-needed to expose deterministic branch `CANONICAL_ENTRY_ANCHOR` geometry and the
-future Scenic-to-canonical match. Final Home Scenic motion SHALL remain deferred
-until after geometry approval/refreeze and the canonical Home stage.
-
-#### Scenario: Home geometry reaches human review
-- **WHEN** the Stage-1 Home candidate is captured
-- **THEN** both branch entry anchors and their event-free canonical lead-ins are deterministic and reviewable without any final Home motion being implemented
-
-### Requirement: Geometry evidence is human-approved and refrozen separately
-Stage 1 SHALL automatically verify continuity, tangent/event zoning, zero path
-and staff intersections, protected-content clearance, final barlines, and
-responsive behavior, then capture Application terminal, Benefits↔Demo,
-Demo↔Launch, representative Professional shelves, Home entry geometry, and
-representative responsive modes. Explicit human approval SHALL precede a
-successor-only sealed manifest/digest and geometry freeze.
-
-#### Scenario: Required geometry evidence is incomplete
-- **WHEN** any required view, invariant, or explicit human decision is missing
-- **THEN** geometry remains unfrozen and Stage 3 and later implementation stay blocked
-
-### Requirement: Projection exposes stable metadata without motion ownership
-After refreeze, Projection SHALL expose deterministic zone types,
-`CANONICAL_ENTRY_ANCHOR`, `EVENT_SAFE_STRAIGHT`, `EVENT_FREE_CURVED`, event-free
-connectors, Assembly intervals, draw metrics, and reveal-anchor references.
-Projection SHALL NOT create GSAP timelines, navigation state, or per-frame
-presentation calculations, and adding metadata SHALL not change approved visual
-geometry.
-
-#### Scenario: Motion consumes a refrozen projection
-- **WHEN** a downstream pure motion model receives Projection output
-- **THEN** it can resolve precomputed draw, Assembly, and reveal state from stable metadata without rebuilding geometry or querying layout per frame
+#### Scenario: Rebaseline validation passes
+- **WHEN** code, documentation, and focused browser checks are green
+- **THEN** Stage 1 remains stopped at explicit Human Geometry Approval

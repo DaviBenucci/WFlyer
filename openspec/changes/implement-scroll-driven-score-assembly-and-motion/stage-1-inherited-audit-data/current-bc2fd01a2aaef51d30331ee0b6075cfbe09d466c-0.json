@@ -1,0 +1,35 @@
+{
+  "demoCallToAction": {
+    "classification": "CLEAR",
+    "minimumClearance": 256.186,
+    "minimumClearanceRounded": 256.19,
+    "nearest": {
+      "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+      "role": "staff-line"
+    },
+    "reason": "demo-call-to-action",
+    "sceneId": "application-demo"
+  },
+  "demonstration": {
+    "classification": "COLLISION",
+    "minimumClearance": -115.335,
+    "minimumClearanceRounded": -115.33,
+    "nearest": {
+      "id": "wf-phase-9-task-34:vertical-wide:application:staff:8",
+      "role": "staff-line"
+    },
+    "reason": "application-tablet-demo",
+    "sceneId": "application-demo"
+  },
+  "launch": {
+    "classification": "CLEAR",
+    "minimumClearance": 171.665,
+    "minimumClearanceRounded": 171.67,
+    "nearest": {
+      "id": "wf-phase-9-task-34:vertical-wide:application:staff:0",
+      "role": "staff-line"
+    },
+    "reason": "access-action",
+    "sceneId": "application-access"
+  }
+}

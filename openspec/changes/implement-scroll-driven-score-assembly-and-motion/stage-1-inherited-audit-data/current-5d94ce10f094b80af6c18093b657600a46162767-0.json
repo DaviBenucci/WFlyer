@@ -1,0 +1,29 @@
+{
+  "baseline": {
+    "capacitySignature": "projects-capacity:ebc1146d",
+    "scoreHash": 3169665790,
+    "visitAnchors": "[{\"anchor\":{\"x\":16870.25,\"y\":824.2996519288713},\"cardRect\":{\"height\":610.44,\"width\":313.2,\"x\":16713.65,\"y\":151.4},\"measurementSource\":\"dom-measured\",\"projectIndex\":1},{\"anchor\":{\"x\":17190.335,\"y\":812.2096519288713},\"cardRect\":{\"height\":599.52,\"width\":289.89,\"x\":17045.39,\"y\":150.23},\"measurementSource\":\"dom-measured\",\"projectIndex\":2},{\"anchor\":{\"x\":17510.41,\"y\":803.84},\"cardRect\":{\"height\":610.44,\"width\":313.2,\"x\":17353.81,\"y\":151.4},\"measurementSource\":\"dom-measured\",\"projectIndex\":3}]"
+  },
+  "repeated": {
+    "capacitySignature": "projects-capacity:ebc1146d",
+    "probeState": [
+      {
+        "interaction": null,
+        "rest": null,
+        "transition": ""
+      },
+      {
+        "interaction": null,
+        "rest": null,
+        "transition": ""
+      },
+      {
+        "interaction": null,
+        "rest": null,
+        "transition": ""
+      }
+    ],
+    "scoreHash": 3169665790,
+    "visitAnchors": "[{\"anchor\":{\"x\":16870.25,\"y\":824.2996519288713},\"cardRect\":{\"height\":610.44,\"width\":313.2,\"x\":16713.65,\"y\":151.4},\"measurementSource\":\"dom-measured\",\"projectIndex\":1},{\"anchor\":{\"x\":17190.335,\"y\":812.2096519288713},\"cardRect\":{\"height\":599.52,\"width\":289.89,\"x\":17045.39,\"y\":150.23},\"measurementSource\":\"dom-measured\",\"projectIndex\":2},{\"anchor\":{\"x\":17510.41,\"y\":803.84},\"cardRect\":{\"height\":610.44,\"width\":313.2,\"x\":17353.81,\"y\":151.4},\"measurementSource\":\"dom-measured\",\"projectIndex\":3}]"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "updatedAt": "2026-09-14T12:26:40.349030+00:00",
+  "isolatedScratch": "/tmp/wflyer-systematic-audit-20260913",
+  "purpose": "audit-only collection, continuation, raw persistence and mechanical comparison; no product imports by runtime",
+  "files": {
+    "prepare-primary.py": "f315e6c4427e406423d8164d89fe48f0c3e9f744bfa3138333d98a638685ab60",
+    "lifecycle.mjs": "336a885cd55a737f07481f6039f8647c99e4d5e036dfbea911404bd3fe546f45",
+    "index-observations.py": "a0c868998f89b2bef11251bdde72aeb3478048f8d91151abe5edd10671c63df3",
+    "cluster-raw.py": "2db2005f9f9fe3635ef08df1f3c781e0e70d32e71e9abf4336a1e8e237884df5",
+    "collect.mjs": "ca516408092c0b30561ac00e46152a7ba39d9a1ab58c048b2723b8830fc9b6bf",
+    "collect-before-cascade-isolation.mjs": "6e09d6f3ec022c888c42a7fefb1334e9793a1e7a2519abfffae217e15199a2b0",
+    "shared-probe.mjs": "f0e22ae2de4648318f3a5424ce80b8db0e9b3616e2d385268d380936d21d8547",
+    "check-ink.mjs": "a15f2b07b044731509e96aa89efdf697b7c379aef60419839be09edfc639ed15",
+    "provenance.json": "0c916e3dbbe3bcd8083f8b26269947731871c0b817ac47297856512b15cfce7d",
+    "recover-interrupted-slots.py": "71d9eb15c0fec41846dd95fbb1c8b6c2a5caf14c265cffbd7dc0dc9f00d9f747",
+    "check-centers.mjs": "bd7ccfb18df2524f95093b0f2e90b4078f6eea962421a233b50d908ad825d05b",
+    "queue-configurations-corrected.py": "bbc8b08bdebadeb41fa0aac449963edbaff2cb80feaaff960e45f3f84f0e7d2d",
+    "coverage.py": "dc9ce553e6cf664769d90f11c956b9509707ebc5a864801720acd924d48a636d",
+    "queue-tail.py": "53c6a90df9a19b2fffadea62587606fad8da90aa6c6849093e8edeed8b0bc2b4",
+    "compare-access.py": "49f1bdbaec6763764d7226bbf6c92db1bff501ce94217c11bc1441afcdbbbcb2",
+    "map-shared-obligations.py": "504b4ab998cb62fd51db4be673c58c3725a30bbec77fb584432441d806b3cee0",
+    "queue-corrected.py": "b9dd05e750aeb0362e3e46de01db3b8ea82880faf1b420d37715be4e73425906",
+    "queue-resume-2.py": "c78fc3fbdd978e754abfa9e7922557a1bf26ea672b92fc6dc87088db45ed1a19",
+    "queue-configurations.py": "69a4c8c726cc14c6f9b09e99123f1ecdcca26e6a7d3cf5078846ebb174283dcf",
+    "queue.py": "6a5d217eba32020324506e585f02a5bbbca6a8aa857d4014f86d08d20b10c2de"
+  },
+  "originalInputsIntegrity": "continuation-integrity.json",
+  "status": "collection in progress; not completion"
+}

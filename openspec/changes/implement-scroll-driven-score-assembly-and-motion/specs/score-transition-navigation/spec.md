@@ -1,64 +1,50 @@
 ## ADDED Requirements
 
-### Requirement: Navigation policies share one canonical story model
-The controller SHALL expose `NORMAL_SCRUB`, `FAST_TRAVERSAL`, and
-`RESTORE_SETTLED_STATE` as presentation policies over the same native-scroll
-story position, canonical path, semantic chapter ownership, history, and focus
-contracts. Ordinary wheel, touch, keyboard, scrollbar, and assistive scrolling
-SHALL remain `NORMAL_SCRUB`; manual scroll velocity alone SHALL NOT activate
-Fast Traversal.
+### Requirement: Navigation policies share one portfolio model
+`NORMAL_SCRUB`, `FAST_TRAVERSAL`, and `RESTORE_SETTLED_STATE` SHALL operate on
+the same native-scroll portfolio position, chapter order, history, and focus
+contracts.
 
-#### Scenario: User scrolls rapidly without selecting a destination
-- **WHEN** high-velocity manual input advances the native document
-- **THEN** normal scrub remains authoritative and no programmatic Fast Traversal policy starts
+#### Scenario: Manual scrolling advances the story
+- **WHEN** wheel, touch, keyboard, scrollbar, or assistive scrolling changes native position
+- **THEN** normal scrub remains authoritative and no parallel navigation state starts
 
-### Requirement: Explicit navigation uses staff-only Fast Traversal
-Only explicit programmatic story navigation MAY activate `FAST_TRAVERSAL`.
-During it, staff progression, reversible draw/erase, and canonical path state
-SHALL remain active, with Assembly geometry active when required. All
-Composer-backed event presentation SHALL remain disabled and intermediate
-content motion SHALL be simplified or suppressed.
+### Requirement: Explicit distant navigation uses staff-only traversal
+Only an explicit programmatic destination MAY use Fast Traversal. Composer event
+presentation SHALL remain hidden until the surviving destination settles.
 
-#### Scenario: A distant header destination is selected
-- **WHEN** canonical navigation begins a nontrivial traversal
-- **THEN** the user moves through continuous staff-only geometry with no note, accidental, beam, tuplet, ledger, or other Composer-backed event visible until arrival
+#### Scenario: A distant Professional destination is selected
+- **WHEN** traversal begins
+- **THEN** the canonical staff progresses continuously and events remain hidden until arrival
 
-### Requirement: Arrival resolves semantic state before event presentation
-Fast Traversal SHALL end only after actual destination semantic state is
-resolved. It SHALL then return to `NORMAL_SCRUB`, allow eligible events to
-resolve from precomputed anchors, settle destination content, update history,
-and apply the canonical destination-focus contract without an intermediate
-false active label.
-
-#### Scenario: Traversal reaches its destination
-- **WHEN** actual canonical progress enters the target ownership interval
-- **THEN** traversal settles once, normal presentation resumes, eligible destination events may appear, and semantic header/history/focus state agree with the destination
-
-### Requirement: Cancellation and target replacement resume from actual progress
-Wheel, touch, navigation key, Escape, a new target, or a material responsive
-mode change SHALL cancel the active traversal from its actual current story
-progress. The abandoned destination SHALL NOT complete. A replacement target
-SHALL start from that same real position and Composer-backed events SHALL remain
-hidden for the replacement traversal.
-
-#### Scenario: User interrupts an active traversal
-- **WHEN** a cancellation input occurs before arrival
-- **THEN** the old traversal releases ownership, normal scrub resolves events and content from actual progress, and the old destination does not settle
+### Requirement: Cancellation and replacement use actual progress
+User input, Escape, a new target, or material responsive change SHALL cancel or
+replace traversal from the actual current story position.
 
 #### Scenario: A second destination replaces the first
-- **WHEN** a new valid target is selected during Fast Traversal
-- **THEN** the first target is discarded and staff-only traversal restarts deterministically from current real progress toward the replacement
+- **WHEN** a new surviving target is selected before arrival
+- **THEN** the abandoned destination does not settle and the replacement begins from current progress
 
-### Requirement: Restoration and cross-branch traversal do not replay Home entry
-Professional↔Application Fast Traversal MAY pass through settled Home, but SHALL
-NOT replay the one-shot Home cinematic. Deep-link and history restoration SHALL
-use `RESTORE_SETTLED_STATE` to resolve the correct scroll, destination, focus,
-and semantic chapter directly rather than animating through prior chapters.
+### Requirement: History restoration never invents a removed chapter
+Back, forward, refresh, and valid hashes SHALL restore surviving settled state
+directly. Removed hashes SHALL fall back through existing unknown-target policy.
 
-#### Scenario: Navigation crosses from one branch to the other
-- **WHEN** explicit navigation traverses through Home between Professional and Application
-- **THEN** settled Home may provide continuity while its origin entry sequence remains complete and unreplayed
+#### Scenario: Browser history restores a portfolio chapter
+- **WHEN** popstate resolves a surviving location
+- **THEN** history, focus, header state, and semantic chapter ownership agree without replaying Home
 
-#### Scenario: Browser history restores a prior destination
-- **WHEN** popstate or refresh resolves an existing story location
-- **THEN** the controller restores its canonical settled state directly with consistent history, focus, and chapter ownership
+### Requirement: Shortcuts resolve semantic landmark entry
+Header, hash and chapter-history navigation SHALL resolve the canonical
+`entryAnchor` through the current projection/native-scroll mapping. Structural
+scene start, DOM center and musical entry SHALL NOT be assumed equivalent.
+The destination SHALL be immediately recognizable without whole-chapter fit.
+
+#### Scenario: Entry differs from structural start
+- **WHEN** the reader chooses the chapter in the header
+- **THEN** its semantic entry station lands visibly below the header with usable focus
+- **AND** remaining content is reachable by continued native traversal
+
+#### Scenario: Traversal is reduced or interrupted
+- **WHEN** reduced motion, user cancellation or replacement applies
+- **THEN** the same entry authority and actual native position govern immediate/short positioning or cancellation
+- **AND** no stale arrival/history is committed and animated traversal never exceeds the existing 3.0-second maximum

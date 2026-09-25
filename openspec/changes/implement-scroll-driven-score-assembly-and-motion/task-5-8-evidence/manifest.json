@@ -1,0 +1,108 @@
+{
+  "route": "/__visual-lab/story/motion",
+  "capturedAt": "2026-09-24T20:07:05.582Z",
+  "humanGeometryApproval": "PENDING",
+  "captures": [
+    {
+      "profile": "expanded-1536x900",
+      "browser": "chromium",
+      "viewport": [
+        1536,
+        900
+      ],
+      "dpr": 1,
+      "mode": "horizontal-enhanced",
+      "presentation": "EXPANDED_LANDSCAPE",
+      "projects": "full fan",
+      "scorePathSelfIntersections": "0",
+      "scoreStaffSelfIntersections": "0",
+      "images": [
+        "screenshots/expanded-1536x900-home.png",
+        "screenshots/expanded-1536x900-professional-about.png",
+        "screenshots/expanded-1536x900-professional-projects.png",
+        "screenshots/expanded-1536x900-professional-contact.png",
+        "screenshots/expanded-1536x900-contact-form.png"
+      ]
+    },
+    {
+      "profile": "owner-firefox-1366x611",
+      "browser": "firefox",
+      "viewport": [
+        1366,
+        611
+      ],
+      "dpr": 1,
+      "mode": "vertical-wide",
+      "presentation": "COMPACT_LANDSCAPE",
+      "projects": "single teaser",
+      "scorePathSelfIntersections": "0",
+      "scoreStaffSelfIntersections": "0",
+      "images": [
+        "screenshots/owner-firefox-1366x611-professional-about.png",
+        "screenshots/owner-firefox-1366x611-professional-projects.png",
+        "screenshots/owner-firefox-1366x611-overview.png"
+      ]
+    },
+    {
+      "profile": "owner-chromium-1366x639",
+      "browser": "chromium",
+      "viewport": [
+        1366,
+        639
+      ],
+      "dpr": 1,
+      "mode": "vertical-wide",
+      "presentation": "COMPACT_LANDSCAPE",
+      "projects": "single teaser",
+      "scorePathSelfIntersections": "0",
+      "scoreStaffSelfIntersections": "0",
+      "images": [
+        "screenshots/owner-chromium-1366x639-professional-about.png",
+        "screenshots/owner-chromium-1366x639-professional-projects.png",
+        "screenshots/owner-chromium-1366x639-overview.png"
+      ]
+    },
+    {
+      "profile": "tablet-portrait-820x1180",
+      "browser": "chromium",
+      "viewport": [
+        820,
+        1180
+      ],
+      "dpr": 1,
+      "mode": "vertical-wide",
+      "presentation": "PORTRAIT_TRAVERSE",
+      "projects": "single teaser",
+      "scorePathSelfIntersections": "0",
+      "scoreStaffSelfIntersections": "0",
+      "images": [
+        "screenshots/tablet-portrait-820x1180-professional-about.png",
+        "screenshots/tablet-portrait-820x1180-professional-projects.png",
+        "screenshots/tablet-portrait-820x1180-overview.png",
+        "screenshots/tablet-portrait-820x1180-about-local-reflow.png"
+      ]
+    },
+    {
+      "profile": "mobile-portrait-390x844",
+      "browser": "chromium",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 1,
+      "mode": "vertical-compact",
+      "presentation": "PORTRAIT_TRAVERSE",
+      "projects": "single teaser",
+      "scorePathSelfIntersections": "0",
+      "scoreStaffSelfIntersections": "0",
+      "images": [
+        "screenshots/mobile-portrait-390x844-professional-about.png",
+        "screenshots/mobile-portrait-390x844-professional-projects.png",
+        "screenshots/mobile-portrait-390x844-professional-contact.png",
+        "screenshots/mobile-portrait-390x844-overview.png",
+        "screenshots/mobile-portrait-390x844-about-local-reflow.png",
+        "screenshots/mobile-portrait-390x844-contact-form.png"
+      ]
+    }
+  ]
+}

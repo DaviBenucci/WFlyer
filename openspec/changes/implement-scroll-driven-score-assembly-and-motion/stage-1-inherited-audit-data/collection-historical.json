@@ -1,0 +1,1574 @@
+[
+  {
+    "id": "38a56111ea38a77710c5-eb8ce2214d702e11b5fa",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-integration.spec.ts",
+      "Phase-9 Task-34 real score integration",
+      "horizontal enhanced dark has deterministic hydration and Music contracts"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-integration.spec.ts",
+      "line": 64,
+      "column": 9
+    }
+  },
+  {
+    "id": "38a56111ea38a77710c5-47692a72fa0e8ab6d8b7",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-integration.spec.ts",
+      "Phase-9 Task-34 real score integration",
+      "vertical wide light has deterministic hydration and Music contracts"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-integration.spec.ts",
+      "line": 64,
+      "column": 9
+    }
+  },
+  {
+    "id": "38a56111ea38a77710c5-f4e425608eb9aaa60ffe",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-integration.spec.ts",
+      "Phase-9 Task-34 real score integration",
+      "vertical compact dark has deterministic hydration and Music contracts"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-integration.spec.ts",
+      "line": 64,
+      "column": 9
+    }
+  },
+  {
+    "id": "38a56111ea38a77710c5-2d7063358bdab998ac04",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-integration.spec.ts",
+      "Phase-9 Task-34 real score integration",
+      "static fail-open light has deterministic hydration and Music contracts"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-integration.spec.ts",
+      "line": 64,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-40b8a5aebe05ab015cec",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "the task-33 ScorePath review surface remains development-only"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 65,
+      "column": 5
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-9d350af80b07707cba9d",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath hydration regression",
+      "zero hydration warnings · vertical-compact light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 130,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-2633b7c37d3d7fc2c73d",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath hydration regression",
+      "zero hydration warnings · vertical-compact dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 130,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-cab35573bc0c7e308eb8",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath hydration regression",
+      "zero hydration warnings · origin vertical-compact"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 130,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-67a780e6bb0dfe89052f",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath hydration regression",
+      "zero hydration warnings · origin horizontal-enhanced"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 130,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-bcb303bb7bf677349820",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-soft · vertical-wide · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-58678dcbab57a6659ebd",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-soft · vertical-wide · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-6e01a94bded827546f10",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-soft · vertical-compact · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-3fd41cb56364be65faea",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-soft · vertical-compact · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-0fe7bcd15d1f10893144",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-flowing · vertical-wide · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-9ec677c4c6ad8d8a9d7d",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-flowing · vertical-wide · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-0574d34e38e70643c529",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-flowing · vertical-compact · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-48c6be8ca201239fa140",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-flowing · vertical-compact · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-ab06a4ea7ded002f04f3",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "reduced motion retains the complete static score and usable scenes"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 309,
+      "column": 7
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-bd907fe98a5d47c982a2",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 360×640"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-366d366dc5e0b5419144",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 375×844"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-80f680c1ff7e4b048792",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 390×932"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-715fb265ac9c13f12c91",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 412×640"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-b9b3b76e0e19191178b5",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 414×844"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-68a815a03f11f07b62f6",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 430×932"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-4d71ff29722b9c81eba7",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "tablet and vertical-wide baselines remain intact"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 706,
+      "column": 7
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-22ff6dc88034b33a72ab",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 real-origin review",
+      "horizontal-enhanced · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 775,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-3dbe0fdfe093983010d0",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 real-origin review",
+      "vertical-wide · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 775,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-03ff82b337f73c0360a4",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 real-origin review",
+      "vertical-compact · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 775,
+      "column": 9
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-199a96a26f947efc8c47",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "keeps the measured 1536x864 origin departure crossing-free"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 144,
+      "column": 9
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-271cec76fa9c623e9b2c",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "keeps the measured 1920x917 terminal return crossing-free"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 144,
+      "column": 9
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-060d0f48ae61004eb5ff",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "keeps the measured 1920x1200 Overview exit crossing-free"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 144,
+      "column": 9
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-5bd61db3ff6018e51477",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "proves the live 13-scene rendered-clearance audit"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 167,
+      "column": 7
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-c7fde891db725d99c8be",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "proves the shared Services and How It Works card interaction in rendered geometry"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 453,
+      "column": 7
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-151b33c19ae95273a114",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "preserves the accepted Family-A tablet and Launch-form clearances"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 948,
+      "column": 7
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-89477621480732378e25",
+    "title": [
+      "",
+      "chromium",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "proves the rendered three-card Projects visits"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 1148,
+      "column": 7
+    }
+  },
+  {
+    "id": "38a56111ea38a77710c5-70949b3aa23b96cbdca0",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-integration.spec.ts",
+      "Phase-9 Task-34 real score integration",
+      "horizontal enhanced dark has deterministic hydration and Music contracts"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-integration.spec.ts",
+      "line": 64,
+      "column": 9
+    }
+  },
+  {
+    "id": "38a56111ea38a77710c5-6f62c99a914878732c82",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-integration.spec.ts",
+      "Phase-9 Task-34 real score integration",
+      "vertical wide light has deterministic hydration and Music contracts"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-integration.spec.ts",
+      "line": 64,
+      "column": 9
+    }
+  },
+  {
+    "id": "38a56111ea38a77710c5-db06f13776c6d56857ff",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-integration.spec.ts",
+      "Phase-9 Task-34 real score integration",
+      "vertical compact dark has deterministic hydration and Music contracts"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-integration.spec.ts",
+      "line": 64,
+      "column": 9
+    }
+  },
+  {
+    "id": "38a56111ea38a77710c5-bdf37bc78e2be03d6955",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-integration.spec.ts",
+      "Phase-9 Task-34 real score integration",
+      "static fail-open light has deterministic hydration and Music contracts"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-integration.spec.ts",
+      "line": 64,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-a811777fb563d0458698",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "the task-33 ScorePath review surface remains development-only"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 65,
+      "column": 5
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-0f64dc140a3248450bf0",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath hydration regression",
+      "zero hydration warnings · vertical-compact light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 130,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-734106439f123e6dd578",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath hydration regression",
+      "zero hydration warnings · vertical-compact dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 130,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-0c42c83353e9358c6dec",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath hydration regression",
+      "zero hydration warnings · origin vertical-compact"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 130,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-e69487569db4ec765357",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath hydration regression",
+      "zero hydration warnings · origin horizontal-enhanced"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 130,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-543e2f27f41c01e9a5dc",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-soft · vertical-wide · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-475b0ab824697c18b826",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-soft · vertical-wide · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-c42bc50737e47f03af4d",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-soft · vertical-compact · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-a26cb3b7ac96fcc19793",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-soft · vertical-compact · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-eadfcf6b1362238aa949",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-flowing · vertical-wide · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-92f616371011ebe7723a",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-flowing · vertical-wide · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-da6d2b412b11f6ba6e14",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-flowing · vertical-compact · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-df2c26c814ac5630cdaa",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-flowing · vertical-compact · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-48969f3ac6852a0335db",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "reduced motion retains the complete static score and usable scenes"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 309,
+      "column": 7
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-9a7a888c06788afc9ec9",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 360×640"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-84d135827b64f01bb8b5",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 375×844"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-5c9f70f3100345af6225",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 390×932"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-adcdd04f1cdf6f8e9213",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 412×640"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-25248a125a5b6826a7b0",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 414×844"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-a4faa325aea0a2a0f014",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 430×932"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-16554e3d8d84b6dcfc13",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "tablet and vertical-wide baselines remain intact"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 706,
+      "column": 7
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-b4e7069aaa549789c34e",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 real-origin review",
+      "horizontal-enhanced · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 775,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-8e85057e060675e51189",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 real-origin review",
+      "vertical-wide · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 775,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-3bdb876233adb96c495e",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 real-origin review",
+      "vertical-compact · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 775,
+      "column": 9
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-f6affe49c47c01d3787c",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "keeps the measured 1536x864 origin departure crossing-free"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 144,
+      "column": 9
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-dd18d7784d3ac3dcff3e",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "keeps the measured 1920x917 terminal return crossing-free"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 144,
+      "column": 9
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-82177a7d760a5a496684",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "keeps the measured 1920x1200 Overview exit crossing-free"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 144,
+      "column": 9
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-853adb671fadef7d9ea2",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "proves the live 13-scene rendered-clearance audit"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 167,
+      "column": 7
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-23d9c35023643cb8de3b",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "proves the shared Services and How It Works card interaction in rendered geometry"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 453,
+      "column": 7
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-1ee0b6075cfbe09d466c",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "preserves the accepted Family-A tablet and Launch-form clearances"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 948,
+      "column": 7
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-ab8390be65d5cf11740e",
+    "title": [
+      "",
+      "firefox",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "proves the rendered three-card Projects visits"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 1148,
+      "column": 7
+    }
+  },
+  {
+    "id": "38a56111ea38a77710c5-03f8d756d887283a4dbf",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-integration.spec.ts",
+      "Phase-9 Task-34 real score integration",
+      "horizontal enhanced dark has deterministic hydration and Music contracts"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-integration.spec.ts",
+      "line": 64,
+      "column": 9
+    }
+  },
+  {
+    "id": "38a56111ea38a77710c5-48ebef93df418434cf70",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-integration.spec.ts",
+      "Phase-9 Task-34 real score integration",
+      "vertical wide light has deterministic hydration and Music contracts"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-integration.spec.ts",
+      "line": 64,
+      "column": 9
+    }
+  },
+  {
+    "id": "38a56111ea38a77710c5-b8e05fa6046f6242f2be",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-integration.spec.ts",
+      "Phase-9 Task-34 real score integration",
+      "vertical compact dark has deterministic hydration and Music contracts"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-integration.spec.ts",
+      "line": 64,
+      "column": 9
+    }
+  },
+  {
+    "id": "38a56111ea38a77710c5-8b7c613c82d712c0f604",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-integration.spec.ts",
+      "Phase-9 Task-34 real score integration",
+      "static fail-open light has deterministic hydration and Music contracts"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-integration.spec.ts",
+      "line": 64,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-e68a2e200a9e64d08135",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "the task-33 ScorePath review surface remains development-only"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 65,
+      "column": 5
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-97f61d9492faf6da2f32",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath hydration regression",
+      "zero hydration warnings · vertical-compact light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 130,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-dff46b99d11498dd7b94",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath hydration regression",
+      "zero hydration warnings · vertical-compact dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 130,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-8cd5f955678a4433bf8b",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath hydration regression",
+      "zero hydration warnings · origin vertical-compact"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 130,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-f9091ba84f8410e4d0db",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath hydration regression",
+      "zero hydration warnings · origin horizontal-enhanced"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 130,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-ec0cf6c140bb14fda864",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-soft · vertical-wide · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-ac8de7d9d0c671ab3f61",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-soft · vertical-wide · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-ee7da5d6cba26385f473",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-soft · vertical-compact · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-a5dbe9d0c1f13e1660cc",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-soft · vertical-compact · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-db092b133fa357806bad",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-flowing · vertical-wide · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-4ff344bd3f2a8fa31750",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-flowing · vertical-wide · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-aed54fb410a388bf3995",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-flowing · vertical-compact · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-38d760f56271a1444695",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "organic-flowing · vertical-compact · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 185,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-226b27af0ce593372a2c",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 ScorePath task-33 candidate matrix",
+      "reduced motion retains the complete static score and usable scenes"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 309,
+      "column": 7
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-1763855e1d88b9072b03",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 360×640"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-a1d6cdef3982d0b8846b",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 375×844"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-85c00e4c4159427dafd3",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 390×932"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-ead7148895c2b37ea2a0",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 412×640"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-bc6e6a84bbdd0da42fbf",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 414×844"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-abb6427bb0f5d9a7f4e5",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "Organic Flowing compact real scenes fit 430×932"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 341,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-48d3e1c852198fb11a28",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 responsive refinement",
+      "tablet and vertical-wide baselines remain intact"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 706,
+      "column": 7
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-e4977371b49e33242554",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 real-origin review",
+      "horizontal-enhanced · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 775,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-c0db05bc96b605b8cf56",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 real-origin review",
+      "vertical-wide · light"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 775,
+      "column": 9
+    }
+  },
+  {
+    "id": "f231b7dfe5149a47a517-0ef3aeba907e40e1ba23",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-path-review.spec.ts",
+      "Phase-9 task-33 real-origin review",
+      "vertical-compact · dark"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-path-review.spec.ts",
+      "line": 775,
+      "column": 9
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-2bd002b06099916d072e",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "keeps the measured 1536x864 origin departure crossing-free"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 144,
+      "column": 9
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-3a163ab39c9c44e45bbf",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "keeps the measured 1920x917 terminal return crossing-free"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 144,
+      "column": 9
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-ad49f470a718d729f7cd",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "keeps the measured 1920x1200 Overview exit crossing-free"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 144,
+      "column": 9
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-cfd8502e6448b4679071",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "proves the live 13-scene rendered-clearance audit"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 167,
+      "column": 7
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-5f87c05fa1ca542a0271",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "proves the shared Services and How It Works card interaction in rendered geometry"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 453,
+      "column": 7
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-254fa1288a1c33ad4b4d",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "preserves the accepted Family-A tablet and Launch-form clearances"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 948,
+      "column": 7
+    }
+  },
+  {
+    "id": "bc2fd01a2aaef51d3033-ab566be3e86ddcf85043",
+    "title": [
+      "",
+      "webkit",
+      "phase09-score-refinement.spec.ts",
+      "Phase-9 human choreography refinement",
+      "proves the rendered three-card Projects visits"
+    ],
+    "location": {
+      "file": "/tmp/wflyer-systematic-audit-20260913/historical/tests/e2e/phase09-score-refinement.spec.ts",
+      "line": 1148,
+      "column": 7
+    }
+  }
+]

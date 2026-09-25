@@ -1,0 +1,2537 @@
+{
+  "projectionBeforeSha256": "150f38344676cf895461beef0a10109a6fa00fa698c34a3b1df44b73b4b32514",
+  "projectionAfterSha256": "5fda8a5f4c0767857cb95842d1c7e49b0ec230d248bad52f7bd33729a37b29ed",
+  "records": [
+    {
+      "id": "1440x900",
+      "mode": "horizontal-enhanced",
+      "branch": "application",
+      "segmentCountBefore": 339,
+      "segmentCountAfter": 339,
+      "changedKnots": [
+        {
+          "index": 292,
+          "before": {
+            "x": 1327.4975,
+            "y": 722.45
+          },
+          "after": {
+            "x": 1071.8,
+            "y": 722.45
+          }
+        }
+      ],
+      "affectedSegments": [
+        290,
+        291,
+        292,
+        293
+      ],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "beforeCrossings": [
+        {
+          "line": "wf-phase-9-task-34:horizontal-enhanced:application:staff:0",
+          "left": 886,
+          "right": 889,
+          "a": {
+            "x": 1047.978591534972,
+            "y": 747.2760247034289
+          },
+          "b": {
+            "x": 1033.254693392684,
+            "y": 747.9472416930982
+          },
+          "c": {
+            "x": 1033.7245789250096,
+            "y": 747.7288037728977
+          },
+          "d": {
+            "x": 1033.2476145892197,
+            "y": 748.0403760620882
+          }
+        }
+      ],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 6.396824642892523,
+      "maximumTangentVariationDeg": 4.010841335657483
+    },
+    {
+      "id": "1440x900",
+      "mode": "horizontal-enhanced",
+      "branch": "professional",
+      "segmentCountBefore": 250,
+      "segmentCountAfter": 250,
+      "changedKnots": [
+        {
+          "index": 122,
+          "before": {
+            "x": 13296.975714285712,
+            "y": 614.072747223702
+          },
+          "after": {
+            "x": 13296.975714285712,
+            "y": 612.9
+          }
+        },
+        {
+          "index": 123,
+          "before": {
+            "x": 13307.261428571428,
+            "y": 615.2623918682727
+          },
+          "after": {
+            "x": 13307.261428571428,
+            "y": 613.8
+          }
+        },
+        {
+          "index": 124,
+          "before": {
+            "x": 13317.547142857142,
+            "y": 615.3508256086762
+          },
+          "after": {
+            "x": 13317.547142857142,
+            "y": 614.6999999999999
+          }
+        },
+        {
+          "index": 125,
+          "before": {
+            "x": 13327.832857142856,
+            "y": 614.9491743913237
+          },
+          "after": {
+            "x": 13327.832857142856,
+            "y": 615.6
+          }
+        },
+        {
+          "index": 126,
+          "before": {
+            "x": 13338.11857142857,
+            "y": 615.0376081317272
+          },
+          "after": {
+            "x": 13338.11857142857,
+            "y": 616.5
+          }
+        },
+        {
+          "index": 127,
+          "before": {
+            "x": 13348.404285714285,
+            "y": 616.227252776298
+          },
+          "after": {
+            "x": 13348.404285714285,
+            "y": 617.4
+          }
+        },
+        {
+          "index": 129,
+          "before": {
+            "x": 13396.2218,
+            "y": 644.6190451695378
+          },
+          "after": {
+            "x": 13396.2218,
+            "y": 632.6190451695378
+          }
+        }
+      ],
+      "affectedSegments": [
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:6"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:9"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:10"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:10"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:6"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:9"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:10"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:10"
+        }
+      ],
+      "beforeCrossings": [],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 1.5304290073639835,
+      "maximumTangentVariationDeg": 1.93307022951382
+    },
+    {
+      "id": "1536x900",
+      "mode": "horizontal-enhanced",
+      "branch": "application",
+      "segmentCountBefore": 341,
+      "segmentCountAfter": 341,
+      "changedKnots": [
+        {
+          "index": 294,
+          "before": {
+            "x": 1413.8874999999998,
+            "y": 722.45
+          },
+          "after": {
+            "x": 1136.11,
+            "y": 722.45
+          }
+        }
+      ],
+      "affectedSegments": [
+        292,
+        293,
+        294,
+        295
+      ],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "beforeCrossings": [
+        {
+          "line": "wf-phase-9-task-34:horizontal-enhanced:application:staff:0",
+          "left": 887,
+          "right": 890,
+          "a": {
+            "x": 1108.7921027620328,
+            "y": 747.3982483712063
+          },
+          "b": {
+            "x": 1096.7531923153017,
+            "y": 748.0559298703018
+          },
+          "c": {
+            "x": 1097.9321198592843,
+            "y": 747.7884929793428
+          },
+          "d": {
+            "x": 1097.4613223215404,
+            "y": 748.114659837456
+          }
+        }
+      ],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 4.748528833393395,
+      "maximumTangentVariationDeg": 2.769588890863152
+    },
+    {
+      "id": "1536x900",
+      "mode": "horizontal-enhanced",
+      "branch": "professional",
+      "segmentCountBefore": 250,
+      "segmentCountAfter": 250,
+      "changedKnots": [
+        {
+          "index": 122,
+          "before": {
+            "x": 14132.605714285713,
+            "y": 614.072747223702
+          },
+          "after": {
+            "x": 14132.605714285713,
+            "y": 612.9
+          }
+        },
+        {
+          "index": 123,
+          "before": {
+            "x": 14142.891428571429,
+            "y": 615.2623918682727
+          },
+          "after": {
+            "x": 14142.891428571429,
+            "y": 613.8
+          }
+        },
+        {
+          "index": 124,
+          "before": {
+            "x": 14153.177142857143,
+            "y": 615.3508256086762
+          },
+          "after": {
+            "x": 14153.177142857143,
+            "y": 614.6999999999999
+          }
+        },
+        {
+          "index": 125,
+          "before": {
+            "x": 14163.462857142857,
+            "y": 614.9491743913237
+          },
+          "after": {
+            "x": 14163.462857142857,
+            "y": 615.6
+          }
+        },
+        {
+          "index": 126,
+          "before": {
+            "x": 14173.74857142857,
+            "y": 615.0376081317272
+          },
+          "after": {
+            "x": 14173.74857142857,
+            "y": 616.5
+          }
+        },
+        {
+          "index": 127,
+          "before": {
+            "x": 14184.034285714286,
+            "y": 616.227252776298
+          },
+          "after": {
+            "x": 14184.034285714286,
+            "y": 617.4
+          }
+        },
+        {
+          "index": 129,
+          "before": {
+            "x": 14242.6608,
+            "y": 645.3212957295378
+          },
+          "after": {
+            "x": 14242.6608,
+            "y": 633.3212957295378
+          }
+        }
+      ],
+      "affectedSegments": [
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:6"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:9"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:10"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:10"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:6"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:9"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:10"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:10"
+        }
+      ],
+      "beforeCrossings": [],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 1.845864056731489,
+      "maximumTangentVariationDeg": 2.1843785350058154
+    },
+    {
+      "id": "1920x917",
+      "mode": "horizontal-enhanced",
+      "branch": "application",
+      "segmentCountBefore": 341,
+      "segmentCountAfter": 341,
+      "changedKnots": [
+        {
+          "index": 294,
+          "before": {
+            "x": 1767.4875000000002,
+            "y": 730.95
+          },
+          "after": {
+            "x": 1409.39,
+            "y": 730.95
+          }
+        }
+      ],
+      "affectedSegments": [
+        292,
+        293,
+        294,
+        295
+      ],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:home:1"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:home:1"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "beforeCrossings": [
+        {
+          "line": "wf-phase-9-task-34:horizontal-enhanced:application:staff:0",
+          "left": 887,
+          "right": 890,
+          "a": {
+            "x": 1385.1642064239581,
+            "y": 755.9017755856654
+          },
+          "b": {
+            "x": 1369.9587385701127,
+            "y": 756.6062026489557
+          },
+          "c": {
+            "x": 1371.2121198592847,
+            "y": 756.2884929793427
+          },
+          "d": {
+            "x": 1370.7413223215408,
+            "y": 756.614659837456
+          }
+        }
+      ],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 3.296433441949085,
+      "maximumTangentVariationDeg": 2.1801656035793675
+    },
+    {
+      "id": "1920x917",
+      "mode": "horizontal-enhanced",
+      "branch": "professional",
+      "segmentCountBefore": 250,
+      "segmentCountAfter": 250,
+      "changedKnots": [
+        {
+          "index": 122,
+          "before": {
+            "x": 17475.345714285715,
+            "y": 625.632747223702
+          },
+          "after": {
+            "x": 17475.345714285715,
+            "y": 624.46
+          }
+        },
+        {
+          "index": 123,
+          "before": {
+            "x": 17485.63142857143,
+            "y": 626.8223918682728
+          },
+          "after": {
+            "x": 17485.63142857143,
+            "y": 625.36
+          }
+        },
+        {
+          "index": 124,
+          "before": {
+            "x": 17495.917142857143,
+            "y": 626.9108256086763
+          },
+          "after": {
+            "x": 17495.917142857143,
+            "y": 626.26
+          }
+        },
+        {
+          "index": 125,
+          "before": {
+            "x": 17506.20285714286,
+            "y": 626.5091743913238
+          },
+          "after": {
+            "x": 17506.20285714286,
+            "y": 627.1600000000001
+          }
+        },
+        {
+          "index": 126,
+          "before": {
+            "x": 17516.488571428574,
+            "y": 626.5976081317273
+          },
+          "after": {
+            "x": 17516.488571428574,
+            "y": 628.0600000000001
+          }
+        },
+        {
+          "index": 127,
+          "before": {
+            "x": 17526.774285714288,
+            "y": 627.787252776298
+          },
+          "after": {
+            "x": 17526.774285714288,
+            "y": 628.96
+          }
+        },
+        {
+          "index": 129,
+          "before": {
+            "x": 17628.5972,
+            "y": 657.4903120495379
+          },
+          "after": {
+            "x": 17628.5972,
+            "y": 645.4903120495379
+          }
+        }
+      ],
+      "affectedSegments": [
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:6"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:9"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:10"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:10"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:6"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:9"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:10"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:10"
+        }
+      ],
+      "beforeCrossings": [],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 1.166724276870804,
+      "maximumTangentVariationDeg": 1.373207046813362
+    },
+    {
+      "id": "1100x640",
+      "mode": "horizontal-enhanced",
+      "branch": "application",
+      "segmentCountBefore": 316,
+      "segmentCountAfter": 316,
+      "changedKnots": [
+        {
+          "index": 269,
+          "before": {
+            "x": 1272.56,
+            "y": 601.5999999999999
+          },
+          "after": {
+            "x": 906.28,
+            "y": 601.5999999999999
+          }
+        }
+      ],
+      "affectedSegments": [
+        267,
+        268,
+        269,
+        270
+      ],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-access:6"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-access:6"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-access:6"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-access:6"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "beforeCrossings": [],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 2.2192463807388574,
+      "maximumTangentVariationDeg": 1.4484353429402692
+    },
+    {
+      "id": "1100x640",
+      "mode": "horizontal-enhanced",
+      "branch": "professional",
+      "segmentCountBefore": 250,
+      "segmentCountAfter": 250,
+      "changedKnots": [
+        {
+          "index": 27,
+          "before": {
+            "x": 7617.619058909894,
+            "y": 392.405384992016
+          },
+          "after": {
+            "x": 7623.619058909894,
+            "y": 392.405384992016
+          }
+        },
+        {
+          "index": 34,
+          "before": {
+            "x": 7700.5,
+            "y": 556
+          },
+          "after": {
+            "x": 7712.5,
+            "y": 556
+          }
+        },
+        {
+          "index": 122,
+          "before": {
+            "x": 10209.357142857143,
+            "y": 437.03103293798785
+          },
+          "after": {
+            "x": 10209.357142857143,
+            "y": 435.8582857142858
+          }
+        },
+        {
+          "index": 123,
+          "before": {
+            "x": 10213.714285714286,
+            "y": 437.9789632968442
+          },
+          "after": {
+            "x": 10213.714285714286,
+            "y": 436.51657142857147
+          }
+        },
+        {
+          "index": 124,
+          "before": {
+            "x": 10218.07142857143,
+            "y": 437.8256827515335
+          },
+          "after": {
+            "x": 10218.07142857143,
+            "y": 437.1748571428572
+          }
+        },
+        {
+          "index": 125,
+          "before": {
+            "x": 10222.42857142857,
+            "y": 437.1823172484666
+          },
+          "after": {
+            "x": 10222.42857142857,
+            "y": 437.8331428571429
+          }
+        },
+        {
+          "index": 126,
+          "before": {
+            "x": 10226.785714285714,
+            "y": 437.0290367031559
+          },
+          "after": {
+            "x": 10226.785714285714,
+            "y": 438.4914285714286
+          }
+        },
+        {
+          "index": 127,
+          "before": {
+            "x": 10231.142857142857,
+            "y": 437.97696706201225
+          },
+          "after": {
+            "x": 10231.142857142857,
+            "y": 439.1497142857143
+          }
+        },
+        {
+          "index": 129,
+          "before": {
+            "x": 10264.21,
+            "y": 461.5347884015379
+          },
+          "after": {
+            "x": 10264.21,
+            "y": 449.5347884015379
+          }
+        }
+      ],
+      "affectedSegments": [
+        25,
+        26,
+        27,
+        28,
+        32,
+        33,
+        34,
+        35,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:6"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:9"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:10"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:10"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:6"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:9"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:10"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:10"
+        }
+      ],
+      "beforeCrossings": [
+        {
+          "line": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0",
+          "left": 102,
+          "right": 106,
+          "a": {
+            "x": 7588.204494103326,
+            "y": 393.144475407646
+          },
+          "b": {
+            "x": 7589.478230668056,
+            "y": 393.4016603918732
+          },
+          "c": {
+            "x": 7588.417390666722,
+            "y": 392.8154638017299
+          },
+          "d": {
+            "x": 7589.38495361737,
+            "y": 393.8892298685327
+          }
+        },
+        {
+          "line": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0",
+          "left": 495,
+          "right": 499,
+          "a": {
+            "x": 10200.30701878038,
+            "y": 459.3921382067053
+          },
+          "b": {
+            "x": 10201.281954582257,
+            "y": 459.459023496321
+          },
+          "c": {
+            "x": 10201.038074802631,
+            "y": 459.4123604235009
+          },
+          "d": {
+            "x": 10202.671949061049,
+            "y": 459.93840534061525
+          }
+        },
+        {
+          "line": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:0",
+          "left": 510,
+          "right": 523,
+          "a": {
+            "x": 10223.14932967395,
+            "y": 461.3282839721097
+          },
+          "b": {
+            "x": 10224.040229444658,
+            "y": 461.22388555136484
+          },
+          "c": {
+            "x": 10222.48384017633,
+            "y": 460.5091396402114
+          },
+          "d": {
+            "x": 10224.683150708832,
+            "y": 461.99921368100655
+          }
+        },
+        {
+          "line": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+          "left": 134,
+          "right": 138,
+          "a": {
+            "x": 7706.093963017895,
+            "y": 529.5877173809005
+          },
+          "b": {
+            "x": 7707.539263381804,
+            "y": 531.380091834371
+          },
+          "c": {
+            "x": 7706.363340992251,
+            "y": 529.9329734324133
+          },
+          "d": {
+            "x": 7714.276382664963,
+            "y": 530.7696906225082
+          }
+        },
+        {
+          "line": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8",
+          "left": 498,
+          "right": 508,
+          "a": {
+            "x": 10213.946783869766,
+            "y": 413.170138076299
+          },
+          "b": {
+            "x": 10216.141900477864,
+            "y": 413.85054519477023
+          },
+          "c": {
+            "x": 10215.92762042066,
+            "y": 413.83985221942544
+          },
+          "d": {
+            "x": 10216.531578514503,
+            "y": 413.7760121409329
+          }
+        }
+      ],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 2.1849851022565,
+      "maximumTangentVariationDeg": 3.2345842003802003
+    },
+    {
+      "id": "default-horizontal-enhanced",
+      "mode": "horizontal-enhanced",
+      "branch": "application",
+      "segmentCountBefore": 326,
+      "segmentCountAfter": 326,
+      "changedKnots": [
+        {
+          "index": 279,
+          "before": {
+            "x": 1652.0400000000002,
+            "y": 846
+          },
+          "after": {
+            "x": 1156.8,
+            "y": 846
+          }
+        }
+      ],
+      "affectedSegments": [
+        277,
+        278,
+        279,
+        280
+      ],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-access:6"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-access:6"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-access:6"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-access:6"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "beforeCrossings": [],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 5.028518474183405,
+      "maximumTangentVariationDeg": 3.4791542418147987
+    },
+    {
+      "id": "default-horizontal-enhanced",
+      "mode": "horizontal-enhanced",
+      "branch": "professional",
+      "segmentCountBefore": 250,
+      "segmentCountAfter": 250,
+      "changedKnots": [
+        {
+          "index": 122,
+          "before": {
+            "x": 13145.485714285713,
+            "y": 663.572747223702
+          },
+          "after": {
+            "x": 13145.485714285713,
+            "y": 662.4
+          }
+        },
+        {
+          "index": 123,
+          "before": {
+            "x": 13155.771428571428,
+            "y": 664.7623918682727
+          },
+          "after": {
+            "x": 13155.771428571428,
+            "y": 663.3
+          }
+        },
+        {
+          "index": 124,
+          "before": {
+            "x": 13166.057142857142,
+            "y": 664.8508256086762
+          },
+          "after": {
+            "x": 13166.057142857142,
+            "y": 664.1999999999999
+          }
+        },
+        {
+          "index": 125,
+          "before": {
+            "x": 13176.342857142856,
+            "y": 664.4491743913237
+          },
+          "after": {
+            "x": 13176.342857142856,
+            "y": 665.1
+          }
+        },
+        {
+          "index": 126,
+          "before": {
+            "x": 13186.62857142857,
+            "y": 664.5376081317272
+          },
+          "after": {
+            "x": 13186.62857142857,
+            "y": 666
+          }
+        },
+        {
+          "index": 127,
+          "before": {
+            "x": 13196.914285714285,
+            "y": 665.727252776298
+          },
+          "after": {
+            "x": 13196.914285714285,
+            "y": 666.9
+          }
+        },
+        {
+          "index": 129,
+          "before": {
+            "x": 13271.999999999998,
+            "y": 684.0531686895379
+          },
+          "after": {
+            "x": 13271.999999999998,
+            "y": 672.0531686895379
+          }
+        }
+      ],
+      "affectedSegments": [
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:6"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:9"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:10"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:10"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-process:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:6"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:9"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:10"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:10"
+        }
+      ],
+      "beforeCrossings": [],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 2.078016476066368,
+      "maximumTangentVariationDeg": 2.4511068794621327
+    },
+    {
+      "id": "default-vertical-wide",
+      "mode": "vertical-wide",
+      "branch": "application",
+      "segmentCountBefore": 203,
+      "segmentCountAfter": 203,
+      "changedKnots": [],
+      "affectedSegments": [],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:home:1"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-access:6"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:home:1"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-access:6"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "beforeCrossings": [],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 11.603246001779686,
+      "maximumTangentVariationDeg": 2.008130433855171
+    },
+    {
+      "id": "default-vertical-wide",
+      "mode": "vertical-wide",
+      "branch": "professional",
+      "segmentCountBefore": 179,
+      "segmentCountAfter": 179,
+      "changedKnots": [],
+      "affectedSegments": [],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:4"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-projects:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:5"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:6"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:7"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:7"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:4"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-projects:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:5"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:6"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:7"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:7"
+        }
+      ],
+      "beforeCrossings": [],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 11.404770653233854,
+      "maximumTangentVariationDeg": 1.8540039829953852
+    },
+    {
+      "id": "default-vertical-compact",
+      "mode": "vertical-compact",
+      "branch": "application",
+      "segmentCountBefore": 203,
+      "segmentCountAfter": 203,
+      "changedKnots": [],
+      "affectedSegments": [],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:home:1"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:home:1"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "beforeCrossings": [],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 16.514261294460507,
+      "maximumTangentVariationDeg": 5.961966388176355
+    },
+    {
+      "id": "default-vertical-compact",
+      "mode": "vertical-compact",
+      "branch": "professional",
+      "segmentCountBefore": 179,
+      "segmentCountAfter": 179,
+      "changedKnots": [],
+      "affectedSegments": [],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:4"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-projects:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:5"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-terminal:7"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:7"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:7"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:4"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-projects:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:5"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-terminal:7"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:7"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:7"
+        }
+      ],
+      "beforeCrossings": [],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 16.545004278558764,
+      "maximumTangentVariationDeg": 0.8285407268441745
+    },
+    {
+      "id": "default-static",
+      "mode": "static",
+      "branch": "application",
+      "segmentCountBefore": 203,
+      "segmentCountAfter": 203,
+      "changedKnots": [],
+      "affectedSegments": [],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:home:1"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-access:6"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:home:1"
+        },
+        {
+          "slotId": "application-overview:primary",
+          "zoneId": "notation:application-overview:2"
+        },
+        {
+          "slotId": "application-overview:reserved",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-how-it-works:primary",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-how-it-works:reserved",
+          "zoneId": "notation:application-how-it-works:3"
+        },
+        {
+          "slotId": "application-benefits:primary",
+          "zoneId": "notation:application-benefits:4"
+        },
+        {
+          "slotId": "application-benefits:reserved",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-demo:primary",
+          "zoneId": "notation:application-demo:5"
+        },
+        {
+          "slotId": "application-access:primary",
+          "zoneId": "notation:application-access:6"
+        },
+        {
+          "slotId": "application-access:reserved",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:primary",
+          "zoneId": "notation:application-terminal:7"
+        },
+        {
+          "slotId": "application-terminal:reserved",
+          "zoneId": "notation:application-terminal:7"
+        }
+      ],
+      "beforeCrossings": [],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 11.603246001779686,
+      "maximumTangentVariationDeg": 2.008130433855171
+    },
+    {
+      "id": "default-static",
+      "mode": "static",
+      "branch": "professional",
+      "segmentCountBefore": 179,
+      "segmentCountAfter": 179,
+      "changedKnots": [],
+      "affectedSegments": [],
+      "maxUnaffectedPointDelta": 0,
+      "maxUnaffectedTangentDelta": 0,
+      "mappingUnchanged": true,
+      "beforeGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:4"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-projects:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:5"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:6"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:7"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:7"
+        }
+      ],
+      "afterGroups": [
+        {
+          "slotId": "home:primary",
+          "zoneId": "notation:professional-about:2"
+        },
+        {
+          "slotId": "professional-about:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:primary",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-services:reserved",
+          "zoneId": "notation:professional-services:3"
+        },
+        {
+          "slotId": "professional-process:primary",
+          "zoneId": "notation:professional-process:4"
+        },
+        {
+          "slotId": "professional-process:reserved",
+          "zoneId": "notation:professional-projects:5"
+        },
+        {
+          "slotId": "professional-projects:primary",
+          "zoneId": "notation:professional-projects:5"
+        },
+        {
+          "slotId": "professional-contact:primary",
+          "zoneId": "notation:professional-contact:6"
+        },
+        {
+          "slotId": "professional-terminal:primary",
+          "zoneId": "notation:professional-terminal:7"
+        },
+        {
+          "slotId": "professional-terminal:reserved",
+          "zoneId": "notation:professional-terminal:7"
+        }
+      ],
+      "beforeCrossings": [],
+      "afterCrossings": [],
+      "centerCrossings": [],
+      "forbiddenEventCount": 0,
+      "maximumTangentAngleDeg": 11.404770653233854,
+      "maximumTangentVariationDeg": 1.8540039829953852
+    }
+  ],
+  "schema": "wflyer-stage1-batch2-repair-diagnostics/v1",
+  "head": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+  "authorization": "ADR-047 / ASM-IMP-DEC-011",
+  "status": "Six local repairs pass deterministic validation; final matrix STOP on separate Projects clearance at 1100x640",
+  "defects": [
+    "ASM-SI-019",
+    "ASM-SI-020",
+    "ASM-SI-021",
+    "ASM-SI-022",
+    "ASM-SI-023",
+    "ASM-SI-024"
+  ],
+  "fixturePath": "tests/fixtures/story-score/stage1-batch2-measurements.json",
+  "fixtureSha256": "61f26ce52ebffcee4b3751d41b856be60d97c38e1e63ba3dd4a97ad6d569f9e3",
+  "method": {
+    "centerSampleCount": 2049,
+    "staffSampleCount": 1025,
+    "rightIndexMinimum": "left + 2",
+    "orientationProductThreshold": -1e-07,
+    "localitySamplesPerUnaffectedSegment": 33,
+    "splineSupportForChangedKnot": "segments i-2, i-1, i, i+1",
+    "scope": "same local chapter envelopes across inputs, no viewport-specific condition or validator exception"
+  },
+  "projectionPatchFromBatch2Start": "--- projection-before-batch2.ts\n+++ projection-after-batch2.ts\n@@ -452,6 +452,7 @@\n function horizontalProfessionalBridge(\n   start: Vec2,\n   target: Vec2,\n+  servicesDeparture = false,\n ): readonly Vec2[] {\n   const deltaX = target.x - start.x;\n \n@@ -468,7 +469,10 @@\n         y:\n           start.y +\n           (target.y - start.y) * smoothstep(progress) +\n-          Math.sin(Math.PI * progress) * 22,\n+          Math.sin(Math.PI * progress) * 22 -\n+          // ASM-SI-024: retain a shallow first step leaving Services' short\n+          // trailing shelf before the existing Process descent resumes.\n+          (servicesDeparture && progress === 0.18 ? HORIZONTAL_STAFF_SPACE : 0),\n       }),\n     ),\n   );\n@@ -513,8 +517,12 @@\n   const remainingWidth = target.x - boundary.descentEndX;\n \n   return Object.freeze([\n-    ...descent,\n-    Object.freeze({ x: boundary.descentEndX, y: boundary.safeY }),\n+    // ASM-SI-020/021: open the two inner-offset folds while retaining\n+    // the measured corridor, origin endpoint and About shelf.\n+    ...descent.map((point, index) => index === 1\n+      ? Object.freeze({ ...point, x: point.x + HORIZONTAL_STAFF_SPACE / 2 })\n+      : point),\n+    Object.freeze({ x: boundary.descentEndX + HORIZONTAL_STAFF_SPACE, y: boundary.safeY }),\n     Object.freeze({\n       x: boundary.descentEndX + remainingWidth * 0.34,\n       y: boundary.safeY,\n@@ -654,6 +662,7 @@\n   start: Vec2,\n   target: Vec2,\n   laneY: number,\n+  launchArrival = false,\n ): readonly Vec2[] {\n   const exitsDownward = laneY > start.y;\n   const arrivesFromBelow = laneY > target.y;\n@@ -686,7 +695,12 @@\n   }).slice(1);\n   const lane = [0.25, 0.5, 0.75].map((progress) =>\n     Object.freeze({\n-      x: start.x + (arrivalCenterX - start.x) * progress,\n+      // ASM-SI-019: settle the long return before the inner staff enters\n+      // Launch's half-turn. Only its last straight approach knot changes.\n+      x: launchArrival && progress === 0.75\n+        ? Math.min(start.x + (arrivalCenterX - start.x) * progress,\n+          arrivalCenterX + HORIZONTAL_STAFF_SPACE * 3)\n+        : start.x + (arrivalCenterX - start.x) * progress,\n       y: laneY,\n     }),\n   );\n@@ -1885,6 +1899,9 @@\n           postShelfEndX,\n           fallbackInteractionY,\n           fallbackInteractionY + descent * 0.45,\n+          // ASM-SI-022/023: the short trailing shelf cannot carry an offset\n+          // sinusoidal fold. Keep its endpoints and straight inclination.\n+          0,\n         ),\n         semanticSlotIds: Object.freeze([]),\n       }),\n@@ -2291,6 +2308,7 @@\n   viewportHeight: number,\n   connectorIndex: number,\n   branch: StoryScoreBranch,\n+  targetChapterId: StoryChapterId,\n   connectorKind?: HorizontalNotationShelf[\"connectorKind\"],\n   connectorValleyY?: number,\n   connectorInteraction?: HorizontalNotationShelf[\"connectorInteraction\"],\n@@ -2342,8 +2360,9 @@\n           connectorKind,\n         )\n       : target.x > start.x\n-      ? horizontalProfessionalBridge(start, target)\n-      : horizontalApplicationReturn(start, target, applicationLaneY)),\n+      ? horizontalProfessionalBridge(start, target, targetChapterId === \"professional-process\")\n+      : horizontalApplicationReturn(start, target, applicationLaneY,\n+          targetChapterId === \"application-access\")),\n   );\n }\n \n@@ -2461,6 +2480,7 @@\n         viewportHeight,\n         branch === \"application\" ? applicationReturnIndex : index,\n         branch,\n+        chapterId,\n         shelf.connectorKind,\n         shelf.connectorValleyY,\n         shelf.connectorInteraction,\n",
+  "validation": {
+    "baseline-tests.log": "\n RUN  v4.1.11 /home/davi-benucci/\u00c1rea de trabalho/WFlyer\n\n \u276f |unit| tests/unit/story/story-score-batch2-geometry.test.ts (4 tests | 4 failed) 5183ms\n     \u00d7 has globally clean center and staff paths at '1440x900' 1520ms\n     \u00d7 has globally clean center and staff paths at '1536x900' 1214ms\n     \u00d7 has globally clean center and staff paths at '1920x917' 1533ms\n     \u00d7 has globally clean center and staff paths at '1100x640' 912ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 4 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  |unit| tests/unit/story/story-score-batch2-geometry.test.ts > Stage-1 registered Batch-2 measured geometry > has globally clean center and staff paths at '1440x900'\nAssertionError: expected [ { branch: 'application', \u2026(7) } ] to deeply equal []\n\n- Expected\n+ Received\n\n- []\n+ [\n+   {\n+     \"a\": {\n+       \"x\": 1047.978591534972,\n+       \"y\": 747.2760247034289,\n+     },\n+     \"b\": {\n+       \"x\": 1033.254693392684,\n+       \"y\": 747.9472416930982,\n+     },\n+     \"branch\": \"application\",\n+     \"c\": {\n+       \"x\": 1033.7245789250096,\n+       \"y\": 747.7288037728977,\n+     },\n+     \"d\": {\n+       \"x\": 1033.2476145892197,\n+       \"y\": 748.0403760620882,\n+     },\n+     \"left\": 886,\n+     \"line\": \"wf-phase-9-task-34:horizontal-enhanced:application:staff:0\",\n+     \"right\": 889,\n+   },\n+ ]\n\n \u276f tests/unit/story/story-score-batch2-geometry.test.ts:17:23\n     15|         .map((crossing) => ({ branch: branch.branch, line: \"center\", .\u2026\n     16|     ]);\n     17|     expect(crossings).toEqual([]);\n       |                       ^\n     18|     for (const branch of Object.values(projection.branches)) {\n     19|       expect(branch.path.continuity.maximumPointGap).toBe(0);\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/4]\u23af\n\n FAIL  |unit| tests/unit/story/story-score-batch2-geometry.test.ts > Stage-1 registered Batch-2 measured geometry > has globally clean center and staff paths at '1536x900'\nAssertionError: expected [ { branch: 'application', \u2026(7) } ] to deeply equal []\n\n- Expected\n+ Received\n\n- []\n+ [\n+   {\n+     \"a\": {\n+       \"x\": 1108.7921027620328,\n+       \"y\": 747.3982483712063,\n+     },\n+     \"b\": {\n+       \"x\": 1096.7531923153017,\n+       \"y\": 748.0559298703018,\n+     },\n+     \"branch\": \"application\",\n+     \"c\": {\n+       \"x\": 1097.9321198592843,\n+       \"y\": 747.7884929793428,\n+     },\n+     \"d\": {\n+       \"x\": 1097.4613223215404,\n+       \"y\": 748.114659837456,\n+     },\n+     \"left\": 887,\n+     \"line\": \"wf-phase-9-task-34:horizontal-enhanced:application:staff:0\",\n+     \"right\": 890,\n+   },\n+ ]\n\n \u276f tests/unit/story/story-score-batch2-geometry.test.ts:17:23\n     15|         .map((crossing) => ({ branch: branch.branch, line: \"center\", .\u2026\n     16|     ]);\n     17|     expect(crossings).toEqual([]);\n       |                       ^\n     18|     for (const branch of Object.values(projection.branches)) {\n     19|       expect(branch.path.continuity.maximumPointGap).toBe(0);\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[2/4]\u23af\n\n FAIL  |unit| tests/unit/story/story-score-batch2-geometry.test.ts > Stage-1 registered Batch-2 measured geometry > has globally clean center and staff paths at '1920x917'\nAssertionError: expected [ { branch: 'application', \u2026(7) } ] to deeply equal []\n\n- Expected\n+ Received\n\n- []\n+ [\n+   {\n+     \"a\": {\n+       \"x\": 1385.1642064239581,\n+       \"y\": 755.9017755856654,\n+     },\n+     \"b\": {\n+       \"x\": 1369.9587385701127,\n+       \"y\": 756.6062026489557,\n+     },\n+     \"branch\": \"application\",\n+     \"c\": {\n+       \"x\": 1371.2121198592847,\n+       \"y\": 756.2884929793427,\n+     },\n+     \"d\": {\n+       \"x\": 1370.7413223215408,\n+       \"y\": 756.614659837456,\n+     },\n+     \"left\": 887,\n+     \"line\": \"wf-phase-9-task-34:horizontal-enhanced:application:staff:0\",\n+     \"right\": 890,\n+   },\n+ ]\n\n \u276f tests/unit/story/story-score-batch2-geometry.test.ts:17:23\n     15|         .map((crossing) => ({ branch: branch.branch, line: \"center\", .\u2026\n     16|     ]);\n     17|     expect(crossings).toEqual([]);\n       |                       ^\n     18|     for (const branch of Object.values(projection.branches)) {\n     19|       expect(branch.path.continuity.maximumPointGap).toBe(0);\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[3/4]\u23af\n\n FAIL  |unit| tests/unit/story/story-score-batch2-geometry.test.ts > Stage-1 registered Batch-2 measured geometry > has globally clean center and staff paths at '1100x640'\nAssertionError: expected [ \u2026(5) ] to deeply equal []\n\n- Expected\n+ Received\n\n- []\n+ [\n+   {\n+     \"a\": {\n+       \"x\": 7588.204494103326,\n+       \"y\": 393.144475407646,\n+     },\n+     \"b\": {\n+       \"x\": 7589.478230668056,\n+       \"y\": 393.4016603918732,\n+     },\n+     \"branch\": \"professional\",\n+     \"c\": {\n+       \"x\": 7588.417390666722,\n+       \"y\": 392.8154638017299,\n+     },\n+     \"d\": {\n+       \"x\": 7589.38495361737,\n+       \"y\": 393.8892298685327,\n+     },\n+     \"left\": 102,\n+     \"line\": \"wf-phase-9-task-34:horizontal-enhanced:professional:staff:0\",\n+     \"right\": 106,\n+   },\n+   {\n+     \"a\": {\n+       \"x\": 10200.30701878038,\n+       \"y\": 459.3921382067053,\n+     },\n+     \"b\": {\n+       \"x\": 10201.281954582257,\n+       \"y\": 459.459023496321,\n+     },\n+     \"branch\": \"professional\",\n+     \"c\": {\n+       \"x\": 10201.038074802631,\n+       \"y\": 459.4123604235009,\n+     },\n+     \"d\": {\n+       \"x\": 10202.671949061049,\n+       \"y\": 459.93840534061525,\n+     },\n+     \"left\": 495,\n+     \"line\": \"wf-phase-9-task-34:horizontal-enhanced:professional:staff:0\",\n+     \"right\": 499,\n+   },\n+   {\n+     \"a\": {\n+       \"x\": 10223.14932967395,\n+       \"y\": 461.3282839721097,\n+     },\n+     \"b\": {\n+       \"x\": 10224.040229444658,\n+       \"y\": 461.22388555136484,\n+     },\n+     \"branch\": \"professional\",\n+     \"c\": {\n+       \"x\": 10222.48384017633,\n+       \"y\": 460.5091396402114,\n+     },\n+     \"d\": {\n+       \"x\": 10224.683150708832,\n+       \"y\": 461.99921368100655,\n+     },\n+     \"left\": 510,\n+     \"line\": \"wf-phase-9-task-34:horizontal-enhanced:professional:staff:0\",\n+     \"right\": 523,\n+   },\n+   {\n+     \"a\": {\n+       \"x\": 7706.093963017895,\n+       \"y\": 529.5877173809005,\n+     },\n+     \"b\": {\n+       \"x\": 7707.539263381804,\n+       \"y\": 531.380091834371,\n+     },\n+     \"branch\": \"professional\",\n+     \"c\": {\n+       \"x\": 7706.363340992251,\n+       \"y\": 529.9329734324133,\n+     },\n+     \"d\": {\n+       \"x\": 7714.276382664963,\n+       \"y\": 530.7696906225082,\n+     },\n+     \"left\": 134,\n+     \"line\": \"wf-phase-9-task-34:horizontal-enhanced:professional:staff:8\",\n+     \"right\": 138,\n+   },\n+   {\n+     \"a\": {\n+       \"x\": 10213.946783869766,\n+       \"y\": 413.170138076299,\n+     },\n+     \"b\": {\n+       \"x\": 10216.141900477864,\n+       \"y\": 413.85054519477023,\n+     },\n+     \"branch\": \"professional\",\n+     \"c\": {\n+       \"x\": 10215.92762042066,\n+       \"y\": 413.83985221942544,\n+     },\n+     \"d\": {\n+       \"x\": 10216.531578514503,\n+       \"y\": 413.7760121409329,\n+     },\n+     \"left\": 498,\n+     \"line\": \"wf-phase-9-task-34:horizontal-enhanced:professional:staff:8\",\n+     \"right\": 508,\n+   },\n+ ]\n\n \u276f tests/unit/story/story-score-batch2-geometry.test.ts:17:23\n     15|         .map((crossing) => ({ branch: branch.branch, line: \"center\", .\u2026\n     16|     ]);\n     17|     expect(crossings).toEqual([]);\n       |                       ^\n     18|     for (const branch of Object.values(projection.branches)) {\n     19|       expect(branch.path.continuity.maximumPointGap).toBe(0);\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[4/4]\u23af\n\n\n Test Files  1 failed (1)\n      Tests  4 failed (4)\n   Start at  14:24:32\n   Duration  9.02s (transform 1.28s, setup 354ms, import 1.47s, tests 5.18s, environment 1.73s)\n\n",
+    "focused-tests.log": "\n RUN  v4.1.11 /home/davi-benucci/\u00c1rea de trabalho/WFlyer\n\n\n Test Files  4 passed (4)\n      Tests  51 passed (51)\n   Start at  14:31:26\n   Duration  73.89s (transform 1.35s, setup 2.12s, import 2.30s, tests 59.34s, environment 8.75s)\n\n",
+    "lint.log": "$ eslint . --max-warnings=0\n",
+    "typecheck.log": "$ next typegen && tsc --noEmit\nGenerating route types...\n\u2713 Types generated successfully\n",
+    "full-unit.log": "\n RUN  v4.1.11 /home/davi-benucci/\u00c1rea de trabalho/WFlyer\n\n\n Test Files  98 passed (98)\n      Tests  778 passed (778)\n   Start at  14:43:54\n   Duration  105.42s (transform 1.65s, setup 8.46s, import 4.62s, tests 42.53s, environment 39.92s)\n\n",
+    "historical-integrity.log": "Historical integrity PASS: 4 manifest/seal pairs and 64 payloads byte-identical to Stage 0 and frozen Phase 9\n",
+    "final-matrix.log": "[WebServer] (node:241216) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n\n[WebServer] $ next dev --hostname 127.0.0.1\n\n[WebServer] (node:241229) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n\n[WebServer] (node:241246) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n\n[WebServer] (node:241303) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n\n[WebServer] (node:241315) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n\n\nRunning 132 tests using 1 worker\n\n(node:241334) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\n\n[1/132] [chromium] \u203a tests/e2e/assembly-stage1-geometry.spec.ts:18:3 \u203a Stage-1 complete footprints and Home entries 1440x900 horizontal-enhanced\n[2/132] [chromium] \u203a tests/e2e/assembly-stage1-geometry.spec.ts:18:3 \u203a Stage-1 complete footprints and Home entries 1536x900 horizontal-enhanced\n[3/132] [chromium] \u203a tests/e2e/assembly-stage1-geometry.spec.ts:18:3 \u203a Stage-1 complete footprints and Home entries 1920x917 horizontal-enhanced\n[4/132] [chromium] \u203a tests/e2e/assembly-stage1-geometry.spec.ts:18:3 \u203a Stage-1 complete footprints and Home entries 1100x640 horizontal-enhanced\n  1) [chromium] \u203a tests/e2e/assembly-stage1-geometry.spec.ts:18:3 \u203a Stage-1 complete footprints and Home entries 1100x640 horizontal-enhanced \n\n    Error: expect(received).toBe(expected) // Object.is equality\n\n    Expected: \"CLEAR\"\n    Received: \"COLLISION\"\n\n      57 |       for (const visit of projects.visits) {\n      58 |         expect(visit.measurementSource).toBe(\"dom-measured\");\n    > 59 |         expect(visit.classification).toBe(\"CLEAR\");\n         |                                      ^\n      60 |         expect(visit.minimumClearance).toBeGreaterThanOrEqual(12);\n      61 |         expect(visit.distanceFromRenderedCenter).toBeLessThanOrEqual(1);\n      62 |         expect(visit.notationSafe).toBe(true);\n        at /home/davi-benucci/\u00c1rea de trabalho/WFlyer/tests/e2e/assembly-stage1-geometry.spec.ts:59:38\n\n    attachment #2: screenshot (image/png) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    test-results/stage1-batch2-final/e2e-assembly-stage1-geomet-51f09-100x640-horizontal-enhanced-chromium/test-failed-1.png\n    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n    attachment #3: video (video/webm) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    test-results/stage1-batch2-final/e2e-assembly-stage1-geomet-51f09-100x640-horizontal-enhanced-chromium/video.webm\n    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n    Error Context: test-results/stage1-batch2-final/e2e-assembly-stage1-geomet-51f09-100x640-horizontal-enhanced-chromium/error-context.md\n\n\nTesting stopped early after 1 maximum allowed failures.\n\n  1 failed\n    [chromium] \u203a tests/e2e/assembly-stage1-geometry.spec.ts:18:3 \u203a Stage-1 complete footprints and Home entries 1100x640 horizontal-enhanced \n  128 did not run\n  3 passed (31.1s)\n  1 error was not a part of any test, see above for details\n"
+  },
+  "stopDiagnostic": "stage-1-projects-clearance-stop-diagnostics.json"
+}

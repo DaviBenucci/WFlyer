@@ -1,54 +1,52 @@
 ## ADDED Requirements
 
-### Requirement: Mobile header is compact, semantic, and operable
-Vertical W_Flyer modes SHALL use one compact sticky row containing the real
-W_Flyer/Home anchor, the active semantic chapter label, a navigation-sheet
-trigger, and theme control, with interactive targets at least 44 pixels. The
-chapter label SHALL derive from stable semantic ownership, SHALL be empty at
-Home because W_Flyer represents Home, and SHALL NOT claim a destination before
-ownership reaches it.
+### Requirement: Navigation exposes only surviving destinations
+Header, mobile sheet, footer, landmarks, accessible names, focus order, sitemap,
+and public route metadata SHALL expose Home and Professional/Portfolio
+destinations only.
 
-#### Scenario: Story ownership changes from Home to a chapter
-- **WHEN** canonical semantic progress transfers to a narrative chapter
-- **THEN** the compact header exposes that chapter accessibly with a non-color-only active indication while retaining one-row operability
+#### Scenario: A user opens site navigation
+- **WHEN** navigation links are enumerated visually or by assistive technology
+- **THEN** no removed institutional Application destination or external-access CTA is present
 
-#### Scenario: Demo is the active narrative chapter
-- **WHEN** semantic ownership reaches Application Demo
-- **THEN** Demo may appear as the active header label even though it is not a dedicated navigation-sheet destination
+### Requirement: Removed routes fail closed
+The removed institutional URLs SHALL use the existing accessible,
+non-indexable Not Found behavior with no redirect or hidden compatibility page.
 
-### Requirement: Mobile navigation is a Professional-first modal sheet
-The complete mobile destination set SHALL appear in a dedicated sheet or
-drawer ordered Home, Professional destinations, then Application destinations.
-While open it SHALL contain focus, close on Escape, suppress background
-interaction, and lock document scrolling only for the open interval. Active
-destination semantics SHALL use `aria-current` where applicable and a visual
-indicator not based on color alone.
+#### Scenario: A removed URL is requested
+- **WHEN** `/aplicacao-wflyer` or its former child URL is loaded
+- **THEN** the response is 404, no removed UI is exposed, and robots metadata is non-indexable
 
-#### Scenario: Keyboard user opens and closes without navigating
-- **WHEN** the user opens the sheet, traverses its controls, and presses Escape
-- **THEN** focus stays inside while open, background interaction and scroll remain unavailable only while open, the sheet closes, and focus returns deterministically to the trigger
+### Requirement: Focus and scroll-lock ownership is scoped
+Navigation and transition owners SHALL restore focus, release inert state and
+scroll locks, and remove listeners and observers on completion, cancellation,
+responsive rebuild, failure, and unmount.
 
-### Requirement: Menu interaction is isolated from canonical story state
-Opening, closing, theme-changing, or interacting with the sheet SHALL NOT
-change story progress, active semantic chapter, Composer output, or score
-Projection. Selecting a destination SHALL close the sheet and reuse the
-canonical story navigation controller; no separate mobile teleport or motion
-clock is permitted.
+#### Scenario: A traversal is interrupted
+- **WHEN** user input cancels an active destination traversal
+- **THEN** native scrolling and operable focus resume from actual progress without an orphan lock or trap
 
-#### Scenario: User changes theme while the sheet is open
-- **WHEN** the theme control is activated from an open navigation sheet
-- **THEN** the sheet and semantic story state remain stable and neither score composition nor geometry is regenerated
+### Requirement: Interaction regions remain stable and reachable
+Interaction-heavy landmarks SHALL provide stable regions under canonical
+spatial contract §8. Contact SHALL preserve readable/operable fields, statuses,
+values, security and focus while lateral camera advancement holds. Native
+vertical reachability and deliberate exit SHALL remain available without traps.
 
-#### Scenario: User selects a destination
-- **WHEN** an enabled sheet destination is activated
-- **THEN** the sheet closes, canonical navigation begins from actual story progress, and destination focus follows the existing canonical focus contract after settlement
+#### Scenario: A reader edits and submits Contact
+- **WHEN** text entry, IME, validation, submission or virtual-keyboard resize occurs
+- **THEN** the focused control and required messages remain reachable/visible without lateral drift or discarded values
+- **AND** form success/error does not automatically navigate
 
-### Requirement: Navigation teardown and restoration are recoverable
-Leaving mobile-navigation mode while the sheet is open SHALL close it and
-release focus containment, inert/background suppression, and scroll lock before
-the next header mode is established. Back, Forward, refresh, deep link, and
-browser restoration SHALL resolve directly to a settled semantic header state.
+#### Scenario: A reader leaves or returns to the interaction span
+- **WHEN** native scrolling or explicit navigation changes the landmark
+- **THEN** traversal resumes safely, retained form state follows its existing lifecycle and no stale lock/focus trap remains
 
-#### Scenario: Viewport leaves mobile mode with the sheet open
-- **WHEN** a material responsive change selects a non-mobile header
-- **THEN** the sheet closes idempotently, all modal resources are released, and the new header reflects actual semantic ownership without story replay
+### Requirement: Partial visibility never prevents access
+Required content and controls SHALL become readable/operable through native
+traversal, keyboard or assistive navigation. Focus SHALL NOT remain obscured
+by camera clipping, sticky header, safe areas or the virtual keyboard.
+
+#### Scenario: Keyboard navigation reaches an offscreen station
+- **WHEN** a required control receives focus
+- **THEN** its station is made visible through the same story mapping and the control can be operated
+- **AND** passive scroll does not steal focus or require a horizontal swipe

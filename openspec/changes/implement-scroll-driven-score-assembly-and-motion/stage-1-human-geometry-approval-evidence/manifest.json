@@ -1,0 +1,384 @@
+{
+  "schema": "wflyer-stage1-human-geometry-evidence/v1",
+  "status": "READY_FOR_HUMAN_REVIEW",
+  "humanGeometryApproval": "PENDING",
+  "activeChange": "implement-scroll-driven-score-assembly-and-motion",
+  "repositoryHead": "40e6ae1a8996c53ed2ec372c47f16bc073d6cee9",
+  "topology": "HOME / ORIGIN → PROFESSIONAL / PORTFOLIO",
+  "route": "/__visual-lab/story/motion",
+  "capturedAt": "2026-09-23T14:38:05.240Z",
+  "itemCount": 11,
+  "browserCounts": {
+    "chromium": 9,
+    "firefox": 1,
+    "webkit": 1
+  },
+  "coverage": {
+    "horizontalEnhancedIncluded": true,
+    "safeFallbackIncluded": true,
+    "tabletIncluded": true,
+    "mobileIncluded": true,
+    "reducedMotionIncluded": true
+  },
+  "selectionPolicy": "Representative subset of the validated 63-observation manifest; no matrix rerun and no subjective approval inference.",
+  "items": [
+    {
+      "evidence_id": "HGE-001",
+      "browser": "chromium",
+      "browser_version": "153.0.8010.12",
+      "viewport_width": 1536,
+      "viewport_height": 900,
+      "route": "/__visual-lab/story/motion",
+      "chapter": "home",
+      "responsive_mode": "horizontal-enhanced",
+      "projects_capacity_result": "PASS",
+      "projects_capacity_reasons": "none",
+      "safe_fallback": false,
+      "motion_preference": "no-preference",
+      "source_validation_observation_id": "CHROMIUM-GEO-02",
+      "purpose": "Home / single spatial origin",
+      "capture_framing": "chapter-viewport",
+      "interaction_state": null,
+      "stable_post_readiness": {
+        "bootstrap_state": "REVEALED",
+        "bootstrap_cover_present": false,
+        "lifecycle": "mounted",
+        "page_error_count": 0
+      },
+      "supporting_automated_facts": {
+        "composer_fingerprint": "fnv1a32:039bce10",
+        "horizontal_overflow": false,
+        "path_self_intersections": 0,
+        "staff_self_intersections": 0
+      },
+      "screenshot": "screenshots/hge-001-chromium-home-1536x900.png",
+      "screenshot_sha256": "37266a411546972a78c588b9aababc83fc3c985cd52b0d8e5be763d4d4123e94"
+    },
+    {
+      "evidence_id": "HGE-002",
+      "browser": "chromium",
+      "browser_version": "153.0.8010.12",
+      "viewport_width": 1536,
+      "viewport_height": 900,
+      "route": "/__visual-lab/story/motion",
+      "chapter": "professional-process",
+      "responsive_mode": "horizontal-enhanced",
+      "projects_capacity_result": "PASS",
+      "projects_capacity_reasons": "none",
+      "safe_fallback": false,
+      "motion_preference": "no-preference",
+      "source_validation_observation_id": "CHROMIUM-LIFE-01",
+      "purpose": "Normal desktop Professional progression",
+      "capture_framing": "chapter-viewport",
+      "interaction_state": null,
+      "stable_post_readiness": {
+        "bootstrap_state": "REVEALED",
+        "bootstrap_cover_present": false,
+        "lifecycle": "mounted",
+        "page_error_count": 0
+      },
+      "supporting_automated_facts": {
+        "composer_fingerprint": "fnv1a32:039bce10",
+        "horizontal_overflow": false,
+        "path_self_intersections": 0,
+        "staff_self_intersections": 0
+      },
+      "screenshot": "screenshots/hge-002-chromium-professional-process-1536x900.png",
+      "screenshot_sha256": "4f4cb419c8ec7bc0b7eccc2b410ae48e50f60eff82494698b5de7c10c369f772"
+    },
+    {
+      "evidence_id": "HGE-003",
+      "browser": "webkit",
+      "browser_version": "26.6",
+      "viewport_width": 1536,
+      "viewport_height": 900,
+      "route": "/__visual-lab/story/motion",
+      "chapter": "professional-projects",
+      "responsive_mode": "horizontal-enhanced",
+      "projects_capacity_result": "PASS",
+      "projects_capacity_reasons": "none",
+      "safe_fallback": false,
+      "motion_preference": "no-preference",
+      "source_validation_observation_id": "WEBKIT-PC-04",
+      "purpose": "Projects horizontal-enhanced and representative WebKit rendering",
+      "capture_framing": "chapter-viewport",
+      "interaction_state": null,
+      "stable_post_readiness": {
+        "bootstrap_state": "REVEALED",
+        "bootstrap_cover_present": false,
+        "lifecycle": "mounted",
+        "page_error_count": 0
+      },
+      "supporting_automated_facts": {
+        "composer_fingerprint": "fnv1a32:039bce10",
+        "horizontal_overflow": false,
+        "path_self_intersections": 0,
+        "staff_self_intersections": 0
+      },
+      "screenshot": "screenshots/hge-003-webkit-professional-projects-1536x900.png",
+      "screenshot_sha256": "4bfb9f392b27c6ce9c2887e557b5834c6d33398dce4e9b4092f33558422336ec"
+    },
+    {
+      "evidence_id": "HGE-004",
+      "browser": "chromium",
+      "browser_version": "153.0.8010.12",
+      "viewport_width": 1920,
+      "viewport_height": 917,
+      "route": "/__visual-lab/story/motion",
+      "chapter": "professional-projects",
+      "responsive_mode": "vertical-wide",
+      "projects_capacity_result": "INSUFFICIENT_CAPACITY",
+      "projects_capacity_reasons": "projects-protected-clearance-or-clip",
+      "safe_fallback": true,
+      "motion_preference": "no-preference",
+      "source_validation_observation_id": "CHROMIUM-PC-05",
+      "purpose": "Projects whole-story capacity fallback",
+      "capture_framing": "chapter-viewport",
+      "interaction_state": null,
+      "stable_post_readiness": {
+        "bootstrap_state": "REVEALED",
+        "bootstrap_cover_present": false,
+        "lifecycle": "mounted",
+        "page_error_count": 0
+      },
+      "supporting_automated_facts": {
+        "composer_fingerprint": "fnv1a32:039bce10",
+        "horizontal_overflow": false,
+        "path_self_intersections": 0,
+        "staff_self_intersections": 0
+      },
+      "screenshot": "screenshots/hge-004-chromium-professional-projects-1920x917.png",
+      "screenshot_sha256": "acda65aaacdd34ae60a8cb41a5d58b4f624cdde66932fdb44011e3d73b171946"
+    },
+    {
+      "evidence_id": "HGE-005",
+      "browser": "chromium",
+      "browser_version": "153.0.8010.12",
+      "viewport_width": 1100,
+      "viewport_height": 640,
+      "route": "/__visual-lab/story/motion",
+      "chapter": "professional-projects",
+      "responsive_mode": "vertical-wide",
+      "projects_capacity_result": "INSUFFICIENT_CAPACITY",
+      "projects_capacity_reasons": "projects-protected-clearance-or-clip",
+      "safe_fallback": true,
+      "motion_preference": "no-preference",
+      "source_validation_observation_id": "CHROMIUM-PC-06",
+      "purpose": "Registered capacity/breakpoint boundary candidate",
+      "capture_framing": "projects-fan-start",
+      "interaction_state": null,
+      "stable_post_readiness": {
+        "bootstrap_state": "REVEALED",
+        "bootstrap_cover_present": false,
+        "lifecycle": "mounted",
+        "page_error_count": 0
+      },
+      "supporting_automated_facts": {
+        "composer_fingerprint": "fnv1a32:039bce10",
+        "horizontal_overflow": false,
+        "path_self_intersections": 0,
+        "staff_self_intersections": 0
+      },
+      "screenshot": "screenshots/hge-005-chromium-professional-projects-1100x640.png",
+      "screenshot_sha256": "77586fd38f594a2da74bef134f77a539854827f15fc0024dd79624bc941e8ae3"
+    },
+    {
+      "evidence_id": "HGE-006",
+      "browser": "chromium",
+      "browser_version": "153.0.8010.12",
+      "viewport_width": 900,
+      "viewport_height": 1024,
+      "route": "/__visual-lab/story/motion",
+      "chapter": "professional-projects",
+      "responsive_mode": "vertical-wide",
+      "projects_capacity_result": null,
+      "projects_capacity_reasons": null,
+      "safe_fallback": false,
+      "motion_preference": "no-preference",
+      "source_validation_observation_id": "CHROMIUM-GEO-05",
+      "purpose": "Tablet composition",
+      "capture_framing": "chapter-viewport",
+      "interaction_state": null,
+      "stable_post_readiness": {
+        "bootstrap_state": "REVEALED",
+        "bootstrap_cover_present": false,
+        "lifecycle": "mounted",
+        "page_error_count": 0
+      },
+      "supporting_automated_facts": {
+        "composer_fingerprint": "fnv1a32:039bce10",
+        "horizontal_overflow": false,
+        "path_self_intersections": 0,
+        "staff_self_intersections": 0
+      },
+      "screenshot": "screenshots/hge-006-chromium-professional-projects-900x1024.png",
+      "screenshot_sha256": "9e903fdc4d87965c7c922586492036b4f401141ce2f5c9334bfe25901576c8bd"
+    },
+    {
+      "evidence_id": "HGE-007",
+      "browser": "chromium",
+      "browser_version": "153.0.8010.12",
+      "viewport_width": 390,
+      "viewport_height": 844,
+      "route": "/__visual-lab/story/motion",
+      "chapter": "professional-projects",
+      "responsive_mode": "vertical-compact",
+      "projects_capacity_result": null,
+      "projects_capacity_reasons": null,
+      "safe_fallback": false,
+      "motion_preference": "no-preference",
+      "source_validation_observation_id": "CHROMIUM-GEO-06",
+      "purpose": "Mobile composition",
+      "capture_framing": "chapter-viewport",
+      "interaction_state": null,
+      "stable_post_readiness": {
+        "bootstrap_state": "REVEALED",
+        "bootstrap_cover_present": false,
+        "lifecycle": "mounted",
+        "page_error_count": 0
+      },
+      "supporting_automated_facts": {
+        "composer_fingerprint": "fnv1a32:039bce10",
+        "horizontal_overflow": false,
+        "path_self_intersections": 0,
+        "staff_self_intersections": 0
+      },
+      "screenshot": "screenshots/hge-007-chromium-professional-projects-390x844.png",
+      "screenshot_sha256": "2e80cae8da7e25dff7f29fb0817612e4dd429d445f466eee88fd3d51fadee552"
+    },
+    {
+      "evidence_id": "HGE-008",
+      "browser": "chromium",
+      "browser_version": "153.0.8010.12",
+      "viewport_width": 1536,
+      "viewport_height": 900,
+      "route": "/__visual-lab/story/motion",
+      "chapter": "professional-projects",
+      "responsive_mode": "horizontal-enhanced",
+      "projects_capacity_result": "PASS",
+      "projects_capacity_reasons": "none",
+      "safe_fallback": false,
+      "motion_preference": "no-preference",
+      "source_validation_observation_id": "CHROMIUM-PC-02",
+      "purpose": "Projects keyboard-focus geometry",
+      "capture_framing": "chapter-viewport",
+      "interaction_state": {
+        "active": true,
+        "itemTransform": "matrix(1.025, 0, 0, 1.025, 0, -17.6)",
+        "itemZIndex": "13",
+        "outlineStyle": "solid",
+        "outlineWidth": "4px"
+      },
+      "stable_post_readiness": {
+        "bootstrap_state": "REVEALED",
+        "bootstrap_cover_present": false,
+        "lifecycle": "mounted",
+        "page_error_count": 0
+      },
+      "supporting_automated_facts": {
+        "composer_fingerprint": "fnv1a32:039bce10",
+        "horizontal_overflow": false,
+        "path_self_intersections": 0,
+        "staff_self_intersections": 0
+      },
+      "screenshot": "screenshots/hge-008-chromium-professional-projects-1536x900.png",
+      "screenshot_sha256": "44017f5dcdb7da56ebc6a3475178c5a93c7ed7dc82fd79b86c8cf14eee0e1300"
+    },
+    {
+      "evidence_id": "HGE-009",
+      "browser": "firefox",
+      "browser_version": "155.0",
+      "viewport_width": 1536,
+      "viewport_height": 900,
+      "route": "/__visual-lab/story/motion",
+      "chapter": "professional-contact",
+      "responsive_mode": "vertical-wide",
+      "projects_capacity_result": "INSUFFICIENT_CAPACITY",
+      "projects_capacity_reasons": "projects-protected-clearance-or-clip",
+      "safe_fallback": true,
+      "motion_preference": "no-preference",
+      "source_validation_observation_id": "FIREFOX-GEO-02",
+      "purpose": "Contact geometry and representative Firefox rendering",
+      "capture_framing": "chapter-viewport",
+      "interaction_state": null,
+      "stable_post_readiness": {
+        "bootstrap_state": "REVEALED",
+        "bootstrap_cover_present": false,
+        "lifecycle": "mounted",
+        "page_error_count": 0
+      },
+      "supporting_automated_facts": {
+        "composer_fingerprint": "fnv1a32:039bce10",
+        "horizontal_overflow": false,
+        "path_self_intersections": 0,
+        "staff_self_intersections": 0
+      },
+      "screenshot": "screenshots/hge-009-firefox-professional-contact-1536x900.png",
+      "screenshot_sha256": "f7a5e9f583e9ccb3a9216760d45137ced435f56d7870c3ebe0f6483888d1c7bd"
+    },
+    {
+      "evidence_id": "HGE-010",
+      "browser": "chromium",
+      "browser_version": "153.0.8010.12",
+      "viewport_width": 1536,
+      "viewport_height": 900,
+      "route": "/__visual-lab/story/motion",
+      "chapter": "professional-terminal",
+      "responsive_mode": "horizontal-enhanced",
+      "projects_capacity_result": "PASS",
+      "projects_capacity_reasons": "none",
+      "safe_fallback": false,
+      "motion_preference": "no-preference",
+      "source_validation_observation_id": "CHROMIUM-GEO-02",
+      "purpose": "Professional terminal and global-footer handoff",
+      "capture_framing": "chapter-viewport",
+      "interaction_state": null,
+      "stable_post_readiness": {
+        "bootstrap_state": "REVEALED",
+        "bootstrap_cover_present": false,
+        "lifecycle": "mounted",
+        "page_error_count": 0
+      },
+      "supporting_automated_facts": {
+        "composer_fingerprint": "fnv1a32:039bce10",
+        "horizontal_overflow": false,
+        "path_self_intersections": 0,
+        "staff_self_intersections": 0
+      },
+      "screenshot": "screenshots/hge-010-chromium-professional-terminal-1536x900.png",
+      "screenshot_sha256": "78e0f297ce6864664faf8f3c178d60f96eb84d90e737dedfc81460101b63d57e"
+    },
+    {
+      "evidence_id": "HGE-011",
+      "browser": "chromium",
+      "browser_version": "153.0.8010.12",
+      "viewport_width": 1440,
+      "viewport_height": 900,
+      "route": "/__visual-lab/story/motion",
+      "chapter": "professional-projects",
+      "responsive_mode": "static",
+      "projects_capacity_result": null,
+      "projects_capacity_reasons": null,
+      "safe_fallback": false,
+      "motion_preference": "reduce",
+      "source_validation_observation_id": "CHROMIUM-GEO-07",
+      "purpose": "Reduced Motion static Projects presentation",
+      "capture_framing": "chapter-viewport",
+      "interaction_state": null,
+      "stable_post_readiness": {
+        "bootstrap_state": "REVEALED",
+        "bootstrap_cover_present": false,
+        "lifecycle": "mounted",
+        "page_error_count": 0
+      },
+      "supporting_automated_facts": {
+        "composer_fingerprint": "fnv1a32:039bce10",
+        "horizontal_overflow": false,
+        "path_self_intersections": 0,
+        "staff_self_intersections": 0
+      },
+      "screenshot": "screenshots/hge-011-chromium-professional-projects-1440x900.png",
+      "screenshot_sha256": "723a786115a880c08a520d67b3fe09e589da018b72865f09a8cb46383a8d6725"
+    }
+  ]
+}

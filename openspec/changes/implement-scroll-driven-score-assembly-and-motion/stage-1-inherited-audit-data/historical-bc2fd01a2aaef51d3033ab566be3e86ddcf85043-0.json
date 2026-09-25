@@ -1,0 +1,133 @@
+{
+  "connectorEventCounts": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "maximumVisitTangentDeg": 1.043916,
+  "pathSelfIntersections": 0,
+  "scorePointerEvents": "none",
+  "scoreZIndex": 1,
+  "sceneZIndex": 2,
+  "staffLineSelfIntersections": 0,
+  "visits": [
+    {
+      "cardSurfaceAlpha": 0,
+      "cardSurfaceHasBackgroundImage": true,
+      "classification": "CLEAR",
+      "declaredCardRect": {
+        "height": 610.43,
+        "left": 16713.63,
+        "top": 151.41,
+        "width": 313.2
+      },
+      "distanceFromDeclaredAnchor": 0.803,
+      "localTangentAngleDeg": 0.557,
+      "measurementSource": "dom-measured",
+      "minimumClearance": 17.739,
+      "nearestPathPoint": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:canonical:65",
+        "x": 16870.864,
+        "y": 804.334
+      },
+      "nearestStaffPoint": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:canonical:65",
+        "x": 16775.512,
+        "y": 779.942
+      },
+      "notationSafe": true,
+      "projectIndex": 1,
+      "renderedBounds": {
+        "bottom": 761.843,
+        "height": 610.435,
+        "left": 16713.634,
+        "right": 17026.838,
+        "top": 151.408,
+        "width": 313.204
+      },
+      "visitAnchor": {
+        "x": 16870.23,
+        "y": 803.84
+      }
+    },
+    {
+      "cardSurfaceAlpha": 0,
+      "cardSurfaceHasBackgroundImage": true,
+      "classification": "CLEAR",
+      "declaredCardRect": {
+        "height": 599.52,
+        "left": 17045.39,
+        "top": 150.23,
+        "width": 289.89
+      },
+      "distanceFromDeclaredAnchor": 0.596,
+      "localTangentAngleDeg": 0.602,
+      "measurementSource": "dom-measured",
+      "minimumClearance": 17.857,
+      "nearestPathPoint": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:canonical:65",
+        "x": 17190.664,
+        "y": 792.247
+      },
+      "nearestStaffPoint": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:canonical:65",
+        "x": 17126.77,
+        "y": 767.967
+      },
+      "notationSafe": true,
+      "projectIndex": 2,
+      "renderedBounds": {
+        "bottom": 749.75,
+        "height": 599.516,
+        "left": 17045.391,
+        "right": 17335.281,
+        "top": 150.234,
+        "width": 289.891
+      },
+      "visitAnchor": {
+        "x": 17190.335,
+        "y": 791.75
+      }
+    },
+    {
+      "cardSurfaceAlpha": 0,
+      "cardSurfaceHasBackgroundImage": true,
+      "classification": "CLEAR",
+      "declaredCardRect": {
+        "height": 610.43,
+        "left": 17353.83,
+        "top": 151.4,
+        "width": 313.2
+      },
+      "distanceFromDeclaredAnchor": 0.518,
+      "localTangentAngleDeg": 0.558,
+      "measurementSource": "dom-measured",
+      "minimumClearance": 17.8,
+      "nearestPathPoint": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:4:canonical:65",
+        "x": 17510.569,
+        "y": 804.329
+      },
+      "nearestStaffPoint": {
+        "id": "wf-phase-9-task-34:horizontal-enhanced:professional:staff:8:canonical:65",
+        "x": 17437.631,
+        "y": 779.999
+      },
+      "notationSafe": true,
+      "projectIndex": 3,
+      "renderedBounds": {
+        "bottom": 761.839,
+        "height": 610.435,
+        "left": 17353.834,
+        "right": 17667.038,
+        "top": 151.404,
+        "width": 313.204
+      },
+      "visitAnchor": {
+        "x": 17510.43,
+        "y": 803.83
+      }
+    }
+  ]
+}
