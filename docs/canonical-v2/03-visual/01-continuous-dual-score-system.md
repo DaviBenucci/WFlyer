@@ -1,4 +1,10 @@
-# Continuous Dual-Score Visual System
+# Continuous Score Visual System — historical dual-score baseline
+
+> **Portfolio-only authority:** ADR-053 / `ASM-IMP-DEC-017` supersedes the
+> bidirectional and Application-specific portions below. The active successor
+> has one Home origin and one continuous Professional score. This predecessor
+> geometry remains only as Phase-9 provenance; it does not authorize a second
+> branch, left-side reservation, Application segment, or related validator.
 
 ## Visual principle
 

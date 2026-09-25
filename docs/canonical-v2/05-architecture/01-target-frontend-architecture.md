@@ -24,9 +24,6 @@ src/components/score/
 
 src/components/persona/
   PersonaRig, PersonaEasterEggController
-
-src/components/pages/application-demo/
-  ApplicationDemoDevice
 ```
 
 Exact placement may adapt to repository conventions, but pure story/music models must not be embedded inside React components.
@@ -42,7 +39,6 @@ native scroll → story progress → timeline/active chapter/hash/header
 Local UI state:
 
 - Contact form;
-- demo state machine;
 - mobile menu;
 - theme;
 - Persona optional controller.
@@ -73,6 +69,7 @@ Detailed pages remain server-renderable independent surfaces. The immersive land
 
 ## Migration pattern
 
-Build v2 in parallel/dev lab, validate, cut over `/`, then remove legacy
-components after rollback evidence. Parallel Phase-4 work must not alter public
-`/` behavior before that cutover.
+The portfolio-only successor retains the development labs needed for validation,
+but the public and lab story compositions share the same Home → Professional
+topology. Removed institutional Application modules are not compatibility
+surfaces.

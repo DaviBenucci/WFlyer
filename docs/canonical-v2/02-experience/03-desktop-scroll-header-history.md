@@ -1,8 +1,16 @@
 # Desktop Scroll, Header Traversal, URL, and History
 
+> ADR-057 / ASM-IMP-DEC-020 and
+> [Continuous Spatial Story §7](01-global-story-architecture.md#7-header-hashes-history-and-focus)
+> define current destinations as semantic landmark entry anchors, independent
+> of structural start/DOM center. Recognizable arrival and continued content
+> reachability replace whole-chapter viewport fit. Header is an optional shortcut.
+
+
 ## Native scroll
 
-- `scrollTop` is the source of truth.
+- Native scroll is the source of truth; the initial shared input mapping uses
+  `scrollTop`, independently of projected camera direction.
 - No global wheel/touch `preventDefault()`.
 - No required chapter snapping.
 - Trackpad inertia and scrollbar dragging remain native.
@@ -23,15 +31,11 @@ Header order is explicit and independent of physical X position, active
 progress, timeline order, or branch direction:
 
 ```text
-Aplicação → Como funciona → Benefícios → Lançamento
-W_Flyer / Home
-Sobre → Serviços → Processo → Projetos → Contato
+W_Flyer / Home → Sobre → Serviços → Processo → Projetos → Contato
 ```
 
-Demonstration remains in the master story but is intentionally absent from the
-header. `Lançamento` resolves the stable final Application content chapter and
-its current `PRELAUNCH` scene. Adding these semantic targets changes neither
-native-scroll traversal ownership nor timing/history/cancellation policy.
+These semantic targets change neither native-scroll traversal ownership nor
+timing/history/cancellation policy.
 
 ## Cancellation/supersession
 

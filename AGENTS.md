@@ -58,13 +58,13 @@ Do not add Anime.js, Framer Motion, React Spring, Lenis, a smooth-scroll library
 
 ## 5. Scroll and motion rules
 
-- Native vertical scroll is the canonical story progress source.
-- Desktop horizontal movement is progressive enhancement.
+- Native scroll is the canonical story progress source; input axis and camera direction are separate.
+- ADR-057 / ASM-IMP-DEC-020 and [Continuous Spatial Story](docs/canonical-v2/02-experience/01-global-story-architecture.md) govern one shared story, landmark spans, viewport-as-camera and capability-adaptive presentation. Portrait uses primary native vertical input and readable local reflow; desktop defaults to the same native-scroll mapping.
 - Never use global `wheel` or `touchmove` `preventDefault()` to drive the story.
 - Header traversal animates the same native scroll position and master timeline; it does not use a parallel animation state.
 - Maximum extreme header traversal duration is 3.0 seconds.
 - User input cancels/supersedes automated traversal.
-- Reduced motion uses the vertical static story.
+- Reduced motion preserves the same landmarks/content with settled or short/immediate transitions; the semantic vertical document is the safe baseline.
 - Every GSAP timeline, ScrollTrigger, observer, listener, timer, and frame loop has explicit ownership and cleanup.
 
 ## 6. Visual asset rules
@@ -115,6 +115,19 @@ Rules:
 - If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
+
+## AI Model Routing
+
+For substantial Codex execution, follow:
+
+`docs/.ai/AI_MODEL_ROUTING_POLICY_v2.0.0.md`
+
+The policy defines canonical model selection, automatic upgrade/downgrade
+gates, anti-loop behavior, failure handoffs, and model-switch continuation
+contracts.
+
+Project-specific prompts may narrow these rules but MUST NOT silently weaken
+their escalation, stop, repository-safety, or handoff requirements.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

@@ -1,0 +1,52 @@
+policy:
+  id: AI-MRP-001
+  version: 2.0.0
+
+routing_classes:
+  ROUTINE_LOW_RISK:
+    preferred_model: OPENAI_GPT_6_LUNA
+    reasoning_profile: HIGH
+    fallback_models: []
+    human_authorization_required: false
+  BOUNDED_IMPLEMENTATION:
+    preferred_model: OPENAI_GPT_6_SOL
+    reasoning_profile: HIGH
+    fallback_models: []
+    human_authorization_required: false
+  COMPLEX_DIAGNOSIS:
+    preferred_model: OPENAI_GPT_6_ASTRA
+    reasoning_profile: HIGH
+    fallback_models: []
+    human_authorization_required: false
+  ARCHITECTURE_GOVERNANCE:
+    preferred_model: OPENAI_GPT_6_ASTRA
+    reasoning_profile: ULTRA
+    fallback_models: []
+    human_authorization_required: false
+  HUMAN_DECISION:
+    preferred_model: null
+    reasoning_profile: null
+    fallback_models: []
+    human_authorization_required: true
+
+models:
+  OPENAI_GPT_6_SOL:
+    display_name: GPT-6 Sol
+    provider: openai
+    lifecycle: active
+    eligible_routing_classes:
+      - BOUNDED_IMPLEMENTATION
+  OPENAI_GPT_6_LUNA:
+    display_name: GPT-6 Luna
+    provider: openai
+    lifecycle: active
+    eligible_routing_classes:
+      - ROUTINE_LOW_RISK
+  OPENAI_GPT_6_ASTRA:
+    display_name: GPT-6 Astra
+    provider: openai
+    lifecycle: active
+    eligible_routing_classes:
+      - COMPLEX_DIAGNOSIS
+      - ARCHITECTURE_GOVERNANCE
+

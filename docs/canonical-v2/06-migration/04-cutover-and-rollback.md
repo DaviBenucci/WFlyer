@@ -1,5 +1,9 @@
 # Cutover and Rollback
 
+> Former bidirectional readiness bullets below are historical predecessor
+> criteria. ADR-053 / `ASM-IMP-DEC-017` requires portfolio-only validation for
+> any future cutover; production remains unauthorized.
+
 ## Parallel build
 
 Develop the music system and story foundation in isolated/dev-only surfaces first. Preserve the legacy public landing until the applicable gates pass.

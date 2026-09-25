@@ -4,11 +4,6 @@
 
 ```text
 /#home
-/#aplicacao
-/#como-funciona
-/#beneficios
-/#demonstracao
-/#lancamento
 /#sobre
 /#servicos
 /#processo
@@ -18,54 +13,36 @@
 
 `/` without a valid hash starts at Home after readiness positioning.
 
-## Detailed routes retained
+## Public routes
 
 ```text
 /
-/aplicacao-wflyer
-/aplicacao-wflyer/como-funciona
-/aplicacao-wflyer/beneficios
 /sobre
 /servicos
 /processo
-/portfolio
 /contato
+/servicos/criacao-de-sites
+/servicos/criacao-de-aplicacoes
+/servicos/integracoes
+/servicos/solucoes-sob-medida
+/politica-de-privacidade
+/politica-de-cookies
+/termos-de-uso
+/acessibilidade
 ```
 
-Service detail routes and legal routes remain.
+The software-application service route is a generic professional service and is
+not an institutional product branch. Unknown/nonpublic service slugs fail
+closed as non-indexable 404 responses. The former `/portfolio` listing and
+`/portfolio/[slug]` details are no longer public routes under ADR-056; they
+also fail closed as non-indexable 404 responses. Project-detail IA and URLs
+are deferred without a replacement destination.
 
-`/portfolio` retains the stable URL in this release; public labels use `Projetos`.
-Phase 3 adds only allowlisted project details beneath that stable namespace as
-`/portfolio/[slug]`. Unknown or nonpublic project slugs fail closed as
-non-indexable `404` responses and never enter the sitemap. A future
-`/projetos` URL migration still requires separate explicit approval and
-redirect/SEO planning.
-
-## Relationship between landing and detailed routes
-
-- Landing: concise narrative, visual movement, conversion sequence.
-- Detailed route: full readable content, direct link, independent server rendering, SEO/sharing, no dependency on master timeline.
-- Landing cards/secondary links may open detailed routes with native navigation.
+The removed `/aplicacao-wflyer` URLs use the existing Not Found behavior. No
+redirect or compatibility page is authorized.
 
 ## Header targets
 
-Application group:
-
-- Aplicação
-- Como funciona
-- Benefícios
-- Lançamento
-
-Professional group:
-
-- Sobre
-- Serviços
-- Processo
-- Projetos
-- Contato
-
-The central W_Flyer symbol targets Home. Header order is this explicit semantic
-manifest and is never inferred from physical X position, story progress, or the
-Application branch's reversed desktop travel. Demonstration remains a story
-chapter without a dedicated header item. `Lançamento` targets the stable final
-Application content chapter in its current PRELAUNCH state.
+Home is central. The surviving targets are Sobre, Serviços, Processo, Projetos,
+and Contato. The header uses semantic manifest order and the same native-scroll
+story position; it never infers order from physical X coordinates.

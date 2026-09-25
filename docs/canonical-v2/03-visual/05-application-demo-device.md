@@ -1,4 +1,9 @@
-# APP-04 Application Demo Device
+# APP-04 Application Demo Device — historical, superseded scope
+
+> **Status:** non-normative historical design record. ADR-053 /
+> `ASM-IMP-DEC-017` removes this device and its chapter from the active
+> institutional website. Retain this file only as predecessor provenance; it
+> creates no current route, asset, validation, or implementation requirement.
 
 ## Purpose
 

@@ -1,5 +1,10 @@
 # Legacy Test Migration Map
 
+> **Portfolio-only status:** ADR-053 / `ASM-IMP-DEC-017` supersedes all
+> Application-branch replacement targets below. Equivalent Professional and
+> successor Stage-1 coverage now exists; branch-only suites are removed rather
+> than kept dormant.
+
 ## Replace after v2 equivalents exist
 
 | Legacy coverage | Why obsolete | Required v2 replacement |
@@ -9,7 +14,7 @@
 | `tests/motion/score-transitions.motion.spec.ts` | route overlay transitions | native-scroll, header traversal, cancellation, history, cleanup |
 | `tests/e2e/phase05-navigation.spec.ts` | route chapter lifecycle | story scroll + detailed-route independence |
 | `tests/e2e/score-continuity.spec.ts` old per-route continuity | continuous branch score | segment seam/ScorePath/semantic stability |
-| `phase06-application-demo` tests/snapshots | interactive DOM tablet | video state machine/replay/error/reduced motion |
+| `phase06-application-demo` tests/snapshots | removed institutional branch | removed after portfolio-only route and accessibility replacements passed |
 | `phase07` intro fixed-time assertions | fixed 5.6s authority | readiness, positioning, timeout, skip, deep links |
 | old home visual snapshots | click/CTA branch Home | scroll-primary Home/score origin |
 

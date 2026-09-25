@@ -6,13 +6,13 @@ These wireframes define scope/composition only. Approved visual assets, score pa
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────────┐
-│ Application   How it works   Benefits       [W_Flyer]   About Services ...│
+│ [W_Flyer]   About   Services   Process   Projects   Contact                │
 │                                                                            │
-│ APPLICATION W_FLYER            [CLEF / ORIGIN]       PORTFOLIO & SERVICES │
-│ short proposition              two scores emerge      short proposition    │
+│                    [CLEF / ORIGIN]       PORTFOLIO & SERVICES              │
+│                    one score continues    short proposition                │
 │                                                                            │
-│        ╭═══════════════════════╯ ╰══════════════════════════════╮           │
-│                     TWO PATHS, ONE ORIGIN                       │           │
+│                     ╰══════════════════════════════╮                        │
+│                       ONE PATH, ONE ORIGIN                                 │
 │                         scroll cue                              │           │
 └────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -38,20 +38,6 @@ These wireframes define scope/composition only. Approved visual assets, score pa
 │             ╱ CARD 2        (hover/focus card rises/foregrounds)           │
 │         ╱ CARD 1                                                         │
 │ ═════════════ score continues behind/around the fan ══════════════════════ │
-└────────────────────────────────────────────────────────────────────────────┘
-```
-
-## Desktop Demo
-
-```text
-┌────────────────────────────────────────────────────────────────────────────┐
-│ DEMONSTRATION                                                              │
-│ concise framing                     ┌───────────────────────────────┐       │
-│ score guides attention              │      TABLET / VIDEO            │       │
-│ ═══════════════════════╮            │  [replay only after ended]     │       │
-│                        ╰═══════════▶ │                               │       │
-│                                      └───────────────────────────────┘       │
-│                         score resumes toward Access                         │
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -84,16 +70,6 @@ These wireframes define scope/composition only. Approved visual assets, score pa
 [PROJECTS STACK]
   ║
 [CONTACT]
-  ║ final barline / visual transition
-[APPLICATION]
-  ║
-[HOW]
-  ║
-[BENEFITS]
-  ║
-[DEMO]
-  ║
-[ACCESS W_FLYER]
   ║ final barline
 [GLOBAL FOOTER]
 ```

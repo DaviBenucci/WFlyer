@@ -1,5 +1,8 @@
 # Header em partitura
 
+> Historical predecessor design record. ADR-053 and ADR-056 supersede its
+> former branch/route targets for the active portfolio-only story.
+
 ## Anatomia desktop
 
 ```text

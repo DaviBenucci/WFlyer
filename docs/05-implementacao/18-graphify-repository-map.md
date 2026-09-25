@@ -7,7 +7,8 @@
 **Phase 09 closure refresh:** 2026-08-03
 **Phase 09 Node-only closure refresh:** 2026-08-10
 **Post-Phase-8 maintenance refresh:** 2026-08-29
-**Graphify:** `0.9.51`
+**Tooling maintenance:** 2026-09-10
+**Graphify:** `0.9.57`
 **Mode:** normal, undirected graph
 **Analyzed root:** W_Flyer institutional-site repository
 
@@ -42,7 +43,7 @@ The corpus excludes:
 - non-canonical rasters, audio, video, and fonts.
 
 Files detected as sensitive are omitted by Graphify and require separate
-review; secrets must never be forced into the graph. Graphify 0.9.51
+review; secrets must never be forced into the graph. Graphify 0.9.57
 deliberately reinjects only `graphify-out/memory/*.md` into its feedback loop
 despite the broader exclusion. This local exception is validated separately
 and does not admit cache, JSON, HTML, raw queries, or other outputs as sources.
@@ -346,10 +347,10 @@ stylesheet dependency.
   normative evidence.
 - Semantic subagent extraction does not expose token counts to the current
   orchestrator, so recorded cost remains zero/unknown rather than estimated.
-- The active installation is Graphify `0.9.51` through `uv`; that owner was
+- The active installation is Graphify `0.9.57` through `uv`; that owner was
   preserved during the patch upgrade.
 - The repository Graphify skill and supported user skill locations are aligned
-  with `0.9.51`; the repository post-commit/post-checkout hooks and merge driver
+  with `0.9.57`; the repository post-commit/post-checkout hooks and merge driver
   are installed.
 - This map represents the local snapshot above. Later structural changes still
   require `scripts/graphify-repository.sh update`, validation, and checksums.

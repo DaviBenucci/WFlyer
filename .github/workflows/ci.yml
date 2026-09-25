@@ -44,7 +44,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
         with:
-          version: 11.24.0
+          version: 11.26.0
           run_install: false
 
       - name: Configure Node.js
@@ -61,7 +61,7 @@ jobs:
         run: pnpm validate:dependencies
 
       - name: Validate OpenSpec
-        run: pnpm dlx @fission-ai/openspec@1.11.0 validate --all --strict --no-interactive
+        run: pnpm dlx @fission-ai/openspec@1.13.0 validate --all --strict --no-interactive
 
       - name: Lint
         run: pnpm lint
@@ -91,7 +91,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
         with:
-          version: 11.24.0
+          version: 11.26.0
           run_install: false
 
       - name: Configure Node.js
@@ -125,7 +125,7 @@ jobs:
     name: Browser, accessibility and visual tests
     runs-on: ubuntu-24.04
     container:
-      image: mcr.microsoft.com/playwright:v1.62.1-noble@sha256:dcc5531e97840b9b5e794f2814476b21571c5124a3fca2267d73041f56e7580e
+      image: mcr.microsoft.com/playwright:v1.63.0-noble@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27
       options: --ipc=host
     timeout-minutes: 60
     env:
@@ -141,7 +141,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
         with:
-          version: 11.24.0
+          version: 11.26.0
           run_install: false
 
       - name: Configure Node.js
@@ -187,18 +187,18 @@ jobs:
           test "${ID}" = "ubuntu"
           test "${VERSION_ID}" = "24.04"
           test "${node_version%%.*}" = "v24"
-          test "${pnpm_version}" = "11.24.0"
-          test "${playwright_version}" = "Version 1.62.1"
+          test "${pnpm_version}" = "11.26.0"
+          test "${playwright_version}" = "Version 1.63.0"
           test "${browser_path}" = "/ms-playwright"
           test -d "${browser_path}"
           test -r "${browser_path}"
           browser_plan="$(pnpm exec playwright install --dry-run)"
           printf '%s\n' "${browser_plan}"
           for expected_browser in \
-            "(playwright chromium v1234)" \
-            "(playwright chromium-headless-shell v1234)" \
-            "(playwright firefox v1538)" \
-            "(playwright webkit v2336)" \
+            "(playwright chromium v1243)" \
+            "(playwright chromium-headless-shell v1243)" \
+            "(playwright firefox v1543)" \
+            "(playwright webkit v2359)" \
             "(playwright ffmpeg v1011)"
           do
             grep -Fq "${expected_browser}" <<<"${browser_plan}"
@@ -271,7 +271,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
         with:
-          version: 11.24.0
+          version: 11.26.0
           run_install: false
 
       - name: Configure Node.js

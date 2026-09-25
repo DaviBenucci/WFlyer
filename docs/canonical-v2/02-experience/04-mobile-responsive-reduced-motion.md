@@ -1,123 +1,41 @@
-# Mobile, Responsive Rebuild, and Reduced Motion
+# Responsive Presentation, Portrait Traversal and Reduced Motion
 
-## Vertical semantic order
+The current normative spatial authority is ADR-057 / ASM-IMP-DEC-020:
+[Continuous Spatial Story](01-global-story-architecture.md), especially §§4–6
+and §§9–10. This document maps predecessor vocabulary; it is not another model.
 
-```text
-Home
-About
-Services
-Process
-Projects
-Contact
-Professional final barline / visual transition
-Application
-How It Works
-Benefits
-Demonstration
-Access W_Flyer
-Application final barline
-Global footer
-```
+One semantic order remains Home → About → Services → Process → Projects →
+Contact → Terminal, followed by the shared global footer. Portrait uses primary
+native vertical input and readable local vertical staging on this same story;
+the global camera may remain lateral. It is not a miniature desktop or a
+separate vertical narrative. No horizontal swipe is required.
 
-## Mobile presentation
+## Current conceptual classes
 
-- no horizontal pinning;
-- no required swipe/carousel;
-- document/narrative progression is vertical, while musical notation remains
-  locally horizontal or gently inclined and reads left-to-right;
-- the continuous five-line score uses notation-safe composition zones joined by
-  event-free connector zones for vertical displacement;
-- no literal vertical staff and no 180-degree-reversed notation groups;
-- concise editorial variants;
-- normal document scrolling and landmarks;
-- application access appears last in application sequence.
+- `EXPANDED_LANDSCAPE`: high capacity; more simultaneous content.
+- `COMPACT_LANDSCAPE`: constrained landscape; fewer simultaneous elements.
+- `PORTRAIT_TRAVERSE`: narrow/tall; local reflow and sequential content stations.
 
-## Responsive score presentation modes
+Use the canonical contract for capability selection, token readability, input
+mapping, interaction islands, reduced motion and responsive restoration. No
+numerical class boundaries are approved by this documentation change.
 
-### `horizontal-enhanced`
+## Transitional implementation vocabulary
 
-Immersive horizontal story progression for viewports with sufficient effective
-width, height, input capability, and motion allowance. It uses long
-notation-safe zones, fewer connector turns, and higher local motif capacity.
+ADR-055's `horizontal-enhanced`, `vertical-wide`, `vertical-compact` and `static`
+remain the current implementation modes. Their existence does not force the
+new classes into a one-to-one mode mapping or require vertical story geometry
+whenever a simultaneous fan fails capacity. Capability, input axis, story
+geometry and presentation remain separate concerns.
 
-### `vertical-wide`
+ADR-056's full horizontal fan and one vertical teaser are preserved implemented
+Stage-1 behavior. The fan retains its full capacity/interaction/visit contracts
+while it exists. Final Projects presentation across continuous spans is pending
+implementation; route withdrawal and factual canonical data remain binding.
 
-Vertical document progression for tablets, narrow desktop windows, low-height
-notebooks, and other layouts without sufficient horizontal-story capacity. It
-uses medium-length left-to-right notation zones and connectors for vertical
-displacement.
-
-### `vertical-compact`
-
-Vertical document progression for narrow layouts. It preserves readable glyph
-scale and spacing by shortening notation zones, placing fewer semantic motifs
-in each local zone, and using more connectors. It does not rotate notation,
-discard semantic motifs, or recompose the score.
-
-### `static`
-
-Vertical functional/reduced-motion fallback using the same semantic score,
-seed, motif IDs, pitches, and slot IDs without horizontal pinning, scrub, or
-complex reveal motion.
-
-The functional responsive semantics above and
-`maxNotationTangentAngleDeg=18` were approved by external Gate-C follow-up
-review on 2026-08-24. That approval does not promote the current piecewise
-returning connector fixture as the final mobile aesthetic. It remains
-validation-only and noncanonical; final organic public geometry is a blocking
-Phase-9 human Score Path decision.
-
-## Mode eligibility
-
-Exact activation thresholds are Motion Lab calibration values. Selection must
-be capable of considering width, height, pointer/input capability,
-`prefers-reduced-motion`, and effective layout capacity; width alone is
-insufficient. A wide mobile landscape viewport does not automatically receive
-`horizontal-enhanced`, and an insufficient-height desktop may use
-`vertical-wide`. Vertical/static presentation remains the universal fallback.
-
-## Semantic composition and physical grouping
-
-Responsive projection can distribute one ordered semantic slot sequence across
-different numbers of local notation zones. Smaller capacities add connector
-zones rather than deleting motifs, shrinking notation disproportionately, or
-generating a different score. Only ScorePath geometry, physical slot ranges,
-spacing, local-zone capacity, and surrounding scene arrangement may vary.
-
-## Breakpoint rebuild
-
-```text
-RUNNING → FREEZE → CAPTURE ACTIVE CHAPTER → DESTROY OWNED CONTEXT → BUILD NEW MODE → RESTORE EQUIVALENT CHAPTER → RUNNING
-```
-
-The semantic score composition and session seed do not change. The transition
-preserves the active semantic chapter, slot IDs, motif IDs/order, durations,
-staffSteps, contour IDs/translations, reserved slots, and key signature;
-destroys only the prior responsive projection ownership; rebuilds geometry; and
-restores the equivalent chapter without returning the user to Home.
-
-## Bootstrap positioning seam
-
-Phase-4 bootstrap resolves a semantic `StoryChapterId` before selecting physical
-geometry. Its initial projection-positioning adapter targets the native
-static/vertical document and is shared by compact, reduced-motion, and failure
-recovery paths. The adapter seam must accept later responsive projections
-without changing destination precedence, history shape, or Home semantics.
-
-Horizontal projection and responsive rebuild ownership begin in Phase 5. They
-are not Phase-4 critical readiness resources. The Phase-9 final score and Home
-score geometry are also outside Phase-4 readiness and cannot block bootstrap.
-
-## Reduced motion
-
-- force vertical static mode;
-- resolve and position the same valid hash/history/Home destination as the
-  full-motion path before reveal;
-- use the Phase-4 `0ms` minimum/reveal operational default; this skips the
-  opening presentation, not destination/bootstrap semantics;
-- no horizontal pinning/scrub requirement;
-- score and Persona render final states;
-- header navigation uses immediate/short non-narrative positioning;
-- no APP-04 autoplay;
-- no animated Persona easter eggs;
-- all content and controls remain.
+The prior vertical/static implementation is the usable fallback and historical
+responsive evidence. Reduced motion preserves the same semantic story with
+settled or short/immediate transitions, no required long camera travel, pinning
+or scrub. Responsive changes restore local semantic position/focus, not just a
+chapter's DOM top or a stale physical offset. Composer, seed and score semantics
+remain unchanged. Frozen Gate-C/Phase-9 approval and HGA evidence are not rewritten.

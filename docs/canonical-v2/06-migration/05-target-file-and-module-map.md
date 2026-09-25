@@ -51,8 +51,6 @@ src/
     projects/
       ProjectCardFan.tsx
       ProjectCard.tsx
-    pages/application-demo/
-      ApplicationDemoDevice.tsx
   app/
     __visual-lab/
       music/
@@ -60,6 +58,9 @@ src/
         bootstrap/
       motion/
 ```
+
+ADR-053 / `ASM-IMP-DEC-017` supersedes any predecessor target map that included
+institutional Application pages, scenes, access workflows, or demo devices.
 
 ## Boundary rules
 

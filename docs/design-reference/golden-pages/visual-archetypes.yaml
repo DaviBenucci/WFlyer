@@ -3,24 +3,15 @@ status: normative
 updated_at: '2026-07-29'
 source_files:
   master_board: master/wflyer-approved-master-board.png
-  application_reference: application/application-desktop-light.png
 archetypes:
-  origin-bifurcation:
+  portfolio-origin:
     source_panels: [home-light, home-dark]
     pages: [home]
-    rules: [central-clef-origin, dual-branch-layout, balanced-editorial-hero]
-  product-demo:
-    source_files: [application/application-desktop-light.png]
-    pages: [application]
-    rules: [editorial-hero, interactive-tablet, five-benefit-strip]
+    rules: [central-clef-origin, single-portfolio-layout, balanced-editorial-hero]
   editorial-sequence:
-    source_panels: [home-light, application-light]
-    pages: [application-how-it-works, company]
+    source_panels: [home-light]
+    pages: [company]
     rules: [large-serif-heading, restrained-copy, score-continuity, modular-sections]
-  editorial-benefits-terminal:
-    source_panels: [application-light, services-light]
-    pages: [application-benefits]
-    rules: [benefit-cards, terminal-cta, final-double-barline]
   service-grid:
     source_panels: [services-light, services-dark]
     pages: [services]
@@ -29,16 +20,12 @@ archetypes:
     source_panels: [services-light, portfolio-light]
     pages: [process]
     rules: [numbered-steps, score-as-progress-line, no-horizontal-scroll-dependency]
-  portfolio-grid:
-    source_panels: [portfolio-light, portfolio-dark]
-    pages: [portfolio]
-    rules: [project-cards, verified-projects-only, external-link-affordance]
   contact-terminal:
     source_panels: [contact-light, contact-dark]
     pages: [contact]
     rules: [two-column-contact, accessible-form, social-links, final-double-barline]
   service-detail:
-    source_panels: [services-light, application-light, contact-light]
+    source_panels: [services-light, contact-light]
     pages: [service-sites, service-applications, service-integrations, service-custom]
     rules: [editorial-hero, scoped-deliverables, process-block, contact-cta]
   legal-editorial:

@@ -47,9 +47,9 @@ Composer semantics or weights.
 
 Suggested chapter profile:
 
-- About/Contact/Access/terminals: calm/terminal;
-- Services/Application/Benefits/Home: balanced;
-- Process/Projects/How/Demo: active.
+- About/Contact/terminal: calm/terminal;
+- Services/Home: balanced;
+- Process/Projects: active.
 
 ## Anti-repetition
 

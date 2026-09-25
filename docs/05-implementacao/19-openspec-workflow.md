@@ -1,7 +1,7 @@
 # Workflow OpenSpec
 
 **Status:** OPERACIONAL
-**Versão validada:** `@fission-ai/openspec 1.11.0`
+**Versão validada:** `@fission-ai/openspec 1.13.0`
 **Schema padrão:** `spec-driven`
 **Escopo:** changes focados do site institucional `wflyer.com.br`
 
@@ -18,7 +18,7 @@ um change apenas para satisfazer processo.
 
 ## 2. Baseline instalada
 
-- CLI global gerenciada por pnpm: `1.11.0`;
+- CLI global gerenciada por pnpm: `1.13.0`;
 - Node.js validado: `24.18.0`;
 - raiz saudável em `openspec/`;
 - contexto e regras em `openspec/config.yaml`;
@@ -30,11 +30,11 @@ um change apenas para satisfazer processo.
 - templates artesanais anteriores em `openspec/templates/` preservados;
 - validação estrita no job `quality` do CI.
 
-O upgrade de manutenção 1.7.0 → 1.11.0 preservou o gerenciador pnpm e foi
+O upgrade de manutenção 1.11.0 → 1.13.0 preservou o gerenciador pnpm e foi
 feito com:
 
 ```bash
-pnpm add --global @fission-ai/openspec@1.11.0
+pnpm add --global @fission-ai/openspec@1.13.0
 openspec update .
 ```
 
@@ -123,7 +123,7 @@ da Fase 05 deve permanecer ativo nesta subetapa.
 O CI usa uma versão fixa e não modifica specs:
 
 ```bash
-pnpm dlx @fission-ai/openspec@1.11.0 \
+pnpm dlx @fission-ai/openspec@1.13.0 \
   validate --all --strict --no-interactive
 ```
 

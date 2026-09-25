@@ -90,7 +90,7 @@ presence only.
 | Resolved selected SHA | `PENDING` |
 | Automatic/manual deployment behavior | `PENDING` |
 | Node version | `PENDING — expected 24.x` |
-| Package manager/Corepack behavior | `PENDING — expected pnpm 11.24.0 through Corepack` |
+| Package manager/Corepack behavior | `PENDING — expected pnpm 11.26.0 through Corepack` |
 | Working directory | `PENDING — expected repository root` |
 | Build command | `PENDING` |
 | Runtime entry/start command | `PENDING — must execute node .next/standalone/server.js` |

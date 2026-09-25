@@ -1,5 +1,11 @@
 # Chapter Acceptance Criteria
 
+> Apply all ten validation classes from
+> [Continuous Spatial Story §13](../02-experience/01-global-story-architecture.md#13-validation-contract).
+> Intentional partial offscreen content is valid with proven reachability;
+> inaccessible content, obscured focus and unsafe score ink remain failures.
+
+
 ## Home
 
 - no previous/next buttons;
@@ -27,10 +33,12 @@
 ## Projects
 
 - only authorized cases;
-- every card identifiable and accessible;
-- focus/hover equivalent raised state;
-- no clipping or unstable z-index;
-- mobile stacked version;
+- retained full fan states keep identifiable/accessible cards, equivalent
+  focus/hover presentation, three visits and complete interaction safety;
+- one canonical teaser in current vertical modes is transitional ADR-056
+  evidence; new-target acceptance uses the recorded continuous-span disposition
+  and proves every required project item/interaction reachable;
+- no unapproved Projects listing/detail route or placeholder link;
 - no invented metrics/results.
 
 ## Contact
@@ -40,30 +48,13 @@
 - duplicate submission bounded;
 - valid values retained after error;
 - no Persona easter egg while typing;
-- success does not auto-navigate.
+- success does not auto-navigate;
+- stable interaction-region behavior preserves fields, status and focus during
+  text entry, keyboard viewport changes, error recovery and deliberate exit.
 
-## Application/How/Benefits
+## Professional terminal
 
-- public boundaries respected;
-- five exact How steps;
-- four landing benefit groups;
-- no primary app CTA before Access.
-
-## APP-04
-
-- muted/no-audio, no loop;
-- only active-chapter first start;
-- exact final frame after ended;
-- replay top-center, keyboard/touch accessible;
-- simulated UI inert;
-- reduced motion no autoplay;
-- failure keeps static media;
-- returning after completion remains final frame.
-
-## Access/Terminals
-
-- one primary app link;
-- no automatic redirect;
 - final barline before terminal;
-- mobile Access is last application content;
-- shared footer data; one real mobile global footer.
+- no automatic redirect;
+- shared footer data;
+- one real mobile global footer follows the terminal.

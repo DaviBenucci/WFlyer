@@ -1,11 +1,10 @@
 version: "2.0"
 status: approved
+spatialAuthority: ADR-057 / ASM-IMP-DEC-020
+spatialContract: docs/canonical-v2/02-experience/01-global-story-architecture.md
 canonicalLanguage: en
 publicLanguage: pt-BR
 branches:
-  application:
-    desktopDirection: left
-    mobileOrder: 2
   professional:
     desktopDirection: right
     mobileOrder: 1
@@ -17,47 +16,6 @@ chapters:
     timelineLabel: home
     header: center-brand
     detailRoute: "/"
-  - id: application-overview
-    label: Aplicação
-    hash: "#aplicacao"
-    branch: application
-    timelineLabel: app-overview
-    header: true
-    detailRoute: "/aplicacao-wflyer"
-  - id: application-how-it-works
-    label: Como funciona
-    hash: "#como-funciona"
-    branch: application
-    timelineLabel: app-how
-    header: true
-    detailRoute: "/aplicacao-wflyer/como-funciona"
-  - id: application-benefits
-    label: Benefícios
-    hash: "#beneficios"
-    branch: application
-    timelineLabel: app-benefits
-    header: true
-    detailRoute: "/aplicacao-wflyer/beneficios"
-  - id: application-demo
-    label: Demonstração
-    hash: "#demonstracao"
-    branch: application
-    timelineLabel: app-demo
-    header: false
-    detailRoute: "/aplicacao-wflyer#demonstracao"
-  - id: application-access
-    label: Lançamento
-    hash: "#lancamento"
-    branch: application
-    timelineLabel: app-access
-    header: true
-    availabilityState: PRELAUNCH
-  - id: application-terminal
-    label: Application terminal
-    branch: application
-    timelineLabel: app-terminal
-    header: false
-    finalBarlineBefore: true
   - id: professional-about
     label: Sobre
     hash: "#sobre"
@@ -85,7 +43,6 @@ chapters:
     branch: professional
     timelineLabel: pro-projects
     header: true
-    detailRoute: "/portfolio"
   - id: professional-contact
     label: Contato
     hash: "#contato"
@@ -100,12 +57,6 @@ chapters:
     header: false
     finalBarlineBefore: true
 desktopTimelineOrder:
-  - application-terminal
-  - application-access
-  - application-demo
-  - application-benefits
-  - application-how-it-works
-  - application-overview
   - home
   - professional-about
   - professional-services
@@ -121,10 +72,4 @@ mobileDocumentOrder:
   - professional-projects
   - professional-contact
   - professional-terminal
-  - application-overview
-  - application-how-it-works
-  - application-benefits
-  - application-demo
-  - application-access
-  - application-terminal
   - global-footer

@@ -1,0 +1,500 @@
+{
+  "$schema": "known-inherited-findings.schema.json",
+  "format": "wflyer-known-inherited-findings/v1",
+  "policy": "ASM-AUDIT-001",
+  "decisions": [
+    "ADR-051",
+    "ADR-052",
+    "ASM-IMP-DEC-015",
+    "ASM-IMP-DEC-016"
+  ],
+  "status": "APPROVED_REGISTRY_CONTRACT_NO_AUTOMATIC_DEFER",
+  "existingRegisters": [
+    {
+      "family": "ASM-SI",
+      "ids": "ASM-SI-001..014 and ASM-SI-019..024; static015..018 repeat004..007",
+      "authority": "docs/canonical-v2/00-governance/03-decision-register.md",
+      "decisions": [
+        "ADR-044",
+        "ADR-047"
+      ],
+      "rule": "Preserve original root/occurrence/repair evidence; audit references these IDs without duplicating roots or guessing disposition."
+    },
+    {
+      "family": "ASM-PC",
+      "ids": [
+        "ASM-PC-001",
+        "ASM-PC-002",
+        "ASM-PC-003"
+      ],
+      "authority": "docs/canonical-v2/00-governance/03-decision-register.md",
+      "decisions": [
+        "ADR-048",
+        "ADR-049",
+        "ADR-050"
+      ],
+      "rule": "Distinct existing roots trigger audit. Current work preserved; no blanket reclassification or defer."
+    }
+  ],
+  "records": [
+    {
+      "id": "ASM-CR-001",
+      "alias": "APPLICATION-ACCESS-CONTENT-RESERVATION",
+      "rootSignature": "application-access/Task-33/PRELAUNCH-content-replaced-link/fixed-reservation-not-updated",
+      "firstDiscoveredStage": "successor Stage 1",
+      "lineage": "Inherited frozen Phase-9 content/reservation mismatch; no additional Stage-1 48px regression proved. Reuse completed controlled classification.",
+      "surface": "Task-33 Organic Soft/Flowing vertical Access reservations; other declared presentations await audit",
+      "owner": "Application scene/layout content-envelope owner; geometric consumer owns local fit",
+      "ownerFiles": [
+        "src/components/story/ApplicationChapterScene.tsx",
+        "src/components/story/ApplicationLaunchInterestForm.tsx",
+        "src/components/story/application-launch-interest-form.module.css",
+        "src/app/%5F_visual-lab/story/score-paths/ScorePathReview.tsx",
+        "src/app/%5F_visual-lab/story/score-paths/score-path-review.module.css",
+        "src/lib/story/score/organic-flowing.ts",
+        "src/lib/story/score/projection.ts",
+        "src/components/story-score/StoryScoreLayer.tsx",
+        "src/config/application-release.ts"
+      ],
+      "classification": "INHERITED_CRITICAL",
+      "severity": {
+        "level": "CRITICAL_ACCEPTANCE",
+        "rationale": "Existing required zero-X/zero-Y content-envelope acceptance fails. Broader public user/security impact is not inferred."
+      },
+      "impact": {
+        "mandatoryInvariantViolation": true,
+        "violatedInvariants": [
+          "required complete Access content reservation / zero overflow"
+        ],
+        "materialAccessibilityLoss": null,
+        "materialFunctionalLoss": null,
+        "securityOrDataIntegrityImpact": null,
+        "description": "Required preview form exceeds its envelope; exact clipping/reachability/public impact beyond saved cases remains for the bounded audit."
+      },
+      "occurrences": [
+        {
+          "id": "ASM-CR-001-O01",
+          "surface": "Task-33 application-access preview",
+          "candidate": "organic-soft",
+          "mode": "vertical-wide",
+          "viewport": {
+            "width": 1340,
+            "height": 820
+          },
+          "theme": "light",
+          "condition": "key absent / TURNSTILE_FAILED",
+          "engine": "Chromium 153.0.8010.12",
+          "historicalOverflow": {
+            "x": 0,
+            "y": 62
+          },
+          "currentOverflow": {
+            "x": 0,
+            "y": 62
+          },
+          "units": "physical CSS pixels; overflow values are integer CSSOM differences",
+          "reservationBlockSize": 370,
+          "equivalent": true,
+          "evidence": [
+            {
+              "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/current-no-key.json",
+              "sha256": "ab0b20d372ec9eb5a130bcd469a9038ec1491a0e014c2b53cda00ce0abe45711",
+              "jsonPointer": "/results/0/settled",
+              "source": "current"
+            },
+            {
+              "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/history-no-key.json",
+              "sha256": "2e111163d522764e339fe0085303896800acf56d0b6ee23e80e095885041abe2",
+              "jsonPointer": "/results/0/settled",
+              "source": "frozen-source-replay"
+            }
+          ],
+          "horizontalRootGrouping": "no horizontal overflow in this case",
+          "measurements": [
+            {
+              "name": "contentEnvelopeOverflowX",
+              "units": "physical CSS px (integer CSSOM difference)",
+              "current": 0,
+              "historical": 0,
+              "rawOutcome": "PASS"
+            },
+            {
+              "name": "contentEnvelopeOverflowY",
+              "units": "physical CSS px (integer CSSOM difference)",
+              "current": 62,
+              "historical": 62,
+              "rawOutcome": "FAIL"
+            }
+          ]
+        },
+        {
+          "id": "ASM-CR-001-O02",
+          "surface": "Task-33 application-access preview",
+          "candidate": "organic-soft",
+          "mode": "vertical-wide",
+          "viewport": {
+            "width": 1340,
+            "height": 820
+          },
+          "theme": "light",
+          "condition": "key present / VERIFYING_TURNSTILE",
+          "engine": "Chromium 153.0.8010.12",
+          "historicalOverflow": {
+            "x": 0,
+            "y": 110
+          },
+          "currentOverflow": {
+            "x": 0,
+            "y": 110
+          },
+          "units": "physical CSS pixels; overflow values are integer CSSOM differences",
+          "reservationBlockSize": 370,
+          "equivalent": true,
+          "evidence": [
+            {
+              "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/current-key-live.json",
+              "sha256": "04eb36a336c1f8e51cd9a0de83eca073aadfbd4f2e6ff5fc7539f2446c1597ec",
+              "jsonPointer": "/results/0/settled",
+              "source": "current"
+            },
+            {
+              "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/history-key-live.json",
+              "sha256": "6db6b83cf25fc7f91d867215f209f0f7f5416b2b1bd4b7838d019d392f7ef23c",
+              "jsonPointer": "/results/0/settled",
+              "source": "frozen-source-replay"
+            }
+          ],
+          "horizontalRootGrouping": "no horizontal overflow in this case",
+          "measurements": [
+            {
+              "name": "contentEnvelopeOverflowX",
+              "units": "physical CSS px (integer CSSOM difference)",
+              "current": 0,
+              "historical": 0,
+              "rawOutcome": "PASS"
+            },
+            {
+              "name": "contentEnvelopeOverflowY",
+              "units": "physical CSS px (integer CSSOM difference)",
+              "current": 110,
+              "historical": 110,
+              "rawOutcome": "FAIL"
+            }
+          ]
+        },
+        {
+          "id": "ASM-CR-001-O03",
+          "surface": "Task-33 application-access preview",
+          "candidate": "organic-soft",
+          "mode": "vertical-wide",
+          "viewport": {
+            "width": 1340,
+            "height": 820
+          },
+          "theme": "light",
+          "condition": "key present / failed script",
+          "engine": "Chromium 153.0.8010.12",
+          "historicalOverflow": {
+            "x": 0,
+            "y": 118
+          },
+          "currentOverflow": {
+            "x": 0,
+            "y": 118
+          },
+          "units": "physical CSS pixels; overflow values are integer CSSOM differences",
+          "reservationBlockSize": 370,
+          "equivalent": true,
+          "evidence": [
+            {
+              "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/current-key-blocked.json",
+              "sha256": "7fc35560a7a34a1dd4c41daf46b10f67b3f7326e65adabce835e6bc557db4006",
+              "jsonPointer": "/results/0/settled",
+              "source": "current"
+            },
+            {
+              "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/history-key-blocked.json",
+              "sha256": "f2864a601e077f0ddef09d5cad634b2d272d6a3b21a1ae9c39d4114037fe4846",
+              "jsonPointer": "/results/0/settled",
+              "source": "frozen-source-replay"
+            }
+          ],
+          "horizontalRootGrouping": "no horizontal overflow in this case",
+          "measurements": [
+            {
+              "name": "contentEnvelopeOverflowX",
+              "units": "physical CSS px (integer CSSOM difference)",
+              "current": 0,
+              "historical": 0,
+              "rawOutcome": "PASS"
+            },
+            {
+              "name": "contentEnvelopeOverflowY",
+              "units": "physical CSS px (integer CSSOM difference)",
+              "current": 118,
+              "historical": 118,
+              "rawOutcome": "FAIL"
+            }
+          ]
+        },
+        {
+          "id": "ASM-CR-001-O04",
+          "surface": "Task-33 application-access preview",
+          "candidate": "organic-flowing",
+          "mode": "vertical-wide",
+          "viewport": {
+            "width": 1340,
+            "height": 820
+          },
+          "theme": "light",
+          "condition": "key present / failed script",
+          "engine": "Chromium 153.0.8010.12",
+          "historicalOverflow": {
+            "x": 0,
+            "y": 118
+          },
+          "currentOverflow": {
+            "x": 0,
+            "y": 118
+          },
+          "units": "physical CSS pixels; overflow values are integer CSSOM differences",
+          "reservationBlockSize": 370,
+          "equivalent": true,
+          "evidence": [
+            {
+              "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/current-key-blocked.json",
+              "sha256": "7fc35560a7a34a1dd4c41daf46b10f67b3f7326e65adabce835e6bc557db4006",
+              "jsonPointer": "/results/2/settled",
+              "source": "current"
+            },
+            {
+              "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/history-key-blocked.json",
+              "sha256": "f2864a601e077f0ddef09d5cad634b2d272d6a3b21a1ae9c39d4114037fe4846",
+              "jsonPointer": "/results/2/settled",
+              "source": "frozen-source-replay"
+            }
+          ],
+          "horizontalRootGrouping": "no horizontal overflow in this case",
+          "measurements": [
+            {
+              "name": "contentEnvelopeOverflowX",
+              "units": "physical CSS px (integer CSSOM difference)",
+              "current": 0,
+              "historical": 0,
+              "rawOutcome": "PASS"
+            },
+            {
+              "name": "contentEnvelopeOverflowY",
+              "units": "physical CSS px (integer CSSOM difference)",
+              "current": 118,
+              "historical": 118,
+              "rawOutcome": "FAIL"
+            }
+          ]
+        },
+        {
+          "id": "ASM-CR-001-O05",
+          "surface": "Task-33 application-access preview",
+          "candidate": "organic-soft",
+          "mode": "vertical-compact",
+          "viewport": {
+            "width": 430,
+            "height": 844
+          },
+          "theme": "light",
+          "condition": "key present / failed script",
+          "engine": "Chromium 153.0.8010.12",
+          "historicalOverflow": {
+            "x": 5,
+            "y": 325
+          },
+          "currentOverflow": {
+            "x": 5,
+            "y": 325
+          },
+          "units": "physical CSS pixels; overflow values are integer CSSOM differences",
+          "reservationBlockSize": 480,
+          "equivalent": true,
+          "evidence": [
+            {
+              "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/current-key-blocked.json",
+              "sha256": "7fc35560a7a34a1dd4c41daf46b10f67b3f7326e65adabce835e6bc557db4006",
+              "jsonPointer": "/results/1/settled",
+              "source": "current"
+            },
+            {
+              "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/history-key-blocked.json",
+              "sha256": "f2864a601e077f0ddef09d5cad634b2d272d6a3b21a1ae9c39d4114037fe4846",
+              "jsonPointer": "/results/1/settled",
+              "source": "frozen-source-replay"
+            }
+          ],
+          "horizontalRootGrouping": "NEEDS_REVIEW associated X5; do not assume a new root or silently merge",
+          "measurements": [
+            {
+              "name": "contentEnvelopeOverflowX",
+              "units": "physical CSS px (integer CSSOM difference)",
+              "current": 5,
+              "historical": 5,
+              "rawOutcome": "FAIL"
+            },
+            {
+              "name": "contentEnvelopeOverflowY",
+              "units": "physical CSS px (integer CSSOM difference)",
+              "current": 325,
+              "historical": 325,
+              "rawOutcome": "FAIL"
+            }
+          ]
+        },
+        {
+          "id": "ASM-CR-001-O06",
+          "surface": "Task-33 application-access preview",
+          "candidate": "organic-flowing",
+          "mode": "vertical-compact",
+          "viewport": {
+            "width": 430,
+            "height": 844
+          },
+          "theme": "light",
+          "condition": "key present / failed script",
+          "engine": "Chromium 153.0.8010.12",
+          "historicalOverflow": {
+            "x": 0,
+            "y": 263
+          },
+          "currentOverflow": {
+            "x": 0,
+            "y": 263
+          },
+          "units": "physical CSS pixels; overflow values are integer CSSOM differences",
+          "reservationBlockSize": 500,
+          "equivalent": true,
+          "evidence": [
+            {
+              "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/current-key-blocked.json",
+              "sha256": "7fc35560a7a34a1dd4c41daf46b10f67b3f7326e65adabce835e6bc557db4006",
+              "jsonPointer": "/results/3/settled",
+              "source": "current"
+            },
+            {
+              "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/history-key-blocked.json",
+              "sha256": "f2864a601e077f0ddef09d5cad634b2d272d6a3b21a1ae9c39d4114037fe4846",
+              "jsonPointer": "/results/3/settled",
+              "source": "frozen-source-replay"
+            }
+          ],
+          "horizontalRootGrouping": "no horizontal overflow in this case",
+          "measurements": [
+            {
+              "name": "contentEnvelopeOverflowX",
+              "units": "physical CSS px (integer CSSOM difference)",
+              "current": 0,
+              "historical": 0,
+              "rawOutcome": "PASS"
+            },
+            {
+              "name": "contentEnvelopeOverflowY",
+              "units": "physical CSS px (integer CSSOM difference)",
+              "current": 263,
+              "historical": 263,
+              "rawOutcome": "FAIL"
+            }
+          ]
+        }
+      ],
+      "equivalence": {
+        "status": "EQUIVALENT_FOR_RECORDED_INPUTS",
+        "notWorsened": true,
+        "source": "306ccb74da6c7bbf8f187e360c0776c571b5fc3d",
+        "limitations": [
+          "Current toolchain/browser reused for historical source; no historical installation or aggregate PASS.",
+          "Current Turbopack and historical webpack are explicit in accepted existing diagnosis; next audit controls a common bundler.",
+          "Six saved conditions / four presentation profiles, not all states/themes/engines or a maximum-envelope proof.",
+          "Soft compact X5 is visible; its precise causal grouping awaits audit."
+        ],
+        "evidence": [
+          {
+            "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-classification.md",
+            "sha256": "4a4267d1d8f3412b5864af9f6772000be436f798c7ef811dd85603a4d9bd0560"
+          },
+          {
+            "path": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-diagnostic-data/validation.json",
+            "sha256": "ca656f03ea5490e78e69fd80007b7b990d5d3945dfb7f7c4a5d88c870ecf72b4"
+          }
+        ]
+      },
+      "rawValidation": {
+        "result": "FAIL",
+        "validator": "tests/e2e/phase09-score-path-review.spec.ts existing content-envelope zero X/Y assertions",
+        "enabled": true,
+        "threshold": "zero required overflow; no new tolerance",
+        "scope": "saved observations, not a new aggregate test run"
+      },
+      "runtime": {
+        "candidateStatus": "NOT_APPLICABLE_TO_SAVED_EXPLICIT_REVIEW_MODES",
+        "fallback": "NOT_ESTABLISHED_FOR_THIS_REVIEW_RESERVATION",
+        "evidence": "Projects capacity fallback does not own or waive this explicit preview reservation."
+      },
+      "stageDisposition": "SUPERSEDED_SCOPE",
+      "registrationApproval": {
+        "reference": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-inherited-audit-owner-approval.txt",
+        "sha256": "d0c2c56ca6a88b77d43cc5aa5ffbef1a32c2c34acab53a2f8ed4162f634042e2",
+        "date": "2026-09-13",
+        "decisions": [
+          "ADR-051",
+          "ASM-IMP-DEC-015"
+        ]
+      },
+      "dispositionApproval": null,
+      "remediation": {
+        "owner": null,
+        "reviewPoint": "Historical diagnosis retained; institutional Application branch removed by ADR-053 / ASM-IMP-DEC-017",
+        "executionAuthorized": false,
+        "scopeApproved": false,
+        "boundary": "Access content reservation and only proved necessary local entry/exit support; deterministic scene input, no form/Projects/unrelated chapter or generic vertical change",
+        "verificationStatus": "NOT_REPAIRED; SUPERSEDED_SCOPE_BY_ADR-053"
+      },
+      "acceptanceBaseline": {
+        "kind": "DIAGNOSTIC_BASELINE_NOT_DEFER_APPROVAL",
+        "comparisonDomain": "exact six occurrence inputs and linked raw measurements only",
+        "fingerprint": "8b402a927ff8ccb0579646fdf2b1bdf1b5cc0d708397fb1b88e7a71bbe239c31",
+        "units": "CSSOM physical CSS pixel overflow",
+        "toleranceAuthority": "original exact zero-overflow assertions unchanged; no invented tolerance",
+        "worseningRule": "Any worse metric/impact, new unsupported occurrence or unresolved equivalence stays blocking; this record is already blocking."
+      },
+      "reblockConditions": [
+        "any mandatory invariant failure",
+        "worsened metric or impact",
+        "new occurrence outside approved comparison domain",
+        "missing/expired defer approval or missed review point",
+        "missing required evidence or classification"
+      ],
+      "history": [
+        {
+          "date": "2026-09-13",
+          "action": "REGISTER_INHERITED_ROOT_AND_APPROVED_LOCAL_SCOPE",
+          "authority": [
+            "ADR-051",
+            "ASM-IMP-DEC-015",
+            "ASM-IMP-DEC-016"
+          ],
+          "evidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-access-overflow-classification.md",
+          "disposition": "BLOCK_STAGE",
+          "note": "No repair or defer approved for execution before audit/batch disposition; no prior diagnostics altered."
+        },
+        {
+          "date": "2026-09-22",
+          "action": "SUPERSEDE_INSTITUTIONAL_APPLICATION_REPAIR_SCOPE",
+          "authority": [
+            "ADR-053",
+            "ASM-IMP-DEC-017"
+          ],
+          "evidence": "openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-inherited-audit-supersession.json",
+          "disposition": "SUPERSEDED_SCOPE",
+          "note": "Inherited 62/110/118px Access deficit remains historically proven and unrepaired. The institutional Application branch is no longer in active product scope; neither DEFER nor RESOLVED is claimed."
+        }
+      ]
+    }
+  ]
+}

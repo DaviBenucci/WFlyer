@@ -1,5 +1,12 @@
 # File-by-File Migration Map
 
+> **Historical baseline:** entries describing the former institutional
+> Application scenes are completed predecessor migration history and are
+> superseded by ADR-053 / `ASM-IMP-DEC-017`. Use `CURRENT_HANDOFF.md` for the
+> active portfolio-only worktree.
+> The former `/portfolio` route actions below are also superseded by ADR-056 /
+> `ASM-IMP-DEC-019`; they remain here as migration history.
+
 ## Root/governance
 
 | Path | Action | Notes |

@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "graphify hook-check"
+            "command": "/home/davi-benucci/.local/bin/graphify hook-check"
           }
         ]
       }

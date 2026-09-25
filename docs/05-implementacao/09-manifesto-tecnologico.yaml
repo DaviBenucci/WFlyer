@@ -1,6 +1,6 @@
 project: wflyer-site
 status: normative
-updated_at: 2026-08-29
+updated_at: 2026-09-10
 architecture:
   classification: static-first
   pure_static_export: false
@@ -12,7 +12,7 @@ architecture:
 runtime:
   node: "24 LTS"
   package_manager: pnpm
-  package_manager_version: "11.24.0"
+  package_manager_version: "11.26.0"
   corepack: required
   output: standalone
   entry_point: .next/standalone/server.js

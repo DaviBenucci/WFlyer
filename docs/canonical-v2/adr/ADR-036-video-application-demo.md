@@ -1,6 +1,6 @@
 # ADR-036 — Video-Based Application Demonstration
 
-**Status:** APPROVED  
+**Status:** SUPERSEDED by ADR-053 for the institutional site; retained as historical provenance
 **Date:** 2026-08-14
 
 ## Context

@@ -225,7 +225,6 @@ routes=(
   '/sobre'
   '/servicos'
   '/processo'
-  '/portfolio'
   '/contato'
   '/servicos/criacao-de-sites'
   '/servicos/criacao-de-aplicacoes'

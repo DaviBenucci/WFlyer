@@ -1,5 +1,42 @@
 # W_Flyer v2 — Linear Implementation Plan
 
+> **Current spatial authority (ADR-057 / ASM-IMP-DEC-020, 2026-09-24):**
+> [Continuous Spatial Story](docs/canonical-v2/02-experience/01-global-story-architecture.md)
+> supersedes viewport-contained chapters, fixed desktop/mobile geometry and
+> the HGA-002 macro-gap plan. HGA-001A–D remain invariant/supporting/transitional
+> evidence, not approval of the new target. The notices immediately below are
+> predecessor scope checkpoints. The current successor is rebaselined in place
+> from 30/51 to 25/55: tasks 5.1–5.5 reopen for fresh target validation and four
+> implementation prerequisites precede them. Task 5.6 remains pending.
+> Minimal spatial metadata and target geometry belong to Stage 1; later temporal
+> Assembly metadata remains behind refreeze. This pass is documentation only;
+> it permits one isolated local governance commit after validation, no product
+> implementation, push or deployment. Earlier frozen phases remain unchanged.
+
+
+> **Current institutional scope (ADR-053 / ASM-IMP-DEC-017, 2026-09-22):**
+> `wflyer.com.br` is portfolio-only. The active story is Home / Origin →
+> Professional / Portfolio; mobile continues through the Professional chapters
+> to the global footer. Earlier Application-branch stages below describe the
+> historical plan and are superseded for active institutional implementation.
+> The independent musical-application product is outside this removal. The
+> successor rebaseline and automated geometry checkpoint are complete; Human
+> Geometry Approval remains pending at task 5.6 (30/51).
+>
+> **Current HGA boundary (ADR-055 / ASM-IMP-DEC-018, 2026-09-23):** desktop
+> support does not require horizontal orientation. Preserve complete capacity
+> gating and desktop-quality `vertical-wide` fallback. HGA-001A is resolved;
+> HGA-001B is expected capacity rejection; HGA-001C and HGA-002 remain open.
+> Future bounded presentation/macro-spacing work follows 018, without Projects
+> geometry, eligibility, Composer or motion changes. Current review is docs-only.
+>
+> **Current Projects boundary (ADR-056 / ASM-IMP-DEC-019, 2026-09-24):**
+> the Stage-1 Motion Lab renders the full Projects fan only in
+> `horizontal-enhanced`; vertical story modes render one static teaser. The
+> owner withdrew the prior `/portfolio` listing and detail routes from the
+> active public scope. Earlier route, card-link, and mobile-stack requirements
+> below remain historical phase contracts and are superseded for current work.
+
 **Status:** normative and approved  
 **Canonical language:** English  
 **Execution rule:** Codex must execute phases strictly in order. A phase is not complete until its gate is satisfied and evidence is recorded. Codex must not skip, merge, or reorder phases.
@@ -8,16 +45,15 @@
 
 Rebuild `wflyer.com.br` as a personal professional portfolio and service-acquisition site under the W_Flyer brand, with:
 
-- a scroll-driven desktop narrative using native vertical scroll mapped to a horizontal story;
-- a vertical mobile/tablet fallback with Portfolio first and Application second;
+- one continuous Home → About → Services → Process → Projects → Contact → Terminal journey, with landmarks and content/interaction spans;
+- a viewport camera and capability-adaptive expanded landscape, compact landscape and portrait traverse presentations under ADR-057;
 - one canonical master story position;
 - header traversal through intermediate chapters, proportional to distance and capped at 3.0 seconds;
-- two continuous organic musical scores from Home to their final barlines;
-- a professional branch and an application branch;
-- preserved detailed routes for SEO and long-form content;
+- one continuous organic musical score from Home through the Professional terminal;
+- one portfolio narrative with Home as its sole origin;
+- preserved service and legal detailed routes for SEO and long-form content;
 - deterministic music rendering/composition;
 - a humanized, hooded, non-photorealistic W_Flyer Persona;
-- a video-based, non-interactive application demonstration;
 - progressive enhancement, reduced-motion support, accessibility, performance, and full recovery behavior.
 
 ## Phase 0 — Canonical merge, audit, and baseline protection
@@ -384,17 +420,58 @@ The authoritative Phase-9 evidence references are:
 
 All sealed evidence remains immutable.
 
-### Post-Phase-9 Assembly/Motion successor boundary — Stage 0 complete
+### Post-Phase-9 Assembly/Motion successor boundary — bounded Stage 1 authorized
+
+**Current execution gate — 2026-09-13:** ADR-051 / ASM-IMP-DEC-015
+registers the distinct inherited **ASM-CR-001 Access content-reservation** root
+and approves scene-owned deterministic full-state PRELAUNCH reservation using
+existing geometry transport, with only minimum proven local entry/exit support.
+No reactive form/Turnstile DOM→Projection loop, per-frame measurement, arbitrary
+370px replacement, unrelated chapter/Projects/Composer change, form redesign or
+weakened acceptance. 118px is not a maximum. SSR/first-client and ordinary
+interaction remain stable; later LIVE evolution uses the same scene contract.
+
+ADR-052 / ASM-IMP-DEC-016 and **ASM-AUDIT-001** add a prerequisite now triggered
+by three distinct inherited roots (ASM-PC-001/002/003). Preserve valid prior
+repairs and scopes, but pause new individual inherited repairs, including Access,
+until one prebounded audit and one complete-batch owner disposition. Historical
+execution sequences below remain context; they do not override this prerequisite.
+The canonical policy is
+`docs/canonical-v2/00-governance/07-successor-inherited-defect-audit-policy.md`.
+
+The approved manifest in the active change fixes 150 current cases plus 150
+frozen-source comparison obligations, 3,240 Access state observations, 48 lifecycle
+and 24 static-accessibility sequences, and existing named guard sources. Use
+mechanical structured collection/comparison/grouping; model analysis only for
+differences, failures, unclassified cases and root clusters. No per-slot narrative
+or unnecessary screenshots. Keep raw failures and all mandatory validators;
+individual explicit noncritical DEFER never waives an invariant or must-pass test.
+Fallback remains separate from candidate validity. OUT_OF_AUDIT_SCOPE /
+NEEDS_REVIEW is recorded without automatic expansion; independent safe declared
+observations continue after findings. Missing required evidence remains blocking.
+
+Current Ultra normalizes only approved governance, validates strict/structured/
+ID/reference/diff/historical integrity and STOPs. Next is COMPLEX_DIAGNOSIS AUDIT ONLY,
+with no product/runtime/pipeline repair; then STOP for one owner/governance batch
+disposition before normally routing bounded blocking work to BOUNDED_IMPLEMENTATION. Focused
+and deterministic qualification still precede fresh final matrix/evidence and
+Human Geometry Approval. Progress remains 7/92, human approval pending; no Stage
+2+, refreeze, motion, commit, push or deploy. All previous seals/payloads,
+negative fixtures, diagnostics and unrelated dirty changes remain immutable.
 
 The isolated OpenSpec change `implement-scroll-driven-score-assembly-and-motion`
 has completed its documentation-only Stage-0 bootstrap on 2026-09-05. Gate 0
 is PASS; the owner has approved Stage 0 and its scoped documentation checkpoint
-commit. Bounded Stage-1 implementation authorization remains pending. Its sole
+commit. Subsequent owner instructions authorize bounded Stage 1, with the
+2026-09-08 ADR-044/045 exception and hydration correction normalized before
+implementation, the focused 2026-09-09 ADR-046 numerical determinism
+boundary normalized before the hydration fix, and ADR-047's exact six-defect
+Batch-2 exception normalized before any Batch-2 repair. Its sole
 successor technical authority is:
 
 `docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md`.
 
-The successor exclusively owns these five geometry refinements transferred
+The successor owns these five geometry refinements transferred
 from the Phase-9 human review:
 
 - `ASM-LAYOUT-DELTA-001` — Application terminal spatial continuation;
@@ -406,11 +483,93 @@ from the Phase-9 human review:
 
 No `ASM-LAYOUT-DELTA-*`, Composer semantic change, Assembly, or Motion work was
 implemented in Phase 9 or Stage 0. The isolated successor boundary and its
-Stage-0 preconditions are recorded in its `stage-0-review.md`; this checkpoint
-does not authorize Stage 1, Phase 10, or later parent work. Stage 1 must stop
+Stage-0 preconditions are recorded in its `stage-0-review.md`. The later
+ADR-044/045 authorization adds exactly the 14 inherited defect envelopes
+(`ASM-SI-001..014`; static `015..018` repeat `004..007`) and the direct
+StoryScoreLayer hydration regression. Global zero-intersection acceptance and
+all historical evidence remain unchanged. Normalize governance and pass its
+checks first. ADR-046 / `ASM-IMP-DEC-010` retains the existing six-decimal
+presentation representation after full-precision safety and separates only
+internal `candidateCount` telemetry from canonical hydration attributes;
+allocator math, candidate uniqueness, semantics, and acceptance remain
+unchanged. Preserve the valid numerical-only H2 stop and four-engine source
+trace; prove exact semantic/canonical geometry and SSR/first-client equality
+with zero hydration warnings before continuing. Diagnose and fix hydration,
+pass focused regression, repair the
+registered local geometry families, then run the deterministic geometry gate,
+serial three-engine matrix, and successor evidence. The hydration fix and the
+14 Batch-1 repairs have passed their recorded focused checks. The real-DOM
+matrix then correctly stopped for six additional inherited defects. ADR-047 /
+`ASM-IMP-DEC-011` authorizes exactly Batch 2 `ASM-SI-019..024`: one Application
+Demo→Launch defect at 1440x900, 1536x900 and 1920x917, plus five Professional
+defects at 1100x640 (six distinct defects / eight viewport occurrences).
+Their supplemental review and JSON retain Stage-0/Phase-9 reproduction and
+do not replace the immutable Batch-1 records. Only the exact six local
+envelopes and minimum adjacent continuity geometry may change. Global zero
+center-path and visible-staff intersections remains mandatory; no broader
+Phase-9 reopening, aesthetic redesign, unrelated reshaping, Composer change,
+or generalized metadata is authorized. Any additional inherited defect outside
+Batch 1 plus Batch 2, or material expansion beyond an envelope, requires a new
+explicit STOP/decision. The ADR-047 governance-only run was required to stop after its
+inventory, normalization, strict/structured/diff and historical integrity checks
+pass, before Batch-2 runtime repairs, browser matrix, or final evidence. The
+separate High continuation may implement those six repairs with focused checks;
+the final browser matrix still requires a clean deterministic global gate.
+ADR-048 / ASM-IMP-DEC-012 now registers ASM-PC-001 (one inherited P3 root,
+O01/O02/O03) with Stage-0/Phase-9 constructor proof. The owner selects whole-
+story capacity fallback: coarse eligibility AND candidate-horizontal Projects
+capacity are required; otherwise the existing compatible vertical mode applies.
+The exact exception includes minimum Projects-only vertical three-visit
+Projection/measurement support and lifecycle/semantic visit preservation. No
+fan repositioning, card/section dimension changes, viewport hack, Composer
+change or weaker 12px/global-zero contract. Preserve all previous repairs.
+The prior outside-batches STOP remains historically valid; future unregistered
+defects/material expansion still STOP. Current Ultra work normalizes only
+governance and stops after bounded checks, before High implementation.
+
+ADR-049 / ASM-IMP-DEC-013 separately registers ASM-PC-002: the uncapped
+first-Projects-visit full-ink clearance defect at 1440x900, 1536x900 and 1920x917
+(O01/O02/O03). Only the first horizontal notation shelf and minimum entry/
+visit-1-to-2 continuity may change, with reservation derived from complete
+rendered ink and required interaction envelopes. ASM-PC-001 stays unchanged.
+The three saved fixtures remain negative baselines; horizontal capability
+requires complete actual capacity PASS, never historical acceptance or a fixed
+viewport workaround. Candidate qualification now uses the separately named
+013 + 014 local envelopes under ADR-050 below; if none can pass, STOP.
+Preserve cards/fan, visits 2/3 except minimum proven continuity, NON-ASSEMBLY,
+Composer/glyphs, both batches, ADR-046, 12px, visible ink/staff and global zero.
+This additional owner decision permits only governance normalization in Ultra,
+then bounded validation and STOP for a separate High implementation run.
+All historical records remain immutable; no human gate is marked complete.
+
+ADR-050 / ASM-IMP-DEC-014 registers distinct ASM-PC-003: second-horizontal-
+Projects-shelf focus-start clearance at 1440x900, 1536x900 and 1920x917
+(O01/O02/O03). Its retained constructor/style lineage is inherited, not a fresh
+historical browser PASS. Only that shelf and minimum necessary visit-1-to-2 /
+visit-2-to-3 junction controls may change. Derive reservation from full visible
+staff/applicable event ink and actual production card/interaction envelopes
+over transitions. Preserve focus accessibility, visit 1 except its separate
+ASM-PC-002 authority, visit 3's own shelf, cards/fan, unrelated geometry and
+all prior contracts/validators. No fixed offset, viewport branch or new solver.
+
+ASM-PC-001/002 remain separate and their repair boundaries are unchanged.
+At least one appropriate corrected horizontal candidate among those three
+viewports must pass the complete predicate within the combined named 013 + 014
+envelopes; old fixtures remain negative and universal fallback cannot conceal
+failure. High repairs 002 first, then 003; only after both local repairs pass
+may 001 fallback/vertical/lifecycle work continue. Out-of-envelope movement or
+another unregistered defect requires STOP. Current Ultra normalizes only
+necessary governance and validates strict/structured/diff/integrity checks,
+then stops for High with runtime implementation pending. Retain the partial
+evaluator/eight tests, all original STOP/lineage evidence, 7/92 and pending
+Human Geometry Approval. No runtime repair, final matrix or captures here.
+
+Phase 10 and later parent work remain unauthorized. Stage 1 must stop
 after automated validation and deterministic visual evidence for explicit
 Human Geometry Approval. Stage 2 refreeze follows that approval; Stage 3+
-requires the refreeze. See the successor `stage-1-authorization.md` draft.
+requires the refreeze. Stage 2+ remains unstarted and unauthorized. See the
+successor `stage-1-authorization.md`. No commit, push, deploy, or motion is
+authorized by the current Stage-1 instruction.
 
 ## Phase 10 — W_Flyer Persona asset, rig, and easter eggs
 

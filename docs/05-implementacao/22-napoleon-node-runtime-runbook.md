@@ -91,7 +91,7 @@ remain pending until the owner inspects the panel.
 | Deploy behavior | actual automatic/manual behavior recorded before attachment | `<external evidence pending>` |
 | Working directory | repository root | `<external evidence pending>` |
 | Node.js version | `24.x` | `<external evidence pending>` |
-| Package manager | pnpm `11.24.0` through Corepack | `<external evidence pending>` |
+| Package manager | pnpm `11.26.0` through Corepack | `<external evidence pending>` |
 | Install/build command | command in section 4 | `<external evidence pending>` |
 | Runtime entry point | `.next/standalone/server.js` | `<external evidence pending>` |
 | Start command | `node .next/standalone/server.js` | `<external evidence pending>` |
@@ -118,7 +118,7 @@ checkout and supports `set -euo pipefail`. Then configure this build command:
 set -euo pipefail
 corepack enable
 test "$(node --version | cut -d. -f1)" = "v24"
-test "$(pnpm --version)" = "11.24.0"
+test "$(pnpm --version)" = "11.26.0"
 pnpm install --frozen-lockfile
 WFLYER_BUILD_ID="$(git rev-parse --verify 'HEAD^{commit}')"
 export WFLYER_BUILD_ID
@@ -253,13 +253,9 @@ while IFS= read -r route; do
   }
 done <<'WFLYER_PUBLIC_ROUTES'
 /
-/aplicacao-wflyer
-/aplicacao-wflyer/como-funciona
-/aplicacao-wflyer/beneficios
 /sobre
 /servicos
 /processo
-/portfolio
 /contato
 /servicos/criacao-de-sites
 /servicos/criacao-de-aplicacoes

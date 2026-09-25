@@ -1,5 +1,10 @@
 # Scope, Status, and Terminology
 
+> **Current scope:** portfolio-only under ADR-053 / `ASM-IMP-DEC-017`.
+> Application-specific terms below are retained only where they define frozen
+> predecessor records or the independent product; they do not define an active
+> institutional story branch.
+
 ## Website scope
 
 `wflyer.com.br` is:
@@ -26,7 +31,9 @@ It is not presented as “W_Flyer company.”
 | interactive tablet | application demo device |
 | route coordinate | story progress / timeline label |
 
-The stable detailed URL `/portfolio` is retained for the current release unless the owner separately approves a URL migration. Its public label is `Projetos`.
+ADR-056 records the owner's withdrawal of the former `/portfolio` listing and
+`/portfolio/[slug]` details from the current public release. `Projetos` remains
+the story chapter label; no replacement project-detail IA or URL is defined.
 
 ## Status
 

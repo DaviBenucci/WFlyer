@@ -241,7 +241,7 @@ without copying any secret value:
 | Selected source | `develop/site-institucional` and observed full SHA |
 | Deploy behavior | Actual automatic/manual control and how premature deploy is prevented |
 | Node version | Actual configured `24.x` value |
-| Package manager | Actual Corepack/pnpm `11.24.0` behavior |
+| Package manager | Actual Corepack/pnpm `11.26.0` behavior |
 | Working directory | Actual repository-root setting |
 | Build command | Actual command, compared with the canonical runtime runbook |
 | Start command | Must execute `node .next/standalone/server.js` |
@@ -295,7 +295,7 @@ PLAYWRIGHT_BASE_URL="${WFLYER_STAGING_ORIGIN}" \
 The suite must pass against the external HTTPS origin without starting a local
 server and without exposing `__WFLYER_TRANSITION_TEST__`. It covers all public
 routes, staging noindex, accessibility, 404, navigation history, first-session
-intro, the local tablet journey, and a non-submitting Contact form check.
+intro, the portfolio Home journey, and a non-submitting Contact form check.
 
 Do not point `test:e2e`, `test:a11y`, `test:motion`, or `test:visual` at
 deployed staging. Those suites use repository-test controls and local visual
@@ -312,13 +312,9 @@ set -euo pipefail
 
 routes=(
   '/'
-  '/aplicacao-wflyer'
-  '/aplicacao-wflyer/como-funciona'
-  '/aplicacao-wflyer/beneficios'
   '/sobre'
   '/servicos'
   '/processo'
-  '/portfolio'
   '/contato'
   '/servicos/criacao-de-sites'
   '/servicos/criacao-de-aplicacoes'

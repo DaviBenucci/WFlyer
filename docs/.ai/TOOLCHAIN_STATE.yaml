@@ -1,0 +1,89 @@
+# Derived state maintained by Gemini Flash in Antigravity.
+# Repository/live environment are authoritative. This file is a cache and may be regenerated.
+
+schema_version: 2
+status: UNINITIALIZED
+
+repository:
+  root: null
+  branch: null
+  head: null
+  scanned_at: null
+  scanned_by: GEMINI_FLASH
+
+maintenance:
+  last_run_kind: null        # PREFLIGHT | POSTFLIGHT | EXPLICIT_MAINTENANCE
+  last_result: NEVER_RUN     # READY | ACTION_REQUIRED | HUMAN_DECISION_REQUIRED | FAILED | NEVER_RUN
+  handoff_reason: null
+  next_actor: null           # CODEX | SONNET | GEMINI_FLASH | GEMINI_PRO | HUMAN | NONE
+
+# Environment information is descriptive, not authorization to modify the machine.
+environment:
+  os: null
+  node_version: null
+  python_version: null
+  package_managers: {}
+  notes: []
+
+# Flexible map keyed by a stable tool identifier.
+# Example fields are shown as comments; only populate facts that were actually verified.
+tools: {}
+# tools:
+#   graphify:
+#     detected: true
+#     confidence: HIGH       # HIGH | MEDIUM | LOW
+#     evidence:
+#       - graphify-out/
+#     ownership: GLOBAL_TOOL_PROJECT_INTEGRATION
+#     manager: <verified manager/provenance>
+#     installed_version: <verified version>
+#     available_version: <last checked version or null>
+#     available_version_checked_at: <timestamp or null>
+#     update_state: CURRENT  # CURRENT | UPDATE_AVAILABLE | UPDATE_APPLIED | BLOCKED | UNKNOWN
+#     integration_health: HEALTHY  # HEALTHY | DEGRADED | BROKEN | UNKNOWN
+#     last_validated_head: <sha or null>
+#     global_change_observed:
+#       changed: false
+#       before: null
+#       after: null
+#
+#   storybook:
+#     detected: true
+#     confidence: HIGH
+#     evidence:
+#       - package.json
+#       - .storybook/
+#     ownership: REPOSITORY_DEPENDENCY
+#     manager: pnpm
+#     installed_version: <version>
+#     available_version: <version>
+#     update_state: CURRENT
+#
+#   context7:
+#     detected: true
+#     confidence: HIGH
+#     ownership: REMOTE_SERVICE
+#     manager: remote_mcp
+#     endpoint_health: HEALTHY
+
+generated_artifacts:
+  graphify:
+    present: false
+    represented_head: null
+    stale: null
+    paths: []
+  codex_context:
+    path: docs/.ai/CODEX_CONTEXT.md
+    based_on_head: null
+    status: UNINITIALIZED
+
+findings: []
+# findings:
+#   - id: TOOL-FINDING-001
+#     class: TOOLING_UPDATE | CONFIG_DRIFT | SPEC_DRIFT | MIGRATION_REQUIRED | PROVENANCE_AMBIGUITY
+#     severity: INFO | WARNING | BLOCKING
+#     tool: <tool id>
+#     summary: <concise finding>
+#     evidence: []
+#     required_actor: CODEX | SONNET | GEMINI_FLASH | GEMINI_PRO | HUMAN | NONE
+#     resolved: false

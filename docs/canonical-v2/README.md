@@ -1,51 +1,60 @@
-# W_Flyer v2 Canonical Documentation
+# W_Flyer canonical v2 package
 
-**Status:** approved target specification  
-**Current code:** retained public v1 landing baseline plus completed Phases
-2–9 on isolated development routes, including readiness/bootstrap/deep links,
-the native-scroll master story, semantic header/history, Professional and
-Application scenes, one continuous dual score, and the secure Application
-PRELAUNCH refinement. Gate 9 passed on 2026-09-04 at technical-baseline commit
-`306ccb74da6c7bbf8f187e360c0776c571b5fc3d`; the successor Assembly/Motion
-OpenSpec completed documentation-only Stage 0 on 2026-09-05 with Gate 0 PASS.
-The owner has approved Stage 0 and its scoped documentation checkpoint commit.
-Bounded Stage-1 authorization remains pending; no successor runtime
-implementation or public `/` cutover has started.
+> **Current spatial authority:** ADR-057 / ASM-IMP-DEC-020 and
+> [Continuous Spatial Story](02-experience/01-global-story-architecture.md).
+> One story uses landmarks, spans and a viewport camera in all presentations.
+> The older topology summaries below express semantic order, not independent
+> desktop/mobile geometries. Target implementation and Human Geometry Approval
+> remain pending; active tasks are 25/55 after rebaseline.
 
-**Implementation plan:** [`../../WFLYER_IMPLEMENTATION_PLAN.md`](../../WFLYER_IMPLEMENTATION_PLAN.md)
 
-## Reading order
+## Current authority
 
-1. `00-governance/01-source-of-truth.md`
-2. `00-governance/02-scope-status-and-terminology.md`
-3. `00-governance/03-decision-register.md`
-4. `00-governance/04-supersession-map.md`
-5. `00-governance/06-decision-traceability.md`
-6. `01-product/`
-7. `02-experience/`
-8. `03-visual/`
-9. `04-music/`
-10. `05-architecture/`
-11. `06-migration/`
-12. `07-quality/`
-13. `manifests/`
-
-## Canonical classification
-
-Every statement in this directory is classified as one of:
-
-- **APPROVED:** Codex must implement it.
-- **CALIBRATION:** Codex may propose values; human approval is required before the value becomes canonical.
-- **PENDING ASSET:** implementation may scaffold the contract, but final integration cannot be approved until the asset is supplied and approved.
-- **RETAINED:** an existing v1 behavior remains authoritative.
-- **SUPERSEDED:** historical/current-state behavior must not be used as the target.
-- **OUT OF SCOPE:** Codex must not implement it in the current website repository.
-
-## Core target
+ADR-053 and `ASM-IMP-DEC-017` define the active institutional site as a
+portfolio-only personal professional experience.
 
 ```text
-APPLICATION TERMINAL ← ACCESS ← DEMO ← BENEFITS ← HOW ← APPLICATION ← HOME
-                                                                      HOME → ABOUT → SERVICES → PROCESS → PROJECTS → CONTACT → PROFESSIONAL TERMINAL
+Desktop: HOME / ORIGIN → SOBRE → SERVIÇOS → PROCESSO → PROJETOS → CONTATO
+Mobile:  HOME → SOBRE → SERVIÇOS → PROCESSO → PROJETOS → CONTATO → FOOTER
 ```
 
-Desktop maps native vertical scroll to this horizontal story. Mobile uses the semantic document order: professional branch first, application branch second.
+Home is the sole narrative and spatial origin. No institutional Application
+chapter, branch selection, left-side reservation, access CTA, demo, responsive
+branch concatenation, or compatibility geometry remains active. The independent
+musical application is a separate product concern.
+
+## Canonical precedence
+
+1. repository `AGENTS.md`;
+2. `WFLYER_IMPLEMENTATION_PLAN.md`;
+3. governance decision register, including ADR-053;
+4. this canonical package and machine-readable manifests;
+5. the active OpenSpec change;
+6. retained operational and historical records.
+
+Frozen Phase-9 closure and audit evidence accurately describe their former
+product scope and remain immutable. They are not current portfolio validation.
+
+## Current implementation change
+
+`openspec/changes/implement-scroll-driven-score-assembly-and-motion`
+
+The current architecture normalization is documentation-only. Its bounded next
+implementation package begins with Stage-1 spatial metadata. Human Geometry
+Approval, Stage 2+, new motion integration and public cutover remain pending.
+Only one safely isolated local governance checkpoint commit is permitted by the
+current owner request; no product implementation, push or deployment here.
+
+## Core invariants
+
+- native scroll is authoritative, with primary vertical input in portrait;
+- GSAP is the sole programmatic motion engine;
+- no per-frame Composer, Projection rebuild, ordinary DOM measurement, or React
+  frame clock;
+- approved glyph paths and Composer semantics/fingerprints remain stable;
+- Projects remains NON-ASSEMBLY; the retained full fan keeps its three visits,
+  while final sequential presentation follows the new contract;
+- full visible ink, 12px physical clearance, event-safe zoning, and global zero
+  self-intersections remain mandatory;
+- all motion owners have explicit cleanup;
+- reduced motion and failure retain a readable, navigable vertical document.

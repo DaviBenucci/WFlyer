@@ -1,5 +1,11 @@
 # Project Card System
 
+> **Current Stage-1 scope (ADR-056 / ASM-IMP-DEC-019):** the full fan below is
+> active only in `horizontal-enhanced`. `vertical-wide` and `vertical-compact`
+> display one noninteractive teaser chosen from canonical featured-public order.
+> The prior route/link and mobile-stack contracts below are historical and
+> superseded. No current project listing/detail route is defined.
+
 ## Desktop composition
 
 3–5 highlighted project cards form a controlled hand/fan:
@@ -20,14 +26,15 @@ Rest → hover/focus:
 - selected card moves to foreground;
 - focus ring remains visible.
 
-Click/Enter follows the semantic card link to an allowlisted
-`/portfolio/[slug]` detail. Unknown or nonpublic records generate neither a
-card nor a route/sitemap entry. Hover is preview only and never the exclusive
-access path.
+Click/Enter selects a card within the fan without navigation. Unknown or
+nonpublic records generate neither a card nor a route/sitemap entry. Hover is
+preview only and never the exclusive access path.
 
 ## Mobile
 
-Use a staggered vertical stack. Do not copy the full desktop fan, require hover, or force horizontal carousel/swipe.
+Use one static teaser. Do not mount the fan, require hover, or force horizontal
+carousel/swipe. The horizontal capacity candidate may construct an inert fan
+only for measurement, outside the active interaction/accessibility tree.
 
 ## Content anatomy
 

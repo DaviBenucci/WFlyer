@@ -1,187 +1,65 @@
 # Chapter Contracts
 
-Each chapter contract defines: objective, content, CTA, visual elements, drawing/motion, timeline position, desktop, mobile, detail route, entry/exit, and acceptance.
+> Spatial extent, entry, content/interaction spans and camera behavior are
+> governed by [Continuous Spatial Story](01-global-story-architecture.md).
+> The chapter content below is semantic; no chapter must fit in one viewport.
 
-## HOME — Origin
 
-1. **Objective:** explain two expressions of one origin: W_Flyer application and professional portfolio/services.
-2. **Content:** brief application proposition, W_Flyer origin statement, brief professional proposition; pt-BR copy remains editorially reviewable.
-3. **CTA:** no primary CTA; scroll is the exploration cue; header is optional fast navigation.
-4. **Visuals:** official logo/symbol, one substantially enlarged approved
-   treble clef as the shared scenographic origin, two branch departures below
-   its lower region, restrained scroll cue, and no score through primary copy.
-5. **Motion:** readiness intro hands off to score/clef/branches; first user scroll begins the selected branch.
-6. **Timeline:** semantic origin between both branch lengths.
-7. **Desktop:** full-stage balanced composition; no internal scroll.
-8. **Mobile:** first section; no left/right instruction dependency.
-9. **Detail route:** `/`.
-10. **Entry/exit:** intro → Home; exits to Application or About.
-11. **Acceptance:** `HOME-AC-001..008` in the acceptance manifest.
+## Home — origin
 
-## ABOUT — Professional introduction
+- Establish one portfolio path and one musical/spatial origin.
+- Preserve the approved clef, score identity, readiness intro, skip, fail-open,
+  reduced-motion, and deep-link behavior.
+- Expose professional service and profile actions only.
+- Render one five-line origin staff; no branch-choice UX or dormant reservation.
 
-1. **Objective:** identify the person/professional behind the work without exposing physical appearance.
-2. **Content:** concise professional positioning, relation among software/product/design/problem solving, personal responsibility.
-3. **CTA:** no primary CTA; optional secondary `/sobre` link.
-4. **Visuals:** required future W_Flyer Persona region, professional score in a
-   low safe corridor, and abstract brand structures. Until Phase 10, the
-   explicit `PERSONA_RESERVED_ZONE` is an exclusion only and contains no
-   invented Persona asset.
-5. **Motion:** Persona forms from/around score geometry; hands off visual structures to Services.
-6. **Timeline:** first professional chapter.
-7. **Desktop:** Persona approximately 35–40% of composition after final asset calibration.
-8. **Mobile:** headline → Persona → concise text; reduced assembly.
-9. **Detail route:** `/sobre`.
-10. **Entry/exit:** Home geometry → Persona → Services modules.
-11. **Acceptance:** no photo/likeness; static readable fallback; approved Persona only.
+## Sobre — professional introduction
 
-## SERVICES
+- Identify Davi Benucci as the professional behind W_Flyer without inventing a
+  final Persona asset or exposing physical likeness.
+- Preserve the approved Persona reservation until the owner supplies/approves
+  the final asset.
+- Enter from Home and continue to Serviços.
 
-1. **Objective:** explain what can be commissioned.
-2. **Content:** Sites, Applications, Integrations, Custom Solutions; one outcome-oriented sentence each.
-3. **CTA:** secondary links to `/servicos` or service detail routes.
-4. **Visuals:** four brand-derived modules in the foreground, not project cards;
-   the score uses the shared card-interaction envelope behind them with
-   restrained opacity and no events in unsafe expanded geometry.
-5. **Motion:** one eased normal → expanded → normal score interaction; modules
-   remain readable and later align into Process.
-6. **Timeline:** after About.
-7. **Desktop:** four modules visible at stable state.
-8. **Mobile:** vertical cards/modules.
-9. **Detail route:** `/servicos` and existing service details.
-10. **Entry/exit:** About → module formation → ordered Process path.
-11. **Acceptance:** exactly four initial categories, personal language, keyboard operability.
+## Serviços
 
-## PROCESS
+- Present exactly four approved categories: sites, software applications,
+  integrations, and custom solutions.
+- Use brand-derived modules, keyboard-operable links, and the approved bounded
+  card/score interaction envelope.
+- Preserve complete content and a vertical mobile presentation.
 
-1. **Objective:** establish method and trust.
-2. **Content:** Discovery and Context; Scope and Direction; Incremental Implementation; Validation and Evolution.
-3. **CTA:** none required.
-4. **Visuals:** one ordered progression above a restrained lower/middle score
-   corridor with long gentle curvature.
-5. **Motion:** line/progress activates stages sequentially; no global-progress ambiguity.
-6. **Timeline:** after Services; not a primary header item.
-7. **Desktop:** horizontal ordered sequence within the story stage.
-8. **Mobile:** vertical sequence.
-9. **Detail route:** existing `/processo` retained.
-10. **Entry/exit:** Services modules align → Process → overlap into project cards.
-11. **Acceptance:** four ordered steps; no plural-company language; no mandatory interaction.
+## Processo
 
-## PROJECTS
+- Present Descoberta e contexto; Escopo e direção; Implementação incremental;
+  Validação e evolução in that order.
+- Keep the sequence readable without motion and continue toward Projetos.
 
-1. **Objective:** provide verifiable evidence of capability.
-2. **Content:** project name, type/category, concise purpose, owner role/competencies, status; no invented metrics.
-3. **CTA:** each card is a semantic link to an authorized destination/detail.
-4. **Visuals:** 3–5 highlighted cards; initial set is three authorized projects; hand/fan composition.
-5. **Motion:** stack enters, opens into fan, becomes interactive; hover/focus
-   raises, reduces rotation, and foregrounds. The score visits all three cards
-   through a behind-card alternating serpentine; steep spans are event-free
-   connectors and notation remains within the 18-degree tangent limit.
-6. **Timeline:** largest professional scene weight.
-7. **Desktop:** partially overlapped fan with every project identifiable.
-8. **Mobile:** staggered vertical stack, no hover dependency or horizontal carousel requirement.
-9. **Detail route:** `/portfolio` for the current-release listing and
-   allowlisted `/portfolio/[slug]` details; unknown or nonpublic slugs fail
-   closed.
-10. **Entry/exit:** Process blocks → stack/fan → cards partially close and open space for Contact.
-11. **Acceptance:** authorized projects only; focus visible; selected card not clipped; keyboard/touch equivalent.
+## Projetos
 
-## CONTACT
+- Present only W_Flyer, MSN Distribuidora, and MSN Suprimentos unless the owner
+  explicitly approves more.
+- Preserve NON-ASSEMBLY, canonical data and keyboard/focus/touch safety. The
+  retained full fan keeps its three visits and capacity/interaction envelopes;
+  ADR-056 single-teaser behavior is transitional. Record the final sequential
+  continuous-span disposition during implementation under ADR-057.
+- Keep complete visible ink, event-free connector valleys, tangent limits, 12px
+  physical clearance, and global zero self-intersections.
 
-1. **Objective:** convert professional interest into a real enquiry.
-2. **Content:** concise invitation, name, email, project type/subject, message; alternate approved channels.
-3. **CTA:** `Enviar mensagem` is the sole primary CTA.
-4. **Visuals:** calmer composition; a low long gentle score wave continues
-   below all copy, channels, form controls, consent, Turnstile, submission, and
-   feedback regions toward the ending.
-5. **Motion:** cards recede; form stabilizes; submission states are local and never auto-advance story.
-6. **Timeline:** final professional content chapter.
-7. **Desktop:** message/channels + form.
-8. **Mobile:** one column; followed by professional visual ending/transition, not a second semantic footer.
-9. **Detail route:** `/contato`.
-10. **Entry/exit:** Projects → Contact → final barline → professional terminal on desktop; mobile transitions to Application.
-11. **Acceptance:** secure existing backend; duplicate-submit protection; valid fields preserved; accessible error/success focus.
+## Contato
 
-## APPLICATION OVERVIEW
+- Preserve the secure contact form, alternate approved channels, validation,
+  Turnstile, consent, duplicate-submit protection, provider failure/recovery,
+  focus, and accessible status behavior.
+- End the Professional story with cadence, final barline, and the terminal.
+- Never auto-advance on form state; use the stable interaction-region contract
+  in the canonical spatial model so editing and native reachability remain safe.
 
-1. **Objective:** explain problem, audience, and proposition before features.
-2. **Content:** support for adapting scores between instruments/tonal contexts with explicit human review.
-3. **CTA:** no app-access CTA.
-4. **Visuals:** approved music system showing origin/context/result relationship, not fake live processing.
-5. **Motion:** score material transforms illustratively and stabilizes into the first How marker.
-6. **Timeline:** first application chapter after Home.
-7. **Desktop:** copy + musical composition.
-8. **Mobile:** concise copy + composition after professional branch.
-9. **Detail route:** `/aplicacao-wflyer`.
-10. **Entry/exit:** Home → application score language → How It Works.
-11. **Acceptance:** no internal pipeline terms, no accuracy promise, understandable without motion.
+## Global footer
 
-## HOW IT WORKS
+- Follow the final portfolio chapter in vertical document order.
+- Use the shared canonical footer data and expose surviving portfolio, legal,
+  accessibility, email, GitHub, and Instagram destinations.
 
-1. **Objective:** explain the approved public flow.
-2. **Content:** choose/insert score; origin instrument/key; destination instrument/key; view/review; export/continue.
-3. **CTA:** optional secondary detail link, no app-access CTA.
-4. **Visuals:** five ordered foreground markers with the same shared
-   event-free card-score interaction used by Services behind them.
-5. **Motion:** markers activate in order through the master timeline; no nested pinned story.
-6. **Timeline:** after Application; relatively long scene.
-7. **Desktop:** one/two steps visually dominant at a time.
-8. **Mobile:** vertical ordered timeline.
-9. **Detail route:** `/aplicacao-wflyer/como-funciona`.
-10. **Entry/exit:** Application result → step 01; step 05 transitions to Benefits.
-11. **Acceptance:** exact order; no hover dependency; no private implementation details.
-
-## BENEFITS
-
-1. **Objective:** translate function into visitor value.
-2. **Content:** less repetitive work; different contexts; review before continuing; continuous workflow.
-3. **CTA:** no app-access CTA.
-4. **Visuals:** four music-derived motifs/elements above a restrained lower
-   score corridor, not generic SaaS cards and not an expanded-card interaction.
-5. **Motion:** benefits emerge from the score and converge toward the demo device.
-6. **Timeline:** after How.
-7. **Desktop:** asymmetrical four-item composition.
-8. **Mobile:** four concise vertical items.
-9. **Detail route:** `/aplicacao-wflyer/beneficios`.
-10. **Entry/exit:** How step 05 → benefits → tablet preparation.
-11. **Acceptance:** exactly four landing groups; no invented numbers or guarantees.
-
-## DEMONSTRATION — APP-04
-
-1. **Objective:** show an illustrative interface flow without exposing a fake mini application.
-2. **Content:** approved muted/no-audio video; poster; exact final frame.
-3. **CTA:** no narrative CTA; replay is a media control.
-4. **Visuals:** device shell, screen mask, media, reflection/shadow, subtle desktop tilt.
-5. **Motion:** first playback begins only when chapter becomes active; completion switches to final frame and replay.
-6. **Timeline:** largest application visual scene.
-7. **Desktop:** prominent device; no internal UI controls.
-8. **Mobile:** frontal device; no hover/tilt dependency; reduced motion is static until explicit replay.
-9. **Detail route:** optional anchor within `/aplicacao-wflyer`, no dedicated route required.
-10. **Entry/exit:** Benefits → protected device → score routes quietly around
-    or below the device and prepares Launch.
-11. **Acceptance:** full state-machine criteria in the demo specification.
-
-## LAUNCH / APPLICATION FINAL CONTENT
-
-1. **Objective:** convert a fully informed visitor according to actual product availability.
-2. **Content:** in `PRELAUNCH`, truthful development status and an invitation to request one availability notification.
-3. **CTA:** in `PRELAUNCH`, one email field, explicit purpose-limited consent, Privacy Policy link, Turnstile, and `Avisar quando estiver disponível`; no unavailable app link. A later approved `LIVE` state replaces the form with one primary external link to `app.wflyer.com.br`.
-4. **Visuals:** reduced density, a protected accessible form, and musical cadence in a low safe region.
-5. **Motion:** deceleration; form states never advance the story and no pulsing/bouncing CTA.
-6. **Timeline:** final application content chapter.
-7. **Desktop:** focused, spacious composition.
-8. **Mobile:** obligatorily last application content before final ending/footer.
-9. **Detail route:** no separate PRELAUNCH route; future LIVE action uses the external application URL.
-10. **Entry/exit:** Demo → Launch → final barline → terminal/footer.
-11. **Acceptance:** all ten explicit form states, fixed-purpose consent,
-    secure dedicated endpoint, honest acknowledgment outcome, no automatic
-    redirect, and no earlier primary app CTA.
-
-## TERMINALS
-
-Application and professional terminal visuals begin only after their physical
-final barlines. They use shared data/configuration. The immersive landing does
-not append a second visual footer after a terminal already fulfills that role.
-Vertical/mobile integrates one semantic footer/navigation close into the final
-Application terminal; unrelated standalone/internal routes retain their shared
-footer behavior.
+The former institutional Application chapter contracts are historical under
+ADR-053 and have no active implementation requirement.

@@ -1,31 +1,27 @@
-# Brand Positioning and Product Goals
+# Brand Positioning and Goals
 
-## Positioning
+W_Flyer is Davi Benucci's professional brand. The public website presents a
+personal portfolio and service-acquisition experience; it does not present
+W_Flyer as a company.
 
-W_Flyer is the brand under which the owner presents professional work and the W_Flyer musical product. The website speaks from a personal/professional perspective, not as an invented agency or company team.
+## Goals
 
-## Business goals
+- explain professional capability in technology, product, design, and digital
+  problem solving;
+- show only approved project evidence;
+- describe services and process truthfully;
+- provide an accessible, secure Contact conversion path;
+- use music as a coherent visual language without obscuring content;
+- retain readable detailed routes and progressive enhancement.
 
-1. Demonstrate technical/product/design competence.
-2. Convert qualified visitors into service enquiries.
-3. Present the W_Flyer application after sufficient context.
-4. Preserve trust through verifiable cases and transparent product status.
+## Product boundary
 
-## Service offer
+The public website and `app.wflyer.com.br` are separate products. The website
+does not expose an institutional branch, demo, launch form, or access CTA for
+the musical application. Generic software-application services remain valid
+professional offerings.
 
-- Sites
-- Applications
-- Integrations
-- Custom solutions
+## Prohibited claims
 
-## Conversion model
-
-Professional branch terminates in Contact. Application branch terminates in Access W_Flyer. Home is exploratory and has no competing primary CTA.
-
-## Prohibitions
-
-- no “we are a company/team” implication;
-- no invented outcomes or metrics;
-- no personal photograph or realistic likeness;
-- no app access before the terminal scene in the mobile application flow;
-- no product capability claims beyond approved public boundaries.
+Do not invent company structure, team members, clients, metrics, outcomes,
+awards, testimonials, roadmap, product capability, or security guarantees.

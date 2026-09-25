@@ -150,7 +150,7 @@ actual panel that Napoleon can:
 
 1. select a Node.js application rather than a static site;
 2. pull the GitHub repository and exact staging branch;
-3. use Node.js 24 and pnpm 11.24.0 through Corepack;
+3. use Node.js 24 and pnpm 11.26.0 through Corepack;
 4. run the governed build from the repository root;
 5. start `node .next/standalone/server.js` as a persistent process;
 6. inject or configure the actual `PORT` contract and, only when required,

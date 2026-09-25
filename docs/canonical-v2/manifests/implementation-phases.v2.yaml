@@ -33,19 +33,19 @@ phases:
     status: gate-7-complete
     gate: G7
   - id: P8
-    name: Application scenes
-    status: gate-8-complete
+    name: Historical Application scenes
+    status: gate-8-complete-superseded-by-adr-053
     gate: G8
   - id: P9
-    name: Continuous dual-score integration
-    status: gate-9-complete
+    name: Historical continuous dual-score integration
+    status: gate-9-complete-superseded-topology
     gates: [G9-SCORE-PATH-HUMAN, G9]
   - id: P10
     name: Persona final asset and easter eggs
     gate: G10-HUMAN
   - id: P11
-    name: Final APP-04 media
-    gate: G11-HUMAN
+    name: Historical final APP-04 media boundary
+    status: superseded-by-adr-053
   - id: P12
     name: Accessibility/responsive/reduced-motion hardening
     gate: G12

@@ -1,22 +1,23 @@
-# Graph Report - WFlyer  (2026-09-04)
+# Graph Report - WFlyer  (2026-09-24)
 
 ## Corpus Check
-- 896 files · ~616,647 words
+- 1673 files · ~10,992,518 words
 - Verdict: corpus is large enough that graph structure adds value.
+- Unclassified: 144 file(s) not represented in the graph (top: .log 65, .css 28, .sha256 23)
 
 ## Summary
-- 6244 nodes · 10367 edges · 605 communities (459 shown, 146 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 290 edges (avg confidence: 0.91)
+- 7681 nodes · 12830 edges · 656 communities (526 shown, 130 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 441 edges (avg confidence: 0.91)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2ffef25b`
+- Built from commit: `40e6ae1a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - ui/index.ts
-- ChapterScore.tsx
+- renderer/types.ts
 - lib/contact/index.ts
 - theme-tokens.test.ts
 - transition.ts
@@ -24,23 +25,23 @@
 - scripts
 - Grupo wf-logo
 - SiteHeader.tsx
-- ProfessionalChapterScene.tsx
+- seo.ts
 - glyphs/types.ts
 - Fonte da verdade
 - Bootstrap repository-intelligence design
 - capture-music-gate-b-evidence.mjs
 - compilerOptions
-- lib/motion/geometry.ts
-- app/page.tsx
+- ScoreTransitionLayer.tsx
+- topology.ts
 - Relatório do bootstrap Graphify e OpenSpec
-- Brief opcional para referências adicionais
+- Golden pages e arquétipos
 - manifest.json
 - Complete Site QA Release Preparation Proposal
 - SiteExperienceShell.tsx
 - Corrected brand opening motion specification
 - QA da animação de entrada da marca
-- site-content.ts
 - pages/index.ts
+- stage-1-human-geometry-approval-evidence/manifest.json
 - capture-phase5-evidence.mjs
 - properties
 - Content and contact security design
@@ -48,18 +49,18 @@
 - Interactive Application Demo Design
 - Custom angular italic W_Flyer wordmark
 - Normative Documentation Index
-- Vec2
+- geometry/types.ts
 - Official production W_Flyer intro master
-- Catálogo de animações
+- playwright
 - Controles do endpoint de contato
 - lifecycle.ts
 - type
-- Current contact UI stops before the documented but unimplemented API, Turnstile and Resend flow
+- json
 - Decisions
 - Especificação application-desktop-light
 - Composição desktop em tema claro
-- Home origin with Application left, Institutional right, and animated home-pivot still planned
-- smoke-standalone.mjs
+- Chapter manifest drives score geometry and header navigation; Phase 05 animation remains unimplemented
+- build-note-model.ts
 - Staging, Release, Rollback, and Homologation Operations
 - Perfil de publicação
 - Guia operacional para Codex
@@ -69,22 +70,22 @@
 - ScoreTransitionLayer.stories.tsx
 - Cormorant Garamond SIL Open Font License
 - parse-yaml-subset.ts
-- topology.ts
+- lib/motion/eligibility.ts
 - ADDED Requirements
-- Contact Form Implementation Contract
+- compose-segment.test.ts
 - Brand opening motion specification
 - Manifesto de capítulos da partitura
 - Official W_Flyer vector animation master
 - properties
-- application-demo/index.ts
+- AI Model Routing, Escalation, Downgrade and Handoff Policy
 - Graphify Architecture Map
 - viewport
 - prepare-standalone.mjs
-- smoke-indexing.mjs
+- tooling/lifecycle.mjs
 - ScorePathReview.tsx
-- W_Flyer Institutional Site Documentation
-- Architecture Decision Register
-- Animação de entrada da marca W_Flyer
+- ProfessionalChapterScene.tsx
+- MotionStoryLab.tsx
+- CalibrationWorkbench.tsx
 - Continuidade editorial da dupla partitura
 - Fases de implementação
 - Contrato de execução integral pelo Codex
@@ -92,27 +93,27 @@
 - Accessible W_Flyer image title and description
 - Storyboards
 - capture-music-gate-c-delta-evidence.mjs
-- enum
-- run-music-gate-c-delta-validation.mjs
-- create-release-manifest.mjs
-- Narrativa de dupla partitura
-- Tablet interativo da página Aplicação
+- usage
+- capture.mjs
+- AI Model Routing, Escalation, Downgrade and Handoff Policy
+- Vec2
+- cleanup.ts
 - Paridade geométrica entre temas
-- enum
+- projects-capacity.ts
 - Separação entre site e aplicativo
 - Fontes técnicas oficiais
 - Visual authorization page matrix
 - Initial, symbol, and final state choreography
-- Composições do ramo da aplicação
-- Gate de autorização visual
+- 01-global-story-architecture.md
+- story/motion/geometry.ts
 - Arquitetura de componentes
-- Phase 09 Local Release-Readiness Report
+- Accumulated Codex Execution Report
 - Official dark-on-light W_Flyer horizontal lockup
 - Visual archetypes
 - Inspiration reference manifest
 - W_Flyer monochrome logo variant
-- enum
-- required
+- entry_edge
+- golden-page-spec.schema.json
 - Q: What is the exact CI E2E order and which late WebKit tests risk timing, retries, or shared state on Ubuntu 24?
 - devDependencies
 - Accessible Navigation Lifecycle Specification
@@ -122,27 +123,27 @@
 - capture-music-gate-c-evidence.mjs
 - Faixa de cinco benefícios
 - proposal.md
-- type
+- next
 - Pre-code closure status
-- run-lighthouse.mjs
+- shared-origin.ts
 - Official W_Flyer header symbol production asset
 - phase07-brand-intro.visual.spec.ts
-- Package Candidate Job
+- site-content.ts
 - public/index.ts
 - Brief Como funciona desktop
 - Terminal Contact form composition
 - Briefs opcionais de geração
-- enum
+- branch
 - tasks.md
-- start-lighthouse-server.mjs
-- validate-locked-dependencies.mjs
+- composer/types.ts
+- properties
 - Requirements
-- static-routes.a11y.spec.ts
-- page-archetypes.visual.spec.ts
+- app/layout.tsx
+- @playwright/test
 - Checklist de prontidão antes do código definitivo
-- GitHub Environments and Napoleon Runtime
-- Evidências visuais — Fase 2
-- Evidências visuais — Fase 3
+- SiteFooter.tsx
+- build-motif-model.ts
+- Animação de entrada da marca W_Flyer
 - Fluxo controlado de atualização de dependências
 - Process visual state at coordinate +3
 - Home visual state at coordinate 0
@@ -156,10 +157,11 @@
 - exit_anchor_y
 - tolerance
 - OpenSpec do site institucional
+- attempt-1-tooling/shared-probe.mjs
 - phase07-professional-scenes.spec.ts
-- phase07-brand-intro.spec.ts
+- Stage-1 first Projects full-ink owner authorization and High handoff
 - Evidências locais — Fase 1
-- motion_notes
+- Stage-1 Projects first-event ink clearance STOP — 2026-09-10
 - Requirement: Candidate browser evidence matches common CI
 - W_Flyer Music System v0.1 — Implementation Contract
 - W_Flyer Music System v0.1 — Implementation Contract
@@ -171,11 +173,11 @@
 - Tasks template
 - create-release-manifest.d.mts
 - vitest.setup.ts
-- home.a11y.spec.ts
-- phase07-brand-intro.a11y.spec.ts
+- Stage-1 Projects visit-2 focus clearance STOP — 2026-09-11
+- type
 - Q: Why did the GitHub Actions quality and browser checks fail, and how were they resolved?
-- home.visual.spec.ts
-- seo.ts
+- interactive_regions
+- 6. Approved Assembly Decisions — `ASM-DEC-*`
 - runtime.ts
 - Navigation focus transfer with Back/Forward focus preservation
 - gate-c-review.ts
@@ -185,29 +187,31 @@
 - ADDED Requirements
 - lab-score-models.ts
 - Requirements
-- @storybook/addon-vitest
+- notes
 - compose-motif.ts
-- tailwindcss
-- pitch-contours.ts
-- ComposerConfigurationError
-- @testing-library/react
+- presentation_annotations
+- react
+- compose-segment.ts
+- units.ts
 - Gate-C final triplet correction validation — 2026-08-24
-- @types/node
-- compose-segment.test.ts
-- triplet-numeral.test.ts
-- StoryNavigationContext.tsx
+- ref_node_path
+- draft-calibration.ts
+- vitest
+- AI Collaboration Protocol — Codex <-> Antigravity Baton Workflow
 - session-seed.ts
 - StoryBootstrapExperience.tsx
-- bootstrap/index.ts
-- @vitest/coverage-v8
+- ContactForm.tsx
+- coordinate
 - postcss.config.mjs
-- main.ts
-- score-continuity.spec.ts
-- static-routes.spec.ts
-- fonts.test.ts
-- ScorePath
+- ship_in_production
+- source
+- terminal
+- measurement.ts
+- Modelo espacial de dupla partitura
+- Staff.stories.tsx
+- event-safe-placement.ts
 - Napoleon Node.js runtime runbook
-- vitest.config.ts
+- Current Model Handoff
 - Programmatic SVG and GSAP brand intro
 - ADR-012 — Animação de entrada programática baseada na referência aprovada
 - Brand-intro temporal contract
@@ -248,6 +252,7 @@
 - Motion, theme, keyboard and reduced-motion requirements
 - Non-functional requirements RNF-001 through RNF-023
 - Double-score routing and transition requirements
+- eslint.config.mjs
 - OriginScore, ChapterScore, and ScoreTransitionLayer branch rendering
 - Truthful browser history with normalized server-rendered deep links
 - RootLayout → SiteExperienceShell → chapter-motion Phase 05 impact boundary
@@ -256,13 +261,21 @@
 - Spec-driven complete-brand-home-opening change metadata
 - Spec-driven correct-score-navigation-contracts change metadata
 - Repository SHA-256 checksum manifest
+- Stage-1 consolidated owner decision proposal
+- ref_node_url
+- collect-before-cascade-isolation.mjs
+- properties
+- properties
+- Stage 1 HGA architecture resolution and bounded implementation handoff
+- W_Flyer Institutional Site Documentation
+- Projects visit-3 classification and bounded implementation handoff
 - PROMPT_CODEX_FASE_09_NAPOLEON.md
 - Staging homologation report
-- build-note-model.ts
+- ref_node_crypto
 - Canonical Decision Register
 - Staging homologation runbook
 - Napoleon Node.js rollback runbook
-- Mapa de IDs SVG W_Flyer
+- AI Executor Stall, Escalation, and Systematic Audit Policy
 - Q: Audit the dirty visual stabilization change and regenerated baselines against the OpenSpec design and project rules
 - Decisions
 - GlyphCalibrationComposites.tsx
@@ -281,7 +294,7 @@
 - W_Flyer Music Renderer v0.1 — Canonical Contract
 - Chapter Contracts
 - projection.ts
-- app/layout.tsx
+- AI Executor Stall, Escalation, and Systematic Audit Policy
 - rebuild-scroll-driven-wflyer-v2/tasks.md
 - ADDED Requirements
 - W_Flyer Music Renderer v0.1
@@ -292,59 +305,59 @@
 - W_Flyer Procedural Score Composer v0.1 — Canonical Contract
 - Procedural Score Composer v0.1
 - File-by-File Migration Map
-- APP-04 Application Demo Device
+- APP-04 Application Demo Device — historical, superseded scope
 - Chapter Acceptance Criteria
-- composer/types.ts
+- capture-assembly-stage1-evidence.mjs
 - package.json
-- repo-overlay/openspec/changes/implement-music-system-v0-1/tasks.md
+- implement-music-system-v0-1/tasks.md
 - Q: Inspect relationships around the isolated Music System, Visual Lab, tests, legacy landing, and motion after structural changes
-- music/index.ts
+- Projects visit-2 focus clearance: lineage and owner decision — 2026-09-11
 - Q: Final Music System v0.1 structural isolation and runtime calibration validation audit
 - W_Flyer Visual Library — Musical Geometry Kit v0.1
 - Music System v0.1 — QA and Evidence Contract
 - W_Flyer Persona
 - State Machines
-- Music System v0.1 — QA and Evidence Contract
+- staging.smoke.spec.ts
 - ADDED Requirements
 - Repository conflict map — inspected `WFlyer(10).zip`
 - Decision Traceability by Conversation Block
 - Desktop Scroll, Header Traversal, URL, and History
-- Continuous Dual-Score Visual System
+- Continuous Score Visual System — historical dual-score baseline
 - Low-Fidelity Scene Wireframes
 - Motion Lifecycle and Performance
 - Current-State Audit — `Wflyer(20260814-194446).zip`
 - W_Flyer v2 — Canonical Documentation Manifest
-- Canonical decision-register delta
+- email.ts
 - Source of Truth and Precedence
-- Brand Positioning and Product Goals
+- Brand Positioning and Goals
 - User Journeys, Conversion, and Content Boundaries
-- Mobile, Responsive Rebuild, and Reduced Motion
-- Intro, Bootstrap, Deep Links, and Recovery
+- OriginScore.tsx
+- smoke-standalone.mjs
 - Visual Asset Library
 - Project Card System
 - Music Visual Lab and Gates
 - Cutover and Rollback
-- Music System v0.1 Gate A report
+- Continuous Spatial Story
 - Music System v0.1 Gate C corrective delta — automated review bundle
-- renderer/types.ts
+- ScoreGlyph.tsx
 - rebuild-scroll-driven-wflyer-v2/proposal.md
 - ADDED Requirements
 - W_Flyer Canonical Package Validation Report
 - repo-overlay/openspec/changes/implement-music-system-v0-1/proposal.md
-- glyphs/page.tsx
-- CalibrationWorkbench.tsx
+- Tablet interativo da página Aplicação
+- Current Agent Handoff
 - W_Flyer v2 — Linear Implementation Plan
 - Scope, Status, and Terminology
 - Information Architecture and Routes
-- Global Story Architecture
+- phase09-dark-theme.spec.ts
 - Terminals, Footers, and Navigation Semantics
-- Target Frontend Architecture
+- Project AI Documentation
 - Security, Contact, SEO, and Operations
 - Phase 0 baseline recovery and validation
-- W_Flyer v2 Canonical Documentation
+- Product Executor Context Pack (`CODEX_CONTEXT.md`)
 - rebuild-scroll-driven-wflyer-v2/design.md
 - ADDED Requirements
-- Codex Initial Prompt — W_Flyer v2 Re-architecture
+- Stage-1 Projects visit-3 interaction clearance STOP — 2026-09-12
 - Phase 1 — Isolated W_Flyer Music System v0.1
 - W_Flyer v2 — Linear Implementation Plan
 - Phase 1 — Isolated W_Flyer Music System v0.1
@@ -367,31 +380,31 @@
 - ADR-037 — Branch Terminals and Footer Semantics
 - ADR-038 — Progressive Enhancement, Reduced Motion, and Performance
 - ADR-039 — Designer-Owned Visual Asset Governance
-- Migration Notes
+- lib/motion/geometry.ts
 - Q: Inspect the restored test/Playwright setup and identify the smallest existing browser/visual commands that prove the public landing, navigation, legacy score, contact, and demo baseline without updating snapshots. Inspect any Phase 0 evidence conventions and propose exact evidence files/content.
 - W_Flyer Canonical Implementation Package v1.0 — Installation
 - ADDED Requirements
-- Migration Notes
+- Music System v0.1 — QA and Evidence Contract
 - lib/story/index.ts
-- music-visual-lab.spec.ts
-- Migration Notes
+- buildStoryScoreProjection
+- Successor inherited-defect audit and stage disposition
 - Music Data Contracts
 - Music Visual Lab — Required Gate
 - ADDED Requirements
 - ADDED Requirements
 - Music Visual Lab — Required Gate
-- music/layout.tsx
+- RouteAwareExperienceBoundary.tsx
 - Phase 10 — W_Flyer Persona asset, rig, and easter eggs
 - Phase 11 — Final APP-04 media assets
 - Phase 9 — Continuous dual-score integration
-- Phase 10 — W_Flyer Persona asset, rig, and easter eggs
-- Phase 11 — Final APP-04 media assets
+- Phase 9 Task-34 Integration Review Evidence
+- ref_next_navigation
 - Phase 9 — Continuous dual-score integration
 - Music Visual Lab — Required Gate
 - Target File and Module Map
 - W_Flyer Canonical Implementation Package v1.0
-- music/page.tsx
-- pure-boundary.test.ts
+- properties
+- properties
 - Phase 0 — Canonical merge, audit, and baseline protection
 - Phase 13 — Performance, lifecycle, observability, and failure recovery
 - Phase 14 — Cutover, legacy removal, and full regression
@@ -403,31 +416,32 @@
 - Phase 6 — Header traversal, URL, and history
 - Phase 7 — Professional branch scenes
 - Phase 8 — Application branch scenes
-- Phase 0 — Canonical merge, audit, and baseline protection
-- Phase 12 — Accessibility, reduced motion, responsive hardening
-- Phase 13 — Performance, lifecycle, observability, and failure recovery
-- Phase 15 — Staging, homologation, and production authorization
-- Phase 2 — Story v2 domain model and static vertical skeleton
-- Phase 3 — Content, detailed routes, and conversion contracts
-- Phase 4 — Readiness-driven intro, bootstrap, deep links, and recovery
+- Music System v0.1 Gate A report
+- ASM-IMP-DEC-012 — Projects capacity gates whole-story enhancement
+- W_Flyer current operational handoff
+- Narrativa de dupla partitura
+- phase09-score-path-review.spec.ts
+- Stage 1 portfolio geometry validation report
+- capture-phase7-evidence.mjs
 - StoryScoreLayer.tsx
-- Phase 6 — Header traversal, URL, and history
-- Phase 7 — Professional branch scenes
-- Phase 8 — Application branch scenes
+- Stage 1 Human Geometry Approval evidence
+- Composições do ramo da aplicação
+- 27. Implementation Stages and Stop Gates
 - Codex Implementation Boundary
 - 2026-08-15-pre-restore-metadata.md
 - 02-motion-acceptance-contracts.md
 - 04-definition-of-done.md
-- import-boundary.test.ts
-- draft-calibration.ts
+- Continuous-story governance checkpoint — 2026-09-24
+- properties
+- properties
 - metrics.ts
-- music-visual-lab.a11y.spec.ts
-- RootLayout mounts theme controls while ThemeProvider resolves, applies and exposes theme state
+- ref_node_fs
+- Home origin with Application left, Institutional right, and animated home-pivot still planned
 - Q: Does the final Gate-B composite remain isolated in the development Music Visual Lab and reuse immutable glyph rendering?
 - Q: Diagnose and minimally fix the Firefox and WebKit Music Visual Lab accessibility failures without weakening axe assertions.
 - capture-phase9-refinement-evidence.mjs
 - Music System v0.1 Gate C — final external-human approval
-- Staff.stories.tsx
+- Continuous-story baseline integrity diagnosis — 2026-09-24
 - Q: How should the Gate-B calibration composite evidence reuse the existing Music Visual Lab architecture?
 - Music System v0.1 Gate C — conditional human decision
 - Q: Inspect relationships around the isolated Music System, Visual Lab, tests, and public landing after Gate-C structural changes.
@@ -435,44 +449,44 @@
 - 2026-08-24-implement-music-system-v0-1/proposal.md
 - Q: Where is the final Gate-C triplet numeral size implemented, tested, presented, and captured, while preserving responsive projection?
 - Gate-C final triplet numeral comparison — 2026-08-24
-- Phase 14 — Cutover, legacy removal, and full regression
-- NavigationMeasure.stories.tsx
-- Test Strategy
+- Tilt CSS 3D
+- 5. Finding Taxonomy
+- 9.1 Remaining task classes
 - Q: Where is the final Gate-C triplet numeral size implemented, how does it flow through renderer and SVG presentation into the four evidence captures, and is that change isolated from responsive projection and SiteExperienceShell?
 - capture-phase-4-bootstrap-evidence.mjs
-- Home bifurcada
-- @lhci/cli
-- SiteFooter.tsx
+- Stage-1 self-intersection scope conflict — 2026-09-08
+- 5. Finding Taxonomy
+- Continuous-story implementation package
 - Q: Audit stale nonhistorical Gate-C draft and pending statuses after final human approval
 - capture-phase-2-static-evidence.mjs
 - capture-phase-3-content-evidence.mjs
-- pitches/page.tsx
+- Canonical decision-register delta
 - bootstrap/positioning.ts
-- Contracts that must survive future phases
-- theme.stories.tsx
-- getPublicServiceBySlug
-- phase08-v2-application-scenes.spec.ts
+- 9.1 Remaining task classes
+- known-inherited-findings.json
+- WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md
+- properties
 - Post-Phase-8 toolchain maintenance
 - capture-phase9-firefox-demo-correction-evidence.mjs
 - Phase-4 Changed-File Inventory
-- capture-phase7-evidence.mjs
+- validate-ai-routing.mjs
 - Phase 2 Gate 2 report — static vertical v2 skeleton
 - Phase 5 Gate Report
-- capture-phase8-evidence.mjs
+- @testing-library/react
 - Music System v0.1 — Gate-C closeout validation
 - Phase 3 changed-file inventory — 2026-08-24
-- Phase 4 Gate Report
+- run-music-gate-c-delta-validation.mjs
 - Phase 7 Changed-File Inventory
 - Phase 8 Changed-File Inventory
 - Phase 8 Gate Report
-- RouteAwareExperienceBoundary.tsx
+- Stage-0 completion review
 - Phase 3 Gate report — 2026-08-24
 - Phase-5 Changed-File Inventory
 - Phase 6 Changed-File Inventory
 - Phase 6 Gate Report
 - Phase 7 Gate Report
-- capture-phase4-evidence.mjs
-- phase02-static-story.a11y.spec.ts
+- SiteHeader.stories.tsx
+- axe-core
 - Manifesto tecnológico
 - Phase 3 content and publication evidence — 2026-08-24
 - Phase 3 resume audit — 2026-08-24
@@ -481,12 +495,12 @@
 - Phase-5 Master Story Contract
 - Phase-5 Regression and Isolation Evidence
 - Phase-5 Responsive Projection and Rebuild
-- phase02-static-story.spec.ts
+- Phase 4 Gate Report
 - phase06-story-header.spec.ts
 - Phase 2 preflight — static vertical v2 skeleton
 - Phase 3 OpenSpec reconciliation — 2026-08-24
 - Phase 3 route and migration matrix — 2026-08-24
-- Bootstrap / Projection Adapter Contract
+- 12. Tool-specific behavioral contracts
 - Readiness State-Machine Contract
 - Browser and Accessibility Validation
 - Phase-5 Lifecycle and Performance Evidence
@@ -495,7 +509,7 @@
 - Phase 6 Commit Boundary
 - Responsive, Accessibility, and Screenshot Review
 - Traversal Duration and Home Geometry
-- Contact, Persona, and Terminal Boundaries
+- Phase 10 — W_Flyer Persona asset, rig, and easter eggs
 - Phase 7 Commit Boundary
 - Responsive, Accessibility, and Review Evidence
 - Phase 8 Commit Boundary
@@ -504,14 +518,18 @@
 - Q: Where should Phase-4 bootstrap readiness, semantic destination, history, and projection ownership live without modifying the legacy public landing?
 - Phase 3 Contact regression — 2026-08-24
 - Lifecycle and Cleanup Evidence
-- Phase 4 Rehydration
-- History, Hash, and Back/Forward Evidence
+- stage-1-hga-001c-evidence/manifest.json
+- 16. Baton and handoff state model
 - APP-04 State and Media Contract
-- phase04-bootstrap.a11y.spec.ts
-- phase06-story-header.a11y.spec.ts
+- known-inherited-findings.schema.json
+- Stage-1 Astra High audit-only handoff
 - Deep-Link and History Matrix
-- phase05-master-story.a11y.spec.ts
-- phase03-content-routes.spec.ts
+- 4. Executor and model-class roles
+- 6. Systematic Audit Mode
+- 6. Systematic Audit Mode
+- severity
+- prior-current-error-context.md
+- Stage 1 progress — portfolio-only rebaseline
 - 2026-08-25-destination-resolution-table.md
 - 2026-08-25-phase-4-seal-record.md
 - 2026-08-25-reduced-motion.md
@@ -564,66 +582,118 @@
 - phase-8/validation/2026-08-28-regression-and-isolation.md
 - phase-8/validation/2026-08-28-source-freeze.md
 - phase-8/validation/2026-08-28-source-validation.md
-- @storybook/nextjs-vite
-- @tailwindcss/postcss
-- @types/react-dom
-- vitest
+- Codex Initial Prompt — W_Flyer v2 Re-architecture
+- 19. Gemini Pro anti-loop diagnosis and independent review contract
+- 13. Required Stop States
+- 3. Core Principles
+- 13. Required Stop States
 - ADDED Requirements
-- ScoreTransitionLayer.tsx
+- 3. Core Principles
+- 25. Acceptance Contracts — `ASM-AC-001..025`
 - Decisions
-- ContactForm.tsx
+- 10. Update policy
 - ADDED Requirements
 - Impact
-- composition.ts
-- Phase 9 Task-34 Integration Review Evidence
-- ApplicationLaunchInterestForm.test.tsx
-- acessibilidade/page.tsx
+- 8.1 ASM-LAYOUT-DELTA-001 — Application terminal continuation
+- 5. Canonical Architecture
+- 6. Shared repository artifacts
+- ADDED Requirements
 - Requirement: Professional choreography follows scene purpose
 - ADDED Requirements
-- config/navigation.ts
-- phase09-score-refinement.spec.ts
+- ADDED Requirements
+- 8. Tool discovery
 - ADDED Requirements
 - refine-phase-9-score-choreography-and-prelaunch/tasks.md
-- theme-provider.tsx
-- phase09-score-integration.spec.ts
-- score-presentation-tokens.test.ts
-- OriginScore.tsx
+- 10. Durable Checkpoints
+- 11. Stage Blocking and Deferred Findings
+- 4. Anti-Loop Rules
+- 10. Durable Checkpoints
 - Phase 9 Task-34 Choreography/PRELAUNCH Refinement Evidence
-- cleanup.ts
+- Rebaselined successor tasks — ADR-057 / ASM-IMP-DEC-020
 - Phase 9 Firefox and Demo Geometry Correction Evidence
-- LocalRevealController.tsx
+- 11. Stage Blocking and Deferred Findings
 - Phase 9 Task-33 Refinement Evidence
-- archetypes.ts
-- preview.ts
+- 7. Mobile Header Decisions — `MOB-HDR-DEC-*`
+- phase02-static-story.spec.ts
 - Q: How do StoryV2Header and ProjectCardFan own responsive header measurement, compact card capacity, and their focused regressions?
-- phase09-score-path-review.spec.ts
-- phase09-score-path-review.a11y.spec.ts
-- playwright
-- manifest-coherence.test.ts
+- Phase 11 — Final APP-04 media assets
+- 4. Anti-Loop Rules
+- stage-1-hga-001-causal-model.md
+- 13. Gemini Flash maintenance lifecycle
+- ADDED Requirements
+- occurrences
+- 10. Home Scenic Assembly — State by State
+- 26. Implementation Decisions — `ASM-IMP-DEC-*`
+- config/navigation.ts
+- ADDED Requirements
+- checkpoint.md
+- Intro, Bootstrap, Deep Links, and Recovery
+- 21. Lifecycle, Cleanup, Performance, and Observability Decisions
+- ADDED Requirements
+- ADDED Requirements
+- 9. Motion Decisions — `MOT-DEC-*`
+- continuation-harness-boundary.md
+- shared-continuation-boundary.md
+- bootstrap/index.ts
+- 12.2 State machine
+- 19. Runtime Lifecycle — State by State
+- AUTHORIZED_FOR_FULL_IMPLEMENTATION
+- Phase 0 — Canonical merge, audit, and baseline protection
+- Phase 12 — Accessibility, reduced motion, responsive hardening
+- ADDED Requirements
+- Phase 13 — Performance, lifecycle, observability, and failure recovery
+- 17. Fast Traversal — State by State
+- 30. Final Human Homologation Checklist
+- 29. Deterministic Visual Evidence Matrix
+- Brief opcional para referências adicionais
+- Stage 1 authorization — portfolio-only rebaseline
+- Catálogo de animações
+- components/story/index.ts
+- Phase 14 — Cutover, legacy removal, and full regression
+- ChapterScore.tsx
+- Phase 2 — Story v2 domain model and static vertical skeleton
+- Phase 3 — Content, detailed routes, and conversion contracts
+- Phase 4 — Readiness-driven intro, bootstrap, deep links, and recovery
+- Phase 5 — Desktop Motion Lab and native-scroll master story
+- Phase 6 — Header traversal, URL, and history
+- Target Frontend Architecture
+- ASM-PC-001 fallback authorization review — 2026-09-10
+- Phase 7 — Professional branch scenes
+- stage-1-projects-clearance-stop.md
+- Phase 8 — Application branch scenes
+- 28. Test Strategy
+- Responsive Presentation, Portrait Traversal and Reduced Motion
+- ai-route-resolver.mjs
+- 15. Mobile Header — State by State
+- 16. Score Draw, Event Reveal, and Content Reveal
+- task-5-8-evidence/manifest.json
+- page-archetypes.visual.spec.ts
+- 2. Preconditions and Phase-9 Handoff
+- phase07-brand-intro.spec.ts
 
 ## God Nodes (most connected - your core abstractions)
-1. `Vec2` - 74 edges
-2. `StoryChapterId` - 45 edges
-3. `ScorePath` - 41 edges
-4. `scaleVector()` - 40 edges
-5. `Angular winged WF symbol` - 39 edges
-6. `frameAt()` - 32 edges
-7. `addVectors()` - 32 edges
-8. `placeAtStaffStep()` - 29 edges
-9. `requireNormalizedPosition()` - 29 edges
-10. `requirePositiveNumber()` - 27 edges
+1. `vitest` - 94 edges
+2. `Vec2` - 85 edges
+3. `react` - 52 edges
+4. `@playwright/test` - 51 edges
+5. `ScorePath` - 51 edges
+6. `StoryChapterId` - 50 edges
+7. `6. Approved Assembly Decisions — `ASM-DEC-*`` - 49 edges
+8. `scaleVector()` - 40 edges
+9. `Angular winged WF symbol` - 39 edges
+10. `Canonical Decision Register` - 36 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Official W_Flyer header symbol production asset` --semantically_similar_to--> `Official compact W_Flyer symbol lockup`  [INFERRED] [semantically similar]
-  svg/wflyer-header-symbol.svg → docs/design-reference/LOGO/svg/lockups/wflyer-compact.svg
-- `ADR-024 Napoleon Git Branch Handoff` --semantically_similar_to--> `Immutable Read-Only Napoleon Handoff`  [INFERRED] [semantically similar]
-  docs/00-governanca/05-registro-decisoes.md → .github/workflows/deploy.yml
-- `Actions Evidence Versus Napoleon Source Build` --semantically_similar_to--> `Immutable Read-Only Napoleon Handoff`  [INFERRED] [semantically similar]
-  docs/05-implementacao/21-staging-release-operations.md → .github/workflows/deploy.yml
-- `ContactForm → strict POST /api/contact → Turnstile → plain-text Resend flow` --semantically_similar_to--> `Strict 16 KiB verified and private delivery boundary`  [INFERRED] [semantically similar]
-  graphify-out/memory/query_20260731_183045_how_does_the_contact_form_flow_through_post__api_c.md → openspec/changes/archive/2026-07-31-complete-content-contact-security/specs/secure-contact-workflow/spec.md
-- `Contact fail-closed email fallback` --semantically_similar_to--> `Strict 16 KiB verified and private delivery boundary`  [INFERRED] [semantically similar]
-  docs/08-operacao/01-observabilidade-incidentes.md → openspec/changes/archive/2026-07-31-complete-content-contact-security/specs/secure-contact-workflow/spec.md
+- `ADR-046 — Successor numerical determinism and search telemetry boundary` --references--> `serializeSvgNumber()`  [INFERRED]
+  docs/canonical-v2/00-governance/03-decision-register.md → src/components/score/svg-number.ts
+- `Available-space proof` --references--> `MotionStoryLab()`  [INFERRED]
+  openspec/changes/implement-scroll-driven-score-assembly-and-motion/stage-1-projects-lineage-and-capacity-review.md → src/components/story-motion/MotionStoryLab.tsx
+- `ASM-IMP-DEC-009 — Stage-1 hydration equality and execution order` --references--> `StoryScoreLayer()`  [INFERRED]
+  docs/canonical-v2/05-architecture/WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md → src/components/story-score/StoryScoreLayer.tsx
+- `Deterministic composition` --references--> `composeSegment()`  [INFERRED]
+  docs/canonical-v2/06-migration/evidence/phase-9/task-34-integration-review-2026-08-31/README.md → src/lib/music/composer/compose-segment.ts
+- `ADR-026 — W_Flyer Music Renderer v0.1` --references--> `ScorePath`  [INFERRED]
+  CANONICAL_DECISION_DELTA.md → src/lib/music/geometry/types.ts
 
 ## Import Cycles
 - None detected.
@@ -679,51 +749,51 @@
 - **Sistema de rotas em dupla partitura** — docs_04_conteudo_01_mapa_conteudo_continuidade_editorial_da_dupla_partitura, docs_05_implementacao_01_arquitetura_static_first_continuidade_progressiva_da_partitura, docs_05_implementacao_03_componentes_componentes_de_partitura_e_experiencia, docs_05_implementacao_07_fases_implementacao_rotas_e_dupla_partitura, docs_05_implementacao_11_manifesto_capitulos_partitura_manifesto_de_capitulos_da_partitura [INFERRED 0.95]
 - **Terminal double-bar visual contract** — docs_design_reference_golden_pages_briefs_03_benefits_desktop_terminal_benefits_composition, docs_design_reference_golden_pages_briefs_09_contact_individual_terminal_contact_composition, docs_design_reference_storyboards_readme_benefits_terminal, docs_design_reference_storyboards_readme_contact_terminal, docs_design_reference_golden_pages_visual_archetypes_editorial_benefits_terminal, docs_design_reference_golden_pages_visual_archetypes_contact_terminal [INFERRED 0.95]
 
-## Communities (605 total, 146 thin omitted)
+## Communities (656 total, 130 thin omitted)
 
 ### Community 0 - "ui/index.ts"
-Cohesion: 0.05
-Nodes (69): staticPageStyles, nativeLinkAttributes(), StoryChapter(), Button(), ButtonProps, controlClassName(), ControlSize, ControlVariant (+61 more)
+Cohesion: 0.04
+Nodes (80): @storybook/nextjs-vite, HomePage(), metadata, src_app_page_module, src_components_pages_static_page_module, staticPageStyles, Button(), ButtonProps (+72 more)
 
-### Community 1 - "ChapterScore.tsx"
-Cohesion: 0.13
-Nodes (22): anchorToY(), ChapterScore(), ChapterScoreProps, cubicAngle(), cubicPoint(), edgeToX(), getChapterScorePath(), getControlPoints() (+14 more)
+### Community 1 - "renderer/types.ts"
+Cohesion: 0.05
+Nodes (50): Canonical filename mapping, Important correction, Legacy primitive files intentionally removed, Migration Notes, Canonical filename mapping, Important correction, Legacy primitive files intentionally removed, Migration Notes (+42 more)
 
 ### Community 2 - "lib/contact/index.ts"
-Cohesion: 0.05
-Nodes (73): AppLaunchInterestEmailPreviewPage(), previewConfig, previewRegistration, dynamic, errorResponse(), POST(), PublicCode, requestHostname() (+65 more)
+Cohesion: 0.14
+Nodes (23): dynamic, errorResponse(), POST(), PublicCode, responseHeaders, runtime, ContactServerConfig, readContactServerConfig() (+15 more)
 
 ### Community 3 - "theme-tokens.test.ts"
-Cohesion: 0.13
-Nodes (17): canonicalDarkDeclarations, canonicalLightDeclarations, ColorTriplet, contrastRatio(), customProperties(), expectMinimumContrast(), iconSource, layoutSource (+9 more)
+Cohesion: 0.05
+Nodes (58): isThemeName(), resolveReviewRouteTheme(), THEME_BROWSER_COLORS, THEME_CHANGE_EVENT, THEME_REVIEW_ROUTE_PREFIX, THEME_STORAGE_KEY, ThemeName, themes (+50 more)
 
 ### Community 4 - "transition.ts"
 Cohesion: 0.09
-Nodes (34): normativeStates, operableCompletion, RelevantViolation, AdjacentEdge, adjacentEdges, outgoingLink(), chapterControl(), expectSafeSettledDocument() (+26 more)
+Nodes (35): findRelevantViolations(), normativeStates, operableCompletion, RelevantViolation, AdjacentEdge, adjacentEdges, outgoingLink(), chapterControl() (+27 more)
 
 ### Community 5 - "BrandIntroController.tsx"
-Cohesion: 0.14
-Nodes (21): AttributeSnapshot, BRAND_INTRO_LABELS, BRAND_INTRO_SESSION_KEY, BrandIntroController(), HomeOpeningTargets, IntroState, IntroTarget, isolateExperienceSiblings() (+13 more)
+Cohesion: 0.08
+Nodes (32): Architecture conclusion, Phase 4 Rehydration, Verified before implementation, gsap, @gsap/react, ref_next_image, src_components_brand_intro_brand_intro_module, AttributeSnapshot (+24 more)
 
 ### Community 6 - "scripts"
 Cohesion: 0.08
-Nodes (24): scripts, build, build:storybook, dev, lighthouse, lint, prepare:standalone, release:manifest (+16 more)
+Nodes (26): scripts, ai:route, build, build:storybook, dev, lighthouse, lint, prepare:standalone (+18 more)
 
 ### Community 7 - "Grupo wf-logo"
-Cohesion: 0.11
-Nodes (47): Símbolo modular à esquerda, W_Flyer horizontal lockup, Wordmark à direita, Cor monocromática currentColor, W_Flyer logo master, Contraste cromático símbolo–wordmark, Direção diagonal do gradiente, Gradiente linear da marca (+39 more)
+Cohesion: 0.05
+Nodes (80): Cópias controladas dos assets oficiais, Coreografia compartilhada entre temas, Documentos normativos de motion e QA, Geometria imutável da animação, Referências da animação de entrada, Contrato controlado de IDs, Grupos controlados de animação, Mapa controlado de IDs SVG (+72 more)
 
 ### Community 8 - "SiteHeader.tsx"
-Cohesion: 0.16
-Nodes (15): APPLICATION_NAVIGATION, getHeaderRouteState(), HeaderNavigationId, HeaderNavigationItem, HeaderRouteState, INSTITUTIONAL_NAVIGATION, normalizePathname(), NavigationMeasure() (+7 more)
+Cohesion: 0.10
+Nodes (24): @testing-library/user-event, getHeaderRouteState(), HeaderNavigationId, HeaderNavigationItem, HeaderRouteState, INSTITUTIONAL_NAVIGATION, normalizePathname(), NavigationMeasure() (+16 more)
 
-### Community 9 - "ProfessionalChapterScene.tsx"
-Cohesion: 0.06
-Nodes (27): APP04_DEVELOPMENT_CONTRACT_FIXTURE, StoryMotionLabPageProps, ApplicationDemoMediaContract, PersonaIntegrationSlot(), PersonaIntegrationSlotProps, ApplicationChapterScene(), ApplicationChapterSceneProps, isPhase8ApplicationChapterId() (+19 more)
+### Community 9 - "seo.ts"
+Cohesion: 0.12
+Nodes (20): next, metadata, metadata, metadata, ApplicationCreationPage(), metadata, metadata, SiteCreationPage() (+12 more)
 
 ### Community 10 - "glyphs/types.ts"
 Cohesion: 0.10
-Nodes (21): common, registryByKey, AccidentalAnchors, CompleteGlyphAnchorsFor, CompleteGlyphMetrics, FlagAnchors, GlyphAnchorName, GlyphAnchors (+13 more)
+Nodes (21): common, MUSIC_GLYPH_REGISTRY, registryByKey, AccidentalAnchors, CompleteGlyphAnchorsFor, CompleteGlyphMetrics, FlagAnchors, GlyphAnchorName (+13 more)
 
 ### Community 11 - "Fonte da verdade"
 Cohesion: 0.09
@@ -734,40 +804,40 @@ Cohesion: 0.07
 Nodes (34): Bootstrap repository-intelligence design, Bootstrap archived without functional delta specs, External Graphify and OpenSpec CLI decision, Filtered repository-root Graphify corpus decision, Lightweight Graphify versioning decision, Manual Graphify and pinned strict OpenSpec CI, Six-step bootstrap migration and tooling-only rollback, Missing usable project-local Graphify and OpenSpec baseline (+26 more)
 
 ### Community 13 - "capture-music-gate-b-evidence.mjs"
-Cohesion: 0.15
-Nodes (21): assertCanonicalDraftPayload(), baseUrl, CALIBRATION_FILE_NAMES, captureCalibration(), captureGlyphGallery(), captureLocator(), captureOverview(), capturePage() (+13 more)
+Cohesion: 0.14
+Nodes (22): ref_node_events, assertCanonicalDraftPayload(), baseUrl, CALIBRATION_FILE_NAMES, captureCalibration(), captureGlyphGallery(), captureLocator(), captureOverview() (+14 more)
 
 ### Community 14 - "compilerOptions"
-Cohesion: 0.07
-Nodes (30): dom, dom.iterable, esnext, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, storybook-static (+22 more)
+Cohesion: 0.10
+Nodes (20): compilerOptions, allowJs, esModuleInterop, exactOptionalPropertyTypes, incremental, isolatedModules, jsx, lib (+12 more)
 
-### Community 15 - "lib/motion/geometry.ts"
-Cohesion: 0.23
-Nodes (16): ScoreTransitionLayer(), createScoreTransitionPath(), DEFAULT_TRANSITION_VIEWPORT, destinationAnchorKind(), edgeFallbackPoint(), fallbackChapterPoint(), isFinitePoint(), MeasuredTransitionAnchors (+8 more)
+### Community 15 - "ScoreTransitionLayer.tsx"
+Cohesion: 0.13
+Nodes (18): src_components_experience_experience_module, NOTE_POSITIONS, ScoreTransitionLayerProps, STAFF_LINE_OFFSETS, defaultProps, geometry, TransitionPresentation, TransitionTestSnapshot (+10 more)
 
-### Community 16 - "app/page.tsx"
+### Community 16 - "topology.ts"
 Cohesion: 0.14
-Nodes (18): HomePage(), metadata, auxiliaryRouteByPath, AuxiliaryRouteEntry, auxiliaryRoutes, scoreChapterById, scoreChapterByPath, scoreChapters (+10 more)
+Nodes (25): AuxiliaryRoute, auxiliaryRouteByPath, AuxiliaryRouteEntry, auxiliaryRoutes, ChapterBranch, ScoreChapter, scoreChapterByPath, scoreChapters (+17 more)
 
 ### Community 17 - "Relatório do bootstrap Graphify e OpenSpec"
 Cohesion: 0.08
 Nodes (27): accessible-navigation-lifecycle delta spec, OpenSpec list, plan, apply, validate and archive lifecycle, Focused OpenSpec change role, Future OpenSpec update protocol, No --no-validate bypass, complete-phase-05-motion-navigation functional change, score-transition-navigation delta spec, OpenSpec 1.7.0 spec-driven core baseline (+19 more)
 
-### Community 18 - "Brief opcional para referências adicionais"
-Cohesion: 0.12
-Nodes (27): Aprovação humana preserva estados derivados, Brief opcional para referências adicionais, Checklist de continuidade da partitura, Geração opcional durante QA, Invariantes visuais e estruturais, Saída reconstruível em HTML, CSS e SVG, Tablet visual com implementação DOM, AUTHORIZED_FOR_FULL_IMPLEMENTATION (+19 more)
+### Community 18 - "Golden pages e arquétipos"
+Cohesion: 0.31
+Nodes (11): Golden pages e arquétipos, Herança authorized-derived, Modelo de status visuais, QA visual e homologação humana, Regras de comparação individual e painel, Sistema de referência visual, Implementação authorized-derived, Ordem de autoridade visual (+3 more)
 
 ### Community 19 - "manifest.json"
-Cohesion: 0.07
-Nodes (26): documentationVersion, forbidden_in_assets, generated_at, geometry_policy, implementationReadiness, package, production_assets, review_only (+18 more)
+Cohesion: 0.17
+Nodes (11): documentationVersion, forbidden_in_assets, generated_at, geometry_policy, implementationReadiness, package, production_assets, review_only (+3 more)
 
 ### Community 20 - "Complete Site QA Release Preparation Proposal"
 Cohesion: 0.10
 Nodes (27): Contact Retry Stabilization Design, Ephemeral Logical Submission Identity, Stable Resend Idempotency Across Unchanged Retries, Stabilize Contact Delivery Retries Proposal, Duplicate-Safe Retry Requirement, Secure Contact Workflow Retry Delta, Contact Retry Stabilization Tasks, Separate Build and Runtime Value Ownership (+19 more)
 
 ### Community 21 - "SiteExperienceShell.tsx"
-Cohesion: 0.13
-Nodes (23): currentViewport(), incomingOffset(), INITIAL_PRESENTATION, measureHomePivot(), measureScoreAnchor(), NavigationMethod, outgoingOffset(), pointFromSvgMarker() (+15 more)
+Cohesion: 0.06
+Nodes (39): currentViewport(), incomingOffset(), INITIAL_PRESENTATION, measureScoreAnchor(), NavigationMethod, outgoingOffset(), pointFromSvgMarker(), reportAnimationError() (+31 more)
 
 ### Community 22 - "Corrected brand opening motion specification"
 Cohesion: 0.08
@@ -777,21 +847,21 @@ Nodes (25): Completed Phase 05 motion-navigation tasks, Persistent score navigat
 Cohesion: 0.08
 Nodes (24): Capturas determinísticas com movimento reduzido, Comparação com arquétipos autorizados, Evidências visuais — Fase 4, Limites do tablet e formulário na Fase 4, Matriz visual de dezesseis rotas, Continuidade visual da pauta, Direção das transições de capítulo, Governança do baseline visual (+16 more)
 
-### Community 24 - "site-content.ts"
-Cohesion: 0.06
-Nodes (51): ApplicationFeatureStrip(), AudienceList(), BenefitsGrid(), CompanyMark(), ContactWorkspace(), EditorialPillars(), ProjectGrid(), ServiceDetailMark() (+43 more)
+### Community 24 - "pages/index.ts"
+Cohesion: 0.09
+Nodes (35): metadata, metadata, metadata, metadata, metadata, servicePresentation, Breadcrumbs(), BulletList() (+27 more)
 
-### Community 25 - "pages/index.ts"
-Cohesion: 0.10
-Nodes (35): metadata, metadata, metadata, metadata, metadata, metadata, generateMetadata(), metadata (+27 more)
+### Community 25 - "stage-1-human-geometry-approval-evidence/manifest.json"
+Cohesion: 0.09
+Nodes (21): activeChange, browserCounts, chromium, firefox, webkit, capturedAt, coverage, horizontalEnhancedIncluded (+13 more)
 
 ### Community 26 - "capture-phase5-evidence.mjs"
 Cohesion: 0.23
 Nodes (14): baseUrl, capture(), captureHeldTransition(), captureTerminal(), desktopViewport, holdAt(), interruptTransition(), mobileViewport (+6 more)
 
 ### Community 27 - "properties"
-Cohesion: 0.08
-Nodes (24): type, type, type, type, type, properties, approval_date, coordinate (+16 more)
+Cohesion: 0.09
+Nodes (22): type, enum, type, type, type, type, properties, approval_date (+14 more)
 
 ### Community 28 - "Content and contact security design"
 Cohesion: 0.12
@@ -810,20 +880,20 @@ Cohesion: 0.17
 Nodes (19): currentColor monochrome treatment, Official vertical W_Flyer logo lockup, Separately transformed symbol and wordmark groups, Stacked symbol-over-wordmark composition, Vertical brand hierarchy, Wide 600 by 500 viewBox, Forward-leaning brand language, Official W_Flyer wordmark master (+11 more)
 
 ### Community 32 - "Normative Documentation Index"
-Cohesion: 0.12
-Nodes (18): Normative Documentation Index, Transition Accessibility, Recovery, and Testability, Chapter Transition Specification, Cancelable Chapter Transition Lifecycle, Topology-Based Transition Modes, Contact and Policy Content, Data Minimization and No Analytics, Official Contact and Privacy Policy (+10 more)
+Cohesion: 0.07
+Nodes (31): Normative Documentation Index, Transition Accessibility, Recovery, and Testability, Chapter Transition Specification, Cancelable Chapter Transition Lifecycle, Topology-Based Transition Modes, Contact and Policy Content, Data Minimization and No Analytics, Official Contact and Privacy Policy (+23 more)
 
-### Community 33 - "Vec2"
-Cohesion: 0.12
-Nodes (33): LabResponsiveConnectorPath, BarlineStroke, BEAM_TOPOLOGIES, BeamMotifId, BeamPrimitive, BeamTopology, BeamTopologyElement, ContinuousBeamTopologyElement (+25 more)
+### Community 33 - "geometry/types.ts"
+Cohesion: 0.14
+Nodes (31): BEAM_TOPOLOGIES, BeamMotifId, BeamTopology, BeamTopologyElement, ContinuousBeamTopologyElement, getBeamTopology(), HookBeamTopologyElement, materializeBeamTopology() (+23 more)
 
 ### Community 34 - "Official production W_Flyer intro master"
 Cohesion: 0.15
 Nodes (18): Cinematic 1200 by 675 viewBox, Cyan symbol echo, Dark-background intro contrast, Initial, symbol, and final visual states, Isolated origin underscore, Non-focusable accessible intro identity, Non-interactive intro stage, Official production W_Flyer intro master (+10 more)
 
-### Community 35 - "Catálogo de animações"
-Cohesion: 0.16
-Nodes (17): NavigationMeasure, Especificação da homepage, Home como origem e bifurcação, Modelo espacial de dupla partitura, Páginas auxiliares, Ramo da aplicação, Ramo institucional, Sistema de dupla partitura (+9 more)
+### Community 35 - "playwright"
+Cohesion: 0.13
+Nodes (14): playwright, captureMatrix(), detailedCaptures, escapeHtml(), ADR-0056, outputDirectory, routes, captures (+6 more)
 
 ### Community 36 - "Controles do endpoint de contato"
 Cohesion: 0.15
@@ -831,15 +901,15 @@ Nodes (17): Controles de borda, Controles de segredos, Controles de segurança, 
 
 ### Community 37 - "lifecycle.ts"
 Cohesion: 0.18
-Nodes (17): ScoreChapter, advancePhase(), createInitialNavigationLifecycleState(), isCurrentNavigationRequest(), isEventForActiveRequest(), NavigationLifecycleEvent, NavigationLifecyclePhase, navigationLifecycleReducer() (+9 more)
+Nodes (17): Representative evidence, advancePhase(), createInitialNavigationLifecycleState(), isCurrentNavigationRequest(), isEventForActiveRequest(), NavigationLifecycleEvent, NavigationLifecyclePhase, navigationLifecycleReducer() (+9 more)
 
 ### Community 38 - "type"
-Cohesion: 0.11
-Nodes (19): items, type, items, type, items, type, items, type (+11 more)
+Cohesion: 0.15
+Nodes (13): items, type, items, type, items, type, type, items (+5 more)
 
-### Community 39 - "Current contact UI stops before the documented but unimplemented API, Turnstile and Resend flow"
-Cohesion: 0.12
-Nodes (15): Current contact UI stops before the documented but unimplemented API, Turnstile and Resend flow, Como o formulário de contato chega ao endpoint /api/contact e às integrações Turnstile e Resend?, ContactProjectTypeSelect.tsx, contato/page.tsx, Endpoint e schema de contato, Current application preview is implemented while the interactive Phase 06 tablet remains planned, EXTRAÍDO and AMBÍGUO classification, Quais arquivos implementam o tablet interativo da página Aplicação? (+7 more)
+### Community 39 - "json"
+Cohesion: 0.08
+Nodes (20): collections, datetime, hashlib, json, loaded_product(), metrics(), primary_faces(), product_faces() (+12 more)
 
 ### Community 40 - "Decisions"
 Cohesion: 0.12
@@ -850,20 +920,20 @@ Cohesion: 0.18
 Nodes (15): Estados da partitura, Estados de header e navegação, Estados do formulário, Estados do tablet, Referências de componentes, Referências originais e aprovadas, Composição e regiões interativas, Continuidade de entrada e saída da partitura (+7 more)
 
 ### Community 42 - "Composição desktop em tema claro"
-Cohesion: 0.18
-Nodes (15): Ações do hero, Anotação superior de modo claro, Aplicação W_Flyer — modo claro, Composição desktop em tema claro, Copy de apoio do hero, CTA “Acessar aplicação”, Headline “Sua música, em qualquer tom.”, Hero editorial da Aplicação (+7 more)
-
-### Community 43 - "Home origin with Application left, Institutional right, and animated home-pivot still planned"
-Cohesion: 0.16
-Nodes (14): Home origin with Application left, Institutional right, and animated home-pivot still planned, EXTRAÍDO and INFERIDO classification, Como a Home se conecta aos ramos Aplicação e Institucional?, chapters.ts, Chapter manifest drives score geometry and header navigation; Phase 05 animation remains unimplemented, EXTRAÍDO classification with unimplemented Phase 05 caveat, Como as rotas principais se conectam ao sistema da dupla partitura?, ChapterScore() (+6 more)
-
-### Community 44 - "smoke-standalone.mjs"
 Cohesion: 0.15
-Nodes (12): child, delay(), logs, prohibitedDevelopmentRoutes, publicRoutes, readLogs(), repositoryRoot, scriptDirectory (+4 more)
+Nodes (17): Ações do hero, Anotação superior de modo claro, Aplicação ativa na navegação, Aplicação W_Flyer — modo claro, Composição desktop em tema claro, Copy de apoio do hero, CTA “Acessar aplicação”, Headline “Sua música, em qualquer tom.” (+9 more)
+
+### Community 43 - "Chapter manifest drives score geometry and header navigation; Phase 05 animation remains unimplemented"
+Cohesion: 0.11
+Nodes (16): Chapter manifest drives score geometry and header navigation; Phase 05 animation remains unimplemented, EXTRAÍDO classification with unimplemented Phase 05 caveat, Como as rotas principais se conectam ao sistema da dupla partitura?, ChapterScore(), Current contact UI stops before the documented but unimplemented API, Turnstile and Resend flow, Como o formulário de contato chega ao endpoint /api/contact e às integrações Turnstile e Resend?, ContactProjectTypeSelect.tsx, Endpoint e schema de contato (+8 more)
+
+### Community 44 - "build-note-model.ts"
+Cohesion: 0.17
+Nodes (37): averagePoints(), layoutBeamedMotif(), noteheadStemAttachment(), resolvePrimaryBeamAttachments(), AccidentalPlacement, buildAccidentalPlacement(), BarlineRole, buildBarlineStroke() (+29 more)
 
 ### Community 45 - "Staging, Release, Rollback, and Homologation Operations"
-Cohesion: 0.22
-Nodes (14): Branch SHA Freeze Gate, Immutable Read-Only Napoleon Handoff, Non-Secret Release Manifest, Deployment and Runtime Configuration, Napoleon Branch SHA Handoff, Napoleon Inventory Gate, Traceable Artifact Integrity, SHA-Aligned Branch Handoff (+6 more)
+Cohesion: 0.09
+Nodes (37): Branch SHA Freeze Gate, Candidate Browser Gate Job, Candidate Quality Gate Job, Immutable Read-Only Napoleon Handoff, Package Candidate Job, Prepare Napoleon Release Workflow, Non-Secret Release Manifest, Validate Release Request Job (+29 more)
 
 ### Community 46 - "Perfil de publicação"
 Cohesion: 0.16
@@ -874,8 +944,8 @@ Cohesion: 0.16
 Nodes (14): Modelo static-first, Ferramentas de desenvolvimento aprovadas, IA fora do runtime, Protocolo de desenvolvimento visual, Toolchain de IA para desenvolvimento, Guia operacional para Codex, Protocolo de implementação visual, Protocolo de infraestrutura e execução (+6 more)
 
 ### Community 48 - "Header em partitura"
-Cohesion: 0.19
-Nodes (14): Aplicação ativa na navegação, Navegação bifurcada, Símbolo W_Flyer central, Criação de Aplicações, Criação de Sites, Grade de quatro serviços, Header em partitura, Ícones lineares (+6 more)
+Cohesion: 0.16
+Nodes (18): Home bifurcada, Símbolo W_Flyer central, Clave de sol central, Criação de Aplicações, Criação de Sites, Dupla chamada Aplicação e Serviços, Grade de quatro serviços, Header em partitura (+10 more)
 
 ### Community 49 - "Sistema visual claro"
 Cohesion: 0.20
@@ -886,8 +956,8 @@ Cohesion: 0.42
 Nodes (13): check_dependencies(), fail(), generate_graph(), graphify_version(), make_html_standalone(), query_graph(), require_command(), graphify-repository.sh script (+5 more)
 
 ### Community 51 - "ScoreTransitionLayer.stories.tsx"
-Cohesion: 0.13
-Nodes (14): Adjacent, CompletionCheckpoint, Compressed, Dark, ErrorFallback, geometry, HomePivot, Idle (+6 more)
+Cohesion: 0.14
+Nodes (13): Adjacent, CompletionCheckpoint, Compressed, Dark, ErrorFallback, geometry, Idle, meta (+5 more)
 
 ### Community 52 - "Cormorant Garamond SIL Open Font License"
 Cohesion: 0.26
@@ -897,17 +967,17 @@ Nodes (14): Cormorant Garamond SIL Open Font License, Cormorant Project Authors,
 Cohesion: 0.36
 Nodes (7): parseBlock(), ParsedLine, parseKeyValue(), parseScalar(), parseYamlSubset(), YamlSubsetValue, readCanonicalManifest()
 
-### Community 54 - "topology.ts"
-Cohesion: 0.12
-Nodes (26): AuxiliaryRoute, ChapterBranch, EligibleNavigationLink, evaluateLinkEligibility(), ineligible(), IneligibleNavigationLink, isHttpProtocol(), isUnmodifiedPrimaryActivation() (+18 more)
+### Community 54 - "lib/motion/eligibility.ts"
+Cohesion: 0.22
+Nodes (13): EligibleNavigationLink, evaluateLinkEligibility(), ineligible(), IneligibleNavigationLink, isHttpProtocol(), isUnmodifiedPrimaryActivation(), LinkActivation, LinkCandidate (+5 more)
 
 ### Community 55 - "ADDED Requirements"
 Cohesion: 0.14
 Nodes (13): ADDED Requirements, Requirement: Browser evidence remains independently observable, Requirement: Canonical browser evidence environment, Requirement: Deterministic repository browser runtime, Requirement: Deterministic visual capture and baseline governance, Scenario: A baseline update is proposed, Scenario: A changing retry is observed, Scenario: Canonical browser jobs execute (+5 more)
 
-### Community 56 - "Contact Form Implementation Contract"
-Cohesion: 0.15
-Nodes (13): Contact Form Implementation Contract, Cloudflare Edge Rate-Limit Baseline, Contact Endpoint Defense Pipeline, Logical Submission Idempotency, Persistence-Free Contact Delivery, Contact Defense in Depth, External Log Retention Gate, Minimal Sanitized Technical Logging (+5 more)
+### Community 56 - "compose-segment.test.ts"
+Cohesion: 0.08
+Nodes (24): src_lib_music_composer_index_approved_composer_calibration_v1, src_lib_music_composer_index_automatic_motif_ids, src_lib_music_composer_index_composercalibration, src_lib_music_composer_index_composercandidateexhaustederror, src_lib_music_composer_index_composerprofile, src_lib_music_composer_index_composesegment, src_lib_music_composer_index_getmotifdefinition, src_lib_music_composer_index_getpitchcontourdeltas (+16 more)
 
 ### Community 57 - "Brand opening motion specification"
 Cohesion: 0.15
@@ -922,44 +992,44 @@ Cohesion: 0.26
 Nodes (12): Wide horizontal logo lockup with winged symbol and italic W_Flyer wordmark, Horizontal ink-sweep wordmark mask, Official horizontal W_Flyer vector animation base, Independent staged vector reveal mechanism, Horizontal ink-sweep mask, Horizontal logo lockup, Independent staged vector reveal, Official W_Flyer vector animation master (+4 more)
 
 ### Community 60 - "properties"
-Cohesion: 0.04
-Nodes (46): additionalProperties, type, type, $id, type, additionalProperties, properties, required (+38 more)
+Cohesion: 0.06
+Nodes (33): additionalProperties, type, type, $id, type, additionalProperties, properties, required (+25 more)
 
-### Community 61 - "application-demo/index.ts"
-Cohesion: 0.12
-Nodes (23): APPLICATION_DEMO_STATES, ApplicationDemoEvent, ApplicationDemoState, createApplicationDemoInitialState(), reduceApplicationDemoState(), ApplicationDemoDevice(), ApplicationDemoDeviceProps, getDocumentVisibilityServerSnapshot() (+15 more)
+### Community 61 - "AI Model Routing, Escalation, Downgrade and Handoff Policy"
+Cohesion: 0.05
+Nodes (43): 10.1 Upgrade ready, 10.2 Downgrade ready after remaining-task reclassification, 10.3 Unresolved owner decision, 10.4 Human gate reached, 10. Machine-readable terminal response, 11. Receiving-model continuation contract, 12. Test, token and tool discipline, 13. Repository, evidence and safety boundaries (+35 more)
 
 ### Community 62 - "Graphify Architecture Map"
 Cohesion: 0.24
 Nodes (11): Graphify as Auxiliary Architecture Index, External Infrastructure Evidence Boundary, Filtered and Secret-Safe Graph Corpus, Graphify Architecture Map, Phase 09 Structural and Semantic Refresh, Semantic Re-Extraction and Deduplication Compaction, Validated Architecture and Release Relationships, Confirmed Napoleon Git Branch Handoff (+3 more)
 
 ### Community 63 - "viewport"
-Cohesion: 0.18
-Nodes (11): type, height, viewport, width, additionalProperties, properties, required, type (+3 more)
+Cohesion: 0.22
+Nodes (9): type, height, viewport, width, additionalProperties, properties, required, type (+1 more)
 
 ### Community 64 - "prepare-standalone.mjs"
 Cohesion: 0.18
 Nodes (12): assertInside(), assertRegularTree(), copySource(), legacyMirrorNames, nextDirectory, pathExists(), prohibitedReferencePath, repositoryRoot (+4 more)
 
-### Community 65 - "smoke-indexing.mjs"
-Cohesion: 0.18
-Nodes (7): child, failClosedRobots, productionRobots, repositoryRoot, scriptDirectory, serverPath, standaloneDirectory
+### Community 65 - "tooling/lifecycle.mjs"
+Cohesion: 0.19
+Nodes (29): access(), append(), configure(), contextFor(), digest(), dir, drive(), focusSamples() (+21 more)
 
 ### Community 66 - "ScorePathReview.tsx"
-Cohesion: 0.07
-Nodes (33): ScorePathReviewPage(), ScorePathReviewPageProps, ScorePathReviewPreviewPage(), ScorePathReviewPreviewPageProps, BranchReview(), renderChapter(), ReviewChapterStyle, ReviewTrackStyle (+25 more)
+Cohesion: 0.04
+Nodes (60): src_app_5f_visual_lab_story_score_paths_fixtures_score_path_candidates_buildscorepathreviewtrack, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_candidates_resolvescorepathreviewselection, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_candidates_score_path_review_branches, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_candidates_score_path_review_candidate_ids, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_candidates_score_path_review_candidates, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_candidates_score_path_review_compact_responsive_baseline_metrics, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_candidates_score_path_review_flowing_baseline_metrics, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_candidates_score_path_review_flowing_status (+52 more)
 
-### Community 67 - "W_Flyer Institutional Site Documentation"
-Cohesion: 0.20
-Nodes (10): Normative Implementation Agent Rules, Institutional Repository Scope Boundary, Sequential Completion and Release Governance, Source-of-Truth Precedence, External Homologation Gate, GitHub to Napoleon to Cloudflare Topology, Operational and Publication Decisions, Release Preparation Without Production Deployment (+2 more)
+### Community 67 - "ProfessionalChapterScene.tsx"
+Cohesion: 0.10
+Nodes (14): src_components_persona_persona_integration_slot_module, PersonaIntegrationSlot(), PersonaIntegrationSlotProps, src_components_story_professional_chapter_scene_module, PROFESSIONAL_CHAPTER_IDS, ProfessionalChapterId, ProfessionalChapterScene(), SceneIntroductionProps (+6 more)
 
-### Community 68 - "Architecture Decision Register"
-Cohesion: 0.29
-Nodes (10): ADR-001 Separate Institutional Repository, ADR-018 Preserve Existing Cloudflare and DNS, ADR-020 Napoleon Hosting Connected to GitHub, ADR-021 GitHub Environment Secrets Boundary, ADR-023 Owner Homologation, ADR-024 Napoleon Git Branch Handoff, Architecture Decision Register, Approved Delivery Topology (+2 more)
+### Community 68 - "MotionStoryLab.tsx"
+Cohesion: 0.14
+Nodes (15): Historical stop — public-surface acceptance conflict, 2026-09-24, src_components_story_motion_motion_story_lab_module, createMotionStoryRuntimeRegistry(), createProjectsCandidateSnapshotRegistry(), MotionLabChapterStyle, MotionStoryLab(), MotionStorySurface(), MotionStorySurfaceProps (+7 more)
 
-### Community 69 - "Animação de entrada da marca W_Flyer"
-Cohesion: 0.27
-Nodes (10): Handoff do símbolo para o header, Header em partitura, Arquitetura GSAP, Layout persistente de motion, Stack GSAP, Animação de entrada da marca W_Flyer, BrandIntroState state machine, Handoff FLIP para o header (+2 more)
+### Community 69 - "CalibrationWorkbench.tsx"
+Cohesion: 0.15
+Nodes (14): ACCIDENTAL_KEYS, CalibrationPreview(), CalibrationWorkbench(), roleFor(), GlyphCalibrationComposites(), cloneAnchors(), createDraftCalibrationExport(), createEditableGlyphCalibrations() (+6 more)
 
 ### Community 70 - "Continuidade editorial da dupla partitura"
 Cohesion: 0.20
@@ -989,33 +1059,29 @@ Nodes (10): Brief — Benefícios, desktop claro e escuro, Terminal Benefits des
 Cohesion: 0.07
 Nodes (44): assertAndCaptureTripletDetail(), assertMotifMatrix(), assertSafeLoopbackOrigin(), assertTupletGeometry(), authorizedFiles, baseUrl, captureArguments, captureImmutableBaseline() (+36 more)
 
-### Community 77 - "enum"
-Cohesion: 0.40
-Nodes (5): component-reference, golden-reference, storyboard, usage, enum
+### Community 78 - "capture.mjs"
+Cohesion: 0.11
+Nodes (17): browserDefinitions, browsers, capture(), definitions, delay(), evidenceDirectory, items, repositoryRoot (+9 more)
 
-### Community 78 - "run-music-gate-c-delta-validation.mjs"
-Cohesion: 0.10
-Nodes (18): configDirectory, isCi, outputDir, playwrightTestServerMode, reportDir, resolvePlaywrightEvidenceDirectory(), resolvePlaywrightTestServerMode(), screenshotStylePath (+10 more)
+### Community 79 - "AI Model Routing, Escalation, Downgrade and Handoff Policy"
+Cohesion: 0.05
+Nodes (43): 10.1 Upgrade ready, 10.2 Downgrade ready after remaining-task reclassification, 10.3 Unresolved owner decision, 10.4 Human gate reached, 10. Machine-readable terminal response, 11. Receiving-model continuation contract, 12. Test, token and tool discipline, 13. Repository, evidence and safety boundaries (+35 more)
 
-### Community 79 - "create-release-manifest.mjs"
-Cohesion: 0.36
-Nodes (8): assertSafeReleasePath(), createReleaseManifest(), requireText(), resolveReleaseFile(), writeReleaseManifestFromEnvironment(), digest, revision, validInput
+### Community 80 - "Vec2"
+Cohesion: 0.17
+Nodes (10): 5. ScorePath and local frame, 1. Pure geometry core — Gate A foundation, 5. ScorePath and local frame, 1. Pure geometry core — Gate A foundation, LabResponsiveConnectorPath, CubicBezierScorePath, PitchNormalReference, StraightScorePath (+2 more)
 
-### Community 80 - "Narrativa de dupla partitura"
-Cohesion: 0.22
-Nodes (9): Partitura ondulada, ScoreSegment, ScoreChapter, Continuidade da pauta, Home como pivô entre ramos, Movimento de dupla partitura, Narrativa de dupla partitura, Narrativa de scroll horizontal — histórico (+1 more)
-
-### Community 81 - "Tablet interativo da página Aplicação"
-Cohesion: 0.28
-Nodes (9): Acessibilidade, Experiência acessível, Modo de movimento reduzido, Movimento reduzido, Controles acessíveis da introdução, DemoState, Interação acessível do tablet, Simulação local determinística (+1 more)
+### Community 81 - "cleanup.ts"
+Cohesion: 0.38
+Nodes (6): CleanupCallback, createCleanupRegistry(), onceCleanup(), scheduleRecoveryTimeout(), getTransitionDurationMs(), NAVIGATION_TIMING_MS
 
 ### Community 82 - "Paridade geométrica entre temas"
 Cohesion: 0.28
 Nodes (9): Brief Aplicação desktop escuro, Paridade geométrica entre temas, Sem adições ou anotações externas, Tokens e tablet do tema escuro, Geometria compartilhada entre temas, Botões em cápsula, Prancha mestra aprovada W_Flyer, Sistema visual multipainel (+1 more)
 
-### Community 83 - "enum"
-Cohesion: 0.22
-Nodes (9): status, enum, approved, approved-individual, approved-master-panel, authorized-derived, pending-approval, pending-generation (+1 more)
+### Community 83 - "projects-capacity.ts"
+Cohesion: 0.15
+Nodes (25): ScorePathReviewMode, scorePathReviewSemanticFingerprint(), StoryScoreProjection, contains(), containsRect(), evaluateProjectsCapacity(), hasCrossing(), minimumProtectedClearance() (+17 more)
 
 ### Community 84 - "Separação entre site e aplicativo"
 Cohesion: 0.32
@@ -1033,21 +1099,21 @@ Nodes (8): Brief — Empresa/Sobre, desktop claro e escuro, Company editorial de
 Cohesion: 0.39
 Nodes (8): Accessible W_Flyer title and description, Initial, symbol, and final state choreography, Official W_Flyer brand intro master, Origin underscore, symbol echoes, and violet-blue-cyan color sweep, Static final-lockup animation boundary, W_Flyer logo lockup, W_Flyer wordmark geometry, Winged WF symbol geometry
 
-### Community 88 - "Composições do ramo da aplicação"
-Cohesion: 0.33
-Nodes (7): Barra final, Composições do ramo da aplicação, Composições do ramo institucional, Especificação visual das páginas, Orçamento de performance de motion, Orçamento de performance para motion, ApplicationDemoTablet
+### Community 88 - "01-global-story-architecture.md"
+Cohesion: 0.08
+Nodes (22): Current Agent Handoff, W_Flyer current operational handoff, Context, Goals / Non-Goals, Migration and validation, Risks / Trade-offs, Capabilities, Impact (+14 more)
 
-### Community 89 - "Gate de autorização visual"
-Cohesion: 0.29
-Nodes (7): Adaptação responsiva, Responsividade, Assets, licenças e referências visuais, Gate de autorização visual, M-016 — Tablet: inclinação CSS 3D, Asset gate BLOCKED_ASSET_APPROVAL, Tilt CSS 3D
+### Community 89 - "story/motion/geometry.ts"
+Cohesion: 0.23
+Nodes (18): DESKTOP_TIMELINE_ORDER, assertFinite(), assertSpan(), cameraAt(), clamp(), closestStoryChapter(), frozenSpan(), measureStoryTimelineGeometry() (+10 more)
 
 ### Community 90 - "Arquitetura de componentes"
 Cohesion: 0.33
 Nodes (7): Estrutura de pastas proposta, Fronteira de Client Components, Isolamento de assets de referência, Organização do projeto, Arquitetura de componentes, Componentes de partitura e experiência, Regras de componentes
 
-### Community 91 - "Phase 09 Local Release-Readiness Report"
-Cohesion: 0.29
-Nodes (7): Accumulated Codex Execution Report, External Integration Blocked, External Release Blockers, Measured Repository-Owned Quality Gate, Phase 09 Local Release-Readiness Report, Phase 05–09 Regression Register, Repository Complete, Production Unauthorized
+### Community 91 - "Accumulated Codex Execution Report"
+Cohesion: 0.10
+Nodes (20): Accumulated Codex Execution Report, External Integration Blocked, Capturas de rotas estáticas, Evidências não antecipam fases posteriores, Evidências visuais — Fase 2, Indicador de desenvolvimento excluído da produção, Capturas da Home e bifurcação, Capturas de QA não produtivas (+12 more)
 
 ### Community 92 - "Official dark-on-light W_Flyer horizontal lockup"
 Cohesion: 0.33
@@ -1065,21 +1131,17 @@ Nodes (7): Inspiration reference manifest, Inspiration-only non-production restr
 Cohesion: 0.29
 Nodes (7): Accessible SVG image semantics, Official W_Flyer identity symbol, Horizontal 845 × 162 logo lockup, Monochrome currentColor treatment, Official W_Flyer visual identity, W_Flyer monochrome logo variant, wf-logo composition group
 
-### Community 96 - "enum"
-Cohesion: 0.38
-Nodes (7): enum, enum, entry_edge, exit_edge, center, left, right
-
-### Community 97 - "required"
-Cohesion: 0.13
-Nodes (14): additionalProperties, $id, id, sha256, ship_in_production, usage, required, $schema (+6 more)
+### Community 97 - "golden-page-spec.schema.json"
+Cohesion: 0.29
+Nodes (6): additionalProperties, $id, required, $schema, title, type
 
 ### Community 98 - "Q: What is the exact CI E2E order and which late WebKit tests risk timing, retries, or shared state on Ubuntu 24?"
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: What is the exact CI E2E order and which late WebKit tests risk timing, retries, or shared state on Ubuntu 24?, Source Nodes
 
 ### Community 99 - "devDependencies"
-Cohesion: 0.07
-Nodes (29): eslint, eslint-config-next, jsdom, devDependencies, axe-core, eslint, eslint-config-next, jsdom (+21 more)
+Cohesion: 0.08
+Nodes (26): devDependencies, axe-core, eslint, eslint-config-next, jsdom, @lhci/cli, playwright, @playwright/test (+18 more)
 
 ### Community 100 - "Accessible Navigation Lifecycle Specification"
 Cohesion: 0.29
@@ -1109,33 +1171,29 @@ Nodes (6): Acesso de qualquer lugar, Exportação versátil, Faixa de cinco bene
 Cohesion: 0.22
 Nodes (8): Capabilities, Impact, Modified Capabilities, New Capabilities, Scope and non-goals, Verified facts, inferences, and pending work, What Changes, Why
 
-### Community 107 - "type"
-Cohesion: 0.40
-Nodes (6): type, type, next, previous, null, string
-
 ### Community 108 - "Pre-code closure status"
 Cohesion: 0.33
 Nodes (6): External credentials and production publication gate, Pre-code closure status, READY_FOR_IMPLEMENTATION, Visual implementation authorization, Documentation revision summary, Visual inheritance freeze for implementation
 
-### Community 109 - "run-lighthouse.mjs"
-Cohesion: 0.33
-Nodes (5): child, chromePath, lhciPath, repositoryRoot, scriptDirectory
+### Community 109 - "shared-origin.ts"
+Cohesion: 0.06
+Nodes (49): src_app_5f_visual_lab_story_score_paths_fixtures_score_path_origin_buildscorepathoriginreviewfixture, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_origin_resolvescorepathoriginreviewselection, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_origin_score_path_origin_review_asset, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_origin_score_path_origin_review_branches, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_origin_score_path_origin_review_label, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_origin_score_path_origin_review_modes, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_origin_score_path_origin_review_status, src_app_5f_visual_lab_story_score_paths_fixtures_score_path_origin_score_path_origin_review_themes (+41 more)
 
 ### Community 110 - "Official W_Flyer header symbol production asset"
 Cohesion: 0.33
 Nodes (6): currentColor theme adaptation, Header-optimized 282 by 165 viewBox, Non-focusable accessible W_Flyer image identity, Official W_Flyer header symbol production asset, Symbol-only header composition, Asset version 1.0.0-review
 
 ### Community 111 - "phase07-brand-intro.visual.spec.ts"
-Cohesion: 0.15
-Nodes (18): prepareVisualCapture(), stabilizeVisualCapture(), VisualColorScheme, VisualReducedMotion, waitForStableFrames(), waitForVisualDocument(), openTablet(), settleTabletTilt() (+10 more)
+Cohesion: 0.17
+Nodes (16): prepareVisualCapture(), stabilizeVisualCapture(), VisualColorScheme, VisualReducedMotion, waitForStableFrames(), waitForVisualDocument(), BrandIntroTimelineHandle, CheckpointCaptureOptions (+8 more)
 
-### Community 112 - "Package Candidate Job"
-Cohesion: 0.90
-Nodes (5): Candidate Browser Gate Job, Candidate Quality Gate Job, Package Candidate Job, Prepare Napoleon Release Workflow, Validate Release Request Job
+### Community 112 - "site-content.ts"
+Cohesion: 0.09
+Nodes (35): AudienceList(), CompanyMark(), ContactWorkspace(), EditorialPillars(), ServiceDetailMark(), ServiceSolutionGrid(), StepSequence(), ContactShell (+27 more)
 
 ### Community 113 - "public/index.ts"
 Cohesion: 0.08
-Nodes (41): PortfolioPage(), ProjectDetailPage(), formatPosition(), ProjectCard(), ProjectCardProps, compactNumber(), FanItemStyle, getFanItemStyle() (+33 more)
+Nodes (43): src_components_projects_project_cards_module, formatPosition(), ProjectCard(), ProjectCardProps, compactNumber(), FanItemStyle, getFanItemStyle(), ProjectCardFan() (+35 more)
 
 ### Community 114 - "Brief Como funciona desktop"
 Cohesion: 0.80
@@ -1149,45 +1207,45 @@ Nodes (5): Brief — Contato individual, desktop claro e escuro, Terminal Contac
 Cohesion: 0.50
 Nodes (5): Briefs opcionais de geração, Optional QA reference generation policy, Approved master-board visual controls, Non-production golden-reference constraint, W_Flyer approved master board specification
 
-### Community 117 - "enum"
-Cohesion: 0.40
-Nodes (5): enum, branch, application, institutional, origin
-
 ### Community 118 - "tasks.md"
 Cohesion: 0.29
 Nodes (6): 1. Evidence and contract, 2. Canonical browser jobs, 3. Deterministic Playwright runtime, 4. Visual specifications and production integrity, 5. Governed evidence and documentation, 6. Repository validation
 
-### Community 119 - "start-lighthouse-server.mjs"
-Cohesion: 0.40
-Nodes (4): repositoryRoot, scriptDirectory, serverPath, standaloneDirectory
+### Community 119 - "composer/types.ts"
+Cohesion: 0.08
+Nodes (38): resolveFixturePitchContour(), EMPTY_COMPOSITION_HISTORY, composeMotifWithResolverForTesting(), assertIntegerSequence(), ContourTranslationExhaustedError, getPitchContourDeltas(), instantiatePitchContour(), LANDING_PITCH_RANGE (+30 more)
 
-### Community 120 - "validate-locked-dependencies.mjs"
-Cohesion: 0.40
-Nodes (4): dependencyGroups, invalidEntries, packageJson, packageJsonUrl
+### Community 120 - "properties"
+Cohesion: 0.09
+Nodes (23): minLength, type, enum, minLength, type, pattern, type, properties (+15 more)
 
 ### Community 121 - "Requirements"
 Cohesion: 0.07
 Nodes (29): Music Renderer Specification, Purpose, Requirement: Approved glyph geometry is immutable, Requirement: Beam groups use the approved group-balance stem rule, Requirement: Final barline is a renderer primitive, Requirement: Key signatures are deterministic structural score elements, Requirement: Music geometry is deterministic and staff-space based, Requirement: Responsive ScorePath projection separates notation from connectors (+21 more)
 
-### Community 122 - "static-routes.a11y.spec.ts"
-Cohesion: 0.40
-Nodes (3): accessibilityStates, internalRoutes, RelevantViolation
+### Community 122 - "app/layout.tsx"
+Cohesion: 0.16
+Nodes (11): ref_next_font_local, cormorantGaramond, manrope, src_app_globals, metadata, viewport, SiteStructuredData(), fontVariableClasses (+3 more)
+
+### Community 123 - "@playwright/test"
+Cohesion: 0.06
+Nodes (15): records, @playwright/test, candidateExpectations, candidates, profiles, legalRoutes, mainPageContracts, serviceDetailRoutes (+7 more)
 
 ### Community 124 - "Checklist de prontidão antes do código definitivo"
 Cohesion: 0.83
 Nodes (4): Autorização de implementação, Checklist de prontidão antes do código definitivo, Gates de credenciais externas, READY_FOR_IMPLEMENTATION
 
-### Community 125 - "GitHub Environments and Napoleon Runtime"
-Cohesion: 0.67
-Nodes (4): Fail-Closed Configuration Behavior, Environment and Runtime Value Boundary, GitHub Environment Release Gates, GitHub Environments and Napoleon Runtime
+### Community 125 - "SiteFooter.tsx"
+Cohesion: 0.11
+Nodes (16): ADR-0008, Integrate the semantic footer into the immersive terminal, ref_next_link, src_components_brand_official_brand_symbol_module, OfficialBrandSymbol(), OfficialBrandSymbolProps, Dark, Decorative (+8 more)
 
-### Community 126 - "Evidências visuais — Fase 2"
-Cohesion: 0.50
-Nodes (4): Capturas de rotas estáticas, Evidências não antecipam fases posteriores, Evidências visuais — Fase 2, Indicador de desenvolvimento excluído da produção
+### Community 126 - "build-motif-model.ts"
+Cohesion: 0.12
+Nodes (28): sampleLabStaff(), sampleStaffLines(), arraysEqual(), BEAM_SECONDARY_PERPENDICULAR_EPSILON, beamRole(), buildMotifModel(), TUPLET_BRACKET_PARALLEL_EPSILON, TUPLET_END_CAP_PERPENDICULAR_EPSILON (+20 more)
 
-### Community 127 - "Evidências visuais — Fase 3"
-Cohesion: 0.50
-Nodes (4): Capturas da Home e bifurcação, Capturas de QA não produtivas, Evidências das barras finais, Evidências visuais — Fase 3
+### Community 127 - "Animação de entrada da marca W_Flyer"
+Cohesion: 0.27
+Nodes (10): Handoff do símbolo para o header, Header em partitura, Arquitetura GSAP, Layout persistente de motion, Stack GSAP, Animação de entrada da marca W_Flyer, BrandIntroState state machine, Handoff FLIP para o header (+2 more)
 
 ### Community 128 - "Fluxo controlado de atualização de dependências"
 Cohesion: 0.83
@@ -1241,17 +1299,25 @@ Nodes (4): tolerance, maximum, minimum, type
 Cohesion: 0.67
 Nodes (4): proposal, design, tasks and acceptance change artifact set, Minimum OpenSpec change fields, OpenSpec do site institucional, Stack changes require explicit ADR
 
+### Community 141 - "attempt-1-tooling/shared-probe.mjs"
+Cohesion: 0.19
+Nodes (28): access(), append(), configure(), contextFor(), digest(), dir, drive(), focusSamples() (+20 more)
+
 ### Community 142 - "phase07-professional-scenes.spec.ts"
-Cohesion: 0.07
-Nodes (14): legalRoutes, mainPageContracts, serviceDetailRoutes, Bounds, PROFESSIONAL_CHAPTER_IDS, PROFESSIONAL_SCENES, PROJECT_DESTINATIONS, RelevantFinding (+6 more)
+Cohesion: 0.17
+Nodes (6): Bounds, PROFESSIONAL_CHAPTER_IDS, PROFESSIONAL_SCENES, PROJECT_TITLES, RelevantFinding, relevantFindings()
+
+### Community 143 - "Stage-1 first Projects full-ink owner authorization and High handoff"
+Cohesion: 0.33
+Nodes (5): Actual worktree and implementation state, Decision and retained diagnosis, Exact repair envelope and fixture rule, Governance validation and routing boundary, Stage-1 first Projects full-ink owner authorization and High handoff
 
 ### Community 144 - "Evidências locais — Fase 1"
 Cohesion: 0.67
 Nodes (3): Capturas determinísticas da fundação visual, Evidência local não substitui golden reference, Evidências locais — Fase 1
 
-### Community 145 - "motion_notes"
-Cohesion: 0.67
-Nodes (3): items, type, motion_notes
+### Community 145 - "Stage-1 Projects first-event ink clearance STOP — 2026-09-10"
+Cohesion: 0.29
+Nodes (6): Finding and classification, Lineage and scope, Minimum next decision, Routing and attempt ledger, Stage-1 Projects first-event ink clearance STOP — 2026-09-10, Worktree and verification
 
 ### Community 146 - "Requirement: Candidate browser evidence matches common CI"
 Cohesion: 0.33
@@ -1259,11 +1325,11 @@ Nodes (5): ADDED Requirements, Requirement: Candidate browser evidence matches c
 
 ### Community 147 - "W_Flyer Music System v0.1 — Implementation Contract"
 Cohesion: 0.04
-Nodes (45): 10. Stem-direction contract, 11. Rhythmic whitelist, 12. Key-signature contract, 13. Procedural composer, 14. Composer profiles, 15. Anti-repetition and pitch-contour rules, 16. Semantic composition slots and reserved zones, 17. React/SVG presentation contract (+37 more)
+Nodes (44): 10. Stem-direction contract, 11. Rhythmic whitelist, 12. Key-signature contract, 13. Procedural composer, 14. Composer profiles, 15. Anti-repetition and pitch-contour rules, 16. Semantic composition slots and reserved zones, 17. React/SVG presentation contract (+36 more)
 
 ### Community 148 - "W_Flyer Music System v0.1 — Implementation Contract"
 Cohesion: 0.05
-Nodes (42): 10. Stem-direction contract, 11. Rhythmic whitelist, 12. Key-signature contract, 13. Procedural composer, 14. Composer profiles, 15. Anti-repetition and pitch-contour rules, 16. Semantic composition slots and reserved zones, 17. React/SVG presentation contract (+34 more)
+Nodes (41): 10. Stem-direction contract, 11. Rhythmic whitelist, 12. Key-signature contract, 13. Procedural composer, 14. Composer profiles, 15. Anti-repetition and pitch-contour rules, 16. Semantic composition slots and reserved zones, 17. React/SVG presentation contract (+33 more)
 
 ### Community 149 - "Persistent route-to-route animated-navigation coordinator and topology contracts"
 Cohesion: 0.67
@@ -1289,85 +1355,165 @@ Nodes (3): Proposal scope and risk structure, Proposal template, Requested decis
 Cohesion: 0.67
 Nodes (3): Sequential task dependency, Task evidence completion, Tasks template
 
+### Community 157 - "Stage-1 Projects visit-2 focus clearance STOP — 2026-09-11"
+Cohesion: 0.33
+Nodes (5): Exact authorization conflict, Next decision and bounded continuation, Stage-1 Projects visit-2 focus clearance STOP — 2026-09-11, Verified current failure, Work preserved and checks
+
+### Community 158 - "type"
+Cohesion: 0.12
+Nodes (22): items, items, items, minItems, type, additionalProperties, allOf, minLength (+14 more)
+
 ### Community 159 - "Q: Why did the GitHub Actions quality and browser checks fail, and how were they resolved?"
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Why did the GitHub Actions quality and browser checks fail, and how were they resolved?, Source Nodes
 
-### Community 161 - "seo.ts"
-Cohesion: 0.11
-Nodes (19): sitemap(), BreadcrumbItem, JsonLdPrimitive, JsonLdValue, ServiceStructuredData(), ServiceStructuredDataProps, SiteStructuredData(), StructuredData() (+11 more)
+### Community 160 - "interactive_regions"
+Cohesion: 0.67
+Nodes (3): items, type, interactive_regions
+
+### Community 161 - "6. Approved Assembly Decisions — `ASM-DEC-*`"
+Cohesion: 0.04
+Nodes (49): 6. Approved Assembly Decisions — `ASM-DEC-*`, ASM-DEC-001 — GSAP Only, ASM-DEC-002 — Intermediate Assembly Scope, ASM-DEC-003 — Home Origin Visual Hierarchy, ASM-DEC-004 — Home Edge Depth Zones, ASM-DEC-005 — Center-Out Header Reveal, ASM-DEC-006 — Branch Header Docking, ASM-DEC-007 — Branch Depth Activation (+41 more)
 
 ### Community 162 - "runtime.ts"
-Cohesion: 0.06
-Nodes (58): MotionStoryRuntimeRegistry, createStaticNativeStoryPositioningAdapter(), StoryPositioningOptions, StoryPositioningResult, StoryProjectionMode, MOTION_LAB_DRAFT_ELIGIBILITY, resolveStoryProjectionMode(), StoryProjectionDecision (+50 more)
+Cohesion: 0.07
+Nodes (56): Existing owners to reuse, First action and remaining bounded High work, ref_gsap_scrolltrigger, MotionStoryRuntimeRegistry, StoryPositioningOptions, StoryProjectionMode, MOTION_LAB_DRAFT_ELIGIBILITY, resolveCoarseStoryProjectionMode() (+48 more)
 
 ### Community 164 - "gate-c-review.ts"
-Cohesion: 0.09
-Nodes (34): FIXED_SEED_MATRIX, RESPONSIVE_PROJECTION_REVIEW, ComposerFixtureControls(), ComposerPerformanceCounters, ComposerPerformanceStage, isLabTheme(), isLabViewport(), isProfileFilter() (+26 more)
+Cohesion: 0.07
+Nodes (43): FIXED_SEED_MATRIX, RESPONSIVE_PROJECTION_REVIEW, ComposerFixtureControls(), ComposerPerformanceCounters, ComposerPerformanceStage, isLabTheme(), isLabViewport(), isProfileFilter() (+35 more)
 
 ### Community 167 - "organic-flowing.ts"
 Cohesion: 0.07
-Nodes (60): add(), BRANCH_CHAPTERS, buildAuthoredGeometry(), buildChapterLayouts(), buildCubicSplineSegments(), buildEvidence(), BuildOrganicFlowingModelOptions, buildPrimitiveSpanEvidence() (+52 more)
+Nodes (60): Verified live owners, A. Application-access reservation architecture, add(), AuthoredTrackGeometry, BRANCH_CHAPTERS, buildAuthoredGeometry(), buildChapterLayouts(), buildCubicSplineSegments() (+52 more)
 
 ### Community 168 - "ADDED Requirements"
 Cohesion: 0.07
 Nodes (28): ADDED Requirements, Purpose, Requirement: Approved glyph geometry is immutable, Requirement: Beam groups use the approved group-balance stem rule, Requirement: Final barline is a renderer primitive, Requirement: Key signatures are deterministic structural score elements, Requirement: Music geometry is deterministic and staff-space based, Requirement: Responsive ScorePath projection separates notation from connectors (+20 more)
 
 ### Community 169 - "lab-score-models.ts"
-Cohesion: 0.05
-Nodes (66): BEAM_FIXTURES, BUILT_FIXTURES, MOTIF_PATH_MATRIX, PATH_FIXTURES, TRIPLET_DETAIL_FIXTURES, APPROVED_RENDERER_TOKENS, ALL_RHYTHM_FAMILIES, baseScoreModel() (+58 more)
+Cohesion: 0.07
+Nodes (52): BEAM_FIXTURES, BUILT_FIXTURES, MOTIF_PATH_MATRIX, PATH_FIXTURES, TRIPLET_DETAIL_FIXTURES, ALL_RHYTHM_FAMILIES, baseScoreModel(), buildBeamFixture() (+44 more)
 
 ### Community 170 - "Requirements"
 Cohesion: 0.10
 Nodes (20): Procedural Score Composer Specification, Purpose, Requirement: Composer prevents structural and visual repetition, Requirement: Composer uses an explicit rhythmic whitelist, Requirement: Composer uses controlled pitch contours and bounds, Requirement: Key signatures are outside procedural variation, Requirement: Responsive layouts preserve semantic composition, Requirement: Score variation is deterministic within a session (+12 more)
 
+### Community 171 - "notes"
+Cohesion: 0.67
+Nodes (3): items, type, notes
+
 ### Community 172 - "compose-motif.ts"
-Cohesion: 0.13
-Nodes (23): motifSatisfiesHardConstraints(), motifSoftPenalty(), wouldCreateThreeIdenticalPitches(), anchorSchedule(), composeMotifWithResolver(), composeMotifWithResolverForTesting(), contourSchedule(), createComposedMotif() (+15 more)
+Cohesion: 0.12
+Nodes (29): currentTrailingPitchRun(), motifSatisfiesHardConstraints(), motifSoftPenalty(), trailingPitchRun(), wouldCreateThreeIdenticalPitches(), anchorSchedule(), composeMotif(), ComposeMotifInput (+21 more)
 
-### Community 174 - "pitch-contours.ts"
-Cohesion: 0.19
-Nodes (16): assertIntegerSequence(), ContourTranslationExhaustedError, getPitchContourDeltas(), instantiatePitchContour(), LANDING_PITCH_RANGE, PITCH_CONTOUR_TABLE, PitchContourTableEntry, PitchRange (+8 more)
+### Community 173 - "presentation_annotations"
+Cohesion: 0.67
+Nodes (3): items, type, presentation_annotations
 
-### Community 175 - "ComposerConfigurationError"
-Cohesion: 0.22
-Nodes (12): assertWeight(), deriveChapterSeed(), encodeLength(), formatVersionedChapterSeed(), hashSeedParts(), Mulberry32, SeedPart, seedPartToString() (+4 more)
+### Community 174 - "react"
+Cohesion: 0.23
+Nodes (16): react, FinalBarline(), FinalBarlineProps, MeasureBar(), MeasureBarProps, src_components_music_music_module, MusicalNote(), MusicalNoteProps (+8 more)
+
+### Community 175 - "compose-segment.ts"
+Cohesion: 0.17
+Nodes (20): appendCompositionHistory(), assertFiniteUnitInterval(), composeSegment(), overlappingReservedZone(), slotSeed(), stableMotifInstanceId(), validateReservedZones(), validateSlots() (+12 more)
+
+### Community 176 - "units.ts"
+Cohesion: 0.11
+Nodes (31): src_app_5f_visual_lab_music_fixtures_lab_score_models_approved_down_flag_transform, EXTENDED_LEDGER_PITCHES, ledgerCases, MusicPitchFixturesPage(), PITCH_LADDER_STEPS, pitchLadder, STEM_FLAG_LABELS, stemAndFlagCases (+23 more)
 
 ### Community 177 - "Gate-C final triplet correction validation — 2026-08-24"
 Cohesion: 0.29
 Nodes (6): Deferred human work, Executed validation, Final capture hashes, Gate-C final triplet correction validation — 2026-08-24, Implemented geometry, Responsive and historical immutability
 
-### Community 179 - "compose-segment.test.ts"
-Cohesion: 0.12
-Nodes (17): LANDING_STAFF_STEPS, PITCH_CONTOUR_IDS, PREFERRED_PITCH_RANGE, COMMON_ANCHOR_WEIGHTS, COMMON_CONTOUR_WEIGHTS, DENSITY_WEIGHTS, profile(), weights() (+9 more)
+### Community 178 - "ref_node_path"
+Cohesion: 0.14
+Nodes (12): ref_node_fs_promises, ref_node_path, dependencyGroups, invalidEntries, packageJson, packageJsonUrl, archetypeEntries, ArchetypePageId (+4 more)
 
-### Community 180 - "triplet-numeral.test.ts"
-Cohesion: 0.11
-Nodes (36): getMotifDefinition(), resolveBeamGroupStemDirection(), arraysEqual(), BEAM_SECONDARY_PERPENDICULAR_EPSILON, beamRole(), buildMotifModel(), TUPLET_BRACKET_PARALLEL_EPSILON, TUPLET_END_CAP_PERPENDICULAR_EPSILON (+28 more)
+### Community 179 - "draft-calibration.ts"
+Cohesion: 0.21
+Nodes (8): APPROVED_RENDERER_GLYPH_CALIBRATIONS, GlyphCalibrationStatus, RuntimeApprovedGlyphCalibration, APPROVED_RENDERER_GLYPH_CALIBRATIONS, APPROVED_RENDERER_TOKENS, RendererEngravingTokens, RendererGlyphCalibrations, ResolvedGlyphCalibration
 
-### Community 181 - "StoryNavigationContext.tsx"
+### Community 180 - "vitest"
 Cohesion: 0.15
-Nodes (14): DEFAULT_STORY_NAVIGATION_BRIDGE_CONTEXT, DEFAULT_STORY_NAVIGATION_STATE_CONTEXT, StoryNavigationBridgeContext, StoryNavigationBridgeContextValue, StoryNavigationController, StoryNavigationProvider(), StoryNavigationStateContext, StoryNavigationStateContextValue (+6 more)
+Nodes (27): vitest, roles(), beamCases, buildNote(), accidentalAnchors, composedMotif(), downStemBeamLayout(), flagAnchors (+19 more)
+
+### Community 181 - "AI Collaboration Protocol — Codex <-> Antigravity Baton Workflow"
+Cohesion: 0.10
+Nodes (20): 11. Global-tool changes in a multi-project environment, 14. Product-executor lifecycle — Codex / Sonnet, 15. `CODEX_CONTEXT.md` generation contract, 17. Baton integrity, interruption and quota exhaustion, 18. Shared anti-loop and root-cause budget, 1. Purpose, 20. Validation and evidence, 21. Maintenance mutation envelope (+12 more)
 
 ### Community 182 - "session-seed.ts"
 Cohesion: 0.18
 Nodes (9): getBrowserMusicSessionSeed(), assertNonEmptySeed(), createSecureSessionSeed(), resolveSessionSeed(), ResolveSessionSeedOptions, SecureRandomSource, SessionSeedStorage, SessionSeedUnavailableError (+1 more)
 
 ### Community 183 - "StoryBootstrapExperience.tsx"
-Cohesion: 0.08
-Nodes (34): STORY_BOOTSTRAP_SCENARIOS, StoryBootstrapPageProps, abortError(), acquireBootstrapLocks(), ActivePositionRequest, AttributeSnapshot, BootstrapDebugPositionCall, BootstrapDebugState (+26 more)
+Cohesion: 0.09
+Nodes (35): STORY_BOOTSTRAP_SCENARIOS, StoryBootstrapPageProps, src_components_story_bootstrap_story_bootstrap_module, abortError(), acquireBootstrapLocks(), ActivePositionRequest, AttributeSnapshot, BootstrapDebugPositionCall (+27 more)
 
-### Community 184 - "bootstrap/index.ts"
-Cohesion: 0.12
-Nodes (30): destination(), resolveStoryBootstrapDestination(), ResolveStoryBootstrapDestinationInput, STORY_CHAPTER_ID_BY_HASH, StoryBootstrapDestinationSource, storyHashForChapter(), createStoryHistoryEntry(), isRecord() (+22 more)
-
-### Community 193 - "ScorePath"
+### Community 184 - "ContactForm.tsx"
 Cohesion: 0.11
-Nodes (35): LabResponsiveStructuralConfiguration, WeightedConnectorSegment, AccidentalPlacement, BuildAccidentalPlacementInput, FinalBarlineInput, OrdinaryBarlineInput, BuildTrebleKeySignatureInput, getTrebleKeySignatureEntries() (+27 more)
+Nodes (17): Contact, Persona, and Terminal Boundaries, Contact seam, Persona boundary, Terminal boundary, ref_next_script, src_components_pages_contact_contact_form_module, ContactForm(), ContactFormFallback() (+9 more)
+
+### Community 190 - "measurement.ts"
+Cohesion: 0.09
+Nodes (36): Bounded implementation handoff, Candidate/live equivalence and limits, Cause and counterfactual, Exact crossing and validator validity, Projects candidate intersection: measurement-order classification, Ready-to-paste continuation, Validation and exact worktree scope, react-dom (+28 more)
+
+### Community 191 - "Modelo espacial de dupla partitura"
+Cohesion: 0.24
+Nodes (10): NavigationMeasure, Modelo espacial de dupla partitura, Páginas auxiliares, Ramo da aplicação, Ramo institucional, Sistema de dupla partitura, Templates auxiliares de serviço e páginas legais, M-013 — Transição de capítulo à esquerda (+2 more)
+
+### Community 192 - "Staff.stories.tsx"
+Cohesion: 0.25
+Nodes (7): Dark, Forward, meta, Quiet, Reverse, Story, Terminal
+
+### Community 193 - "event-safe-placement.ts"
+Cohesion: 0.09
+Nodes (35): ReservedZoneReason, ScoreMotifPlacement, buildCompositionSlots(), composeApprovedBranch(), fnv1a(), RESERVED_COMPOSER_REASON, STORY_SCORE_BRANCH_CHAPTERS, STORY_SCORE_BRANCHES (+27 more)
 
 ### Community 194 - "Napoleon Node.js runtime runbook"
 Cohesion: 0.12
 Nodes (15): 1. Purpose and safety boundary, 2. Required release identity, 3. Napoleon panel contract, 4. Build and start commands, 5. Build-time and runtime values, 6. Staging hostname and DNS evidence, 7.1 Revision and process evidence, 7.2 Public routes and static assets (+7 more)
+
+### Community 195 - "Current Model Handoff"
+Cohesion: 0.17
+Nodes (11): Attempt history, Authorized objective and boundary, Canonical authority, Continuation prompt, Current Model Handoff, Next action, Preserve / prohibited, Repository state (+3 more)
+
+### Community 236 - "eslint.config.mjs"
+Cohesion: 0.50
+Nodes (3): ref_eslint_config, ref_eslint_config_next_core_web_vitals, ref_eslint_config_next_typescript
+
+### Community 245 - "Stage-1 consolidated owner decision proposal"
+Cohesion: 0.10
+Nodes (19): Controlled current/historical comparison, Evidence, validation and worktree preservation, Historical acceptance and authority, Inherited mechanism and bounded affected cases, Result, Routing and ready-to-paste Ultra handoff, Stage-1 application-access overflow causal classification, B. Trigger for a systematic inherited-defect audit (+11 more)
+
+### Community 246 - "ref_node_url"
+Cohesion: 0.08
+Nodes (20): browserCache, cases, evidenceDir, repoDir, server, ref_node_child_process, ref_node_url, ref_storybook_addon_vitest_vitest_plugin (+12 more)
+
+### Community 247 - "collect-before-cascade-isolation.mjs"
+Cohesion: 0.17
+Nodes (19): [base,out,network='live',matrix='one'], results, access(), append(), configure(), contextFor(), digest(), dir (+11 more)
+
+### Community 248 - "properties"
+Cohesion: 0.12
+Nodes (17): properties, required, type, candidateStatus, equivalence, evidence, fallback, limitations (+9 more)
+
+### Community 249 - "properties"
+Cohesion: 0.12
+Nodes (16): minItems, type, uniqueItems, type, const, const, properties, decisions (+8 more)
+
+### Community 250 - "Stage 1 HGA architecture resolution and bounded implementation handoff"
+Cohesion: 0.18
+Nodes (11): Authority and exact state, Current completion — 2026-09-24, Current owner clarification — 2026-09-24, Current owner-device verification stop — 2026-09-24, Evidence retained without reinterpretation, First action and implementation owners, Governance validation, Preserved HGA-002 baseline and safe density boundary (+3 more)
+
+### Community 251 - "W_Flyer Institutional Site Documentation"
+Cohesion: 0.15
+Nodes (11): External Homologation Gate, GitHub to Napoleon to Cloudflare Topology, Operational and Publication Decisions, Canonical precedence, Core invariants, Current authority, Current implementation change, W_Flyer canonical v2 package (+3 more)
+
+### Community 252 - "Projects visit-3 classification and bounded implementation handoff"
+Cohesion: 0.25
+Nodes (7): Authority and exact next action, Classification, Evidence and lineage limits, Projects visit-3 classification and bounded implementation handoff, Ready-to-paste continuation, Validation and preserved state, Why the rectangle rejects
 
 ### Community 253 - "PROMPT_CODEX_FASE_09_NAPOLEON.md"
 Cohesion: 0.12
@@ -1377,13 +1523,13 @@ Nodes (15): Codex master prompt — W_Flyer Phase 09, Napoleon staging and homol
 Cohesion: 0.17
 Nodes (11): Automated staging evidence, Candidate and workflow evidence, Manual homologation evidence, Napoleon DNS/hosting and separate application evidence, Napoleon panel inventory, Open external blockers, Owner decision, Required homologation record (+3 more)
 
-### Community 255 - "build-note-model.ts"
-Cohesion: 0.13
-Nodes (49): averagePoints(), layoutBeamedMotif(), noteheadStemAttachment(), resolvePrimaryBeamAttachments(), buildAccidentalPlacement(), BarlineRole, buildBarlineStroke(), buildFinalBarline() (+41 more)
+### Community 255 - "ref_node_crypto"
+Cohesion: 0.23
+Nodes (11): ref_node_crypto, ref_node_os, assertSafeReleasePath(), createReleaseManifest(), requireText(), resolveReleaseFile(), writeReleaseManifestFromEnvironment(), fontChecksums (+3 more)
 
 ### Community 256 - "Canonical Decision Register"
-Cohesion: 0.09
-Nodes (21): ADR-025 — Continuous organic dual-score narrative, ADR-026 — W_Flyer Music Renderer v0.1, ADR-027 — Seeded procedural score composition, ADR-028 — Music calibration and Visual Lab gates, ADR-029 — W_Flyer brand and personal professional positioning, ADR-030 — Alternative A: immersive landing plus detailed routes, ADR-031 — Native-scroll master story and header traversal, ADR-032 — Responsive vertical story and mobile order (+13 more)
+Cohesion: 0.05
+Nodes (37): ADR-025 — Continuous organic dual-score narrative, ADR-026 — W_Flyer Music Renderer v0.1, ADR-027 — Seeded procedural score composition, ADR-028 — Music calibration and Visual Lab gates, ADR-029 — W_Flyer brand and personal professional positioning, ADR-030 — Alternative A: immersive landing plus detailed routes, ADR-031 — Native-scroll master story and header traversal, ADR-032 — Responsive vertical story and mobile order (+29 more)
 
 ### Community 257 - "Staging homologation runbook"
 Cohesion: 0.18
@@ -1393,9 +1539,9 @@ Nodes (10): 1. Entry gate and stop conditions, 2. Evidence handling and privacy 
 Cohesion: 0.18
 Nodes (10): 1. Authorization and triggers, 2. Evidence and privacy boundary, 3. Validate both immutable revisions, 4. Capture pre-rollback state, 5. Execute through the actual Napoleon Node.js control, 6. Post-rollback verification, 7. Staging rollback exercise, 8. Rollback failure and Contact-only incidents (+2 more)
 
-### Community 259 - "Mapa de IDs SVG W_Flyer"
-Cohesion: 0.09
-Nodes (33): Cópias controladas dos assets oficiais, Coreografia compartilhada entre temas, Documentos normativos de motion e QA, Geometria imutável da animação, Referências da animação de entrada, Contrato controlado de IDs, Grupos controlados de animação, Mapa controlado de IDs SVG (+25 more)
+### Community 259 - "AI Executor Stall, Escalation, and Systematic Audit Policy"
+Cohesion: 0.15
+Nodes (12): 12. Decision Algorithm, 14. Batch Governance After Audit, 15. Required Evidence for Every Long-Running Problem, 16. Forbidden Behaviors, 17. Acceptance Criteria for This Policy, 18. Recommended Repository Integration, 19. Executive Summary, 1. Purpose (+4 more)
 
 ### Community 260 - "Q: Audit the dirty visual stabilization change and regenerated baselines against the OpenSpec design and project rules"
 Cohesion: 0.40
@@ -1407,7 +1553,7 @@ Nodes (19): 10. Landing integration is a separate future change, 11. Triplet typ
 
 ### Community 262 - "GlyphCalibrationComposites.tsx"
 Cohesion: 0.14
-Nodes (20): AccidentalExample(), AccidentalKey, CalibratedGlyph(), CalibrationTheme, ClefCalibration(), FlagExample(), FlagKey, glyphCorners() (+12 more)
+Nodes (19): AccidentalExample(), AccidentalKey, CalibratedGlyph(), CalibrationTheme, ClefCalibration(), FlagExample(), FlagKey, glyphCorners() (+11 more)
 
 ### Community 263 - "ADDED Requirements"
 Cohesion: 0.10
@@ -1446,8 +1592,8 @@ Cohesion: 0.12
 Nodes (16): Accidentals, Barlines, Beamed-group stem direction — approved Option B, Beams, Coordinate system, Key signatures, Ledger lines, Note durations in v0.1 (+8 more)
 
 ### Community 272 - "dependencies"
-Cohesion: 0.13
-Nodes (15): gsap, @gsap/react, next, dependencies, gsap, @gsap/react, next, react (+7 more)
+Cohesion: 0.25
+Nodes (8): dependencies, gsap, @gsap/react, next, react, react-dom, resend, zod
 
 ### Community 273 - "W_Flyer Music Renderer v0.1 — Canonical Contract"
 Cohesion: 0.13
@@ -1462,16 +1608,16 @@ Cohesion: 0.13
 Nodes (14): Accidentals, Barlines, Beamed-group stem direction — approved Option B, Beams, Coordinate system, Key signatures, Ledger lines, Note durations in v0.1 (+6 more)
 
 ### Community 276 - "Chapter Contracts"
-Cohesion: 0.14
-Nodes (13): ABOUT — Professional introduction, APPLICATION OVERVIEW, BENEFITS, Chapter Contracts, CONTACT, DEMONSTRATION — APP-04, HOME — Origin, HOW IT WORKS (+5 more)
+Cohesion: 0.22
+Nodes (8): Chapter Contracts, Contato, Global footer, Home — origin, Processo, Projetos, Serviços, Sobre — professional introduction
 
 ### Community 277 - "projection.ts"
-Cohesion: 0.05
-Nodes (75): StoryScoreBranch, SCORE_PATH_REVIEW_MAX_NOTATION_TANGENT_ANGLE_DEG, ScorePathReviewInteractionProfile, ScorePathReviewMode, ScorePathReviewProjectVisit, ApplicationOrganicFlowingPath, applicationOriginBridge(), applyChapterBarlineClassification() (+67 more)
+Cohesion: 0.04
+Nodes (82): H. Bounded vertical compatibility, with no acceptance exemption, Amend the active successor, Decisions, Preserve safety, reconcile presentation, Reuse existing semantic and projection owners, Stage spatial metadata before geometry approval, Exact inventory, Geometry ownership and bounded next action (+74 more)
 
-### Community 278 - "app/layout.tsx"
-Cohesion: 0.17
-Nodes (13): contentSecurityPolicy, nextConfig, metadata, viewport, robots(), createDeploymentRobotsHeader(), createDeploymentRobotsMetadata(), createDeploymentRobotsPolicy() (+5 more)
+### Community 278 - "AI Executor Stall, Escalation, and Systematic Audit Policy"
+Cohesion: 0.15
+Nodes (12): 12. Decision Algorithm, 14. Batch Governance After Audit, 15. Required Evidence for Every Long-Running Problem, 16. Forbidden Behaviors, 17. Acceptance Criteria for This Policy, 18. Recommended Repository Integration, 19. Executive Summary, 1. Purpose (+4 more)
 
 ### Community 279 - "rebuild-scroll-driven-wflyer-v2/tasks.md"
 Cohesion: 0.12
@@ -1490,8 +1636,8 @@ Cohesion: 0.17
 Nodes (11): Chapter density profiles, Diversity rules, Key signatures, Pitch contours, Purpose, Responsive/reduced-motion stability, ScorePath slots and reserved zones, Session determinism (+3 more)
 
 ### Community 283 - "2026-08-24-implement-music-system-v0-1/tasks.md"
-Cohesion: 0.20
-Nodes (9): 0. Canonicalization and baseline protection, 1. Pure geometry core — Gate A foundation, 2. Glyph registry and renderer model, 3. Procedural Score Composer, 4. Music Visual Lab, 5. Gate A — geometry validation, 6. Gate B — human calibration (blocking), 7. Gate C — visual composer validation (+1 more)
+Cohesion: 0.22
+Nodes (8): 0. Canonicalization and baseline protection, 2. Glyph registry and renderer model, 3. Procedural Score Composer, 4. Music Visual Lab, 5. Gate A — geometry validation, 6. Gate B — human calibration (blocking), 7. Gate C — visual composer validation, 8. Regression and repository completion
 
 ### Community 284 - "W_Flyer Procedural Score Composer v0.1 — Canonical Contract"
 Cohesion: 0.17
@@ -1513,33 +1659,33 @@ Nodes (10): Anti-repetition, Density profiles, Key signature, Pitch, Procedural 
 Cohesion: 0.18
 Nodes (10): Application demo, Detailed pages, File-by-File Migration Map, Header/footer, Intro, Landing/experience, Music, Root/governance (+2 more)
 
-### Community 289 - "APP-04 Application Demo Device"
+### Community 289 - "APP-04 Application Demo Device — historical, superseded scope"
 Cohesion: 0.20
-Nodes (9): Activation, APP-04 Application Demo Device, Pending assets, Playback, Purpose, Reduced motion, Replay, State machine (+1 more)
+Nodes (9): Activation, APP-04 Application Demo Device — historical, superseded scope, Pending assets, Playback, Purpose, Reduced motion, Replay, State machine (+1 more)
 
 ### Community 290 - "Chapter Acceptance Criteria"
-Cohesion: 0.20
-Nodes (9): About/Persona, Access/Terminals, APP-04, Application/How/Benefits, Chapter Acceptance Criteria, Contact, Home, Projects (+1 more)
+Cohesion: 0.25
+Nodes (7): About/Persona, Chapter Acceptance Criteria, Contact, Home, Professional terminal, Projects, Services/Process
 
-### Community 291 - "composer/types.ts"
-Cohesion: 0.12
-Nodes (27): appendCompositionHistory(), currentTrailingPitchRun(), EMPTY_COMPOSITION_HISTORY, trailingPitchRun(), composeMotif(), ComposeMotifInput, assertFiniteUnitInterval(), composeSegment() (+19 more)
+### Community 291 - "capture-assembly-stage1-evidence.mjs"
+Cohesion: 0.07
+Nodes (38): baseOrigin, browserTypes, definitions, delay(), desktopTargets, desktopViewport, evidenceRoot, expectedFingerprints (+30 more)
 
 ### Community 292 - "package.json"
-Cohesion: 0.20
-Nodes (9): description, engines, node, pnpm, name, packageManager, private, type (+1 more)
+Cohesion: 0.07
+Nodes (26): description, engines, node, pnpm, name, packageManager, private, type (+18 more)
 
-### Community 293 - "repo-overlay/openspec/changes/implement-music-system-v0-1/tasks.md"
-Cohesion: 0.20
-Nodes (9): 0. Canonicalization and baseline protection, 1. Pure geometry core — Gate A foundation, 2. Glyph registry and renderer model, 3. Procedural Score Composer, 4. Music Visual Lab, 5. Gate A — geometry validation, 6. Gate B — human calibration (blocking), 7. Gate C — visual composer validation (+1 more)
+### Community 293 - "implement-music-system-v0-1/tasks.md"
+Cohesion: 0.22
+Nodes (8): 0. Canonicalization and baseline protection, 2. Glyph registry and renderer model, 3. Procedural Score Composer, 4. Music Visual Lab, 5. Gate A — geometry validation, 6. Gate B — human calibration (blocking), 7. Gate C — visual composer validation, 8. Regression and repository completion
 
 ### Community 294 - "Q: Inspect relationships around the isolated Music System, Visual Lab, tests, legacy landing, and motion after structural changes"
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Inspect relationships around the isolated Music System, Visual Lab, tests, legacy landing, and motion after structural changes, Source Nodes
 
-### Community 295 - "music/index.ts"
-Cohesion: 0.22
-Nodes (14): FinalBarline(), FinalBarlineProps, MeasureBar(), MeasureBarProps, MusicalNote(), MusicalNoteProps, MusicalStaff, NOTE_POSITIONS (+6 more)
+### Community 295 - "Projects visit-2 focus clearance: lineage and owner decision — 2026-09-11"
+Cohesion: 0.29
+Nodes (6): Finding and evidence levels, Local geometry constraints and relationship to ASM-PC-002, Minimum proposed owner decision — approval absent, Preserved work, validation and next action, Projects visit-2 focus clearance: lineage and owner decision — 2026-09-11, Root, full ink and transition envelope
 
 ### Community 296 - "Q: Final Music System v0.1 structural isolation and runtime calibration validation audit"
 Cohesion: 0.40
@@ -1561,9 +1707,9 @@ Nodes (8): Acceptance, Approved direction, Exclusions, Optional easter eggs, Pur
 Cohesion: 0.22
 Nodes (8): APP-04, Contact, Header traversal, Music composer, Persona easter-egg controller, Responsive mode rebuild, State Machines, Story readiness
 
-### Community 301 - "Music System v0.1 — QA and Evidence Contract"
-Cohesion: 0.22
-Nodes (8): 1. Unit-test matrix, 2. Stress tests, 3. Visual evidence, 4. Human calibration evidence, 5. Accessibility, 6. Performance, 7. Regression boundary, Music System v0.1 — QA and Evidence Contract
+### Community 301 - "staging.smoke.spec.ts"
+Cohesion: 0.10
+Nodes (16): contentSecurityPolicy, nextConfig, robots(), sitemap(), createDeploymentRobotsHeader(), createDeploymentRobotsMetadata(), createDeploymentRobotsPolicy(), DeploymentEnvironment (+8 more)
 
 ### Community 302 - "ADDED Requirements"
 Cohesion: 0.22
@@ -1574,20 +1720,20 @@ Cohesion: 0.22
 Nodes (8): Current implementation that is legacy for the new music system, `docs/02-design/05-partitura-ondulada.md`, `docs/02-design/09-sistema-dupla-partitura.md`, `docs/05-implementacao/11-manifesto-capitulos-partitura.yaml`, Existing infrastructure to preserve, New source boundaries, Normative-document conflicts, Repository conflict map — inspected `WFlyer(10).zip`
 
 ### Community 304 - "Decision Traceability by Conversation Block"
-Cohesion: 0.25
-Nodes (7): Application and Persona, Decision Traceability by Conversation Block, Global experience, Implementation, Music renderer/composer, Site and positioning, Visual library
+Cohesion: 0.22
+Nodes (9): Application and Persona, Continuous Spatial Story — owner decision, 2026-09-24, Decision Traceability by Conversation Block, Global experience, Historical provenance exception — owner decision, 2026-09-24, Implementation, Music renderer/composer, Site and positioning (+1 more)
 
 ### Community 305 - "Desktop Scroll, Header Traversal, URL, and History"
 Cohesion: 0.22
 Nodes (8): Active chapter, Cancellation/supersession, Desktop Scroll, Header Traversal, URL, and History, Hashes, Header traversal duration, History, Native scroll, Semantic header manifest
 
-### Community 306 - "Continuous Dual-Score Visual System"
+### Community 306 - "Continuous Score Visual System — historical dual-score baseline"
 Cohesion: 0.20
-Nodes (9): Continuous Dual-Score Visual System, Geometry, Human-approved scene choreography, Key signature, Mobile, Phase-9 final organic Score Path subgate, Scene relationship, Segment structure (+1 more)
+Nodes (9): Continuous Score Visual System — historical dual-score baseline, Geometry, Human-approved scene choreography, Key signature, Mobile, Phase-9 final organic Score Path subgate, Scene relationship, Segment structure (+1 more)
 
 ### Community 307 - "Low-Fidelity Scene Wireframes"
-Cohesion: 0.25
-Nodes (7): Desktop About, Desktop Contact, Desktop Demo, Desktop Home, Desktop Projects, Low-Fidelity Scene Wireframes, Mobile document
+Cohesion: 0.29
+Nodes (6): Desktop About, Desktop Contact, Desktop Home, Desktop Projects, Low-Fidelity Scene Wireframes, Mobile document
 
 ### Community 308 - "Motion Lifecycle and Performance"
 Cohesion: 0.25
@@ -1601,29 +1747,29 @@ Nodes (7): Current-State Audit — `Wflyer(20260814-194446).zip`, Executive find
 Cohesion: 0.25
 Nodes (7): Canonical documentation directory, Legacy documentation, Machine-readable manifests, OpenSpec, Root execution documents, Visual library, W_Flyer v2 — Canonical Documentation Manifest
 
-### Community 311 - "Canonical decision-register delta"
-Cohesion: 0.29
-Nodes (6): ADR-025 — Continuous organic dual-score narrative, ADR-026 — W_Flyer Music Renderer v0.1, ADR-027 — Seeded procedural score composition, ADR-028 — Music asset calibration and Visual Lab gates, Canonical decision-register delta, Required status adjustments
+### Community 311 - "email.ts"
+Cohesion: 0.16
+Nodes (11): resend, zod, contactProjectTypes, email, environmentSchema, ContactEmail, projectLabels, ContactPayload (+3 more)
 
 ### Community 312 - "Source of Truth and Precedence"
 Cohesion: 0.29
 Nodes (6): 1. Authority order, 2. Conflict handling, 3. Canonical language, 4. Single normative version, 5. Evidence, Source of Truth and Precedence
 
-### Community 313 - "Brand Positioning and Product Goals"
-Cohesion: 0.29
-Nodes (6): Brand Positioning and Product Goals, Business goals, Conversion model, Positioning, Prohibitions, Service offer
+### Community 313 - "Brand Positioning and Goals"
+Cohesion: 0.40
+Nodes (4): Brand Positioning and Goals, Goals, Product boundary, Prohibited claims
 
 ### Community 314 - "User Journeys, Conversion, and Content Boundaries"
-Cohesion: 0.25
-Nodes (7): Application launch conversion, Application visitor, Header visitor, Professional visitor, Project publication, Public application boundaries, User Journeys, Conversion, and Content Boundaries
+Cohesion: 0.33
+Nodes (5): Content boundaries, Conversion, Header visitor, Portfolio visitor, User Journeys, Conversion, and Content Boundaries
 
-### Community 315 - "Mobile, Responsive Rebuild, and Reduced Motion"
-Cohesion: 0.14
-Nodes (13): Bootstrap positioning seam, Breakpoint rebuild, `horizontal-enhanced`, Mobile presentation, Mobile, Responsive Rebuild, and Reduced Motion, Mode eligibility, Reduced motion, Responsive score presentation modes (+5 more)
+### Community 315 - "OriginScore.tsx"
+Cohesion: 0.24
+Nodes (11): cubicAngle(), cubicPoint(), getOriginControlPoints(), getOriginStaffPath(), NOTE_BLUEPRINTS, ORIGIN_GEOMETRIES, OriginGeometry, OriginLayout (+3 more)
 
-### Community 316 - "Intro, Bootstrap, Deep Links, and Recovery"
-Cohesion: 0.29
-Nodes (6): Failure cases, Initial target precedence, Intro, Bootstrap, Deep Links, and Recovery, Once per session, State machine, Timing policy
+### Community 316 - "smoke-standalone.mjs"
+Cohesion: 0.08
+Nodes (20): ref_node_net, child, failClosedRobots, productionRobots, repositoryRoot, scriptDirectory, serverPath, standaloneDirectory (+12 more)
 
 ### Community 317 - "Visual Asset Library"
 Cohesion: 0.29
@@ -1641,17 +1787,17 @@ Nodes (6): Dev-only surface, Gate A, Gate B — human blocking, Gate C — human
 Cohesion: 0.29
 Nodes (6): Cutover and Rollback, Cutover prerequisites, Cutover sequence, Parallel build, Production, Rollback
 
-### Community 321 - "Music System v0.1 Gate A report"
-Cohesion: 0.29
-Nodes (6): Canonical semantics proved, Implemented boundaries, Music System v0.1 Gate A report, Next gate, Public compatibility and risks, Validation results
+### Community 321 - "Continuous Spatial Story"
+Cohesion: 0.13
+Nodes (15): 10. Responsive transition lifecycle, 11. Continuity and retained safety, 12. Evidence and HGA disposition, 13. Validation contract, 1. One story and one coordinate authority, 2. Landmarks, content spans and interaction spans, 3. Projection, camera and ownership, 4. Capability-adaptive presentation (+7 more)
 
 ### Community 322 - "Music System v0.1 Gate C corrective delta — automated review bundle"
 Cohesion: 0.13
 Nodes (14): 10. Evidence limits, 1. Resume audit, 2. Decision boundary, 3. Named corrective work, 4. Candidate evidence index, 5. Validation ledger, 6. Immutable baseline, 7. Graphify and isolation (+6 more)
 
-### Community 323 - "renderer/types.ts"
-Cohesion: 0.04
-Nodes (79): ScorePathOriginReviewPage(), ScorePathOriginReviewPageProps, branchLabel(), pointsAttribute(), ScorePathOriginReview(), primitiveReferencePoint(), ScoreDebugOverlay(), ScoreDebugOverlayProps (+71 more)
+### Community 323 - "ScoreGlyph.tsx"
+Cohesion: 0.11
+Nodes (23): GlyphPlacement, EditableGlyphCalibration, galleryPrimitive(), MusicGlyphGalleryPage(), roleFor(), SCALES, THEMES, src_assets_visuals_musical_wf_music_accidental_flat (+15 more)
 
 ### Community 324 - "rebuild-scroll-driven-wflyer-v2/proposal.md"
 Cohesion: 0.29
@@ -1669,13 +1815,13 @@ Nodes (6): Automated validation, Errors, Integrity files, Package guarantees, W_
 Cohesion: 0.29
 Nodes (6): Capabilities, Impact, Modified Capabilities, New Capabilities, What Changes, Why
 
-### Community 328 - "glyphs/page.tsx"
-Cohesion: 0.47
-Nodes (5): galleryPrimitive(), MusicGlyphGalleryPage(), roleFor(), SCALES, THEMES
+### Community 328 - "Tablet interativo da página Aplicação"
+Cohesion: 0.28
+Nodes (9): Acessibilidade, Experiência acessível, Modo de movimento reduzido, Movimento reduzido, Controles acessíveis da introdução, DemoState, Interação acessível do tablet, Simulação local determinística (+1 more)
 
-### Community 329 - "CalibrationWorkbench.tsx"
-Cohesion: 0.17
-Nodes (13): ACCIDENTAL_KEYS, CalibrationPreview(), CalibrationWorkbench(), roleFor(), GlyphCalibrationComposites(), cloneAnchors(), createDraftCalibrationExport(), createEditableGlyphCalibrations() (+5 more)
+### Community 329 - "Current Agent Handoff"
+Cohesion: 0.22
+Nodes (9): Current Agent Handoff, Current Projects checkpoint — 2026-09-24, Current state, Earlier exact-viewport checkpoint — 2026-09-24, Historical owner-profile stop — 2026-09-24, Historical stop — resolved by owner clarification, 2026-09-24, Mandatory boundary, Owner clarification — 2026-09-24 (+1 more)
 
 ### Community 330 - "W_Flyer v2 — Linear Implementation Plan"
 Cohesion: 0.29
@@ -1686,32 +1832,32 @@ Cohesion: 0.33
 Nodes (5): Canonical terminology, Scope, Status, and Terminology, Separate application, Status, Website scope
 
 ### Community 332 - "Information Architecture and Routes"
-Cohesion: 0.33
-Nodes (5): Detailed routes retained, Header targets, Information Architecture and Routes, Landing story hashes, Relationship between landing and detailed routes
+Cohesion: 0.40
+Nodes (4): Header targets, Information Architecture and Routes, Landing story hashes, Public routes
 
-### Community 333 - "Global Story Architecture"
-Cohesion: 0.33
-Nodes (5): Canonical progress, Desktop topology, Global Story Architecture, Home position, Progressive enhancement
+### Community 333 - "phase09-dark-theme.spec.ts"
+Cohesion: 0.18
+Nodes (5): DARK_THEME_TOKENS, REVIEW_SCENARIOS, ReviewScenario, STORY_SCENE_CONTROLS, ThemeName
 
 ### Community 334 - "Terminals, Footers, and Navigation Semantics"
 Cohesion: 0.33
-Nodes (5): Desktop, Footer content, Mobile/vertical mode, Navigation semantics, Terminals, Footers, and Navigation Semantics
+Nodes (5): Footer content, Mobile / vertical mode, Navigation semantics, Portfolio terminal, Terminals, Footers, and Navigation Semantics
 
-### Community 335 - "Target Frontend Architecture"
-Cohesion: 0.29
-Nodes (6): Bootstrap and projection boundary, Detailed routes, Major modules, Migration pattern, State ownership, Target Frontend Architecture
+### Community 335 - "Project AI Documentation"
+Cohesion: 0.15
+Nodes (12): 1. Purpose, 2. File classes and authority, 3. Required read order, 4. Sequential execution invariant, 5. Minimal project `AGENTS.md` integration, 6. Owner workflow, 7. Multi-project rule, 8. Existing global agent baseline (+4 more)
 
 ### Community 336 - "Security, Contact, SEO, and Operations"
 Cohesion: 0.29
-Nodes (6): Application launch-interest workflow, Operations, Retained contact controls, Security, Contact, SEO, and Operations, SEO, SVG/media security
+Nodes (6): Operations, Removed institutional Application workflow, Retained contact controls, Security, Contact, SEO, and Operations, SEO, SVG/media security
 
 ### Community 337 - "Phase 0 baseline recovery and validation"
 Cohesion: 0.33
 Nodes (5): Baseline conclusion, Phase 0 baseline recovery and validation, Post-recovery production verification, Recovery evidence, Restored baseline commands
 
-### Community 338 - "W_Flyer v2 Canonical Documentation"
-Cohesion: 0.33
-Nodes (4): Canonical classification, Core target, Reading order, W_Flyer v2 Canonical Documentation
+### Community 338 - "Product Executor Context Pack (`CODEX_CONTEXT.md`)"
+Cohesion: 0.17
+Nodes (11): 10. Context-pack discipline, 1. Environment readiness, 2. Current handoff summary, 3. Active semantic authority, 4. Relevant architecture / graph, 5. Relevant code / symbols, 6. Relevant tests / validation, 7. Known findings / constraints (+3 more)
 
 ### Community 339 - "rebuild-scroll-driven-wflyer-v2/design.md"
 Cohesion: 0.33
@@ -1721,9 +1867,9 @@ Nodes (5): Context, Goals, Key Decisions, Migration, Non-Goals
 Cohesion: 0.22
 Nodes (8): ADDED Requirements, continuous-dual-score Specification, Requirement: Each branch is perceptually continuous, Requirement: Score supports responsive geometry, Requirement: Terminal follows final barline, Scenario: A branch reaches its ending, Scenario: Projection changes, Scenario: Segment boundary
 
-### Community 341 - "Codex Initial Prompt — W_Flyer v2 Re-architecture"
+### Community 341 - "Stage-1 Projects visit-3 interaction clearance STOP — 2026-09-12"
 Cohesion: 0.33
-Nodes (5): Codex Initial Prompt — W_Flyer v2 Re-architecture, First actions, Mandatory paths, Required execution behavior, Source of truth
+Nodes (5): Exact authorization conflict, Preserved implementation state, Required next step, Stage-1 Projects visit-3 interaction clearance STOP — 2026-09-12, Verified current failure
 
 ### Community 342 - "Phase 1 — Isolated W_Flyer Music System v0.1"
 Cohesion: 0.33
@@ -1731,7 +1877,7 @@ Nodes (6): Gate A — geometry, Gate B — human calibration, blocking, Gate C �
 
 ### Community 343 - "W_Flyer v2 — Linear Implementation Plan"
 Cohesion: 0.33
-Nodes (6): Gate 5, Global stop conditions, Phase 5 — Desktop Motion Lab and native-scroll master story, Required work, Target outcome, W_Flyer v2 — Linear Implementation Plan
+Nodes (6): Gate 15, Global stop conditions, Phase 15 — Staging, homologation, and production authorization, Required work, Target outcome, W_Flyer v2 — Linear Implementation Plan
 
 ### Community 344 - "Phase 1 — Isolated W_Flyer Music System v0.1"
 Cohesion: 0.33
@@ -1743,7 +1889,7 @@ Nodes (4): Current tests, Directly superseded legacy target documents, Retained 
 
 ### Community 346 - "Calibration and Pending-Asset Register"
 Cohesion: 0.25
-Nodes (7): Approved calibration records, Calibration and Pending-Asset Register, Calibration parameters, Gate-C review record, Pending assets, Pending editorial review, Phase-9 Score Path pending approval
+Nodes (7): Approved calibration records, Calibration and Pending-Asset Register, Calibration parameters, Gate-C review record, Pending assets, Pending editorial review, Phase-9 Score Path approval and successor refinements
 
 ### Community 347 - "Legacy Test Migration Map"
 Cohesion: 0.40
@@ -1813,9 +1959,9 @@ Nodes (4): ADR-038 — Progressive Enhancement, Reduced Motion, and Performance,
 Cohesion: 0.40
 Nodes (4): ADR-039 — Designer-Owned Visual Asset Governance, Consequences, Context, Decision
 
-### Community 364 - "Migration Notes"
-Cohesion: 0.40
-Nodes (4): Canonical filename mapping, Important correction, Legacy primitive files intentionally removed, Migration Notes
+### Community 364 - "lib/motion/geometry.ts"
+Cohesion: 0.21
+Nodes (17): ScoreTransitionLayer(), AnchorPoint, createScoreTransitionPath(), DEFAULT_TRANSITION_VIEWPORT, destinationAnchorKind(), edgeFallbackPoint(), fallbackChapterPoint(), isFinitePoint() (+9 more)
 
 ### Community 365 - "Q: Inspect the restored test/Playwright setup and identify the smallest existing browser/visual commands that prove the public landing, navigation, legacy score, contact, and demo baseline without updating snapshots. Inspect any Phase 0 evidence conventions and propose exact evidence files/content."
 Cohesion: 0.40
@@ -1829,21 +1975,21 @@ Nodes (4): Current implementation status after merge, Installation, W_Flyer Cano
 Cohesion: 0.12
 Nodes (16): ADDED Requirements, professional-portfolio-presentation Specification, Requirement: Accessible project cards, Requirement: Approved professional sequence, Requirement: Contact conversion remains protected, Requirement: Current-release professional routes remain stable, Requirement: Personal professional positioning, Requirement: Phase-3 public content is a typed independent domain (+8 more)
 
-### Community 368 - "Migration Notes"
-Cohesion: 0.40
-Nodes (4): Canonical filename mapping, Important correction, Legacy primitive files intentionally removed, Migration Notes
+### Community 368 - "Music System v0.1 — QA and Evidence Contract"
+Cohesion: 0.22
+Nodes (8): 1. Unit-test matrix, 2. Stress tests, 3. Visual evidence, 4. Human calibration evidence, 5. Accessibility, 6. Performance, 7. Regression boundary, Music System v0.1 — QA and Evidence Contract
 
 ### Community 369 - "lib/story/index.ts"
-Cohesion: 0.11
-Nodes (31): StaticStorySkeleton(), APPLICATION_RELEASE, ApplicationReleaseConfiguration, STORY_V2_CONTENT_STATUS, DESKTOP_TIMELINE_ORDER, EMPTY_SEMANTIC_SLOT_IDS, GLOBAL_STORY_FOOTER, HEADER_NAVIGATION (+23 more)
+Cohesion: 0.14
+Nodes (24): StaticStorySkeleton(), EMPTY_SEMANTIC_SLOT_IDS, GLOBAL_STORY_FOOTER, HEADER_NAVIGATION, HEADER_NAVIGATION_ORDER, MOBILE_DOCUMENT_ORDER, MOBILE_STORY_CHAPTERS, MOBILE_STORY_DOCUMENT (+16 more)
 
-### Community 370 - "music-visual-lab.spec.ts"
-Cohesion: 0.22
-Nodes (7): BrowserDraftCalibrationExport, BrowserDraftGlyphCalibration, COMPOSER_PERFORMANCE_MARKS, ComposerPerformanceSnapshot, LAB_ROUTES, readComposerPerformance(), waitForComposerInstrumentation()
+### Community 370 - "buildStoryScoreProjection"
+Cohesion: 0.08
+Nodes (26): B. Exact geometry ownership and repair envelope, openspec_changes_implement_scroll_driven_score_assembly_and_motion_stage_1_projects_full_ink_stop_diagnostics, Actual implementation state, Approved identity and boundary, Normalization, validation and preserved worktree, Projects visit-2 focus authorization and Astra High handoff — 2026-09-11, Ready-to-paste Astra High prompt, openspec_changes_implement_scroll_driven_score_assembly_and_motion_stage_1_projects_interaction_clearance_stop_diagnostics (+18 more)
 
-### Community 371 - "Migration Notes"
-Cohesion: 0.40
-Nodes (4): Canonical filename mapping, Important correction, Legacy primitive files intentionally removed, Migration Notes
+### Community 371 - "Successor inherited-defect audit and stage disposition"
+Cohesion: 0.18
+Nodes (10): 1. Trigger, scope and current execution gate, 2. Independent result axes, 3. Mandatory blocking and explicit defer, 4. Durable registry and diagnostic identity, 5. Candidate safety and validation separation, 6. Frozen audit manifest and equivalent inputs, 7. Execution and artifact efficiency, 8. Completion, batch disposition and routing (+2 more)
 
 ### Community 372 - "Music Data Contracts"
 Cohesion: 0.50
@@ -1865,6 +2011,10 @@ Nodes (6): ADDED Requirements, Requirement: Mode changes preserve semantic chapt
 Cohesion: 0.50
 Nodes (3): Approval requirements, Music Visual Lab — Required Gate, Required fixtures
 
+### Community 377 - "RouteAwareExperienceBoundary.tsx"
+Cohesion: 0.39
+Nodes (4): isStoryVisualLabPath(), RouteAwareExperienceBoundary(), RouteAwareExperienceBoundaryProps, navigationState
+
 ### Community 378 - "Phase 10 — W_Flyer Persona asset, rig, and easter eggs"
 Cohesion: 0.50
 Nodes (4): Blocking asset gate, Gate 10, Phase 10 — W_Flyer Persona asset, rig, and easter eggs, Required work after approval
@@ -1877,21 +2027,29 @@ Nodes (4): Blocking asset gate, Gate 11, Phase 11 — Final APP-04 media assets,
 Cohesion: 0.50
 Nodes (4): Gate 9, Phase 9 — Continuous dual-score integration, Preconditions, Required work
 
-### Community 381 - "Phase 10 — W_Flyer Persona asset, rig, and easter eggs"
-Cohesion: 0.50
-Nodes (4): Blocking asset gate, Gate 10, Phase 10 — W_Flyer Persona asset, rig, and easter eggs, Required work after approval
+### Community 381 - "Phase 9 Task-34 Integration Review Evidence"
+Cohesion: 0.15
+Nodes (12): Architecture ownership, Deterministic composition, Deterministic human-review captures, Final authoritative validation, Integrity and safety, Phase 9 Task-34 Integration Review Evidence, Preserved diagnostic history and exclusions, Projection geometry and responsive fail-safe (+4 more)
 
-### Community 382 - "Phase 11 — Final APP-04 media assets"
-Cohesion: 0.50
-Nodes (4): Blocking asset gate, Gate 11, Phase 11 — Final APP-04 media assets, Required work
+### Community 382 - "ref_next_navigation"
+Cohesion: 0.18
+Nodes (3): ref_next_navigation, FIXTURES, metadata
 
 ### Community 383 - "Phase 9 — Continuous dual-score integration"
-Cohesion: 0.33
-Nodes (6): Gate 9, Human choreography and PRELAUNCH refinement — blocking, Phase 9 — Continuous dual-score integration, Preconditions, Required work, Score Path candidate subgate — human blocking
+Cohesion: 0.29
+Nodes (7): Gate 9, Human choreography and PRELAUNCH refinement — accepted technical baseline, Phase 9 — Continuous dual-score integration, Post-Phase-9 Assembly/Motion successor boundary — bounded Stage 1 authorized, Preconditions, Required work, Score Path candidate subgate — human blocking
 
 ### Community 384 - "Music Visual Lab — Required Gate"
 Cohesion: 0.50
 Nodes (3): Approval requirements, Music Visual Lab — Required Gate, Required fixtures
+
+### Community 387 - "properties"
+Cohesion: 0.18
+Nodes (12): properties, type, date, dispositionApproval, expiresOrReviewPoint, reference, registrationApproval, scope (+4 more)
+
+### Community 388 - "properties"
+Cohesion: 0.17
+Nodes (12): minLength, type, boundary, executionAuthorized, owner, remediation, reviewPoint, scopeApproved (+4 more)
 
 ### Community 389 - "Phase 0 — Canonical merge, audit, and baseline protection"
 Cohesion: 0.67
@@ -1937,61 +2095,73 @@ Nodes (3): Gate 7, Phase 7 — Professional branch scenes, Required work
 Cohesion: 0.67
 Nodes (3): Gate 8, Phase 8 — Application branch scenes, Required work
 
-### Community 400 - "Phase 0 — Canonical merge, audit, and baseline protection"
-Cohesion: 0.67
-Nodes (3): Gate 0, Phase 0 — Canonical merge, audit, and baseline protection, Required work
+### Community 400 - "Music System v0.1 Gate A report"
+Cohesion: 0.29
+Nodes (6): Canonical semantics proved, Implemented boundaries, Music System v0.1 Gate A report, Next gate, Public compatibility and risks, Validation results
 
-### Community 401 - "Phase 12 — Accessibility, reduced motion, responsive hardening"
-Cohesion: 0.67
-Nodes (3): Gate 12, Phase 12 — Accessibility, reduced motion, responsive hardening, Required work
+### Community 401 - "ASM-IMP-DEC-012 — Projects capacity gates whole-story enhancement"
+Cohesion: 0.20
+Nodes (10): A. Registered root and lineage, ASM-IMP-DEC-012 — Projects capacity gates whole-story enhancement, B. Approved responsive policy, C. One policy owner and one geometry owner, D. Candidate-horizontal input/output, E. Independent candidate measurement, not mode feedback, F. Hydration, lifecycle and anti-oscillation, G. Resize semantic preservation (+2 more)
 
-### Community 402 - "Phase 13 — Performance, lifecycle, observability, and failure recovery"
-Cohesion: 0.67
-Nodes (3): Gate 13, Phase 13 — Performance, lifecycle, observability, and failure recovery, Required work
+### Community 402 - "W_Flyer current operational handoff"
+Cohesion: 0.40
+Nodes (5): Active topology, Audit disposition, Current boundary, Preserved work, W_Flyer current operational handoff
 
-### Community 403 - "Phase 15 — Staging, homologation, and production authorization"
-Cohesion: 0.67
-Nodes (3): Gate 15, Phase 15 — Staging, homologation, and production authorization, Required work
+### Community 403 - "Narrativa de dupla partitura"
+Cohesion: 0.33
+Nodes (6): Continuidade da pauta, Home como pivô entre ramos, Movimento de dupla partitura, Narrativa de dupla partitura, Narrativa de scroll horizontal — histórico, M-015 — Alinhamento de continuidade
 
-### Community 404 - "Phase 2 — Story v2 domain model and static vertical skeleton"
-Cohesion: 0.67
-Nodes (3): Gate 2, Phase 2 — Story v2 domain model and static vertical skeleton, Required work
+### Community 404 - "phase09-score-path-review.spec.ts"
+Cohesion: 0.50
+Nodes (4): COMPACT_VIEWPORT_MATRIX, openPreview(), previewUrl(), REVIEW_MATRIX
 
-### Community 405 - "Phase 3 — Content, detailed routes, and conversion contracts"
-Cohesion: 0.67
-Nodes (3): Gate 3, Phase 3 — Content, detailed routes, and conversion contracts, Required work
+### Community 405 - "Stage 1 portfolio geometry validation report"
+Cohesion: 0.33
+Nodes (5): Deduplicated root inventory, Scope and accounting, Stage 1 portfolio geometry validation report, Validation and boundaries, WebKit completion evidence
 
-### Community 406 - "Phase 4 — Readiness-driven intro, bootstrap, deep links, and recovery"
-Cohesion: 0.67
-Nodes (3): Gate 4, Phase 4 — Readiness-driven intro, bootstrap, deep links, and recovery, Required work
+### Community 406 - "capture-phase7-evidence.mjs"
+Cohesion: 0.27
+Nodes (9): capture(), captures, delay(), mockTurnstile(), outputDirectory, repositoryRoot, server, stopServer() (+1 more)
 
 ### Community 407 - "StoryScoreLayer.tsx"
-Cohesion: 0.14
-Nodes (19): normalizeStoryScoreMeasuredRect(), roundMeasurement(), ViewportRect, ATOMIC_EXCLUSION_REASONS, exclusionMeasurementOwners(), HYDRATION_BASELINE, isProjectionMode(), measureElements() (+11 more)
+Cohesion: 0.07
+Nodes (45): ADR-045 — Deterministic Stage-1 SSR hydration and correction order, Closure verification — 2026-09-23, Portfolio-only institutional branch inventory, ref_react_dom_client, ref_react_dom_server, ReviewZoneMarkers(), src_components_score_score_module, primitiveReferencePoint() (+37 more)
 
-### Community 408 - "Phase 6 — Header traversal, URL, and history"
-Cohesion: 0.67
-Nodes (3): Gate 6, Phase 6 — Header traversal, URL, and history, Required work
+### Community 408 - "Stage 1 Human Geometry Approval evidence"
+Cohesion: 0.40
+Nodes (5): Approval record, Current HGA disposition — ADR-055 / ASM-IMP-DEC-018, Owner checklist, Scope and review boundary, Stage 1 Human Geometry Approval evidence
 
-### Community 409 - "Phase 7 — Professional branch scenes"
-Cohesion: 0.67
-Nodes (3): Gate 7, Phase 7 — Professional branch scenes, Required work
-
-### Community 410 - "Phase 8 — Application branch scenes"
-Cohesion: 0.67
-Nodes (3): Gate 8, Phase 8 — Application branch scenes, Required work
-
-### Community 417 - "draft-calibration.ts"
+### Community 409 - "Composições do ramo da aplicação"
 Cohesion: 0.18
-Nodes (10): GlyphPlacement, APPROVED_RENDERER_GLYPH_CALIBRATIONS, EditableGlyphCalibration, GlyphCalibrationStatus, MusicGlyphKey, RuntimeApprovedGlyphCalibration, APPROVED_RENDERER_GLYPH_CALIBRATIONS, APPROVED_RENDERER_TOKENS (+2 more)
+Nodes (12): Barra final, Partitura ondulada, ScoreSegment, Gate de autorização visual, ScoreChapter, Composições do ramo da aplicação, Composições do ramo institucional, Especificação visual das páginas (+4 more)
+
+### Community 410 - "27. Implementation Stages and Stop Gates"
+Cohesion: 0.05
+Nodes (37): 27. Implementation Stages and Stop Gates, Actions, Current execution prerequisite — ADR-052 / ASM-IMP-DEC-016, Gate, Gate 0, Gate, Gate, Gate (+29 more)
+
+### Community 415 - "Continuous-story governance checkpoint — 2026-09-24"
+Cohesion: 0.29
+Nodes (7): Architecture and next boundary, Continuous-story governance checkpoint — 2026-09-24, Current disposition — owner-approved historical provenance exception, Focused diagnosis follow-up, Pre-edit baseline and isolation, Preservation qualification, Validation results
+
+### Community 416 - "properties"
+Cohesion: 0.20
+Nodes (10): properties, required, type, acceptanceBaseline, comparisonDomain, fingerprint, kind, toleranceAuthority (+2 more)
+
+### Community 417 - "properties"
+Cohesion: 0.20
+Nodes (10): properties, required, type, description, impact, mandatoryInvariantViolation, materialAccessibilityLoss, materialFunctionalLoss (+2 more)
 
 ### Community 418 - "metrics.ts"
-Cohesion: 0.29
-Nodes (15): APPROVED_FLAG_TRANSFORM, APPROVED_GLYPH_CALIBRATIONS, approvedCalibrationFromRegistry(), createDraftGlyphCalibration(), GlyphCalibrationIssue, isCompleteDraftGlyphCalibration(), isFinitePositiveNumber(), isMusicGlyphKey() (+7 more)
+Cohesion: 0.27
+Nodes (16): APPROVED_DOWN_FLAG_TRANSFORM, APPROVED_FLAG_TRANSFORM, APPROVED_GLYPH_CALIBRATIONS, approvedCalibrationFromRegistry(), createDraftGlyphCalibration(), GlyphCalibrationIssue, isCompleteDraftGlyphCalibration(), isFinitePositiveNumber() (+8 more)
 
-### Community 420 - "RootLayout mounts theme controls while ThemeProvider resolves, applies and exposes theme state"
-Cohesion: 0.40
-Nodes (4): RootLayout mounts theme controls while ThemeProvider resolves, applies and exposes theme state, EXTRAÍDO classification, Como o tema claro e escuro percorre os componentes?, theme-toggle.tsx
+### Community 419 - "ref_node_fs"
+Cohesion: 0.10
+Nodes (16): constructors, esbuild, req, seen, seen, ref_home_davi_benucci_área_de_trabalho_wflyer_tests_e2e_helpers_assembly_stage1_audit_ts, ref_node_fs, ref_node_module (+8 more)
+
+### Community 420 - "Home origin with Application left, Institutional right, and animated home-pivot still planned"
+Cohesion: 0.17
+Nodes (10): Home origin with Application left, Institutional right, and animated home-pivot still planned, EXTRAÍDO and INFERIDO classification, Como a Home se conecta aos ramos Aplicação e Institucional?, RootLayout mounts theme controls while ThemeProvider resolves, applies and exposes theme state, EXTRAÍDO classification, Como o tema claro e escuro percorre os componentes?, ThemeProvider(), Phase 05 motion navigation design (+2 more)
 
 ### Community 421 - "Q: Does the final Gate-B composite remain isolated in the development Music Visual Lab and reuse immutable glyph rendering?"
 Cohesion: 0.40
@@ -2009,9 +2179,9 @@ Nodes (17): applyInteractionDiagnostic(), applyProjectDiagnostic(), assertScoreC
 Cohesion: 0.25
 Nodes (7): Canonical triplet contract, Evidence authority and history, Explicit boundary, Final decision, Music System v0.1 Gate C — final external-human approval, Other approved Gate-C values, Responsive approval
 
-### Community 425 - "Staff.stories.tsx"
-Cohesion: 0.25
-Nodes (7): Application, Dark, Institutional, meta, Quiet, Story, Terminal
+### Community 425 - "Continuous-story baseline integrity diagnosis — 2026-09-24"
+Cohesion: 0.33
+Nodes (6): Causal classification and repair decision, Complete binary comparison, Continuous-story baseline integrity diagnosis — 2026-09-24, Exact A / B / C / D evidence, Focused validation, Required next evidence and stop
 
 ### Community 426 - "Q: How should the Gate-B calibration composite evidence reuse the existing Music Visual Lab architecture?"
 Cohesion: 0.40
@@ -2041,17 +2211,17 @@ Nodes (4): Answer, Outcome, Q: Where is the final Gate-C triplet numeral size im
 Cohesion: 0.50
 Nodes (3): Exact delta, Gate-C final triplet numeral comparison — 2026-08-24, Image comparison
 
-### Community 433 - "Phase 14 — Cutover, legacy removal, and full regression"
-Cohesion: 0.67
-Nodes (3): Gate 14, Phase 14 — Cutover, legacy removal, and full regression, Required work
-
-### Community 434 - "NavigationMeasure.stories.tsx"
-Cohesion: 0.25
-Nodes (7): Active, Benefits, Default, Focus, Hover, meta, Story
-
-### Community 435 - "Test Strategy"
+### Community 433 - "Tilt CSS 3D"
 Cohesion: 0.40
-Nodes (5): Deterministic Transition Capture Contract, Phase 05 Visual Evidence Index, Cross-Engine Release Quality Gate, Deterministic Test Data and Timelines, Test Strategy
+Nodes (5): Adaptação responsiva, Responsividade, Assets, licenças e referências visuais, M-016 — Tablet: inclinação CSS 3D, Tilt CSS 3D
+
+### Community 434 - "5. Finding Taxonomy"
+Cohesion: 0.25
+Nodes (8): 5.1 `CURRENT_REGRESSION`, 5.2 `INHERITED_CRITICAL`, 5.3 `INHERITED_NONBLOCKING`, 5.4 `VALIDATION_PIPELINE_DEFECT`, 5.5 `UNCLASSIFIED`, 5.6 `OUT_OF_AUDIT_SCOPE`, 5.7 `SAFE_FALLBACK`, 5. Finding Taxonomy
+
+### Community 435 - "9.1 Remaining task classes"
+Cohesion: 0.25
+Nodes (8): 9.1 Remaining task classes, 9.2 Upgrade progressively; downgrade by direct reclassification, 9. Model Routing and Cost Control, `ARCHITECTURE_GOVERNANCE`, `BOUNDED_IMPLEMENTATION`, `COMPLETE`, `COMPLEX_DIAGNOSIS`, `HUMAN_DECISION`
 
 ### Community 436 - "Q: Where is the final Gate-C triplet numeral size implemented, how does it flow through renderer and SVG presentation into the four evidence captures, and is that change isolated from responsive projection and SiteExperienceShell?"
 Cohesion: 0.40
@@ -2061,13 +2231,17 @@ Nodes (4): Answer, Outcome, Q: Where is the final Gate-C triplet numeral size im
 Cohesion: 0.13
 Nodes (25): assertBootstrapContract(), assertNotInterrupted(), assertOutputTargetsAbsent(), assertValidPng(), baseUrl, capturePage(), captures, captureUrl() (+17 more)
 
-### Community 438 - "Home bifurcada"
-Cohesion: 0.40
-Nodes (6): Home bifurcada, Clave de sol central, Dupla chamada Aplicação e Serviços, Home — modo claro, Home — modo escuro, Indicador “Role para explorar”
+### Community 438 - "Stage-1 self-intersection scope conflict — 2026-09-08"
+Cohesion: 0.22
+Nodes (8): Diagnostic artifact, Ownership and material-change assessment, Per-occurrence classification, Recovery-only document changes and checks, Reproduction and provenance, Result and exact acceptance conflict, Stage-1 self-intersection scope conflict — 2026-09-08, Stop-state ledger
 
-### Community 440 - "SiteFooter.tsx"
-Cohesion: 0.12
-Nodes (13): ADR-0008, OfficialBrandSymbol(), OfficialBrandSymbolProps, Dark, Decorative, Informative, meta, Story (+5 more)
+### Community 439 - "5. Finding Taxonomy"
+Cohesion: 0.25
+Nodes (8): 5.1 `CURRENT_REGRESSION`, 5.2 `INHERITED_CRITICAL`, 5.3 `INHERITED_NONBLOCKING`, 5.4 `VALIDATION_PIPELINE_DEFECT`, 5.5 `UNCLASSIFIED`, 5.6 `OUT_OF_AUDIT_SCOPE`, 5.7 `SAFE_FALLBACK`, 5. Finding Taxonomy
+
+### Community 440 - "Continuous-story implementation package"
+Cohesion: 0.33
+Nodes (6): Bootstrap and scope, Continuous-story implementation package, First slice deliverables and checks, Next implementation instruction — task 5.7 only, Preservation and stop rules, Remaining dependency order
 
 ### Community 441 - "Q: Audit stale nonhistorical Gate-C draft and pending statuses after final human approval"
 Cohesion: 0.40
@@ -2075,35 +2249,35 @@ Nodes (4): Answer, Outcome, Q: Audit stale nonhistorical Gate-C draft and pendin
 
 ### Community 442 - "capture-phase-2-static-evidence.mjs"
 Cohesion: 0.14
-Nodes (23): assertNotInterrupted(), assertOutputTargetsAbsent(), assertValidPng(), baseUrl, captures, captureStory(), closeBrowser(), delay() (+15 more)
+Nodes (24): ref_node_assert_strict, assertNotInterrupted(), assertOutputTargetsAbsent(), assertValidPng(), baseUrl, captures, captureStory(), closeBrowser() (+16 more)
 
 ### Community 443 - "capture-phase-3-content-evidence.mjs"
-Cohesion: 0.14
-Nodes (22): assertNotInterrupted(), assertOutputTargetsAbsent(), assertValidPng(), baseUrl, capturePage(), captures, captureUrl(), closeBrowser() (+14 more)
+Cohesion: 0.13
+Nodes (23): assertNotInterrupted(), assertOutputTargetsAbsent(), assertValidPng(), baseUrl, capturePage(), captures, captureUrl(), closeBrowser() (+15 more)
 
-### Community 444 - "pitches/page.tsx"
-Cohesion: 0.17
-Nodes (17): EXTENDED_LEDGER_PITCHES, ledgerCases, MusicPitchFixturesPage(), PITCH_LADDER_STEPS, pitchLadder, STEM_FLAG_LABELS, stemAndFlagCases, modulo() (+9 more)
+### Community 444 - "Canonical decision-register delta"
+Cohesion: 0.29
+Nodes (6): ADR-025 — Continuous organic dual-score narrative, ADR-026 — W_Flyer Music Renderer v0.1, ADR-027 — Seeded procedural score composition, ADR-028 — Music asset calibration and Visual Lab gates, Canonical decision-register delta, Required status adjustments
 
 ### Community 445 - "bootstrap/positioning.ts"
-Cohesion: 0.14
+Cohesion: 0.15
 Nodes (11): assertNotAborted(), createAbortError(), ownerDocumentFor(), resolveFrameScheduler(), resolveRoot(), SCROLL_BEHAVIOR_LOCKS, ScrollBehaviorLock, StaticNativeStoryPositioningAdapterOptions (+3 more)
 
-### Community 446 - "Contracts that must survive future phases"
-Cohesion: 0.11
-Nodes (18): Accepted phase state, Contracts that must survive future phases, Current operational topology, Deferred work and hard stops, Exact next safe action, Foundation and isolated Music system, Known primary-worktree residue, Maintenance state (+10 more)
+### Community 446 - "9.1 Remaining task classes"
+Cohesion: 0.25
+Nodes (8): 9.1 Remaining task classes, 9.2 Upgrade progressively; downgrade by direct reclassification, 9. Model Routing and Cost Control, `ARCHITECTURE_GOVERNANCE`, `BOUNDED_IMPLEMENTATION`, `COMPLETE`, `COMPLEX_DIAGNOSIS`, `HUMAN_DECISION`
 
-### Community 447 - "theme.stories.tsx"
-Cohesion: 0.11
-Nodes (16): ApplicationChapter, Dark, Home, meta, MobileMenuOpen, ProcessSubmeasure, Story, useTheme() (+8 more)
+### Community 447 - "known-inherited-findings.json"
+Cohesion: 0.25
+Nodes (7): decisions, existingRegisters, format, $schema, policy, records, status
 
-### Community 448 - "getPublicServiceBySlug"
-Cohesion: 0.22
-Nodes (10): ApplicationCreationPage(), metadata, metadata, SiteCreationPage(), IntegrationsPage(), metadata, CustomSolutionsPage(), metadata (+2 more)
+### Community 448 - "WFlyer_Post_Phase9_ASM_Motion_Canonical_Spec.md"
+Cohesion: 0.06
+Nodes (32): 11. Scenic-to-Canonical Handoff, 13. Projects — Explicit Non-Assembly Choreography, 14.1 Canonical mobile story, 14.2 Local notation orientation, 14.3 Responsive modes, 14. Responsive / Mobile Score Model, 18.1 Remove or substantially reduce, 18.2 Preserve (+24 more)
 
-### Community 449 - "phase08-v2-application-scenes.spec.ts"
-Cohesion: 0.17
-Nodes (6): APPLICATION_CHAPTER_IDS, APPLICATION_SCENES, installMediaContract(), MediaDebugSnapshot, ONE_PIXEL_PNG, openContractLab()
+### Community 449 - "properties"
+Cohesion: 0.25
+Nodes (8): enabled, rawValidation, result, threshold, validator, properties, required, type
 
 ### Community 450 - "Post-Phase-8 toolchain maintenance"
 Cohesion: 0.18
@@ -2111,15 +2285,15 @@ Nodes (10): Boundary, Graphify acceptance, Infrastructure documentation, Next.js
 
 ### Community 451 - "capture-phase9-firefox-demo-correction-evidence.mjs"
 Cohesion: 0.13
-Nodes (11): definitions, delay(), files, launchedBrowsers, outputDirectory, port, priorDirectory, repositoryRoot (+3 more)
+Nodes (12): definitions, delay(), files, launchedBrowsers, outputDirectory, port, position(), priorDirectory (+4 more)
 
 ### Community 452 - "Phase-4 Changed-File Inventory"
 Cohesion: 0.20
 Nodes (9): Bootstrap implementation, Canonical contract normalization, Explicitly untouched by Phase 4, Focused tests and tooling, Gate evidence, Phase-4 Changed-File Inventory, Pre-existing dependencies required by the live Phase-4 surface, Shared or mixed files touched by Phase 4 (+1 more)
 
-### Community 453 - "capture-phase7-evidence.mjs"
-Cohesion: 0.27
-Nodes (9): capture(), captures, delay(), mockTurnstile(), outputDirectory, repositoryRoot, server, stopServer() (+1 more)
+### Community 453 - "validate-ai-routing.mjs"
+Cohesion: 0.20
+Nodes (7): __dirname, getFiles(), isNormativeDoc(), registry, REGISTRY_PATH, ROOT_DIR, validateDocs()
 
 ### Community 454 - "Phase 2 Gate 2 report — static vertical v2 skeleton"
 Cohesion: 0.22
@@ -2129,9 +2303,9 @@ Nodes (8): Boundary verification, Gate 2 acceptance, Implemented architecture, L
 Cohesion: 0.22
 Nodes (8): Calibration boundary, Closure, Delivered contract, Entry state, Explicit non-deliverables, Gate decisions, Phase 5 Gate Report, Regression and isolation
 
-### Community 456 - "capture-phase8-evidence.mjs"
-Cohesion: 0.28
-Nodes (7): captures, delay(), outputDirectory, repositoryRoot, stopServer(), suppliedBaseUrl, waitForServer()
+### Community 456 - "@testing-library/react"
+Cohesion: 0.22
+Nodes (6): ref_testing_library_jest_dom_vitest, @testing-library/react, bootstrapRoot(), expectTerminalState(), IMMEDIATE_TIMING, position()
 
 ### Community 457 - "Music System v0.1 — Gate-C closeout validation"
 Cohesion: 0.25
@@ -2141,9 +2315,9 @@ Nodes (7): Boundary and handoff, Graphify, Human authority and evidence, Immutab
 Cohesion: 0.25
 Nodes (7): Active OpenSpec change, Canonical status and route decisions, Phase 3 changed-file inventory — 2026-08-24, Presentation, navigation, SEO, and configuration, Routes, Typed domain and adapters, Validation and evidence tooling
 
-### Community 459 - "Phase 4 Gate Report"
-Cohesion: 0.25
-Nodes (7): Closure, Delivered contract, Entry state, Explicit non-deliverables, Gate-4 decisions, Phase 4 Gate Report, Regression and isolation
+### Community 459 - "run-music-gate-c-delta-validation.mjs"
+Cohesion: 0.10
+Nodes (18): configDirectory, isCi, outputDir, playwrightTestServerMode, reportDir, resolvePlaywrightEvidenceDirectory(), resolvePlaywrightTestServerMode(), screenshotStylePath (+10 more)
 
 ### Community 460 - "Phase 7 Changed-File Inventory"
 Cohesion: 0.25
@@ -2157,9 +2331,9 @@ Nodes (7): Canonical status and planning — 9, Evidence capture script — 1, E
 Cohesion: 0.25
 Nodes (7): Closure, Delivered contract, Entry state, Gate decisions, Phase 8 Gate Report, Scope protection, Timing investigation
 
-### Community 463 - "RouteAwareExperienceBoundary.tsx"
-Cohesion: 0.39
-Nodes (4): isStoryVisualLabPath(), RouteAwareExperienceBoundary(), RouteAwareExperienceBoundaryProps, navigationState
+### Community 463 - "Stage-0 completion review"
+Cohesion: 0.25
+Nodes (8): Authority and predecessor provenance, Contract review and corrections, Exact review file inventory, Gate-0 validation, Historical evidence verification, Next boundary, Owner approval and checkpoint authorization, Stage-0 completion review
 
 ### Community 464 - "Phase 3 Gate report — 2026-08-24"
 Cohesion: 0.29
@@ -2181,13 +2355,13 @@ Nodes (6): Closure, Delivered contract, Entry state, Gate decisions, Phase 6 Gat
 Cohesion: 0.29
 Nodes (6): Closure, Delivered contract, Entry state, Gate decisions, Phase 7 Gate Report, Scope protection
 
-### Community 469 - "capture-phase4-evidence.mjs"
-Cohesion: 0.33
-Nodes (5): captureMatrix(), detailedCaptures, escapeHtml(), outputDirectory, routes
+### Community 469 - "SiteHeader.stories.tsx"
+Cohesion: 0.22
+Nodes (8): ref_storybook_test, Dark, Home, meta, MobileMenuOpen, ProcessSubmeasure, ServicesChapter, Story
 
-### Community 470 - "phase02-static-story.a11y.spec.ts"
-Cohesion: 0.29
-Nodes (4): accessibilityStates, CHAPTER_IDS, HEADER_HASHES, RelevantViolation
+### Community 470 - "axe-core"
+Cohesion: 0.07
+Nodes (27): axe-core, findRelevantViolations(), RelevantViolation, findRelevantViolations(), LAB_ROUTES, RelevantViolation, accessibilityStates, CHAPTER_IDS (+19 more)
 
 ### Community 471 - "Manifesto tecnológico"
 Cohesion: 0.33
@@ -2221,9 +2395,9 @@ Nodes (5): Development-route isolation, Music boundary, Phase-5 Regression and I
 Cohesion: 0.33
 Nodes (5): Modes, Phase-5 Responsive Projection and Rebuild, Projection signals, Rebuild transaction, Validated transitions
 
-### Community 479 - "phase02-static-story.spec.ts"
-Cohesion: 0.33
-Nodes (3): CHAPTER_HASHES, CHAPTER_IDS, HEADER_HASHES
+### Community 479 - "Phase 4 Gate Report"
+Cohesion: 0.14
+Nodes (11): Bootstrap / Projection Adapter Contract, Current Phase-4 implementation, Interface, Phase-5 handoff, Closure, Delivered contract, Entry state, Explicit non-deliverables (+3 more)
 
 ### Community 480 - "phase06-story-header.spec.ts"
 Cohesion: 0.40
@@ -2241,9 +2415,9 @@ Nodes (4): Conflict, Normalization, Phase 3 OpenSpec reconciliation — 2026-08-
 Cohesion: 0.40
 Nodes (4): Migration classification, Namespace and compatibility decisions, Phase 3 route and migration matrix — 2026-08-24, Public route contract
 
-### Community 484 - "Bootstrap / Projection Adapter Contract"
-Cohesion: 0.40
-Nodes (4): Bootstrap / Projection Adapter Contract, Current Phase-4 implementation, Interface, Phase-5 handoff
+### Community 484 - "12. Tool-specific behavioral contracts"
+Cohesion: 0.29
+Nodes (7): 12.1 Graphify, 12.2 OpenSpec tooling, 12.3 Ponytail, 12.4 Serena, 12.5 Storybook, 12.6 Context7 / remote MCP services, 12. Tool-specific behavioral contracts
 
 ### Community 485 - "Readiness State-Machine Contract"
 Cohesion: 0.40
@@ -2277,9 +2451,9 @@ Nodes (4): Accessibility, Projection behavior, Responsive, Accessibility, and Sc
 Cohesion: 0.40
 Nodes (4): Architecture, Reviewed runtime samples, Timing, Traversal Duration and Home Geometry
 
-### Community 493 - "Contact, Persona, and Terminal Boundaries"
-Cohesion: 0.40
-Nodes (4): Contact, Persona, and Terminal Boundaries, Contact seam, Persona boundary, Terminal boundary
+### Community 493 - "Phase 10 — W_Flyer Persona asset, rig, and easter eggs"
+Cohesion: 0.50
+Nodes (4): Blocking asset gate, Gate 10, Phase 10 — W_Flyer Persona asset, rig, and easter eggs, Required work after approval
 
 ### Community 494 - "Phase 7 Commit Boundary"
 Cohesion: 0.40
@@ -2313,37 +2487,89 @@ Nodes (3): Executed coverage, Phase 3 Contact regression — 2026-08-24, Preserv
 Cohesion: 0.50
 Nodes (3): Cleanup rules, Lifecycle and Cleanup Evidence, Owned resources
 
-### Community 502 - "Phase 4 Rehydration"
+### Community 502 - "stage-1-hga-001c-evidence/manifest.json"
 Cohesion: 0.50
-Nodes (3): Architecture conclusion, Phase 4 Rehydration, Verified before implementation
+Nodes (3): generatedAt, items, route
 
-### Community 503 - "History, Hash, and Back/Forward Evidence"
-Cohesion: 0.50
-Nodes (3): History, Hash, and Back/Forward Evidence, Ownership, Write policy
+### Community 503 - "16. Baton and handoff state model"
+Cohesion: 0.29
+Nodes (7): 16.1 Baton status, 16.2 Codex <-> Sonnet continuation baton, 16.3 Product executor -> Gemini Flash maintenance baton, 16.4 Product executor -> Gemini Pro diagnostic baton, 16.5 Product executor -> Gemini Pro review baton, 16.6 Any executor -> Human / Complete, 16. Baton and handoff state model
 
 ### Community 504 - "APP-04 State and Media Contract"
 Cohesion: 0.50
 Nodes (3): APP-04 State and Media Contract, Intentionally absent final media, State authority
 
-### Community 505 - "phase04-bootstrap.a11y.spec.ts"
-Cohesion: 0.67
-Nodes (3): expectNoRelevantFindings(), RelevantFinding, relevantFindings()
+### Community 505 - "known-inherited-findings.schema.json"
+Cohesion: 0.29
+Nodes (6): additionalProperties, description, required, $schema, title, type
+
+### Community 506 - "Stage-1 Astra High audit-only handoff"
+Cohesion: 0.29
+Nodes (6): Bounded automated audit, Exact first action and ready-to-paste prompt, Exact repository state, Inventory, invariants and stop, Minimal authority and completed diagnosis, Stage-1 Astra High audit-only handoff
+
+### Community 508 - "4. Executor and model-class roles"
+Cohesion: 0.33
+Nodes (6): 4.1 Codex — primary product executor, 4.2 Claude Sonnet — alternate product continuation executor, 4.3 Gemini Flash class — engineering maintenance executor, 4.4 Gemini Pro class — diagnostic and review specialist, 4.5 Human owner — governance authority, 4. Executor and model-class roles
+
+### Community 509 - "6. Systematic Audit Mode"
+Cohesion: 0.33
+Nodes (6): 6.1 Purpose, 6.2 Audit-only rule, 6.3 Prebounded manifest, 6.4 Do not fail fast, 6.5 Deduplicate by root cause, 6. Systematic Audit Mode
+
+### Community 510 - "6. Systematic Audit Mode"
+Cohesion: 0.33
+Nodes (6): 6.1 Purpose, 6.2 Audit-only rule, 6.3 Prebounded manifest, 6.4 Do not fail fast, 6.5 Deduplicate by root cause, 6. Systematic Audit Mode
+
+### Community 511 - "severity"
+Cohesion: 0.33
+Nodes (6): level, rationale, severity, properties, required, type
+
+### Community 512 - "prior-current-error-context.md"
+Cohesion: 0.33
+Nodes (5): Error details, Instructions, Page snapshot, Test info, Test source
+
+### Community 513 - "Stage 1 progress — portfolio-only rebaseline"
+Cohesion: 0.22
+Nodes (8): Audit supersession, Automated portfolio geometry validation stop, Completed in the rebaseline, Current checkpoint, Rebaseline validation closure, Remaining successor work, Retained pre-continuous-story checkpoint, Stage 1 progress — portfolio-only rebaseline
+
+### Community 566 - "Codex Initial Prompt — W_Flyer v2 Re-architecture"
+Cohesion: 0.33
+Nodes (5): Codex Initial Prompt — W_Flyer v2 Re-architecture, First actions, Mandatory paths, Required execution behavior, Source of truth
+
+### Community 567 - "19. Gemini Pro anti-loop diagnosis and independent review contract"
+Cohesion: 0.40
+Nodes (5): 19.1 Anti-loop diagnostic trigger, 19.2 Diagnostic objective, 19.3 Required diagnostic return, 19.4 Independent review mode, 19. Gemini Pro anti-loop diagnosis and independent review contract
+
+### Community 568 - "13. Required Stop States"
+Cohesion: 0.40
+Nodes (5): 13.1 Upgrade required, 13.2 Downgrade ready, 13.3 Owner decision required, 13.4 Audit completion, 13. Required Stop States
+
+### Community 569 - "3. Core Principles"
+Cohesion: 0.40
+Nodes (5): 3.1 Do not confuse persistence with progress, 3.2 Preserve the user's experience independently from validator success, 3.3 Never repair outside authority merely to keep moving, 3.4 Stronger validation may expose historical defects, 3. Core Principles
+
+### Community 570 - "13. Required Stop States"
+Cohesion: 0.40
+Nodes (5): 13.1 Upgrade required, 13.2 Downgrade ready, 13.3 Owner decision required, 13.4 Audit completion, 13. Required Stop States
 
 ### Community 571 - "ADDED Requirements"
 Cohesion: 0.10
 Nodes (20): ADDED Requirements, Purpose, Requirement: Acknowledgment is transactional and non-destructive, Requirement: Anti-abuse checks fail closed, Requirement: Form exposes explicit accessible states, Requirement: Launch-interest request boundary is strict, Requirement: Operational delivery is the registration event, Requirement: Transactional templates are fixed, compatible, and private (+12 more)
 
-### Community 573 - "ScoreTransitionLayer.tsx"
-Cohesion: 0.21
-Nodes (10): NOTE_POSITIONS, ScoreTransitionLayerProps, STAFF_LINE_OFFSETS, defaultProps, geometry, TransitionPresentation, TransitionTestSnapshot, ScoreTransitionGeometry (+2 more)
+### Community 572 - "3. Core Principles"
+Cohesion: 0.40
+Nodes (5): 3.1 Do not confuse persistence with progress, 3.2 Preserve the user's experience independently from validator success, 3.3 Never repair outside authority merely to keep moving, 3.4 Stronger validation may expose historical defects, 3. Core Principles
+
+### Community 573 - "25. Acceptance Contracts — `ASM-AC-001..025`"
+Cohesion: 0.08
+Nodes (26): 25. Acceptance Contracts — `ASM-AC-001..025`, ASM-AC-001 — Composition Immutability, ASM-AC-002 — Event-Free Connectors and Assembly, ASM-AC-003 — Notation Geometry, ASM-AC-004 — Deterministic Reversibility, ASM-AC-005 — Native Scroll, ASM-AC-006 — Single Temporal Authority, ASM-AC-007 — Zero Per-Frame Structural Work (+18 more)
 
 ### Community 574 - "Decisions"
-Cohesion: 0.11
-Nodes (17): Build a dedicated launch-interest domain on shared primitives, Context, Decisions, Derive Projects visits from rendered card geometry, Goals / Non-Goals, Implement card expansion as event-free variable staff presentation, Integrate the semantic footer into the immersive terminal, Keep composition immutable and enrich projection evidence (+9 more)
+Cohesion: 0.12
+Nodes (16): Build a dedicated launch-interest domain on shared primitives, Context, Decisions, Derive Projects visits from rendered card geometry, Goals / Non-Goals, Implement card expansion as event-free variable staff presentation, Keep composition immutable and enrich projection evidence, Keep the visual lab review-only and production-isolated (+8 more)
 
-### Community 575 - "ContactForm.tsx"
-Cohesion: 0.16
-Nodes (11): ContactForm(), ContactFormFallback(), ContactFormProps, messages, SubmissionState, search, TurnstileApi, TurnstileOptions (+3 more)
+### Community 575 - "10. Update policy"
+Cohesion: 0.50
+Nodes (4): 10.1 Read current upstream instructions before mutation, 10.2 Compatibility-first, 10.3 General application dependencies are out of scope by default, 10. Update policy
 
 ### Community 576 - "ADDED Requirements"
 Cohesion: 0.12
@@ -2353,21 +2579,21 @@ Nodes (16): ADDED Requirements, Requirement: Chapter barlines require metric pro
 Cohesion: 0.14
 Nodes (13): Affected normative documents, Capabilities, Impact, Inferences and implementation choices, Modified Capabilities, New Capabilities, Non-goals, Pending external evidence (+5 more)
 
-### Community 578 - "composition.ts"
-Cohesion: 0.23
-Nodes (12): buildCompositionSlots(), composeApprovedBranch(), fnv1a(), RESERVED_COMPOSER_REASON, STORY_SCORE_BRANCH_CHAPTERS, STORY_SCORE_BRANCHES, STORY_SCORE_COMPOSITIONS, STORY_SCORE_EXPECTED_FINGERPRINTS (+4 more)
+### Community 578 - "8.1 ASM-LAYOUT-DELTA-001 — Application terminal continuation"
+Cohesion: 0.08
+Nodes (24): 8.1 ASM-LAYOUT-DELTA-001 — Application terminal continuation, 8.2 ASM-LAYOUT-DELTA-002 — Composer events only on visually straight shelves, 8.3 ASM-LAYOUT-DELTA-003 — Benefits ↔ Demo direct corridor, 8.4 ASM-LAYOUT-DELTA-004 — Professional straight-shelf event utilization, 8.5 ASM-LAYOUT-DELTA-005 — Home final scene, 8. Bounded Successor Geometry Refinement, Acceptance, Acceptance (+16 more)
 
-### Community 579 - "Phase 9 Task-34 Integration Review Evidence"
-Cohesion: 0.15
-Nodes (12): Architecture ownership, Deterministic composition, Deterministic human-review captures, Final authoritative validation, Integrity and safety, Phase 9 Task-34 Integration Review Evidence, Preserved diagnostic history and exclusions, Projection geometry and responsive fail-safe (+4 more)
+### Community 579 - "5. Canonical Architecture"
+Cohesion: 0.40
+Nodes (5): 5.1 Ownership hierarchy, 5.2 Existing conceptual owners, 5.3 Candidate new owners, 5.4 Architectural prohibition, 5. Canonical Architecture
 
-### Community 580 - "ApplicationLaunchInterestForm.test.tsx"
-Cohesion: 0.18
-Nodes (8): ApplicationLaunchInterestForm(), ApplicationLaunchInterestFormProps, ApplicationLaunchInterestUiState, isFailureState(), stateMessages, removeTurnstile, renderTurnstile, resetTurnstile
+### Community 580 - "6. Shared repository artifacts"
+Cohesion: 0.50
+Nodes (4): 6.1 `CURRENT_AGENT_HANDOFF.md`, 6.2 `TOOLCHAIN_STATE.yaml`, 6.3 `CODEX_CONTEXT.md`, 6. Shared repository artifacts
 
-### Community 581 - "acessibilidade/page.tsx"
-Cohesion: 0.18
-Nodes (6): metadata, metadata, metadata, metadata, LegalPage(), legalDocuments
+### Community 581 - "ADDED Requirements"
+Cohesion: 0.14
+Nodes (13): ADDED Requirements, Requirement: Assembly is deterministic and event-free, Requirement: Completion requires fresh successor evidence and human review, Requirement: Geometry stabilization precedes motion, Requirement: GSAP remains the sole temporal presentation authority, Requirement: Projects remains NON-ASSEMBLY, Requirement: Runtime failure is fail-open and resource-stable, Scenario: A user reverses inside an Assembly interval (+5 more)
 
 ### Community 582 - "Requirement: Professional choreography follows scene purpose"
 Cohesion: 0.17
@@ -2377,13 +2603,13 @@ Nodes (11): ADDED Requirements, Requirement: Immersive terminal owns the visual 
 Cohesion: 0.17
 Nodes (11): ADDED Requirements, Requirement: Application final scene reflects current availability, Requirement: Header navigation order is semantic and explicit, Requirement: Header traversal lifecycle remains unchanged, Requirement: Story closing avoids duplicate visual footers, Scenario: Current public state is pre-launch, Scenario: Every semantic header item resolves independently of branch direction, Scenario: Header renders from either branch position (+3 more)
 
-### Community 584 - "config/navigation.ts"
-Cohesion: 0.33
-Nodes (8): ChapterRoute, HeaderItem, applicationHeaderLinks, getActiveHeaderItem(), HeaderLink, institutionalHeaderLinks, InternalHeaderLink, mobileHeaderLinks
+### Community 584 - "ADDED Requirements"
+Cohesion: 0.17
+Nodes (11): ADDED Requirements, Requirement: General geometry safety survives the rebaseline, Requirement: Historical geometry remains historical, Requirement: Human approval remains blocking, Requirement: Landmarks occupy continuous story spans, Requirement: The active score has one portfolio branch, Scenario: A historical fixture is reused by a focused unit test, Scenario: A landmark occupies multiple viewports (+3 more)
 
-### Community 585 - "phase09-score-refinement.spec.ts"
-Cohesion: 0.22
-Nodes (6): Branch, NumericRect, RenderedPoint, SCENE_ORDER, ScorePoint, ScoreRectangle
+### Community 585 - "8. Tool discovery"
+Cohesion: 0.50
+Nodes (4): 8.1 Discovery-first rule, 8.2 Confidence classes, 8.3 Tool ownership classes, 8. Tool discovery
 
 ### Community 586 - "ADDED Requirements"
 Cohesion: 0.25
@@ -2393,49 +2619,241 @@ Nodes (7): ADDED Requirements, Requirement: Refined choreography has four functi
 Cohesion: 0.25
 Nodes (7): 1. Governance and canonical contracts, 2. Launch-interest server boundary, 3. PRELAUNCH experience, 4. Header, footer, and scene semantics, 5. Projection choreography, 6. Focused integration and regression, 7. Human-review evidence
 
-### Community 588 - "theme-provider.tsx"
-Cohesion: 0.19
-Nodes (22): isThemeName(), resolveReviewRouteTheme(), THEME_BROWSER_COLORS, THEME_CHANGE_EVENT, THEME_REVIEW_ROUTE_PREFIX, THEME_STORAGE_KEY, ThemeName, themes (+14 more)
+### Community 588 - "10. Durable Checkpoints"
+Cohesion: 0.50
+Nodes (4): 10.1 Repository state is authoritative, 10.2 Ephemeral state is not completion, 10.3 Do not restart completed work unnecessarily, 10. Durable Checkpoints
 
-### Community 591 - "OriginScore.tsx"
-Cohesion: 0.22
-Nodes (12): cubicAngle(), cubicPoint(), getOriginControlPoints(), getOriginStaffPath(), NOTE_BLUEPRINTS, ORIGIN_GEOMETRIES, OriginBranch, OriginGeometry (+4 more)
+### Community 589 - "11. Stage Blocking and Deferred Findings"
+Cohesion: 0.50
+Nodes (4): 11.1 Always blocking by default, 11.2 Defer may be considered only when all conditions hold, 11.3 Known inherited issue ledger, 11. Stage Blocking and Deferred Findings
+
+### Community 590 - "4. Anti-Loop Rules"
+Cohesion: 0.50
+Nodes (4): 4.1 Same-root bounded-attempt limit, 4.2 Unregistered defect rule, 4.3 Repeated inherited-defect trigger, 4. Anti-Loop Rules
+
+### Community 591 - "10. Durable Checkpoints"
+Cohesion: 0.50
+Nodes (4): 10.1 Repository state is authoritative, 10.2 Ephemeral state is not completion, 10.3 Do not restart completed work unnecessarily, 10. Durable Checkpoints
 
 ### Community 592 - "Phase 9 Task-34 Choreography/PRELAUNCH Refinement Evidence"
 Cohesion: 0.20
 Nodes (9): Accessibility and framework-announcer repair, Automated acceptance result, Deterministic capture contract, External human visual acceptance checklist, Failure and environment ledger, Integrity and exclusions, Manual inspection of the generated images, Phase 9 Task-34 Choreography/PRELAUNCH Refinement Evidence (+1 more)
 
-### Community 593 - "cleanup.ts"
-Cohesion: 0.42
-Nodes (6): CleanupCallback, createCleanupRegistry(), onceCleanup(), scheduleRecoveryTimeout(), getTransitionDurationMs(), NAVIGATION_TIMING_MS
+### Community 593 - "Rebaselined successor tasks — ADR-057 / ASM-IMP-DEC-020"
+Cohesion: 0.12
+Nodes (16): 10. Stage 6 — Scenic Home handoff, 11. Stage 7 — Bounded structural Assembly, 12. Stage 8 — GSAP presentation binding, 13. Stage 9 — Responsive and reduced motion, 14. Stage 10 — Navigation and lifecycle, 15. Stage 11 — Final quality and homologation, 1. Stage 0 — Successor bootstrap (completed), 2. Stage 1 — Authorized geometry work before scope rebaseline (+8 more)
 
 ### Community 594 - "Phase 9 Firefox and Demo Geometry Correction Evidence"
 Cohesion: 0.22
 Nodes (8): Automated validation result, Deterministic capture contract, Diagnosis and geometric correction, Integrity and remaining gate, Permanent regression coverage, Phase 9 Firefox and Demo Geometry Correction Evidence, Scope and authority, Visual-evidence staleness audit
 
-### Community 595 - "LocalRevealController.tsx"
-Cohesion: 0.33
-Nodes (4): LocalRevealController(), REVEAL_SELECTOR, gsapMocks, ObserverStub
+### Community 595 - "11. Stage Blocking and Deferred Findings"
+Cohesion: 0.50
+Nodes (4): 11.1 Always blocking by default, 11.2 Defer may be considered only when all conditions hold, 11.3 Known inherited issue ledger, 11. Stage Blocking and Deferred Findings
 
 ### Community 596 - "Phase 9 Task-33 Refinement Evidence"
 Cohesion: 0.25
 Nodes (7): Captures, Final authoritative validation, Integrity, Phase 9 Task-33 Refinement Evidence, Preserved diagnostic history, Runtime assertions, Scope
 
-### Community 597 - "archetypes.ts"
-Cohesion: 0.38
-Nodes (5): archetypeEntries, ArchetypePageId, VisualArchetype, visualArchetypeByPage, VisualArchetypeManifest
+### Community 597 - "7. Mobile Header Decisions — `MOB-HDR-DEC-*`"
+Cohesion: 0.11
+Nodes (18): 7.1 Canonical mobile sheet order, 7. Mobile Header Decisions — `MOB-HDR-DEC-*`, MOB-HDR-DEC-001 — Compact Mobile Header, MOB-HDR-DEC-002 — Mobile Navigation Consolidation, MOB-HDR-DEC-003 — Mobile Navigation Sheet, MOB-HDR-DEC-004 — Mobile Navigation Ordering, MOB-HDR-DEC-005 — Active Destination Semantics, MOB-HDR-DEC-006 — Accessible Modal Navigation (+10 more)
 
-### Community 598 - "preview.ts"
-Cohesion: 0.25
-Nodes (6): cormorantGaramond, manrope, fontVariableClasses, preview, StorybookFrameProps, StoryRenderer
+### Community 598 - "phase02-static-story.spec.ts"
+Cohesion: 0.33
+Nodes (3): CHAPTER_HASHES, CHAPTER_IDS, HEADER_HASHES
 
 ### Community 599 - "Q: How do StoryV2Header and ProjectCardFan own responsive header measurement, compact card capacity, and their focused regressions?"
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: How do StoryV2Header and ProjectCardFan own responsive header measurement, compact card capacity, and their focused regressions?, Source Nodes
 
-### Community 600 - "phase09-score-path-review.spec.ts"
+### Community 600 - "Phase 11 — Final APP-04 media assets"
 Cohesion: 0.50
-Nodes (4): COMPACT_VIEWPORT_MATRIX, openPreview(), previewUrl(), REVIEW_MATRIX
+Nodes (4): Blocking asset gate, Gate 11, Phase 11 — Final APP-04 media assets, Required work
+
+### Community 601 - "4. Anti-Loop Rules"
+Cohesion: 0.50
+Nodes (4): 4.1 Same-root bounded-attempt limit, 4.2 Unregistered defect rule, 4.3 Repeated inherited-defect trigger, 4. Anti-Loop Rules
+
+### Community 603 - "13. Gemini Flash maintenance lifecycle"
+Cohesion: 0.67
+Nodes (3): 13.1 Pre-flight — optional, freshness-driven, 13.2 Post-flight — implementation-aware maintenance, 13. Gemini Flash maintenance lifecycle
+
+### Community 604 - "ADDED Requirements"
+Cohesion: 0.11
+Nodes (17): ADDED Requirements, Requirement: Capacity is resolved by readable reflow and spans, Requirement: HGA-002 margin remediation is superseded, Requirement: Native input is separate from camera geometry, Requirement: Presentations share one continuous portfolio story, Requirement: Project browsing remains outside the landing-page release, Requirement: Reduced motion and failure retain access, Requirement: Responsive lifecycle preserves local semantic state (+9 more)
+
+### Community 605 - "occurrences"
+Cohesion: 0.67
+Nodes (3): minItems, type, occurrences
+
+### Community 606 - "10. Home Scenic Assembly — State by State"
+Cohesion: 0.12
+Nodes (16): 10.1 Home progress model, 10. Home Scenic Assembly — State by State, Desktop, Exit condition, HOME-STATE-00 — LATENT_ORIGIN, HOME-STATE-01 — CLEF_ESTABLISHED, HOME-STATE-02 — HEADER_REVEAL, HOME-STATE-03 — SCORE_AWAKENING (+8 more)
+
+### Community 607 - "26. Implementation Decisions — `ASM-IMP-DEC-*`"
+Cohesion: 0.05
+Nodes (39): 26. Implementation Decisions — `ASM-IMP-DEC-*`, A. Complete scene contract and ownership, A. Equality domains and canonical outputs, A. Identity and immutable lineage, A. Identity, occurrences and retained proof, ASM-IMP-DEC-001 — Separate Post-Phase-9 Change, ASM-IMP-DEC-002 — Layered Implementation Order — REVISED, ASM-IMP-DEC-003 — Projection Remains Geometry Owner (+31 more)
+
+### Community 608 - "config/navigation.ts"
+Cohesion: 0.43
+Nodes (6): ChapterRoute, HeaderItem, getActiveHeaderItem(), institutionalHeaderLinks, InternalHeaderLink, mobileHeaderLinks
+
+### Community 609 - "ADDED Requirements"
+Cohesion: 0.15
+Nodes (12): ADDED Requirements, Requirement: Cancellation and replacement use actual progress, Requirement: Explicit distant navigation uses staff-only traversal, Requirement: History restoration never invents a removed chapter, Requirement: Navigation policies share one portfolio model, Requirement: Shortcuts resolve semantic landmark entry, Scenario: A distant Professional destination is selected, Scenario: A second destination replaces the first (+4 more)
+
+### Community 611 - "Intro, Bootstrap, Deep Links, and Recovery"
+Cohesion: 0.29
+Nodes (6): Failure cases, Initial target precedence, Intro, Bootstrap, Deep Links, and Recovery, Once per session, State machine, Timing policy
+
+### Community 612 - "21. Lifecycle, Cleanup, Performance, and Observability Decisions"
+Cohesion: 0.17
+Nodes (12): 21. Lifecycle, Cleanup, Performance, and Observability Decisions, MOT-DEC-025 — Scoped Motion Runtime Ownership, MOT-DEC-026 — Idempotent Cleanup, MOT-DEC-027 — Structural Rebuild Only, MOT-DEC-028 — Coalesced Layout Invalidation, MOT-DEC-029 — Resize Traversal Cancellation, MOT-DEC-030 — Progressive Motion Readiness, MOT-DEC-031 — Motion Fail-Open (+4 more)
+
+### Community 613 - "ADDED Requirements"
+Cohesion: 0.15
+Nodes (12): ADDED Requirements, Requirement: Focus and scroll-lock ownership is scoped, Requirement: Interaction regions remain stable and reachable, Requirement: Navigation exposes only surviving destinations, Requirement: Partial visibility never prevents access, Requirement: Removed routes fail closed, Scenario: A reader edits and submits Contact, Scenario: A reader leaves or returns to the interaction span (+4 more)
+
+### Community 614 - "ADDED Requirements"
+Cohesion: 0.25
+Nodes (7): ADDED Requirements, Requirement: Deep links do not replay the opening, Requirement: Home is the single musical and spatial origin, Requirement: Home remains usable when motion is unavailable, Scenario: A first visit reaches Home, Scenario: Opening initialization fails, Scenario: The page loads with a surviving chapter hash
+
+### Community 615 - "9. Motion Decisions — `MOT-DEC-*`"
+Cohesion: 0.20
+Nodes (10): 9. Motion Decisions — `MOT-DEC-*`, MOT-DEC-001 — Score Draw Ownership, MOT-DEC-002 — Unified Staff Front, MOT-DEC-003 — Semantic Event Reveal, MOT-DEC-004 — Event Group Atomicity, MOT-DEC-005 — No Events During Connector/Assembly, MOT-DEC-006 — Score-Driven Content Reveal, MOT-DEC-007 — Content Reveal Hysteresis (+2 more)
+
+### Community 618 - "bootstrap/index.ts"
+Cohesion: 0.08
+Nodes (37): History, Hash, and Back/Forward Evidence, Ownership, Write policy, destination(), resolveStoryBootstrapDestination(), ResolveStoryBootstrapDestinationInput, STORY_CHAPTER_ID_BY_HASH, StoryBootstrapDestinationSource (+29 more)
+
+### Community 619 - "12.2 State machine"
+Cohesion: 0.22
+Nodes (9): 12.1 Authorized scenes, 12.2 State machine, 12.3 Structural rule, 12. Structural Assembly — Services and How It Works, CANONICAL, CANONICAL, DISASSEMBLING, REASSEMBLING (+1 more)
+
+### Community 620 - "19. Runtime Lifecycle — State by State"
+Cohesion: 0.22
+Nodes (9): 19. Runtime Lifecycle — State by State, RUNTIME-STATE-ACTIVE, RUNTIME-STATE-BUILDING, RUNTIME-STATE-DISPOSED, RUNTIME-STATE-DISPOSING, RUNTIME-STATE-READY, RUNTIME-STATE-REBUILDING, RUNTIME-STATE-UNINITIALIZED (+1 more)
+
+### Community 621 - "AUTHORIZED_FOR_FULL_IMPLEMENTATION"
+Cohesion: 0.36
+Nodes (9): AUTHORIZED_FOR_FULL_IMPLEMENTATION, Autorização de implementação visual, Conjunto visual mínimo obrigatório, Regras de derivação visual, Restrições imutáveis da autorização, Matriz de autorização por página e viewport, Resumo de 60 estados autorizados, Status das referências visuais (+1 more)
+
+### Community 622 - "Phase 0 — Canonical merge, audit, and baseline protection"
+Cohesion: 0.67
+Nodes (3): Gate 0, Phase 0 — Canonical merge, audit, and baseline protection, Required work
+
+### Community 623 - "Phase 12 — Accessibility, reduced motion, responsive hardening"
+Cohesion: 0.67
+Nodes (3): Gate 12, Phase 12 — Accessibility, reduced motion, responsive hardening, Required work
+
+### Community 624 - "ADDED Requirements"
+Cohesion: 0.25
+Nodes (7): ADDED Requirements, Requirement: Complete event ink occupies safe straight geometry, Requirement: Forbidden regions remain event-free, Requirement: Rendering remains semantically deterministic, Scenario: An event is rendered, Scenario: Staff geometry turns or connects visits, Scenario: The same portfolio composition is rendered twice
+
+### Community 625 - "Phase 13 — Performance, lifecycle, observability, and failure recovery"
+Cohesion: 0.67
+Nodes (3): Gate 13, Phase 13 — Performance, lifecycle, observability, and failure recovery, Required work
+
+### Community 627 - "17. Fast Traversal — State by State"
+Cohesion: 0.25
+Nodes (8): 17.1 Presentation modes, 17.2 Activation, 17.3 Active Fast Traversal, 17.4 Arrival, 17.5 Cancellation, 17.6 Target replacement, 17.7 Cross-branch traversal, 17. Fast Traversal — State by State
+
+### Community 628 - "30. Final Human Homologation Checklist"
+Cohesion: 0.25
+Nodes (8): 30.1 Geometry, 30.2 Musical readability, 30.3 Home, 30.4 Assembly, 30.5 Navigation, 30.6 Responsive, 30.7 Reduced motion, 30. Final Human Homologation Checklist
+
+### Community 630 - "29. Deterministic Visual Evidence Matrix"
+Cohesion: 0.29
+Nodes (7): 29.1 Home desktop, 29.2 Application, 29.3 Professional, 29.4 Mobile, 29.5 Fast Traversal, 29.6 Reduced motion, 29. Deterministic Visual Evidence Matrix
+
+### Community 631 - "Brief opcional para referências adicionais"
+Cohesion: 0.48
+Nodes (7): Aprovação humana preserva estados derivados, Brief opcional para referências adicionais, Checklist de continuidade da partitura, Geração opcional durante QA, Invariantes visuais e estruturais, Saída reconstruível em HTML, CSS e SVG, Tablet visual com implementação DOM
+
+### Community 632 - "Stage 1 authorization — portfolio-only rebaseline"
+Cohesion: 0.33
+Nodes (6): Authorized current work, Forbidden work, Historical dispositions, Stage 1 authorization — portfolio-only rebaseline, Status, Validation and stop
+
+### Community 633 - "Catálogo de animações"
+Cohesion: 0.33
+Nodes (7): Especificação da homepage, Home como origem e bifurcação, Catálogo de animações, M-010 — Abertura oficial da marca, M-011 — Bifurcação da Home, M-017 — Tablet: simulação de transposição, Brand Intro
+
+### Community 634 - "components/story/index.ts"
+Cohesion: 0.13
+Nodes (18): ProfessionalChapterSceneProps, nativeLinkAttributes(), StoryChapter(), StoryChapterProps, DEFAULT_STORY_NAVIGATION_BRIDGE_CONTEXT, DEFAULT_STORY_NAVIGATION_STATE_CONTEXT, StoryNavigationBridgeContext, StoryNavigationBridgeContextValue (+10 more)
+
+### Community 635 - "Phase 14 — Cutover, legacy removal, and full regression"
+Cohesion: 0.67
+Nodes (3): Gate 14, Phase 14 — Cutover, legacy removal, and full regression, Required work
+
+### Community 636 - "ChapterScore.tsx"
+Cohesion: 0.14
+Nodes (21): anchorToY(), ChapterScore(), ChapterScoreProps, cubicAngle(), cubicPoint(), edgeToX(), getChapterScorePath(), getControlPoints() (+13 more)
+
+### Community 637 - "Phase 2 — Story v2 domain model and static vertical skeleton"
+Cohesion: 0.67
+Nodes (3): Gate 2, Phase 2 — Story v2 domain model and static vertical skeleton, Required work
+
+### Community 638 - "Phase 3 — Content, detailed routes, and conversion contracts"
+Cohesion: 0.67
+Nodes (3): Gate 3, Phase 3 — Content, detailed routes, and conversion contracts, Required work
+
+### Community 639 - "Phase 4 — Readiness-driven intro, bootstrap, deep links, and recovery"
+Cohesion: 0.67
+Nodes (3): Gate 4, Phase 4 — Readiness-driven intro, bootstrap, deep links, and recovery, Required work
+
+### Community 640 - "Phase 5 — Desktop Motion Lab and native-scroll master story"
+Cohesion: 0.67
+Nodes (3): Gate 5, Phase 5 — Desktop Motion Lab and native-scroll master story, Required work
+
+### Community 641 - "Phase 6 — Header traversal, URL, and history"
+Cohesion: 0.67
+Nodes (3): Gate 6, Phase 6 — Header traversal, URL, and history, Required work
+
+### Community 642 - "Target Frontend Architecture"
+Cohesion: 0.29
+Nodes (6): Bootstrap and projection boundary, Detailed routes, Major modules, Migration pattern, State ownership, Target Frontend Architecture
+
+### Community 643 - "ASM-PC-001 fallback authorization review — 2026-09-10"
+Cohesion: 0.40
+Nodes (4): ASM-PC-001 fallback authorization review — 2026-09-10, Current implementation boundary, Focused acceptance and subsequent High work, Governance validation
+
+### Community 644 - "Phase 7 — Professional branch scenes"
+Cohesion: 0.67
+Nodes (3): Gate 7, Phase 7 — Professional branch scenes, Required work
+
+### Community 646 - "Phase 8 — Application branch scenes"
+Cohesion: 0.67
+Nodes (3): Gate 8, Phase 8 — Application branch scenes, Required work
+
+### Community 647 - "28. Test Strategy"
+Cohesion: 0.33
+Nodes (6): 28.1 Unit tests, 28.2 Projection/geometry tests, 28.3 Playwright, 28.4 Accessibility, 28.5 Performance, 28. Test Strategy
+
+### Community 648 - "Responsive Presentation, Portrait Traversal and Reduced Motion"
+Cohesion: 0.50
+Nodes (3): Current conceptual classes, Responsive Presentation, Portrait Traversal and Reduced Motion, Transitional implementation vocabulary
+
+### Community 649 - "ai-route-resolver.mjs"
+Cohesion: 0.40
+Nodes (5): args, __dirname, loadRegistry(), REGISTRY_PATH, resolveRoute()
+
+### Community 650 - "15. Mobile Header — State by State"
+Cohesion: 0.40
+Nodes (5): 15. Mobile Header — State by State, MOBILE-HDR-STATE-MENU_OPEN, MOBILE-HDR-STATE-NAVIGATING, MOBILE-HDR-STATE-RESTORING, MOBILE-HDR-STATE-SETTLED
+
+### Community 651 - "16. Score Draw, Event Reveal, and Content Reveal"
+Cohesion: 0.40
+Nodes (5): 16.1 Logical staff front, 16.2 Event reveal eligibility, 16.3 Content reveal, 16.4 Hysteresis, 16. Score Draw, Event Reveal, and Content Reveal
+
+### Community 652 - "task-5-8-evidence/manifest.json"
+Cohesion: 0.40
+Nodes (4): capturedAt, captures, humanGeometryApproval, route
+
+### Community 654 - "2. Preconditions and Phase-9 Handoff"
+Cohesion: 0.50
+Nodes (4): 2.1 Mandatory entry gate, 2.2 Known corrective evidence, 2.3 Meaning of Phase-9 acceptance, 2. Preconditions and Phase-9 Handoff
 
 ## Ambiguous Edges - Review These
 - `currentColor nos grupos filhos` → `Herança de cor do lockup`  [AMBIGUOUS]
@@ -2450,23 +2868,23 @@ Nodes (4): COMPACT_VIEWPORT_MATRIX, openPreview(), previewUrl(), REVIEW_MATRIX
   docs/design-reference/brand-intro/source-assets/wflyer-on-dark.svg · relation: implements
 
 ## Knowledge Gaps
-- **2586 isolated node(s):** `config`, `StoryRenderer`, `StorybookFrameProps`, `fontVariableClasses`, `preview` (+2581 more)
-  These have ≤1 connection - possible missing edges or undocumented components.
-- **146 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **3421 isolated node(s):** `config`, `StoryRenderer`, `StorybookFrameProps`, `fontVariableClasses`, `preview` (+3416 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 4083 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **130 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Work-memory lessons
 
 **Preferred sources** — corroborated by past sessions; start here.
-- `playwright` (6× useful, score=3.309698044)
-- `responsive-score-projection.ts` (4× useful, score=3.182687646)
-- `ScoreSvg()` (4× useful, score=2.641382759)
-- `TupletRenderPrimitive` (3× useful, score=2.265915036)
-- `lab-score-models.ts` (3× useful, score=2.144268914)
-- `composeSegment()` (3× useful, score=1.967675012)
-- `File-by-File Migration Map` (2× useful, score=1.608262805)
-- `gate-c-review.ts` (2× useful, score=1.591888864)
-- `draft-calibration.ts` (2× useful, score=1.470962683)
-- `CalibrationWorkbench.tsx` (2× useful, score=1.294696454)
+- `chapters.ts` (8× useful, score=3.215166781) _(code changed — re-verify)_
+- `responsive-score-projection.ts` (4× useful, score=2.58762759)
+- `ScoreSvg()` (4× useful, score=2.147529278)
+- `TupletRenderPrimitive` (3× useful, score=1.842261923)
+- `lab-score-models.ts` (3× useful, score=1.743359707)
+- `composeSegment()` (3× useful, score=1.599783176)
+- `File-by-File Migration Map` (2× useful, score=1.307569472) _(code changed — re-verify)_
+- `gate-c-review.ts` (2× useful, score=1.294256931)
+- `draft-calibration.ts` (2× useful, score=1.19594005)
+- `CalibrationWorkbench.tsx` (2× useful, score=1.052629927)
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -2481,7 +2899,7 @@ _Questions this graph is uniquely positioned to answer:_
   _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
 - **What is the exact relationship between `Wide angular symbol-and-wordmark composition` and `Intended white-on-dark logo palette`?**
   _Edge tagged AMBIGUOUS (relation: implements) - confidence is low._
-- **Why does `StoryChapterId` connect `runtime.ts` to `StoryScoreLayer.tsx`, `composition.ts`, `organic-flowing.ts`, `ProfessionalChapterScene.tsx`, `public/index.ts`, `lib/story/index.ts`, `StoryNavigationContext.tsx`, `projection.ts`, `StoryBootstrapExperience.tsx`, `bootstrap/index.ts`, `bootstrap/positioning.ts`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `CONTACT_PROJECT_TYPES` connect `public/index.ts` to `site-content.ts`, `lib/contact/index.ts`, `ContactForm.tsx`?**
-  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+- **Why does `vitest` connect `vitest` to `ui/index.ts`, `lib/contact/index.ts`, `theme-tokens.test.ts`, `BrandIntroController.tsx`, `SiteHeader.tsx`, `glyphs/types.ts`, `ScoreTransitionLayer.tsx`, `topology.ts`, `SiteExperienceShell.tsx`, `StoryScoreLayer.tsx`, `geometry/types.ts`, `metrics.ts`, `ref_node_fs`, `gate-c-review.ts`, `package.json`, `lifecycle.ts`, `runtime.ts`, `lab-score-models.ts`, `compose-motif.ts`, `staging.smoke.spec.ts`, `react`, `compose-segment.ts`, `build-note-model.ts`, `units.ts`, `ref_node_path`, `lib/motion/eligibility.ts`, `session-seed.ts`, `ContactForm.tsx`, `compose-segment.test.ts`, `bootstrap/positioning.ts`, `measurement.ts`, `event-safe-placement.ts`, `ScorePathReview.tsx`, `ProfessionalChapterScene.tsx`, `MotionStoryLab.tsx`, `CalibrationWorkbench.tsx`, `@testing-library/react`, `run-music-gate-c-delta-validation.mjs`, `Vec2`, `cleanup.ts`, `story/motion/geometry.ts`, `config/navigation.ts`, `responsive-score-projection.ts`, `bootstrap/index.ts`, `lib/motion/geometry.ts`, `shared-origin.ts`, `site-content.ts`, `public/index.ts`, `lib/story/index.ts`, `buildStoryScoreProjection`, `composer/types.ts`, `RouteAwareExperienceBoundary.tsx`, `components/story/index.ts`, `ChapterScore.tsx`, `SiteFooter.tsx`, `ref_node_crypto`?**
+  _High betweenness centrality (0.079) - this node is a cross-community bridge._
+- **Why does `StoryChapterId` connect `runtime.ts` to `StoryScoreLayer.tsx`, `Continuous Spatial Story`, `Target Frontend Architecture`, `Intro, Bootstrap, Deep Links, and Recovery`, `ProfessionalChapterScene.tsx`, `MotionStoryLab.tsx`, `event-safe-placement.ts`, `organic-flowing.ts`, `bootstrap/index.ts`, `public/index.ts`, `lib/story/index.ts`, `projects-capacity.ts`, `projection.ts`, `StoryBootstrapExperience.tsx`, `story/motion/geometry.ts`, `components/story/index.ts`, `bootstrap/positioning.ts`, `Phase 4 Gate Report`?**
+  _High betweenness centrality (0.065) - this node is a cross-community bridge._

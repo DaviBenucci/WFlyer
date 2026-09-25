@@ -1,86 +1,34 @@
 # Arquitetura de componentes
 
-## Marca
+## Marca e navegação
 
-- `OfficialBrandSymbol`
-- `OfficialBrandLockup`
-- `BrandIntroOverlay`
+- `OfficialBrandSymbol`, `OfficialBrandLockup`, `BrandIntroOverlay`;
+- `SiteHeader`, `NavigationMeasure`, `MobileScoreMenu`, `ThemeToggle`;
+- `ChapterNavigation`, `SiteFooter`.
 
-## Navegação
+## Partitura e experiência
 
-- `SiteHeader`
-- `ApplicationMeasureGroup`
-- `InstitutionalMeasureGroup`
-- `NavigationMeasure`
-- `MobileScoreMenu`
-- `ThemeToggle`
-- `ChapterNavigation`
-- `BranchIndicator`
+- `NarrativeClef`, `OriginScore`, `ChapterScore`, `StoryScoreLayer`;
+- `ScoreTransitionLayer`, `StoryBootstrapExperience`, `MotionStoryLab`;
+- `ProfessionalChapterScene`, `StaticStorySkeleton`.
 
-## Partitura
-
-- `MusicalStaff`
-- `StaffPath`
-- `MusicalNote`
-- `MeasureBar`
-- `FinalBarline`
-- `ScoreSegment`
-- `ScoreEntryAnchor`
-- `ScoreExitAnchor`
-- `ScoreConnectorLayer`
-- `ScoreChapterFrame`
-- `ScoreFallbackFlow`
-
-## Experiência
-
-- `SiteExperienceShell`
-- `ScoreTransitionProvider`
-- `ScoreTransitionLayer`
-- `HomeBifurcation`
-- `PageRevealBoundary`
-- `ReducedMotionBoundary`
+Home usa uma origem e uma pauta de cinco linhas. A experiência ativa segue
+somente a narrativa profissional/portfólio. Não existe componente institucional
+de ramificação, demo ou acesso ao produto separado.
 
 ## Conteúdo principal
 
-- `HomeHero`
-- `ApplicationOverviewPage`
-- `PublicHowItWorksPage`
-- `BenefitsPage`
-- `CompanyOverviewPage`
-- `ServicesPage`
-- `ProcessPage`
-- `PortfolioPage`
-- `ContactPage`
-- `ServiceDetailPage`
-- `SiteFooter`
-
-## Tablet demonstrativo
-
-- `ApplicationDemoTablet`
-- `TabletShell`
-- `TabletScreen`
-- `DemoScorePreview`
-- `DemoTranspositionControls`
-- `DemoStatus`
-- `DemoResetButton`
-
-## Formulário
-
-- `ContactForm`
-- `ProjectTypeField`
-- `ConsentField`
-- `TurnstileField`
-- `FormStatus`
+- Home, Sobre, Serviços, Processo, Projetos e Contato;
+- detalhes de serviço e projeto autorizados;
+- páginas legais e de acessibilidade;
+- formulário seguro de Contato.
 
 ## Regras
 
-- props tipadas;
-- componente visual sem acesso direto a segredo ou ambiente;
-- conteúdo separado de animação;
-- geometria da pauta separada de copy;
-- estados Storybook para cada componente relevante;
-- nenhum componente de domínio do aplicativo musical;
+- props tipadas e nenhum segredo no cliente;
+- conteúdo separado de animação e geometria separada de copy;
+- GSAP como única autoridade programática de movimento;
+- nenhum componente do produto musical independente;
 - nenhuma abstração genérica prematura;
-- o tablet não importa lógica do aplicativo;
-- golden references não são importadas no runtime;
-- componentes de claro e escuro compartilham a mesma árvore DOM sempre que possível.
+- golden references nunca entram no runtime;
+- temas compartilham a mesma árvore DOM sempre que possível.

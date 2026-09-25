@@ -1,0 +1,729 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WFlyer known inherited findings registry",
+  "description": "ASM-AUDIT-001 structured governance contract; raw validators remain enabled. Semantic comparisons/approval validity/reference integrity are also required by policy.",
+  "type": "object",
+  "required": [
+    "$schema",
+    "format",
+    "policy",
+    "decisions",
+    "status",
+    "existingRegisters",
+    "records"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "format": {
+      "const": "wflyer-known-inherited-findings/v1"
+    },
+    "policy": {
+      "const": "ASM-AUDIT-001"
+    },
+    "decisions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "existingRegisters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "family",
+          "ids",
+          "authority",
+          "decisions",
+          "rule"
+        ]
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "alias",
+          "rootSignature",
+          "firstDiscoveredStage",
+          "lineage",
+          "surface",
+          "owner",
+          "stageDisposition",
+          "ownerFiles",
+          "classification",
+          "severity",
+          "impact",
+          "occurrences",
+          "equivalence",
+          "rawValidation",
+          "runtime",
+          "registrationApproval",
+          "dispositionApproval",
+          "remediation",
+          "acceptanceBaseline",
+          "reblockConditions",
+          "history"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ASM-(?:CR|AUD|PC|SI)-[0-9]{3}$"
+          },
+          "alias": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rootSignature": {
+            "type": "string",
+            "minLength": 1
+          },
+          "firstDiscoveredStage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lineage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "surface": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "stageDisposition": {
+            "enum": [
+              "BLOCK_STAGE",
+              "DEFER",
+              "RESOLVED",
+              "SUPERSEDED_SCOPE"
+            ]
+          },
+          "ownerFiles": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "classification": {
+            "enum": [
+              "CURRENT_REGRESSION",
+              "INHERITED_CRITICAL",
+              "INHERITED_NONBLOCKING",
+              "VALIDATION_PIPELINE_DEFECT",
+              "UNCLASSIFIED / NEEDS_REVIEW"
+            ]
+          },
+          "severity": {
+            "type": "object",
+            "required": [
+              "level",
+              "rationale"
+            ],
+            "properties": {
+              "level": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "impact": {
+            "type": "object",
+            "required": [
+              "mandatoryInvariantViolation",
+              "violatedInvariants",
+              "materialAccessibilityLoss",
+              "materialFunctionalLoss",
+              "securityOrDataIntegrityImpact",
+              "description"
+            ],
+            "properties": {
+              "mandatoryInvariantViolation": {
+                "type": "boolean"
+              },
+              "violatedInvariants": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "materialAccessibilityLoss": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "materialFunctionalLoss": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "securityOrDataIntegrityImpact": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "occurrences": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "surface",
+                "mode",
+                "viewport",
+                "theme",
+                "condition",
+                "engine",
+                "equivalent",
+                "evidence",
+                "measurements"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^ASM-(?:CR|AUD|PC|SI)-[0-9]{3}-O[0-9]{2,}$"
+                },
+                "surface": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "candidate": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "mode": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "theme": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "condition": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "engine": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "units": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "horizontalRootGrouping": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "viewport": {
+                  "type": "object",
+                  "required": [
+                    "width",
+                    "height"
+                  ],
+                  "properties": {
+                    "width": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "height": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "historicalOverflow": {
+                  "type": "object",
+                  "required": [
+                    "x",
+                    "y"
+                  ],
+                  "properties": {
+                    "x": {
+                      "type": "number"
+                    },
+                    "y": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "currentOverflow": {
+                  "type": "object",
+                  "required": [
+                    "x",
+                    "y"
+                  ],
+                  "properties": {
+                    "x": {
+                      "type": "number"
+                    },
+                    "y": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "reservationBlockSize": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "equivalent": {
+                  "type": "boolean"
+                },
+                "evidence": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "path",
+                      "sha256"
+                    ],
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "sha256": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      },
+                      "jsonPointer": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "measurements": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "name",
+                      "units",
+                      "current",
+                      "historical",
+                      "rawOutcome"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "units": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "current": {},
+                      "historical": {},
+                      "rawOutcome": {
+                        "enum": [
+                          "PASS",
+                          "FAIL",
+                          "ERROR",
+                          "NOT_OBSERVED"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "equivalence": {
+            "type": "object",
+            "required": [
+              "status",
+              "notWorsened",
+              "source",
+              "limitations",
+              "evidence"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "minLength": 1
+              },
+              "notWorsened": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "limitations": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "evidence": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "path",
+                    "sha256"
+                  ],
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    },
+                    "jsonPointer": {
+                      "type": "string"
+                    },
+                    "source": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "rawValidation": {
+            "type": "object",
+            "required": [
+              "result",
+              "validator",
+              "enabled",
+              "threshold",
+              "scope"
+            ],
+            "properties": {
+              "result": {
+                "enum": [
+                  "PASS",
+                  "FAIL",
+                  "ERROR",
+                  "NOT_OBSERVED"
+                ]
+              },
+              "validator": {
+                "type": "string",
+                "minLength": 1
+              },
+              "enabled": {
+                "const": true
+              },
+              "threshold": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scope": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "runtime": {
+            "type": "object",
+            "required": [
+              "candidateStatus",
+              "fallback",
+              "evidence"
+            ],
+            "properties": {
+              "candidateStatus": {
+                "type": "string",
+                "minLength": 1
+              },
+              "fallback": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "registrationApproval": {
+            "type": "object",
+            "required": [
+              "reference",
+              "sha256",
+              "date",
+              "decisions"
+            ],
+            "properties": {
+              "reference": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "decisions": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "dispositionApproval": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "reference": {
+                "type": "string",
+                "minLength": 1
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "owner": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scope": {
+                "type": "string",
+                "minLength": 1
+              },
+              "expiresOrReviewPoint": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "remediation": {
+            "type": "object",
+            "required": [
+              "owner",
+              "reviewPoint",
+              "executionAuthorized",
+              "scopeApproved",
+              "boundary",
+              "verificationStatus"
+            ],
+            "properties": {
+              "owner": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "reviewPoint": {
+                "type": "string",
+                "minLength": 1
+              },
+              "executionAuthorized": {
+                "type": "boolean"
+              },
+              "scopeApproved": {
+                "type": "boolean"
+              },
+              "boundary": {
+                "type": "string",
+                "minLength": 1
+              },
+              "verificationStatus": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "acceptanceBaseline": {
+            "type": "object",
+            "required": [
+              "kind",
+              "comparisonDomain",
+              "fingerprint",
+              "units",
+              "toleranceAuthority",
+              "worseningRule"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              },
+              "comparisonDomain": {
+                "type": "string",
+                "minLength": 1
+              },
+              "fingerprint": {
+                "type": "string",
+                "minLength": 1
+              },
+              "units": {
+                "type": "string",
+                "minLength": 1
+              },
+              "toleranceAuthority": {
+                "type": "string",
+                "minLength": 1
+              },
+              "worseningRule": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "reblockConditions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "history": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "date",
+                "action",
+                "authority",
+                "evidence",
+                "disposition",
+                "note"
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "stageDisposition": {
+                  "const": "DEFER"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "classification": {
+                  "const": "INHERITED_NONBLOCKING"
+                },
+                "impact": {
+                  "properties": {
+                    "mandatoryInvariantViolation": {
+                      "const": false
+                    },
+                    "violatedInvariants": {
+                      "maxItems": 0
+                    },
+                    "materialAccessibilityLoss": {
+                      "const": false
+                    },
+                    "materialFunctionalLoss": {
+                      "const": false
+                    },
+                    "securityOrDataIntegrityImpact": {
+                      "const": false
+                    }
+                  }
+                },
+                "equivalence": {
+                  "properties": {
+                    "status": {
+                      "const": "EQUIVALENT_FOR_RECORDED_INPUTS"
+                    },
+                    "notWorsened": {
+                      "const": true
+                    }
+                  }
+                },
+                "dispositionApproval": {
+                  "type": "object",
+                  "required": [
+                    "reference",
+                    "date",
+                    "owner",
+                    "scope",
+                    "expiresOrReviewPoint"
+                  ]
+                },
+                "remediation": {
+                  "properties": {
+                    "owner": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "acceptanceBaseline": {
+                  "properties": {
+                    "kind": {
+                      "const": "OWNER_APPROVED_DEFER_BASELINE"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

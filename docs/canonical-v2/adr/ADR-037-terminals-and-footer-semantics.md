@@ -1,6 +1,6 @@
 # ADR-037 — Branch Terminals and Footer Semantics
 
-**Status:** APPROVED  
+**Status:** SUPERSEDED IN PART by ADR-053 for institutional branch/footer order; retained as historical provenance
 **Date:** 2026-08-14
 
 ## Context

@@ -1,5 +1,10 @@
 # SEO e metadados
 
+> Historical predecessor draft. Current public route/SEO authority is
+> `docs/canonical-v2/01-product/02-information-architecture-and-routes.md`
+> and `src/config/seo.ts`; ADR-053 and ADR-056 supersede the old application
+> branch and Projects browsing destinations in the table below.
+
 ## Regras
 
 - uma intenção de busca por página;

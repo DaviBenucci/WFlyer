@@ -1,6 +1,6 @@
 # ADR-032 — Responsive Vertical Story
 
-**Status:** APPROVED  
+**Status:** SUPERSEDED IN PART by ADR-053 for institutional branch/order scope; retained as responsive-mode history
 **Date:** 2026-08-14
 **Clarified:** 2026-08-24 — external Gate-C follow-up responsive functional approval and connector-aesthetic exclusion
 
